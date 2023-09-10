@@ -35,7 +35,28 @@
 
 ## 安装 Obsidian Git 插件进行后续的同步
 
-打开Obsidian[Obsidian Git](https://github.com/denolehov/obsidian-git)
+打开Obsidian，在的这个准备好的库中，安装一个名为[Obsidian Git](https://github.com/denolehov/obsidian-git)的插件，具体操作如下。
+
+首先在左下角设置中的第三方插件中关闭安全模式
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092316189.png)
+
+然后浏览社区插件市场并搜索Obsidian Git选择安装
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092317339.png)
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092318185.png)
+
+注意要打开插件的开关
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092320255.png)
+
+然后在左下角插件的配置中可以设置backup interval（备份时间间隔）
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092321218.png)
+
+安装完成后应该会自动出现一个 Git Control View 的侧边栏。如果没有，则按下 Ctrl + P打开命令面板，搜索 `Obsidian Git: Open Source Control View` ，就可以打开这个面板。
+
 
 
 
