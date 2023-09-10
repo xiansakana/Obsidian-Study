@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Obsidian同步到Github以及Github图床.md",
+                "file": "Others/Obsidian同步到Github以及Github图床（Windows）.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 280.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Obsidian同步到Github以及Github图床.md",
+                "file": "Others/Obsidian同步到Github以及Github图床（Windows）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Obsidian同步到Github以及Github图床.md",
+                "file": "Others/Obsidian同步到Github以及Github图床（Windows）.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Obsidian同步到Github以及Github图床.md"
+                "file": "Others/Obsidian同步到Github以及Github图床（Windows）.md"
               }
             }
           },
@@ -173,7 +173,7 @@
   "active": "4d7974e2414666e4",
   "lastOpenFiles": [
     "Pasted image 20230909230315.png",
-    "Others/Obsidian同步到Github以及Github图床.md",
+    "Others/Obsidian同步到Github以及Github图床（Windows）.md",
     "Pasted image 20230909230327.png",
     "Pasted image 20230909230322.png",
     "Pasted image 20230909230318.png",
