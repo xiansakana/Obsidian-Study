@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Unblock Netease Music.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4d7974e2414666e4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "Others/Obsidian同步到Github以及Github图床（Windows）.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -170,18 +157,18 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "4d7974e2414666e4",
+  "active": "a50fa887b93d6cd6",
   "lastOpenFiles": [
     "Pasted image 20230909232023.png",
-    "Pasted image 20230909230315.png",
     "Others/Obsidian同步到Github以及Github图床（Windows）.md",
+    "Others/Unblock Netease Music.md",
+    "Markdown Cheat Sheet.md",
+    "Pasted image 20230909230315.png",
     "Pasted image 20230909230327.png",
     "Pasted image 20230909230322.png",
     "Pasted image 20230909230318.png",
     "git/Obsidian-Library",
     "git",
-    "Others/Unblock Netease Music.md",
-    "Markdown Cheat Sheet.md",
     "202309092224.md",
     "Others",
     "IMG_0312(20230909-110757).PNG",
