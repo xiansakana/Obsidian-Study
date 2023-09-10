@@ -31,7 +31,7 @@
 
 进入Developer settings后选择左边Personal access tokens里的的tokens (classic)，最后点击Generate new token (classic)。
 
-![[Pasted image 20230910013205.png]]
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100153740.png)
 
 填写用途，我选择的是永不过期，并勾选repo，然后点Generate token即可
 
@@ -39,7 +39,7 @@
 
 这个token只会显示一次，所以最好把它复制下来存好，方便下次使用，否则下次有需要重新新建。我的话直接在Github上新建一个private库来存这个token，这样想用也能随时找到。
 
-![[Pasted image 20230910013806.png]]
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100154448.png)
 
 #### 配置PicGo
 
@@ -50,3 +50,11 @@
 我一般直接选择qq或者snipaste截图然后直接剪切板图片快捷上传，或者直接拖动图片上传。
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100122429.png)
+
+也可以通过快捷键上传，默认为ctrl + shift +P。
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100146871.png)
+
+如果在国内的话Github图片访问可能会很慢，所以这时候我们就可以用 [jsDelivr](https://www.jsdelivr.com/") 进行免费加速，而设置的方法也很简单，只需要在我们 PicGo 图床配置中添加如下自定义域名即可
+
+>
