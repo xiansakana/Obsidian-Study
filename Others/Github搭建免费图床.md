@@ -37,6 +37,16 @@
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100133829.png)
 
-这个token只会显示一次，所以你最好把它复制下来到你的备忘录存好，方便下次使用，否则下次有需要重新新建
+这个token只会显示一次，所以最好把它复制下来存好，方便下次使用，否则下次有需要重新新建。我的话直接在Github上新建一个private库来存这个token，这样想用也能随时找到。
 
+![[Pasted image 20230910013806.png]]
 
+#### 配置PicGo
+
+打开PicGo，选择图床设置中的GitHub然后设置如下，其中仓库名是刚刚创建的仓库，分支名一般是main，Token就是刚刚生成的那个，最后点击确定。
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100139688.png)
+
+我一般直接选择qq或者snipaste截图然后直接剪切板图片快捷上传，或者直接拖动图片上传。
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100122429.png)
