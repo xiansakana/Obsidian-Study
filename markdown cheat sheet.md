@@ -584,6 +584,9 @@ $$
 [【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
 
+https://www.bilibili.com/video/BV1uL411W7HT/
+
+
 # 图片
 
 ```c
