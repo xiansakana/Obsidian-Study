@@ -57,4 +57,6 @@
 
 如果在国内的话Github图片访问可能会很慢，所以这时候我们就可以用 [jsDelivr](https://www.jsdelivr.com/") 进行免费加速，而设置的方法也很简单，只需要在我们 PicGo 图床配置中添加如下自定义域名即可
 
->
+>https://cdn.jsdelivr.net/gh/用户名/仓库名
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100200201.png)
