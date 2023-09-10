@@ -14,6 +14,12 @@ npx -p @unblockneteasemusic/server unblockneteasemusic
 
 [IOS 食用指南](https://github.com/nondanee/UnblockNeteaseMusic/issues/65)
 
+## 使用证书
+
+安装新的 CA 证书，设备上点击链接应该会自动跳转[https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)
+
+在设置 > 通用 > 关于本机 > 证书信任设置，手动信任证书
+
 ## 下载 Shadowrocket 并配置 Unblock 代理
 
 - 右上角加号添加节点
