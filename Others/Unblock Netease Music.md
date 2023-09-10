@@ -1,5 +1,4 @@
 [参考项目地址](https://github.com/UnblockNeteaseMusic)
-
 # Windows
 
 ## 安装依赖
