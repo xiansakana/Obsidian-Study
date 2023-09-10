@@ -21,12 +21,22 @@
 
 #### 创建Github token
 
-在Github里打开`Settings`
-
--> Developer settings -> Personal access tokens`，最后点击 `generate new token`
+在Github里打开Settings
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100125562.png)
 
+然后翻到最下面左侧选择Developer settings
 
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100127190.png)
+
+进入Developer settings后选择左边Personal access tokens里的的tokens (classic)，最后点击Generate new token (classic)。
+
+![[Pasted image 20230910013205.png]]
+
+填写用途，我选择的是永不过期，并勾选repo，然后点Generate token即可
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100133829.png)
+
+这个token只会显示一次，所以你最好把它复制下来到你的备忘录存好，方便下次使用，否则下次有需要重新新建
 
 

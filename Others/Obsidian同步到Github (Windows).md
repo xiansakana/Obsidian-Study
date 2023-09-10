@@ -29,7 +29,7 @@
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092303503.png)
 
-按照我自己的尝试，其实会发现之后装Obsidian Git的插件仍然无法链接到仓库,会显示git is not ready，最后才发现可能是没有安装git的原因，所以还是建议安装一下[git](https://gitforwindows.org/)。
+按照我自己的尝试，其实会发现之后装Obsidian Git的插件仍然无法链接到仓库,会显示Git is not ready，最后才发现可能是没有安装git的原因，所以还是建议安装一下[Git](https://gitforwindows.org/)。
 
 具体的安装过程可以参考这篇文章：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）](https://blog.csdn.net/mukes/article/details/115693833)
 

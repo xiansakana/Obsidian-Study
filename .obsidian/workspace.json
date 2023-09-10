@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Unblock Netease Music.md",
+                "file": "Others/Github搭建免费图床.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Unblock Netease Music.md",
+                "file": "Others/Github搭建免费图床.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Unblock Netease Music.md",
+                "file": "Others/Github搭建免费图床.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Unblock Netease Music.md"
+                "file": "Others/Github搭建免费图床.md"
               }
             }
           },
@@ -172,9 +172,10 @@
   },
   "active": "9967474c44bce7c8",
   "lastOpenFiles": [
-    "Others/Github搭建免费图床.md",
+    "Pasted image 20230910013205.png",
     "Others/Obsidian同步到Github (Windows).md",
     "Others/Unblock Netease Music.md",
+    "Others/Github搭建免费图床.md",
     "Markdown Cheat Sheet.md",
     "未命名",
     "[.md",
