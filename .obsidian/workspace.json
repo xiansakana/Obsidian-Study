@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "markdown cheat sheet.md",
+                "file": "Others/Unblock Netease Music.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "markdown cheat sheet.md",
+                "file": "Others/Unblock Netease Music.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "markdown cheat sheet.md",
+                "file": "Others/Unblock Netease Music.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "markdown cheat sheet.md"
+                "file": "Others/Unblock Netease Music.md"
               }
             }
           },
@@ -155,10 +155,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a50fa887b93d6cd6",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
-    "Unblock Netease Music.md",
-    "markdown cheat sheet.md",
+    "Markdown Cheat Sheet.md",
+    "Others/Unblock Netease Music.md",
+    "Others",
     "未命名.md",
     "IMG_0312(20230909-110757).PNG",
     "NYU/Applied Matrix Theory",
