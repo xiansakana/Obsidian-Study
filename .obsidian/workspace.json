@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Obsidian同步到Github（Windows）.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Github图床.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Github图床.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Github图床.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Github图床.md"
+                "file": "Others/Obsidian同步到Github (Windows).md"
               }
             }
           },
@@ -172,11 +172,11 @@
   },
   "active": "9967474c44bce7c8",
   "lastOpenFiles": [
-    "Others/Obsidian同步到Github（Windows）.md",
-    "Others/Github图床.md",
-    "未命名",
+    "Others/Github搭建免费图床.md",
+    "Others/Obsidian同步到Github (Windows).md",
     "Others/Unblock Netease Music.md",
     "Markdown Cheat Sheet.md",
+    "未命名",
     "[.md",
     "Pasted image 20230909232023.png",
     "Pasted image 20230909230315.png",
