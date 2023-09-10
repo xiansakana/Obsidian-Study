@@ -57,6 +57,27 @@
 
 安装完成后应该会自动出现一个 Git Control View 的侧边栏。如果没有，则按下 Ctrl + P打开命令面板，搜索 `Obsidian Git: Open Source Control View` ，就可以打开这个面板。
 
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309092330291.png)
+
+有了这个插件，以后的同步操作你都可以在 Obsidian 内部进行了。
+
+这个插件顶部的按钮对应了 Git 中最常见的几个操作。如果你对 Git 有一定的了解，应该对这些操作不会陌生。
+
+1. Backup：备份，提交所有的更改，并且执行推送。
+2. Commit：确认提交，但不推送。
+3. Stage all：存储当前的变更。
+4. Unstage all：取消存储变更。
+5. Push：推送到远端，可以理解为推送到 Github。
+6. Pull：从远端拉取到本地，可以理解为从 Github 拉取最新数据到本地。
+7. Change Layout：改变下方文件的排布方式。
+8. Refresh：刷新当前的文件变更情况。
+
+如果你不想了解他们具体是干什么的，只想知道怎么做同步，那其实就两个按键有用。
+
+1. Backup，第一个按钮，一次性完成提交并推送到 Github。
+2. Pull，第六个按钮，从 Github 同步到本地。
+
+到这一步就完成了所有的配置工作，第一次使用时，点击 Backup 就可以。
 
 
 
