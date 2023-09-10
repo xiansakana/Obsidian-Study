@@ -1,0 +1,2 @@
+# Obsidian-study
+Study notes 
