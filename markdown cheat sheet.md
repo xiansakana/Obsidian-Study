@@ -570,29 +570,19 @@ $$
 
 ```c
 [B站](https://www.bilibili.com)
-[B站][id]
-[id]:https://www.bilibili.com    
      
 [原神](./QQ截图20220110160242.png)
      
-[【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
+[【静止画MAD】FRIEND(https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
 <iframe src="//player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ```
 
 
-
 [B站](https://www.bilibili.com)
-
-[B站][id]
-
-[id]:https://www.bilibili.com
-
-[原神](./QQ截图20220110160242.png)
 
 [【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
-<iframe src="//player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 # 图片
 
@@ -606,10 +596,6 @@ $$
 ```
 
 ![【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
-
-
-
-![原神](./QQ截图20220110160242.png)
 
 
 
