@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -156,8 +155,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b9b5499490b32cc0",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "NYU/Applied Matrix Theory",
+    "NYU/Computing Systems Architecture",
+    "NYU/Principles of Database Systems",
+    "NYU",
     "2023-09-09.md",
     "markdown cheat sheet.md"
   ]
