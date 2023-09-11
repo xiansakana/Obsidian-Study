@@ -24,10 +24,9 @@
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309111111418.png)
 
-在所需下载版本的最后的assets中选择对应的系统版本，windows就选x64
+在所需下载版本的最后的assets中选择对应的系统版本，windows系统32位就选ia32，64位就选x64，或者直接直接选下面那个setup exe的，ios系统选dmg。
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309111113731.png)
-
 
 安装之后软件的界面大概是这样。
 
