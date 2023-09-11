@@ -14,7 +14,22 @@
 
 #### 下载PicGo
 
-推荐使用一个开源图床工具 [PicGo](https://molunerfinn.com/PicGo/) 来作为我们的图片上传工具，安装之后软件的界面大概是这样。
+推荐使用一个开源图床工具 [PicGo](https://molunerfinn.com/PicGo/) 来作为我们的图片上传工具，打开链接的官网后点击免费下载后会跳转到Github的界面。
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309111107422.png)
+
+一般前几个是beta版本，也就是测试版本，所以我们选择后面的正式版。
+
+![[Pasted image 20230911111011.png]]
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309111111418.png)
+
+在所需下载版本的最后的assets中选择对应的系统版本，windows就选x64
+
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309111113731.png)
+
+
+安装之后软件的界面大概是这样。
 
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202309100122429.png)
 
