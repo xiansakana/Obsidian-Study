@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Unblock Netease Music.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "d938b15e236ab5d0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.11"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Unblock Netease Music.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Unblock Netease Music.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Github搭建免费图床.md"
+                "file": "Others/Unblock Netease Music.md"
               }
             }
           },
@@ -135,6 +146,16 @@
             "state": {
               "type": "git-view",
               "state": {}
+            }
+          },
+          {
+            "id": "9ecbc5226e6dc85e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
             }
           }
         ],
@@ -157,11 +178,11 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "0431ea7b248077f3",
+  "active": "d938b15e236ab5d0",
   "lastOpenFiles": [
+    "Others/Github搭建免费图床.md",
     "Pasted image 20230911111011.png",
     "Others/Obsidian同步到Github (Windows).md",
-    "Others/Github搭建免费图床.md",
     "Others/Unblock Netease Music.md",
     "Markdown Cheat Sheet.md",
     "Pasted image 20230910013806.png",
