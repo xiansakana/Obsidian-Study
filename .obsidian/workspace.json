@@ -14,8 +14,21 @@
               "type": "empty",
               "state": {}
             }
+          },
+          {
+            "id": "38f6f9fd606700e1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cooking/未命名.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Cooking/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Cooking/未命名.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pasted image 20230911111011.png"
+                "file": "Cooking/未命名.md"
               }
             }
           },
@@ -163,6 +178,8 @@
   },
   "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "Cooking/未命名.md",
+    "Cooking",
     "Pasted image 20230911111011.png",
     "Markdown Cheat Sheet.md",
     "Others/Unblock Netease Music.md",
@@ -170,7 +187,6 @@
     "Others/Obsidian同步到Github (Windows).md",
     "Pasted image 20230910013806.png",
     "Pasted image 20230910013205.png",
-    "未命名",
     "[.md",
     "Pasted image 20230909232023.png",
     "Pasted image 20230909230315.png",
