@@ -4,47 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "bf5794f21bef42af",
+        "id": "56bbae0cc70c0bca",
         "type": "tabs",
         "children": [
           {
-            "id": "38f6f9fd606700e1",
+            "id": "fa578c370b9a6fff",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "18b43ebcf3c0aa3c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "686046a5e9add621",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cooking/热菜/清蒸鲈鱼.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Cooking/热菜/咖喱牛肉（猪肉）土豆.md"
-              }
+              "state": {}
             }
           },
           {
@@ -192,15 +159,17 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "18b43ebcf3c0aa3c",
+  "active": "fa578c370b9a6fff",
   "lastOpenFiles": [
+    "NYU/Applied Matrix Theory/未命名.md",
+    "NYU/Applied Matrix Theory/未命名 1.md",
+    "Cooking/热菜/清蒸鲈鱼.md",
+    "Markdown Cheat Sheet.md",
     "Cooking/汤/玉米排骨汤.md",
     "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
-    "Cooking/热菜/清蒸鲈鱼.md",
     "Cooking/汤",
     "Cooking/热菜",
     "Others/Github搭建免费图床.md",
-    "Markdown Cheat Sheet.md",
     "Cooking",
     "Pasted image 20230911111011.png",
     "Others/Unblock Netease Music.md",
