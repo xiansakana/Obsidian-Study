@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Github通过git上传本地文件.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Github通过git上传本地文件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Github搭建免费图床.md",
+                "file": "Others/Github通过git上传本地文件.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Github搭建免费图床.md"
+                "file": "Others/Github通过git上传本地文件.md"
               }
             }
           },
@@ -178,8 +178,8 @@
   },
   "active": "f62801d136bc6f07",
   "lastOpenFiles": [
-    "Others/Github通过git上传本地文件.md",
     "Others/Github搭建免费图床.md",
+    "Others/Github通过git上传本地文件.md",
     "Others/Unblock Netease Music.md",
     "Others/Obsidian同步到Github (Windows).md",
     "NYU/Applied Matrix Theory/未命名.md",
