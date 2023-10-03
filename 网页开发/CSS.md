@@ -83,5 +83,65 @@ h2 {
 ```
 
 - Element Selector & Class Selector
+```html
+<a class="large-text" href=""></a>
 ```
+
+```css
+a.large-text {
+  font-size: 32px;
+}
 ```
+
+- Grouping Selector
+```css
+h1,
+h2,
+h3 {
+  color: red;
+}
+```
+
+- Descendant Selector
+```html
+<div class="link1">
+  <a href="https://www.google.com">Google首页</a>
+  <a href="https://www.baidu.com">Baidu首页</a>
+</div>
+```
+
+```css
+div.link1 a {
+  color: red;
+}
+```
+
+- Attribute Selector
+```html
+<input type="text" />
+```
+
+```css
+input[type="text"] {
+  color: red;
+}
+```
+
+- [Pseudo-class](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes) Selector
+`:hover`: 鼠标悬停
+`:active`: 鼠标按住
+`:focus`:
+```css
+input[type="text"]:active {
+  color: lightgreen;
+}
+
+input[type="text"]:hover {
+  color: lightgreen;
+}
+```
+
+`:nth-child()`: 用于选择第n个元素
+
+
+
