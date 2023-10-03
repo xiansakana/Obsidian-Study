@@ -8,27 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fa578c370b9a6fff",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "f62801d136bc6f07",
+            "id": "e97c7bd4a97074d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Github通过git上传本地文件.md",
+                "file": "网页开发/CSS.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Github通过git上传本地文件.md",
+                "file": "网页开发/CSS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Github通过git上传本地文件.md",
+                "file": "网页开发/CSS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Github通过git上传本地文件.md"
+                "file": "网页开发/CSS.md"
               }
             }
           },
@@ -176,18 +167,29 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "f62801d136bc6f07",
+  "active": "e97c7bd4a97074d0",
   "lastOpenFiles": [
-    "Others/Github搭建免费图床.md",
-    "Others/Github通过git上传本地文件.md",
-    "Others/Unblock Netease Music.md",
+    "Others/图床使用方案.md",
     "Others/Obsidian同步到Github (Windows).md",
+    "Others/Hexo搭建个人网站.md",
+    "Others/Hexo博客增加书单集.md",
+    "Others/Github通过git上传本地文件.md",
+    "Others/Github搭建免费图床.md",
+    "网页开发/CSS.md",
+    "HTML.md",
+    "网页开发/HTML.md",
+    "Markdown Cheat Sheet.md",
+    "2023 網頁全端開發/HTML.md",
+    "网页开发",
+    "Others/Unblock Netease Music.md",
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
+    "2-3+故宮檔案.zip",
+    "Cooking/热菜/清蒸鲈鱼.md",
+    "Cooking/汤/玉米排骨汤.md",
     "NYU/Applied Matrix Theory/未命名.md",
     "NYU/Applied Matrix Theory/未命名 1.md",
-    "Cooking/热菜/清蒸鲈鱼.md",
-    "Markdown Cheat Sheet.md",
-    "Cooking/汤/玉米排骨汤.md",
-    "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
     "Cooking/汤",
     "Cooking/热菜",
     "Cooking",
@@ -207,8 +209,6 @@
     "IMG_0312(20230909-110757).PNG",
     "NYU/Applied Matrix Theory",
     "NYU/Computing Systems Architecture",
-    "NYU/Principles of Database Systems",
-    "NYU",
     "2023-09-09.md"
   ]
 }
