@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "网页开发/CSS.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "网页开发/CSS.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "网页开发/CSS.md",
+                "file": "Others/Obsidian同步到Github (Windows).md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "网页开发/CSS.md"
+                "file": "Others/Obsidian同步到Github (Windows).md"
               }
             }
           },
@@ -169,13 +169,13 @@
   },
   "active": "e97c7bd4a97074d0",
   "lastOpenFiles": [
+    "网页开发/CSS.md",
     "Others/图床使用方案.md",
     "Others/Obsidian同步到Github (Windows).md",
     "Others/Hexo搭建个人网站.md",
     "Others/Hexo博客增加书单集.md",
     "Others/Github通过git上传本地文件.md",
     "Others/Github搭建免费图床.md",
-    "网页开发/CSS.md",
     "HTML.md",
     "网页开发/HTML.md",
     "Markdown Cheat Sheet.md",
