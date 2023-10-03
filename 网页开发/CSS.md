@@ -128,9 +128,9 @@ input[type="text"] {
 ```
 
 - [Pseudo-class](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes) Selector
-`:hover`: 鼠标悬停
-`:active`: 鼠标按住
-`:focus`:
+[`:hover`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover): 鼠标悬停
+[`:active`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active): 鼠标按住
+[`:focus`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus): 点击选择
 ```css
 input[type="text"]:active {
   color: lightgreen;
@@ -141,7 +141,29 @@ input[type="text"]:hover {
 }
 ```
 
-`:nth-child()`: 用于选择第n个元素
+[`:nth-child()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child): 用于选择第n个元素
 
+- Pseudo-element Selector
+[`::first-line`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line): 更改段落第一行的样式
+```css
+p::first-line {
+  font-size: 32px;
+}
+```
 
+[::selection](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection): 鼠标选择的部分
+```css
+*::selection{
+  background-color: green;
+}
+```
 
+### CSS概念
+
+#### Inheritance
+- Parents and Children
+- [Inherited and Non-Inherited Properties](https://www.w3.org/TR/CSS21/propidx.html)
+	Inherited: color, font-family, font-size, font-weight, list-style-type, text-align...
+	>user styling: Program Setting
+	>user agent styling: Browser Default (优先度可能大于inheritance，比如`<a>`颜色通常需要额外设定)
+	
