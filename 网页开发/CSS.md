@@ -167,3 +167,32 @@ p::first-line {
 	>user styling: Program Setting
 	>user agent styling: Browser Default (优先度可能大于inheritance，比如`<a>`颜色通常需要额外设定)
 	
+#### Conflicting Styling
+- 单个或者多个Stylesheet重复设定
+- 处理原则：Priority, Specificity, Order Rule。
+
+#### Priority:
+1. Inline Styling
+2. User Stylesheet (内部顺序由Specificity决定)
+3. User Agent Stylesheet
+4. Inheritance
+
+#### Specificities
+1. id - specificity (1, 0, 0)
+2. class - specificity (0, 1, 0)
+3. tag - specificity (0, 0, 1)
+> Order Rule:
+> Specificity相同时，后面样式覆盖前面；后面`<link>stylesheet`覆盖前面。
+
+#### 文字样式
+#### CSS单位
+- absolute units
+- relative units
+
+**reletive units**
+1. em: 相对于parent element的长度
+2. rem (root em): 浏览器预设（一般16px）
+3. vw (viewport width): 浏览器视窗宽度的1/100，但100vw通常会略宽于网页宽度
+4. vh (viewport height): 浏览器视窗高度的1/100
+
+$$ \frac{1}{100} $$
