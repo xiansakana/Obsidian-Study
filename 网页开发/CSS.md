@@ -209,12 +209,64 @@ p::first-line {
 - [background-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color)
 - [background-image](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image)
 - [background-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size): content (平铺), cover (等比缩放不留空白)
-- [background-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position)
+- [background-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position): top, left, right, bottom, center
+- [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
+
+### Box Model
+- [margin](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin)
+```css
+/* 应用于所有边 */
+margin: 1em;
+margin: -3px;
+/* 上边下边 | 左边右边 */
+margin: 5% auto;
+/* 上边 | 左边右边 | 下边 */
+margin: 1em auto 2em;
+/* 上边 | 右边 | 下边 | 左边 */
+margin: 2px 1em 0 auto;
+/* 全局值 */
+margin: inherit;
+margin: initial;
+margin: unset;
+```
+
+- [border](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border)
+```css
+/* style */
+border: solid;
+/* width | style */
+border: 2px dotted;
+/* style | color */
+border: outset #f33;
+/* width | style | color */
+border: medium dashed green;
+/* Global values */
+border: inherit;
+border: initial;
+border: unset;
+```
+
+- [padding](https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding)
+```css
+/* 应用于所有边 */
+padding: 1em;
+/* 上边下边 | 左边右边 */
+padding: 5% 10%;
+/* 上边 | 左边右边 | 下边 */
+padding: 1em 2em 2em;
+/* 上边 | 右边 | 下边 | 左边 */
+padding: 5px 1em 0 2em;
+/* 全局值 */
+padding: inherit;
+padding: initial;
+padding: unset;
+```
+
+- [content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/content)
+
+>padding、 border以及margin都可再分别设置上下左右的属性。另外，border可设置[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)（圆角外框）。
+
 - 
-
-
-
-
 
 
 
