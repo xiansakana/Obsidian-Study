@@ -184,9 +184,8 @@ p::first-line {
 > Order Rule:
 > Specificity相同时，后面样式覆盖前面；后面`<link>stylesheet`覆盖前面。
 
-#### 文字样式
-#### CSS单位
-- absolute units
+### CSS单位
+- absolute units: px, in, mm, cm等
 - relative units
 
 **reletive units**
@@ -194,5 +193,31 @@ p::first-line {
 2. rem (root em): 浏览器预设（一般16px）
 3. vw (viewport width): 浏览器视窗宽度的1/100，但100vw通常会略宽于网页宽度
 4. vh (viewport height): 浏览器视窗高度的1/100
+5. %: 相对于parent element的值
 
-$$ \frac{1}{100} $$
+### 文字样式
+- [font-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size)
+- [text-align](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align): right, left, center
+- [text-decoration](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration): underline, line-through, none
+- [line-height](https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height)
+- [letter-spacing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/letter-spacing)
+- [font-family](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family)
+- [text-indent](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-indent)
+- [font-weight](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight): normal, bold, lighter, bolder
+
+### 背景样式
+- [background-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color)
+- [background-image](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image)
+- [background-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size): content (平铺), cover (等比缩放不留空白)
+- [background-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position)
+- 
+
+
+
+
+
+
+
+
+
+
