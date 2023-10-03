@@ -1,13 +1,15 @@
 - [DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM) Tree (Document Object Model)：加载到浏览器中的网页的树状表示。浏览器加载网页时，会创建该页面的DOM Tree。
-- [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment语法为/**/。
+- [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment语法为`/**/`。
 
 ## 基本语法
 
 ### 放置位置
+
 - inline styling（优先级最高，但只能特定标签）
 ```html
 <h1 style="color: red;">< /h1>
 ```
+
 - internal styling（方便撰写，但不适用于多个页面）
 ```html
 <head>
@@ -18,6 +20,7 @@
     </style>
 </head>
 ```
+
 - external styling（外部`style.css`文件，最常见，方便维护）
 ```html
 <link rel="stylesheet" href="./style.css" />
@@ -28,7 +31,57 @@ h1 {
   color: red;
 }
 ```
+
 ### 颜色设定
+
 - Color Keywords([named-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/named-color)): red, black, purple, green, coral等。
 - [rgb](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/rgb): 红绿蓝0-255
+- rgba: a表示alpha，用来储存透明度（0,1）
+- [hex-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/hex-color)
+- [HSL](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/hsl): 色相Hue，饱和度Saturation，亮度Lightness
 
+### CSS Selectors 选择器
+
+- Universal Selector (`*`)
+```css
+* {
+  color: red;
+}
+```
+
+- Element Selector
+```css
+h2 {
+    color: red;
+}
+```
+
+- Id Selector （唯一）
+```html
+<p id="first-paragraph"></p>
+```
+
+```css
+#first-paragraph{
+    color: rgb(66, 128, 194);
+}
+```
+
+- Class Selector（可重复）
+```html
+<p class="blue-text" "large-text"></p>
+```
+
+```css
+.blue-text{
+    color: blue;
+}
+
+.large-text {
+  font-size: large;
+}
+```
+
+- Element Selector & Class Selector
+```
+```

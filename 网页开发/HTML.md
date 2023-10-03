@@ -86,6 +86,7 @@
 </form>
 ```
 ### method属性
+
 - [GET](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/GET)：表单数据会附加在 `action` 属性的 URL 中，并以 '?' 作为分隔符，[没有副作用](https://developer.mozilla.org/zh-CN/docs/Glossary/Idempotent) 时使用这个方法。
 - [POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST)：用来隐藏信息，表单数据会包含在表单体内然后发送给服务器。
 
