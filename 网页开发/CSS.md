@@ -266,9 +266,11 @@ padding: unset;
 
 >padding、 border以及margin都可再分别设置上下左右的属性。另外，border可设置[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)（圆角外框）。
 
-- 
+- [overflow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow): visible, hidden, scroll
 
-
+- [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing):
+	- border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
+	- content-box: 默认值，元素的内容区的宽度就是width
 
 
 
