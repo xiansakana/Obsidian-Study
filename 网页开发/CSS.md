@@ -213,6 +213,8 @@ p::first-line {
 - [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
 
 ### Box Model
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310041923616.png)
+
 - [margin](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin)
 ```css
 /* 应用于所有边 */
