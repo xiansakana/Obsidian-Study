@@ -327,5 +327,32 @@ h2:hover {
 }
 ```
 
-### CSS动画
-- animation
+### [CSS Animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)
+- animation-name
+- animation-duration
+- animation-timing-function
+- animation-delay
+- animation-iteration-count
+- animation-direction, animation-fill-mode, animation-play-state
+```css
+h2 {
+  background-color: green;
+  /* animation-name: changeColor;
+  animation-duration: 1s;
+  transition: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards; */
+  animation: changeColor 1s ease-in 0s infinite alternate forwards;
+}
+
+@keyframes changeColor {
+  from {
+    background-color: green;
+  }
+  to {
+    background-color: red;
+  }
+}
+```
