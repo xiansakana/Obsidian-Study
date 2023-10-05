@@ -288,4 +288,11 @@ Outer dispaly type
 ### [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
 - static: 预设值，`top`, `right`, `bottom`, `left` 和 `z-index` 属性无效。
 - relative: 根据normal flow进行定位
-- absolute
+- absolute: 从normal flow中移除，定位参考为ancestor（若无则为浏览器视窗）
+- fixed: 从normal flow中移除，定位参考为inital containing block
+- sticky: 从relative超过threshold后变成fixed
+
+#### [Stacking Context](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
+
+### 表格样式
+- border-collapse: 
