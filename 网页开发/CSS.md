@@ -74,7 +74,7 @@ h2 {
 
 ```css
 .blue-text{
-    color: blue;
+  color: blue;
 }
 
 .large-text {
@@ -274,6 +274,18 @@ padding: unset;
 	- border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
 	- content-box: 默认值，元素的内容区的宽度就是width
 
+### [Display](https://developer.mozilla.org/en-US/docs/Web/CSS/display)属性
+Outer dispaly type
+- block
+- inline
+- inline-block
+#### Inner display type
+- flex
+- grid
 
+![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042107689.png)
 
-
+### [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
+- static: 预设值，`top`, `right`, `bottom`, `left` 和 `z-index` 属性无效。
+- relative: 根据normal flow进行定位
+- absolute
