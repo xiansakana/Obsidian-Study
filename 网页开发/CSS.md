@@ -295,4 +295,37 @@ Outer dispaly type
 #### [Stacking Context](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
 
 ### 表格样式
-- border-collapse: 
+- [border-collapse](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-collapse): collapse, seperate（边框合并或者分开）
+- [overflow-x](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-x): visible, hidden, clip, scroll, auto（设置滚动条或溢出内容）
+
+### Opacity（不透明度）和Cursor
+- [opacity](https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity)
+- [cursor](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor): help, wait, crosshair, not-allowed, zoom-in, grab...
+
+### [Transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition)
+- property name | duration | [easy function](https://easings.net/)
+```css
+h1 {
+  transition: all 2s ease-in-out;
+}
+
+h1:hover {
+  background-color: green;
+  color: white;
+}
+```
+
+### [Transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
+- translate(-50%, -50%)
+- rotate(180deg)
+- scale
+```css
+h2:hover {
+  transform: translate((-50%, -50%);
+  transform: rotate(180deg);
+  transform: scale(0.5);
+}
+```
+
+### CSS动画
+- animation
