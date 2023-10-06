@@ -293,6 +293,7 @@ Outer dispaly type
 - sticky: 从relative超过threshold后变成fixed
 
 #### [Stacking Context](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
+>z-index
 
 ### 表格样式
 - [border-collapse](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-collapse): collapse, seperate（边框合并或者分开）
