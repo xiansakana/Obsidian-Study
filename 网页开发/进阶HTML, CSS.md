@@ -49,3 +49,15 @@ flex: 1 1 100px
 ```
 - [align-self](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self): 单个flex item设置对齐方式
 
+### [Media Query](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
+```css
+  @media screen and (max-width: 800px) {
+	h1 {
+	  background-color: red;
+	}
+  }
+```
+
+### [Bootstrap](https://getbootstrap.com/)
+
+### User Snippet
