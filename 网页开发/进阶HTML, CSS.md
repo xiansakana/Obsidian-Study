@@ -61,3 +61,16 @@ flex: 1 1 100px
 ### [Bootstrap](https://getbootstrap.com/)
 
 ### User Snippet
+[snippet-generator](https://snippet-generator.app/)
+
+### Bookmark
+```html
+<a href="#id"></a>
+```
+
+```css
+html{
+	scroll-behavior: smooth;
+}
+```
+
