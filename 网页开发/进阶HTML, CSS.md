@@ -74,3 +74,53 @@ html{
 }
 ```
 
+### [@font-face](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face)
+```css
+@font-face{
+  font-family: "myFont";
+  src:url("./font.ttf")
+}
+```
+
+### Sass (Syntactically Awesome Stylesheets)
+>一种将CSS视为程序语言的网页开发技术
+
+Extension: Live Sass Compiler
+
+- Nested CSS()
+```scss
+header {
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        list-style-type: none;
+        a {
+          color: red;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+```
+
+```css
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul li a {
+  color: red;
+  text-decoration: none;
+} /*# sourceMappingURL=style.css.map */
+```
+
+- 变量设置
+```scss
+
+```
