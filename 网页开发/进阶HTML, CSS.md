@@ -82,7 +82,7 @@ html{
 }
 ```
 
-### Sass (Syntactically Awesome Stylesheets)
+### [Sass (Syntactically Awesome Stylesheets)](https://sass-lang.com/)
 >一种将CSS视为程序语言的网页开发技术
 
 Extension: Live Sass Compiler
@@ -122,5 +122,126 @@ header nav ul li a {
 
 - 变量设置
 ```scss
-
+$themeColor: red;
+h1 {
+  color: $themeColor;
+}
 ```
+
+```css
+h1 {
+  color: red;
+}
+```
+
+- Self Ampersand
+```scss
+a {
+  color: green;
+  text-decoration: none;
+  &:hover {
+	color: blue;
+  }
+```
+
+```css
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+}
+```
+
+- Import
+>分类，重复利用
+```scss
+// 在_header.scss中输入
+header {
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        list-style-type: none;
+        a {
+          color: green;
+          text-decoration: none;
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 在style.scss中引用
+@import "./header";
+```
+
+```css
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul li a {
+  color: green;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: blue;
+}
+```
+
+- Mixin
+>function, method
+```scss
+@mixin flexbox($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+header {
+  nav {
+    ul {
+      @include flexbox(column);
+      flex-wrap: wrap;
+      li {
+        list-style-type: none;
+        a {
+          color: green;
+          text-decoration: none;
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```css
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul li a {
+  color: green;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: blue;
+}
+```
+
