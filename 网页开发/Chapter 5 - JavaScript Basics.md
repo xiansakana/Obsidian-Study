@@ -20,10 +20,11 @@ window.alert("welcome " + user_name);
 
 ### 变量与赋值
 
-- 声明变量（Declare Variable）
-1. 若值变化，用let
-2. 若值不变，用const
-3. 请勿用var
+#### 声明变量（Declare Variable）
+
+1. 若值变化，用let。
+2. 若值不变，用const。
+3. 请勿用var。
 >注意：
 >1. 用const来声明变量，需要马上赋予初始值(initializer)。let则不需要，若用let宣告了变量，但还没有赋值，则变量的值是undefined。
 >2. 用const和let声明的变量，不能重复声明(redeclaration)。
@@ -35,4 +36,21 @@ window.alert("welcome " + user_name);
 |const|&#10005;|&#10003;|需要|
 
 ### 数据类型（Data Type）
+
+1. Number - 整数和带小数点的数字。
+2. BigInt - 任意长度的整数。
+3. String - 字符串。
+4. Boolean - true或false两种值
+5. null - 用来代表某个不存在的值
+6. undefined - 未被赋值的变量
+
+> 除了这些数据类型之外，JavaScript还有种叫做object，属于non-primitive data type，object可能是array或是function等等。
+
+#### Number
+
+范围：-9,007,199,254,740,992 (-2^253^) 和 9,007,199,254,740,992 (2^253^) 之間的所有整數
+
+2^253^
+
+
 
