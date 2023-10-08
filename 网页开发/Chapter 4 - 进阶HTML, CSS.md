@@ -18,7 +18,7 @@
 - space-between
 - space-around
 - space-evenly
-![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042340682.png)
+![|500](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042340682.png)
 #### [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)
 >控制在cross axis (与main axis垂直)上的对齐方式。
 - stretch (默认)
@@ -26,7 +26,7 @@
 - flex-end
 - center
 - baseline
-![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042340567.png)
+![|500](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042340567.png)
 
 #### [align-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
 - normal (默认)

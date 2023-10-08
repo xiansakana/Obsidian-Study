@@ -8,6 +8,19 @@ window.alert("welcome " + user_name);
 ```
 
 ### Lexical Structure
-1. Case Sensitive: JavaScript中大小写敏感
-2. 1
-3. 当行注释//，多行在`/**/`内部
+1. Case Sensitive: JavaScript中大小写敏感。
+2. 空白键、换行键等等在JavaScript中会全部被忽略。
+3. 当行注释//，多行在`/**/`内部。
+4. 变量开头可以为文字、underscore(\_) 、dollar sign($)，不能为数字。
+5. 内部有关键字(reserved words, keywords)，例如：null, of, if, then, in, finally, for, while, break, continue, switch, try, let, const, var等等，不能作为变量名称。
+6. 使用Unicode字元集合，所以String内部可由任何Unicode文字组成。
+7. Semicolons(;)可用来分隔语句， Semicolons的使用是optional。
+
+### 变量与赋值
+- 声明变量(Declare Variable) 
+1. 若值变化，用let
+2. 若值不变，用const
+3. 请勿用var
+>注意：
+>1. 用const来声明变量，需要马上赋予初始值(initializer)。let则不需要，若用let宣告了变量，但还没有赋值，则变量的值是undefined。
+>2. 
