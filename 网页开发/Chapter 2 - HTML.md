@@ -2,6 +2,7 @@
 
 - live server（注意要信任工作区）
 - Prettier - Code formatter （设置中搜索Format On Save，然后勾选Editor: Format On Save；搜索Default Formatter，然后选择Prettier- Code formatter）
+- Auto Rename Tag
 
 ## 基本语法
 
