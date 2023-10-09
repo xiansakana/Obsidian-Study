@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "网页开发/Chapter 5 - JavaScript Basics.md",
+                "file": "网页开发/Chapter 6 - JavaScript Basics 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "网页开发/Chapter 5 - JavaScript Basics.md",
+                "file": "网页开发/Chapter 6 - JavaScript Basics 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "网页开发/Chapter 5 - JavaScript Basics.md",
+                "file": "网页开发/Chapter 6 - JavaScript Basics 2.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "网页开发/Chapter 5 - JavaScript Basics.md"
+                "file": "网页开发/Chapter 6 - JavaScript Basics 2.md"
               }
             }
           },
@@ -169,8 +169,9 @@
   },
   "active": "9d121a3bdc2f8d61",
   "lastOpenFiles": [
-    "Markdown Cheat Sheet.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
+    "网页开发/Chapter 6 - JavaScript Basics 2.md",
+    "Markdown Cheat Sheet.md",
     "网页开发/Chapter 4 - 进阶HTML, CSS.md",
     "网页开发/Chapter 3 - CSS.md",
     "网页开发/Chapter 2 - HTML.md",
