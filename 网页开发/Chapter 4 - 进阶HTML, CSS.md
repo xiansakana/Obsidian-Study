@@ -1,11 +1,15 @@
 ## [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 ### [Flex Container](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Container)
+
 #### [flex-direcction](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-direction)
 - row: 横向
 - column: 纵向
 - row-reverse: 横向反向
 - column-reverse: 纵向反向
+
 #### [flex-wrap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap)(自动换行)
+
 - nowrap (默认)
 - wrap
 - wrap-reverse
@@ -40,6 +44,7 @@
 ![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310050016526.png)
 
 ### [Flex Item](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Item)
+
 - [flex-grow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow): 将flex container中的剩余空间(remaining space)分配给flex items
 - [flex-shrink](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-shrink): 定义了flex item在必要时收缩的能力
 - [flex-basis](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis): 指定了 flex item在主轴方向上的初始大小
@@ -49,7 +54,8 @@ flex: 1 1 100px
 ```
 - [align-self](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self): 单个flex item设置对齐方式
 
-### [Media Query](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
+## [Media Query](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
+
 ```css
   @media screen and (max-width: 800px) {
 	h1 {
@@ -58,12 +64,14 @@ flex: 1 1 100px
   }
 ```
 
-### [Bootstrap](https://getbootstrap.com/)
+## [Bootstrap](https://getbootstrap.com/)
 
-### User Snippet
+## User Snippet
+
 [snippet-generator](https://snippet-generator.app/)
 
-### Bookmark
+## Bookmark
+
 ```html
 <a href="#id"></a>
 ```
@@ -74,7 +82,8 @@ html{
 }
 ```
 
-### [@font-face](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face)
+## [@font-face](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@font-face)
+
 ```css
 @font-face{
   font-family: "myFont";
@@ -82,7 +91,8 @@ html{
 }
 ```
 
-### [Sass (Syntactically Awesome Stylesheets)](https://sass-lang.com/)
+## [Sass (Syntactically Awesome Stylesheets)](https://sass-lang.com/)
+
 >一种将CSS视为程序语言的网页开发技术
 
 Extension: Live Sass Compiler
