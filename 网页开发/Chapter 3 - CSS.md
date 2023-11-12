@@ -1,27 +1,34 @@
-- [DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM) Tree (Document Object Model)：加载到浏览器中的网页的树状表示。浏览器加载网页时，会创建该页面的DOM Tree。
-- [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment语法为`/**/`。
+## 基本概念
+
+- [DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM) Tree (Document Object Model)：加载到浏览器中的网页的树状表示。浏览器加载网页时，会创建该页面的 DOM Tree。
+- [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment 语法为`/**/`。
 
 ## 基本语法
 
 ### 放置位置
 
 - inline styling（优先级最高，但只能特定标签）
+
 ```html
-<h1 style="color: red;">< /h1>
+<h1 style="color: red;">< /h1></h1>
 ```
 
-- internal styling（方便撰写，但不适用于多个页面）
+- [flex-wrap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap)(自动换行)
+
 ```html
 <head>
-    <style>
-        h1{
-            color: red;
-        }
-    </style>
+     
+  <style>
+            h1{
+                color: red;
+            }
+       
+  </style>
 </head>
 ```
 
 - external styling（外部`style.css`文件，最常见，方便维护）
+
 ```html
 <link rel="stylesheet" href="./style.css" />
 ```
@@ -34,15 +41,16 @@ h1 {
 
 ### 颜色设定
 
-- Color Keywords([named-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/named-color)): red, black, purple, green, coral等。
-- [rgb](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/rgb): 红绿蓝0-255
-- rgba: a表示alpha，用来储存透明度（0,1）
+- Color Keywords([named-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/named-color)): red, black, purple, green, coral 等。
+- [rgb](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/rgb): 红绿蓝 0-255
+- rgba: a 表示 alpha，用来储存透明度（0,1）
 - [hex-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/hex-color)
-- [HSL](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/hsl): 色相Hue，饱和度Saturation，亮度Lightness
+- [HSL](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/hsl): 色相 Hue，饱和度 Saturation，亮度 Lightness
 
 ### CSS Selectors 选择器
 
 - Universal Selector (`*`)
+
 ```css
 * {
   color: red;
@@ -50,6 +58,7 @@ h1 {
 ```
 
 - Element Selector
+
 ```css
 h2 {
     color: red;
@@ -57,6 +66,7 @@ h2 {
 ```
 
 - Id Selector （唯一）
+
 ```html
 <p id="first-paragraph"></p>
 ```
@@ -68,6 +78,7 @@ h2 {
 ```
 
 - Class Selector（可重复）
+
 ```html
 <p class="blue-text" "large-text"></p>
 ```
@@ -83,6 +94,7 @@ h2 {
 ```
 
 - Element Selector & Class Selector
+
 ```html
 <a class="large-text" href=""></a>
 ```
@@ -94,6 +106,7 @@ a.large-text {
 ```
 
 - Grouping Selector
+
 ```css
 h1,
 h2,
@@ -103,6 +116,7 @@ h3 {
 ```
 
 - Descendant Selector
+
 ```html
 <div class="link1">
   <a href="https://www.google.com">Google首页</a>
@@ -117,6 +131,7 @@ div.link1 a {
 ```
 
 - Attribute Selector
+
 ```html
 <input type="text" />
 ```
@@ -128,9 +143,10 @@ input[type="text"] {
 ```
 
 - [Pseudo-class](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes) Selector
-[`:hover`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover): 鼠标悬停
-[`:active`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active): 鼠标按住
-[`:focus`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus): 点击选择
+  [`:hover`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover): 鼠标悬停
+  [`:active`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active): 鼠标按住
+  [`:focus`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus): 点击选择
+
 ```css
 input[type="text"]:active {
   color: lightgreen;
@@ -141,10 +157,11 @@ input[type="text"]:hover {
 }
 ```
 
-[`:nth-child()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child): 用于选择第n个元素
+[`:nth-child()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child): 用于选择第 n 个元素
 
 - Pseudo-element Selector
-[`::first-line`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line): 更改段落第一行的样式
+  [`::first-line`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line): 更改段落第一行的样式
+
 ```css
 p::first-line {
   font-size: 32px;
@@ -152,50 +169,61 @@ p::first-line {
 ```
 
 [::selection](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection): 鼠标选择的部分
+
 ```css
 *::selection{
   background-color: green;
 }
 ```
 
-### CSS概念
+### CSS 概念
 
 #### Inheritance
+
 - Parents and Children
+
 - [Inherited and Non-Inherited Properties](https://www.w3.org/TR/CSS21/propidx.html)
-	Inherited: color, font-family, font-size, font-weight, list-style-type, text-align...
-	>user styling: Program Setting
-	>user agent styling: Browser Default (优先度可能大于inheritance，比如`<a>`颜色通常需要额外设定)
-	
+  Inherited: color, font-family, font-size, font-weight, list-style-type, text-align...
+
+  > user styling: Program Setting
+  > user agent styling: Browser Default (优先度可能大于 inheritance，比如`<a>`颜色通常需要额外设定)
+
 #### Conflicting Styling
-- 单个或者多个Stylesheet重复设定
+
+- 单个或者多个 Stylesheet 重复设定
 - 处理原则：Priority, Specificity, Order Rule。
 
-#### Priority:
+#### Priority
+
 1. Inline Styling
-2. User Stylesheet (内部顺序由Specificity决定)
+2. User Stylesheet (内部顺序由 Specificity 决定)
 3. User Agent Stylesheet
 4. Inheritance
 
 #### Specificities
+
 1. id - specificity (1, 0, 0)
 2. class - specificity (0, 1, 0)
 3. tag - specificity (0, 0, 1)
-> Order Rule:
-> Specificity相同时，后面样式覆盖前面；后面`<link>stylesheet`覆盖前面。
 
-### CSS单位
-- absolute units: px, in, mm, cm等
+> Order Rule:
+> Specificity 相同时，后面样式覆盖前面；后面`<link>stylesheet`覆盖前面。
+
+### CSS 单位
+
+- absolute units: px, in, mm, cm 等
 - relative units
 
 **reletive units**
-1. em: 相对于parent element的长度
-2. rem (root em): 浏览器预设（一般16px）
-3. vw (viewport width): 浏览器视窗宽度的1/100，但100vw通常会略宽于网页宽度
-4. vh (viewport height): 浏览器视窗高度的1/100
-5. %: 相对于parent element的值
+
+1. em: 相对于 parent element 的长度
+2. rem (root em): 浏览器预设（一般 16px）
+3. vw (viewport width): 浏览器视窗宽度的 1/100，但 100vw 通常会略宽于网页宽度
+4. vh (viewport height): 浏览器视窗高度的 1/100
+5. %: 相对于 parent element 的值
 
 ### 文字样式
+
 - [font-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size)
 - [text-align](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align): right, left, center
 - [text-decoration](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration): underline, line-through, none
@@ -206,6 +234,7 @@ p::first-line {
 - [font-weight](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight): normal, bold, lighter, bolder
 
 ### 背景样式
+
 - [background-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color)
 - [background-image](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image)
 - [background-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size): content (平铺), cover (等比缩放不留空白)
@@ -213,9 +242,11 @@ p::first-line {
 - [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
 
 ### Box Model
-![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310041923616.png)
+
+![](https://img.xiansakana.xyz/202310182246305.png)
 
 - [margin](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin)
+
 ```css
 /* 应用于所有边 */
 margin: 1em;
@@ -233,6 +264,7 @@ margin: unset;
 ```
 
 - [border](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border)
+
 ```css
 /* style */
 border: solid;
@@ -249,6 +281,7 @@ border: unset;
 ```
 
 - [padding](https://developer.mozilla.org/zh-CN/docs/Web/CSS/padding)
+
 ```css
 /* 应用于所有边 */
 padding: 1em;
@@ -266,45 +299,60 @@ padding: unset;
 
 - [content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/content)
 
->padding、 border以及margin都可再分别设置上下左右的属性。另外，border可设置[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)（圆角外框）。
+> padding、 border 以及 margin 都可再分别设置上下左右的属性。另外，border 可设置[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)（圆角外框）。
 
 - [overflow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow): visible, hidden, scroll
 
 - [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing):
-	- border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
-	- content-box: 默认值，元素的内容区的宽度就是width
+  - border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
+  - content-box: 默认值，元素的内容区的宽度就是 width
 
 ### [Display](https://developer.mozilla.org/en-US/docs/Web/CSS/display)属性
-Outer dispaly type
+
+#### Outer dispaly type
+
 - block
 - inline
 - inline-block
+
 #### Inner display type
+
 - flex
 - grid
 
-![](https://raw.githubusercontent.com/xiansakana/IMG-BED/main/202310042107689.png)
+| display type | new line | width, height |       上下 margin, padding        | 左右 margin, padding |                             范例                             |
+| :----------: | -------- | :-----------: | :-------------------------------: | :------------------: | :----------------------------------------------------------: |
+|    block     | 会换行   |   可以设定    |             可以设定              |       可以设定       |                      `<h1>`, `<p>`等等                       |
+|    inline    | 不换行   |   不能设定    | 可以设定，但不会推开其他 elements |       可以设定       |                     `<a>`, `<span>`等等                      |
+| inline-block | 不换行   |   可以设定    |             可以设定              |       可以设定       | 只有`<img>`, `<button>`, `<input>`, `<select>`, `<textarea>` |
+|  flex item   | 不换行   |   可以设定    |             可以设定              |       可以设定       |                  任何在 flex 之下的 element                  |
 
 ### [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
-- static: 预设值，`top`, `right`, `bottom`, `left` 和 `z-index` 属性无效。
-- relative: 根据normal flow进行定位
-- absolute: 从normal flow中移除，定位参考为ancestor（若无则为浏览器视窗）
-- fixed: 从normal flow中移除，定位参考为inital containing block
-- sticky: 从relative超过threshold后变成fixed
 
-#### [Stacking Context](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
->z-index
+- static: 预设值，`top`, `right`, `bottom`, `left`  和  `z-index`  属性无效。
+- relative: 根据 normal flow 进行定位
+- absolute: 从 normal flow 中移除，定位参考为 ancestor（若无则为浏览器视窗）
+- fixed: 从 normal flow 中移除，定位参考为 inital containing block
+- sticky: 从 relative 超过 threshold 后变成 fixed
+
+[Stacking Context](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
+
+> z-index
 
 ### 表格样式
+
 - [border-collapse](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-collapse): collapse, seperate（边框合并或者分开）
 - [overflow-x](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-x): visible, hidden, clip, scroll, auto（设置滚动条或溢出内容）
 
-### Opacity（不透明度）和Cursor
+### Opacity（不透明度）和 Cursor
+
 - [opacity](https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity)
 - [cursor](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor): help, wait, crosshair, not-allowed, zoom-in, grab...
 
 ### [Transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition)
+
 - property name | duration | [easy function](https://easings.net/)
+
 ```css
 h1 {
   transition: all 2s ease-in-out;
@@ -317,9 +365,11 @@ h1:hover {
 ```
 
 ### [Transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
+
 - translate(-50%, -50%)
 - rotate(180deg)
 - scale
+
 ```css
 h2:hover {
   transform: translate((-50%, -50%);
@@ -329,12 +379,14 @@ h2:hover {
 ```
 
 ### [CSS Animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)
+
 - animation-name
 - animation-duration
 - animation-timing-function
 - animation-delay
 - animation-iteration-count
 - animation-direction, animation-fill-mode, animation-play-state
+
 ```css
 h2 {
   background-color: green;
@@ -357,3 +409,4 @@ h2 {
   }
 }
 ```
+

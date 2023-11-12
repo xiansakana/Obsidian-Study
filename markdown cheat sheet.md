@@ -2,75 +2,108 @@
 
 # 标题
 
-```c
+```markdown
 # 一级标题
+
 ## 二级标题
+
 ### 三级标题
+
 #### 四级标题
+
 ##### 五级标题
+
 ###### 六级标题
 ```
 
 # 一级标题
 
 ## 二级标题
+
 ### 三级标题
+
 #### 四级标题
+
 ##### 五级标题
+
 ###### 六级标题
-
-
-
 
 # 分割线
 
-```c
+```markdown
 //分割线表示
-***
+
 ---
-___
+
+---
+
+---
+
 <hr style="border:1px solid red;">
 ```
 
-***
 ---
-___
+
+---
+
+---
+
 <hr style="border:1px solid red;">
 
 # 字体
 
 ## 字体类型和颜色
-``` c
+
+```markdown
 <font face="kaiti">这里是楷体</font>
+<br/>
 <font face="heiti">这里是黑体</font>
+<br/>
 <font face="simsun">这里是宋体</font>
+<br/>
 <font face="Arial">This is Arial</font>
+<br/>
 <font face="Arial Narrow">This is Arial Narrow</font>
+<br/>
 <font face="Times New Roman">This is Times New Roman</font>
+<br/>
 <font face="Calibri">This is Calibri</font>
+<br/>
 <font color="red"><b>红色加粗</b></font>
+<br/>
 <font style="background: linear-gradient( to right，#ff1616，#ff7716，#ffdc16,#36c945，#10a5ce，#Of0096，#a51eff，#ff1616); ">这是七色光彩背景颜色</font>
 ```
 
 <font face="kaiti">这里是楷体</font>
+<br/>
 <font face="heiti">这里是黑体</font>
+<br/>
 <font face="simsun">这里是宋体</font>
+<br/>
 <font face="幼圆">这里是幼圆</font>
+<br/>
 <font face="华文彩云">这里是华文彩云</font>
+<br/>
 <font face="Arial">This is Arial</font>
+<br/>
 <font face="Arial Narrow">This is Arial Narrow</font>
+<br/>
 <font face="Times New Roman">This is Times New Roman</font>
+<br/>
 <font face="Calibri">This is Calibri</font>
+<br/>
 <font color="red"><b>红色加粗</b></font>
+<br/>
 <font style="background: linear-gradient( to right, #ff1616, #ff7716, #ffdc16, #36c945, #10a5ce, #Of0096, #a51eff, #ff1616); ">这是七色光彩背景颜色</font>
 
 ## 其他
-```c
+
+```markdown
 ==高亮==
 ~~删除线~~
-**粗**__体__
-*斜体*
-***粗***__*斜*__*__体__*
+**粗\*\***体**
+_斜体_
+**_粗_\***\*_斜_**_**体**_
 <u>下划线</u>
 :smile:
 $\theta=x^2$
@@ -78,19 +111,19 @@ $\theta=x^2$
 
 ==高亮==
 ~~删除线~~
-**粗**__体__
-*斜体*
-***粗***__*斜*__*__体__*
+**粗\*\***体**
+_斜体_
+**_粗_\***\*_斜_**_**体**_
 <u>下划线</u>
 😄
-[emoji链接](https://unicode.org/emoji/charts/full-emoji-list.html)
+[emoji 链接](https://unicode.org/emoji/charts/full-emoji-list.html)
 $\theta=x^2$
 
 # 转义
-```c
+
+```markdown
 \\ 反斜杠
-\` 反引号
-\* 星号
+\` 反引号 \* 星号
 \_ 下划线
 \{\} 大括号
 \[\] 中括号
@@ -103,8 +136,7 @@ $\theta=x^2$
 ```
 
 \\ 反斜杠
-\` 反引号
-\* 星号
+\` 反引号 \* 星号
 \_ 下划线
 \{\} 大括号
 \[\] 中括号
@@ -117,7 +149,7 @@ $\theta=x^2$
 
 # 引用
 
-```c
+```markdown
 //一级引用用一个>来表示
 //二级引用用两个>来表示
 //三级引用用三个>来表示
@@ -125,75 +157,84 @@ $\theta=x^2$
 
 > 一级引用
 
->>二级引用
+> > 二级引用
 
-> > >三级引用
-
-
+> > > 三级引用
 
 # 脚注
 
-```c
+```markdown
 一键三连[^1]
 ```
 
 一键三连[^1]
 
-[^1]:点赞、投币、收藏
+[^1]: 点赞、投币、收藏
 
 # 列表
+
 ## 有序列表
-```c
+
+```markdown
 //有序列表
+
 ## 有序列表
-1. 有序列表1
-2. 有序列表2
-3. 有序列表3
-    1. 子序列1
-    2. 子序列2
-    3. 子序列3
+
+1. 有序列表 1
+2. 有序列表 2
+3. 有序列表 3
+   1. 子序列 1
+   2. 子序列 2
+   3. 子序列 3
 ```
 
-1. 有序列表1
-2. 有序列表2
-1. 有序列表3
-    1. 子序列1
-    2. 子序列2
-    3. 子序列3
+1. 有序列表 1
+2. 有序列表 2
+3. 有序列表 3
+   1. 子序列 1
+   2. 子序列 2
+   3. 子序列 3
 
 ## 无序列表
 
-```c
+```markdown
 //无序列表
-## 无序列表
-* 无序列表1
-+ 无序列表2
-  - [ ] 子序列1
-  - [ ] 子序列2
-  - [x] 子序列3
-- 无序列表3
-    - 子序列1
-    + 子序列2
-    * 子序列3
 
+## 无序列表
+
+- 无序列表 1
+
+* 无序列表 2
+  - [ ] 子序列 1
+  - [ ] 子序列 2
+  - [x] 子序列 3
+
+- 无序列表 3
+  - 子序列 1
+  * 子序列 2
+  - 子序列 3
 ```
 
-* 无序列表1
-+ 无序列表2
-  - [ ] 子序列1
-  - [ ] 子序列2
-  - [x] 子序列3
-- 无序列表3
-    - 子序列1
-    + 子序列2
-    * 子序列3
+- 无序列表 1
 
+* 无序列表 2
+  - [ ] 子序列 1
+  - [ ] 子序列 2
+  - [x] 子序列 3
+
+- 无序列表 3
+
+  - 子序列 1
+
+  * 子序列 2
+
+  - 子序列 3
 
 # 数学公式
 
-```c
+```markdown
 $$
-\frac{partial f}{\partial x} = \sqrt[3]{a_1}x  
+\frac{partial f}{\partial x} = \sqrt[3]{a_1}x
 $$
 
 $$
@@ -203,7 +244,7 @@ $$
 $$
 \lim_{a\to\infty}a=\infty\lim_{b\rightarrow-\infty}=-\infty \tag{3}
 $$
-    
+
 $$
 x(t)=\sum_{k=-\infty}^{\infty}a_ke^{jkw_0t} \tag{4}
 $$
@@ -225,9 +266,7 @@ $$
 x(t)=\sum_{k=-\infty}^{\infty}a_ke^{jkw_0t} \tag{4}
 $$
 
-
-
-```c
+```markdown
 $$
 \vec{F}=ma\\
 \leq\\
@@ -243,7 +282,7 @@ $$
 
 ## 希腊字母
 
-```c
+```markdown
 $$
 \alpha, \beta, \gamma, \delta, \epsilon\\
 \varepsilon, \eta, \theta, \vartheta, \kappa\\
@@ -254,7 +293,6 @@ $$
 $$
 ```
 
-
 $$
 \alpha, \beta, \gamma, \delta, \epsilon\\
 \varepsilon, \eta, \theta, \vartheta, \kappa\\
@@ -264,11 +302,9 @@ $$
 \sigma, \chi, \O, \Xi, \Upsilon
 $$
 
-
-
 ## 矩阵
 
-```c
+```markdown
 $$
 \begin{Bmatrix}
    a & b \\
@@ -279,14 +315,12 @@ $$
 
 $$
 \begin{Bmatrix}
-	a & b \\
-	c & d
+  a & b \\
+  c & d
 \end{Bmatrix} \tag{1}
 $$
 
-
-
-```c
+```markdown
 $$
 \begin{bmatrix}
 a & b\\
@@ -302,9 +336,7 @@ c & d
 \end{bmatrix} \tag{2}
 $$
 
-
-
-```c
+```markdown
 $$
 \begin{vmatrix}
 a & b\\
@@ -320,9 +352,7 @@ c & d
 \end{vmatrix} \tag{3}
 $$
 
-
-
-```c
+```markdown
 $$
 \left\{
 \begin{matrix}
@@ -344,9 +374,7 @@ $$
 \right\} \tag{4}
 $$
 
-
-
-```c
+```markdown
 $$
 \left[
 \begin{matrix}
@@ -368,9 +396,7 @@ $$
 \right] \tag{5}
 $$
 
-
-
-```c
+```markdown
 $$
 \left(
 \begin{matrix}
@@ -382,7 +408,6 @@ $$
 $$
 ```
 
-
 $$
 \left(
 \begin{matrix}
@@ -393,9 +418,7 @@ $$
 \right) \tag{6}
 $$
 
-
-
-```c
+```markdown
 $$
 \begin{Bmatrix}
 1 & 2 & \cdots & 5\\
@@ -414,12 +437,10 @@ $$
 \alpha & \alpha+1 & \cdots & \alpha+4
 \end{Bmatrix}\tag{7}
 $$
-
-
 
 ## 多行等式对齐
 
-```c
+```markdown
 $$
 \begin{aligned}
 a &= b + c \\
@@ -428,28 +449,16 @@ a &= b + c \\
 $$
 ```
 
-
 $$
 \begin{aligned}
 a &= b + c \\
   &= d + e + f
 \end{aligned}
 $$
-
 
 ## 方程组、条件表达式
 
-```c
-$$
-\begin{cases}
-3x + 5y +  z \\
-7x - 2y + 4z \\
--6x + 3y + 2z
-\end{cases}   
-$$
-```
-
-
+```markdown
 $$
 \begin{cases}
 3x + 5y +  z \\
@@ -457,120 +466,115 @@ $$
 -6x + 3y + 2z
 \end{cases}
 $$
+```
 
+$$
+\begin{cases}
+3x + 5y +  z \\
+7x - 2y + 4z \\
+-6x + 3y + 2z
+\end{cases}
+$$
 
-```c
+```markdown
 $$
 f(n) =
-\begin{cases} 
+\begin{cases}
 n/2,  & \text{if }n\text{ is even} \\
 3n+1, & \text{if }n\text{ is odd}
 \end{cases}
 $$
 ```
 
-
 $$
 f(n) =
-\begin{cases} 
+\begin{cases}
 n/2,  & \text{if }n\text{ is even} \\
 3n+1, & \text{if }n\text{ is odd}
 \end{cases}
 $$
-
 
 ## 间隔
 
-```c
+```markdown
 //紧贴 + 无空格 + 小空格 + 中空格 + 大空格 + 真空格 + 双真空格
+
 $$
 a\!b + ab + a\,b + a\;b + a\ b + a\quad b + a\qquad b
 $$
 ```
 
-
 $$
 a\!b + ab + a\,b + a\;b + a\ b + a\quad b + a\qquad b
 $$
-
 
 ## 表格
 
 ### 简易表格
 
-```c
+```markdown
 $$
 \begin{array}{|c|l|r|}
-	\hline 1&20&3000\\
-	\hline 40&500&60000\\
-	\hline 7000&80000&9000000\\
-	\hline
+  \hline 1&20&3000\\
+  \hline 40&500&60000\\
+  \hline 7000&80000&9000000\\
+  \hline
 \end{array}
 $$
 ```
 
-
 $$
 \begin{array}{|c|l|r|}
-	\hline 1&20&3000\\
-	\hline 40&500&60000\\
-	\hline 7000&80000&9000000\\
-	\hline
+  \hline 1&20&3000\\
+  \hline 40&500&60000\\
+  \hline 7000&80000&9000000\\
+  \hline
 \end{array}
 $$
 
-
-
-```c
-|参数|解释|                                             
+```markdown
+|参数|解释|  
 |:-:|:-:|//居中
 //|-:|-:|右对齐
 //|:-|:-|左对齐
 |enable|是否启用 nav 左侧项目按钮，仅控制左侧项目按钮|
-|travelling|是否启用 nav 开往按钮|    
+|travelling|是否启用 nav 开往按钮|
 ```
 
-
-
-|参数|解释|                                             
-|:-:|:-:|
-|enable|是否启用 nav 左侧项目按钮，仅控制左侧项目按钮|
-|travelling|是否启用 nav 开往按钮|    
-
-
+|    参数    |                     解释                      |
+| :--------: | :-------------------------------------------: |
+|   enable   | 是否启用 nav 左侧项目按钮，仅控制左侧项目按钮 |
+| travelling |             是否启用 nav 开往按钮             |
 
 ### 真值表
 
-```c
+```markdown
 $$
 \begin{array}{cc|c}
-	       A&B&F\\
-	\hline 0&0&0\\
-	       0&1&1\\
-	       1&0&1\\
-	       1&1&1\\
+         A&B&F\\
+  \hline 0&0&0\\
+         0&1&1\\
+         1&0&1\\
+         1&1&1\\
 \end{array}
 $$
 ```
 
-
 $$
 \begin{array}{cc|c}
-	       A&B&F\\
-	\hline 0&0&0\\
-	       0&1&1\\
-	       1&0&1\\
-	       1&1&1\\
+         A&B&F\\
+  \hline 0&0&0\\
+         0&1&1\\
+         1&0&1\\
+         1&1&1\\
 \end{array}
 $$
 
-
 # 甘特图
 
-
-```c
+````markdown
 ```mermaid
-		gantt
+    gantt
         dateFormat  YYYY-MM-DD
         title 软件开发甘特图
         section 设计
@@ -589,14 +593,10 @@ $$
         压力测试                               :after a1  , 20h
         测试报告                               : 48h
 ```
-
-
-
-```mermaid
         gantt
         dateFormat  YYYY-MM-DD
         title Work Plan
-        
+
         FYP Topic Select                      :done,    des1, 2022-06-06,2022-09-15
         Preliminary Report                      :done,  des2, 2022-10-05,2022-10-30
         Final Report Framework: done, 2022-11-18, 2022-12-01
@@ -604,92 +604,62 @@ $$
         Interim Report :done, 2022-12-25, 2023-01-13
         Experiment Performing :active, 2022-11-23, 2023-03-01
         Data Analysis: 2023-02-22, 2023-04-10
-        
+
         Final Report: 2023-03-01, 2023-04-28
-        
+
         Oral Presentation: 2023-05-15, 2023-05-19
-```
-
-
-
-
+````
 
 # 超链接
 
-```c
-[B站](https://www.bilibili.com)
-     
+```markdown
+[B 站](https://www.bilibili.com)
+
 [原神](./QQ截图20220110160242.png)
-     
-[【静止画MAD】FRIEND(https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
-[【静止画MAD】FRIEND](https://www.bilibili.com/video/BV1uL411W7HT)
- 
+[【静止画 MAD】FRIEND(https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
+
+[【静止画 MAD】FRIEND](https://www.bilibili.com/video/BV1uL411W7HT)
+
 <iframe src="https://player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &danmaku="1" width="90%" height="360"> </iframe>
-
-
 ```
 
-[B站](https://www.bilibili.com)
+[B 站](https://www.bilibili.com)
 
-[【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
+[【静止画 MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
-[【静止画MAD】FRIEND](https://www.bilibili.com/video/BV1uL411W7HT)
+[【静止画 MAD】FRIEND](https://www.bilibili.com/video/BV1uL411W7HT)
 
   <!--<iframe src="https://player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &danmaku="1" width="90%" height="360" autoplay="false"> </iframe>-->
 
-
-
 # 图片
 
-```c
+```markdown
 //在线图片
 ![【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
 //本地图片
 ![原神](./QQ截图20220110160242.png)
- 
 ```
 
 ![【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
 
-
-
 # 代码块
 
-```c
+```markdown
 `printf()`
-```
-
-`printf()`
-
-```c
+printf()
 #include<stdio.h>
 int main(){
-    printf("hello world!");
-    return 0;
+printf("hello world!");
+return 0;
 }
 ```
 
-
-
-
 # UML 图表
 
-````c
+````markdown
 //下面是一个序列图
-```mermaid
-sequenceDiagram
-张三 ->> 李四: 你好！李四, 最近怎么样?
-李四-->>王五: 你最近怎么样，王五？
-李四--x 张三: 我很好，谢谢!
-李四-x 王五: 我很好，谢谢!
-Note right of 王五: 李四想了很长时间, 文字太长了<br/>不适合放在一行.
-
-李四-->>张三: 打量着王五...
-张三->>王五: 很好... 王五, 你怎么样?
-```
-````
 
 ```mermaid
 sequenceDiagram
@@ -702,16 +672,16 @@ Note right of 王五: 李四想了很长时间, 文字太长了<br/>不适合放
 李四-->>张三: 打量着王五...
 张三->>王五: 很好... 王五, 你怎么样?
 ```
+sequenceDiagram
+张三 ->> 李四: 你好！李四, 最近怎么样?
+李四-->>王五: 你最近怎么样，王五？
+李四--x 张三: 我很好，谢谢!
+李四-x 王五: 我很好，谢谢!
+Note right of 王五: 李四想了很长时间, 文字太长了<br/>不适合放在一行.
 
-```c
+李四-->>张三: 打量着王五...
+张三->>王五: 很好... 王五, 你怎么样?
 //下面是一个流程图
-```mermaid
-graph LR
-A[长方形] -- 链接 --> B((圆))
-A --> C(圆角长方形)
-B --> D{菱形}
-C --> D
-```
 
 ```mermaid
 graph LR
@@ -720,14 +690,18 @@ A --> C(圆角长方形)
 B --> D{菱形}
 C --> D
 ```
+graph LR
+A[长方形] -- 链接 --> B((圆))
+A --> C(圆角长方形)
+B --> D{菱形}
+C --> D
+````
 
 - 关于 **Mermaid** 语法，参考 [这儿](https://mermaidjs.github.io/),
 
+# Flowchart 流程图
 
-
-# Flowchart流程图
-
-```c
+```markdown
 //标准流程图源码格式
 st=>start: 开始框
 op=>operation: 处理框
@@ -738,11 +712,6 @@ e=>end: 结束框
 st->op->cond
 cond(yes)->io->e
 cond(no)->sub1(right)->op
-```
-
-
-
-```flow
 st=>start: 开始框
 op=>operation: 处理框
 cond=>condition: 判断框(是或否?)
@@ -752,11 +721,6 @@ e=>end: 结束框
 st->op->cond
 cond(yes)->io->e
 cond(no)->sub1(right)->op
-```
-
-
-
-```c
 //标准流程图源码格式（横向）
 st=>start: 开始框
 op=>operation: 处理框
@@ -767,9 +731,6 @@ e=>end: 结束框
 st(right)->op(right)->cond
 cond(yes)->io(bottom)->e
 cond(no)->sub1(right)->op
-```
-
-```flow
 st=>start: 开始框
 op=>operation: 处理框
 cond=>condition: 判断框(是或否?)
@@ -780,4 +741,3 @@ st(right)->op(right)->cond
 cond(yes)->io(bottom)->e
 cond(no)->sub1(right)->op
 ```
-

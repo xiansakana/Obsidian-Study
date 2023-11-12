@@ -113,12 +113,12 @@ JavaScript中的String有可用的attributes以及methods。常见的有：
 
 - logical operator
 
-  |   A   |   B   | A && B | A \|\| B |
-  | :---: | :---: | :----: | :------: |
-  | true  | true  |  true  |   true   |
-  | true  | false | false  |   true   |
-  | false | true  | false  |   true   |
-  | false | false | false  |  false   |
+  |   A   |   B   | A && B | A &#124;&#124; B |
+  | :---: | :---: | :----: | :--------------: |
+  | true  | true  |  true  |       true       |
+  | true  | false | false  |       true       |
+  | false | true  | false  |       true       |
+  | false | false | false  |      false       |
 
   > - &&: If the left hand side is true, then it evaluates as the right hand side; If the left hand isde is not true, then it ecaluates as the left hand side.
   > - ||: If the left hand side can be converted to true, then returns left hand side; else, return right hand side.
