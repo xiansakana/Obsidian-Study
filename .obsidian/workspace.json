@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/Github搭建免费图床.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f33246af6ff75994",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miscellaneous/图床使用方案.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md"
+                "file": "miscellaneous/图床使用方案.md"
               }
             }
           },
@@ -169,8 +182,16 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "cba1c69ddd3c84d9",
+  "active": "f33246af6ff75994",
   "lastOpenFiles": [
+    "miscellaneous/Github搭建免费图床.md",
+    "miscellaneous/图床使用方案.md",
+    "Test.md",
+    "cooking/汤/玉米排骨汤.md",
+    "cooking/热菜/清蒸鲈鱼.md",
+    "cooking/热菜/咖喱牛肉（猪肉）土豆.md",
+    "config/前后端分离项目云服务器部署.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
     "ebook/application",
     "ebook/新建文件夹",
@@ -181,9 +202,7 @@
     "ebook/申请制下可能存在的认知偏差.pdf",
     "ebook/程序员面试白皮书.pdf",
     "ebook/程序员的自我修养：链接、装载与库.pdf",
-    "ebook",
     "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
     "Test.md",
     "Pasted image 20240223100619.png",
     "algorithm/Top Interview 150.md",
@@ -195,7 +214,6 @@
     "interview/resume/others/131345os0hwjpazroljil9.png",
     "interview/bq/behavior questions.md",
     "frontend/Advanced HTML-CSS.md",
-    "miscellaneous/图床使用方案.md",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
     "Markdown Cheat Sheet.md",
@@ -211,13 +229,8 @@
     "Others/图床使用方案.md",
     "Others/Hexo搭建个人网站.md",
     "Others/Hexo博客增加书单集.md",
-    "Others/Github搭建免费图床.md",
-    "HTML.md",
-    "2023 網頁全端開發/HTML.md",
-    "Others/Unblock Netease Music.md",
     "未命名.canvas",
     "未命名 1.canvas",
-    "Cooking/热菜/清蒸鲈鱼.md",
     "Pasted image 20230911111011.png"
   ]
 }
