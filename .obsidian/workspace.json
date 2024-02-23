@@ -182,8 +182,14 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "f33246af6ff75994",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "frontend/css/CSS2笔记.pdf",
+    "frontend/css",
+    "css/CSS2笔记.pdf",
+    "css",
+    "CSS/CSS2笔记.pdf",
+    "CSS",
     "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/图床使用方案.md",
     "Test.md",
@@ -197,11 +203,6 @@
     "ebook/新建文件夹",
     "ebook/sde/程序员面试白皮书.pdf",
     "ebook/sde/程序员的自我修养：链接、装载与库.pdf",
-    "ebook/sde",
-    "ebook/programming",
-    "ebook/申请制下可能存在的认知偏差.pdf",
-    "ebook/程序员面试白皮书.pdf",
-    "ebook/程序员的自我修养：链接、装载与库.pdf",
     "miscellaneous/Hexo搭建个人网站.md",
     "Test.md",
     "Pasted image 20240223100619.png",
@@ -228,7 +229,6 @@
     "Others/Github通过git上传本地文件.md",
     "Others/图床使用方案.md",
     "Others/Hexo搭建个人网站.md",
-    "Others/Hexo博客增加书单集.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "Pasted image 20230911111011.png"
