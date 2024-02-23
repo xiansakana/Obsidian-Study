@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.5
+    "width": 201.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -167,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,28 +181,31 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Github搭建免费图床.md",
+    "miscellaneous/图床使用方案.md",
+    "frontend/Authentication.md",
+    "frontend/Advanced-JavaScript.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
     "frontend/css/CSS2笔记.pdf",
     "frontend/css",
     "css/CSS2笔记.pdf",
     "css",
     "CSS/CSS2笔记.pdf",
     "CSS",
-    "miscellaneous/Github搭建免费图床.md",
-    "miscellaneous/图床使用方案.md",
     "Test.md",
     "cooking/汤/玉米排骨汤.md",
     "cooking/热菜/清蒸鲈鱼.md",
     "cooking/热菜/咖喱牛肉（猪肉）土豆.md",
     "config/前后端分离项目云服务器部署.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
     "ebook/application",
     "ebook/新建文件夹",
     "ebook/sde/程序员面试白皮书.pdf",
-    "ebook/sde/程序员的自我修养：链接、装载与库.pdf",
-    "miscellaneous/Hexo搭建个人网站.md",
     "Test.md",
     "Pasted image 20240223100619.png",
     "algorithm/Top Interview 150.md",
@@ -226,9 +228,6 @@
     "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
     "Pasted image 20231003181811.png",
     "Others/Obsidian同步到Github (Windows).md",
-    "Others/Github通过git上传本地文件.md",
-    "Others/图床使用方案.md",
-    "Others/Hexo搭建个人网站.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "Pasted image 20230911111011.png"
