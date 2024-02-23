@@ -13,11 +13,22 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf"
+                "file": "sql/cheat_sheet_data_type_mysql.pdf"
+              }
+            }
+          },
+          {
+            "id": "fa7bd97357b3af52",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.8"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
+                "file": "sql/cheat_sheet_data_type_mysql.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
+                "file": "sql/cheat_sheet_data_type_mysql.pdf",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf"
+                "file": "sql/cheat_sheet_data_type_mysql.pdf"
               }
             }
           },
@@ -141,7 +152,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -165,13 +178,28 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "91eefe6efc5927de",
+  "active": "fa7bd97357b3af52",
   "lastOpenFiles": [
-    "rules/WAGE REQUIREMENTS FOR INTERNS In For-Profit Businesses.pdf",
+    "interview/oa/Amazon/亚马逊OA code/amazon OA1.ipynb",
+    "interview/oa/Amazon/亚马逊OA code/oa.ipynb",
+    "interview/oa/Amazon/亚马逊OA code/Copy_of_oa.ipynb",
+    "interview/oa/Amazon/amazon OA/Copy_of_oa.ipynb",
+    "interview/oa/Amazon/amazon OA/oa.ipynb",
+    "interview/oa/Amazon/亚马逊OA code/AMAZON OA 整理.html",
+    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
+    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.html",
+    "interview/oa/Amazon/amazon OA/amazon OA1.ipynb",
+    "interview/resume/others/一亩三分地.pdf",
+    "interview/resume/others/Xingyun_Xue_resume_ng_2024_may.pdf",
+    "interview/resume/others/thread-1042179-1-1.html.png",
+    "interview/resume/others/Software_Engineer_Resume_mosaic.png",
+    "interview/resume/others/31420ec0vp2lhvxxk8gfy.png",
+    "interview/resume/others/4134b5rpyssyohjar2n5.jpg",
+    "interview/resume/others/223844ihhqh27w9gwoie3i.png",
+    "interview/resume/others/131345os0hwjpazroljil9.png",
+    "interview/bq/behavior questions.md",
     "frontend/Advanced HTML-CSS.md",
     "miscellaneous/图床使用方案.md",
-    "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
-    "rules",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
     "Markdown Cheat Sheet.md",
@@ -190,29 +218,15 @@
     "Others/Github搭建免费图床.md",
     "HTML.md",
     "2023 網頁全端開發/HTML.md",
-    "网页开发",
     "Others/Unblock Netease Music.md",
     "未命名.canvas",
     "未命名 1.canvas",
-    "2-3+故宮檔案.zip",
     "Cooking/热菜/清蒸鲈鱼.md",
     "Cooking/汤/玉米排骨汤.md",
     "NYU/Applied Matrix Theory/未命名.md",
     "NYU/Applied Matrix Theory/未命名 1.md",
-    "Cooking/汤",
-    "Cooking/热菜",
-    "Cooking",
     "Pasted image 20230911111011.png",
     "Pasted image 20230910013806.png",
-    "Pasted image 20230910013205.png",
-    "[.md",
-    "Pasted image 20230909232023.png",
-    "Pasted image 20230909230315.png",
-    "Pasted image 20230909230327.png",
-    "Pasted image 20230909230322.png",
-    "Pasted image 20230909230318.png",
-    "git/Obsidian-Library",
-    "git",
-    "202309092224.md"
+    "[.md"
   ]
 }
