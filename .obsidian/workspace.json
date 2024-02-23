@@ -11,24 +11,15 @@
             "id": "91eefe6efc5927de",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "sql/cheat_sheet_data_type_mysql.pdf"
-              }
-            }
-          },
-          {
-            "id": "fa7bd97357b3af52",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.8"
+                "file": "algorithm/Top Interview 150.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sql/cheat_sheet_data_type_mysql.pdf",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sql/cheat_sheet_data_type_mysql.pdf",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sql/cheat_sheet_data_type_mysql.pdf"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -178,19 +169,19 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "fa7bd97357b3af52",
+  "active": "91eefe6efc5927de",
   "lastOpenFiles": [
+    "rules/WAGE REQUIREMENTS FOR INTERNS In For-Profit Businesses.pdf",
+    "sql/cheat_sheet_data_type_mysql.pdf",
+    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
     "interview/oa/Amazon/亚马逊OA code/amazon OA1.ipynb",
     "interview/oa/Amazon/亚马逊OA code/oa.ipynb",
     "interview/oa/Amazon/亚马逊OA code/Copy_of_oa.ipynb",
     "interview/oa/Amazon/amazon OA/Copy_of_oa.ipynb",
     "interview/oa/Amazon/amazon OA/oa.ipynb",
     "interview/oa/Amazon/亚马逊OA code/AMAZON OA 整理.html",
-    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
     "interview/oa/Amazon/amazon OA/AMAZON_50_OA.html",
     "interview/oa/Amazon/amazon OA/amazon OA1.ipynb",
-    "interview/resume/others/一亩三分地.pdf",
-    "interview/resume/others/Xingyun_Xue_resume_ng_2024_may.pdf",
     "interview/resume/others/thread-1042179-1-1.html.png",
     "interview/resume/others/Software_Engineer_Resume_mosaic.png",
     "interview/resume/others/31420ec0vp2lhvxxk8gfy.png",
