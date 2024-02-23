@@ -4,27 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "56bbae0cc70c0bca",
+        "id": "d5ff4f641cbe4cbe",
         "type": "tabs",
         "children": [
           {
-            "id": "9d121a3bdc2f8d61",
+            "id": "91eefe6efc5927de",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "cb7999ca7398e470",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
+              "type": "pdf",
+              "state": {
+                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf"
+              }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -90,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf"
+              }
             }
           },
           {
@@ -168,8 +165,13 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "cb7999ca7398e470",
+  "active": "91eefe6efc5927de",
   "lastOpenFiles": [
+    "rules/WAGE REQUIREMENTS FOR INTERNS In For-Profit Businesses.pdf",
+    "frontend/Advanced HTML-CSS.md",
+    "miscellaneous/图床使用方案.md",
+    "rules/WAGE REQUIREMENTS FOR INTERNS In Not-For-Profit Businesses.pdf",
+    "rules",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
     "Markdown Cheat Sheet.md",
@@ -211,10 +213,6 @@
     "Pasted image 20230909230318.png",
     "git/Obsidian-Library",
     "git",
-    "202309092224.md",
-    "Others",
-    "NYU/Applied Matrix Theory",
-    "NYU/Computing Systems Architecture",
-    "2023-09-09.md"
+    "202309092224.md"
   ]
 }
