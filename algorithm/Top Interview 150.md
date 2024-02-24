@@ -2,7 +2,44 @@
 
 ## Array / String
 
-### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) （删除有序数组中的重复项）
+### [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)（[罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/)）
+
+```
+Input: s = "III"
+Output: 3
+Explanation: III = 3.
+```
+
+```
+Input: s = "MCMXCIV"
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+```
+
+```python
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        Roman2Int = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        Int = 0
+        n = len(s)
+
+        for i in range(n - 1):
+            if Roman2Int[s[i]] < Roman2Int[s[i + 1]]:
+                Int -= Roman2Int[s[i]]
+            else:
+                Int += Roman2Int[s[i]]
+
+        return Int + Roman2Int[s[-1]]
+
+```
+
+时间复杂度：O(N)。遍历了一遍数组。
+
+空间复杂度：O(1)。使用了 `Int`。
+
+
+
+### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) （[删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)）
 
 ```
 Input: nums = [1,1,2]
