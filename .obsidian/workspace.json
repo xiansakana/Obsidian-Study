@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/bq/behavior questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/bq/behavior questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/bq/behavior questions.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "interview/bq/behavior questions.md"
               }
             }
           },
@@ -172,10 +172,10 @@
   },
   "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
+    "algorithm/Top Interview 150.md",
     "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
     "interview/resume/others/北美CS找工简历求轻喷！！_1_涵_来自小红书网页版.jpg",
-    "algorithm/Top Interview 150.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/Unblock-Netease-Music.md",
@@ -197,7 +197,6 @@
     "config/前后端分离项目云服务器部署.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
     "ebook/application",
-    "ebook/新建文件夹",
     "Test.md",
     "Pasted image 20240223100619.png",
     "interview/resume/others/thread-1042179-1-1.html.png",
