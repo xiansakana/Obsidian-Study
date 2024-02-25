@@ -2,6 +2,34 @@
 
 ## Array / String
 
+### [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)（[整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/)）
+```
+Input: num = 3
+Output: "III"
+Explanation: 3 is represented as 3 ones.
+```
+
+```
+Input: num = 1994
+Output: "MCMXCIV"
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+```
+
+```python
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        Int2Roman = [(1000,'M'),(900,'CM'),(500,'D'),(400,'CD'),(100,'C'),(90,'XC'),(50,'L'),(40,'XL'),(10,'X'),(9,'IX'),(5,'V'),(4,'IV'),(1,'I')]
+        Roman = ''
+        for value, symbol in Int2Roman:
+            while num >= value:
+                num -= value
+                Roman += symbol
+            if num == 0:
+                break
+        return Roman
+```
+
+
 ### [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)（[罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/)）
 
 ```
@@ -22,15 +50,12 @@ class Solution:
         Roman2Int = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
         Int = 0
         n = len(s)
-
         for i in range(n - 1):
             if Roman2Int[s[i]] < Roman2Int[s[i + 1]]:
                 Int -= Roman2Int[s[i]]
             else:
                 Int += Roman2Int[s[i]]
-
         return Int + Roman2Int[s[-1]]
-
 ```
 
 时间复杂度：O(N)。遍历了一遍数组。
