@@ -11,11 +11,9 @@
             "id": "cba1c69ddd3c84d9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
-                "mode": "source",
-                "source": false
+                "file": "interview/resume/Jie_Cheng_resume.pdf"
               }
             }
           }
@@ -69,8 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "defed06388ad0739",
@@ -86,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/resume/Jie_Cheng_resume.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/resume/Jie_Cheng_resume.pdf",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "interview/resume/Jie_Cheng_resume.pdf"
               }
             }
           },
@@ -173,6 +170,7 @@
   },
   "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
+    "algorithm/Top Interview 150.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/Unblock-Netease-Music.md",
@@ -198,7 +196,6 @@
     "ebook/sde/程序员面试白皮书.pdf",
     "Test.md",
     "Pasted image 20240223100619.png",
-    "algorithm/Top Interview 150.md",
     "interview/resume/others/thread-1042179-1-1.html.png",
     "interview/resume/others/Software_Engineer_Resume_mosaic.png",
     "interview/resume/others/31420ec0vp2lhvxxk8gfy.png",
