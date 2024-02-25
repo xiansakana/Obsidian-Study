@@ -11,9 +11,11 @@
             "id": "cba1c69ddd3c84d9",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "interview/resume/Jie_Cheng_resume.pdf"
+                "file": "algorithm/Top Interview 150.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/resume/Jie_Cheng_resume.pdf",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/resume/Jie_Cheng_resume.pdf",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/resume/Jie_Cheng_resume.pdf"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -170,6 +172,7 @@
   },
   "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
+    "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
     "interview/resume/others/北美CS找工简历求轻喷！！_1_涵_来自小红书网页版.jpg",
     "algorithm/Top Interview 150.md",
@@ -195,7 +198,6 @@
     "ebook/application/申请制下可能存在的认知偏差.pdf",
     "ebook/application",
     "ebook/新建文件夹",
-    "ebook/sde/程序员面试白皮书.pdf",
     "Test.md",
     "Pasted image 20240223100619.png",
     "interview/resume/others/thread-1042179-1-1.html.png",
