@@ -29,6 +29,9 @@ class Solution:
         return Roman
 ```
 
+时间复杂度：O(1)。由于 value Symbols 长度是固定的，且字符中的每个字符的出现次数均不会超过3，因此循环次数有一个确定的上限。对于本题给出的数据范围，循环次数不会超过 15 次。
+
+空间复杂度：O(1)。
 
 ### [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)（[罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/)）
 
