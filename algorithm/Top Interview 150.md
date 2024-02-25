@@ -129,6 +129,35 @@ class Solution:
 
 空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
 
+### [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)（[最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word/)）
+
+```
+Input: s = "Hello World"
+Output: 5
+Explanation: The last word is "World" with length 5.
+```
+
+```
+Input: s = "   fly me   to   the moon  "
+Output: 4
+Explanation: The last word is "moon" with length 4.
+```
+
+```python
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        length = 0
+        for i in s[::-1]:
+            if i !=' ':
+                length +=1
+            elif i ==' ' and length != 0:
+                break
+        return length
+```
+
+时间复杂度：O(n)，其中 n 是字符串的长度。最多需要反向遍历字符串一次。
+
+空间复杂度：O(1)。
 
 
 ### [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/) （[合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)）
