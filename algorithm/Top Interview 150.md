@@ -65,7 +65,37 @@ class Solution:
 
 空间复杂度：O(1)。使用了 `Int`。
 
+### [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)（[最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)）
+```
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+```
 
+```
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+```
+
+```python
+class Solution:
+
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        word = strs[0]
+        length = len(word)
+        ans = ''
+        for i in range(length):
+            char = word[i]
+            for j in range(1, len(strs)):
+                if i == len(strs[j]) or strs[j][i] != char:
+                    return ans
+            ans += char
+        return ans
+```
+
+时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。
+
+空间复杂度：O(1)。使用的额外空间复杂度为常数。
 
 ### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) （[删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)）
 
