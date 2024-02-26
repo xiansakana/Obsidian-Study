@@ -547,6 +547,8 @@ Output: "world hello"
 Explanation: Your reversed string should not contain leading or trailing spaces.
 ```
 
+**使用语言特性**
+
 ```python
 class Solution:
     def reverseWords(self, s: str) -> str:
@@ -559,6 +561,32 @@ class Solution:
 时间复杂度：O(n)，其中 n 为输入字符串的长度。
     
 空间复杂度：O(n)，用来存储字符串分割之后的结果。
+
+**双指针遍历**
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        s = ' ' + s;
+        int n = s.length();
+        StringBuilder ans = new StringBuilder();
+        for (int left = n - 1, right = n; left >= 0; left--) {
+            char ch = s.charAt(left);
+            if (ch == ' ') {
+                if (left + 1 < right) {
+                    ans.append(s, left + 1, right).append(' ');
+                }
+                right = left;
+            }
+        }
+        return ans.substring(0, ans.length() - 1);
+    }
+}
+```
+
+时间复杂度：O(n)，其中 n 为输入字符串的长度。
+    
+空间复杂度：O(1)。
 
 ### [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 
