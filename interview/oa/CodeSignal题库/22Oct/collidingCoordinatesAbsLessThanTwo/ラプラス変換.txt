@@ -1,0 +1,5 @@
+reduce to
+
+an array of coordinates (x_i, y_i), find all pairs of P_1, P_2 s.t. abs(x1-x2)<=2 and abs(y1-y2)<=2
+
+sorting? line sweep? interval tree?

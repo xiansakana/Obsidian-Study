@@ -1,0 +1,22 @@
+def cyclic_generator(digit):
+    digit = str(digit)
+    # some cyclic representations have leading 0 e.g. 1001 -> 0011. 0011 is invalid; thus the gross looking if condition
+    return [ int(digit[i:]+digit[:i]) for i in range(len(digit)) if len(str(int(digit[i:]+digit[:i])))==len(digit)]
+
+
+def solution(a):
+    # sort to make digits that have the same length together
+    # a.sort()
+    cyclic_group = {} # <=9n~O(n) space since a[i]<=10^9
+    cyclic_counts = [] # O(n) space
+    for i in a:
+        if i not in cyclic_group:
+            cyclic_counts.append(0)
+            for num in cyclic_generator(i):
+                cyclic_group[num] = len(cyclic_counts)-1
+        else:
+            # Sn = (0+n-1)n/2 = (n^2-n)/2
+            # Sn+1 = (n^+n)/2
+            cyclic_counts[cyclic_group[i]] +=1
+    # arithmatic sequence sum
+    return sum(map(lambda i: (i+1)*i/2, cyclic_counts))
