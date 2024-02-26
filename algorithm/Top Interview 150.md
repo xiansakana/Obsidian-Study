@@ -535,6 +535,30 @@ class Solution:
 - 空间复杂度：O(1)。
 
 
+### [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)（[反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)）
+```
+Input: s = "the sky is blue"
+Output: "blue is sky the"
+```
+
+```
+Input: s = "  hello world  "
+Output: "world hello"
+Explanation: Your reversed string should not contain leading or trailing spaces.
+```
+
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        result = s.split()
+        result.reverse()
+        result = " ".join(result)
+        return result
+```
+
+时间复杂度：O(n)，其中 n 为输入字符串的长度。
+    
+空间复杂度：O(n)，用来存储字符串分割之后的结果。
 
 ### [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 

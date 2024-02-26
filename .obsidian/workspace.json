@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/bq/behavior questions.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -172,6 +172,7 @@
   },
   "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
+    "interview/bq/behavior questions.md",
     "algorithm/Top Interview 150.md",
     "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
@@ -205,7 +206,6 @@
     "interview/resume/others/4134b5rpyssyohjar2n5.jpg",
     "interview/resume/others/223844ihhqh27w9gwoie3i.png",
     "interview/resume/others/131345os0hwjpazroljil9.png",
-    "interview/bq/behavior questions.md",
     "frontend/Advanced HTML-CSS.md",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
