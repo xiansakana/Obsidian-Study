@@ -341,6 +341,40 @@ class Solution {
 
 ## Array / String
 
+### [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)（[Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)）
+
+```
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
+Explanation:
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+```
+
+```
+Input: s = "A", numRows = 1
+Output: "A"
+```
+
+```python
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1:
+            return s
+        res = [""] * numRows
+        mod = numRows * 2 - 2
+        for i in range(len(s)):
+            j = min(i % mod, mod - i % mod)
+            res[j] += s[i]
+        return "".join(res)
+```
+
+时间复杂度：O(n)。
+    
+空间复杂度：O(n)。
+
 ### [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
 Return *the minimum number of jumps to reach* `nums[n - 1]`.
