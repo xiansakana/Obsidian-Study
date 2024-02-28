@@ -4,7 +4,7 @@ tags:
   - 图床
   - Git
 categories: 杂项
-cover: https://img.xiansakana.xyz/202401262259266.jpg
+cover: https://f005.backblazeb2.com/b2api/v1/b2_download_file_by_id?fileId=4_z03939b199b68c9918aa40911_f103d3cf661d09366_d20240127_m035927_c005_v0501015_t0032_u01706327967622
 abbrlink: 4df281b8
 date: 2024-01-26 22:58:42
 ---
