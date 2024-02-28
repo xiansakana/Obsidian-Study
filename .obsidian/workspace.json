@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "config/Git常用版本控制指令.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "config/Git常用版本控制指令.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "config/Git常用版本控制指令.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "config/Git常用版本控制指令.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -154,7 +154,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,10 +172,10 @@
   },
   "active": "556004bcbb43fd0b",
   "lastOpenFiles": [
+    "config/Git常用版本控制指令.md",
     "frontend/Advanced HTML-CSS.md",
     "frontend/Advanced-JavaScript.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
-    "config/Git常用版本控制指令.md",
     "config/Git-bash配置多个Github用户.md",
     "config/前后端分离项目云服务器部署.md",
     "backend/Springboot.md",
