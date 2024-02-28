@@ -5,7 +5,7 @@ tags:
   - 数据库
   - 后端
 categories: 学习
-cover: "https://img.xiansakana.xyz/202311140937414.jpg"
+cover: "https://cdn.cbd.int/xiansakana-blog-img/202311140937414.jpg"
 abbrlink: 8ead567e
 date: 2023-11-14 09:36:39
 ---
@@ -37,7 +37,7 @@ MongoDB Shell (mongosh)是一个功能齐全的 JavaScript 和 Node.js 16.x REPL
 
 在 MongoDB 当中，我们可以一次拥有数个 databases。每个 database 内部可以有数个 collections。 Collections 等同于是 MySQL 当中的一个表格。
 
-![](https://img.xiansakana.xyz/202311131431197.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202311131431197.png)
 
 在 MongoDB Shell 当中，常用的指令有：
 

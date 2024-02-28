@@ -5,18 +5,18 @@ tags:
   - 笔记
   - Git
 categories: 杂项
-cover: 'https://img.xiansakana.xyz/202401262304183.jpg'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202401262304183.jpg'
 abbrlink: 3c869818
 date: 2024-01-26 23:03:09
 ---
 
 ## 创建 Github 新仓库
 
-![](https://img.xiansakana.xyz/202401262255535.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262255535.png)
 
 然后根据自己需求设置名称，如果想要公开笔记就选 public，不想公开就选 private。
 
-![](https://img.xiansakana.xyz/202401262300632.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262300632.png)
 
 ## 同步仓库到本地
 
@@ -24,21 +24,21 @@ date: 2024-01-26 23:03:09
 
 下载完成后选择 clone a repository。
 
-![](https://img.xiansakana.xyz/202401262301225.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262301225.png)
 
 同步完成后选择刚刚创建的仓库，然后 Local Path 是我们要 clone 的地方，随便选个空的文件夹就好，因为后面要把.git 目录移动到 Obsidian 的仓库里面。
 
-![](https://img.xiansakana.xyz/202401262301847.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262301847.png)
 
 ## 合并 Obsidian 仓库和 Git 仓库
 
 在 clone 后的 Obsidian-Library 的文件夹中可以看到隐藏的.git 文件夹，如果看不到可能是因为没有勾选显示隐藏的项目，选择勾选就好。
 
-![](https://img.xiansakana.xyz/202401262301476.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262301476.png)
 
 然后将.git 文件夹移动到 Obsidian 笔记所在的仓库，使得其和.obsidian 文件夹在一起
 
-![](https://img.xiansakana.xyz/202401262301045.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262301045.png)
 
 按照我自己的尝试，其实会发现之后装 Obsidian Git 的插件仍然无法链接到仓库,会显示 Git is not ready，最后才发现可能是没有安装 git 的原因，所以还是建议安装一下[Git](https://gitforwindows.org/)。
 
@@ -50,25 +50,25 @@ date: 2024-01-26 23:03:09
 
 首先在左下角设置中的第三方插件中关闭安全模式
 
-![](https://img.xiansakana.xyz/202401262302769.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302769.png)
 
 然后浏览社区插件市场并搜索 Obsidian Git 选择安装
 
-![](https://img.xiansakana.xyz/202401262302861.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302861.png)
 
-![](https://img.xiansakana.xyz/202401262302564.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302564.png)
 
 注意要打开插件的开关
 
-![](https://img.xiansakana.xyz/202401262302414.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302414.png)
 
 然后在左下角插件的配置中可以设置 backup interval（备份时间间隔）
 
-![](https://img.xiansakana.xyz/202401262302323.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302323.png)
 
 安装完成后应该会自动出现一个 Git Control View 的侧边栏。如果没有，则按下 Ctrl + P 打开命令面板，搜索  `Obsidian Git: Open Source Control View` ，就可以打开这个面板。
 
-![](https://img.xiansakana.xyz/202401262302152.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202401262302152.png)
 
 有了这个插件，以后的同步操作你都可以在 Obsidian 内部进行了。
 

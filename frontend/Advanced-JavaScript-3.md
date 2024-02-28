@@ -3,7 +3,7 @@ title: Advanced JavaScript 3
 tags:
   - JavaScript
   - 前端
-cover: 'https://img.xiansakana.xyz/202311120954810.jpg'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202311120954810.jpg'
 categories: 学习
 abbrlink: 894eaa28
 date: 2023-11-12 09:42:25

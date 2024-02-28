@@ -4,7 +4,7 @@ tags:
   - HTML
   - 前端
 categories: 学习
-cover: https://img.xiansakana.xyz/202310180425942.png
+cover: https://cdn.cbd.int/xiansakana-blog-img/202310180425942.png
 abbrlink: 9192d298
 date: 2023-10-18 04:18:54
 ---

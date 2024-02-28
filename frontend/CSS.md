@@ -4,7 +4,7 @@ tags:
   - CSS
   - 前端
 categories: 学习
-cover: https://img.xiansakana.xyz/202310190107034.png
+cover: https://cdn.cbd.int/xiansakana-blog-img/202310190107034.png
 abbrlink: d54bd6b
 date: 2023-10-19 01:24:41
 ---
@@ -254,7 +254,7 @@ p::first-line {
 
 ### Box Model
 
-![](https://img.xiansakana.xyz/202310182246305.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202310182246305.png)
 
 - [margin](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin)
 

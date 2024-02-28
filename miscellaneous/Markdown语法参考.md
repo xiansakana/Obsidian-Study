@@ -3,7 +3,7 @@ title: Markdown语法参考
 tags:
   - Markdown
 categories: 杂项
-cover: https://img.xiansakana.xyz/202309201855290.png
+cover: https://cdn.cbd.int/xiansakana-blog-img/202309201855290.png
 abbrlink: bc03c1d4
 date: 2023-10-18 04:03:23
 ---

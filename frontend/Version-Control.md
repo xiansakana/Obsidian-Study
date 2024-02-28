@@ -4,7 +4,7 @@ tags:
   - Git
   - Unix
   - CMD
-cover: 'https://img.xiansakana.xyz/202311120955919.png'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202311120955919.png'
 categories: 学习
 abbrlink: 231a4d21
 date: 2023-11-12 09:43:35
@@ -30,7 +30,7 @@ date: 2023-11-12 09:43:35
 - CLI (Command-Line Interface)
 - GUI (Graphical User Interface)
 
-![](https://img.xiansakana.xyz/202311072308618.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202311072308618.png)
 
 通常认为，CLI 没有图形使用者介面（GUI）那么方便使用者操作。因为，命令列介面的软体通常需要使用者记忆操作的命令，但是，由于其本身的特点，命令列介面要较图形使用者介面节约电脑系统的资源。在熟记命令的前提下，使用命令列介面往往要较使用图形使用者介面的操作速度要快。所以，在现在的图形使用者介面的作业系统中，通常都保留著可选的命令列介面。
 
@@ -78,7 +78,7 @@ Git Bash 是一个适用于 Microsoft Windows 环境的应用程序。在 Git ba
 
 Git 本身是个在个人电脑上可以帮助开发者做版本控制的软体。GitHub 是个网路平台，为使用 Git 的软体开发和版本控制提供託管服务。Git 与 GitHub 协作的流程如下：
 
-![](https://img.xiansakana.xyz/202311072355701.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202311072355701.png)
 
 名词认识：
 

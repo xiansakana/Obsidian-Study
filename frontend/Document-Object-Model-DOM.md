@@ -5,7 +5,7 @@ tags:
   - 前端
   - DOM
 categories: 学习
-cover: "https://img.xiansakana.xyz/202311010813961.png"
+cover: "https://cdn.cbd.int/xiansakana-blog-img/202311010813961.png"
 abbrlink: 5fb72f5f
 date: 2023-11-01 05:15:52
 ---
@@ -22,7 +22,7 @@ date: 2023-11-01 05:15:52
 2. document 是指 HTML document 。
 3. 这个模型意味着所有 document 内部的 HTML 元素都是 object。每个 HTML 标签都有其属性和方法。
 
-![](https://img.xiansakana.xyz/202310182251952.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202310182251952.png)
 
 在 Document Object Model 这颗树上的每个点被称之为节点(node)。节点分为三种：
 
@@ -441,7 +441,7 @@ button.style.color = "white";
 
 所有 HTML 元素都从“element object”继承 attributes 和 methods。除了继承来的属性与方法，其中某些 HTML 元素有自己独特的 attributes 和 methods 。
 
-![](https://img.xiansakana.xyz/202310182252836.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202310182252836.png)
 
 ```javascript
 let button = document.querySelector("button");
@@ -464,7 +464,7 @@ listener 通常为一个一般的 function，或更常见的是一个 arrow func
 
 JavaScript Events Objects 的继承关系如下：
 
-![](https://img.xiansakana.xyz/202310182252783.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202310182252783.png)
 
 所有的 Events Objects 中，最常用到的几个属性与方法是：
 
@@ -569,7 +569,7 @@ JSON Object 有两个 method：
 - [JSON.stringify(value)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify): 将 value 转换为 JSON String。
 - [JSON.parse(text)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse): 解析 JSON String，制作出 JSON String 描述的 JavaScript 值或 Object。
 
-![](https://img.xiansakana.xyz/202310182252739.png)
+![](https://cdn.cbd.int/xiansakana-blog-img/202310182252739.png)
 
 ```javascript
 let myLuckyNumbers = [1, 2, 3, 4, 5, 6];
