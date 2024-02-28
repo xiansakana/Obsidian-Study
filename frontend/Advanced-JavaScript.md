@@ -4,7 +4,7 @@ tags:
   - JavaScript
   - 前端
 categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232138720.png'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202309232138720.png'
 abbrlink: 365c67ca
 date: 2023-11-06 15:13:34
 ---

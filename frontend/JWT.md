@@ -4,7 +4,7 @@ tags:
   - JWT
   - State
 categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242029724.jpg'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202311242029724.jpg'
 abbrlink: 1bb08f7a
 date: 2023-11-24 20:48:25
 ---

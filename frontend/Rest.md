@@ -6,7 +6,7 @@ tags:
   - 前端
   - Express.js
 categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222253181.jpg'
+cover: 'https://cdn.cbd.int/xiansakana-blog-img/202311222253181.jpg'
 abbrlink: 5d268eee
 date: 2023-11-22 22:37:26
 ---
