@@ -4,7 +4,7 @@ tags:
   - Authentication
   - Bcrypt
 categories: 学习
-cover: 'https://cdn.cbd.int/xiansakana-blog-img/202311222256191.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311222256191.jpg'
 abbrlink: 33d0b125
 date: 2023-11-22 22:55:29
 ---
@@ -63,7 +63,7 @@ $$
 
 例如，如果密码是 abc123xyz, salt round 是 12, 还有随机的盐巴，那 bcrypt 输出的结果会是：
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311191822820.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311191822820.png)
 
 Where:
 
@@ -76,11 +76,11 @@ Where:
 
 在 Node.js 当中使用 Bcrypt 计算密码的哈希值语法有两种：
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311191823415.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311191823415.png)
 
 第二种：
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311191824731.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311191824731.png)
 
 ```javascript
 // student.js

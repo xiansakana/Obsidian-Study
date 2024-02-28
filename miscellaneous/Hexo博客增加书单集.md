@@ -3,7 +3,7 @@ title: Hexo博客增加书单集
 tags:
   - Hexo
 categories: Hexo
-cover: https://cdn.cbd.int/xiansakana-blog-img/202309282106651.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202309282106651.jpg
 abbrlink: 3acbfff3
 date: 2023-09-28 21:05:33
 ---
@@ -166,11 +166,11 @@ div.info div.info-card {
 
 最后 hexo 三连之后就可以预览效果啦
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202310052134977.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202310052134977.png)
 
 下面是目录的预览
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202309282146203.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202309282146203.png)
 
 ## 更新
 

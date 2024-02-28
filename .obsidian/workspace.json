@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md"
+                "file": "miscellaneous/图床使用方案.md"
               }
             }
           },
@@ -154,8 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,6 +171,7 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
@@ -204,7 +204,6 @@
     "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
     "interview/resume/others/北美CS找工简历求轻喷！！_1_涵_来自小红书网页版.jpg",
-    "miscellaneous/Github搭建免费图床.md",
     "frontend/Authentication.md",
     "frontend/css/CSS2笔记.pdf",
     "frontend/css",

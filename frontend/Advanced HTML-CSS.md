@@ -5,7 +5,7 @@ tags:
   - HTML
   - 前端
 categories: 学习
-cover: https://cdn.cbd.int/xiansakana-blog-img/202310200418702.png
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202310200418702.png
 abbrlink: e4f80284
 date: 2023-10-20 04:13:38
 ---
@@ -37,7 +37,7 @@ date: 2023-10-20 04:13:38
 - space-between
 - space-around
 - space-evenly
-  ![](https://cdn.cbd.int/xiansakana-blog-img/202310182250583.png)
+  ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202310182250583.png)
 
 #### [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)
 
@@ -48,7 +48,7 @@ date: 2023-10-20 04:13:38
 - flex-end
 - center
 - baseline
-  ![](https://cdn.cbd.int/xiansakana-blog-img/202310182251350.png)
+  ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202310182251350.png)
 
 #### [align-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
 
@@ -60,7 +60,7 @@ date: 2023-10-20 04:13:38
 - space-between
 - space-around
 - space-evenly
-  ![](https://cdn.cbd.int/xiansakana-blog-img/202310182251312.png)
+  ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202310182251312.png)
 
 ### [Flex Item](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Item)
 
