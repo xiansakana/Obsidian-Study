@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "miscellaneous/图床使用方案.md"
               }
             }
           },
@@ -172,6 +172,16 @@
   },
   "active": "556004bcbb43fd0b",
   "lastOpenFiles": [
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Hexo博客增加书单集.md",
+    "miscellaneous/图床使用方案.md",
+    "config/Git-bash配置多个Github用户.md",
+    "config/Git常用版本控制指令.md",
+    "config/前后端分离项目云服务器部署.md",
+    "algorithm/Top Interview 150.md",
     "interview/bq/其他/IMG_1193.JPG",
     "interview/bq/其他/IMG_1192.JPG",
     "interview/bq/其他/IMG_1191.JPG",
@@ -182,26 +192,17 @@
     "interview/bq/其他/IMG_1194.JPG",
     "interview/bq/其他",
     "interview/bq/新建文件夹",
-    "config/Git常用版本控制指令.md",
     "frontend/Advanced HTML-CSS.md",
     "frontend/Advanced-JavaScript.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
-    "config/Git-bash配置多个Github用户.md",
-    "config/前后端分离项目云服务器部署.md",
     "backend/Springboot.md",
     "backend/Springboot常用注解.md",
-    "algorithm/Top Interview 150.md",
     "interview/bq/behavior questions.md",
     "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
     "interview/resume/others/北美CS找工简历求轻喷！！_1_涵_来自小红书网页版.jpg",
-    "miscellaneous/图床使用方案.md",
     "miscellaneous/Github搭建免费图床.md",
-    "miscellaneous/Unblock-Netease-Music.md",
-    "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/Markdown语法参考.md",
     "frontend/Authentication.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
     "frontend/css/CSS2笔记.pdf",
     "frontend/css",
     "css/CSS2笔记.pdf",
@@ -213,7 +214,6 @@
     "cooking/热菜/咖喱牛肉（猪肉）土豆.md",
     "Test.md",
     "Pasted image 20240223100619.png",
-    "interview/resume/others/thread-1042179-1-1.html.png",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
     "Markdown Cheat Sheet.md",
