@@ -2,13 +2,13 @@
 
 ## Self-intro
 
-1.        Current role + 现公司现team，year of experience in jb 主要工作职责，proficient in jb 主要语言和工具。Besides the technical part，an important part of my job is jb 上的软技能 （communication，time management， problem-solving ）
-2.        如果有过去的工作或者实习相关经历也可以提一下，特别是有paper或者专利。
-3.        Education background
-4.        One or two sentences about typical workflow （注意结合申请工作的特点，突出相似的transferable skill比如说team work， explain technical work to non-technical people，business sense）
-5.        举project例子For example, I worked on project A and B. 找两个跟这个jb最贴近的经历好好仔细复习，如果要展开的话。简历里经历很多，面试问到哪一个都是公平的，但是面试官的精力也是有限的，他们肯定最感兴趣最相关的经历。
+1. Current role + 现公司现team，year of experience in jb 主要工作职责，proficient in jb 主要语言和工具。Besides the technical part，an important part of my job is jb 上的软技能 （communication，time management， problem-solving ）
+2. 如果有过去的工作或者实习相关经历也可以提一下，特别是有paper或者专利。
+3. Education background
+4. One or two sentences about typical workflow （注意结合申请工作的特点，突出相似的transferable skill比如说team work， explain technical work to non-technical people，business sense）
+5. 举project例子For example, I worked on project A and B. 找两个跟这个jb最贴近的经历好好仔细复习，如果要展开的话。简历里经历很多，面试问到哪一个都是公平的，但是面试官的精力也是有限的，他们肯定最感兴趣最相关的经历。
 
-So, my name is Jie Cheng and I'm currently pursing my master's degree in computer engineering at New York University, where I developed a strong foundation in software development and a passion for solving complex problems through code. I chose to transfer to this field of study from electronic engineering at my undergraduate program because I've always been interested in computers and software. I’ve worked hard in my education and now I’m ready to apply my knowledge into practice.
+So, my name is XX and I'm currently pursing my master's degree in computer engineering at New York University, where I developed a strong foundation in software development and a passion for solving complex problems through code. I chose to transfer to this field of study from electronic engineering at my undergraduate program because I've always been interested in computers and software. I’ve worked hard in my education and now I’m ready to apply my knowledge into practice.
 
 Even though I don't have any real-life work experience, I've had a lot of exposure to projects that involved solving real problems. I have hands-on experience with technologies like HTML, CSS, and JavaScript. This position seems like a great opportunity to advance those skills I just talked about, and continue building my career and challenging myself.
 
