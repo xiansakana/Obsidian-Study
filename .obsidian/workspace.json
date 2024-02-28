@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "config/前后端分离项目云服务器部署.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "config/前后端分离项目云服务器部署.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "config/前后端分离项目云服务器部署.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "config/前后端分离项目云服务器部署.md"
               }
             }
           },
@@ -171,8 +171,12 @@
   },
   "active": "cba1c69ddd3c84d9",
   "lastOpenFiles": [
-    "interview/bq/behavior questions.md",
+    "config/Git-bash配置多个Github用户.md",
+    "config/前后端分离项目云服务器部署.md",
+    "backend/Springboot.md",
+    "backend/Springboot常用注解.md",
     "algorithm/Top Interview 150.md",
+    "interview/bq/behavior questions.md",
     "interview/resume/Jie_Cheng_resume.pdf",
     "interview/resume/Jie Cheng CV.zip",
     "interview/resume/others/北美CS找工简历求轻喷！！_1_涵_来自小红书网页版.jpg",
@@ -194,7 +198,6 @@
     "cooking/汤/玉米排骨汤.md",
     "cooking/热菜/清蒸鲈鱼.md",
     "cooking/热菜/咖喱牛肉（猪肉）土豆.md",
-    "config/前后端分离项目云服务器部署.md",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
     "ebook/application",
     "Test.md",
@@ -212,9 +215,7 @@
     "网页开发/Chapter 4 - 进阶HTML, CSS.md",
     "网页开发/Chapter 3 - CSS.md",
     "网页开发/Chapter 2 - HTML.md",
-    "().md",
     "Pasted image 20231004205906.png",
-    "Cooking/热菜/咖喱牛肉（猪肉）土豆.md",
     "Pasted image 20231003181811.png",
     "未命名.canvas",
     "未命名 1.canvas"
