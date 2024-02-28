@@ -5,7 +5,7 @@ tags:
   - JSX
   - SPA
 categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311222305271.jpg"
+cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg"
 abbrlink: d8a440d1
 date: 2023-11-22 23:04:10
 ---
@@ -48,7 +48,7 @@ React（也称为 React.js 或 ReactJS）是一个免费和开源的前端 JavaS
 用指令 npx create-react-app app-name 就可以生成一个 React 的专案。 (npx 代表 Node Package Execution，是 npm 内建的功能。Npx 是一个 npm package 运行程序，可以从 npm 拿到 package 并且直接执行，甚至无需在电脑上安装该 package。)
 React 专案内的基本架构如下图：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311221652326.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311221652326.png)
 
 文件夹与档案的基本用途如下：
 
@@ -500,7 +500,7 @@ React 中的每个 Component 都有一个生命周期(Life Cycle)，而我们可
 >
 > 除了这三个 methods 之外，还有许多其他的 Life Cycle Methods，有兴趣再去认识。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311222151079.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222151079.png)
 
 根据 React 的文件，「如果你熟悉 React class 的生命周期方法，你可以把 useEffect 视为 componentDidMount，componentDidUpdate 和 componentWillUnmount 的组合。」
 
@@ -573,4 +573,4 @@ export default Layout;
 > 解决方法：
 > vscode 里面 按住 Ctrl + Shift + P ----> 选择 typescript 版本 ----> 选择使用工作区版本
 >
-> ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311222236617.png)
+> ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222236617.png)

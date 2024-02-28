@@ -4,7 +4,7 @@ tags:
   - 网易云音乐
   - VPN
 categories: 杂项
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202401262307331.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262307331.jpg
 abbrlink: a66fbac0
 date: 2024-01-26 23:05:37
 ---

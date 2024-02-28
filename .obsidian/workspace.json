@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "miscellaneous/Github搭建免费图床.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "miscellaneous/Github搭建免费图床.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "miscellaneous/Github搭建免费图床.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/图床使用方案.md"
+                "file": "miscellaneous/Github搭建免费图床.md"
               }
             }
           },
@@ -171,8 +171,8 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
-    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/图床使用方案.md",
+    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
     "replace_md_url.py",

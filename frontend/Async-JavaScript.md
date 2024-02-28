@@ -5,7 +5,7 @@ tags:
   - 前端
   - Ajax
 categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311140929903.jpg"
+cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140929903.jpg"
 abbrlink: 3d61c948
 date: 2023-11-14 09:24:21
 ---
@@ -18,13 +18,13 @@ AJAX 在客户端使用各种 Web 技术来创建异步(asynchronous) Web 应用
 
 常见的 Ajax 应用的例子是，我们在 YouTube 或是 Google 搜寻时，网站会根据我们前面打的几个字，猜想我们想要搜寻的关键字是什么。这就是不干扰现有页面的显示和行为的情况下，从服务器发送和获得数据，并且更新网页的方法。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311112120918.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311112120918.png)
 
 ## 同步与异步
 
 在计算机程式中，异步(asynchronous)代表着一个 process 独立于其他 process 运行，而同步(synchronous)代表着一个 process 仅在某个其他 process 完成或移交后而运行。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311112122765.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311112122765.png)
 
 通常来说，JavaScript 的特性是 single-threaded synchronous，代表 JavaScript 是个一次只会做一件事情的程式语言。然而，JS 有内建的 asynchronous function，例如 setTimeout()。 setTimeout() funtion 设置一个计时器，一旦计时器时间到，该计时器就会执行一个函数或指定的一段代码。 setTimeout()的语法为：
 
@@ -70,9 +70,9 @@ promiseObject.then((data) => {
 
 这段程式码中，当 promiseObject 从 pending 变成 fulfilled 之后，.then()内部的 callback function 就会被 JavaScript 自动执行。执行时，带入的参数就是从 URL 获得的 HTTP Response 内容。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311112143059.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311112143059.png)
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311112146306.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311112146306.png)
 
 ```javascript
 let fetchPromise = fetch(
@@ -214,7 +214,7 @@ fectchProduct();
 
 在认识 Event Loop 之前，先来认识一种数据结构 – Queue。 Queue 与 Stack 是两个相似但原则相反的数据结构。 Queue 是一种列队式的结构，采用先进先出(First In First Out, FIFO)为原则。 Stack 则是堆状的结构，采用后进先出为(Last In First Out, LIFO)原则。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311130938799.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311130938799.png)
 
 在 Node.js 的 Event Loop 当中，大致可分成以下几种 Queue：
 
@@ -238,7 +238,7 @@ Node.js 运行程式码的顺序是：
 - 如果在循环的过程中， 若 nextTick Queue 有函式可以执行，则优先将 nextTick Queue 清空。
 - microtask Queue 也是同样操作，若 microtask Queue 当中有函式可以执行，则优先将 microtask Queue 清空。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img//202311131004839.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311131004839.png)
 
 ```javascript
 console.log("start");
