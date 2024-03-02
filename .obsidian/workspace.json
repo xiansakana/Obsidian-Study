@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/awesome-resume/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/awesome-resume/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "interview/awesome-resume/README.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "interview/awesome-resume/README.md"
               }
             }
           },
@@ -171,6 +171,19 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "interview/awesome-resume/imgs/wrong_all.png",
+    "interview/awesome-resume/imgs/rabbit-256.png",
+    "interview/awesome-resume/imgs/pdf.png",
+    "interview/awesome-resume/imgs/2.png",
+    "interview/awesome-resume/imgs/1.png",
+    "algorithm/Top Interview 150.md",
+    "interview/awesome-resume/imgs/banner.jpg",
+    "interview/awesome-resume/imgs/all.jpg",
+    "interview/awesome-resume/imgs/4.png",
+    "interview/awesome-resume/imgs/3.png",
+    "interview/awesome-resume/imgs",
+    "interview/awesome-resume/README.md",
+    "interview/awesome-resume",
     "miscellaneous/图床使用方案.md",
     "interview/bq/behavior questions.md",
     "miscellaneous/Hexo搭建个人网站.md",
@@ -181,28 +194,16 @@
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4.crdownload",
     "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg",
     "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg.crdownload",
-    "interview/resume/中文/E9B6C23FF9DB2947E690BF8518A2C9DD.png",
     "interview/resume/中文/E9B6C23FF9DB2947E690BF8518A2C9DD.png.crdownload",
     "interview/resume/中文",
     "interview/resume/新建文件夹",
     "replace_md_url.py",
-    "test.py",
-    "新建 文本文档.txt",
     "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
     "config/Git-bash配置多个Github用户.md",
     "config/Git常用版本控制指令.md",
     "config/前后端分离项目云服务器部署.md",
-    "algorithm/Top Interview 150.md",
-    "interview/bq/其他/IMG_1193.JPG",
-    "interview/bq/其他/IMG_1192.JPG",
-    "interview/bq/其他/IMG_1191.JPG",
-    "interview/bq/其他/IMG_1190.JPG",
-    "interview/bq/其他/IMG_1189.JPG",
-    "interview/bq/其他/IMG_1188.JPG",
-    "interview/bq/其他/IMG_1187.JPG",
-    "interview/bq/其他/IMG_1194.JPG",
     "frontend/Advanced HTML-CSS.md",
     "frontend/Advanced-JavaScript.md",
     "backend/Springboot.md",
@@ -215,7 +216,6 @@
     "Test.md",
     "网页开发/Chapter 6 - JavaScript Basics 2.md",
     "网页开发/Chapter 5 - JavaScript Basics.md",
-    "Markdown Cheat Sheet.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
