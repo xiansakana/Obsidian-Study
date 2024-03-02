@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/图床使用方案.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/图床使用方案.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -171,6 +171,7 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "miscellaneous/图床使用方案.md",
     "interview/bq/behavior questions.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
@@ -184,7 +185,6 @@
     "interview/resume/中文/E9B6C23FF9DB2947E690BF8518A2C9DD.png.crdownload",
     "interview/resume/中文",
     "interview/resume/新建文件夹",
-    "miscellaneous/图床使用方案.md",
     "replace_md_url.py",
     "test.py",
     "新建 文本文档.txt",
