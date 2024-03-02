@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/bq/behavior questions.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/bq/behavior questions.md"
+                "file": "miscellaneous/图床使用方案.md"
               }
             }
           },
@@ -171,6 +171,7 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "interview/bq/behavior questions.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
     "miscellaneous/Github搭建免费图床.md",
@@ -206,7 +207,6 @@
     "frontend/Advanced-JavaScript.md",
     "backend/Springboot.md",
     "backend/Springboot常用注解.md",
-    "interview/bq/behavior questions.md",
     "frontend/Authentication.md",
     "Test.md",
     "cooking/汤/玉米排骨汤.md",
