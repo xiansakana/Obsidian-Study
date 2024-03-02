@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md"
+                "file": "miscellaneous/Hexo搭建个人网站.md"
               }
             }
           },
@@ -171,6 +171,8 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "miscellaneous/Hexo博客增加书单集.md",
+    "miscellaneous/Github搭建免费图床.md",
     "interview/resume/中文/竖版-鲍嘉轩-安徽大学-计算机科学与技术.pdf",
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4",
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4.crdownload",
@@ -180,8 +182,6 @@
     "interview/resume/中文/E9B6C23FF9DB2947E690BF8518A2C9DD.png.crdownload",
     "interview/resume/中文",
     "interview/resume/新建文件夹",
-    "miscellaneous/Hexo博客增加书单集.md",
-    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "replace_md_url.py",
@@ -202,7 +202,6 @@
     "interview/bq/其他/IMG_1188.JPG",
     "interview/bq/其他/IMG_1187.JPG",
     "interview/bq/其他/IMG_1194.JPG",
-    "interview/bq/其他",
     "frontend/Advanced HTML-CSS.md",
     "frontend/Advanced-JavaScript.md",
     "backend/Springboot.md",
