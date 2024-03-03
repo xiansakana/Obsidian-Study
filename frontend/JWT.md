@@ -9,13 +9,13 @@ abbrlink: 1bb08f7a
 date: 2023-11-24 20:48:25
 ---
 
-## HTTP is a stateless protocol
+# HTTP is a stateless protocol
 
 HTTP 是一种无状态协议(stateless protocol)。无状态协议是指，此协议不要求服务器在多个 request 期间保留有关每个用户的信息或状态。例如，如果我们服务器中的 session 储存了某个送到客户端的 session id 何时会过期，则这就是 stateful。 (但这在世界上的服务器是很常见的。之前介绍过的 express-session 这个 package 也是 stateful。)
 
 在 HTTP 协议被设计时，之所以将 HTTP 定义成无状态协议是因为，如果服务器不需要跟踪多个请求的状态(state)，就能够简化客户端和服务器之间所需要沟通的次数与需要传输的数据量。如果要求服务器维护客户端访问的状态，则发出和回应 HTTP request 的结构将更加复杂。
 
-## Stateful and Stateless Authentication
+# Stateful and Stateless Authentication
 
 在验证使用者的方面，基本上可以分为两种：
 
@@ -42,7 +42,7 @@ Stateless Authentication 的缺点在于：
 1. 不能随时撤销 session：由于 session 数据存储在客户端，服务器无法删除 session 。
 2. 制作难度较高：相比于 Stateful Authentication，使用 Stateless Authentication 需要更多的技术。
 
-## JWT (Json Web Token)
+# JWT (Json Web Token)
 
 JWT 验证的逻辑步骤：
 

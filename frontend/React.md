@@ -10,7 +10,7 @@ abbrlink: d8a440d1
 date: 2023-11-22 23:04:10
 ---
 
-## SPA
+# SPA
 
 若我们有一个后端的网路服务(Web Service)已经能够正常运作且受到保护，只有经过身份验证和授权的用户才能调用这个 API，则我们可以使用网页前端的框架来架设网站，并且连结到此 API。
 
@@ -29,7 +29,7 @@ date: 2023-11-22 23:04:10
 
 市面上有几个热门框架可以制作 SPA，包括 React.js（由 Facebook 开发和使用）、Angular.js （ 由 Google 的 Angular 团队以及社群共同领导 ）和 Vue.js。
 
-## React
+# React
 
 React（也称为 React.js 或 ReactJS）是一个免费和开源的前端 JavaScript 框架，用 UI 组件来架构使用者介面。它由 Meta（以前的 Facebook）和个人开发人员社区维护。 React 可用作于开发 SPA 网页。 React 的基本原理是，用 JavaScript 来生成 HTML。
 
@@ -43,7 +43,7 @@ React（也称为 React.js 或 ReactJS）是一个免费和开源的前端 JavaS
 2. React 最有用的特性之一是，它能够更改网站上的 Components，而无需更新整个 DOM。这是通过虚拟 DOM (virtual DOM)完成的。虚拟 DOM 是 DOM 的虚拟表示(virtual representation)或副本(copy)。每当用户执行操作时，例如点击按钮，React 都会更新虚拟 DOM，将更新后的与之前的版本进行比较，检测差异，然后只更新受影响的对象而不是刷新整个 DOM。这使得网站反应速度更快、性能更高。
 3. JSX 代表 JavaScript XML，是 JavaScript 的语法扩展，它允许写程式的人在 JavaScript 代码中，嵌入类似 HTML 语法的程式码。 React 的工作就是将 JSX 换成 DOM 元素。
 
-## Get Started with React
+# Get Started with React
 
 用指令 npx create-react-app app-name 就可以生成一个 React 的专案。 (npx 代表 Node Package Execution，是 npm 内建的功能。Npx 是一个 npm package 运行程序，可以从 npm 拿到 package 并且直接执行，甚至无需在电脑上安装该 package。)
 React 专案内的基本架构如下图：
@@ -71,7 +71,7 @@ React 专案内的基本架构如下图：
 >   ```
 > - 安装 extension: ES7+ React/Redux/React-Native snippets
 
-## JSX
+# JSX
 
 JSX 的功能让我们可以在 JavaScript 内部，使用类 HTML 的程式码来制作 Component。 （ React 并不要求使用 JSX，但大部分人觉得在 JavaScript 程式码中撰写使用者界面的同时，这是一个很好的视觉辅助）
 
@@ -130,7 +130,7 @@ JSX 的特殊语法如下：
    };
    ```
 
-## Props
+# Props
 
 在 React 当中，每个 Component 都可以有自己的属性(Props, properties)。 Props 可以由 HTML 标签的 attributes 传递给 Component。例如：
 
@@ -191,7 +191,7 @@ const App = () => {
 };
 ```
 
-## 事件处理
+# 事件处理
 
 使用 React element 处理事件跟使用 DOM element 处理事件是十分相似的。它们有一些语法上的差异：
 
@@ -256,7 +256,7 @@ const buttonHandler = () => {
 </button>;
 ```
 
-## State
+# State
 
 使用 React 的其中一个好处在于，能够只更改网站上必须改变的 Components，而无需更新整个 DOM。实现这个功能的工具是 State。State 是透过 React Hooks 当中的 useState 来完成的。
 
@@ -291,7 +291,7 @@ const Info = () => {
 };
 ```
 
-## State Lifting
+# State Lifting
 
 我们有时会希望两个 Component 之间可以共享某个 state。如果两个 Component 属于不同链同层级或是不同链不同层级，则我们需要将 state 往两边最近的 common ancestor (ancestor component)的方向移动。这样的做法就叫做「state lifting」。
 
@@ -356,7 +356,7 @@ const Info = ({ messages, setMessages }) => {
 export default Info;
 ```
 
-## useEffect
+# useEffect
 
 在程式语言里，一个函数通常只会做两件事：
 
@@ -399,7 +399,7 @@ const App = () => {
 };
 ```
 
-## Class Component, Life Cycle
+# Class Component, Life Cycle
 
 React 16 版本以前，Component 的制作方式只有一种，那就是使用 class component。 Class Component 内部自动带有 State 以及跟 Component 生命周期(Component Life Cycle)有关的函数。
 
@@ -508,7 +508,7 @@ React 中的每个 Component 都有一个生命周期(Life Cycle)，而我们可
 
 关于 useEffect 如何跟三个生命周期函数互换，可参考 https://zh-hant.reactjs.org/docs/hooks-effect.html。
 
-## React Router
+# React Router
 
 因为 Create React App 并不自动包含 page routing 的功能，所以最有名的解决方案是使用 react-router-dom 这个 package。 React Router Dom 中，App.js 的语法是：
 

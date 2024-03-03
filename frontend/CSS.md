@@ -14,7 +14,7 @@ date: 2023-10-19 01:24:41
 - [DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM) Tree (Document Object Model)：加载到浏览器中的网页的树状表示。浏览器加载网页时，会创建该页面的 DOM Tree。
 - [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment 语法为`/**/`。
 
-# 基本语法
+## 基本语法
 
 ## 放置位置
 
@@ -50,7 +50,7 @@ h1 {
 }
 ```
 
-### 颜色设定
+## 颜色设定
 
 - Color Keywords([named-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/named-color)): red, black, purple, green, coral 等。
 - [rgb](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/rgb): 红绿蓝 0-255
@@ -58,7 +58,7 @@ h1 {
 - [hex-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/hex-color)
 - [HSL](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value/hsl): 色相 Hue，饱和度 Saturation，亮度 Lightness
 
-### CSS Selectors 选择器
+## CSS Selectors 选择器
 
 - Universal Selector (`*`)
 
@@ -187,9 +187,9 @@ p::first-line {
 }
 ```
 
-### CSS 概念
+## CSS 概念
 
-#### Inheritance
+### Inheritance
 
 - Parents and Children
 
@@ -199,19 +199,19 @@ p::first-line {
   > user styling: Program Setting
   > user agent styling: Browser Default (优先度可能大于 inheritance，比如`<a>`颜色通常需要额外设定)
 
-#### Conflicting Styling
+### Conflicting Styling
 
 - 单个或者多个 Stylesheet 重复设定
 - 处理原则：Priority, Specificity, Order Rule。
 
-#### Priority
+### Priority
 
 1. Inline Styling
 2. User Stylesheet (内部顺序由 Specificity 决定)
 3. User Agent Stylesheet
 4. Inheritance
 
-#### Specificities
+### Specificities
 
 1. id - specificity (1, 0, 0)
 2. class - specificity (0, 1, 0)
@@ -220,7 +220,7 @@ p::first-line {
 > Order Rule:
 > Specificity 相同时，后面样式覆盖前面；后面`<link>stylesheet`覆盖前面。
 
-### CSS 单位
+## CSS 单位
 
 - absolute units: px, in, mm, cm 等
 - relative units
@@ -233,7 +233,7 @@ p::first-line {
 4. vh (viewport height): 浏览器视窗高度的 1/100
 5. %: 相对于 parent element 的值
 
-### 文字样式
+## 文字样式
 
 - [font-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size)
 - [text-align](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align): right, left, center
@@ -244,7 +244,7 @@ p::first-line {
 - [text-indent](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-indent)
 - [font-weight](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight): normal, bold, lighter, bolder
 
-### 背景样式
+## 背景样式
 
 - [background-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-color)
 - [background-image](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image)
@@ -252,7 +252,7 @@ p::first-line {
 - [background-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position): top, left, right, bottom, center
 - [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
 
-### Box Model
+## Box Model
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202310182246305.png)
 
@@ -318,15 +318,15 @@ padding: unset;
   - border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
   - content-box: 默认值，元素的内容区的宽度就是 width
 
-### [Display](https://developer.mozilla.org/en-US/docs/Web/CSS/display)属性
+## [Display](https://developer.mozilla.org/en-US/docs/Web/CSS/display)属性
 
-#### Outer dispaly type
+### Outer dispaly type
 
 - block
 - inline
 - inline-block
 
-#### Inner display type
+### Inner display type
 
 - flex
 - grid
@@ -338,7 +338,7 @@ padding: unset;
 | inline-block | 不换行   |   可以设定    |             可以设定              |       可以设定       | 只有`<img>`, `<button>`, `<input>`, `<select>`, `<textarea>` |
 |  flex item   | 不换行   |   可以设定    |             可以设定              |       可以设定       |                  任何在 flex 之下的 element                  |
 
-### [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
+## [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
 
 - static: 预设值，`top`, `right`, `bottom`, `left`  和  `z-index`  属性无效。
 - relative: 根据 normal flow 进行定位
@@ -350,17 +350,17 @@ padding: unset;
 
 > z-index
 
-### 表格样式
+## 表格样式
 
 - [border-collapse](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-collapse): collapse, seperate（边框合并或者分开）
 - [overflow-x](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow-x): visible, hidden, clip, scroll, auto（设置滚动条或溢出内容）
 
-### Opacity（不透明度）和 Cursor
+## Opacity（不透明度）和 Cursor
 
 - [opacity](https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity)
 - [cursor](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor): help, wait, crosshair, not-allowed, zoom-in, grab...
 
-### [Transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition)
+## [Transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition)
 
 - property name | duration | [easy function](https://easings.net/)
 
@@ -375,7 +375,7 @@ h1:hover {
 }
 ```
 
-### [Transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
+## [Transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
 
 - translate(-50%, -50%)
 - rotate(180deg)
@@ -389,7 +389,7 @@ h2:hover {
 }
 ```
 
-### [CSS Animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)
+## [CSS Animation](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)
 
 - animation-name
 - animation-duration

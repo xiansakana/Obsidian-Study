@@ -10,7 +10,7 @@ abbrlink: aaac2584
 date: 2023-11-14 09:43:11
 ---
 
-## Mongoose
+# Mongoose
 
 若要在程式语言中使用或存取 MongoDB，我们需要工具让数据库可以跟 JavaScript 程式码连结。这类工具的特点就是，能够将 JavaScript 中的 Object 转换成 MongoDB 当中的 document，因此，这类的工具叫做 object-document mapping (ODM)。在市面上，众多 MongoDB 的 ODM 当中，最热门的叫做 mongoose。
 
@@ -24,7 +24,7 @@ date: 2023-11-14 09:43:11
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311132010171.png)
 
-## Model and Schema
+# Model and Schema
 
 在 Mongoose 中，两个 keyword 需要记得：
 
@@ -108,7 +108,7 @@ app.listen(3000, () => {
 });
 ```
 
-## CRUD in Mongoose
+# CRUD in Mongoose
 
 常见在 Mongoose 中，跟 CRUD 有关的操作是：
 
@@ -253,7 +253,7 @@ app.listen(3000, () => {
 
 其他的所有操作，请参考 Mongoose CRUD 页面： https://mongoosejs.com/docs/queries.html
 
-## Schema Validators
+# Schema Validators
 
 如果我们希望 Collections 中的数据，在被存放到 Collections 之前，可以经过验证(例如，员工数据库的薪资栏位不能小于 0)，则可以在 Schema 中设定每个属性的验证器(validators)来达到此功能。
 
@@ -357,7 +357,7 @@ name:{  type: String,  required: true}
 
 跟 number 有关的验证器有：min, max, enum。
 
-## Instance Method
+# Instance Method
 
 在 Mongoose Model 当中的每笔数据都叫做 document，而 document 又叫做 instance。若我们希望某个 model 中的所有 documents 都可以使用某个 method，则可以将此 method 定义在 Schema 上。像这样定义在 Schema 上的 method 被称为 instance method。 Instance method 的语法有两种。第一种是在 Schema 内设定 methods 属性并且给予一个对象，对象内部有 methods：
 
@@ -428,7 +428,7 @@ Student.find({})
   });
 ```
 
-## Static Methods
+# Static Methods
 
 如果我们想要定义某个专属于 Schema 使用的 method，则可以使用 static method。 Static method 属于 Schema 本身，而不属于 Mongoose Model 内部的 documents。此概念来自于面向对象程式设计。 Static methods 的设置方式有以下三种：
 
@@ -544,7 +544,7 @@ Student.findAllMajorStudents("Mathematics")
   });
 ```
 
-## Mongoose Middleware
+# Mongoose Middleware
 
 Mongoose Middleware (也称为 pre, post hooks) 是在异步函数执行期间传递控制权的函数。 Middleware 是定义在 Schema 上的。
 

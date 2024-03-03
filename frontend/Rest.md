@@ -11,7 +11,7 @@ abbrlink: 5d268eee
 date: 2023-11-22 22:37:26
 ---
 
-## REST
+# REST
 
 表现层状态转换（英语：Representational State Transfer，缩写：REST）是 Roy Thomas Fielding 博士于 2000 年在他的 UC Irvine 博士论文中提出来的一种全球资讯网软体架构风格，目的是便于不同软体/程式在网路（例如 WWW）中互相传递资讯。
 
@@ -19,7 +19,7 @@ REST 是根基于超文字传输协定(HTTP)之上而确定的一组约束和属
 
 符合或相容于这种架构风格（简称为 REST 或 RESTful）的网路服务，允许使用者端发出以统一资源标识符（简称为 URI）存取和操作网路资源的请求，而与预先定义好的无状态操作集一致化。相对于其它种类的网路服务，例如 SOAP 服务，则是以本身所定义的操作集，来存取网路上的资源。
 
-## RESTful API
+# RESTful API
 
 如果我们要将服务器架构成一种服务(或是 API)，让任何使用者都可以存取数据，则可以将制作一个 RESTful API：
 
@@ -190,7 +190,7 @@ app.listen(3000, () => {
 });
 ```
 
-## RESTful Routing
+# RESTful Routing
 
 如果我们的服务器不提供服务，而是网页功能，还是可以将网页服务器内部的 routing 做成 REST 风格，称为 RESTful Routing。通常来说，RESTful Routing 遵守以下的表格。当然，每个网站也可以设定自己的 Restful Routing。以下的表格与 Ruby on Rails 框架相同：
 

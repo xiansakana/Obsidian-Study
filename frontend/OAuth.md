@@ -9,7 +9,7 @@ abbrlink: 6529f8fe
 date: 2023-11-22 22:58:04
 ---
 
-## OAuth
+# OAuth
 
 我们可以依靠另一方（如 Facebook）来验证某人的真实性，而不是使用密码。大多数网站让用户在本地身份验证（local authentication）或使用其他服务之间进行选择。我们可以使用 OAuth 以帮助新旧用户简化注册/登录过程。假设用户已经在浏览器中登入 Facebook，则用户只需单击一个按钮即可登入我们的网站，而不需要填写个人数据表格或是注册新的密码。
 
@@ -24,7 +24,7 @@ OAuth 2.0 是一种安全协议，协议规范能让第三方应用程式以有�
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311201924672.png)
 
-## OAuth 2.0 详细流程
+# OAuth 2.0 详细流程
 
 1. Site A 到 Site B 注册自己，并且从 Site B 拿到 Secret 以及一个 ID。
 2. 当使用者 X 告诉 Site A 去存取 X 在 Site B 上的数据，使用者 X 会被透过 Site A 的 ID 送到 Site B，并且告诉 Site B 说自己同意 Site A 来获取自己存在这里的信息。
@@ -33,7 +33,7 @@ OAuth 2.0 是一种安全协议，协议规范能让第三方应用程式以有�
 5. Site B 确认了 Site A 给的 secret，确认没有其他网站冒充 Site A，并且透过 Authorization Code 确认使用者 X 确实给了 Site A 授权来存使用者 X 的信息，于是 Site B 将 security token 寄给 Site A。
 6. Site A 接下来拿者 security token 到 Site B 去取得所需数据。
 
-## OAuth 详细流程
+# OAuth 详细流程
 
 1. 架设 Client 叫做 Spencer Cool Website，网址是www.spencercool.com。 Client 需要先到 Google 注册自己，表明自己会使用 Google OAuth，而 Google 会给 Spencer Cool Website 两组英数字码：client_id 以及 secret。也需要设定 redirect URL，是 Google 验证使用者完成后，需要将使用者导向到 Spencer Cool Website 的地方。
 2. Spencer Cool Website 需要制作一个 anchor tag， 连结到 /auth/google。网页使用者点击链接，就会被送到 Google 登入页面。
@@ -45,13 +45,13 @@ OAuth 2.0 是一种安全协议，协议规范能让第三方应用程式以有�
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311201938540.png)
 
-## Passport 套件
+# Passport 套件
 
 Passport.js 是适用于 Node.js 中，用来做身份验证的 middleware。使用 Passport.js，我们可以将 OAuth 身份验证的功能轻松集成到任何基于 Node 和 Express 的应用程序中。
 
 Passport 库提供了 500 多种身份验证机制，包括本地身份验证、Google、Facebook、Twitter、 GitHub 、LinkedIn、 Instagram 登入等等功能。
 
-## Passport 套件语法
+# Passport 套件语法
 
 因为 Passport 把所有跟 OAuth 有关的步骤都自动完成了，所以我们的程序码是从获得 token 与 resource owner 的数据后，以及 redirect 的部分开始撰写。 (内部的步骤有点繁琐且复杂，需要一些耐心。)
 
@@ -80,7 +80,7 @@ Passport 在 deserializeUser()额外附加的一个功能，就是当 deserializ
 - req.logout() – 登出使用者。 Passport 会自动删除 session。
 - req.isAuthenticated() – 给定 boolean 的值，代表使用者是否被认证过。
 
-## 整体流程
+# 整体流程
 
 1. 使用者按下通过 Google 登陆后，会进入 Google Strategy 的 callback function。
 2. 在 callback function 内部，我们可以决定是否储存使用者信息。执行 done()后，连接到第三步骤。

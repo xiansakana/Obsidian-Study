@@ -10,7 +10,7 @@ abbrlink: 5fb72f5f
 date: 2023-11-01 05:15:52
 ---
 
-## Document Object Model ([DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM))
+# Document Object Model ([DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM))
 
 文件对象模型（Document Object Model, DOM) 是 HTML 的程序介面。它提供了一个文件（树）的结构化表示法，并定义让程序可以存取并改变文件架构、风格和内容的方法。DOM 提供了文件以拥有属性与函式的节点与物件组成的结构化表示。节点也可以附加事件处理程序，一旦触发事件就会执行处理程序。 本质上，它将网页与脚本或程序语言连结在一起。
 
@@ -32,7 +32,7 @@ date: 2023-11-01 05:15:52
 
 DOM 提供 2 种节点集合：[HTMLCollection](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCollection) (element nodes) 以及[NodeList](https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList) (所有三种 nodes)。
 
-### [Window Object](https://developer.mozilla.org/zh-CN/docs/Web/API/Window)
+## [Window Object](https://developer.mozilla.org/zh-CN/docs/Web/API/Window)
 
 在 JavaScript 当中的 window object 代表目前程序码正在运行的电脑视窗 (通常就是指我们的浏览器视窗)。Window Object 可使用的常见 methods 包含：
 
@@ -50,7 +50,7 @@ Window Object 可使用的常见 properties 包含：
 - [window.localStorage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage): return 一个 local storage 对象。
 - [window.sessionStorage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage): return 一个 session storage 对象。
 
-### Document Object
+## Document Object
 
 Document Object 常用的 methods 有：
 
@@ -112,7 +112,7 @@ console.log(hellos.length); // 3
 console.log(helloss.length); // 2
 ```
 
-### 差别比较
+## 差别比较
 
 Element Object 是三种节点的其中一种。每个节点(Node)有 childNodes 的属性。Return type 为 NodeList，内部包含此节点在 DOM Tree 之下第一层的所有节点的所有节点。
 
@@ -135,7 +135,7 @@ Element Object 是三种节点的其中一种。每个节点(Node)有 childNodes
 | Attributes | length, index                                                   | length, index                                                   |
 | forEach    | Allowed                                                         | Not allowed                                                     |
 
-## Function Declaration and Expression
+# Function Declaration and Expression
 
 Function Express 的用途主要在于：
 
@@ -198,7 +198,7 @@ window.addEventListener("click", function () {
 })(10, 5);
 ```
 
-## Arrow Function Expression
+# Arrow Function Expression
 
 JavaScript 中的函数是 first-class objects (一等对象)。所谓的 function 是 first-class objects 是指，我们可以：
 
@@ -262,7 +262,7 @@ console.log(addition(10, 20));
 > 5. 若 Arrow Function Expression 有加上 curly brackets，则一定需要加 return 关键字才会回传一个值。
 > 6. Arrow Function Expression 没有 this 关键字绑定，不应该用作 Objects 的 methods。
 
-## forEach() Method
+# forEach() Method
 
 forEach() 为每个阵列元素执行一次提供函数。 forEach()与 arrow function 协作的语法为：
 
@@ -305,7 +305,7 @@ hellos.forEach((hello) => {
 });
 ```
 
-## Element Objects
+# Element Objects
 
 在 DOM Tree 当中，每个 HTML 元素（可能）有自己独特的 properties 和 methods。除了这些独特的属性之外，所有 Element Objects 都必须具有此列表中的属性和方法：
 
@@ -432,7 +432,7 @@ button.style.backgroundColor = "green";
 button.style.color = "white";
 ```
 
-## Inheritance 继承
+# Inheritance 继承
 
 在面向对象的程序语言当中，我们可以将 attributes 和 methods 从一个 class 继承到另一个 class。用更简单的方式来说，从一个对象继承到另一个对象，这个过程称为 inheritance。
 
@@ -451,7 +451,7 @@ button.addEventListener("click", () => {
 });
 ```
 
-## JavaScript Events
+# JavaScript Events
 
 addEventListener() 可以让我们在 window object, document object 以及 element object 上面挂一个事件监听器(Event Listener)。事件监听器会不断的等待特定事件的发生。当有特定事件发生时，事件监听器就会执行所被赋予的 function。
 
@@ -460,7 +460,7 @@ addEventListener(type, listener);
 type 是指事件的类型。例如，一个 button 可以挂著 click 这种事件的事件监听器、window object 可以挂著 resize 这种事件的事件监听器。
 listener 通常为一个一般的 function，或更常见的是一个 arrow function expression。当事件发生在 HTML element 上面时，JavaScript 会自动执行 listener 这个 callback function。Callback function 被执行时， JavaScript 会在把 event object 当作 argument，放进 listener 内部去执行函式。
 
-### JavaScript Events Objects
+## JavaScript Events Objects
 
 JavaScript Events Objects 的继承关系如下：
 
@@ -519,13 +519,13 @@ b.addEventListener("click", (e) => {
 });
 ```
 
-### Event Bubbling
+## Event Bubbling
 
 Event Bubbling 的概念是指，当一个事件发生在一个元素上时，它首先在其上运行 event handler ，然后运行其 parent element 的 event handler ，然后一直往上运行其他祖先的 event handler 。
 
 之所以称作 Event Bubbling 是因为，这个过程被称为就像冒泡一样，事件像水中的气泡从内部元素向上通过 parent element 往上走。
 
-## [Local Storage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage) and [Session Storage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage)
+# [Local Storage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage) and [Session Storage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage)
 
 Storage 是在浏览器中一个存储数据的地方(这个地方并不是数据库)。在 Storage 内部储存的数值都是 key-value pair，且不论是 key 还是 value，资料型态都必须是 String。如果我们将要储存在 Storage 的资料不是 String，那麽资料会先被强制转换为 String ，再被储存到 Storage 内部。
 

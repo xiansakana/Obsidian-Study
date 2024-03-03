@@ -9,7 +9,7 @@ abbrlink: 4df281b8
 date: 2024-01-26 22:58:42
 ---
 
-## 创建 Github 新仓库
+# 创建 Github 新仓库
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262255535.png)
 
@@ -21,9 +21,9 @@ date: 2024-01-26 22:58:42
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262256112.png)
 
-## 上传图片
+# 上传图片
 
-#### 下载 PicGo
+## 下载 PicGo
 
 推荐使用一个开源图床工具  [PicGo](https://molunerfinn.com/PicGo/)  来作为我们的图片上传工具，打开链接的官网后点击免费下载后会跳转到 Github 的界面。
 
@@ -41,7 +41,7 @@ date: 2024-01-26 22:58:42
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262256532.png)
 
-#### 创建 Github token
+## 创建 Github token
 
 在 Github 里打开 Settings
 
@@ -63,7 +63,7 @@ date: 2024-01-26 22:58:42
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262257228.png)
 
-#### 配置 PicGo
+## 配置 PicGo
 
 打开 PicGo，选择图床设置中的 GitHub 然后设置如下，其中仓库名是刚刚创建的仓库，分支名一般是 main，Token 就是刚刚生成的那个，最后点击确定。
 

@@ -9,14 +9,14 @@ abbrlink: 9192d298
 date: 2023-10-18 04:18:54
 ---
 
-## vscode 扩展
+# vscode 扩展
 
 - live server（注意要信任工作区）
 - Prettier - Code formatter （设置中搜索 Format On Save，然后勾选 Editor: Format On Save；搜索 Default Formatter，然后选择 Prettier- Code formatter）
 - Auto Rename Tag
 - Code Runner
 
-## 基本语法
+# 基本语法
 
 - [`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)anchor tag 可以设定 target 属性
 
@@ -56,7 +56,7 @@ date: 2023-10-18 04:18:54
   放在 block elements 中的内容。
   内联元素不会从新行开始，内联元素仅占用必要的宽度。
 
-## [表格 Table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table)
+# [表格 Table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table)
 
 `<table>` `<tr>` `<th>` `<td>` `<th>` `<thead>` `<tbody>`
 `<colspan>` `<rowspan>`: 合并表格项
@@ -83,7 +83,7 @@ date: 2023-10-18 04:18:54
 </table>
 ```
 
-## [表单 Form](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form)
+# [表单 Form](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form)
 
 ```html
 <form action="">
@@ -103,7 +103,7 @@ date: 2023-10-18 04:18:54
 </form>
 ```
 
-### method 属性
+## method 属性
 
 - [GET](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/GET)：表单数据会附加在  `action`  属性的 URL 中，并以 '?' 作为分隔符，[没有副作用](https://developer.mozilla.org/zh-CN/docs/Glossary/Idempotent)  时使用这个方法。
 - [POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST)：用来隐藏信息，表单数据会包含在表单体内然后发送给服务器。
@@ -229,7 +229,7 @@ date: 2023-10-18 04:18:54
 ></textarea>
 ```
 
-## 其他
+# 其他
 
 - [`<br />`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br) break 换行
 - [`<hr />`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr) 主题分割（水平分割线）

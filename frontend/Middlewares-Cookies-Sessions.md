@@ -11,7 +11,7 @@ abbrlink: faaf9cfa
 date: 2023-11-22 22:54:01
 ---
 
-## Express Middlewares
+# Express Middlewares
 
 Express 中的 Middleware(中间件)除了可以放在所有的 routes 之前，也可以放在 route 内部的 path 以及 callbackFn 之间。语法是：
 
@@ -23,7 +23,7 @@ Middleware 中的 callbackFn 内可以有三个参数，分别为 req, res, 以�
 
 在 try catch block 内部，我们可以把 catch()到的错误，用 next()往 middleware 的方向传送。此时，我们在 express 的 app.use()所使用的 callbackFn 则需要四个参数： err, req, res, 以及 next。
 
-## express.Router
+# express.Router
 
 随着服务器的扩大，routes 的数量可能变得非常巨大。此时，将 routes 根据功能分类就变得相当重要。 Express.js 提供了 express.Router 的功能，让我们可以将 routes 分门别类。 express.Router 的语法为：
 
@@ -45,7 +45,7 @@ const birds = require('./birds’);
 app.use('/birds', birds);
 ```
 
-## Cookies
+# Cookies
 
 Cookies 是服务器传送给浏览器，并在客户端下次访问同一网站时一同发回的一小段文字。
 
@@ -111,7 +111,7 @@ app.get("/seeCookie", (req, res) => {
 });
 ```
 
-## Signing Cookies
+# Signing Cookies
 
 在计算机科学当中，哈希函数的功能是，把信息或数据压缩成摘要(或指纹)，或使得数据量变小或变大，将数据的格式转换，重新建立一个叫做哈希值(hash values)。好的哈希函数应该要有以下的特点：
 
@@ -147,7 +147,7 @@ Cookie 签名的完整流程是：
 3. 客户端或许会篡改 signed cookies。
 4. 客户端下次发送 HTTP request 到服务器时，服务器会将 value 以及 secret 拿去做运算，得到 HMAC 值。再将 HMAC 值与客户端送来的 signed cookies 对照。如果两者不同，则代表 signed cookies 遭到篡改。服务器即认定此为无效的 signed cookies。
 
-## Cookies and Storage
+# Cookies and Storage
 
 Cookies 以及 storage (local storage、session storage 的统称) 的差别在于：
 
@@ -158,7 +158,7 @@ Cookies 以及 storage (local storage、session storage 的统称) 的差别在�
 | Data Size  | 对每个网站来说，最大 4095Bytes         | 最大 5MB                       |
 | Expiration | 有可能会过期                           | 不会过期                       |
 
-## Sessions
+# Sessions
 
 使用 Cookies 可能会有以下两个问题：
 
@@ -225,7 +225,7 @@ app.use(
 );
 ```
 
-## express-sessions
+# express-sessions
 
 如果我们想要获得 session id 所相对应的 session data，我们只需要在 Express 当中取得 request object 的 session 属性即可：
 
@@ -272,7 +272,7 @@ app.get("/secret2", checkUser, (req, res) => {
 });
 ```
 
-## 环境变量
+# 环境变量
 
 直接在程序码内储存秘密是一个不好的习惯。通常来说，我们会把秘密存在环境变量内部。环境变量(environment variable)是一个动态的值，可以影响电脑上运行的程序。它们是正在运行程序的一部分。
 
@@ -304,7 +304,7 @@ MYSESSIONSECRETKEY="熊貓跟貓熊哪個是對的?"
 .env
 ```
 
-## Flash
+# Flash
 
 Flash 是在 session 当中一个特别的储存空间，可以用来储存一些简短的信息。例如，登入成功或是登入失败的信息。如果要使用 flash，可以使用 connect-flash 套件。
 

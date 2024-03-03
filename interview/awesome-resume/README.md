@@ -19,7 +19,7 @@
 | 免费项目实战课程 | <a href="https://github.com/resumejob/free-project-course">https://github.com/resumejob/free-project-course/</a> |
 
 
-### 目录
+# 目录
 
 - [Checklist](#checklist)
 - [English](#English)
@@ -33,7 +33,7 @@
 
 
 
-## <a name="checklist">Checklist</a>
+# <a name="checklist">Checklist</a>
 - [ ] 使用 https://www.promptio.net/Resume 来优化简历描述
 - [ ] 按照时间倒序列出工作经历以及项目经验
 - [ ] 检查电话与邮箱地址是否正确，领英与简历同步更新
@@ -42,11 +42,11 @@
 - [ ] 使用 PDF 格式并且保持一页篇幅，简历命名方式为 “姓名_岗位.pdf”
 
 
-## <a name="English">English</a>
+# <a name="English">English</a>
 
-### <a name="Summary">Summary</a>
+## <a name="Summary">Summary</a>
 
-#### Experienced
+### Experienced
 
 - Seasoned Software Engineer with 8 years of experience in the field of artificial intelligence, proficient in Python, TensorFlow, and Keras. Architected and deployed a machine learning platform that improved data processing speed by 40% for a client base of over 100,000. Awarded 'Engineer of the Year' for exceptional leadership in innovation and collaborative project success.
 - Software Engineer with a decade of experience in cloud infrastructure, skilled in AWS, Kubernetes, and Terraform. Played a key role in the migration and management of a cloud solution that now supports over 50 enterprise clients, leading to a 50% reduction in on-premise costs. Recognized with the 'Best Technical Achievement' award for optimizing cloud services and outstanding teamwork.
@@ -54,7 +54,7 @@
 - Software Engineer with over 7 years of experience in mobile application development, adept in Swift and Android SDK. Directed the launch of a series of health and wellness apps, amassing over 3 million downloads, and a 4.5+ star rating. Received the 'Innovative Mobile App' accolade for outstanding app design and user experience.
 - Software Engineer with 5 years of experience in SaaS product development, proficient in Ruby on Rails and JavaScript frameworks. Led the development of a project management tool that increased customer productivity by 30%, servicing over 10,000 active users. Commended with the 'SaaS Innovator' award for driving product growth and leading a high-performing development team.
 
-#### New Grad
+### New Grad
 
 - Newly graduated Software Engineer with 2+ years of focused experience in Python and C#. Instrumental in the design and implementation of a campus-wide resource management system that is now actively used by over 4,000 students and faculty. Awarded 'Best Senior Project' for outstanding software development skills and project execution.
 - Computer Science graduate with an emphasis on mobile development, accumulating 1+ years of experience in Swift and Kotlin. Successfully developed and launched a nutrition tracking app for a senior project, currently with over 1,000 downloads. Lauded for exceptional problem-solving abilities and received the 'Most Innovative Project' accolade from the department.
@@ -63,7 +63,7 @@
 - Software Engineer with a fresh perspective from a rigorous Computer Science program, offering 2 years of practical experience in Java and SQL. Successfully developed a library management system used by the university library to track and manage over 20,000 books and resources. Commended with the 'Academic Achievement in Software Development' for maintaining a consistent track record of top-tier project deliverables.
 
 
-### Simple Summary
+## Simple Summary
 - Experienced frontend engineer with a strong background in React and Vue development. Skilled in building user-friendly, high-performance web applications.
 - Highly skilled frontend engineer with extensive experience using JavaScript to develop interactive, user-friendly web applications. Proficient in using modern frameworks and libraries to optimize performance and deliver top-quality products.
 - Experienced backend engineer with a strong background in Java development. Skilled in building scalable, high-performance systems and services to support a wide range of business needs.
@@ -78,9 +78,9 @@
 - Innovator of next-generation solutions, systems and applications giving companies a competitive edge and producing outstanding results for customers.
 - Designed and developed an auto tweeting utility that gave exposure to buyers and sellers in social media.
 
-### <a name="Work Experience">Work Experience</a>
+## <a name="Work Experience">Work Experience</a>
 
-#### Backend
+### Backend
 
 - Developed team management module for in-house CRM system in PHP that helped managers to assign members and keep track of their performance by using comprehensive dashboards and reports.
 - Designed and implemented a fullstack solution to display XYZ in data centers worldwide.
@@ -116,7 +116,7 @@
 - Improved the kernel of the high-volume digital ads platform and ensured high throughput, low latency.
 - Led a mobile backend project as the on-site solution architect, collaborated closely with client management teams.
 
-#### Frontend
+### Frontend
 - Design and developed different admin and front-end section of the application that provided a gateway to members to interact with each other as well as customer support.
 - Collaborated with senior consultants (developers, designers, UX designers) and project/product managers in a small, agile team building responsive, cross-browser compatible and scalable web apps. Daily stand-up. Peer reviewing PR. Involved in front-end & back-end. Exposed to UX.
 - Developed the front-end of customers’websites and newsletters and of the company's own web portals.
@@ -145,13 +145,13 @@
 - Built a high-performance data integration tool for XXX, a leading media group; migrated its contents in minutes.
 - Built a web-based application for XXX to enable central management via the portal. 
 
-#### Referral
+### Referral
 - He/She is a graduate student at the University of B. In his/her undergraduate years, he Led the development of C, which has been highly acknowledged by classmates and teachers. He/She has experience in web development with Javascript, Python, C++, and Java, and database management with SQL and NoSQL. He/She is a motivated, teamwork-oriented and adaptive individual who loves working under multi-cultural and fast-paced conditions.
 - He/She is a graduate student at B. He/She is interested in solving complex real-world problems with software and built several projects using Java, C++ and Javascript. Besides, he is also familiar with MySQL, PostgreSQL. He had experience in working at C, D as a software engineer, which helps him/her gain hands-on experience in web application development. He/She is a motivated, teamwork-oriented and adaptive individual who loves working under multi-cultural.
 - As a software engineer, He/She has consistently demonstrated their ability to deliver high-quality solutions. He/She are highly skilled in a range of technologies and are always looking for ways to improve their skills and stay current with the latest industry developments. [Name] is a valuable asset to any team and I highly recommend He/She."
 - As a recent graduate of XYZ University, He/She has demonstrated a strong understanding of software engineering principles and practices. He/She have shown a willingness to learn and are eager to apply their skills in a professional setting. He/She is a highly motivated individual with a passion for technology and I am confident that they will be an asset to any team they join."
 
-#### Cover Letter
+### Cover Letter
 
 > Dear Hiring Manager,
 > 
@@ -248,9 +248,9 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 >
 
 
-## <a name="中文">中文</a>
-### 简介
-#### 通用
+# <a name="中文">中文</a>
+## 简介
+### 通用
 
 - 有良好的代码风格，注重代码质量，通过学习 XXX，XXX 等多个开源项目的架构与源码，确保代码具备健壮性与扩展性。
 - 具备良好的代码编程习惯及文档编写能力，参与 XXX，XXX 项目的核心部分代码编写，重构和维护。能进行技术攻关，突破关键技术瓶颈。
@@ -289,7 +289,7 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 - 熟悉移动网络通信机制，对 **HTTP、TCP/IP 协议**有较深刻的理解，熟悉网络性能优化且有成功实施经验。
 
 
-### 后端简介：
+## 后端简介：
 
 - 熟悉使用 **Tomcat** 应用服务器的应用部署和配置，熟悉 **jenkins** 自动化部署、测试。
 - 了解数据分析库 **Numpy 和 Pandas、matplotlib** 的原理，有数据处理、分析和建模的经验。
@@ -330,7 +330,7 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 - 熟悉 Mysql 工作原理及程序上如何高性能配置，了解主流开源 NoSQL 系统（Memcached、Redis、MongoDB等）的使用和原理，有分布式系统使用经验；
 - 使用 **Scrapy** 框架对采集目标进行数据收集，跟踪网页链接构建分类信息字段分析目标网址，使用** Xpath, Re **库提取信息。通过抓包工具获取 Ajax 链接并解析 json 数据。
 
-### 前端与移动端简介：
+## 前端与移动端简介：
 
 - 对前后端分离模式，可视化开发深入理解，对 Vue 和 react 有丰富的开发经验，具备一定的框架设计能力。
 - 熟练使用 XXX 开发框架，对浏览器渲染，异步编程，跨域等概念有清晰的认知，对常见库的源码实现有了解。
@@ -359,9 +359,9 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 - 熟悉 **Objective-C 与 Swift 语言**，掌握 iOS 开发中用代码与故事板实现 UI，网络通信，数据库等的基础知识，掌握 XCode 常用的调试技巧与测试方法，懂得 iOS 性能优化的常见思路。
 - 熟悉 **JS 与 WebView** 交互，熟悉第三方登录，分享，字符功能，熟悉 APP 上线发布，版本迭代的全部流程，有多个项目上线经验。
 
-### <a name="项目经验">项目经验</a>
+## <a name="项目经验">项目经验</a>
 
-#### 通用
+### 通用
 - 独自负责客户端从无到有的产品设计，研发，流程图及开发文档，用两个月的时间独立开发了初版的 APP，集成了支付模块、文件下载，数据本地缓存功能。
 - 负责项目管理，产品研发部门的工作任务分配，工作细化划分，保证项目按时上线。
 - 与产品经理保持沟通，对订单管理模块进行维护与高效重构，一个月修复超过后台管理系统 30个 Bug。
@@ -370,7 +370,7 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 - 作为软件开发团队的核心成员，为大数据应用设计开发高质量的软件平台。对微服务架构组件有实践经验，理解常见架构的高可用性与可扩展性。
 - 有项目云服务化或者相关开发以及项目调优，部署经验。熟悉大规模、高并发系统架构设计，能独立完成系统的设计及开发。
 
-#### 后端经验
+### 后端经验
 - 改造了 Laravel 的队列服务，使用 MySQL 实现存储与分发队列服务，实现了水平扩展，提高系统可用性，减少了 30% 服务器数量。
 - 从设定 Linux 环境，编译 MySQL，设定 Apache 与 Nginx 等服务器，到最后 PHP 的开发环境及参数设定，学习架设 LAMP，XAMMP 等开发环境。
 - 负责 XXX 系统的设计以及研发，帮助部门实现手机端以及网页端的统一管理。
@@ -384,7 +384,7 @@ A self-starter and eager to learn new things. I continuously seek to build my sk
 - 使用 K8S 实现微服务管理模块，实现了分布式任务调度，任务发现等核心功能。
 - 通过慢查询定位 MySQL 数据库查询瓶颈，通过 SQL 优化以及修改索引将查询时间从 1200ms 降低到 40ms
 
-#### 前端与移动端经验
+### 前端与移动端经验
 - 对 **ListView，ConvertView** 进行优化，并通过 **ViewHolder** 缓存 Item 条目，减少重复代码的冗余，减少 **30%** 页面加载时间。
 - 使用多个类实现不同功能，如 Loading 类负责加载数据和布局文件，Adapter 类负责 ListView 控件与展示数据。实现项目模块化开发，降低组件耦合度。
 - 使用 **AsyncSocket** 进行完成即时通讯功能，并协助组长完成客户端与嵌入式网的 **Socket** 对接与通信，实现通过 iOS 设备控制插座的开关、定时开关、温度检测及报警等 8个 功能。

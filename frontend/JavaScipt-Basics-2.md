@@ -9,7 +9,7 @@ abbrlink: ef214ab0
 date: 2023-10-24 03:56:41
 ---
 
-## Function 函数
+# Function 函数
 
 declare function:
 
@@ -23,7 +23,7 @@ function name([param]) {
 >
 > 每个 JavaScript 函数实际上都是一个对象。（代表每个 function 有 instance properties 以及 instance methods）
 
-## Array
+# Array
 
 Array 具有以下核心特征：
 
@@ -58,7 +58,7 @@ Array Instance Properties：[length](https://developer.mozilla.org/zh-CN/docs/We
 
 > 当 Array 内部的元素还有 Array 时，就被称为是 array of arrays。
 
-## [Object](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object)
+# [Object](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 每个 JavaScript 对象都有 properties 以及 method。属于对象的 function 被称为 method。 对象的属性与相对应的值是一种 key-value pair。获取对象属性的方式可以透过 dot notation 或是 []。JavaScript Object 是一种 hashtable。在 method 中的 this 关键字指的是调用该方法的对象。若某个 function 没有调用该 function 的对象，则 this 关键字则是指向 window 对象。
 
@@ -96,9 +96,9 @@ person.walk();
 > // reture true
 > ```
 
-## Loop
+# Loop
 
-### [For Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for)
+## [For Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for)
 
 ```javascript
 for (let i = 0; i < 11; i++) {
@@ -106,7 +106,7 @@ for (let i = 0; i < 11; i++) {
 }
 ```
 
-### [While Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/while)
+## [While Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/while)
 
 ```javascript
 let i = 0;
@@ -116,7 +116,7 @@ while (i < 10) {
 }
 ```
 
-### [Do while Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/do...while)
+## [Do while Loop](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/do...while)
 
 ```javascript
 let j = 0;
@@ -126,7 +126,7 @@ do {
 } while (j < 10);
 ```
 
-### Nested Loop
+## Nested Loop
 
 ```javascript
 let counter = 0;
@@ -138,7 +138,7 @@ for (let i = 0; i < 100; i++) {
 console.log(counter);
 ```
 
-## [Break](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/break)、[Continue](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/continue)
+# [Break](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/break)、[Continue](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/continue)
 
 Break 用于终止存在它的循环。如果 break 语句存在于 nested loop 中，它只会终止那些包含 break 语句的 loop 。若要终止 nested loop，则需要使用 return 关键字。
 
@@ -174,7 +174,7 @@ for (let i = 0; i < 10; i++) {
 > }
 > ```
 
-## Math Object
+# Math Object
 
 - Math 是一个 JavaScript 内建对象，它具有数学常数和函数的属性和方法。(若你有学过 Java， 则可以参考以下说明。Math Class 没有 constructor。 Math Class 的所有 attributes 和 methods 都是 static 的。 常数 𝜋 称为 Math.PI，将正弦函数称为 Math.sin(x)，其中 x 是参数。)
 - Math Object 中，常用的 static properties 包含：Math.PI, Math.E。

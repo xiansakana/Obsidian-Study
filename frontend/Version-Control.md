@@ -10,13 +10,13 @@ abbrlink: 231a4d21
 date: 2023-11-12 09:43:35
 ---
 
-## 版本控制
+# 版本控制
 
 软件工程师常利用版本控制来跟踪、维护原始码、文件以及设定档等的改动。有时候，一个程式同时存有两个以上的版本有其必要性，例如：发布版本中程式错误已经被修正，但没有加入新功能；而开发版本则有新的功能正在开发、也有新的错误待解决，于是便需要同时维护两个不同的版本。
 
 此外，为了找出只存在于某一特定版本中的程式错误、或找出程式错误出现的版本，开发人员也必须通过比对不同版本的原始码以找出问题的位置。
 
-## Kernel and Shell
+# Kernel and Shell
 
 整个电脑可以由使用者、Shell、Kernel、硬件相互协助运作的：
 
@@ -36,7 +36,7 @@ date: 2023-11-12 09:43:35
 
 Windows 系统中， Command-Line Prompt (cmd.exe)是个 CLI 程式。在 macOS 中，terminal 提供了一个命令行界面 (CLI) 来控制基于 UNIX 作业系统的基础。
 
-## Command Prompt 常用指令
+# Command Prompt 常用指令
 
 | CMD Command               | Description                    |
 | :------------------------ | :----------------------------- |
@@ -47,7 +47,7 @@ Windows 系统中， Command-Line Prompt (cmd.exe)是个 CLI 程式。在 macOS 
 | dir                       | list directory content         |
 | Ctrl + C                  | 强制终止任何正在执行的指令     |
 
-## Unix 作业系统
+# Unix 作业系统
 
 UNIX 作业系统，是一个强大的多使用者、多工作业系统，支援多种处理器架构，源自 AT&T 公司于 1970 年代在贝尔实验室研究中心开发。由于 macOS 是基于 Unix 的作业系统，所以在 Unix 系统上的指令，在 macOS 的 terminal 都可以直接使用。
 
@@ -64,7 +64,7 @@ Unix 作业系统中，常用的指令有：
 | rmdir        | Remove an empty directory                                                    |
 | rm -rf       | rf stands for remove forcefully; can be used to remove a non-empty directory |
 
-## Git and Git Bash
+# Git and Git Bash
 
 Git 是一个免费和开源的 version control system (版本控制系统)，旨在以速度和效率处理从小型到大型项目的所有内容。
 
@@ -74,7 +74,7 @@ Microsoft Windows 若要使用 Unix 指令以及 Git 指令，需要先下载 Gi
 
 Git Bash 是一个适用于 Microsoft Windows 环境的应用程序。在 Git bash 内部，我们可以使用 Unix 指令(因为这是一个 bash)，也可以使用 Git 指令，因为 Git bash 自动包含了 Git 指令。
 
-## Git and GitHub
+# Git and GitHub
 
 Git 本身是个在个人电脑上可以帮助开发者做版本控制的软体。GitHub 是个网路平台，为使用 Git 的软体开发和版本控制提供託管服务。Git 与 GitHub 协作的流程如下：
 

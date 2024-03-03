@@ -10,7 +10,7 @@ abbrlink: 3c869818
 date: 2024-01-26 23:03:09
 ---
 
-## 创建 Github 新仓库
+# 创建 Github 新仓库
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262255535.png)
 
@@ -18,7 +18,7 @@ date: 2024-01-26 23:03:09
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262300632.png)
 
-## 同步仓库到本地
+# 同步仓库到本地
 
 这里如果熟悉 git 就用 git clone，不熟悉 git 的话就用[Github Desktop](https://desktop.github.com/)，也就是 Github 的桌面端。
 
@@ -30,7 +30,7 @@ date: 2024-01-26 23:03:09
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202401262301847.png)
 
-## 合并 Obsidian 仓库和 Git 仓库
+# 合并 Obsidian 仓库和 Git 仓库
 
 在 clone 后的 Obsidian-Library 的文件夹中可以看到隐藏的.git 文件夹，如果看不到可能是因为没有勾选显示隐藏的项目，选择勾选就好。
 
@@ -44,7 +44,7 @@ date: 2024-01-26 23:03:09
 
 具体的安装过程可以参考这篇文章：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）](https://blog.csdn.net/mukes/article/details/115693833)
 
-## 安装 Obsidian Git 插件进行后续的同步
+# 安装 Obsidian Git 插件进行后续的同步
 
 打开 Obsidian，在的这个准备好的库中，安装一个名为[Obsidian Git](https://github.com/denolehov/obsidian-git)的插件，具体操作如下。
 

@@ -10,7 +10,7 @@ abbrlink: 747d7228
 date: 2023-11-12 09:56:07
 ---
 
-## 静态与动态网页
+# 静态与动态网页
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311080137624.png)
 
@@ -45,7 +45,7 @@ date: 2023-11-12 09:56:07
 1. 需要更多资源才能建立。由于设定数据库并将其连接到正确页面所需的额外步骤，动态网站的设置和运行可能会更加复杂，这也意味着成本更高。
 2. 性能问题。动态网站比静态网站有更多的处理指令，不断从数据库提取信息以显示网页内容都需要时间来处理和执行。
 
-## 后端网页开发工具
+# 后端网页开发工具
 
 - PHP、Laravel (PHP Framework)
 - Node.js, Express.js (Server-Side JavaScript)
@@ -53,13 +53,13 @@ date: 2023-11-12 09:56:07
 - Ruby on Rails
 - Python Django、Flask Framework
 
-## Node.js
+# Node.js
 
 Node.js 是能够在服务器端运行 JavaScript 的开放原始码、跨平台执行环境。在 Node.js 出现之前，JavaScript 通常作为浏览器上的客户端程式设计语言使用，以 JavaScript 写出的程式通常能够在使用者的浏览器上执行。Node.js 的出现使 JavaScript 也能用于服务器端脚本编写。
 
 Node.js 内部采用 V8 JavaScript 执行引擎作为核心引擎。
 
-### Module Wrapper
+## Module Wrapper
 
 在 Node.js 当中，module 是指一组的程式码，组织成简单或複杂功能，可被用来与外部其他程式码连结。Module 可以是单个文件，或是多个文件与文件夹的集合。
 
@@ -78,7 +78,7 @@ Node.js 内部采用 V8 JavaScript 执行引擎作为核心引擎。
 3. 让 module 内部的 JS 文件可以使用某些实用的变数，例如 module、exports 可以用来输出本身 module，而 require 可以用来获得其他 module。
 4. \_\_filename, \_\_dirname 等等变量在开发上变得方便，因为两者包含 module 的绝对路径名称与文件夹路径。
 
-### Node.js Modules
+## Node.js Modules
 
 Node.js 的 modules 分成三种：
 
@@ -105,7 +105,7 @@ Node.js 的 modules 分成三种：
 
 3. 网路上第三方制作的 modules，可以透过 npm (node package manager)下载来使用。
 
-### Self-Made Modules
+## Self-Made Modules
 
 在 Module Wrapper 中提供的变量：
 
@@ -113,7 +113,7 @@ Node.js 的 modules 分成三种：
 - exports 是 module 对象的属性，本身是个 empty object。
 - require 是一个 function，可以读取一个 JavaScript 文件，执行该文件，然后 return 这个文件的 exports object。若读取的是一个文件夹，则读取该文件夹内的 index.js 文件，执行该文件，然后 return 这个文件的 exports object。
 
-## IP, DNS, Port
+# IP, DNS, Port
 
 IP 地址（英语：IP Address，全称 Internet Protocol Address），又译为国际网路协定地址，是网际协定中用于标识传送或接收资料的装置的一串数字。（相当于每个在网路上的电脑的地址）
 
@@ -155,7 +155,7 @@ app.listen(25, () => {}); // return an email to client, 处理SMTP请求
 app.listen(443, () => {}); // return a webpage to client, 处理HTTPs请求
 ```
 
-## localhost:3000
+# localhost:3000
 
 在电脑网络中，localhost (意为“本地主机”，指“这台电脑”)是给迴路网络接口（loopback）的一个标准主机名，相对应的 IP 位址为 127.0.0.1（IPv4）。在 DNS 中，localhost 这个 domain name 会被换成 127.0. 0.1。
 
@@ -163,7 +163,7 @@ app.listen(443, () => {}); // return a webpage to client, 处理HTTPs请求
 
 通常我们在本机上的网页服务器，都是使用 port 3000 或是 8080(但基本上，也可以设定任何 1000 到 9999 内的数字)。
 
-## HTTP Request and Response Header
+# HTTP Request and Response Header
 
 HTTP Request 以及 Response 的基本规定格式如下：
 
@@ -196,7 +196,7 @@ Post Request 内部有表格数据的话，会是：
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311080246175.png)
 
-## NPM
+# NPM
 
 NPM 是 Node Package Manager，是 Node.js 预设的套件管理系统。 npm 会随着 Node.js 自动安装。透过 npm，我们可以在 CLI (Command-Line Interface)下指令，命令电脑从网路上下载别的开发者发佈到网路上的 node packages。Module 是指具有一些功能的单个 JavaScript 文件。 Package 是一个文件夹，其中包含一个或多个 modules。
 

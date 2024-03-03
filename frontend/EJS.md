@@ -12,7 +12,7 @@ date: 2023-11-12 10:45:48
 
 VScode extension: EJS language support
 
-## EJS
+# EJS
 
 EJS 的全名是“Embedded JavaScript”，是与 Express.js 搭配的内嵌式的样板引擎。 EJS 可以让我们使用 JavaScript 生成 HTML 页面 。 EJS 文件需要放在“views”文件夹内部。
 
@@ -73,7 +73,7 @@ app.listen(3000, () => {
 <%- include("partials/footer") %>
 ```
 
-## EJS 应用
+# EJS 应用
 
 ```javascript
 const express = require("express");
@@ -129,7 +129,7 @@ app.listen(3000, () => {
 </html>
 ```
 
-## [MVC 模式](https://developer.mozilla.org/zh-CN/docs/Glossary/MVC)
+# [MVC 模式](https://developer.mozilla.org/zh-CN/docs/Glossary/MVC)
 
 MVC 模式(Model–View–Controller)是软件工程中的一种 design pattern (软件架构模式)，把软体系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。
 

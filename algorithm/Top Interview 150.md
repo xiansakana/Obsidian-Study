@@ -1,7 +1,5 @@
 # Easy
 
-%% ## Array / String %%
-
 ## [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)（[整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/)）
 ```
 Input: num = 3
@@ -375,8 +373,6 @@ class Solution {
 
 
 # Medium
-
-%% ## Array / String %%
 
 ## [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)（[Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)）
 
@@ -929,8 +925,6 @@ class RandomizedSet:
 
 # Hard
 
-%% ## Array / String %%
-
 ## [2. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)（[接雨水](https://leetcode.cn/problems/trapping-rain-water/)）
 
 ```
@@ -977,9 +971,20 @@ Output:
 ```
 
 ```
-
+Input: words = ["What","must","be","acknowledgment","shall","be"], maxWidth = 16
+Output:
+[
+  "What   must   be",
+  "acknowledgment  ",
+  "shall be        "
+]
+Explanation: Note that the last line is "shall be    " instead of "shall     be", because the last line must be left-justified instead of fully-justified.
+Note that the second line is also left-justified because it contains only one word.
 ```
 
+```python
+
+```
 
 ## [135. Candy](https://leetcode.com/problems/candy/)（[分发糖果](https://leetcode.cn/problems/candy/)）
 

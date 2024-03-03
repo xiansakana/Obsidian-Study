@@ -10,7 +10,7 @@ abbrlink: 4d712855
 date: 2023-11-12 12:35:07
 ---
 
-## 数据库管理系统 DBMS
+# 数据库管理系统 DBMS
 
 我们为什么需要数据库？ 我们不能只将所有数据存储在 Excel 表格中吗？尽管我们可以对电子表格中的数据进行排序和过滤，但数据库具有广泛的查询功能，可以检索与选择条件匹配的所有记录，并且在多个表格中做交叉引用记录以及跨多个表格执行复杂的聚合计算。
 此外，就查询资料而言，数据库比 Excel 快上许多，在资料庞大时差别会更明显。 Excel 可以处理最多大约 100 万行数据，但对于现代数据来说明显容量不足了。
@@ -31,14 +31,14 @@ Relational Database 是一种存储并提供对彼此相关的数据点的访问
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311111808138.png)
 
-## 增删查改 CRUD
+# 增删查改 CRUD
 
 增删查改(英语：CRUD)，全称增加(Create，意为“建立”)、删除(Delete)、查询(Read，意为“读取”)、改正(Update，意为“更新”)，是在 DBMS 当中，一连串常见的操作行为。
 
 - 增删查改除了常用于 SQL 资料库之外，也在与网站的 API 埠口时常使用。在 Restful API 的制作时，会再次使用。但网站的 API 埠口使用 HTTP 协定传送通讯，所以原本的“增删查改”所对应的英文词汇会因此而改名，而不再对应 CRUD。 比如“查”不再是 Read，而改为 GET；“增”不再是 Create，而改为 POST；“改”不再是 Update，而改为 PUT 等等。
 - 英语中因为 CRUD 比中文所对应的 CDRU 易读易记而将“删除”（Delete）放置于最后。但是英文小写的 crud，是指渣滓、水垢、腐蚀污泥，或是恶心的东西。
 
-## Keys
+# Keys
 
 关系键(keys)是关联式数据库的重要组成部分。关系键是一个表中的一个或几个属性，用来标识该表的每一行或与另一个表产生联络。在 DBMS 当中，主要的 keys 有：
 
@@ -48,13 +48,13 @@ Relational Database 是一种存储并提供对彼此相关的数据点的访问
 4. 代理键(surrogate key) – 相对于 natural key，在当数据表格中的所有现有栏位都不适合当主键时，例如数据太长，或是意义层面太多，就会制作一个无意义的栏位来代为作主键。
 5. 复合主键(composite key) – 当数据表的主键(Primary Key)如果是由多个栏位组成，则称为 composite key。
 
-## SQL
+# SQL
 
 SQL (Structured Query Language，结构化查询语言) 是一种特定目的程式语言，用于对关联式数据库管理系统 (Relational DBMS, or RDBMS)下达指令。 SQL 在 1987 年成为国际标准化组织（ISO）标准。
 
 虽然有这一标准的存在，但大部分的 SQL 代码在不同的数据库系统中并不具有完全的跨平台性。也就是说，虽然 SQL 这门程式语言可以用来操作 DBMS，但每个 DBMS 所接受的 SQL 语法有些微差异。例如，用来操作 MySQL 这个 DBMS 的 SQL 程式码不能全部拿去用来操作 Microsoft SQL Server 这个 DBMS。
 
-## SQL Data Types
+# SQL Data Types
 
 | Data Types    | Bytes             | Description                                                                                             |
 | ------------- | ----------------- | ------------------------------------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ SQL (Structured Query Language，结构化查询语言) 是一种特定目的程
 | VARCHAR(n)    | 变动长度，max=2GB | 数据范围是 1~2^21^-1                                                                                    |
 | DATETIME      | 8 bytes           | 数据范围是 1753/1/1~9999/12/31 ex: 2008-11-27 08:08:08.888                                              |
 
-## SQL 基本语法
+# SQL 基本语法
 
 在 SQL 中，创造新表格的语法为：
 
@@ -151,7 +151,7 @@ JOIN table2 ON table1.columnName = table2.columnName;
 
 > 在 JOIN 两个数据表时，若不指定任何结合条件(也就是不写 JOIN ON，而是只写 JOIN)，则合并的结果为两个数据表间的笛卡儿乘积(Cartesian Product)，也就是两个数据表中所有的可能组合。
 
-## SQL 与 NoSQL 比较
+# SQL 与 NoSQL 比较
 
 关系型数据库主要有以下优点：
 

@@ -10,7 +10,7 @@ abbrlink: 8ead567e
 date: 2023-11-14 09:36:39
 ---
 
-## JSON and BSON
+# JSON and BSON
 
 JavaScript Object Notation，通常称为 JSON，在 2000 年代初期由 JavaScript 创建者 Douglas Crockford 定义为 JavaScript 语言的一部分。 JavaScript 对象是简单的容器，其中一个 String key 可以映射到一个 value （这个 value 可以是数字、String，甚至是另一个对象）。这种简单的语言特性允许 JavaScript 对象在文件中非常简单地表示：
 
@@ -31,7 +31,7 @@ JSON 的普遍性使其成为 MongoDB 在开发时的数据结构第一选择。
 | Data Type Support | String, Boolean, Number, Array | String, Boolean, Number (Integer, Float, Long, Decimal128...), Array, Date, Raw Binary |
 | Readability       | Human and Machine              | Machine Only                                                                           |
 
-## MongoDB Shell (mongosh)
+# MongoDB Shell (mongosh)
 
 MongoDB Shell (mongosh)是一个功能齐全的 JavaScript 和 Node.js 16.x REPL(Read, Evaluate, Print, Loop) 环境，用于与 MongoDB 部署进行交互运作。我们可以使用 MongoDB Shell 直接用数据库测试查询和操作。
 

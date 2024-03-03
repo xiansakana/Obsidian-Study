@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "frontend/CSS.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 310.5
+    "width": 269.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "frontend/CSS.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "frontend/CSS.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "frontend/CSS.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -171,24 +171,36 @@
   },
   "active": "d03d3c5c42d02400",
   "lastOpenFiles": [
-    "frontend/Authentication.md",
-    "frontend/Async-JavaScript.md",
-    "frontend/Advanced-JavaScript-3.md",
-    "frontend/Advanced-JavaScript-2.md",
-    "frontend/Advanced-JavaScript.md",
-    "frontend/Advanced HTML-CSS.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Hexo博客增加书单集.md",
+    "miscellaneous/Github搭建免费图床.md",
+    "miscellaneous/图床使用方案.md",
+    "interview/bq/behavior questions.md",
+    "interview/awesome-resume/README.md",
+    "frontend/Version-Control.md",
+    "frontend/SQL.md",
+    "frontend/Rest.md",
+    "frontend/React.md",
+    "frontend/OAuth.md",
+    "frontend/Node-js.md",
+    "frontend/Next-js.md",
+    "frontend/Mongoose.md",
+    "frontend/MongoDB.md",
+    "frontend/Middlewares-Cookies-Sessions.md",
+    "frontend/JWT.md",
+    "frontend/JavaScript-Basics.md",
+    "frontend/JavaScipt-Basics-2.md",
+    "frontend/CSS.md",
+    "frontend/HTML.md",
+    "frontend/Express-js.md",
+    "frontend/EJS.md",
     "frontend/css/CSS2笔记.pdf",
     "ebook/sde/程序员面试白皮书.pdf",
     "ebook/sde/程序员的自我修养：链接、装载与库.pdf",
     "ebook/application/申请制下可能存在的认知偏差.pdf",
-    "config/Git常用版本控制指令.md",
-    "config/Git-bash配置多个Github用户.md",
-    "config/前后端分离项目云服务器部署.md",
-    "backend/Springboot常用注解.md",
-    "backend/Springboot.md",
-    "backend/java/Java.md",
-    "algorithm/lc预备知识.md",
-    "algorithm/Top Interview 150.md",
     "interview/awesome-resume/imgs/banner.jpg",
     "interview/awesome-resume/imgs/wrong_all.png",
     "interview/awesome-resume/imgs/rabbit-256.png",
@@ -198,25 +210,13 @@
     "interview/awesome-resume/imgs/3.png",
     "interview/awesome-resume/imgs/1.png",
     "interview/awesome-resume/imgs/2.png",
-    "interview/awesome-resume/README.md",
     "interview/awesome-resume/imgs",
     "interview/awesome-resume",
     "backend/java",
-    "miscellaneous/图床使用方案.md",
-    "interview/bq/behavior questions.md",
-    "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/Hexo博客增加书单集.md",
-    "miscellaneous/Github搭建免费图床.md",
     "interview/resume/中文/竖版-鲍嘉轩-安徽大学-计算机科学与技术.pdf",
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4",
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4.crdownload",
     "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg",
-    "miscellaneous/Unblock-Netease-Music.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
-    "miscellaneous/Markdown语法参考.md",
-    "Test.md",
-    "cooking/汤/玉米排骨汤.md",
-    "cooking/热菜/清蒸鲈鱼.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

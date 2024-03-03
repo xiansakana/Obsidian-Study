@@ -9,7 +9,7 @@ abbrlink: 98531b37
 date: 2023-11-29 17:36:34
 ---
 
-## Next.js
+# Next.js
 
 Next.js 是一个构建于 Node.js 之上的开源 Web 开发框架，支援基于 React 的 Web 应用程式功能。初始版本于 2016 年 10 月 25 日发布。 Next.js 是最流行的 React 框架之一。Next.js 在发布之前，会经过以下的步骤:
 
@@ -20,23 +20,23 @@ Next.js 是一个构建于 Node.js 之上的开源 Web 开发框架，支援基�
 
 Next.js 内建了 Code Splitting 的功能。在建构 Next.js 网站时， pages/ 目录中的每个文件都会自动将代码拆分为自己的 JavaScript bundle。此外， 不同页面之间共享的任何代码也会被拆分到另一个 bundle 中，以避免在前往另一个页面时，重新下载相同的代码。在初始页面加载后，Next.js 也会自动开始 pre-loading 用户可能导航到的其他页面的代码。
 
-### Compiling
+## Compiling
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291434652.png)
 
-### Minifying
+## Minifying
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291435221.png)
 
-### Bundling
+## Bundling
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291435175.png)
 
-### Code Splitting
+## Code Splitting
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291435075.png)
 
-## 渲染方式
+# 渲染方式
 
 在 React 课程当中，我们学过，React 的运作方式为， 浏览器从服务器接收一个空的 index.html 文件以及用于构建 UI 的 JavaScript 程式码。渲染页面内容的工作发生在用户端的电脑设备上，这被称为 client-side rendering。
 
@@ -45,26 +45,26 @@ Next.js 内建了 Code Splitting 的功能。在建构 Next.js 网站时， page
 1. Server-Side Rendering - 对于每个 HTTP Request，网页会重复制作。通常在需要重复向 API 请求即时数据的网页会选用此种方法。
 2. Static Site Generation - 网页会被制作一次，并且存放在 Content Delivery Networks (CDNs)的服务器上面重复使用。
 
-### Client-Side Rendering
+## Client-Side Rendering
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291437458.png)
 
-### Server-Side Rendering
+## Server-Side Rendering
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291437927.png)
 
-### Content Delivery Network
+## Content Delivery Network
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291437518.png)
 
-## Routing in Next.js
+# Routing in Next.js
 
 在 Next.js 当中的 Routing 规则很简单:
 
 1. 每个页面的 routes 与在 pages 资料夹内的路径有关。 pages/index.js 使用的是 / 这个 route。
 2. pages/posts/first-post.js 使用的是 pages 资料夹的 posts 这个资料夹当中， /posts/first-post 这个 route。
 
-## 使用`<Link>`标签
+# 使用`<Link>`标签
 
 在 Next.js 当中，开发者会使用`<Link>`标签当作`<a>`的替代品(需要 import Link from "next/link")。两者的差别在于:
 
@@ -78,11 +78,11 @@ Next.js 内建了 Code Splitting 的功能。在建构 Next.js 网站时， page
 <Link href="/posts/edit-post">编辑post</Link>
 ```
 
-## Metadata
+# Metadata
 
 在 Next.js 当中，使用`<Head>`标签可以设定网页的 metadata。 `<Head>` 本身是一个内建在 Next.js 中的 Component，可以用来代替 HTML 当中的`<head>`标签。使用`<Head>`之前，需要先 import Head from “next/head”。
 
-## CSS Modules
+# CSS Modules
 
 Next.js 支援 CSS Modules 的功能。 CSS Modules 是指，我们可以将 CSS 文件做成 module，并且将样式套用给特定的 Next.js Component。
 
@@ -90,6 +90,6 @@ CSS Modules 当中，文件的命名规则是[name].module.css。此外，CSS �
 
 如果我们希望某些 CSS 样式套用到所有页面上，我们需要创建一个名为 pages/\_app.js 的文件。 (创建这个文件后，伺服器一定要重新运行。) Next.js 会自动套用\_app.js 的样式到所有页面上。
 
-## Next.js 开发选项
+# Next.js 开发选项
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311291557787.png)
