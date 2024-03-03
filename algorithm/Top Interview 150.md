@@ -1,6 +1,6 @@
 # Easy
 
-## Array / String
+%% ## Array / String %%
 
 ### [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)（[整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/)）
 ```
@@ -376,7 +376,7 @@ class Solution {
 
 # Medium
 
-## Array / String
+%% ## Array / String %%
 
 ### [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)（[Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)）
 
@@ -929,7 +929,7 @@ class RandomizedSet:
 
 # Hard
 
-## Array / String
+%% ## Array / String %%
 
 ### [2. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)（[接雨水](https://leetcode.cn/problems/trapping-rain-water/)）
 
