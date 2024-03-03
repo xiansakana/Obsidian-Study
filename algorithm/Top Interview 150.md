@@ -33,6 +33,8 @@ class Solution:
 
 空间复杂度：O(1)。
 
+
+
 ### [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)（[罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/)）
 
 ```
@@ -65,6 +67,8 @@ class Solution:
 
 空间复杂度：O(1)。使用了 `Int`。
 
+
+
 ### [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)（[最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)）
 ```
 Input: strs = ["flower","flow","flight"]
@@ -96,6 +100,8 @@ class Solution:
 时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。
 
 空间复杂度：O(1)。使用的额外空间复杂度为常数。
+
+
 
 ### [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) （[删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)）
 
@@ -159,6 +165,36 @@ class Solution:
 
 空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
 
+### [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)（[找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)）
+
+```
+Input: haystack = "sadbutsad", needle = "sad"
+Output: 0
+Explanation: "sad" occurs at index 0 and 6.
+The first occurrence is at index 0, so we return 0.
+```
+
+```
+Input: haystack = "leetcode", needle = "leeto"
+Output: -1
+Explanation: "leeto" did not occur in "leetcode", so we return -1.
+```
+
+**暴力解**
+
+```python
+for i in range(0,len(haystack)-len(needle)+1):
+	if haystack[i:i+len(needle)] == needle:
+		return i
+return -1
+```
+
+时间复杂度：O(n×m)，其中 n 是字符串 haystack 的长度，m 是字符串 needle 的长度。最坏情况下我们需要将字符串 needle 与字符串 haystack 的所有长度为 m 的子串均匹配一次。
+
+空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
+
+
+
 ### [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)（[最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word/)）
 
 ```
@@ -188,6 +224,7 @@ class Solution:
 时间复杂度：O(n)，其中 n 是字符串的长度。最多需要反向遍历字符串一次。
 
 空间复杂度：O(1)。
+
 
 
 ### [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/) （[合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)）
@@ -374,6 +411,8 @@ class Solution:
 时间复杂度：O(n)。
     
 空间复杂度：O(n)。
+
+
 
 ### [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
@@ -569,6 +608,7 @@ class Solution:
 - 空间复杂度：O(1)。
 
 
+
 ### [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)（[反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)）
 ```
 Input: s = "the sky is blue"
@@ -621,6 +661,8 @@ class Solution {
 时间复杂度：O(n)，其中 n 为输入字符串的长度。
     
 空间复杂度：O(1)。
+
+
 
 ### [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 
@@ -920,6 +962,23 @@ class Solution:
 
 空间复杂度：O(1)。只需要使用常数的额外空间。
 
+
+
+### [68. Text Justification](https://leetcode.com/problems/text-justification/)（[文本左右对齐](https://leetcode.cn/problems/text-justification/)）
+
+```
+Input: words = ["This", "is", "an", "example", "of", "text", "justification."], maxWidth = 16
+Output:
+[
+   "This    is    an",
+   "example  of text",
+   "justification.  "
+]
+```
+
+```
+
+```
 
 
 ### [135. Candy](https://leetcode.com/problems/candy/)（[分发糖果](https://leetcode.cn/problems/candy/)）
