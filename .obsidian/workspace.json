@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/awesome-resume/README.md",
+                "file": "backend/java/Java.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/awesome-resume/README.md",
+                "file": "backend/java/Java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/awesome-resume/README.md",
+                "file": "backend/java/Java.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/awesome-resume/README.md"
+                "file": "backend/java/Java.md"
               }
             }
           },
@@ -171,6 +171,9 @@
   },
   "active": "5b227c50bfbf18cc",
   "lastOpenFiles": [
+    "interview/awesome-resume/README.md",
+    "backend/java/Java.md",
+    "backend/java",
     "interview/awesome-resume/imgs/wrong_all.png",
     "interview/awesome-resume/imgs/rabbit-256.png",
     "interview/awesome-resume/imgs/pdf.png",
@@ -182,7 +185,6 @@
     "interview/awesome-resume/imgs/4.png",
     "interview/awesome-resume/imgs/3.png",
     "interview/awesome-resume/imgs",
-    "interview/awesome-resume/README.md",
     "interview/awesome-resume",
     "miscellaneous/图床使用方案.md",
     "interview/bq/behavior questions.md",
@@ -197,7 +199,6 @@
     "interview/resume/中文/E9B6C23FF9DB2947E690BF8518A2C9DD.png.crdownload",
     "interview/resume/中文",
     "interview/resume/新建文件夹",
-    "replace_md_url.py",
     "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
