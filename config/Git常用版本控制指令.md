@@ -8,7 +8,7 @@ abbrlink: 23e7f25b
 date: 2024-02-06 08:20:26
 ---
 
-## branch
+# branch
 
 git clone获取指定分支
 
@@ -52,7 +52,7 @@ git pull origin dev
 
 
 
-## pull
+# pull
 
 将远程指定分支拉取到本地指定分支上
 
@@ -81,7 +81,7 @@ git reset --hard origin/master
 
 
 
-## push
+# push
 
 将本地当前分支推送到远程指定分支上
 

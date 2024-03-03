@@ -9,7 +9,7 @@ abbrlink: fe499abe
 date: 2023-11-12 09:01:24
 ---
 
-## Execution Context 执行环境
+# Execution Context 执行环境
 
 当 JS 引擎执行程序码(script)时，便会创建 execution contexts(执行环境) 。 JavaScript 共会建立两种执行环境：
 
@@ -18,7 +18,7 @@ date: 2023-11-12 09:01:24
 
 每种 execution context 都包含两个阶段：创造阶段 creation phase 和 执行阶段 execution phase。
 
-### 全局执行环境
+## 全局执行环境
 
 当初次执行一份 JavaScript 程式码时， JS 引擎会创造第一种 execution context，叫 Global Execution Context。在 Global Execution Context 内部，会先进入 creation phase：
 
@@ -32,7 +32,7 @@ creation phase 结束后，会进入 execution phase：
 1. 逐行( line by line )执行程式码。
 2. 遇到递回时，则使用 call stack 来排定工作顺序。
 
-### 函数执行环境
+## 函数执行环境
 
 每次的 function call ，JS 引擎也都会创造一个 Function Execution Context。 函数执行环境与全局执行环境非常类似，一样也有 creation phase 以及 execution phase，但差别在于，函数执行环境不创建 global object，而是创建 argument object。 Argument object 包含了被放入此函式的 parameters 的数值参照值(a reference to all the parameters passed into the function)。函数执行环境的 creation phase 是：
 
@@ -48,7 +48,7 @@ creation phase 结束后，会进入 execution phase：
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202310182253924.png)
 
-## [Hoisting](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting)
+# [Hoisting](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting)
 
 JavaScript Hoisting 是指 JS 引擎在执行代码之前，将 function、variables 或 class 的 declaration 移动到其范围顶部的过程。
 
@@ -60,7 +60,7 @@ Hoisting 发生时，对于使用 var 做 declaration 的 variable 会给定初�
 
 let 可以 declare without initialization，且我们可以用 console.log()检查 let 的变数值是 undefined，但这个 undefined 的 initialization 并不像 var 是发生在 creation phase 的 hoisting 阶段发生的，而是在 execution phase 的阶段。
 
-## Scope and Closure
+# Scope and Closure
 
 Scope 是指，在当前的 execution context 之中，变量的可访问性(accessibility)为何？我们在 function A 所宣告的变量，在 function B 内部可以使用(访问)吗？又或者，假定程序码是：
 
@@ -95,7 +95,7 @@ Closure 的规则是：
 2. 若从 1 找不到，则从记忆体被分配给函数的位置开始寻找。
 3. 若在目前的 execution context 找不到，就继续往外层、往全局一层一层的去找。
 
-## Call Stack and Recursion
+# Call Stack and Recursion
 
 Call stack 是 JS 引擎追踪本身在调用多个函数的程式码中位置的机制（数据结构的一种）。Call stack 可以帮助我们知道 JS 引擎当前正在运行什么函式以及从该函数中调用了哪些函式等。
 
@@ -139,7 +139,7 @@ function fsequence(n) {
 console.log(fsequence(10));
 ```
 
-## Constructor Function
+# Constructor Function
 
 在函式执行环境的 creation phase 当中，每个 function 都有创建 this 关键字这个步骤。this 关键字指的是正在执行当前 method 的 object。 如果被调用的 function 是常规 function 而非 method，则 this 关键字会指向 global object (因为 closure 会向外找 this 这个字，而在 global execution context 中可以找到，所以 this 才会指向 global object )。
 
@@ -168,7 +168,7 @@ grace.sayHi();
 
 Constructor Function 制作出的每个物件，是独立的，所以会单独佔据记忆体位置。
 
-## Inheritance and the Prototype Chain
+# Inheritance and the Prototype Chain
 
 在 JavaScript 中，每个对象都有一个 private attribute 叫做`__proto__`。 `__proto__`属性存放的值是另一个对象。若对象 A 的`__proto__`属性的值是设定成另一个对象 B，则物件 A 就继承了对象 B 的所有 attributes 以及 methods。
 
@@ -241,7 +241,7 @@ JS 内建的资料类型都有继承其他的 Prototype。例如，[1, 2, 3]这�
 
 JavaScript 中的所有物件最后的 Prototype Chain 都会连到一个叫做 ”Object Prototype“的地方。Object Prototype 是 Prototype Chain 的终点。
 
-## JS Built-in Constructors
+# JS Built-in Constructors
 
 在 JavaScript 中，有许多内建的 constructors，例如 String, Number, Boolean, Array, Object 等等。这些 constructor function 的 prototype 属性都有设定其他的 methods，所以在 MDN 的文件内标题会看到像是：
 
@@ -257,7 +257,7 @@ Array.prototype.push();
 
 但对于 new Array([1, 2, 3])来说，却跟[1, 2, 3]这种写法差异不大。(正确来说，不使用 Array constructor 还是比较好，因为这样写的话，CPU 需要执行比较多步骤。)
 
-## Function Methods
+# Function Methods
 
 在 JavaScript 中，function 是一种特别的对象。(从 Prototype inheritance 可以看出，所有的 function 都有继承 Object prototype。因此，function 也是 object 的一种)。
 
@@ -313,7 +313,7 @@ getAge.apply(Grace, ["台湾", 160]);
 // Grace来自台湾, 身高为160cm
 ```
 
-## Prototype Inheritance in Constructors
+# Prototype Inheritance in Constructors
 
 一个 constructor function A 可以透过两个设定来继承另一个 constructor function B 的 prototype 对象：
 
@@ -356,7 +356,7 @@ mike.study();
 // Mike Huang正在努力读Chemistry
 ```
 
-## Class
+# Class
 
 在 ECMAScript 2015 中引入的 JavaScript Class 语法，可以用来取代 constructor function。Class 语法是 JavaScript 基于现有的 prototype inheritance 的语法糖。(Class 语法与 constructor function 语法可以完全互换)
 
@@ -431,7 +431,7 @@ Student.exampleFunction();
 mike.sayHi();
 ```
 
-## Static Methods and Attributes in JS
+# Static Methods and Attributes in JS
 
 JavaScript 当中的内建 Class (or constructor function)有许多 static properties, static methods, instance properties, instance methods。
 

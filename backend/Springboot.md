@@ -10,7 +10,7 @@ abbrlink: cf14bd9c
 date: 2024-01-26 22:39:38
 ---
 
-## 开发环境热部署
+# 开发环境热部署
 
 在实际的项目开发调试过程中会频繁地修改后台类文件，导致需要重新编译、重新启动，整个过程非常麻烦，影响开发效率。在实际的项目开发调试过程中会频繁地修改后台类文件，导致需要重新编译、重新启动，整个过程非常麻烦，影响开发效率。
 
@@ -34,23 +34,24 @@ date: 2024-01-26 22:39:38
 
 3. 在`application.properties`中配置`devtools`
 
-   ```properties
+```properties
    #热部署生效
    spring.devtools.restart.enabled=true
    #设置重启目录
    spring.devtools.restart.additional-paths=src/main/java
    #设置cLasspath月灵下的WEB-INF文件夹内容修改不重启
    spring.devtools.restart.exclude=static/**
-   ```
+```
+
 
 如果使用了`Eclipse`，那么在修改完代码并保存之后，项目将自动编译并触发重启，而如果使用了`IntelliJIDEA`，还需要配置项目自动编译。
 
 1. 打开 Settings 页面，在左边的菜单栏找到`Build, Execution, Deployment 一 Compiler`，勾选`Build project automatically`
 2. 在 Settings 页面左边的菜单栏找到 Advanced Settings，勾选 A`llow auto-make to start even if developed application is currently running`
 
-## Springboot Controller
+# Springboot Controller
 
-### @RestController
+## @RestController
 
 默认情况下，`@RestController`注解会将返回的对象数据转换为 JOSN 格式
 
@@ -67,7 +68,7 @@ public class TestController {
 }
 ```
 
-### RequestMapping
+## RequestMapping
 
 - `@RequestMapping`注解主要负责 URL 的路由映射。它可以添加在 Controller 类或者具体的方法上。
 
@@ -92,7 +93,7 @@ public class TestController {
   }
   ```
 
-### 参数传递
+## 参数传递
 
 - `@RequestParam`将请求参数绑定到控制器的方法参数上，接收的参数来自 HTTP 请求体或请求 url 的 QueryString，当请求的参数名称与 Controller 的业务方法参数名称一致时`@RequestParam`可以省略。
 - `@PathVaraible`: 用来处理动态的 URL，URL 的值可以作为控制器中处理方法的参数。
@@ -158,9 +159,9 @@ public class ParamsController {
 }
 ```
 
-## 文件上传和拦截器
+# 文件上传和拦截器
 
-### 静态资源访问
+## 静态资源访问
 
 - 使用 IDEA 创建 Spring Boot 项目会默认创建出`classpath:/static/`目录，静态资源一般放在这个目录下即可。
 
@@ -175,7 +176,7 @@ public class ParamsController {
 
 - 过滤规则为`/static/**`，静态资源位置为`classpath:/static/`
 
-### 文件上传原理
+## 文件上传原理
 
 - 表单的`enctype`属性规定在发送到服务器之前应该如何对表单数据进行编码。
 
@@ -232,7 +233,7 @@ public class ParamsController {
   spring.web.resources.static-locations=/upload/
   ```
 
-### 拦截器
+## 拦截器
 
 拦截器在 Web 系统中非常常见，对于某些全局统一的操作，我们可以把它提取到拦截器中实现。总结起来，拦截器大致有以下几种使用场景:
 
@@ -240,7 +241,7 @@ public class ParamsController {
 - 性能监控：有时系统在某段时间莫名其妙很慢，可以通过拦截器在进入处理程序之前记录开始时间，在处理完后记录结束时间，从而得到该请求的处理时间。
 - 通用行为：读取 cookie 得到用户信息并将用户对象放入请求，从而方便后续流程使用，还有提取 Locale、Theme 信息等，只要是多个处理程序都需要的，即可使用拦截器实现。
 
-#### 拦截器定义
+### 拦截器定义
 
 - Spring Boot 定义了`Handlerlnterceptor`接口来实现自定义拦截器的功能。
 - `Handlerlnterceptor`接口定义了`preHandle`, `postHandle`, `afterCompletion`三种方法，通过重写这三种方法实现请求前、请求后等操作。
@@ -255,7 +256,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 }
 ```
 
-#### 拦截器注册
+### 拦截器注册
 
 - `addPathPatterns`方法定义拦截的地址。
 - `excludePathPatterns`定义排除某些地址不被拦截。
@@ -272,15 +273,15 @@ public class WebConfig implements WebMvcConfigurer {
 }
 ```
 
-## RESTful
+# RESTful
 
-### 介绍
+## 介绍
 
 - RESTful 是目前流行的互联网软件服务架构设计风格。
 - REST (Representational State Transfer，表述性状态转移)一词是由 RoyThomas Fielding 在 2000 年的博士论文中提出的，它定义了互联网软件服务的架构原则，如果一个架构符合 REST 原则，则称之为 RESTful 架构。
 - REST 并不是一个标准，它更像一组客户端和服务端交互时的架构理念和设计原则，基于这种架构理念和设计原则的 Web API 更加简洁，更有层次。
 
-### 特点
+## 特点
 
 - 每一个 URI 代表一种资源
 - 客户端使用 GET、POST、PUT、DELETE 四种表示操作方式的动词对服务端资源进行操作:GET 用于获取资源，POST 用于新建资源（也可以用于更新资源），PUT 用于更新资源，DELETE 用于删除资源。
@@ -288,13 +289,13 @@ public class WebConfig implements WebMvcConfigurer {
 - 资源的表现形式是 JSON 或者 HTML。
 - 客户端与服务端之间的交互在请求之间是无状态的，从客户端到服务端的每个请求都包含必需的信息。
 
-### RESTful API
+## RESTful API
 
 - 符合 RESTful 规范的 Web API 需要具备如下两个关键特性:
 - 安全性:安全的方法被期望不会产生任何副作用，当我们使用 GET 操作获取资源时，不会引起资源本身的改变，也不会引起服务器状态的改变。
 - 幂等性:幂等的方法保证了重复进行一个请求和一次请求的效果相同（并不是指响应总是相同的，而是指服务器上资源的状态从第一次请求后就不再改变了)，在数学上幂等性是指 N 次变换和一次变换相同。
 
-### HTTP Method
+## HTTP Method
 
 - HTTP 提供了 POST、GET、PUT、DELETE 等操作类型对某个 Web 资源进行 Create、Read、Update 和 Delete 操作。
 - 一个 HTTP 请求除了利用 URI 标志目标资源之外，还需要通过 HTTP Method 指定针对该资源的操作类型，一些常见的 HTTP 方法及其在 RESTful 风格下的使用:
@@ -307,7 +308,7 @@ public class WebConfig implements WebMvcConfigurer {
 | PATCH     | Update | 200 (OK) or 204 (Not Content), 部分修改                | 404 (Not Found) 资源不存在                                              |
 | DELETE    | Delete | 200 (OK), 资源删除成功                                 | 404 (Not Found) 资源不存在, 405 (Method Not Allowed) 禁止使用该方法调用 |
 
-### HTTP 状态码
+## HTTP 状态码
 
 - HTTP 状态码就是服务向用户返回的状态码和提示信息，客户端的每一次请求，服务都必须给出回应，回应包括 HTTP 状态码和数据两部分。
 - HTTP 定义了 40 个标准状态码，可用于传达客户端请求的结果。状态码分为以下
@@ -318,7 +319,7 @@ public class WebConfig implements WebMvcConfigurer {
   - 4xx:客户端错误，此类错误状态码指向客户端
   - 5xx:服务器错误，服务器负责这写错误状态码
 
-### Spring Boot 实现 RESTful API
+## Spring Boot 实现 RESTful API
 
 - Spring Boot 提供的 spring-boot-starter-web 组件完全支持开发 RESTful APl,提供了与 REST 操作方式(GET、POST、PUT、DELETE）对应的注解。
 - @GetMapping: 处理 GET 请求，获取资源。
@@ -354,12 +355,12 @@ public class UsersController {
 }
 ```
 
-## Swagger
+# Swagger
 
 - Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化`RESTful`风格的 Web 服务，是非常流行的 API 表达工具。
 - Swagger 能够自动生成完善的`RESTfulAPI`文档同时并根据后台代码的修改同步更新，同时提供完整的测试页面来调试 API。
 
-### 使用 Swagger 生成 Web API 文档
+## 使用 Swagger 生成 Web API 文档
 
 - 在 Spring Boot 项目中集成 Swagger 同样非常简单，只需在项目中引入`springfox-swagger2`和`springfox-swagger-ui`依赖即可。由于使用的 SpringBoot 是 3.2.0 版本，导致无法使用 swagger2 依赖无法使用。
 
@@ -378,7 +379,7 @@ public class UsersController {
 
 - 在`http://127.0.0.1:8080/swagger-ui/index.html`打开即可
 
-## Mybatis Plus
+# Mybatis Plus
 
 - pom 配置
 

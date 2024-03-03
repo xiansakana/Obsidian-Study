@@ -9,7 +9,7 @@ abbrlink: e750a506
 date: 2023-12-18 08:13:42
 ---
 
-### @SpringBootApplication
+# @SpringBootApplication
 
 `@SpringbootApplication`标注一个主程序类，相当于`@Configuration`, `@EnableAutoConfiguration`和`@ComponentScan`并具有他们的默认属性值。
 
@@ -29,11 +29,11 @@ public class SpringbootAnnotationApplication {
 }
 ```
 
-### @Controller
+# @Controller
 
 `@Controller`是`@Component`注解的一个延伸，会自动扫描并配置被该注解标注的类，返回页面。此注解用于标注 Spring MVC 的控制器。
 
-### @RequestMapping
+# @RequestMapping
 
 `@RequestMapping`是用于映射 url 到控制器类的一个特定处理程序方法。可用于方法或者类上面，也就是可以通过 url 找到该方法或该类。
 
@@ -107,7 +107,7 @@ spring.freemarker.suffix=.html
 spring.freemarker.template-loader-path=classpath:/static/
 ```
 
-### @RequestParam
+# @RequestParam
 
 `@RequestParam`注解用于将方法的参数与 Web 请求的传递的参数进行绑定。使用`@RequestParam`可以轻松的访问 HTTP 请求参数的值。
 
@@ -149,7 +149,7 @@ public class ParamController {
 </html>
 ```
 
-### @PathVariable
+# @PathVariable
 
 `@PathVariable`注解是将方法中的参数绑定到请求 URI 中的模板变量上。
 
@@ -192,11 +192,11 @@ public class ParamController {
 </html>
 ```
 
-### @RestController (@Controller + @ResponseBody)
+# @RestController (@Controller + @ResponseBody)
 
 `@RestController`是在 Spring 4.0 开始引入的，这是一个特定的控制器注解。此注解相当于`@Controller`和`@ResponseBody`的快捷方式。返回的是输出结果，如 json，一般用来与`@RequestMapping`, `@GetMapping`, `@PostMapping`结合。
 
-### @GetMapping
+# @GetMapping
 
 `@GetMapping`注解用于查询所有用户方法，用于处理 HTTP GET 请求，并将请求映射到具体的处理方法中。具体来说，`@GetMapping`是一个组合注解，它相当于是`@RequestMapping(method=RequestMethod.GET)`的快捷方式。
 
@@ -229,11 +229,11 @@ public class UserController {
 }
 ```
 
-### @PostMapping
+# @PostMapping
 
 `@PostMapping`注解用于处理 HTTP POST 请求，并将请求映射到具体的处理方法中。`@PostMapping`与`@GetMapping`一样，也是一个组合注解，它相当于是`@RequestMapping(method=HttpMethod.POST)`的快捷方式。
 
-### @RequestBody
+# @RequestBody
 
 `@RequestBody`在处理请求方法的参数列表中使用，它可以将请求主体中的参数绑定到一个对象中，请求主体参数是通过`HttpMessageConverter`传递的，根据请求主体中的参数名与对象的属性名进行匹配并绑定值。此外，还可以通过`@Valid`注解对请求主体中的参数进行校验。
 
@@ -245,7 +245,7 @@ public User addUser(@RequestBody User user){
 }
 ```
 
-### @CrossOrigin
+# @CrossOrigin
 
 `@CrossOrigin`注解将为请求处理类或请求处理方法提供跨域调用支持。如果我们将此注解标注类，那么类中的所有方法都将获得支持跨域的能力。使用此注解的好处是可以微调跨域行为。
 
@@ -259,15 +259,15 @@ public User addUser(@RequestBody User user){
 | @Configuration + @Bean  | bean 注册（人为）    |
 | @Value                  | 从配置文件中获取参数 |
 
-### @Service
+# @Service
 
 `@Service`注解是`@Component`的一个延伸（特例），它用于标注业务逻辑类。与`@Component`注解一样，被此注解标注的类，会自动被 Spring 所管理。
 
-### @Component
+# @Component
 
 `@component`定义 spring 管理 bean，声明一个 IOC 容器，把所有标记了`@Bean`注解的类注入到 IOC 容器中去。
 
-### @Autowired
+# @Autowired
 
 `@Autowired`注解用于标记 Spring 将要解析和注入的依赖项。此注解可以作用在构造函数、字段和 setter 方法上，会找到接口的实现类并自动装配。
 
@@ -348,7 +348,7 @@ public class UserActionController {
 }
 ```
 
-### @Resource (@Autowired + @Qualifier)
+# @Resource (@Autowired + @Qualifier)
 
 如果两个实现类共用一个接口可以用`@Resource`代替`@Autowired`并指定`name`。
 
@@ -360,7 +360,7 @@ private UserService userService;
 private UserService adminService;
 ```
 
-### @Qualifier
+# @Qualifier
 
 ```java
 @Autowired
@@ -371,11 +371,11 @@ private UserService userService;
 private UserService adminService;
 ```
 
-### @Configuration
+# @Configuration
 
 配置类，对应配置文件，本质上是一个`@Component`，只是更有意义，见名知意。
 
-### @Bean
+# @Bean
 
 `@Bean`注解主要的作用是告知 Spring，被此注解所标注的类将需要纳入到 Bean 管理工厂中。注解后，spring 容器就会调用接口对应的方法，并将方法的返回结果存入容器。
 
@@ -403,7 +403,7 @@ public class MyBeans {
 }
 ```
 
-### @Value
+# @Value
 
 ```java
 @Value("${local.username}")

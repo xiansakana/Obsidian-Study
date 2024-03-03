@@ -1,4 +1,4 @@
-## Tree
+# Tree
 
 - A **full** binary tree (sometimes referred to as a **proper**, **plane**, or **strict** binary tree) is a tree in which every node has either 0 or 2 children.
 

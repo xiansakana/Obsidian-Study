@@ -9,13 +9,13 @@ abbrlink: 365c67ca
 date: 2023-11-06 15:13:34
 ---
 
-## JavaScript 引擎
+# JavaScript 引擎
 
 JavaScript 并不是由任何程式语言所写成。它只是一个由欧洲电脑制造协会(ECMA)所订的标准。浏览器内部的 JavaScript 引擎会负责遵从 ECMA 所订的标准，理解与处理 JavaScript 程式码，让 JavaScript 程式码可以运作。
 
 JavaScript 最有名的标准更新在 2015 年，被称为 ECMA2015 或是 ES6。
 
-## [NaN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN), [Infinity](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity)
+# [NaN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN), [Infinity](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity)
 
 在 JavaScript 的数字当中，两个最特别的分别是 NaN 以及 Infinity。两者的数据类型都是 number。
 
@@ -23,7 +23,7 @@ NaN 属性表示 Not-A-Number 的值。当我们尝试使用 String 或其他数
 
 Infinity 值（正无穷大）值大于其他任何数值。 负无穷大则是-Infinity。任何乘以 Infinity 的正整数都是 Infinity，除以 Infinity 的任何数都是 0。
 
-## [Spread Syntax](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and [Rest Parameters](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+# [Spread Syntax](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and [Rest Parameters](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
 Spread Syntax 允许在需要零个或多个参数（例如，function invocation）或元素（例如，array 的内部元素 ）的地方，去扩展 array 内部的元素。Spread Syntax 的语法为：
 
@@ -81,13 +81,13 @@ function sum(...theArgs) {
 console.log(sum(1, 2, 3, 4, 5, 6));
 ```
 
-## Primitive, Reference Data Types
+# Primitive, Reference Data Types
 
 在 JavaScript 的 Primitive Data Types 代表它们不是 Objects，每个 Primitive Data Type 都没有自己的 attributes 和 methods。此外， 装有 Primitive Data Types 的 variable 确实拥有数值，而不仅仅是对其数值的记忆体位置的 reference。
 
 Objects 和 array 都是 Reference Data Type。 Reference Data Type 变量中，储存的值是 Reference，也就是记忆体的位址 ，指向储存真实内容的记忆体区块的位置。
 
-## Primitive Coercion
+# Primitive Coercion
 
 既然 Primitive Data Type 没有自己的 attributes 和 methods，为何我们使用 string.length 属性，或是 number.toFixed()这个 method 呢？
 
@@ -103,7 +103,7 @@ let myName = new String("saltedfish");
 console.log(typeof myName); // object
 ```
 
-## JavaScript String Comparison
+# JavaScript String Comparison
 
 JavaScript 如同大部分的程序语言一样，String 之间的比较都是采用 compared lexicographically (字典式的比较法)。 在英文字典中，排列单词的顺序是先按照第一个字母以升序排列（即 a、b、c……z 的顺序）；如果第一个字母一样，那么比较第二个、第三个乃至后面的字母。
 
@@ -121,7 +121,7 @@ console.log("12" < "2");
 //  这两个值都是true。
 ```
 
-## 进阶 Array Methods
+# 进阶 Array Methods
 
 - [arr.map(callbackFn)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map): 创建一个新 array，其中填充了在 arr 中的每个元素上调用 callbackFn 的结果。 每次 callbackFn 执行时，返回的值都会添加到新 array 内部。
 
@@ -221,7 +221,7 @@ console.log(result);
 // ture
 ```
 
-## JS 內建排序函式
+# JS 內建排序函式
 
 若想要把 array 内部的元素由小到大排序，可用 JS 内建排序的 sort()方法。
 
@@ -248,7 +248,7 @@ compareFn 是定义排序顺序的函数。 如果省略，则将 array 元素�
 > - Firefox： Merge sort
 > - Safari： Quicksort, Merge Sort, or Selection Sort (depending on the type of array)
 
-## for...of Loop
+# for...of Loop
 
 for...of Loop 创建一个回圈，去循环可迭代对象(iterable)内的每个元素。可迭代对象包括：string、array、 array-like object（例如：NodeList、HTMLCollection）、TypedArray、Map、Set 和 user-defined 的 iterable。
 
@@ -275,7 +275,7 @@ for (let n of numbers) {
 
 > 注意，object 并不是 iterable。
 
-## for... in Loop
+# for... in Loop
 
 for...in Loop 创建一个回圈，去循环一个 JS 物件中所有的可枚举属性(enumerable properties)。
 

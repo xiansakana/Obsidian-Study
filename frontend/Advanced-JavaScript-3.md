@@ -9,7 +9,7 @@ abbrlink: 894eaa28
 date: 2023-11-12 09:42:25
 ---
 
-## Ternary Operator
+# Ternary Operator
 
 Ternary Operator 是 JavaScript 唯一用到三个运算元的运算子。在一个条件后面会跟著一个问号 (?)，如果条件是 truthy，在冒号(:)前的表达式会被执行，如果条件是 falsy，在冒号后面的表达式会被执行，这个运算子常常被用来当作 if 的简洁写法。 Ternary Operator 的语法为：
 condition ? expressionIfTrue : expressionIfFalse
@@ -21,7 +21,7 @@ console.log(price);
 // 50
 ```
 
-## Default Parameters
+# Default Parameters
 
 当调用了 function 但没有给定足够数量的 arguments 时，parameter 会被设定成 undefined。 在 function 设定 Default Parameters 可以让 functions 有预设的初始化值。
 
@@ -35,7 +35,7 @@ console.log(multiply(5));
 // 5
 ```
 
-## Backtick
+# Backtick
 
 ```javascript
 // backtick
@@ -46,13 +46,13 @@ console.log(myyName);
 // saltedfish的年龄是23且来自New York
 ```
 
-## Strong Typing and Weak Typing
+# Strong Typing and Weak Typing
 
 强弱型别（Strong and weak typing）表示在电脑科学以及程式设计中，经常把程式语言的型别系统分为 strongly typed 和 weakly typed 两种。这两个术语并没有非常明确的定义，但主要用以描述程式语言对于混入不同资料型别的值进行运算时的处理方式。
 
 大致上来说， Strong typing 意味著值的数据类型在有需要时，是必须要被强制改成正确的类别。JavaScript 被认为是个 “weakly typed” or “untyped” 的程式语言。
 
-## Dynamic Typed and Static Typed
+# Dynamic Typed and Static Typed
 
 Static Typed 语言通常是指，编译器(compiler)会在编译时检查数据类型，而 Dynamic Typed 语言是指运行时才会检查。例如，在 Java 中，声明变量时，若赋值与变量类型不同，则无法编译。在修复问题之前，我们无法运行程式码。 主要优点是编译器可以完成各种检查，因此在很早的阶段就发现了很多琐碎的错误。
 
@@ -60,7 +60,7 @@ Static Typed 语言通常执行得更快，因为当编译器知道正在使用�
 
 JavaScript 是个 dynamic typed 语言。
 
-## [IIFE](https://developer.mozilla.org/zh-CN/docs/Glossary/IIFE)
+# [IIFE](https://developer.mozilla.org/zh-CN/docs/Glossary/IIFE)
 
 IIFE（ Immediately Invoked Function Expression ）是一个 JavaScript 函数，它在定义后立即运行。 IIFE 的语法为：
 
@@ -72,7 +72,7 @@ IIFE（ Immediately Invoked Function Expression ）是一个 JavaScript 函数�
 
 当我们在想要避免污染 global naming space，或是想要立即执行某个匿名 function 时(例如在伺服器的程式码内部)，就可以使用 IIFE。
 
-## Destructuring Assignment
+# Destructuring Assignment
 
 Destructuring Assignment 是一种 JavaScript 语法，它可以将 array 中的值或 object 中的属性 unpack 到不同的变量中。常见的语法为：
 
@@ -84,7 +84,7 @@ const { a, b } = obj;
 
 在伺服器的程式码中，常常可以看到 Destructuring Assignment 的语法。
 
-## [Switch Statement](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/switch)
+# [Switch Statement](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/switch)
 
 Switch Statement 是 if statement 的另一种选项。两者的功能性完全相同，但对于有非常多 else if 的 if statement 来说，改写成 Switch Statement 可增加程式码的可阅读性（某些人这样认为，看个人习惯与感觉）。
 
@@ -122,7 +122,7 @@ switch (day) {
 }
 ```
 
-## 错误处理
+# 错误处理
 
 在 JavaScript 当中，如果要执行一段可能会出错的程式码，则可以将程式码放入 try…catch…语句当中。try… catch… 语句常在后端脚本中使用。语法为:
 

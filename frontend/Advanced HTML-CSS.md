@@ -10,24 +10,24 @@ abbrlink: e4f80284
 date: 2023-10-20 04:13:38
 ---
 
-## [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+# [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-### [Flex Container](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Container)
+## [Flex Container](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Container)
 
-#### [flex-direcction](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-direction)
+## [flex-direcction](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-direction)
 
 - row: 横向
 - column: 纵向
 - row-reverse: 横向反向
 - column-reverse: 纵向反向
 
-#### [flex-wrap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap)(自动换行)
+## [flex-wrap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap)(自动换行)
 
 - nowrap (默认)
 - wrap
 - wrap-reverse
 
-#### [justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)
+## [justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)
 
 > 浏览器如何沿着弹性容器的[主轴](https://developer.mozilla.org/zh-CN/docs/Glossary/Main_Axis)和网格容器的行向轴分配内容元素之间和周围的空间。
 
@@ -39,7 +39,7 @@ date: 2023-10-20 04:13:38
 - space-evenly
   ![](https://cdn.cbd.int/xiansakana-blog-img/202310182250583.png)
 
-#### [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)
+## [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)
 
 > 控制在 cross axis (与 main axis 垂直)上的对齐方式。
 
@@ -50,7 +50,7 @@ date: 2023-10-20 04:13:38
 - baseline
   ![](https://cdn.cbd.int/xiansakana-blog-img/202310182251350.png)
 
-#### [align-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
+## [align-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
 
 - normal (默认)
 - stretch
@@ -62,7 +62,7 @@ date: 2023-10-20 04:13:38
 - space-evenly
   ![](https://cdn.cbd.int/xiansakana-blog-img/202310182251312.png)
 
-### [Flex Item](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Item)
+## [Flex Item](https://developer.mozilla.org/zh-CN/docs/Glossary/Flex_Item)
 
 - [flex-grow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow): 将 flex container 中的剩余空间(remaining space)分配给 flex items
 - [flex-shrink](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-shrink): 定义了 flex item 在必要时收缩的能力
@@ -76,7 +76,7 @@ flex: 1 1 100px;
 
 - [align-self](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self): 单个 flex item 设置对齐方式
 
-## [Media Query](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
+# [Media Query](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
 
 ```css
 @media screen and (max-width: 800px) {
@@ -86,7 +86,7 @@ flex: 1 1 100px;
 }
 ```
 
-## [Bootstrap](https://getbootstrap.com/)
+# [Bootstrap](https://getbootstrap.com/)
 
 ## User Snippet
 

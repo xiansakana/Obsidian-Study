@@ -10,7 +10,7 @@ abbrlink: 3d61c948
 date: 2023-11-14 09:24:21
 ---
 
-## Ajax
+# Ajax
 
 AJAX 即「Asynchronous JavaScript and XML」(非同步的 JavaScript 与 XML 技术)，指的是一套综合了多项技术的浏览器端网页开发技术。
 
@@ -20,7 +20,7 @@ AJAX 在客户端使用各种 Web 技术来创建异步(asynchronous) Web 应用
 
 ![](https://cdn.cbd.int/xiansakana-blog-img/202311112120918.png)
 
-## 同步与异步
+# 同步与异步
 
 在计算机程式中，异步(asynchronous)代表着一个 process 独立于其他 process 运行，而同步(synchronous)代表着一个 process 仅在某个其他 process 完成或移交后而运行。
 
@@ -45,7 +45,7 @@ console.log(end’);
 // Here is the code.
 ```
 
-## Promise
+# Promise
 
 Promise 是现代 JavaScript 中异步编程的基础。 Promise 是一个由 asynchronous function 所 return 的对象，主要功能是，Promise 会代理一个建立时不用预先得知结果的值。
 
@@ -91,7 +91,7 @@ fetchPromise.then((response) => {
 // })
 ```
 
-## Catching Errors
+# Catching Errors
 
 为了支持错误处理，Promise 物件提供了一个 catch() 方法，跟 then()很像。我们调用.catch()时，传入一个 callback function 当作参数。传递给 catch() 的处理函数在异步操作失败时自动被 JavaScript 调用。 catch()内部的 callback function 被调用时，参数会被放入错误讯息，通常以变数 e 或是 err 代表错误(error)。
 
@@ -111,7 +111,7 @@ fetchPromise
   });
 ```
 
-## Combining Multiple Promises
+# Combining Multiple Promises
 
 当我们的操作由多个异步函数组成时，我们需要用到 promise chaining，让我们在开始下一个函数之前完成前一个函数。这种情况下，每个 Promise 都互相依赖。
 
@@ -144,7 +144,7 @@ Promise.all([fetchPromise1], [fetchPromise2], [fetchPromise3])
   });
 ```
 
-## Async and Await
+# Async and Await
 
 Async 关键字为我们提供了一种更简单的方式来处理基于 async promise 的代码：
 
@@ -206,7 +206,7 @@ async function fectchProduct() {
 fectchProduct();
 ```
 
-## Node.js Event Loop
+# Node.js Event Loop
 
 在 Node.js 当中，将凡事有任何需要等待结果的、请求外部资源才能进行的函式，都会被放到 Event Loop 中等待。当运算结果出来了或是资源载入完成后，这些正在等待被执行的函式，都会被 Node.js 依序执行。如此一来，Node.js 可以保持忙碌且维持高效率。
 
@@ -283,7 +283,7 @@ console.log("end");
 // setImmediate
 ```
 
-## Race Condition
+# Race Condition
 
 在计算机科学中，进程(process)是正在执行的程式，线程(thread)是可以由程序调度员(scheduler，一个作业系统内的功能)独立管理的轻量级进程。一个 process 内部可以有多个 threads。
 
@@ -394,7 +394,7 @@ main();
 // 卖葡萄与橄榄后的帐户金额是350
 ```
 
-## Promise-Based API
+# Promise-Based API
 
 API (Application Programming Interface) 的中文是应用程序编程接口。 Application 是指任何具有功能的程式， Interface(接口)可以被认为是两个程式之间的服务契约。该合约定义了两个程式之间如何相互通信。例如： 当程式甲需要程式乙帮他做某件事，或是取得某些资料的时候，程式乙会定义一套的标准或接口，告诉任何想要程式乙提供服务的对象，如何跟程式乙沟通。这套标准就是 API。
 
