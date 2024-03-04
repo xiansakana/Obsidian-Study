@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "frontend/React.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "frontend/React.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "frontend/React.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "frontend/React.md"
               }
             }
           },
@@ -169,11 +169,11 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "d03d3c5c42d02400",
   "lastOpenFiles": [
+    "algorithm/Top Interview 150.md",
     "diary",
     "2024-03-03.md",
-    "algorithm/Top Interview 150.md",
     "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
@@ -215,7 +215,6 @@
     "backend/java",
     "interview/resume/中文/竖版-鲍嘉轩-安徽大学-计算机科学与技术.pdf",
     "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4",
-    "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4.crdownload",
     "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg",
     "未命名.canvas",
     "未命名 1.canvas"
