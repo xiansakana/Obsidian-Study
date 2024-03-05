@@ -424,6 +424,38 @@ class Solution {
 
 空间复杂度：O(n)。
 
+## [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)（[判断子序列](https://leetcode.cn/problems/is-subsequence/)）
+
+```
+Input: s = "abc", t = "ahbgdc"
+Output: true
+```
+
+```
+Input: s = "axc", t = "ahbgdc"
+Output: false
+```
+
+```python
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        p1, p2 = 0, 0
+        if len(s) == 0:
+            return True
+        while p2 < len(t):      
+            if s[p1] == t[p2]:
+                if p1 == len(s) - 1:
+                    return True
+                p1 += 1
+            p2 += 1
+        return False
+```
+
+时间复杂度：O(n+m)，其中 n 为 s 的长度，m 为 t 的长度。每次无论是匹配成功还是失败，都有至少一个指针发生右移，两指针能够位移的总距离为 n+m。
+
+空间复杂度：O(1)。
+
+
 # Medium
 
 ## [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)（[Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)）
