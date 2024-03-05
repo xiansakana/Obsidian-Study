@@ -4,7 +4,7 @@ tags:
   - SpringBoot
   - 后端
 categories: 后端
-cover: https://cdn.cbd.int/xiansakana-blog-img/202312180825037.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202312180825037.jpg
 abbrlink: e750a506
 date: 2023-12-18 08:13:42
 ---

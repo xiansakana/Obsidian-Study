@@ -4,7 +4,7 @@ tags:
   - OAuth
   - Passport.js
 categories: 学习
-cover: "https://cdn.cbd.int/xiansakana-blog-img/202311222257191.jpg"
+cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222257191.jpg"
 abbrlink: 6529f8fe
 date: 2023-11-22 22:58:04
 ---
@@ -22,7 +22,7 @@ OAuth 2.0 是一种安全协议，协议规范能让第三方应用程式以有�
 - Authorization Server – 授权服务器，指的是 Google, Facebook 等大型系统，也就是给予授权的服务器。
 - Resource Server – 资源服务器，指的是 Google, Facebook 等大型系统中，存放资源拥有者的被保护信息的位置。
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311201924672.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311201924672.png)
 
 # OAuth 2.0 详细流程
 
@@ -43,7 +43,7 @@ OAuth 2.0 是一种安全协议，协议规范能让第三方应用程式以有�
 6. 由于认证成功，Google Server 会用 HTTP status code 302 把网页使用者重新导向到https://www.spencer.com/auth/google/redirect?code= 。其中的 code 会是 Spencer-saltedfish code。 /auth/google/redirect 这个 route 是由 Spencer Cool Website 后端来处理的。
 7. Spencer Cool Website 可以在/auth/google/redirect 这个 route 中，先确认了使用者已经被验证了(可以用 passport.authenticate('google'))，再将使用者导向 profile 页面，此页面显示使用者存在 Google 的基本信息，但页面是由 Spencer cool website 所提供的。对网页使用者来说，步骤 2 到 6 都是不可见的。
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311201938540.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311201938540.png)
 
 # Passport 套件
 

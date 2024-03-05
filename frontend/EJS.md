@@ -4,7 +4,7 @@ tags:
   - EJS
   - 前端
   - Express.js
-cover: "https://cdn.cbd.int/xiansakana-blog-img/202311121034957.jpg"
+cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121034957.jpg"
 categories: 学习
 abbrlink: 71e431f8
 date: 2023-11-12 10:45:48
@@ -143,9 +143,9 @@ Model、View、Controller 的分工如下：
 - 视图(View) – 将数据有目的的显示出来。
 - 控制器(Controller ) – 用于控制应用程式的流程，处理事件并作出回应。“事件”包括使用者的行为和 Model 上的改变。
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311101555610.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311101555610.png)
 
-![](https://cdn.cbd.int/xiansakana-blog-img/202311101556554.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311101556554.png)
 
 采用 MVC design pattern 的优点有：
 
