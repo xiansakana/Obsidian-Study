@@ -1,6 +1,18 @@
+---
+title: Top Interview 150
+tags:
+  - Leetcode
+  - 算法
+cover: 'https://img.xiansakana.xyz/202403050327460.jpg'
+categories: 算法
+abbrlink: b6d1a2e5
+date: 2024-03-05 03:41:00
+---
+
 # Easy
 
 ## [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)（[整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/)）
+
 ```
 Input: num = 3
 Output: "III"
@@ -27,11 +39,9 @@ class Solution:
         return Roman
 ```
 
-时间复杂度：O(1)。由于 value Symbols 长度是固定的，且字符中的每个字符的出现次数均不会超过3，因此循环次数有一个确定的上限。对于本题给出的数据范围，循环次数不会超过 15 次。
+时间复杂度：O(1)。由于 value Symbols 长度是固定的，且字符中的每个字符的出现次数均不会超过 3，因此循环次数有一个确定的上限。对于本题给出的数据范围，循环次数不会超过 15 次。
 
 空间复杂度：O(1)。
-
-
 
 ## [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)（[罗马数字转整数](https://leetcode.cn/problems/roman-to-integer/)）
 
@@ -65,9 +75,8 @@ class Solution:
 
 空间复杂度：O(1)。使用了 `Int`。
 
-
-
 ## [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)（[最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)）
+
 ```
 Input: strs = ["flower","flow","flight"]
 Output: "fl"
@@ -98,8 +107,6 @@ class Solution:
 时间复杂度：O(mn)，其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量。最坏情况下，字符串数组中的每个字符串的每个字符都会被比较一次。
 
 空间复杂度：O(1)。使用的额外空间复杂度为常数。
-
-
 
 ## [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/) （[删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)）
 
@@ -132,8 +139,6 @@ class Solution:
 
 空间复杂度：O(1)，只需要使用常数的额外空间。
 
-
-
 ## [27. Remove Element](https://leetcode.com/problems/merge-sorted-array/description/) （[移除元素](https://leetcode.cn/problems/remove-element/)）
 
 ```
@@ -151,7 +156,7 @@ class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         left = 0
         right = 0
-        while(i < len(nums)):          
+        while(i < len(nums)):
             if nums[right]!=val:
                 nums[left]=nums[right]
                 left+=1
@@ -191,8 +196,6 @@ return -1
 
 空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
 
-
-
 ## [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)（[最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word/)）
 
 ```
@@ -219,11 +222,9 @@ class Solution:
         return length
 ```
 
-时间复杂度：O(n)，其中 n 是字符串的长度。最多需要反向遍历字符串一次。
+时间复杂度：O(n)，其中  n  是字符串的长度。最多需要反向遍历字符串一次。
 
 空间复杂度：O(1)。
-
-
 
 ## [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/) （[合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)）
 
@@ -271,8 +272,6 @@ class Solution {
 
 空间复杂度：O(m+n)。需要建立长度为 m+n 的中间数组 sorted。
 
-
-
 ## [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) （[买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)）
 
 ```
@@ -301,8 +300,6 @@ class Solution:
 时间复杂度：O(n)。
 
 空间复杂度：O(1)。
-
-
 
 ## [169. Majority Element](https://leetcode.com/problems/majority-element/description/) （[多数元素](https://leetcode.cn/problems/majority-element/)）
 
@@ -337,8 +334,6 @@ class Solution:
 
 空间复杂度：O(1)，Boyer-Moore 算法只需要常数级别的额外空间。
 
-
-
 ```java
 class Solution {
       private static int countNums(int[] nums) {
@@ -369,8 +364,6 @@ class Solution {
 时间复杂度：O(n)。
 
 空间复杂度：O(n)。
-
-
 
 # Medium
 
@@ -405,14 +398,12 @@ class Solution:
 ```
 
 时间复杂度：O(n)。
-    
+
 空间复杂度：O(n)。
-
-
 
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
-Return *the minimum number of jumps to reach* `nums[n - 1]`.
+Return _the minimum number of jumps to reach_ `nums[n - 1]`.
 
 ```
 Input: nums = [2,3,1,1,4]
@@ -442,11 +433,9 @@ class Solution:
 时间复杂度：一重循环遍历的时间复杂度是 O(n)，所以总体时间复杂度为 O(n)。
 空间复杂度：只用到了常数项的变量，所以总体空间复杂度为 O(1)。
 
-
-
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/) （[跳跃游戏](https://leetcode.cn/problems/jump-game/)）
 
-Return `true` *if you can reach the last index, or* `false` *otherwise*.
+Return `true` _if you can reach the last index, or_ `false` _otherwise_.
 
 ```
 Input: nums = [2,3,1,1,4]
@@ -471,8 +460,6 @@ class Solution:
 时间复杂度 O(n)。
 
 空间复杂度 O(1)。
-
-
 
 ## [80. Remove Duplicates from Sorted II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/) （[删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/)）
 
@@ -504,8 +491,6 @@ class Solution:
 
 空间复杂度：O(1)，我们只需要常数的空间存储若干变量。
 
-
-
 ## [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) （[买卖股票的最佳时机 II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)）
 
 ```
@@ -536,7 +521,7 @@ class Solution:
                 profit = p - cost
                 total += profit
                 cost = p
-                profit = 0    
+                profit = 0
         return total
 ```
 
@@ -549,8 +534,6 @@ class Solution:
             if tmp > 0: profit += tmp
         return profit
 ```
-
-
 
 ## [134. Gas Station](https://leetcode.com/problems/gas-station/)（[加油站](https://leetcode.cn/problems/gas-station/)）
 
@@ -589,7 +572,7 @@ class Solution:
             while count < len(gas):
                 j = (i + count) % len(gas)
                 tank += gas[j]
-                tank -= cost[j] 
+                tank -= cost[j]
                 if tank < 0:
                     break
                 count += 1
@@ -597,15 +580,14 @@ class Solution:
                 return i
             else:
                 i = i + count + 1
-        return -1       
+        return -1
 ```
 
 - 时间复杂度：O(N)，其中 N 为数组的长度。我们对数组进行了单次遍历。
 - 空间复杂度：O(1)。
 
-
-
 ## [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)（[反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)）
+
 ```
 Input: s = "the sky is blue"
 Output: "blue is sky the"
@@ -628,8 +610,8 @@ class Solution:
         return result
 ```
 
-时间复杂度：O(n)，其中 n 为输入字符串的长度。
-    
+时间复杂度：O(n)，其中  n  为输入字符串的长度。
+
 空间复杂度：O(n)，用来存储字符串分割之后的结果。
 
 **双指针遍历**
@@ -654,11 +636,9 @@ class Solution {
 }
 ```
 
-时间复杂度：O(n)，其中 n 为输入字符串的长度。
-    
+时间复杂度：O(n)，其中  n  为输入字符串的长度。
+
 空间复杂度：O(1)。
-
-
 
 ## [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 
@@ -686,16 +666,12 @@ class Solution:
 
 空间复杂度：O(n)。
 
-
-
 | 操作                              | 结果          |
 | :-------------------------------- | ------------- |
 | 原始数组                          | 1 2 3 4 5 6 7 |
 | 翻转所有元素                      | 7 6 5 4 3 2 1 |
 | 翻转 [0, (k mod n) -1] 区间的元素 | 5 6 7 4 3 2 1 |
 | 翻转 [k mod n, n - 1] 区间的元素  | 5 6 7 1 2 3 4 |
-
-
 
 ```python
 class Solution:
@@ -721,8 +697,6 @@ class Solution:
 
 空间复杂度：O(1)。
 
-
-
 ```java
 class Solution {
     public void rotate(int[] nums, int k) {
@@ -747,8 +721,6 @@ class Solution {
 时间复杂度：O(n)，其中 n 为数组的长度。每个元素被翻转两次，一共 n 个元素，因此总时间复杂度为 O(2n)=O(n)。
 
 空间复杂度：O(1)。
-
-
 
 ## [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) （[除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/)）
 
@@ -778,7 +750,7 @@ class Solution:
         R[len(nums)-1] = 1
         for i in reversed(range(len(nums)-1)):
             R[i] = nums[i+1] * R[i+1]
-        
+
         for i in range(len(nums)):
             result[i] = L[i] * R[i]
 
@@ -788,9 +760,7 @@ class Solution:
 时间复杂度：O(N)，其中 N 指的是数组 nums 的大小。预处理 L 和 R 数组以及最后的遍历计算都是 O(N) 的时间复杂度。
 空间复杂度：O(N)，其中 N 指的是数组 nums 的大小。使用了 L 和 R 数组去构造答案，L 和 R 数组的长度为数组 nums 的大小。
 
-
-
-空间复杂度 O(1)O(1)*O*(1) 的方法
+空间复杂度 O(1)O(1)_O_(1) 的方法
 
 ```python
 class Solution:
@@ -799,7 +769,7 @@ class Solution:
         result[0] = 1
         for i in range(1, len(nums)):
             result[i] = nums[i-1] * result[i-1]
-        
+
         R = 1
         for i in reversed(range(len(nums))):
             result[i] *= R
@@ -810,8 +780,6 @@ class Solution:
 
 时间复杂度：O(N)，其中 N 指的是数组 nums 的大小。分析与方法一相同。
 空间复杂度：O(1)，输出数组不算进空间复杂度中，因此我们只需要常数的空间存放变量。
-
-
 
 ## [274. H-Index](https://leetcode.com/problems/h-index/) （[H 指数](https://leetcode.cn/problems/h-index/)）
 
@@ -844,8 +812,6 @@ class Solution:
 
 空间复杂度：O(log⁡n)，其中 n 为数组 citations 的长度。即为排序的空间复杂度。
 
-
-
 二分搜索
 
 ```python
@@ -870,8 +836,6 @@ class Solution:
 
 时间复杂度：O(nlogn)，其中 n 为数组 citations 的长度。需要进行 logn 次二分搜索，每次二分搜索需要遍历数组 citations 一次。
 空间复杂度：O(1)，只需要常数个变量来进行二分搜索。
-
-
 
 ## [380. Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) （[O(1) 时间插入、删除和获取随机元素](https://leetcode.cn/problems/insert-delete-getrandom-o1/)）
 
@@ -903,7 +867,7 @@ class RandomizedSet:
         # get the index of the num to be removed
         index = self.indices[val]
         # assign the index of the num to be removed to the last element of the hash table
-        # so that the corresponding index in the hash table is synchronized with the array 
+        # so that the corresponding index in the hash table is synchronized with the array
         self.indices[self.nums[-1]] = index
         # set the last element of the array to the position of the num to be removed
         self.nums[index] = self.nums[-1]
@@ -920,8 +884,6 @@ class RandomizedSet:
 # param_2 = obj.remove(val)
 # param_3 = obj.getRandom()
 ```
-
-
 
 # Hard
 
@@ -955,8 +917,6 @@ class Solution:
 时间复杂度：O(n)，其中 n 是数组 height 的长度。两个指针的移动总次数不超过 n。
 
 空间复杂度：O(1)。只需要使用常数的额外空间。
-
-
 
 ## [68. Text Justification](https://leetcode.com/problems/text-justification/)（[文本左右对齐](https://leetcode.cn/problems/text-justification/)）
 
@@ -1013,7 +973,7 @@ class Solution:
                 left[i] = left[i - 1] + 1
             else:
                 left[i] = 1
-        
+
         right = ret = 0
         for i in range(n - 1, -1, -1):
             if i < n - 1 and ratings[i] > ratings[i + 1]:
@@ -1021,7 +981,7 @@ class Solution:
             else:
                 right = 1
             ret += max(left[i], right)
-        
+
         return ret
 
 ```
@@ -1029,8 +989,6 @@ class Solution:
 时间复杂度：O(n)，其中 n 是孩子的数量。我们需要遍历两次数组以分别计算满足左规则或右规则的最少糖果数量。
 
 空间复杂度：O(n)，其中 n 是孩子的数量。我们需要保存所有的左规则对应的糖果数量。
-
-
 
 常数空间遍历
 
@@ -1062,4 +1020,3 @@ class Solution:
 时间复杂度：O(n)，其中 n 是孩子的数量。我们需要遍历两次数组以分别计算满足左规则或右规则的最少糖果数量。
 
 空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
-
