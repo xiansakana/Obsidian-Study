@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "5071e3fb3c674b38",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miscellaneous/Github搭建免费图床.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -171,8 +183,9 @@
   },
   "active": "d03d3c5c42d02400",
   "lastOpenFiles": [
-    "miscellaneous/图床使用方案.md",
+    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/一些问题记录.md",
+    "miscellaneous/图床使用方案.md",
     "frontend/React.md",
     "algorithm/Top Interview 150.md",
     "diary",
@@ -182,7 +195,6 @@
     "miscellaneous/Markdown语法参考.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
-    "miscellaneous/Github搭建免费图床.md",
     "interview/bq/behavior questions.md",
     "interview/awesome-resume/README.md",
     "frontend/Version-Control.md",
