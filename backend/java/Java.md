@@ -1,3 +1,6 @@
+---
+abbrlink: '0'
+---
 # 基础知识
 
 ## 多态 (Polymorphism)

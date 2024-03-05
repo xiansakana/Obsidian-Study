@@ -1,3 +1,6 @@
+---
+abbrlink: '0'
+---
 <h1 align="center">
  Awesome Resume
 </h1>

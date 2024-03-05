@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -183,12 +183,15 @@
   },
   "active": "d03d3c5c42d02400",
   "lastOpenFiles": [
-    "miscellaneous/一些问题记录.md",
     "algorithm/Top Interview 150.md",
+    "algorithm/lc预备知识.md",
+    "一键修改图床链接.bat",
+    "test.bat",
+    "新建 文本文档.txt",
+    "miscellaneous/一些问题记录.md",
     "algorithm/Top Interview 150 1.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Github搭建免费图床.md",
-    "algorithm/lc预备知识.md",
     "config/Git-bash配置多个Github用户.md",
     "config/Git常用版本控制指令.md",
     "config/前后端分离项目云服务器部署.md",
@@ -209,7 +212,6 @@
     "frontend/Node-js.md",
     "frontend/Next-js.md",
     "frontend/Mongoose.md",
-    "frontend/MongoDB.md",
     "frontend/css/CSS2笔记.pdf",
     "ebook/sde/程序员面试白皮书.pdf",
     "ebook/sde/程序员的自我修养：链接、装载与库.pdf",
@@ -225,9 +227,6 @@
     "interview/awesome-resume/imgs/2.png",
     "interview/awesome-resume/imgs",
     "interview/awesome-resume",
-    "backend/java",
-    "interview/resume/中文/竖版-鲍嘉轩-安徽大学-计算机科学与技术.pdf",
-    "interview/resume/others/X2Twitter.com_uQYDb8wqVVbG9xKV(720p).mp4",
     "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg",
     "未命名.canvas",
     "未命名 1.canvas"

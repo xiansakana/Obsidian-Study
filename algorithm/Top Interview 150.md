@@ -3,7 +3,7 @@ title: Top Interview 150
 tags:
   - Leetcode
   - 算法
-cover: 'https://img.xiansakana.xyz/202403050327460.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050327460.jpg
 categories: 算法
 abbrlink: b6d1a2e5
 date: 2024-03-05 03:41:00
