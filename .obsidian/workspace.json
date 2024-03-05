@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -183,8 +183,9 @@
   },
   "active": "d03d3c5c42d02400",
   "lastOpenFiles": [
-    "miscellaneous/一些问题记录.md",
     "miscellaneous/Github搭建免费图床.md",
+    "miscellaneous/一些问题记录.md",
+    "miscellaneous/Hexo博客增加书单集.md",
     "miscellaneous/图床使用方案.md",
     "frontend/React.md",
     "algorithm/Top Interview 150.md",
@@ -194,7 +195,6 @@
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
     "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/Hexo博客增加书单集.md",
     "interview/bq/behavior questions.md",
     "interview/awesome-resume/README.md",
     "frontend/Version-Control.md",
