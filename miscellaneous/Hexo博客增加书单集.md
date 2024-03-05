@@ -2,7 +2,7 @@
 title: Hexo博客增加书单集
 tags:
   - Hexo
-categories: Hexo
+categories: 杂项
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309282106651.jpg
 abbrlink: 3acbfff3
 date: 2023-09-28 21:05:33

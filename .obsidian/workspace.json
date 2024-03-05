@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d03d3c5c42d02400",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/java/Java.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "5071e3fb3c674b38",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Github搭建免费图床.md",
+                "file": "interview/awesome-resume/Awesome-resume.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/java/Java.md",
+                "file": "interview/awesome-resume/Awesome-resume.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/java/Java.md",
+                "file": "interview/awesome-resume/Awesome-resume.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/java/Java.md"
+                "file": "interview/awesome-resume/Awesome-resume.md"
               }
             }
           },
@@ -181,41 +169,42 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "d03d3c5c42d02400",
+  "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
-    "interview/bq/Behavior-Questions.md",
-    "interview/bq/Behavior Questions.md",
-    "interview/awesome-resume/Awesome-resume.md",
-    "interview/awesome-resume/README.md",
-    "interview/awesome-resume/awesome-resume.md",
     "backend/java/Java.md",
+    "algorithm/Top Interview 150.md",
+    "algorithm/lc预备知识.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Hexo博客增加书单集.md",
+    "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Github搭建免费图床.md",
     "miscellaneous/一些问题记录.md",
+    "miscellaneous/图床使用方案.md",
+    "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
+    "interview/bq/Behavior-Questions.md",
+    "interview/awesome-resume/Awesome-resume.md",
+    "frontend/Version-Control.md",
+    "frontend/SQL.md",
+    "frontend/Rest.md",
+    "frontend/React.md",
+    "frontend/OAuth.md",
+    "frontend/Node-js.md",
+    "frontend/Next-js.md",
+    "frontend/Mongoose.md",
+    "frontend/MongoDB.md",
+    "frontend/Middlewares-Cookies-Sessions.md",
+    "frontend/JWT.md",
+    "frontend/JavaScript-Basics.md",
+    "frontend/JavaScipt-Basics-2.md",
     "copy_md.py",
     "copy_md.txt",
     "新建 文本文档.txt",
     "interview/oa/Amazon/amazon OA/AMAZON_50_OA.html",
-    "algorithm/Top Interview 150.md",
-    "algorithm/lc预备知识.md",
     "一键修改图床链接.bat",
     "test.bat",
-    "algorithm/Top Interview 150 1.md",
-    "miscellaneous/图床使用方案.md",
-    "miscellaneous/Github搭建免费图床.md",
-    "config/Git-bash配置多个Github用户.md",
-    "config/Git常用版本控制指令.md",
-    "config/前后端分离项目云服务器部署.md",
-    "interview/bq/behavior questions.md",
-    "miscellaneous/Unblock-Netease-Music.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/Hexo博客增加书单集.md",
-    "frontend/React.md",
     "diary",
-    "2024-03-03.md",
-    "frontend/Version-Control.md",
-    "frontend/SQL.md",
-    "frontend/Rest.md",
     "frontend/css/CSS2笔记.pdf",
     "ebook/sde/程序员面试白皮书.pdf",
     "ebook/sde/程序员的自我修养：链接、装载与库.pdf",
@@ -228,7 +217,6 @@
     "interview/awesome-resume/imgs/3.png",
     "interview/awesome-resume/imgs/1.png",
     "interview/awesome-resume/imgs/2.png",
-    "interview/resume/others/DF411907B9718C871CD766D42231364A.jpeg",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

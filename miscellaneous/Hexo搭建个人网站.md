@@ -3,7 +3,7 @@ title: Hexo搭建个人网站
 tags:
   - Hexo
   - Git
-categories: Hexo
+categories: 杂项
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309210911702.png
 abbrlink: 186d25a2
 date: 2023-09-20 03:11:12

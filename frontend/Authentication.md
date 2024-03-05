@@ -3,8 +3,8 @@ title: Authentication
 tags:
   - Authentication
   - Bcrypt
-categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222256191.jpg'
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222256191.jpg
 abbrlink: 33d0b125
 date: 2023-11-22 22:55:29
 ---

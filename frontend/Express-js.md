@@ -3,8 +3,8 @@ title: Express.js
 tags:
   - Express.js
   - 前端
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121025991.jpg"
-categories: 学习
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121025991.jpg
+categories: 前端
 abbrlink: fcc95608
 date: 2023-11-12 10:24:29
 ---

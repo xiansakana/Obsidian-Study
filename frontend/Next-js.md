@@ -3,8 +3,8 @@ title: Next.js
 tags:
   - Next.js
   - React
-categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291739583.jpg'
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291739583.jpg
 abbrlink: 98531b37
 date: 2023-11-29 17:36:34
 ---

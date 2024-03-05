@@ -3,8 +3,8 @@ title: JavaScipt Basics 2
 tags:
   - JavaScript
   - 前端
-categories: 学习
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310240401759.png'
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310240401759.png
 abbrlink: ef214ab0
 date: 2023-10-24 03:56:41
 ---

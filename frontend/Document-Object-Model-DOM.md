@@ -4,8 +4,8 @@ tags:
   - JavaScript
   - 前端
   - DOM
-categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311010813961.png"
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311010813961.png
 abbrlink: 5fb72f5f
 date: 2023-11-01 05:15:52
 ---

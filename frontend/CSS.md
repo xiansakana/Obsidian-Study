@@ -3,7 +3,7 @@ title: CSS
 tags:
   - CSS
   - 前端
-categories: 学习
+categories: 前端
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310190107034.png
 abbrlink: d54bd6b
 date: 2023-10-19 01:24:41

@@ -4,8 +4,8 @@ tags:
   - JavaScript
   - 前端
   - Ajax
-categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140929903.jpg"
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140929903.jpg
 abbrlink: 3d61c948
 date: 2023-11-14 09:24:21
 ---

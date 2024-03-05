@@ -4,8 +4,8 @@ tags:
   - React
   - JSX
   - SPA
-categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg"
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg
 abbrlink: d8a440d1
 date: 2023-11-22 23:04:10
 ---

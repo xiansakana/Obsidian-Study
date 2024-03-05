@@ -4,8 +4,8 @@ tags:
   - MongoDB
   - 数据库
   - 后端
-categories: 学习
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140937414.jpg"
+categories: 前端
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140937414.jpg
 abbrlink: 8ead567e
 date: 2023-11-14 09:36:39
 ---
