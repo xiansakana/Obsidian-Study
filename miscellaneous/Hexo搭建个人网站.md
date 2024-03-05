@@ -182,6 +182,13 @@ npm install hexo-admin --save
 
    不出意外，就可以在浏览器上输入`https://username.github.io`访问你的博客了，记得替换`username`为自己的用户名。
 
+关于备份的问题，我一般都新建一个私人仓库来备份hexo源文件，而且可以用bat批处理来一键发布和备份文章
+
+```bash
+start cmd /k "d: && cd Hexo && hexo cl && hexo g && hexo d && git add  --all && git commit -m "update posts" && git push"
+
+```
+
 ## 域名配置
 
 1. 购买域名
