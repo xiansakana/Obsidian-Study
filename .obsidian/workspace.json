@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/awesome-resume/Awesome-resume.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/awesome-resume/Awesome-resume.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/awesome-resume/Awesome-resume.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/awesome-resume/Awesome-resume.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -171,20 +171,23 @@
   },
   "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
-    "backend/java/Java.md",
-    "algorithm/Top Interview 150.md",
+    "interview/bq/Behavior-Questions.md",
+    "interview/awesome-resume/Awesome-Resume.md",
+    "miscellaneous/一些问题记录.md",
+    "interview/awesome-resume/Awesome-Resume 1.md",
+    "interview/awesome-resume/Awesome-resume.md",
+    "miscellaneous/前后端分离项目云服务器部署.md",
+    "backend/Java.md",
     "algorithm/lc预备知识.md",
+    "algorithm/Top Interview 150.md",
     "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
     "miscellaneous/Hexo博客增加书单集.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Github搭建免费图床.md",
-    "miscellaneous/一些问题记录.md",
     "miscellaneous/图床使用方案.md",
     "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
-    "interview/bq/Behavior-Questions.md",
-    "interview/awesome-resume/Awesome-resume.md",
     "frontend/Version-Control.md",
     "frontend/SQL.md",
     "frontend/Rest.md",
@@ -195,9 +198,6 @@
     "frontend/Mongoose.md",
     "frontend/MongoDB.md",
     "frontend/Middlewares-Cookies-Sessions.md",
-    "frontend/JWT.md",
-    "frontend/JavaScript-Basics.md",
-    "frontend/JavaScipt-Basics-2.md",
     "copy_md.py",
     "copy_md.txt",
     "新建 文本文档.txt",
