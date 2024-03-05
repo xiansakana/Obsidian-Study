@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -171,6 +171,9 @@
   },
   "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
+    "language/Python.md",
+    "algorithm/Top Interview 150.md",
+    "language",
     "miscellaneous/一些问题记录.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "utils",
@@ -184,7 +187,6 @@
     "miscellaneous/前后端分离项目云服务器部署.md",
     "backend/Java.md",
     "algorithm/lc预备知识.md",
-    "algorithm/Top Interview 150.md",
     "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
@@ -206,7 +208,6 @@
     "一键修改图床链接.bat",
     "test.bat",
     "diary",
-    "frontend/css/CSS2笔记.pdf",
     "interview/awesome-resume/imgs/banner.jpg",
     "interview/awesome-resume/imgs/wrong_all.png",
     "interview/awesome-resume/imgs/rabbit-256.png",
