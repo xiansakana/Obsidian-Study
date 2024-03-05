@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/一些问题记录.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -171,12 +171,12 @@
   },
   "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
+    "miscellaneous/一些问题记录.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "utils",
     "新建文件夹",
     "miscellaneous/Hexo博客增加书单集.md",
     "miscellaneous/图床使用方案.md",
-    "miscellaneous/一些问题记录.md",
     "interview/bq/Behavior-Questions.md",
     "interview/awesome-resume/Awesome-Resume.md",
     "interview/awesome-resume/Awesome-Resume 1.md",
