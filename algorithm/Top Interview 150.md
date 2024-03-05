@@ -322,11 +322,43 @@ Explanation: s is an empty string "" after removing non-alphanumeric characters.
 Since an empty string reads the same forward and backward, it is a palindrome.
 ```
 
-```python
+**筛选和判断**
 
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s_lower = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+        # s_lower = ''.join([char.lower() for char in s if char.isalnum()])
+        return s_lower == s_lower[::-1]
 ```
 
+时间复杂度：O(∣s∣)，其中 ∣s∣ 是字符串 sss 的长度。
 
+空间复杂度：O(∣s∣)。由于我们需要将所有的字母和数字字符存放在另一个字符串中，在最坏情况下，新的字符串 s_lower 与原字符串 s 完全相同，因此需要使用 O(∣s∣) 的空间。
+
+**双指针**
+
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        n = len(s)
+        left, right = 0, n - 1
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1
+            if left < right:
+                if s[left].lower() != s[right].lower():
+                    return False
+                left += 1
+                right -= 1
+        return True
+```
+
+时间复杂度：O(∣s∣)，其中 ∣s∣ 是字符串 s 的长度。
+
+空间复杂度：O(1)。
 
 ## [169. Majority Element](https://leetcode.com/problems/majority-element/description/) （[多数元素](https://leetcode.cn/problems/majority-element/)）
 
