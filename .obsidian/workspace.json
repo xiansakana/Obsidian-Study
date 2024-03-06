@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "miscellaneous/Git常用版本控制指令.md"
               }
             }
           },
@@ -184,6 +184,9 @@
   },
   "active": "cd4c7c735a4191de",
   "lastOpenFiles": [
+    "miscellaneous/Git-bash配置多个Github用户.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "algorithm/Top Interview 150.md",
     "interview/resume/中文/Markdown-Resume/README.md",
     "interview/resume/中文/Markdown-Resume/resume.css",
     "interview/resume/中文/Markdown-Resume/assets/tools-solid.svg",
@@ -199,7 +202,6 @@
     "interview/resume/中文/Markdown-Resume/assets",
     "interview/resume/中文/Markdown-Resume",
     "miscellaneous/Unblock-Netease-Music.md",
-    "algorithm/Top Interview 150.md",
     "backend/Java.md",
     "backend/Springboot.md",
     "miscellaneous/一些问题记录.md",
@@ -224,8 +226,6 @@
     "frontend/Rest.md",
     "frontend/React.md",
     "frontend/OAuth.md",
-    "frontend/Node-js.md",
-    "frontend/Next-js.md",
     "copy_md.py",
     "copy_md.txt",
     "新建 文本文档.txt",

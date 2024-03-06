@@ -101,3 +101,18 @@ git push origin <本地分支名>
 git push
 ```
 
+
+
+# 删除远端commit
+
+先删除本地的几次提交，"HEAD~1"里面的1代表撤回几次提交
+
+```bash
+git reset --soft HEAD~1
+```
+
+然后强制性将本地覆盖性的提交到远端，达到删除的目的，"branchname"是你的分支名称
+
+```bash
+git push origin branchname --force
+```
