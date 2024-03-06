@@ -527,6 +527,67 @@ class Solution:
 
 空间复杂度：O(1)，只需要额外的常数级别的空间。
 
+## [15. 3Sum](https://leetcode.com/problems/3sum/)（[三数之和](https://leetcode.cn/problems/3sum/)）
+
+Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+
+Notice that the solution set must not contain duplicate triplets.
+
+```
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation: 
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+```
+
+```
+Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+```
+
+```
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
+Explanation: The only possible triplet sums up to 0.
+```
+
+**双指针
+
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        arr = []
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            left, right = i + 1, len(nums) - 1
+            while left < right:
+                if nums[left] + nums[right] + nums[i] < 0:
+                    left += 1
+                elif nums[left] + nums[right] + nums[i] > 0:
+                    right -= 1
+                else:
+                    arr.append([nums[i], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    left += 1
+                    right -= 1
+        return arr
+```
+
+时间复杂度：O(N<sup>2</sup>)，其中 N 是数组 nums 的长度。
+
+空间复杂度：O(log⁡N)。我们忽略存储答案的空间，额外的排序的空间复杂度为 O(log⁡N)。然而我们修改了输入的数组 nums，在实际情况下不一定允许，因此也可以看成使用了一个额外的数组存储了 nums的副本并进行排序，空间复杂度为 O(N)。
+
+
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
 Return _the minimum number of jumps to reach_ `nums[n - 1]`.
