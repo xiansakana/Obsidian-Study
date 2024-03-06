@@ -492,8 +492,40 @@ class Solution:
 
 空间复杂度：O(n)。
 
+## [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) （[盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)）
 
+![](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg)
 
+```
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+```
+
+```
+Input: height = [1,1]
+Output: 1
+```
+
+**双指针**
+
+```python
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left, right = 0, len(height) - 1
+        water = 0
+        while left < right:
+            water = max(water, (right - left) * min(height[left], height[right]))
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+        return water
+```
+
+时间复杂度：O(N)，双指针总计最多遍历整个数组一次。
+
+空间复杂度：O(1)，只需要额外的常数级别的空间。
 
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
