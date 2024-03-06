@@ -492,6 +492,9 @@ class Solution:
 
 空间复杂度：O(n)。
 
+
+
+
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
 Return _the minimum number of jumps to reach_ `nums[n - 1]`.
@@ -748,16 +751,22 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 **双指针**
 
 ```python
-
-
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            if numbers[left] + numbers[right] > target:
+                right -= 1
+            elif numbers[left] + numbers[right] < target:
+                left += 1
+            else:
+                return [left + 1, right + 1]
 ```
 
+时间复杂度：O(n)，其中 n 是数组的长度。两个指针移动的总次数最多为 n 次。
 
-**双指针+二分查找**
+空间复杂度：O(1)。
 
-```python
-
-```
 
 ## [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 
