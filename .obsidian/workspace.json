@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Git常用版本控制指令.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Git常用版本控制指令.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Git常用版本控制指令.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Git常用版本控制指令.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -184,8 +184,8 @@
   },
   "active": "cd4c7c735a4191de",
   "lastOpenFiles": [
-    "miscellaneous/Git-bash配置多个Github用户.md",
     "miscellaneous/Git常用版本控制指令.md",
+    "miscellaneous/Git-bash配置多个Github用户.md",
     "algorithm/Top Interview 150.md",
     "interview/resume/中文/Markdown-Resume/README.md",
     "interview/resume/中文/Markdown-Resume/resume.css",
