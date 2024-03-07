@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/关于美国身份问题的常识.md",
+                "file": "interview/awesome-resume/Awesome-Resume.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "resume",
+                "query": "awesome resume",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +77,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/关于美国身份问题的常识.md",
+                "file": "interview/awesome-resume/Awesome-Resume.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/关于美国身份问题的常识.md",
+                "file": "interview/awesome-resume/Awesome-Resume.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/关于美国身份问题的常识.md"
+                "file": "interview/awesome-resume/Awesome-Resume.md"
               }
             }
           },
@@ -183,8 +184,8 @@
   },
   "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
-    "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/一些问题记录.md",
     "interview/resume/中文/Markdown-Resume/README.md",
     "copy_md_blog2obsidian.py",
