@@ -4,7 +4,7 @@ tags:
   - Next.js
   - React
 categories: 前端
-cover: https://img.xiansakana.xyz/202311291739583.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291739583.jpg
 abbrlink: 98531b37
 date: 2023-11-29 17:36:34
 ---
@@ -22,19 +22,19 @@ Next.js 内建了 Code Splitting 的功能。在建构 Next.js 网站时， page
 
 ## Compiling
 
-![](https://img.xiansakana.xyz/202311291434652.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291434652.png)
 
 ## Minifying
 
-![](https://img.xiansakana.xyz/202311291435221.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291435221.png)
 
 ## Bundling
 
-![](https://img.xiansakana.xyz/202311291435175.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291435175.png)
 
 ## Code Splitting
 
-![](https://img.xiansakana.xyz/202311291435075.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291435075.png)
 
 # 渲染方式
 
@@ -47,15 +47,15 @@ Next.js 内建了 Code Splitting 的功能。在建构 Next.js 网站时， page
 
 ## Client-Side Rendering
 
-![](https://img.xiansakana.xyz/202311291437458.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291437458.png)
 
 ## Server-Side Rendering
 
-![](https://img.xiansakana.xyz/202311291437927.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291437927.png)
 
 ## Content Delivery Network
 
-![](https://img.xiansakana.xyz/202311291437518.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291437518.png)
 
 # Routing in Next.js
 
@@ -92,4 +92,4 @@ CSS Modules 当中，文件的命名规则是[name].module.css。此外，CSS �
 
 # Next.js 开发选项
 
-![](https://img.xiansakana.xyz/202311291557787.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291557787.png)

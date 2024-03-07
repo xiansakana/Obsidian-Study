@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/关于美国身份问题的常识.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/关于美国身份问题的常识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "miscellaneous/关于美国身份问题的常识.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md"
+                "file": "miscellaneous/关于美国身份问题的常识.md"
               }
             }
           },
@@ -183,8 +183,9 @@
   },
   "active": "5071e3fb3c674b38",
   "lastOpenFiles": [
-    "miscellaneous/一些问题记录.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/一些问题记录.md",
     "interview/resume/中文/Markdown-Resume/README.md",
     "copy_md_blog2obsidian.py",
     "copy_md_obsidian2blog copy.py",
@@ -222,7 +223,6 @@
     "interview/awesome-resume/Awesome-resume.md",
     "miscellaneous/前后端分离项目云服务器部署.md",
     "algorithm/lc预备知识.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
     "miscellaneous/Markdown语法参考.md",
     "miscellaneous/Github搭建免费图床.md",
     "frontend/Version-Control.md",

@@ -6,7 +6,7 @@ tags:
   - 前端
   - Express.js
 categories: 前端
-cover: https://img.xiansakana.xyz/202311222254147.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222254147.jpg
 abbrlink: faaf9cfa
 date: 2023-11-22 22:54:01
 ---
@@ -72,7 +72,7 @@ app.get("/setCookie", (req, res) => {
 
 下次同个浏览器传送 HTTP request 到我们的服务器时，我们可以用 cookieParser()这个 middleware，之后就可以透过 req.cookies 这个属性来获取我们的服务器曾经存在客户端的资料。
 
-![](https://img.xiansakana.xyz/202311181819729.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311181819729.png)
 
 ```bash
 npm install cookie-parser
@@ -97,7 +97,7 @@ res.cookie(key, value, { signed: true });
 
 下次同个浏览器传送 HTTP request 到我们的服务器时，我们可以用 req.signedCookies 这个属性获得未签名的 cookies。
 
-![](https://img.xiansakana.xyz/202311181821771.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311181821771.png)
 
 ```javascript
 app.get("/setCookie", (req, res) => {
@@ -120,7 +120,7 @@ app.get("/seeCookie", (req, res) => {
 3. 不可逆性：杂凑函数不应该是可逆的，不然很容易被破解。
 4. 雪崩效应：输入的微小变化会导致输出的巨大差异。增加 hash function 的不可逆性。
 
-![](https://img.xiansakana.xyz/202311181822963.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311181822963.png)
 
 SHA 演算法是 Secure Hash Algorithm 的缩写，一种密码哈希函式算法标准，由美国国家安全局研发。其下又可再分为六个不同的算法标准，包括了：SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224、SHA-512/256。以上总称 SHA 家族。
 
@@ -138,7 +138,7 @@ $$
 
 实现 HMAC 的虚拟码是：
 
-![](https://img.xiansakana.xyz/202311191431403.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311191431403.png)
 
 Cookie 签名的完整流程是：
 
@@ -176,9 +176,9 @@ Session 是在网页服务器上的储存空间。当使用者登入网页时，
 
 另外，在发出 session id 之前，我们可以对 session id 签名。若有人篡改 cookie 内的 session id，我们可以快速识别出来。
 
-![](https://img.xiansakana.xyz/202311191444376.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311191444376.png)
 
-![](https://img.xiansakana.xyz/202311191444947.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311191444947.png)
 
 在 Express 所架设的伺服器内，若要使用 sessions，则可以使用套件 express-sessions。 express-sessions 的语法为
 

@@ -4,7 +4,7 @@ tags:
   - 简历
   - 项目
 categories: 求职
-cover: 'https://img.xiansakana.xyz/202403050512957.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512957.jpg'
 abbrlink: 1162e00e
 ---
 

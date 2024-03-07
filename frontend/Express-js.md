@@ -3,7 +3,7 @@ title: Express.js
 tags:
   - Express.js
   - 前端
-cover: https://img.xiansakana.xyz/202311121025991.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121025991.jpg
 categories: 前端
 abbrlink: fcc95608
 date: 2023-11-12 10:24:29
@@ -39,7 +39,7 @@ HTTP 协议中，客户端可以向伺服器发出请求(request)。常见的请
 例如，在 Google 上搜寻 panda，网址会变成：
 https://www.google.com/search?q=panda&oq=what&aqs=chrome..69i57j69i59l3j35i19i39j69i60l3.1158j0j7&sourceid=chrome&ie=UTF-8
 
-![](https://img.xiansakana.xyz/202311080402562.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080402562.png)
 
 其他常见的 request methods 是：
 
@@ -255,8 +255,8 @@ HTTP 状态码(Status Code)是服务器对任何 HTTP 请求的回应代码。 �
 | 404 Not Found            | 服务器找不到请求的资源，因为在网路上很常出现，此状态码也许最为人所知。                                       |
 | 500 Internal Sever Error | 服务器端发生未知或无法处理的错误。                                                                           |
 
-![](https://img.xiansakana.xyz/202311080543609.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080543609.png)
 
 # 302 Found
 
-![](https://img.xiansakana.xyz/202311080544644.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080544644.png)

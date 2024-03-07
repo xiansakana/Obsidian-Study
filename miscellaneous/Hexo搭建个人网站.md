@@ -4,7 +4,7 @@ tags:
   - Hexo
   - Git
 categories: 杂项
-cover: https://img.xiansakana.xyz/202309210911702.png
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309210911702.png
 abbrlink: 186d25a2
 date: 2023-09-20 03:11:12
 ---
@@ -77,7 +77,7 @@ npm config delete registry
 
 在浏览器打开`localhost:4000`，就能看到
 
-![](https://img.xiansakana.xyz/202309201250749.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201250749.png)
 
 如果你安装了`hexo-admin`插件，就可以通过访问`localhost:4000/admin`来管理你的文章了，并且在可视化界面中操作文章内容。
 
@@ -428,21 +428,21 @@ type: "categories"
 > <div id="lib-cards" class="container">
 >
 > <a href='javascript:void(0);' onClick='pjax.loadUrl("/categories/学习/")'>
-> <card data-image="https://img.xiansakana.xyz/202309232121154.jpg">
+> <card data-image="https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232121154.jpg">
 > <h1 slot="header">学习</h1>
 > <p slot="content">学习之路，永无止境。</p>
 > </card>
 > </a>
 >
 > <a href='javascript:void(0);' onClick='pjax.loadUrl("/categories/游戏/")'>
->   <card data-image="https://img.xiansakana.xyz/202309232100891.jpg">
+>   <card data-image="https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232100891.jpg">
 >     <h1 slot="header">游戏</h1>
 >     <p slot="content">各种游戏记录。</p>
 >   </card>
 > </a>
 >
 > <a href='javascript:void(0);' onClick='pjax.loadUrl("/categories/生活/")'>
->   <card data-image="https://img.xiansakana.xyz/202309232116463.jpg">
+>   <card data-image="https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232116463.jpg">
 >     <h1 slot="header">生活</h1>
 >     <p slot="content">和好朋友👬们一起经历的有趣事。</p>
 >   </card>
@@ -487,7 +487,7 @@ type: essay
   buttonLink: /about/
   limit: 1000
   home_essay: true
-  top_background: https://img.xiansakana.xyz/202309232138720.png
+  top_background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232138720.png
   essay_list:
     - content: 终于写完作业了，好困，明天有时间再想办法继续弄这个网站吧，毕竟还有很多细节需要慢慢配置。
       date: 2023-09-22
@@ -654,7 +654,7 @@ type: "about"
 ```yml
 - class_name: 关于页
   subtitle: 活在当下，及时摸鱼✨
-  avatarImg: https://img.xiansakana.xyz/202309191709924.jpg
+  avatarImg: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309191709924.jpg
   name: saltedfish
   description: 是一条咸鱼
   aboutsiteTips:
@@ -675,16 +675,16 @@ type: "about"
     title: 无限进步
     item:
       - EDU,计算机工程专业
-    img: https://img.xiansakana.xyz/202309210156942.gif
+    img: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309210156942.gif
   statistic:
     link: /archives
     text: 文章隧道
-    cover: https://img.xiansakana.xyz/202309201812230.png
+    cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201812230.png
   map:
     title: 我现在住在
     StrengthenTitle: 美国，纽约
-    background: https://img.xiansakana.xyz/202309192319650.png
-    backgroundDark: https://img.xiansakana.xyz/202309192319650.png
+    background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192319650.png
+    backgroundDark: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192319650.png
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2001
@@ -695,7 +695,7 @@ type: "about"
   personalities:
     author_name: 物流师
     personality_type: ISTJ-T
-    photo_url: https://img.xiansakana.xyz/202309192305203.png
+    photo_url: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192305203.png
     personality_img: https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg
     name_url: https://www.16personalities.com/istj-personality
   maxim:
@@ -710,7 +710,7 @@ type: "about"
     game_tips: 爱好游戏
     game_title: 原神
     game_uid: "UID: 185137348"
-    game_bg: https://img.xiansakana.xyz/202309192310493.jpg
+    game_bg: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192310493.jpg
   comic:
     comic_tips: 爱好番剧
     comic_title: 追番
@@ -733,12 +733,12 @@ type: "about"
   like:
     like_tips: 关注偏好
     like_title: 二次元
-    like_bg: https://img.xiansakana.xyz/202309232100891.jpg
+    like_bg: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232100891.jpg
     like_bottom: Galgame、动漫
   music:
     music_tips: 音乐偏好
     music_title: 华语、纯音乐、动漫音乐
-    music_bg: https://img.xiansakana.xyz/202309192327740.png
+    music_bg: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192327740.png
     music_link: /music/?id=444551276&server=netease
   reward_list:
     # - name: muyui
@@ -899,7 +899,7 @@ date: 2023-09-20 18:22:20
 aside: false
 top_img: false
 type: "album"
-top_background: https://img.xiansakana.xyz/202309201832810.jpg
+top_background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201832810.jpg
 ---
 ```
 
@@ -910,8 +910,8 @@ top_background: https://img.xiansakana.xyz/202309201832810.jpg
   path_name: /dailyphoto
   type: 1
   description: 生活小美好
-  cover: https://img.xiansakana.xyz/202309201908167.jpg
-  top_background: https://img.xiansakana.xyz/202309201909596.png
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201908167.jpg
+  top_background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201909596.png
   rowHeight: 220
   # limit: 10
   lazyload: true
@@ -923,14 +923,14 @@ top_background: https://img.xiansakana.xyz/202309201832810.jpg
       address: 美国纽约
       from:
       image:
-        - https://img.xiansakana.xyz/202309201859503.JPG
+        - https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201859503.JPG
 
 - class_name: 精选壁纸
   path_name: /wallpaper
   type: 1
   description: 不一定精，但我选了
-  cover: https://img.xiansakana.xyz/202309201849058.png
-  top_background: https://img.xiansakana.xyz/202309201948620.png
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201849058.png
+  top_background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201948620.png
   rowHeight: 220
   # limit: 10
   lazyload: true
@@ -940,18 +940,18 @@ top_background: https://img.xiansakana.xyz/202309201832810.jpg
     - date: 2023-09-20
       content: 点兔1
       image:
-        - https://img.xiansakana.xyz/202309201852668.png
+        - https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201852668.png
     - date: 2023-09-20
       content: 点兔2
       image:
-        - https://img.xiansakana.xyz/202309200150263.png
+        - https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309200150263.png
 
 - class_name: 文章封面
   path_name: /postscover
   type: 1
   description: 文章的封面，康康你的
-  cover: https://img.xiansakana.xyz/202309201954794.jpg
-  top_background: https://img.xiansakana.xyz/202309201954794.jpg
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201954794.jpg
+  top_background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201954794.jpg
   rowHeight: 220
   # limit: 10
   lazyload: true
@@ -1144,7 +1144,7 @@ menu:
 error_404:
   enable: true
   subtitle: "Page Not Found"
-  background: https://img.xiansakana.xyz/202309202100487.jpg
+  background: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309202100487.jpg
 ```
 
 ### 追番页面
@@ -1401,7 +1401,7 @@ nav:
       item:
         - name: 博客
           link: https://xiansakana.xyz
-          icon: https://img.xiansakana.xyz/202309191743806.gif
+          icon: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309191743806.gif
     - title: 项目
       # item:
       #   - name: 安知鱼图床
@@ -1693,10 +1693,10 @@ reward:
   enable: true
   coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
   QR_code:
-    - img: https://img.xiansakana.xyz/202309192233175.png
+    - img: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192233175.png
       link:
       text: 微信
-    - img: https://img.xiansakana.xyz/202309192233251.png
+    - img: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309192233251.png
       link:
       text: 支付宝
 ```
@@ -2749,7 +2749,7 @@ home_top:
   banner:
     tips: 夜深了
     title: 早点睡觉吧
-    image: https://img.xiansakana.xyz/202309210219999.gif # https://t.mwm.moe/pc
+    image: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309210219999.gif # https://t.mwm.moe/pc
     link: http://xiansakana.xyz
 ```
 
@@ -3513,7 +3513,7 @@ inject:
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=725692&auto=1&height=66"></iframe>
 ```
 
-![](https://img.xiansakana.xyz/202309231720550.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309231720550.png)
 
 ### 左下角歌单
 
@@ -3556,7 +3556,7 @@ dplayer:
 
 - 文章中引用视频可以直接用 iframe 格式，而 iframe 外链一般可以通过视频网站生成，例如 b 站
 
-![](https://img.xiansakana.xyz/202309231748785.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309231748785.png)
 
 ```markdown
 <iframe src="//player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

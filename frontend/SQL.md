@@ -4,7 +4,7 @@ tags:
   - SQL
   - 数据库
   - 后端
-cover: https://img.xiansakana.xyz/202311121237821.png
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121237821.png
 categories: 前端
 abbrlink: 4d712855
 date: 2023-11-12 12:35:07
@@ -23,13 +23,13 @@ date: 2023-11-12 12:35:07
 
 Relational Database 是一种存储并提供对彼此相关的数据点的访问的数据库。例如，一家娱乐公司有一个数据库来存储他们所有的艺术家和歌曲数据。 所有歌曲都有一位或多于一位作家，所有作家都有一首或多于一首歌曲。 因此，该数据库的每个表格之间是有关连的。
 
-![](https://img.xiansakana.xyz/202311111807687.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311111807687.png)
 
-![](https://img.xiansakana.xyz/202311111807969.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311111807969.png)
 
 几十年来，SQLite、PostgreSQL、MySQL 和 SQL Server 等关系数据库已成为数据存储的热门选择。近几年来，包括 MongoDB 和 Redis 在内的 NoSQL 数据库受到青睐。
 
-![](https://img.xiansakana.xyz/202311111808138.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311111808138.png)
 
 # 增删查改 CRUD
 

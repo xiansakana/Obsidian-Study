@@ -5,7 +5,7 @@ tags:
   - java
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202401262242149.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg'
 abbrlink: cf14bd9c
 date: 2024-01-26 22:39:38
 ---
@@ -184,7 +184,7 @@ public class ParamsController {
 
 - 当表单的`enctype="multipart/form-data"`时，其传输数据形式如下
 
-  ![](https://img.xiansakana.xyz/202401191420448.png)
+  ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401191420448.png)
 
 - SpringBoot 工程嵌入的 tomcat 限制了请求的文件大小，每个文件的配置最大为 1Mb，单次请求的文件的总数不能大于 10Mb。
 

@@ -5,7 +5,7 @@ tags:
   - 后端
   - OOP
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403050512455.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512455.jpg'
 abbrlink: df2849ec
 ---
 

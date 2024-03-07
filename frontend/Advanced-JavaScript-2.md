@@ -3,7 +3,7 @@ title: Advanced JavaScript 2
 tags:
   - JavaScript
   - 前端
-cover: https://img.xiansakana.xyz/202311120954245.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120954245.jpg
 categories: 前端
 abbrlink: fe499abe
 date: 2023-11-12 09:01:24
@@ -46,7 +46,7 @@ creation phase 结束后，会进入 execution phase：
 1. 逐行( line by line )执行程式码。
 2. 遇到递回时，则使用 call stack 来排定工作顺序。
 
-![](https://img.xiansakana.xyz/202310182253924.png)
+![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310182253924.png)
 
 # [Hoisting](https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting)
 

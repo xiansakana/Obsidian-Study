@@ -3,7 +3,7 @@ title: Git常用版本控制指令
 tags:
   - Git
 categories: 杂项
-cover: 'https://img.xiansakana.xyz/202402060822719.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202402060822719.jpg'
 abbrlink: 23e7f25b
 date: 2024-02-06 08:20:26
 ---
