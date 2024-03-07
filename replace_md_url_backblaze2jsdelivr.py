@@ -23,6 +23,8 @@ directory_path = 'd:/notes/study/'
 old_link_prefix = 'img.xiansakana.xyz'
 # old_link_prefix = 'cdn.cbd.int/xiansakana-blog-img'
 # old_link_prefix = 'cdn.jsdelivr.net/npm/xiansakana-blog-img'
+
+# new_link_prefix = 'img.xiansakana.xyz'
 # new_link_prefix = 'cdn.cbd.int/xiansakana-blog-img'
 new_link_prefix = 'cdn.jsdelivr.net/npm/xiansakana-blog-img'
 # 执行替换操作

@@ -4,7 +4,7 @@ tags:
   - Node.js
   - NPM
   - 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120957148.png
+cover: https://img.xiansakana.xyz/202311120957148.png
 categories: 前端
 abbrlink: 747d7228
 date: 2023-11-12 09:56:07
@@ -12,9 +12,9 @@ date: 2023-11-12 09:56:07
 
 # 静态与动态网页
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080137624.png)
+![](https://img.xiansakana.xyz/202311080137624.png)
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080137252.png)
+![](https://img.xiansakana.xyz/202311080137252.png)
 
 静态网站(static websites)由使用 HTML、CSS 和 JavaScript 创建的网页组成。静态网站上的每个页面都存储为单个 HTML 文件，该文件完全按原样从服务器直接传送到用户端。
 
@@ -174,27 +174,27 @@ HTTP Request 以及 Response 的基本规定格式如下：
 
 一个基础的 Get Request 会是：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080243338.png)
+![](https://img.xiansakana.xyz/202311080243338.png)
 
 一个基础的 Response 会是：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080244184.png)
+![](https://img.xiansakana.xyz/202311080244184.png)
 
 如果网页交出表格数据，且使用 GET request 的话，会是：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080244765.png)
+![](https://img.xiansakana.xyz/202311080244765.png)
 
 Post Request 内部有表格数据的话，会是：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080245363.png)
+![](https://img.xiansakana.xyz/202311080245363.png)
 
 带有 cookie 设定的 response：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080246400.png)
+![](https://img.xiansakana.xyz/202311080246400.png)
 
 带有 cookie 设定的 request：
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311080246175.png)
+![](https://img.xiansakana.xyz/202311080246175.png)
 
 # NPM
 

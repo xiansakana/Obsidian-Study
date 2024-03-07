@@ -4,7 +4,7 @@ tags:
   - 算法
   - Leetcode
 categories: 算法
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050509321.jpg'
+cover: 'https://img.xiansakana.xyz/202403050509321.jpg'
 abbrlink: ec69ce91
 ---
 

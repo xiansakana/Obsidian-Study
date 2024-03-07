@@ -5,18 +5,18 @@ tags:
   - 笔记
   - Git
 categories: 杂项
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262304183.jpg'
+cover: 'https://img.xiansakana.xyz/202401262304183.jpg'
 abbrlink: 3c869818
 date: 2024-01-26 23:03:09
 ---
 
 # 创建 Github 新仓库
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262255535.png)
+![](https://img.xiansakana.xyz/202401262255535.png)
 
 然后根据自己需求设置名称，如果想要公开笔记就选 public，不想公开就选 private。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262300632.png)
+![](https://img.xiansakana.xyz/202401262300632.png)
 
 # 同步仓库到本地
 
@@ -24,21 +24,21 @@ date: 2024-01-26 23:03:09
 
 下载完成后选择 clone a repository。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262301225.png)
+![](https://img.xiansakana.xyz/202401262301225.png)
 
 同步完成后选择刚刚创建的仓库，然后 Local Path 是我们要 clone 的地方，随便选个空的文件夹就好，因为后面要把.git 目录移动到 Obsidian 的仓库里面。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262301847.png)
+![](https://img.xiansakana.xyz/202401262301847.png)
 
 # 合并 Obsidian 仓库和 Git 仓库
 
 在 clone 后的 Obsidian-Library 的文件夹中可以看到隐藏的.git 文件夹，如果看不到可能是因为没有勾选显示隐藏的项目，选择勾选就好。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262301476.png)
+![](https://img.xiansakana.xyz/202401262301476.png)
 
 然后将.git 文件夹移动到 Obsidian 笔记所在的仓库，使得其和.obsidian 文件夹在一起
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262301045.png)
+![](https://img.xiansakana.xyz/202401262301045.png)
 
 按照我自己的尝试，其实会发现之后装 Obsidian Git 的插件仍然无法链接到仓库,会显示 Git is not ready，最后才发现可能是没有安装 git 的原因，所以还是建议安装一下[Git](https://gitforwindows.org/)。
 
@@ -50,25 +50,25 @@ date: 2024-01-26 23:03:09
 
 首先在左下角设置中的第三方插件中关闭安全模式
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302769.png)
+![](https://img.xiansakana.xyz/202401262302769.png)
 
 然后浏览社区插件市场并搜索 Obsidian Git 选择安装
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302861.png)
+![](https://img.xiansakana.xyz/202401262302861.png)
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302564.png)
+![](https://img.xiansakana.xyz/202401262302564.png)
 
 注意要打开插件的开关
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302414.png)
+![](https://img.xiansakana.xyz/202401262302414.png)
 
 然后在左下角插件的配置中可以设置 backup interval（备份时间间隔）
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302323.png)
+![](https://img.xiansakana.xyz/202401262302323.png)
 
 安装完成后应该会自动出现一个 Git Control View 的侧边栏。如果没有，则按下 Ctrl + P 打开命令面板，搜索  `Obsidian Git: Open Source Control View` ，就可以打开这个面板。
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262302152.png)
+![](https://img.xiansakana.xyz/202401262302152.png)
 
 有了这个插件，以后的同步操作你都可以在 Obsidian 内部进行了。
 
@@ -89,3 +89,81 @@ date: 2024-01-26 23:03:09
 2. Pull，第六个按钮，从 Github 同步到本地。
 
 到这一步就完成了所有的配置工作，第一次使用时，点击 Backup 就可以。
+
+# 一键同步Obsidian和个人博客
+
+## 一键复制md文件从obdidian文件夹到博客文件夹
+
+- 创建一个.bat批处理文件
+
+```bat
+start cmd /k "d: && cd notes/study && python copy_md_obsidian2blog.py"
+```
+
+- 在obsidian文件夹创建python文件
+
+```python
+import os
+import shutil
+
+# 源文件夹路径
+source_dir = r'D:\notes\study'
+# 目标文件夹路径
+target_dir = r'D:\Hexo\source\_posts'
+
+# 遍历源文件夹
+for root, dirs, files in os.walk(source_dir):
+    for file in files:
+        # 检查文件扩展名是否为.md
+        if file.endswith('.md'):
+            # 构建源文件的完整路径
+            source_file = os.path.join(root, file)
+            # 构建目标文件的完整路径
+            target_file = os.path.join(target_dir, file)
+            # 复制文件
+            shutil.copy2(source_file, target_file)
+            print(f'文件 {file} 已被复制到 {target_dir}')
+```
+
+## 一键post文章并备份
+
+- 创建一个.bat批处理文件
+
+```bat
+start cmd /k "d: && cd Hexo && hexo cl && hexo g && hexo d && git add  --all && git commit -m "update posts" && git push"
+```
+
+## 一键复制md文件从博客文件夹到obdidian文件夹
+
+因为post文章后会在文件属性里生成一个abbr link和 date，所以要同步回obsidian
+
+- 创建一个.bat批处理文件
+
+```bat
+start cmd /k "d: && cd notes/study && python copy_md_blog2obsidian.py"
+```
+
+- 在obsidian文件夹创建python文件
+
+```python
+import os
+import shutil
+
+# 源文件夹路径
+source_dir = r'D:\Hexo\source\_posts'
+# 目标文件夹路径
+target_dir =  r'D:\notes\study'
+
+# 遍历源文件夹
+for root, dirs, files in os.walk(source_dir):
+    for file in files:
+        # 检查文件扩展名是否为.md
+        if file.endswith('.md'):
+            # 构建源文件的完整路径
+            source_file = os.path.join(root, file)
+            # 构建目标文件的完整路径
+            target_file = os.path.join(target_dir, file)
+            # 复制文件
+            shutil.copy2(source_file, target_file)
+            print(f'文件 {file} 已被复制到 {target_dir}')
+```

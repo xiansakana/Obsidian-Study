@@ -3,7 +3,7 @@ title: Git bash配置多个Github用户
 tags:
   - Git
 categories: 杂项
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242059346.jpg"
+cover: "https://img.xiansakana.xyz/202311242059346.jpg"
 abbrlink: 58eb18b5
 date: 2023-11-24 20:58:20
 ---
