@@ -458,6 +458,48 @@ class Solution:
 
 # Medium
 
+## [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)（[无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)）
+
+```
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+```
+
+```
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+```
+
+```
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+```
+
+**双指针滑动窗口**
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        hashset = set()
+        right = -1
+        max_len = 0
+        for left in range(len(s)):
+            if left != 0:
+                hashset.remove(s[left - 1])
+            while right < len(s) - 1 and s[right + 1] not in hashset:
+                hashset.add(s[right + 1])
+                right += 1
+            max_len = max(max_len, right - left + 1)
+        return max_len
+```
+
+时间复杂度：O(N)，其中 N 是字符串的长度。左指针和右指针分别会遍历整个字符串一次。
+
+空间复杂度：O(∣Σ∣)，其中 Σ 表示字符集（即字符串中可以出现的字符），∣Σ∣ 表示字符集的大小。在本题中没有明确说明字符集，因此可以默认为所有 ASCII 码在 \[0,128) 内的字符，即 ∣Σ∣=128|。我们需要用到哈希集合来存储出现过的字符，而字符最多有 ∣Σ∣ 个，因此空间复杂度为 O(∣Σ∣)。
+
 ## [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)（[Z 字形变换](https://leetcode.cn/problems/zigzag-conversion/)）
 
 ```
