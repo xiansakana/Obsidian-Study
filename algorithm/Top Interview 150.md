@@ -943,6 +943,45 @@ class Solution {
 
 空间复杂度：O(1)。
 
+
+## [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)（[长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)）
+
+```
+Input: target = 7, nums = [2,3,1,2,4,3]
+Output: 2
+Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+```
+
+```
+Input: target = 11, nums = [1,1,1,1,1,1,1,1]
+Output: 0
+```
+
+**双指针滑动窗口**
+
+```python
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        left = 0
+        min_len = len(nums) + 1
+        sum = 0
+        for right in range(len(nums)):
+            sum += nums[right]
+            while sum >= target:
+                min_len = min(min_len, right - left + 1)
+                sum -= nums[left]
+                left += 1
+        if min_len == len(nums) + 1:
+            return 0
+        else:
+            return min_len
+```
+
+时间复杂度：O(n)，其中 n 是数组的长度。指针 left 和 right 最多各移动 n 次。
+
+空间复杂度：O(1)。
+
+
 ## [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) （[除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/)）
 
 ```
