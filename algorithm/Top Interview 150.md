@@ -1220,6 +1220,77 @@ class Solution:
 
 空间复杂度：O(1)。只需要使用常数的额外空间。
 
+## [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)（[串联所有单词的子串](https://leetcode.cn/problems/substring-with-concatenation-of-all-words/)）
+
+```
+Input: s = "barfoothefoobarman", words = ["foo","bar"]
+Output: [0,9]
+Explanation: Since words.length == 2 and words[i].length == 3, the concatenated substring has to be of length 6.
+The substring starting at 0 is "barfoo". It is the concatenation of ["bar","foo"] which is a permutation of words.
+The substring starting at 9 is "foobar". It is the concatenation of ["foo","bar"] which is a permutation of words.
+The output order does not matter. Returning [9,0] is fine too.
+```
+
+```
+Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+Output: []
+Explanation: Since words.length == 4 and words[i].length == 4, the concatenated substring has to be of length 16.
+There is no substring of length 16 in s that is equal to the concatenation of any permutation of words.
+We return an empty array.
+```
+
+```
+Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
+Output: [6,9,12]
+Explanation: Since words.length == 3 and words[i].length == 3, the concatenated substring has to be of length 9.
+The substring starting at 6 is "foobarthe". It is the concatenation of ["foo","bar","the"] which is a permutation of words.
+The substring starting at 9 is "barthefoo". It is the concatenation of ["bar","the","foo"] which is a permutation of words.
+The substring starting at 12 is "thefoobar". It is the concatenation of ["the","foo","bar"] which is a permutation of words.
+```
+
+**滑动窗口+哈希表**
+
+```python
+class Solution:
+    def findSubstring(self, s: str, words):
+        if not words or not s:
+            return []
+
+        word_length = len(words[0])
+        words_total_length = len(words) * word_length
+        word_count = len(words)
+        word_map = {}
+        for word in words:
+            word_map[word] = word_map.get(word, 0) + 1
+
+        result = []
+
+        for i in range(word_length):
+            left = i
+            right = i
+            current_map = {}
+            count = 0
+            while right + word_length <= len(s):
+                word = s[right:right + word_length]
+                right += word_length
+                if word in word_map:
+                    current_map[word] = current_map.get(word, 0) + 1
+                    count += 1
+                    while current_map[word] > word_map[word]:
+                        left_word = s[left:left + word_length]
+                        current_map[left_word] -= 1
+                        count -= 1
+                        left += word_length
+                    if count == word_count:
+                        result.append(left)
+                else:
+                    current_map.clear()
+                    count = 0
+                    left = right
+        return result
+```
+
+
 ## [68. Text Justification](https://leetcode.com/problems/text-justification/)（[文本左右对齐](https://leetcode.cn/problems/text-justification/)）
 
 ```
