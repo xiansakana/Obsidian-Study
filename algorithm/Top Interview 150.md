@@ -1290,6 +1290,10 @@ class Solution:
         return result
 ```
 
+时间复杂度：O(ls×n)，其中 ls 是输入 s 的长度，n 是 words 中每个单词的长度。需要做 n 次滑动窗口，每次需要遍历一次 s。
+
+空间复杂度：O(m×n)，其中 m 是 words 的单词数，n 是 words 中每个单词的长度。每次滑动窗口时，需要用一个哈希表保存单词频次。
+
 
 ## [68. Text Justification](https://leetcode.com/problems/text-justification/)（[文本左右对齐](https://leetcode.cn/problems/text-justification/)）
 
