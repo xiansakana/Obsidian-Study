@@ -629,10 +629,59 @@ class Solution:
 
 空间复杂度：O(log⁡N)。我们忽略存储答案的空间，额外的排序的空间复杂度为 O(log⁡N)。然而我们修改了输入的数组 nums，在实际情况下不一定允许，因此也可以看成使用了一个额外的数组存储了 nums的副本并进行排序，空间复杂度为 O(N)。
 
-
 ## [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)（[有效的数独](https://leetcode.cn/problems/valid-sudoku/)）
 
+```
+Input: board = 
+[["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]
+Output: true
+```
 
+```
+Input: board = 
+[["8","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]
+Output: false
+Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+```
+
+```python
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        rows = [set() for _ in range(9)]
+        cols = [set() for _ in range(9)]
+        boxes = [set() for _ in range(9)]
+        for i in range(9):
+            for j in range(9):
+                num = board[i][j]
+                if num != '.':
+                    box_index = (i // 3) * 3 + j // 3  
+                    if num in rows[i] or num in cols[j] or num in boxes[box_index]:
+                        return False
+                    rows[i].add(num)
+                    cols[j].add(num)
+                    boxes[box_index].add(num)
+        return True
+```
+
+时间复杂度：O(1)。数独共有 81 个单元格，只需要对每个单元格遍历一次即可。
+
+空间复杂度：O(1)。由于数独的大小固定，因此哈希表的空间也是固定的。
 
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
