@@ -741,6 +741,7 @@ class Solution:
             # 削头（第一层）
             res += matrix.pop(0)
             # 将剩下的逆时针转九十度，等待下次被削
+            # The unpacking operator `*` is used here to unpack the rows of the matrix as separate arguments to the `zip` function.
             matrix = list(zip(*matrix))[::-1]
         return res
 ```
