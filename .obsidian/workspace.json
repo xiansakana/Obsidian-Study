@@ -49,13 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -205,16 +206,16 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "8ba6fe9779eddec3",
+  "active": "95645f9a82b33171",
   "lastOpenFiles": [
+    "miscellaneous/一些问题记录.md",
+    "interview/bq/Behavior-Questions.md",
+    "backend/Java.md",
+    "algorithm/Top Interview 150.md",
     "interview/inland/alternative.txt",
     "interview/inland/新建 文本文档.txt",
     "interview/inland",
     "interview/新建文件夹",
-    "miscellaneous/一些问题记录.md",
-    "algorithm/Top Interview 150.md",
-    "backend/Java.md",
-    "interview/bq/Behavior-Questions.md",
     "miscellaneous/关于美国身份问题的常识.md",
     "miscellaneous/图床使用方案.md",
     "interview/awesome-resume/Awesome-Resume.md",
@@ -226,7 +227,6 @@
     "replace_md_url_backblaze2jsdelivr.py",
     "replace_md_url_2backblaze2jsdelivr.py",
     "replace_md_url_jsdelivr2backblaze - 副本.py",
-    "replace_md_url_jsdelivr2backblaze.py",
     "miscellaneous/Git常用版本控制指令.md",
     "miscellaneous/Git-bash配置多个Github用户.md",
     "interview/resume/中文/Markdown-Resume/assets/tools-solid.svg",

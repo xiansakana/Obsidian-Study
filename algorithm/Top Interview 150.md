@@ -630,6 +630,10 @@ class Solution:
 空间复杂度：O(log⁡N)。我们忽略存储答案的空间，额外的排序的空间复杂度为 O(log⁡N)。然而我们修改了输入的数组 nums，在实际情况下不一定允许，因此也可以看成使用了一个额外的数组存储了 nums的副本并进行排序，空间复杂度为 O(N)。
 
 
+## [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)（[有效的数独](https://leetcode.cn/problems/valid-sudoku/)）
+
+
+
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
 Return _the minimum number of jumps to reach_ `nums[n - 1]`.
