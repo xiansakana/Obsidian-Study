@@ -715,6 +715,71 @@ class Solution:
 时间复杂度：一重循环遍历的时间复杂度是 O(n)，所以总体时间复杂度为 O(n)。
 空间复杂度：只用到了常数项的变量，所以总体空间复杂度为 O(1)。
 
+## [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)（[螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)）
+
+```
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [1,2,3,6,9,8,7,4,5]
+```
+
+![](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg)
+
+```
+Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+```
+![]()
+![](https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg)
+
+**模拟**
+
+```python
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        while matrix:
+            # 削头（第一层）
+            res += matrix.pop(0)
+            # 将剩下的逆时针转九十度，等待下次被削
+            matrix = list(zip(*matrix))[::-1]
+        return res
+```
+
+时间复杂度：O(mn)，其中 m 和 n 分别是输入矩阵的行数和列数。矩阵中的每个元素都要被访问一次。
+
+空间复杂度：O(mn)。需要创建一个大小为 m×nm 的矩阵 visited 记录每个位置是否被访问过。
+
+**按层模拟**
+
+```python
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix or not matrix[0]:
+            return []
+        rows = len(matrix)
+        cols = len(matrix[0])
+        res = []
+        left, right , top, bottom = 0, cols - 1, 0, rows - 1
+        while left <= right >= 0 and top <= bottom:
+            for col in range(left, right + 1):
+                res.append(matrix[top][col])
+            for row in range(top + 1, bottom + 1):
+                res.append(matrix[row][right])
+            if left < right and top < bottom:
+                for col in range(right - 1, left, -1):
+                    res.append(matrix[bottom][col])
+                for row in range(bottom, top, -1):
+                    res.append(matrix[row][left])
+            left, right , top, bottom = left + 1, right - 1, top + 1, bottom - 1
+        return res
+```
+
+![](https://assets.leetcode-cn.com/solution-static/54/54_fig1.png)
+
+时间复杂度：O(mn)，其中 m 和 n 分别是输入矩阵的行数和列数。矩阵中的每个元素都要被访问一次。
+
+空间复杂度：O(1)。除了输出数组以外，空间复杂度是常数。
+
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/) （[跳跃游戏](https://leetcode.cn/problems/jump-game/)）
 
 Return `true` _if you can reach the last index, or_ `false` _otherwise_.
