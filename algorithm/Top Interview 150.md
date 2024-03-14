@@ -906,6 +906,80 @@ class Solution:
 
 空间复杂度 O(1)。
 
+## [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)（[矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/)）
+
+```
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+```
+
+![](https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg)
+
+```
+Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+```
+
+![](https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg)
+
+**使用标记数组**
+
+```python
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rows = len(matrix)
+        cols = len(matrix[0])
+        row0 = set()
+        col0 = set()
+        for row in range(rows):
+            for col in range(cols):
+                if matrix[row][col] == 0:
+                    row0.add(row)
+                    col0.add(col)
+        for row in row0:
+            for col in range(cols):
+                matrix[row][col] = 0
+        for col in col0:
+            for row in range(rows):
+                matrix[row][col] = 0
+```
+
+时间复杂度：O(mn)，其中 m 是矩阵的行数，n 是矩阵的列数。我们至多只需要遍历该矩阵两次。
+
+空间复杂度：O(m+n)，其中 m 是矩阵的行数，n 是矩阵的列数。我们需要分别记录每一行或每一列是否有零出现。
+
+
+**使用两个标记变量**
+
+```python
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        m, n = len(matrix), len(matrix[0])
+        flag_col0 = any(matrix[i][0] == 0 for i in range(m))
+        flag_row0 = any(matrix[0][j] == 0 for j in range(n))
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = matrix[0][j] = 0
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+        if flag_col0:
+            for i in range(m):
+                matrix[i][0] = 0
+        if flag_row0:
+            for j in range(n):
+                matrix[0][j] = 0
+```
+
+时间复杂度：O(mn)，其中 m 是矩阵的行数，n 是矩阵的列数。我们至多只需要遍历该矩阵两次。
+
+空间复杂度：O(1)。我们只需要常数空间存储若干变量。
+
 ## [80. Remove Duplicates from Sorted II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/) （[删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/)）
 
 ```
