@@ -424,6 +424,28 @@ class Solution {
 
 空间复杂度：O(n)。
 
+## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)（[赎金信](https://leetcode.cn/problems/ransom-note/)）
+
+```
+Input: ransomNote = "a", magazine = "b"
+Output: false
+```
+
+```
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+```
+
+```
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+```
+
+```python
+
+```
+
+
 ## [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)（[判断子序列](https://leetcode.cn/problems/is-subsequence/)）
 
 ```
