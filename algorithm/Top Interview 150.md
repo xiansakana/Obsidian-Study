@@ -1429,6 +1429,63 @@ class Solution:
 时间复杂度：O(nlogn)，其中 n 为数组 citations 的长度。需要进行 logn 次二分搜索，每次二分搜索需要遍历数组 citations 一次。
 空间复杂度：O(1)，只需要常数个变量来进行二分搜索。
 
+## [289. Game of Life](https://leetcode.com/problems/game-of-life/)（[生命游戏](https://leetcode.cn/problems/game-of-life/)）
+
+1. Any live cell with fewer than two live neighbors dies as if caused by under-population.
+2. Any live cell with two or three live neighbors lives on to the next generation.
+3. Any live cell with more than three live neighbors dies, as if by over-population.
+4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+
+![](https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg)
+
+```
+Input: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+```
+
+![](https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg)
+
+```
+Input: board = [[1,1],[1,0]]
+Output: [[1,1],[1,1]]
+```
+
+```python
+class Solution:
+    def gameOfLife(self, board: List[List[int]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        rows = len(board)
+        cols = len(board[0])
+        neighbors = [(1,0), (1,-1), (0,-1), (-1,-1), (-1,0), (-1,1), (0,1), (1,1)]
+  
+        for row in range(rows):
+            for col in range(cols):
+                live_neighbors = 0
+                for neighbor in neighbors:
+                    r = (row + neighbor[0])
+                    c = (col + neighbor[1])
+                    if (r < rows and r >= 0) and (c < cols and c >= 0) and abs(board[r][c]) == 1:
+                        live_neighbors += 1
+
+                if board[row][col] == 0 and live_neighbors == 3:
+                    board[row][col] = 2
+                if board[row][col] == 1 and (live_neighbors > 3 or live_neighbors < 2):
+                    board[row][col] = -1
+
+        for row in range(rows):
+            for col in range(cols):
+                if board[row][col] > 0:
+                    board[row][col] = 1
+                else:
+                    board[row][col] = 0
+```
+
+时间复杂度：O(mn)，其中 m，n 分别为 board 的行数和列数。
+
+空间复杂度：O(1)，除原数组外只需要常数的空间存放若干变量。
+
 ## [380. Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) （[O(1) 时间插入、删除和获取随机元素](https://leetcode.cn/problems/insert-delete-getrandom-o1/)）
 
 ```
