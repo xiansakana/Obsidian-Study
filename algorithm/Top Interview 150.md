@@ -441,10 +441,34 @@ Input: ransomNote = "aa", magazine = "aab"
 Output: true
 ```
 
-```python
+**暴力解**
 
+```python
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        for i in ransomNote:
+            if i in magazine:
+                magazine = magazine.replace(i,'',1)
+            else:
+                return False
+        return True
 ```
 
+时间复杂度：O(mn)，其中 m 是字符串 ransomNote 的长度，n 是字符串 magazine 的长度。
+
+空间复杂度：O(∣S∣)，S 是字符集，这道题中 S 为全部小写英语字母，因此 ∣S∣=26。
+
+**Hash Table**
+
+```python
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        return Counter(ransomNote) <= Counter(magazine)
+```
+
+时间复杂度：O(m+n)，其中 m 是字符串 ransomNote 的长度，n 是字符串 magazine 的长度，我们只需要遍历两个字符一次即可。
+
+空间复杂度：O(∣S∣)，S 是字符集，这道题中 S 为全部小写英语字母，因此 ∣S∣=26。
 
 ## [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)（[判断子序列](https://leetcode.cn/problems/is-subsequence/)）
 
