@@ -207,6 +207,9 @@
   },
   "active": "f8cfba3771f33e15",
   "lastOpenFiles": [
+    "interview/国内/alternative.txt",
+    "interview/国内",
+    "interview/resume/others/74bd15c0a79dd43a50cb7dd5b93d84f7.jpg",
     "backend/Java.md",
     "algorithm/Top Interview 150.md",
     "miscellaneous/一些问题记录.md",
@@ -226,7 +229,6 @@
     "copy_md_obsidian2blog.py",
     "replace_md_url_backblaze2jsdelivr.py",
     "replace_md_url_2backblaze2jsdelivr.py",
-    "replace_md_url_jsdelivr2backblaze - 副本.py",
     "miscellaneous/Git常用版本控制指令.md",
     "miscellaneous/Git-bash配置多个Github用户.md",
     "interview/resume/中文/Markdown-Resume/assets/tools-solid.svg",
@@ -238,7 +240,6 @@
     "interview/resume/中文/Markdown-Resume/assets/info-circle-solid.svg",
     "interview/resume/中文/Markdown-Resume/assets/how-to.gif",
     "interview/resume/中文/Markdown-Resume/assets/graduation-cap-solid.svg",
-    "interview/resume/中文/Markdown-Resume/assets/github-brands.svg",
     "miscellaneous/Unblock-Netease-Music.md",
     "backend/Springboot.md",
     "language/Python.md",
@@ -252,7 +253,6 @@
     "miscellaneous/Github搭建免费图床.md",
     "frontend/Version-Control.md",
     "frontend/SQL.md",
-    "frontend/Rest.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
