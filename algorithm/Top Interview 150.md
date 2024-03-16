@@ -451,6 +451,28 @@ class Solution:
 
 空间复杂度：O(∣Σ∣)，其中 Σ 是字符串的字符集。哈希表存储字符的空间取决于字符串的字符集大小，最坏情况下每个字符均不相同，需要 O(∣Σ∣) 的空间。
 
+## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)（[有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)）
+
+```
+Input: s = "anagram", t = "nagaram"
+Output: true
+```
+
+```
+Input: s = "rat", t = "car"
+Output: false
+```
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
+```
+
+时间复杂度：O(n)，其中 n 为 s 的长度。
+
+空间复杂度：O(S)，其中 S 为字符集大小，此处 S=26。
+
 ## [290. Word Pattern](https://leetcode.com/problems/word-pattern/)（[单词规律](https://leetcode.cn/problems/word-pattern/)）
 
 ```
