@@ -424,6 +424,34 @@ class Solution {
 
 空间复杂度：O(n)。
 
+## [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)（[同构字符串](https://leetcode.cn/problems/isomorphic-strings/)）
+
+```
+Input: s = "egg", t = "add"
+Output: true
+```
+
+```
+Input: s = "foo", t = "bar"
+Output: false
+```
+
+```
+Input: s = "paper", t = "title"
+Output: true
+```
+
+```python
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        return len(set(s)) == len(set(t)) == len(set(zip(s, t)))
+```
+
+时间复杂度：O(n)，其中 n 为字符串的长度。我们只需同时遍历一遍字符串 s 和 t 即可。
+
+空间复杂度：O(∣Σ∣)，其中 Σ 是字符串的字符集。哈希表存储字符的空间取决于字符串的字符集大小，最坏情况下每个字符均不相同，需要 O(∣Σ∣) 的空间。
+
+
 ## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)（[赎金信](https://leetcode.cn/problems/ransom-note/)）
 
 ```
