@@ -451,6 +451,36 @@ class Solution:
 
 空间复杂度：O(∣Σ∣)，其中 Σ 是字符串的字符集。哈希表存储字符的空间取决于字符串的字符集大小，最坏情况下每个字符均不相同，需要 O(∣Σ∣) 的空间。
 
+## [290. Word Pattern](https://leetcode.com/problems/word-pattern/)（[单词规律](https://leetcode.cn/problems/word-pattern/)）
+
+```
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
+```
+
+```
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
+```
+
+```
+Input: pattern = "aaaa", s = "dog cat cat dog"
+Output: false
+```
+
+```python
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        s = s.split()
+        if len(pattern) != len(s):
+            return False
+        return len(set(pattern)) == len(set(s)) == len(set(zip(pattern, s)))
+```
+
+时间复杂度：O(n+m)，其中 n 为 pattern 的长度，m 为 str 的长度。插入和查询哈希表的均摊时间复杂度均为 O(n+m)。每一个字符至多只被遍历一次。
+
+空间复杂度：O(n+m)，其中 n 为 pattern 的长度，m 为 str 的长度。最坏情况下，我们需要存储 pattern 中的每一个字符和 str 中的每一个字符串。
+
 
 ## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)（[赎金信](https://leetcode.cn/problems/ransom-note/)）
 
