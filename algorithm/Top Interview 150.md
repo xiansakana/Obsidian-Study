@@ -11,6 +11,38 @@ date: 2024-03-05 03:41:00
 
 # Easy
 
+## [1. Two Sum](https://leetcode.com/problems/two-sum/)（[两数之和](https://leetcode.cn/problems/two-sum/)）
+
+```
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+```
+
+```
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+```
+
+```
+Input: nums = [3,3], target = 6
+Output: [0,1]
+```
+
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashtable = dict()
+        for i in range(len(nums)):
+            if (target - nums[i]) in hashtable:
+                return [i, hashtable[target - nums[i]]]
+            hashtable[nums[i]] = i
+```
+
+时间复杂度：O(N)，其中 N 是数组中的元素数量。对于每一个元素 i，我们可以 O(1) 地寻找 target - i。
+
+空间复杂度：O(N)，其中 N 是数组中的元素数量。主要为哈希表的开销。
+
 ## [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)（[整数转罗马数字](https://leetcode.cn/problems/integer-to-roman/)）
 
 ```
