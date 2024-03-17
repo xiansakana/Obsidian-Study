@@ -938,6 +938,59 @@ class Solution:
 
 空间复杂度：O(1)。为原地翻转得到的原地旋转。
 
+## [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)（[字母异位词分组](https://leetcode.cn/problems/group-anagrams/)）
+
+```
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+```
+
+```
+Input: strs = [""]
+Output: [[""]]
+```
+
+```
+Input: strs = ["a"]
+Output: [["a"]]
+```
+
+**排序**
+
+```python
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = {}
+        for s in strs:
+            if ''.join(sorted(s))  not in res:
+                res[''.join(sorted(s))] = [s]
+            else:
+                res[''.join(sorted(s))].append(s)
+        return list(res.values())
+```
+
+时间复杂度：O(nklog⁡k)，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的的最大长度。需要遍历 n 个字符串，对于每个字符串，需要 O(klog⁡k) 的时间进行排序以及 O(1) 的时间更新哈希表，因此总时间复杂度是 O(nklog⁡k)。
+
+空间复杂度：O(nk)，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的的最大长度。需要用哈希表存储全部字符串。
+
+**计数**
+
+```python
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        mp = collections.defaultdict(list)
+        for st in strs:
+            counts = [0] * 26
+            for ch in st:
+                counts[ord(ch) - ord("a")] += 1
+            mp[tuple(counts)].append(st)
+        return list(mp.values())
+```
+
+时间复杂度：O(n(k+∣Σ∣))，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的的最大长度，Σ 是字符集，在本题中字符集为所有小写字母，∣Σ∣=26。需要遍历 n 个字符串，对于每个字符串，需要 O(k) 的时间计算每个字母出现的次数，O(∣Σ∣)) 的时间生成哈希表的键，以及 O(1) 的时间更新哈希表，因此总时间复杂度是 O(n(k+∣Σ∣))。
+
+空间复杂度：O(n(k+∣Σ∣))，其中 n 是 strs 中的字符串的数量，k 是 strs 中的字符串的最大长度，Σ 是字符集，在本题中字符集为所有小写字母，∣Σ∣=26。需要用哈希表存储全部字符串，而记录每个字符串中每个字母出现次数的数组需要的空间为 O(∣Σ∣)，在渐进意义下小于 O(n(k+∣Σ∣))，可以忽略不计。
+
 ## [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)（[螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)）
 
 ```
