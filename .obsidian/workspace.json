@@ -55,8 +55,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "algorithm/Top Interview 150.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/一些问题记录.md"
+                "file": "algorithm/Top Interview 150.md"
               }
             }
           },
@@ -207,11 +206,11 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "2e9273bc5c596d24",
+  "active": "2f9c99b720aa90df",
   "lastOpenFiles": [
+    "miscellaneous/一些问题记录.md",
     "backend/Java.md",
     "algorithm/Top Interview 150.md",
-    "miscellaneous/一些问题记录.md",
     "interview/bq/Behavior-Questions.md",
     "miscellaneous/图床使用方案.md",
     "miscellaneous/Hexo搭建个人网站.md",

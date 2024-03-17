@@ -1393,6 +1393,43 @@ class Solution:
         return profit
 ```
 
+## [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)（[最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)）
+
+```
+Input: nums = [100,4,200,1,3,2]
+Output: 4
+Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+```
+
+```
+Input: nums = [0,3,7,2,5,8,4,6,0,1]
+Output: 9
+```
+
+**Hashtable**
+
+```python
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        longest_streak = 0
+        num_set = set(nums)
+        for num in num_set:
+            if num - 1 not in num_set:
+                current_num = num
+                current_streak = 1
+  
+                while current_num + 1 in num_set:
+                    current_num += 1
+                    current_streak += 1
+  
+                longest_streak = max(longest_streak, current_streak)
+        return longest_streak
+```
+
+时间复杂度：O(n)，其中 n 为数组的长度。外层循环需要 O(n) 的时间复杂度，只有当一个数是连续序列的第一个数的情况下才会进入内层循环，然后在内层循环中匹配连续序列中的数，因此数组中的每个数只会进入内层循环一次。
+
+空间复杂度：O(n)。哈希表存储数组中所有的数需要 O(n) 的空间。
+
 ## [134. Gas Station](https://leetcode.com/problems/gas-station/)（[加油站](https://leetcode.cn/problems/gas-station/)）
 
 ```
