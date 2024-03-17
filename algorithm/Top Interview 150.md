@@ -557,6 +557,60 @@ class Solution:
 
 空间复杂度：O(∣Σ∣)，其中 Σ 是字符串的字符集。哈希表存储字符的空间取决于字符串的字符集大小，最坏情况下每个字符均不相同，需要 O(∣Σ∣) 的空间。
 
+## [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)（[存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)）
+
+```
+Input: nums = [1,2,3,1], k = 3
+Output: true
+```
+
+```
+Input: nums = [1,0,1,1], k = 1
+Output: true
+```
+
+```
+Input: nums = [1,2,3,1,2,3], k = 2
+Output: false
+```
+
+**Hashtable**
+
+```python
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        hashset = {}
+        for i, num in enumerate(nums):
+            if num in hashset and i - hashset[num] <= k:
+                return True
+            hashset[num] = i
+        return False
+```
+
+时间复杂度：O(n)，其中 n 是数组 nums 的长度。需要遍历数组一次，对于每个元素，哈希表的操作时间都是 O(1)。
+
+空间复杂度：O(n)，其中 n 是数组 nums 的长度。需要使用哈希表记录每个元素的最大下标，哈希表中的元素个数不会超过 n
+
+**滑动窗口**
+
+```python
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        s = set()
+        for i, num in enumerate(nums):
+            if i > k:
+                s.remove(nums[i - k - 1])
+            if num in s:
+                return True
+            s.add(num)
+        return False
+```
+
+时间复杂度：O(n)，其中 n 是数组 nums 的长度。需要遍历数组一次，对于每个元素，哈希集合的操作时间都是 O(1)。
+
+空间复杂度：O(k)，其中 k 是判断重复元素时允许的下标差的绝对值的最大值。需要使用哈希集合存储滑动窗口中的元素，任意时刻滑动窗口中的元素个数最多为 k+1 个。
+
+
 ## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)（[有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)）
 
 ```
