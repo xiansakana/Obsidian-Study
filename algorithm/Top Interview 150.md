@@ -456,6 +456,80 @@ class Solution {
 
 空间复杂度：O(n)。
 
+## [202. Happy Number](https://leetcode.com/problems/happy-number/)（[快乐数](https://leetcode.cn/problems/happy-number/)）
+
+```
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+```
+
+```
+Input: n = 2
+Output: false
+```
+
+**Hashset**
+
+```python
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        def getNext(num):
+            sum = 0
+            while num:
+                sum += (num % 10) ** 2
+                num = num // 10
+            return sum
+        mid = set()
+        while True:
+            n = getNext(n)
+            if n == 1:
+                return True
+            if n in mid:
+                return False
+            else:
+                mid.add(n)
+```
+
+对于 3 位数的数字，它不可能大于 243。这意味着它要么被困在 243 以下的循环内，要么跌到 1。4 位或 4 位以上的数字在每一步都会丢失一位，直到降到 3 位为止。
+
+时间复杂度：O(243⋅3+log⁡n+log⁡log⁡n+log⁡log⁡log⁡n)... = O(log⁡n)。
+- 查找给定数字的下一个值的成本为 O(log⁡n)，因为我们正在处理数字中的每位数字，而数字中的位数由 log⁡n 给定。
+- 要计算出总的时间复杂度，我们需要仔细考虑循环中有多少个数字，它们有多大。
+- 我们在上面确定，一旦一个数字低于 243，它就不可能回到 243 以上。因此，我们就可以用 243 以下最长循环的长度来代替 243，不过，因为常数无论如何都无关紧要，所以我们不会担心它。
+- 对于高于 2433 的 n，我们需要考虑循环中每个数高于 243 的成本。通过数学运算，我们可以证明在最坏的情况下，这些成本将是 O(log⁡n)+O(log⁡log⁡n)+O(log⁡log⁡log⁡n)...。幸运的是，O(log⁡n) 是占主导地位的部分，而其他部分相比之下都很小（总的来说，它们的总和小于log⁡n），所以我们可以忽略它们。
+
+空间复杂度：O(log⁡n)。与时间复杂度密切相关的是衡量我们放入哈希集合中的数字以及它们有多大的指标。对于足够大的 n，大部分空间将由 n 本身占用。我们可以很容易地优化到 O(243⋅3)=O(1)，方法是只保存集合中小于 243 的数字，因为对于较高的数字，无论如何都不可能返回到它们。
+
+**双指针**
+
+```python
+def isHappy(self, n: int) -> bool:  
+    def get_next(number):
+        total_sum = 0
+        while number > 0:
+            number, digit = divmod(number, 10)
+            total_sum += digit ** 2
+        return total_sum
+
+    slow_runner = n
+    fast_runner = get_next(n)
+    while fast_runner != 1 and slow_runner != fast_runner:
+        slow_runner = get_next(slow_runner)
+        fast_runner = get_next(get_next(fast_runner))
+    return fast_runner == 1
+```
+
+时间复杂度：O(log⁡n)。该分析建立在对前一种方法的分析的基础上，但是这次我们需要跟踪两个指针而不是一个指针来分析，以及在它们相遇前需要绕着这个循环走多少次。
+- 如果没有循环，那么快跑者将先到达 1，慢跑者将到达链表中的一半。我们知道最坏的情况下，成本是 O(2⋅log⁡n)=O(log⁡n)=O(logn)。
+- 一旦两个指针都在循环中，在每个循环中，快跑者将离慢跑者更近一步。一旦快跑者落后慢跑者一步，他们就会在下一步相遇。假设循环中有 k 个数字。如果他们的起点是相隔 k−1 的位置（这是他们可以开始的最远的距离），那么快跑者需要 k−1 步才能到达慢跑者，这对于我们的目的来说也是不变的。因此，主操作仍然在计算起始 n 的下一个值，即 O(log⁡n)。
+
+空间复杂度：O(1)，对于这种方法，我们不需要哈希集来检测循环。指针需要常数的额外空间。
+
 ## [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)（[同构字符串](https://leetcode.cn/problems/isomorphic-strings/)）
 
 ```
