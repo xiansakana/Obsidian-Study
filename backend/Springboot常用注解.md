@@ -437,3 +437,29 @@ public String getValue(){
 local.username=saltedfish
 local.password=123456
 ```
+
+# @ConfigurationProperties
+
+@Value注解只能一个个注入外部属性，但是@ConfigurationProperties可以批量的将外部属性注入到bean对象属性中。
+
+```java
+// AliOSSProperties.java
+@Data
+@Component
+@ConfigurationProperties(perfix = "aliyun.oss")
+public class AliOSSProperties{
+	private String endpoint;
+	private String accessKeyId;
+	private String accessKeySecret;
+	private String bucketName;
+}
+```
+
+```yml
+aliyun:
+  oss:
+    endpoint:
+    accessKeyId:
+    accessKeySecret:
+    bucketName:
+```
