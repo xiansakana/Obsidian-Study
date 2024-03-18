@@ -105,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 269.5,
+    "collapsed": true
   },
   "right": {
     "id": "defed06388ad0739",
@@ -205,7 +206,7 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "2f9c99b720aa90df",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
     "algorithm/Top Interview 150.md",
     "miscellaneous/一些问题记录.md",
