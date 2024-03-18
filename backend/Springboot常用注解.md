@@ -348,27 +348,40 @@ public class UserActionController {
 }
 ```
 
-# @Resource (@Autowired + @Qualifier)
+# @Primary
 
-如果两个实现类共用一个接口可以用`@Resource`代替`@Autowired`并指定`name`。
+如果同类型的bean存在多个，可以用`@Primary`指定优先级
 
 ```java
-@Resource(name = "userServiceImpl")
-private UserService userService;
+@Primary
+@Service
+public class UserServiceImpl implements UserService{}
+```
 
-@Resource(name = "adminServiceImpl")
-private UserService adminService;
+# @Resource (@Autowired + @Qualifier)
+
+如果两个实现类共用一个接口可以用`@Resource`代替`@Autowired`并指定`name`。`@Resource`是JDK提供的注解，`@Autowired`是Spring框架提供；`@Resource`默认按照名称注入，而`@Autowired`默认按照类型注入。
+
+```java
+@RestController
+public class UserController{
+	@Resource(name = "userServiceImpl")
+	private UserService userService;
+	
+	@Resource(name = "adminServiceImpl")
+	private UserService adminService;
+}
 ```
 
 # @Qualifier
 
 ```java
-@Autowired
-@Qualifier("userServiceImpl")
-private UserService userService;
-
-@Resource(name = "adminServiceImpl")
-private UserService adminService;
+@RestController
+public class UserController{
+	@Autowired
+	@Qualifier("userServiceImpl")
+	private UserService userService;
+}
 ```
 
 # @Configuration
