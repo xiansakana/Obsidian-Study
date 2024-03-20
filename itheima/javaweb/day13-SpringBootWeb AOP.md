@@ -10,13 +10,13 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
 ---
 
 
-## 事务&AOP
+# 事务&AOP
 
 
 
-## 1. 事务管理
+# 1. 事务管理
 
-### 1.1 事务回顾
+## 1.1 事务回顾
 
 在数据库阶段我们已学习过事务了，我们讲到：
 
@@ -34,9 +34,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
 
 
 
-### 1.2 Spring事务管理
+## 1.2 Spring事务管理
 
-#### 1.2.1 案例
+## 1.2.1 案例
 
 简单的回顾了事务的概念以及事务的基本操作之后，接下来我们看一个事务管理案例：解散部门 （解散部门就是删除部门）
 
@@ -173,7 +173,7 @@ public class DeptServiceImpl implements DeptService {
 
 
 
-#### 1.2.2 原因分析
+## 1.2.2 原因分析
 
 原因：
 
@@ -209,7 +209,7 @@ public class DeptServiceImpl implements DeptService {
 
 
 
-#### 1.2.3 Transactional注解
+## 1.2.3 Transactional注解
 
 > @Transactional作用：就是在当前这个方法执行开始之前来开启事务，方法执行完毕之后提交事务。如果在这个方法执行的过程当中出现了异常，就会进行事务的回滚操作。
 >
@@ -287,7 +287,7 @@ logging:
 
 
 
-### 1.3 事务进阶
+## 1.3 事务进阶
 
 前面我们通过spring事务管理注解@Transactional已经控制了业务层方法的事务。接下来我们要来详细的介绍一下@Transactional事务管理注解的使用细节。我们这里主要介绍@Transactional注解当中的两个常见的属性：
 
@@ -296,7 +296,7 @@ logging:
 
 我们先来学习下rollbackFor属性。
 
-#### 1.3.1 rollbackFor
+## 1.3.1 rollbackFor
 
 我们在之前编写的业务方法上添加了@Transactional注解，来实现事务管理。
 
@@ -435,9 +435,9 @@ public class DeptServiceImpl implements DeptService {
 
 
 
-#### 1.3.3 propagation
+## 1.3.3 propagation
 
-##### 1.3.3.1 介绍
+### 1.3.3.1 介绍
 
 我们接着继续学习@Transactional注解当中的第二个属性propagation，这个属性是用来配置事务的传播行为的。
 
@@ -474,7 +474,7 @@ public class DeptServiceImpl implements DeptService {
 
 
 
-##### 1.3.3.2 案例
+### 1.3.3.2 案例
 
 接下来我们就通过一个案例来演示下事务传播行为propagation属性的使用。
 
@@ -689,13 +689,13 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 
 
-## 2. AOP基础
+# 2. AOP基础
 
 学习完spring的事务管理之后，接下来我们进入到AOP的学习。 AOP也是spring框架的第二大核心，我们先来学习AOP的基础。
 
 在AOP基础这个阶段，我们首先介绍一下什么是AOP，再通过一个快速入门程序，让大家快速体验AOP程序的开发。最后再介绍AOP当中所涉及到的一些核心的概念。
 
-### 2.1 AOP概述
+## 2.1 AOP概述
 
 什么是AOP？
 
@@ -773,7 +773,7 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 
 
-### 2.2 AOP快速入门
+## 2.2 AOP快速入门
 
 在了解了什么是AOP后，我们下面通过一个快速入门程序，体验下AOP的开发，并掌握Spring中AOP的开发步骤。
 
@@ -865,7 +865,7 @@ public class TimeAspect {
 
 
 
-### 2.3 AOP核心概念
+## 2.3 AOP核心概念
 
 通过SpringAOP的快速入门，感受了一下AOP面向切面编程的开发方式。下面我们再来学习AOP当中涉及到的一些核心概念。
 
@@ -935,7 +935,7 @@ Spring的AOP底层是基于动态代理技术来实现的，也就是说在程�
 
 
 
-## 3. AOP进阶
+# 3. AOP进阶
 
 AOP的基础知识学习完之后，下面我们对AOP当中的各个细节进行详细的学习。主要分为4个部分：
 
@@ -948,7 +948,7 @@ AOP的基础知识学习完之后，下面我们对AOP当中的各个细节进�
 
 
 
-### 3.1 通知类型
+## 3.1 通知类型
 
 在入门程序当中，我们已经使用了一种功能最为强大的通知类型：Around环绕通知。
 
@@ -1204,7 +1204,7 @@ public class MyAspect2 {
 
 
 
-### 3.2 通知顺序
+## 3.2 通知顺序
 
 讲解完了Spring中AOP所支持的5种通知类型之后，接下来我们再来研究通知的执行顺序。
 
@@ -1390,7 +1390,7 @@ public class MyAspect4 {
 
 
 
-### 3.3 切入点表达式
+## 3.3 切入点表达式
 
 从AOP的入门程序到现在，我们一直都在使用切入点表达式来描述切入点。下面我们就来详细的介绍一下切入点表达式的具体写法。
 
@@ -1414,7 +1414,7 @@ public class MyAspect4 {
 
 
 
-#### 3.3.1 execution
+## 3.3.1 execution
 
 execution主要根据方法的返回值、包名、类名、方法名、方法参数等信息来匹配，语法为：
 
@@ -1568,7 +1568,7 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 
   
 
-#### 3.3.2 @annotation
+## 3.3.2 @annotation
 
 已经学习了execution切入点表达式的语法。那么如果我们要匹配多个无规则的方法，比如：list()和 delete()这两个方法。这个时候我们基于execution这种切入点表达式来描述就不是很方便了。而在之前我们是将两个切入点表达式组合在了一起完成的需求，这个是比较繁琐的。
 
@@ -1684,7 +1684,7 @@ public class MyAspect6 {
 
 
 
-### 3.4 连接点
+## 3.4 连接点
 
 讲解完了切入点表达式之后，接下来我们再来讲解最后一个部分连接点。我们前面在讲解AOP核心概念的时候，我们提到过什么是连接点，连接点可以简单理解为可以被AOP控制的方法。
 
@@ -1759,11 +1759,11 @@ public class MyAspect7 {
 
 
 
-## 4. AOP案例
+# 4. AOP案例
 
 SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要通过一个案例来对AOP进行一个综合的应用。
 
-### 4.1 需求
+## 4.1 需求
 
 需求：将案例中增、删、改相关接口的操作日志记录到数据库表中
 
@@ -1777,7 +1777,7 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 
 
 
-### 4.2 分析
+## 4.2 分析
 
 问题1：项目当中增删改相关的方法是不是有很多？
 
@@ -1819,7 +1819,7 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 
 
 
-### 4.3 步骤
+## 4.3 步骤
 
 简单分析了一下大概的实现思路后，接下来我们就要来完成案例了。案例的实现步骤其实就两步：
 
@@ -1838,9 +1838,9 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 
 
 
-### 4.4 实现
+## 4.4 实现
 
-#### 4.4.1 准备工作
+## 4.4.1 准备工作
 
 1. AOP起步依赖
 
@@ -1905,7 +1905,7 @@ public interface OperateLogMapper {
 
 
 
-#### 4.4.2 编码实现
+## 4.4.2 编码实现
 
 - 自定义注解@Log
 

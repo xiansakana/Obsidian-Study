@@ -7,9 +7,9 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192155572.jpg'
 ---
-## SpringBoot基础
+# SpringBoot基础
 
-## 课程内容
+# 课程内容
 
 > 1. SpringBootWeb入门
 >
@@ -23,7 +23,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192155572.jpg'
 
 
 
-## 前言
+# 前言
 
 ![image-20221130095316032](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221130095316032.png)
 
@@ -76,9 +76,9 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 
 
-## 1. SpringBootWeb快速入门
+# 1. SpringBootWeb快速入门
 
-### 1.1 需求
+## 1.1 需求
 
 需求：基于SpringBoot的方式开发一个web应用，浏览器发起请求/hello后，给浏览器返回字符串 “Hello World ~”。
 
@@ -86,7 +86,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
  
 
-### 1.2 开发步骤
+## 1.2 开发步骤
 
 第1步：创建SpringBoot工程项目
 
@@ -96,7 +96,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 
 
-#### 1.2.1 创建SpringBoot工程（需要联网）
+## 1.2.1 创建SpringBoot工程（需要联网）
 
 基于Spring官方骨架，创建SpringBoot工程。
 
@@ -116,7 +116,7 @@ Spring发展到今天已经形成了一种开发生态圈，Spring提供了若�
 
 
 
-#### 1.2.2 定义请求处理类
+## 1.2.2 定义请求处理类
 
 在com.itheima这个包下创建一个子包controller
 
@@ -144,7 +144,7 @@ public class HelloController {
 
 
 
-#### 1.2.3 运行测试
+## 1.2.3 运行测试
 
 运行SpringBoot自动生成的引导类
 
@@ -158,7 +158,7 @@ public class HelloController {
 
 
 
-### 1.3 Web分析
+## 1.3 Web分析
 
 ![image-20221201224603497](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201224603497.png)
 
@@ -207,11 +207,11 @@ public class HelloController {
 
 
 
-## 2. HTTP协议
+# 2. HTTP协议
 
-### 2.1 HTTP-概述
+## 2.1 HTTP-概述
 
-#### 2.1.1 介绍
+## 2.1.1 介绍
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220823200024507.png)
 
@@ -244,7 +244,7 @@ HTTP：Hyper Text Transfer Protocol(超文本传输协议)，规定了浏览器�
 
 
 
-#### 2.2.2 特点
+## 2.2.2 特点
 
 我们刚才初步认识了HTTP协议，那么我们在看看HTTP协议有哪些特点：
 
@@ -277,7 +277,7 @@ HTTP：Hyper Text Transfer Protocol(超文本传输协议)，规定了浏览器�
 
 
 
-### 2.2 HTTP-请求协议
+## 2.2 HTTP-请求协议
 
 浏览器和服务器是按照HTTP协议进行数据通信的。
 
@@ -384,9 +384,9 @@ GET请求和POST请求的区别：
 
 
 
-### 2.3 HTTP-响应协议
+## 2.3 HTTP-响应协议
 
-#### 2.3.1 格式介绍
+## 2.3.1 格式介绍
 
 与HTTP的请求一样，HTTP响应的数据也分为3部分：**响应行**、**响应头** 、**响应体** 
 
@@ -421,7 +421,7 @@ GET请求和POST请求的区别：
 
 
 
-#### 2.3.2 响应状态码
+## 2.3.2 响应状态码
 
 | 状态码分类 | 说明                                                         |
 | ---------- | ------------------------------------------------------------ |
@@ -443,7 +443,7 @@ GET请求和POST请求的区别：
 
 
 
-### 2.4 HTTP-协议解析
+## 2.4 HTTP-协议解析
 
 将资料中准备好的Demo工程，导入到我们的IDEA中，有一个Server.java类，这里面就是自定义的一个服务器代码，主要使用到的是`ServerSocket`和`Socket`
 
@@ -569,11 +569,11 @@ class Handler extends Thread {
 
 
 
-## 3. WEB服务器-Tomcat
+# 3. WEB服务器-Tomcat
 
-### 3.1 简介
+## 3.1 简介
 
-#### 3.1.1 服务器概述
+## 3.1.1 服务器概述
 
 **服务器硬件**
 
@@ -600,7 +600,7 @@ class Handler extends Thread {
 
 
 
-#### 3.1.2 Web服务器
+## 3.1.2 Web服务器
 
 Web服务器是一个应用程序(软件)，对HTTP协议的操作进行封装，使得程序员不必直接对协议进行操作(不用程序员自己写代码去解析http协议规则)，让Web开发更加便捷。主要功能是"提供网上信息浏览服务"。
 
@@ -659,7 +659,7 @@ Tomcat就是一款软件，我们主要是以学习如何去使用为主。具�
 
 
 
-#### 3.1.3 Tomcat
+## 3.1.3 Tomcat
 
 Tomcat服务器软件是一个免费的开源的web应用服务器。是Apache软件基金会的一个核心项目。由Apache，Sun和其他一些公司及个人共同开发而成。
 
@@ -681,9 +681,9 @@ Tomcat的官网: https://tomcat.apache.org/
 
 
 
-### 3.2 基本使用
+## 3.2 基本使用
 
-#### 3.2.1 下载
+## 3.2.1 下载
 
 直接从官方网站下载：https://tomcat.apache.org/download-90.cgi
 
@@ -704,7 +704,7 @@ Tomcat的软件程序  ：/资料/SpringbootWeb/apache-tomcat-9.0.27-windows-x64
 
 
 
-#### 3.2.2 安装与卸载
+## 3.2.2 安装与卸载
 
 **安装:** Tomcat是绿色版，直接解压即安装
 
@@ -732,7 +732,7 @@ webapps：就是以后项目部署的目录
 
 
 
-#### 3.2.3 启动与关闭
+## 3.2.3 启动与关闭
 
 **启动Tomcat** 
 
@@ -776,7 +776,7 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 
 
 
-#### 3.2.4 常见问题
+## 3.2.4 常见问题
 
 **问题1：Tomcat启动时，窗口一闪而过**
 
@@ -801,11 +801,11 @@ Tomcat的默认端口为8080，所以在浏览器的地址栏输入：`http://12
 
 
 
-### 3.3 入门程序解析
+## 3.3 入门程序解析
 
 关于web开发的基础知识，我们可以告一段落了。下面呢，我们在基于今天的核心技术点SpringBoot快速入门案例进行分析。
 
-#### 3.3.1 Spring官方骨架
+## 3.3.1 Spring官方骨架
 
 之前我们创建的SpringBoot入门案例，是基于Spring官方提供的骨架实现的。
 
@@ -839,7 +839,7 @@ Spring官方生成的SpringBoot项目，怎么使用呢？
 
 
 
-#### 3.3.2 起步依赖
+## 3.3.2 起步依赖
 
 在我们之前讲解的SpringBoot快速入门案例中，同样也引用了：web依赖和test依赖
 
@@ -872,7 +872,7 @@ Spring的官方提供了很多现成的starter(起步依赖)，我们在开发�
 
 
 
-#### 3.3.2 SpringBoot父工程
+## 3.3.2 SpringBoot父工程
 
 在我们之前开发的SpringBoot入门案例中，我们通过maven引入的依赖，是没有指定具体的依赖版本号的。
 
@@ -890,7 +890,7 @@ Spring的官方提供了很多现成的starter(起步依赖)，我们在开发�
 
 
 
-#### 3.3.3 内嵌Tomcat
+## 3.3.3 内嵌Tomcat
 
 问题：为什么我们之前书写的SpringBoot入门程序中，并没有把程序部署到Tomcat的webapps目录下，也可以运行呢？
 

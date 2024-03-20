@@ -8,7 +8,7 @@ categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 ---
 
-## Maven高级
+# Maven高级
 
 **今日目标**
 
@@ -18,9 +18,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 > * 能够根据需求配置生成、开发、测试环境，并在各个环境间切换运行
 > * 了解Maven的私服
 
-## 1，分模块开发
+# 1，分模块开发
 
-### 1.1 分模块开发设计
+## 1.1 分模块开发设计
 
 (1)按照功能拆分
 
@@ -48,31 +48,31 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 这样的话，项目中的每一层都可以单独维护，也可以很方便的被别人使用。关于分模块开发的意义，我们就说完了，说了这么多好处，那么该如何实现呢?
 
-### 1.2 分模块开发实现
+## 1.2 分模块开发实现
 
 前面我们已经完成了SSM整合，接下来，咱们就基于SSM整合的项目来实现对项目的拆分。
 
-#### 1.2.1 环境准备
+## 1.2.1 环境准备
 
 将`资料\maven_02_ssm`部署到IDEA中，将环境快速准备好，部署成功后，项目的格式如下:
 
 ![1630769969416](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630769969416.png)
 
-#### 1.2.2 抽取domain层
+## 1.2.2 抽取domain层
 
-##### 步骤1:创建新模块
+### 步骤1:创建新模块
 
 创建一个名称为`maven_03_pojo`的jar项目,为什么项目名是从02到03这样创建，原因后面我们会提到，这块的名称可以任意。
 
 ![1630771178137](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771178137.png)
 
-##### 步骤2:项目中创建domain包
+### 步骤2:项目中创建domain包
 
 在`maven_03_pojo`项目中创建`com.itheima.domain`包，并将`maven_02_ssm`中Book类拷贝到该包中
 
 ![1630771371487](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771371487.png)
 
-##### 步骤3:删除原项目中的domain包
+### 步骤3:删除原项目中的domain包
 
 删除后，`maven_02_ssm`项目中用到`Book`的类中都会有红色提示，如下:
 
@@ -82,7 +82,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 要想解决上述问题，我们需要在`maven_02_ssm`中添加`maven_03_pojo`的依赖。
 
-##### 步骤4:建立依赖关系
+### 步骤4:建立依赖关系
 
 在`maven_02_ssm`项目的pom.xml添加`maven_03_pojo`的依赖
 
@@ -96,7 +96,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 因为添加了依赖，所以在`maven_02_ssm`中就已经能找到Book类，所以刚才的报红提示就会消失。
 
-##### 步骤5:编译`maven_02_ssm`项目
+### 步骤5:编译`maven_02_ssm`项目
 
 编译`maven_02_ssm`你会在控制台看到如下错误
 
@@ -110,7 +110,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 在IDEA中是有`maven_03_pojo`这个项目，所以我们只需要将`maven_03_pojo`项目安装到本地仓库即可。
 
-##### 步骤6:将项目安装本地仓库
+### 步骤6:将项目安装本地仓库
 
 将需要被依赖的项目`maven_03_pojo`，使用maven的install命令，把其安装到Maven的本地仓库中。
 
@@ -124,15 +124,15 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 当再次执行`maven_02_ssm`的compile的命令后，就已经能够成功编译。
 
-#### 1.2.3 抽取Dao层
+## 1.2.3 抽取Dao层
 
-##### 步骤1:创建新模块
+### 步骤1:创建新模块
 
 创建一个名称为`maven_04_dao`的jar项目
 
 ![1630773580067](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773580067.png)
 
-##### 步骤2:项目中创建dao包
+### 步骤2:项目中创建dao包
 
 在`maven_04_dao`项目中创建`com.itheima.dao`包，并将`maven_02_ssm`中BookDao类拷贝到该包中
 
@@ -176,7 +176,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
     </dependencies>
     ```
 
-##### 步骤3:删除原项目中的dao包
+### 步骤3:删除原项目中的dao包
 
 删除Dao包以后，因为`maven_02_ssm`中的BookServiceImpl类中有使用到Dao的内容，所以需要在`maven_02_ssm`的pom.xml添加`maven_04_dao`的依赖
 
@@ -198,7 +198,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 和刚才的错误原因是一样的，maven在仓库中没有找到`maven_04_dao`,所以此时我们只需要将`maven_04_dao`安装到Maven的本地仓库即可。
 
-##### 步骤4:将项目安装到本地仓库
+### 步骤4:将项目安装到本地仓库
 
 将需要被依赖的项目`maven_04_dao`，使用maven的install命令，把其安装到Maven的本地仓库中。
 
@@ -210,7 +210,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 当再次执行`maven_02_ssm`的compile的指令后，就已经能够成功编译。
 
-#### 1.2.4 运行测试并总结
+## 1.2.4 运行测试并总结
 
 将抽取后的项目进行运行，测试之前的增删改查功能依然能够使用。
 
@@ -226,7 +226,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 团队内部开发需要发布模块功能到团队内部可共享的仓库中(私服)，私服我们后面会讲解。
 
-## 2，依赖管理
+# 2，依赖管理
 
 我们现在已经能把项目拆分成一个个独立的模块，当在其他项目中想要使用独立出来的这些模块，只需要在其pom.xml使用`<dependency>`标签来进行jar包的引入即可。
 
@@ -257,7 +257,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </dependencies>
 ```
 
-### 2.1 依赖传递与冲突问题
+## 2.1 依赖传递与冲突问题
 
 回到我们刚才的项目案例中，打开Maven的面板，你会发现:
 
@@ -349,7 +349,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 在这个视图中就能很明显的展示出jar包之间的相互依赖关系。
 
-### 2.2 可选依赖和排除依赖
+## 2.2 可选依赖和排除依赖
 
 依赖传递介绍完以后，我们来思考一个问题，
 
@@ -362,7 +362,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 **说明:**在真实使用的过程中，maven_02_ssm中是需要用到maven_03_pojo的，我们这里只是用这个例子描述我们的需求。因为有时候，maven_04_dao出于某些因素的考虑，就是不想让别人使用自己所依赖的maven_03_pojo。
 
-#### 方案一:可选依赖
+## 方案一:可选依赖
 
 * 可选依赖指对外隐藏当前所依赖的资源---不透明
 
@@ -382,7 +382,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 ![1630854923484](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630854923484.png)
 
-#### 方案二:排除依赖
+## 方案二:排除依赖
 
 * 排除依赖指主动断开依赖的资源，被排除的资源无需指定版本---不需要
 
@@ -436,11 +436,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 * 可选依赖是在B上设置`<optional>`,`A`不知道有`C`的存在，
 * 排除依赖是在A上设置`<exclusions>`,`A`知道有`C`的存在，主动将其排除掉。
 
-## 3，聚合和继承
+# 3，聚合和继承
 
 我们的项目已经从以前的单模块，变成了现在的多模块开发。项目一旦变成了多模块开发以后，就会引发一些问题，在这一节中我们主要会学习两个内容`聚合`和`继承`，用这两个知识来解决下分模块后的一些问题。
 
-### 3.1 聚合
+## 3.1 聚合
 
 ![1630858596147](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630858596147.png)
 
@@ -458,11 +458,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 关于聚合具体的实现步骤为:
 
-#### 步骤1:创建一个空的maven项目
+## 步骤1:创建一个空的maven项目
 
 ![1630859532119](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630859532119.png)
 
-#### 步骤2:将项目的打包方式改为pom
+## 步骤2:将项目的打包方式改为pom
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -485,7 +485,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 * war:说明该项目为web项目
 * pom:说明该项目为聚合或继承(后面会讲)项目
 
-#### 步骤3:pom.xml添加所要管理的项目
+## 步骤3:pom.xml添加所要管理的项目
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -508,7 +508,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </project>
 ```
 
-#### 步骤4:使用聚合统一管理项目
+## 步骤4:使用聚合统一管理项目
 
 ![1630859797123](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630859797123.png)
 
@@ -518,7 +518,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 聚合的知识我们就讲解完了，最后总结一句话就是，**聚合工程主要是用来管理项目**。
 
-### 3.2 继承
+## 3.2 继承
 
 我们已经完成了使用聚合工程去管理项目，聚合工程进行某一个构建操作，其他被其管理的项目也会执行相同的构建操作。那么接下来，我们再来分析下，多模块开发存在的另外一个问题，`重复配置`的问题，我们先来看张图:
 
@@ -537,11 +537,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 接下来，我们到程序中去看看继承该如何实现?
 
-#### 步骤1:创建一个空的Maven项目并将其打包方式设置为pom
+## 步骤1:创建一个空的Maven项目并将其打包方式设置为pom
 
 因为这一步和前面maven创建聚合工程的方式是一摸一样，所以我们可以单独创建一个新的工程，也可以直接和聚合公用一个工程。实际开发中，聚合和继承一般也都放在同一个项目中，但是这两个的功能是不一样的。
 
-#### 步骤2:在子项目中设置其父工程
+## 步骤2:在子项目中设置其父工程
 
 分别在`maven_02_ssm`,`maven_03_pojo`,`maven_04_dao`的pom.xml中添加其父项目为`maven_01_parent`
 
@@ -556,7 +556,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </parent>
 ```
 
-#### 步骤3:优化子项目共有依赖导入问题
+## 步骤3:优化子项目共有依赖导入问题
 
 1. 将子项目共同使用的jar包都抽取出来，维护在父项目的pom.xml中
 
@@ -751,7 +751,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 ![1630943390187](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630943390187.png)
 
-#### 步骤4:优化子项目依赖版本问题
+## 步骤4:优化子项目依赖版本问题
 
 如果把所有用到的jar包都管理在父项目的pom.xml，看上去更简单些，但是这样就会导致有很多项目引入了过多自己不需要的jar包。如上面看到的这张图:
 
@@ -889,9 +889,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
   2.子工程中还可以定义父工程中没有定义的依赖关系,只不过不能被父工程进行版本统一管理。
 
-### 3.3 聚合与继承的区别
+## 3.3 聚合与继承的区别
 
-#### 3.3.1 聚合与继承的区别
+## 3.3.1 聚合与继承的区别
 
 两种之间的作用:
 
@@ -910,17 +910,17 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 相信到这里，大家已经能区分开什么是聚合和继承，但是有一个稍微麻烦的地方就是聚合和继承的工程构建，需要在聚合项目中手动添加`modules`标签，需要在所有的子项目中添加`parent`标签，万一写错了咋办?
 
-#### 3.3.2 IDEA构建聚合与继承工程
+## 3.3.2 IDEA构建聚合与继承工程
 
 其实对于聚合和继承工程的创建，IDEA已经能帮助我们快速构建，具体的实现步骤为:
 
-##### 步骤1:创建一个Maven项目
+### 步骤1:创建一个Maven项目
 
 创建一个空的Maven项目，可以将项目中的`src`目录删除掉，这个项目作为聚合工程和父工程。
 
 ![1630946592924](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630946592924.png)
 
-##### 步骤2:创建子项目
+### 步骤2:创建子项目
 
 该项目可以被聚合工程管理，同时会继承父工程。
 
@@ -930,7 +930,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 按照上面这种方式，大家就可以根据自己的需要来构建分模块项目。
 
-## 4，属性
+# 4，属性
 
 在这一章节内容中，我们将学习两个内容，分别是
 
@@ -939,9 +939,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 属性中会继续解决分模块开发项目存在的问题，版本管理主要是认识下当前主流的版本定义方式。
 
-### 4.1 属性
+## 4.1 属性
 
-#### 4.1.1 问题分析
+## 4.1.1 问题分析
 
 讲解内容之前，我们还是先来分析问题:
 
@@ -955,9 +955,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 ![1630947749661](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630947749661.png)
 
-#### 4.1.2 解决步骤
+## 4.1.2 解决步骤
 
-##### 步骤1:父工程中定义属性
+### 步骤1:父工程中定义属性
 
 ```xml
 <properties>
@@ -967,7 +967,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </properties>
 ```
 
-##### 步骤2:修改依赖的version
+### 步骤2:修改依赖的version
 
 ```xml
 <dependency>
@@ -998,13 +998,13 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </properties>
 ```
 
-### 4.2 配置文件加载属性
+## 4.2 配置文件加载属性
 
 Maven中的属性我们已经介绍过了，现在也已经能够通过Maven来集中管理Maven中依赖jar包的版本。但是又有新的需求，就是想让Maven对于属性的管理范围能更大些，比如我们之前项目中的`jdbc.properties`，这个配置文件中的属性，能不能也来让Maven进行管理呢?
 
 答案是肯定的，具体的实现步骤为:
 
-##### 步骤1:父工程定义属性
+### 步骤1:父工程定义属性
 
 ```xml
 <properties>
@@ -1012,7 +1012,7 @@ Maven中的属性我们已经介绍过了，现在也已经能够通过Maven来�
 </properties>
 ```
 
-##### 步骤2:jdbc.properties文件中引用属性
+### 步骤2:jdbc.properties文件中引用属性
 
 在jdbc.properties，将jdbc.url的值直接获取Maven配置的属性
 
@@ -1023,7 +1023,7 @@ jdbc.username=root
 jdbc.password=root
 ```
 
-##### 步骤3:设置maven过滤文件范围
+### 步骤3:设置maven过滤文件范围
 
 Maven在默认情况下是从当前项目的`src\main\resources`下读取文件进行打包。现在我们需要打包的资源文件是在maven_02_ssm下,需要我们通过配置来指定下具体的资源目录。
 
@@ -1048,7 +1048,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 
 
-##### 步骤4:测试是否生效
+### 步骤4:测试是否生效
 
 测试的时候，只需要将maven_02_ssm项目进行打包，然后观察打包结果中最终生成的内容是否为Maven中配置的内容。
 
@@ -1148,7 +1148,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 具体使用，就是使用 `${key}`来获取，key为等号左边的，值为等号右边的，比如获取红线的值，对应的写法为 `${java.runtime.name}`。
 
-### 4.3 版本管理
+## 4.3 版本管理
 
 关于这个版本管理解决的问题是，在Maven创建项目和引用别人项目的时候，我们都看到过如下内容:
 
@@ -1177,11 +1177,11 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 对于这些版本，大家只需要简单认识下即可。
 
-## 5，多环境配置与应用
+# 5，多环境配置与应用
 
 这一节中，我们会讲两个内容，分别是`多环境开发`和`跳过测试`
 
-### 5.1 多环境开发
+## 5.1 多环境开发
 
 ![1630983617755](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630983617755.png)
 
@@ -1194,7 +1194,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 maven提供配置多种环境的设定，帮助开发者在使用过程中快速切换环境。具体实现步骤:
 
-#### 步骤1:父工程配置多个环境,并指定默认激活环境
+## 步骤1:父工程配置多个环境,并指定默认激活环境
 
 ```xml
 <profiles>
@@ -1226,7 +1226,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 </profiles>
 ```
 
-#### 步骤2:执行安装查看env_dep环境是否生效
+## 步骤2:执行安装查看env_dep环境是否生效
 
 ![1630983967960](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630983967960.png)
 
@@ -1234,7 +1234,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 ![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977885030.png)
 
-#### 步骤3:切换默认环境为生产环境
+## 步骤3:切换默认环境为生产环境
 
 ```xml
 <profiles>
@@ -1266,7 +1266,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 </profiles>
 ```
 
-#### 步骤4:执行安装并查看env_pro环境是否生效
+## 步骤4:执行安装并查看env_pro环境是否生效
 
 查看到的结果为`jdbc:mysql://127.2.2.2:3306/ssm_db`
 
@@ -1274,11 +1274,11 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 虽然已经能够实现不同环境的切换，但是每次切换都是需要手动修改，如何来实现在不改变代码的前提下完成环境的切换呢?
 
-#### 步骤5:命令行实现环境切换
+## 步骤5:命令行实现环境切换
 
 ![1630984476202](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630984476202.png)
 
-#### 步骤6:执行安装并查看env_test环境是否生效
+## 步骤6:执行安装并查看env_test环境是否生效
 
 查看到的结果为`jdbc:mysql://127.3.3.3:3306/ssm_db`
 
@@ -1309,7 +1309,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
   mvn 指令 -P 环境定义ID[环境定义中获取]
   ```
 
-### 5.2 跳过测试
+## 5.2 跳过测试
 
 前面在执行`install`指令的时候，Maven都会按照顺序从上往下依次执行，每次都会执行`test`,
 
@@ -1320,7 +1320,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 遇到上面这些情况的时候，我们就想跳过测试执行下面的构建命令，具体实现方式有很多：
 
-#### 方式一:IDEA工具实现跳过测试
+## 方式一:IDEA工具实现跳过测试
 
 ![1630985300814](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630985300814.png)
 
@@ -1336,7 +1336,7 @@ Toggle翻译为切换的意思，也就是说在测试与不测试之间进行�
 
 这种方式最简单，但是有点"暴力"，会把所有的测试都跳过，如果我们想更精细的控制哪些跳过哪些不跳过，就需要使用配置插件的方式。
 
-#### 方式二:配置插件实现跳过测试
+## 方式二:配置插件实现跳过测试
 
 在父工程中的pom.xml中添加测试插件配置
 
@@ -1364,7 +1364,7 @@ excludes：哪些测试类不参与测试，即排除，针对skipTests为false�
 
 includes: 哪些测试类要参与测试，即包含,针对skipTests为true来设置的
 
-#### 方式三:命令行跳过测试
+## 方式三:命令行跳过测试
 
 ![1630986926124](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630986926124.png)
 
@@ -1375,7 +1375,7 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
 * 执行的项目构建指令必须包含测试生命周期，否则无效果。例如执行compile生命周期，不经过test生命周期。
 * 该命令可以不借助IDEA，直接使用cmd命令行进行跳过测试，需要注意的是cmd要在pom.xml所在目录下进行执行。
 
-## 6，私服
+# 6，私服
 
 这一节，我们主要学习的内容是:
 
@@ -1385,7 +1385,7 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
 
 首先来说一说什么是私服?
 
-### 6.1 私服简介
+## 6.1 私服简介
 
 团队开发现状分析
 
@@ -1417,15 +1417,15 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
   * Sonatype公司的一款maven私服产品
   * 下载地址：https://help.sonatype.com/repomanager3/download
 
-### 6.2 私服安装
+## 6.2 私服安装
 
-#### 步骤1:下载解压
+## 步骤1:下载解压
 
 将`资料\latest-win64.zip`解压到一个空目录下。
 
 ![1630988572349](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988572349.png)
 
-#### 步骤2:启动Nexus
+## 步骤2:启动Nexus
 
 ![1630988673245](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988673245.png)
 
@@ -1439,7 +1439,7 @@ nexus.exe /run nexus
 
 ![1630988939301](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988939301.png)
 
-#### 步骤3:浏览器访问
+## 步骤3:浏览器访问
 
 访问地址为:
 
@@ -1449,7 +1449,7 @@ http://localhost:8081
 
 ![1630988857125](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988857125.png)
 
-#### 步骤4:首次登录重置密码
+## 步骤4:首次登录重置密码
 
 ![1630988983159](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988983159.png)
 
@@ -1476,7 +1476,7 @@ http://localhost:8081
 - 修改服务器运行配置信息
   - 安装路径下bin目录中nexus.vmoptions文件保存有nexus服务器启动对应的配置信息，例如默认占用内存空间。
 
-### 6.3 私服仓库分类
+## 6.3 私服仓库分类
 
 私服资源操作流程分析:
 
@@ -1517,7 +1517,7 @@ http://localhost:8081
 
 ![1630990244010](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630990244010.png)
 
-### 6.4 本地仓库访问私服配置
+## 6.4 本地仓库访问私服配置
 
 * 我们通过IDEA将开发的模块上传到私服，中间是要经过本地Maven的
 * 本地Maven需要知道私服的访问地址以及私服访问的用户名和密码
@@ -1528,7 +1528,7 @@ http://localhost:8081
 
 上面所说的这些内容，我们需要在本地Maven的配置文件`settings.xml`中进行配置。
 
-#### 步骤1:私服上配置仓库
+## 步骤1:私服上配置仓库
 
 ![1630991211000](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630991211000.png)
 
@@ -1538,7 +1538,7 @@ http://localhost:8081
 
 第7，8步骤是创建itheima-release仓库
 
-#### 步骤2:配置本地Maven对私服的访问权限
+## 步骤2:配置本地Maven对私服的访问权限
 
 ```xml
 <servers>
@@ -1555,7 +1555,7 @@ http://localhost:8081
 </servers>
 ```
 
-#### 步骤3:配置私服的访问路径
+## 步骤3:配置私服的访问路径
 
 ```xml
 <mirrors>
@@ -1576,11 +1576,11 @@ http://localhost:8081
 
 至此本地仓库就能与私服进行交互了。
 
-### 6.5 私服资源上传与下载
+## 6.5 私服资源上传与下载
 
 本地仓库与私服已经建立了连接，接下来我们就需要往私服上上传资源和下载资源，具体的实现步骤为:
 
-#### 步骤1:配置工程上传私服的具体位置
+## 步骤1:配置工程上传私服的具体位置
 
 ```xml
  <!--配置当前工程保存在私服中的具体位置-->
@@ -1600,7 +1600,7 @@ http://localhost:8081
 </distributionManagement>
 ```
 
-#### 步骤2:发布资源到私服
+## 步骤2:发布资源到私服
 
 ![1630992305191](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630992305191.png)
 

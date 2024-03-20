@@ -7,9 +7,9 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192154716.jpg'
 ---
-## Maven
+# Maven
 
-## 课程内容
+# 课程内容
 
 > 1. 初识Maven
 > 2. Maven概述
@@ -28,9 +28,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192154716.jpg'
 
 
 
-## 01. Maven课程介绍
+# 01. Maven课程介绍
 
-### 1.1 课程安排
+## 1.1 课程安排
 
 学习完前端Web开发技术后，我们即将开始学习后端Web开发技术。做为一名Java开发工程师，**后端Web开发技术是我们学习的重点**。
 
@@ -40,9 +40,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192154716.jpg'
 
 
 
-### 1.2 初识Maven
+## 1.2 初识Maven
 
-#### 1.2.1 什么是Maven
+## 1.2.1 什么是Maven
 
 Maven是Apache旗下的一个开源项目，是一款用于管理和构建java项目的工具。
 
@@ -54,7 +54,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 
 
-#### 1.2.2 Maven的作用
+## 1.2.2 Maven的作用
 
 使用Maven能够做什么呢？
 
@@ -119,9 +119,9 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 
 
-## 02. Maven概述
+# 02. Maven概述
 
-### 2.1 Maven介绍
+## 2.1 Maven介绍
 
 Apache Maven是一个项目管理和构建工具，它基于项目对象模型(Project Object Model , 简称: POM)的概念，通过一小段描述信息来管理项目的构建、报告和文档。
 
@@ -135,7 +135,7 @@ Maven的作用：
 
 
 
-### 2.2 Maven模型
+## 2.2 Maven模型
 
 * 项目对象模型 (Project Object Model)
 * 依赖管理模型(Dependency)
@@ -179,7 +179,7 @@ Maven的作用：
 
 
 
-### 2.3 Maven仓库 
+## 2.3 Maven仓库 
 
 仓库：用于存储资源，管理各种jar包
 
@@ -209,11 +209,11 @@ Maven仓库分为：
 
 
 
-### 2.4 Maven安装
+## 2.4 Maven安装
 
 认识了Maven后，我们就要开始使用Maven了，那么首先我们要进行Maven的下载与安装。
 
-#### 2.4.1 下载
+## 2.4.1 下载
 
 下载地址：https://maven.apache.org/download.cgi
 
@@ -223,7 +223,7 @@ Maven仓库分为：
 
 
 
-#### 2.4.2 安装步骤
+## 2.4.2 安装步骤
 
 Maven安装配置步骤：
 
@@ -332,13 +332,13 @@ mvn -v
 
 
 
-## 03. IDEA集成Maven
+# 03. IDEA集成Maven
 
 我们要想在IDEA中使用Maven进行项目构建，就需要在IDEA中集成Maven
 
-### 3.1 配置Maven环境 
+## 3.1 配置Maven环境 
 
-#### 3.1.1 当前工程设置 
+## 3.1.1 当前工程设置 
 
 1、选择 IDEA中 File  =>  Settings  =>  Build,Execution,Deployment  =>  Build Tools  =>  Maven
 
@@ -370,7 +370,7 @@ mvn -v
 
   
 
-#### 3.1.2 全局设置 
+## 3.1.2 全局设置 
 
 1、进入到IDEA欢迎页面
 
@@ -396,9 +396,9 @@ mvn -v
 
 
 
-### 3.2 Maven项目
+## 3.2 Maven项目
 
-#### 3.2.1 创建Maven项目 
+## 3.2.1 创建Maven项目 
 
 1、创建一个空项目 
 
@@ -456,7 +456,7 @@ public class HelloWorld {
 
 
 
-#### 3.2.2 POM配置详解
+## 3.2.2 POM配置详解
 
 POM (Project Object Model) ：指的是项目对象模型，用来描述当前的maven项目。
 
@@ -494,7 +494,7 @@ pom文件详解：
 
 
 
-#### 3.2.3 Maven坐标详解
+## 3.2.3 Maven坐标详解
 
 什么是坐标？
 
@@ -520,7 +520,7 @@ Maven坐标主要组成
 
 
 
-### 3.3 导入Maven项目
+## 3.3 导入Maven项目
 
 - **方式1：使用Maven面板，快速导入项目**
 
@@ -554,9 +554,9 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 
 
-## 04. 依赖管理
+# 04. 依赖管理
 
-### 4.1 依赖配置
+## 4.1 依赖配置
 
 依赖：指当前项目运行所需要的jar包。一个项目中可以引入多个依赖：
 
@@ -621,9 +621,9 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 
 
-### 4.2 依赖传递
+## 4.2 依赖传递
 
-#### 4.2.1 依赖具有传递性
+## 4.2.1 依赖具有传递性
 
 早期我们没有使用maven时，向项目中添加依赖的jar包，需要把所有的jar包都复制到项目工程下。如下图所示，需要logback-classic时，由于logback-classic又依赖了logback-core和slf4j，所以必须把这3个jar包全部复制到项目工程下
 
@@ -656,7 +656,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 
 
-#### 4.2.2 排除依赖
+## 4.2.2 排除依赖
 
 问题：之前我们讲了依赖具有传递性。那么A依赖B，B依赖C，如果A不想将C依赖进来，是否可以做到？ 
 
@@ -700,7 +700,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 
 
-### 4.3 依赖范围
+## 4.3 依赖范围
 
 在项目中导入依赖的jar包后，默认情况下，可以在任何地方使用。
 
@@ -735,9 +735,9 @@ scope标签的取值范围：
 
 
 
-### 4.4 生命周期
+## 4.4 生命周期
 
-#### 4.4.1 介绍
+## 4.4.1 介绍
 
 Maven的生命周期就是为了对所有的构建过程进行抽象和统一。 描述了一次项目构建，经历哪些阶段。
 
@@ -795,7 +795,7 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
 
 
 
-#### 4.4.2 执行
+## 4.4.2 执行
 
 在日常开发中，当我们要执行指定的生命周期时，有两种执行方式：
 
@@ -856,9 +856,9 @@ clean：
 
  
 
-## 05. 附录
+# 05. 附录
 
-### 5.1 更新依赖索引
+## 5.1 更新依赖索引
 
 有时候给idea配置完maven仓库信息后，在idea中依然搜索不到仓库中的jar包。这是因为仓库中的jar包索引尚未更新到idea中。这个时候我们就需要更新idea中maven的索引了，具体做法如下：
 
@@ -880,7 +880,7 @@ clean：
 
 
 
-### 5.2 清理maven仓库
+## 5.2 清理maven仓库
 
 初始情况下，我们的本地仓库是没有任何jar包的，此时会从私服去下载（如果没有配置，就直接从中央仓库去下载），可能由于网络的原因，jar包下载不完全，这些不完整的jar包都是以lastUpdated结尾。此时，maven不会再重新帮你下载，需要你删除这些以lastUpdated结尾的文件，然后maven才会再次自动下载这些jar包。
 

@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 ---
-## SpringBootWeb案例
+# SpringBootWeb案例
 
 前面我们已经实现了员工信息的条件分页查询以及删除操作。 关于员工管理的功能，还有两个需要实现：
 
@@ -33,9 +33,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 
 
 
-## 1. 新增员工
+# 1. 新增员工
 
-### 1.1 需求
+## 1.1 需求
 
 ![image-20221216162622582](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216162622582.png) 
 
@@ -43,7 +43,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 
 
 
-### 1.2 接口文档
+## 1.2 接口文档
 
 我们参照接口文档来开发新增员工功能
 
@@ -111,7 +111,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 
 
 
-### 1.3 思路分析
+## 1.3 思路分析
 
 新增员工的具体的流程：
 
@@ -141,7 +141,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 
 
 
-### 1.4 功能开发
+## 1.4 功能开发
 
 **EmpController**
 
@@ -224,7 +224,7 @@ public interface EmpMapper {
 
 
 
-### 1.5 功能测试
+## 1.5 功能测试
 
 代码开发完成后，重启服务器，打开Postman发送 POST 请求，请求路径：http://localhost:8080/emps
 
@@ -232,7 +232,7 @@ public interface EmpMapper {
 
 
 
-### 1.6 前后端联调
+## 1.6 前后端联调
 
 功能测试通过后，我们再进行通过打开浏览器，测试后端功能接口：
 
@@ -248,7 +248,7 @@ public interface EmpMapper {
 
 
 
-## 2. 文件上传
+# 2. 文件上传
 
 在我们完成的新增员工功能中，还存在一个问题：没有头像(图片缺失)
 
@@ -262,7 +262,7 @@ public interface EmpMapper {
 
 
 
-### 2.1 简介 
+## 2.1 简介 
 
 文件上传，是指将本地图片、视频、音频等文件上传到服务器，供其他用户浏览或下载的过程。
 
@@ -435,7 +435,7 @@ public class UploadController {
 
 
 
-### 2.2 本地存储
+## 2.2 本地存储
 
 前面我们已分析了文件上传功能前端和后端的基础代码实现，文件上传时在服务端会产生一个临时文件，请求响应完成之后，这个临时文件被自动删除，并没有进行保存。下面呢，我们就需要完成将上传的文件保存在服务器的本地磁盘上。
 
@@ -553,9 +553,9 @@ spring.servlet.multipart.max-request-size=100MB
 
 
 
-### 2.3 阿里云OSS
+## 2.3 阿里云OSS
 
-#### 2.3.1 准备
+## 2.3.1 准备
 
 阿里云是阿里巴巴集团旗下全球领先的云计算公司，也是国内最大的云服务提供商 。
 
@@ -626,7 +626,7 @@ spring.servlet.multipart.max-request-size=100MB
 
 
 
-#### 2.3.2 入门
+## 2.3.2 入门
 
 阿里云oss 对象存储服务的准备工作我们已经完成了，接下来我们就来完成第二步操作：参照官方所提供的sdk示例来编写入门程序。
 
@@ -729,7 +729,7 @@ public class AliOssTest {
 
 
 
-#### 2.3.3 集成
+## 2.3.3 集成
 
 阿里云oss对象存储服务的准备工作以及入门程序我们都已经完成了，接下来我们就需要在案例当中集成oss对象存储服务，来存储和管理案例中上传的图片。
 
@@ -877,7 +877,7 @@ public class UploadController {
 
 
 
-## 3. 修改员工
+# 3. 修改员工
 
 需求：修改员工信息
 
@@ -892,9 +892,9 @@ public class UploadController {
 
 
 
-### 3.1 查询回显
+## 3.1 查询回显
 
-#### 3.1.1 接口文档
+## 3.1.1 接口文档
 
 根据ID查询员工数据 
 
@@ -971,13 +971,13 @@ public class UploadController {
 
 
 
-#### 3.1.2 实现思路
+## 3.1.2 实现思路
 
 ![image-20221230161841795](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230161841795.png)
 
 
 
-#### 3.1.3 代码实现
+## 3.1.3 代码实现
 
 - EmpMapper
 
@@ -1054,7 +1054,7 @@ public class EmpController {
 
 
 
-#### 3.1.4 postman测试
+## 3.1.4 postman测试
 
 ![image-20221230170926513](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230170926513.png)
 
@@ -1064,13 +1064,13 @@ public class EmpController {
 
 
 
-### 3.2 修改员工
+## 3.2 修改员工
 
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom:67%;" />
 
 > 当用户修改完数据之后，点击保存按钮，就需要将数据提交到服务端，然后服务端需要将修改后的数据更新到数据库中。 
 
-#### 3.2.1 接口文档
+## 3.2.1 接口文档
 
 - 基本信息
 
@@ -1138,13 +1138,13 @@ public class EmpController {
 
 
 
-#### 3.2.2 实现思路
+## 3.2.2 实现思路
 
 ![image-20221230171342318](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230171342318.png)
 
 
 
-#### 3.2.3 代码实现
+## 3.2.3 代码实现
 
 - EmpMapper
 
@@ -1265,13 +1265,13 @@ public class EmpController {
 
 
 
-#### 3.2.4 postman测试
+## 3.2.4 postman测试
 
 ![image-20220904221941144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904221941144.png) 
 
 
 
-#### 3.2.5 前后端联调测试
+## 3.2.5 前后端联调测试
 
 ![image-20220904222028501](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904222028501.png) 
 
@@ -1283,11 +1283,11 @@ public class EmpController {
 
 
 
-## 4. 配置文件
+# 4. 配置文件
 
 员工管理的增删改查功能我们已开发完成，但在我们所开发的程序中还一些小问题，下面我们就来分析一下当前案例中存在的问题以及如何优化解决。
 
-### 4.1 参数配置化
+## 4.1 参数配置化
 
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221231085558457.png" alt="image-20221231085558457" style="zoom: 80%;" />
 
@@ -1378,7 +1378,7 @@ public class AliOSSUtils {
 
 
 
-### 4.2 yml配置文件
+## 4.2 yml配置文件
 
 前面我们一直使用springboot项目创建完毕后自带的application.properties进行属性的配置，那其实呢，在springboot项目当中是支持多种配置方式的，除了支持properties配置文件以外，还支持另外一种类型的配置文件，就是我们接下来要讲解的yml格式的配置文件。
 
@@ -1502,7 +1502,7 @@ aliyun:
 
 
 
-### 4.3 @ConfigurationProperties
+## 4.3 @ConfigurationProperties
 
 讲解完了yml配置文件之后，最后再来介绍一个注解`@ConfigurationProperties`。在介绍注解之前，我们先来看一个场景，分析下代码当中可能存在的问题：
 

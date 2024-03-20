@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
 ---
-## Spring_day03
+# Spring_day03
 
 **今日目标**
 
@@ -16,7 +16,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
 > * 能运用AOP相关知识完成对应的案例编写
 > * 重点掌握Spring的声明式事务管理
 
-## 1，AOP简介
+# 1，AOP简介
 
 前面我们在介绍Spring的时候说过，Spring有两个核心的概念，一个是`IOC/DI`，一个是`AOP`。
 
@@ -26,20 +26,20 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
 
 对于下面的内容，我们主要就是围绕着这一句话进行展开学习，主要学习两方面内容`AOP核心概念`,`AOP作用`:
 
-### 1.1 什么是AOP?
+## 1.1 什么是AOP?
 
 * AOP(Aspect Oriented Programming)面向切面编程，一种编程范式，指导开发者如何组织程序结构。
   * OOP(Object Oriented Programming)面向对象编程
 
 我们都知道OOP是一种编程思想，那么AOP也是一种编程思想，编程思想主要的内容就是指导程序员该如何编写程序，所以它们两个是不同的`编程范式`。
 
-### 1.2 AOP作用
+## 1.2 AOP作用
 
 - 作用:在不惊动原始设计的基础上为其进行功能增强，前面咱们有技术就可以实现这样的功能即代理模式。
 
 前面咱们有技术就可以实现这样的功能即`代理模式`。
 
-### 1.3 AOP核心概念
+## 1.3 AOP核心概念
 
 为了能更好的理解AOP的相关概念，我们准备了一个环境，整个环境的内容我们暂时可以不用关注，最主要的类为:`BookDaoImpl`
 
@@ -128,9 +128,9 @@ public class BookDaoImpl implements BookDao {
   * 通知类
   * 切面
 
-## 2，AOP入门案例
+# 2，AOP入门案例
 
-### 2.1 需求分析
+## 2.1 需求分析
 
 案例设定：测算接口执行效率，但是这个案例稍微复杂了点，我们对其进行简化。
 
@@ -142,7 +142,7 @@ public class BookDaoImpl implements BookDao {
 
 总结需求为:使用SpringAOP的注解方式完成在方法执行的前打印出当前系统时间。
 
-### 2.2 思路分析
+## 2.2 思路分析
 
 需求明确后，具体该如何实现，都有哪些步骤，我们先来分析下:
 
@@ -156,7 +156,7 @@ public class BookDaoImpl implements BookDao {
 >
 > 5.绑定切入点与通知关系(切面)
 
-### 2.3 环境准备
+## 2.3 环境准备
 
 * 创建一个Maven项目
 
@@ -227,9 +227,9 @@ public class BookDaoImpl implements BookDao {
 
 
 
-### 2.4 AOP实现步骤
+## 2.4 AOP实现步骤
 
-#### 步骤1:添加依赖
+## 步骤1:添加依赖
 
 pom.xml
 
@@ -246,13 +246,13 @@ pom.xml
 * 因为`spring-context`中已经导入了`spring-aop`,所以不需要再单独导入`spring-aop`
 * 导入AspectJ的jar包,AspectJ是AOP思想的一个具体实现，Spring有自己的AOP实现，但是相比于AspectJ来说比较麻烦，所以我们直接采用Spring整合ApsectJ的方式进行AOP开发。
 
-#### 步骤2:定义接口与实现类
+## 步骤2:定义接口与实现类
 
 ```
 环境准备的时候，BookDaoImpl已经准备好，不需要做任何修改
 ```
 
-#### 步骤3:定义通知类和通知
+## 步骤3:定义通知类和通知
 
 通知就是将共性功能抽取出来后形成的方法，共性功能指的就是当前系统时间的打印。
 
@@ -266,7 +266,7 @@ public class MyAdvice {
 
 类名和方法名没有要求，可以任意。
 
-#### 步骤4:定义切入点
+## 步骤4:定义切入点
 
 BookDaoImpl中有两个方法，分别是save和update，我们要增强的是update方法，该如何定义呢?
 
@@ -285,7 +285,7 @@ public class MyAdvice {
 * 切入点定义依托一个不具有实际意义的方法进行，即无参数、无返回值、方法体无实际逻辑。
 * execution及后面编写的内容，后面会有章节专门去学习。
 
-#### 步骤5:制作切面
+## 步骤5:制作切面
 
 切面是用来描述通知和切入点之间的关系，如何进行关系的绑定?
 
@@ -307,7 +307,7 @@ public class MyAdvice {
 
 **说明:**@Before翻译过来是之前，也就是说通知会在切入点方法执行之前执行，除此之前还有其他四种类型，后面会讲。
 
-#### 步骤6:将通知类配给容器并标识其为切面类
+## 步骤6:将通知类配给容器并标识其为切面类
 
 ```java
 @Component
@@ -323,7 +323,7 @@ public class MyAdvice {
 }
 ```
 
-#### 步骤7:开启注解格式AOP功能
+## 步骤7:开启注解格式AOP功能
 
 ```java
 @Configuration
@@ -333,7 +333,7 @@ public class SpringConfig {
 }
 ```
 
-#### 步骤8:运行程序
+## 步骤8:运行程序
 
 ```java
 public class App {
@@ -349,7 +349,7 @@ public class App {
 
 ![1630147945888](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630147945888.png)
 
-### 知识点1：@EnableAspectJAutoProxy  
+## 知识点1：@EnableAspectJAutoProxy  
 
 | 名称 | @EnableAspectJAutoProxy |
 | ---- | ----------------------- |
@@ -357,7 +357,7 @@ public class App {
 | 位置 | 配置类定义上方          |
 | 作用 | 开启注解格式AOP功能     |
 
-### 知识点2：@Aspect
+## 知识点2：@Aspect
 
 | 名称 | @Aspect               |
 | ---- | --------------------- |
@@ -365,7 +365,7 @@ public class App {
 | 位置 | 切面类定义上方        |
 | 作用 | 设置当前类为AOP切面类 |
 
-### 知识点3：@Pointcut   
+## 知识点3：@Pointcut   
 
 | 名称 | @Pointcut                   |
 | ---- | --------------------------- |
@@ -374,7 +374,7 @@ public class App {
 | 作用 | 设置切入点方法              |
 | 属性 | value（默认）：切入点表达式 |
 
-### 知识点4：@Before
+## 知识点4：@Before
 
 | 名称 | @Before                                                      |
 | ---- | ------------------------------------------------------------ |
@@ -382,28 +382,28 @@ public class App {
 | 位置 | 通知方法定义上方                                             |
 | 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前运行 |
 
-## 3，AOP工作流程
+# 3，AOP工作流程
 
 AOP的入门案例已经完成，对于刚才案例的执行过程，我们就得来分析分析，这一节我们主要讲解两个知识点:`AOP工作流程`和`AOP核心概念`。其中核心概念是对前面核心概念的补充。
 
-### 3.1 AOP工作流程
+## 3.1 AOP工作流程
 
 由于AOP是基于Spring容器管理的bean做的增强，所以整个工作过程需要从Spring加载bean说起:
 
-#### 流程1:Spring容器启动
+## 流程1:Spring容器启动
 
 * 容器启动就需要去加载bean,哪些类需要被加载呢?
 * 需要被增强的类，如:BookServiceImpl
 * 通知类，如:MyAdvice
 * 注意此时bean对象还没有创建成功
 
-#### 流程2:读取所有切面配置中的切入点
+## 流程2:读取所有切面配置中的切入点
 
 ![1630151682428](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630151682428.png)
 
 * 上面这个例子中有两个切入点的配置，但是第一个`ptx()`并没有被使用，所以不会被读取。
 
-#### 流程3:初始化bean，
+## 流程3:初始化bean，
 
 判定bean对应的类中的方法是否匹配到任意切入点
 
@@ -421,19 +421,19 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
     * 因为要对目标对象进行功能增强，而采用的技术是动态代理，所以会为其创建一个代理对象
     * 最终运行的是代理对象的方法，在该方法中会对原始方法进行功能增强
 
-#### 流程4:获取bean执行方法
+## 流程4:获取bean执行方法
 
 * 获取的bean是原始对象时，调用方法并执行，完成操作
 * 获取的bean是代理对象时，根据代理对象的运行模式运行原始方法与增强的内容，完成操作
 
-#### 验证容器中是否为代理对象
+## 验证容器中是否为代理对象
 
 为了验证IOC容器中创建的对象和我们刚才所说的结论是否一致，首先先把结论理出来:
 
 * 如果目标对象中的方法会被增强，那么容器中将存入的是目标对象的代理对象
 * 如果目标对象中的方法不被增强，那么容器中将存入的是目标对象本身。
 
-##### 验证思路
+### 验证思路
 
 > 1.要执行的方法，不被定义的切入点包含，即不要增强，打印当前类的getClass()方法
 >
@@ -441,7 +441,7 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
 >
 > 3.观察两次打印的结果
 
-##### 步骤1:修改App类,获取类的类型
+### 步骤1:修改App类,获取类的类型
 
 ```java
 public class App {
@@ -454,7 +454,7 @@ public class App {
 }
 ```
 
-##### 步骤2:修改MyAdvice类，不增强
+### 步骤2:修改MyAdvice类，不增强
 
 因为定义的切入点中，被修改成`update1`,所以BookDao中的update方法在执行的时候，就不会被增强，
 
@@ -474,11 +474,11 @@ public class MyAdvice {
 }
 ```
 
-##### 步骤3:运行程序
+### 步骤3:运行程序
 
 ![1630154495165](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630154495165.png)
 
-##### 步骤4:修改MyAdvice类，增强
+### 步骤4:修改MyAdvice类，增强
 
 因为定义的切入点中，被修改成`update`,所以BookDao中的update方法在执行的时候，就会被增强，
 
@@ -498,7 +498,7 @@ public class MyAdvice {
 }
 ```
 
-##### 步骤5:运行程序
+### 步骤5:运行程序
 
 ![1630154625564](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630154625564.png)
 
@@ -506,7 +506,7 @@ public class MyAdvice {
 
 不能直接打印对象，从上面两次结果中可以看出，直接打印对象走的是对象的toString方法，不管是不是代理对象打印的结果都是一样的，原因是内部对toString方法进行了重写。
 
-### 3.2 AOP核心概念
+## 3.2 AOP核心概念
 
 在上面介绍AOP的工作流程中，我们提到了两个核心概念，分别是:
 
@@ -531,9 +531,9 @@ SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，
   * 代理
 * SpringAOP的本质或者可以说底层实现是通过代理模式。
 
-## 4，AOP配置管理
+# 4，AOP配置管理
 
-### 4.1 AOP切入点表达式
+## 4.1 AOP切入点表达式
 
 前面的案例中，有涉及到如下内容:
 
@@ -541,7 +541,7 @@ SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，
 
 对于AOP中切入点表达式，我们总共会学习三个内容，分别是`语法格式`、`通配符`和`书写技巧`。
 
-#### 4.1.1 语法格式
+## 4.1.1 语法格式
 
 首先我们先要明确两个概念:
 
@@ -589,7 +589,7 @@ execution(public User com.itheima.service.UserService.findById(int))
 
 就需要用到下面所学习的通配符。
 
-#### 4.1.2 通配符
+## 4.1.2 通配符
 
 我们使用通配符描述切入点，主要的目的就是简化之前的配置，具体都有哪些通配符可以使用?
 
@@ -652,7 +652,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 后面两种更符合我们平常切入点表达式的编写规则
 
-#### 4.1.3 书写技巧
+## 4.1.3 书写技巧
 
 对于切入点表达式的编写其实是很灵活的，那么在编写的时候，有没有什么好的技巧让我们用用:
 
@@ -666,7 +666,7 @@ execution(* com.itheima.*.*Service.save*(..))
 - 参数规则较为复杂，根据业务方法灵活调整
 - 通常**==不使用异常==**作为**==匹配==**规则
 
-### 4.2 AOP通知类型
+## 4.2 AOP通知类型
 
 前面的案例中，有涉及到如下内容:
 
@@ -676,7 +676,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 除了这个注解外，还有没有其他的注解，换个问题就是除了可以在前面加，能不能在其他的地方加?
 
-#### 4.2.1 类型介绍
+## 4.2.1 类型介绍
 
 我们先来回顾下AOP通知:
 
@@ -706,7 +706,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 (5)环绕通知,环绕通知功能比较强大，它可以追加功能到方法执行的前后，这也是比较常用的方式，它可以实现其他四种通知类型的功能，具体是如何实现的，需要我们往下学习。
 
-#### 4.2.2 环境准备
+## 4.2.2 环境准备
 
 - 创建一个Maven项目
 
@@ -805,9 +805,9 @@ execution(* com.itheima.*.*Service.save*(..))
 
 ![1630167385146](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630167385146.png)
 
-#### 4.2.3 通知类型的使用
+## 4.2.3 通知类型的使用
 
-##### 前置通知
+### 前置通知
 
 修改MyAdvice,在before方法上添加`@Before注解`
 
@@ -828,7 +828,7 @@ public class MyAdvice {
 
 ![1630167805723](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630167805723.png)
 
-##### 后置通知
+### 后置通知
 
 ```java
 @Component
@@ -850,9 +850,9 @@ public class MyAdvice {
 
 ![1630167887131](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630167887131.png)
 
-##### 环绕通知
+### 环绕通知
 
-###### 基本使用
+### 基本使用
 
 ```java
 @Component
@@ -902,7 +902,7 @@ public class MyAdvice {
 
 ![1630168293492](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630168293492.png)
 
-###### 注意事项
+### 注意事项
 
 (1)原始方法有返回值的处理
 
@@ -982,7 +982,7 @@ public class MyAdvice {
 
 ​	在环绕通知中是可以对原始方法返回值就行修改的。
 
-##### 返回后通知
+### 返回后通知
 
 ```java
 @Component
@@ -1007,7 +1007,7 @@ public class MyAdvice {
 
 **注意：**返回后通知是需要在原始方法`select`正常执行后才会被执行，如果`select()`方法执行的过程中出现了异常，那么返回后通知是不会被执行。后置通知是不管原始方法有没有抛出异常都会被执行。这个案例大家下去可以自己练习验证下。
 
-##### 异常后通知
+### 异常后通知
 
 ```java
 @Component
@@ -1036,9 +1036,9 @@ public class MyAdvice {
 
 ![1630170090945](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630170090945.png)
 
-##### 通知类型总结
+### 通知类型总结
 
-###### 知识点1：@After
+### 知识点1：@After
 
 | 名称 | @After                                                       |
 | ---- | ------------------------------------------------------------ |
@@ -1046,7 +1046,7 @@ public class MyAdvice {
 | 位置 | 通知方法定义上方                                             |
 | 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法后运行 |
 
-###### 知识点2：@AfterReturning  
+### 知识点2：@AfterReturning  
 
 | 名称 | @AfterReturning                                              |
 | ---- | ------------------------------------------------------------ |
@@ -1054,7 +1054,7 @@ public class MyAdvice {
 | 位置 | 通知方法定义上方                                             |
 | 作用 | 设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法正常执行完毕后执行 |
 
-###### 知识点3：@AfterThrowing  
+### 知识点3：@AfterThrowing  
 
 | 名称 | @AfterThrowing                                               |
 | ---- | ------------------------------------------------------------ |
@@ -1062,7 +1062,7 @@ public class MyAdvice {
 | 位置 | 通知方法定义上方                                             |
 | 作用 | 设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法运行抛出异常后执行 |
 
-###### 知识点4：@Around
+### 知识点4：@Around
 
 | 名称 | @Around                                                      |
 | ---- | ------------------------------------------------------------ |
@@ -1082,9 +1082,9 @@ public class MyAdvice {
 
 我们可以通过一些案例加深下对通知类型的学习。
 
-### 4.3 业务层接口执行效率
+## 4.3 业务层接口执行效率
 
-#### 4.3.1 需求分析
+## 4.3.1 需求分析
 
 这个需求也比较简单，前面我们在介绍AOP的时候已经演示过:
 
@@ -1106,7 +1106,7 @@ public class MyAdvice {
 
 **说明:**原始方法如果只执行一次，时间太快，两个时间差可能为0，所以我们要执行万次来计算时间差。
 
-#### 4.3.2 环境准备
+## 4.3.2 环境准备
 
 - 创建一个Maven项目
 
@@ -1314,9 +1314,9 @@ public class MyAdvice {
 
 ![1630214631112](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630214631112.png)
 
-#### 4.3.3 功能开发
+## 4.3.3 功能开发
 
-##### 步骤1:开启SpringAOP的注解功能
+### 步骤1:开启SpringAOP的注解功能
 
 在Spring的主配置文件SpringConfig类中添加注解
 
@@ -1324,7 +1324,7 @@ public class MyAdvice {
 @EnableAspectJAutoProxy
 ```
 
-##### 步骤2:创建AOP的通知类
+### 步骤2:创建AOP的通知类
 
 * 该类要被Spring管理，需要添加@Component
 
@@ -1345,7 +1345,7 @@ public class ProjectAdvice {
 }
 ```
 
-##### 步骤3:添加环绕通知
+### 步骤3:添加环绕通知
 
 在runSpeed()方法上添加@Around
 
@@ -1367,7 +1367,7 @@ public class ProjectAdvice {
 
 **注意:**目前并没有做任何增强
 
-##### 步骤4:完成核心业务，记录万次执行的时间
+### 步骤4:完成核心业务，记录万次执行的时间
 
 ```java
 @Component
@@ -1390,13 +1390,13 @@ public class ProjectAdvice {
 }
 ```
 
-##### 步骤5:运行单元测试类
+### 步骤5:运行单元测试类
 
 ![1630215355776](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630215355776.png)
 
 **注意:**因为程序每次执行的时长是不一样的，所以运行多次最终的结果是不一样的。
 
-##### 步骤6:程序优化
+### 步骤6:程序优化
 
 目前程序所面临的问题是，多个方法一起执行测试的时候，控制台都打印的是:
 
@@ -1431,7 +1431,7 @@ public class ProjectAdvice {
 }
 ```
 
-##### 步骤7:运行单元测试类
+### 步骤7:运行单元测试类
 
 ![1630215743444](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630215743444.png)
 
@@ -1443,7 +1443,7 @@ public class ProjectAdvice {
 
 这块只是通过该案例把AOP的使用进行了学习，具体的实际值是有很多因素共同决定的。
 
-### 4.4 AOP通知获取数据
+## 4.4 AOP通知获取数据
 
 目前我们写AOP仅仅是在原始方法前后追加一些操作，接下来我们要说说AOP中数据相关的内容，我们将从`获取参数`、`获取返回值`和`获取异常`三个方面来研究切入点的相关信息。
 
@@ -1461,7 +1461,7 @@ public class ProjectAdvice {
   * 抛出异常后通知
   * 环绕通知
 
-#### 4.4.1 环境准备
+## 4.4.1 环境准备
 
 - 创建一个Maven项目
 
@@ -1562,9 +1562,9 @@ public class ProjectAdvice {
 
 ![1630233154992](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630233154992.png)
 
-#### 4.4.2 获取参数
+## 4.4.2 获取参数
 
-##### 非环绕通知获取方式
+### 非环绕通知获取方式
 
 在方法上添加JoinPoint,通过JoinPoint来获取参数
 
@@ -1632,7 +1632,7 @@ public class App {
 
 使用JoinPoint的方式获取参数适用于`前置`、`后置`、`返回后`、`抛出异常后`通知。剩下的大家自行去验证。
 
-##### 环绕通知获取方式
+### 环绕通知获取方式
 
 环绕通知使用的是ProceedingJoinPoint，因为ProceedingJoinPoint是JoinPoint类的子类，所以对于ProceedingJoinPoint类中应该也会有对应的`getArgs()`方法，我们去验证下:
 
@@ -1691,11 +1691,11 @@ public class MyAdvice {
 
     有了这个特性后，我们就可以在环绕通知中对原始方法的参数进行拦截过滤，避免由于参数的问题导致程序无法正确运行，保证代码的健壮性。
 
-#### 4.4.3 获取返回值
+## 4.4.3 获取返回值
 
 对于返回值，只有返回后`AfterReturing`和环绕`Around`这两个通知类型可以获取，具体如何获取?
 
-##### 环绕通知获取返回值
+### 环绕通知获取返回值
 
 ```java
 @Component
@@ -1718,7 +1718,7 @@ public class MyAdvice {
 
 上述代码中，`ret`就是方法的返回值，我们是可以直接获取，不但可以获取，如果需要还可以进行修改。
 
-##### 返回后通知获取返回值
+### 返回后通知获取返回值
 
 ```java
 @Component
@@ -1753,11 +1753,11 @@ public class MyAdvice {
 
 ![1630237372286](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630237372286.png)
 
-#### 4.4.4 获取异常
+## 4.4.4 获取异常
 
 对于获取抛出的异常，只有抛出异常后`AfterThrowing`和环绕`Around`这两个通知类型可以获取，具体如何获取?
 
-##### 环绕通知获取异常
+### 环绕通知获取异常
 
 这块比较简单，以前我们是抛出异常，现在只需要将异常捕获，就可以获取到原始方法的异常信息了
 
@@ -1787,7 +1787,7 @@ public class MyAdvice {
 
 在catch方法中就可以获取到异常，至于获取到异常以后该如何处理，这个就和你的业务需求有关了。
 
-##### 抛出异常后通知获取异常
+### 抛出异常后通知获取异常
 
 ```java
 @Component
@@ -1832,9 +1832,9 @@ public class BookDaoImpl implements BookDao {
 
 至此，AOP通知如何获取数据就已经讲解完了，数据中包含`参数`、`返回值`、`异常(了解)`。
 
-### 4.5 百度网盘密码数据兼容处理
+## 4.5 百度网盘密码数据兼容处理
 
-#### 4.5.1 需求分析
+## 4.5.1 需求分析
 
 需求: 对百度网盘分享链接输入密码时尾部多输入的空格做兼容处理。
 
@@ -1874,7 +1874,7 @@ public class BookDaoImpl implements BookDao {
 ①：在业务方法执行之前对所有的输入参数进行格式处理——trim()
 ②：使用处理后的参数调用原始方法——环绕通知中存在对原始方法的调用
 
-#### 4.5.2 环境准备
+## 4.5.2 环境准备
 
 - 创建一个Maven项目
 
@@ -1953,9 +1953,9 @@ public class BookDaoImpl implements BookDao {
 
 需求是使用AOP将参数进行统一处理，不管输入的密码`root`前后包含多少个空格，最终控制台打印的都是true。
 
-#### 4.5.3 具体实现
+## 4.5.3 具体实现
 
-##### 步骤1:开启SpringAOP的注解功能
+### 步骤1:开启SpringAOP的注解功能
 
 ```java
 @Configuration
@@ -1965,7 +1965,7 @@ public class SpringConfig {
 }
 ```
 
-##### 步骤2:编写通知类
+### 步骤2:编写通知类
 
 ```java
 @Component
@@ -1977,7 +1977,7 @@ public class DataAdvice {
 }
 ```
 
-##### 步骤3:添加环绕通知
+### 步骤3:添加环绕通知
 
 ```java
 @Component
@@ -1996,7 +1996,7 @@ public class DataAdvice {
 }
 ```
 
-##### 步骤4:完成核心业务，处理参数中的空格
+### 步骤4:完成核心业务，处理参数中的空格
 
 ```java
 @Component
@@ -2024,11 +2024,11 @@ public class DataAdvice {
 }
 ```
 
-##### 步骤5:运行程序
+### 步骤5:运行程序
 
 不管密码`root`前后是否加空格，最终控制台打印的都是true
 
-##### 步骤6:优化测试
+### 步骤6:优化测试
 
 为了能更好的看出AOP已经生效，我们可以修改ResourcesImpl类，在方法中将密码的长度进行打印
 
@@ -2049,11 +2049,11 @@ public class ResourcesDaoImpl implements ResourcesDao {
 
 ![1630242491831](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630242491831.png)
 
-## 5，AOP总结
+# 5，AOP总结
 
 AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总结:
 
-### 5.1 AOP的核心概念
+## 5.1 AOP的核心概念
 
 * 概念：AOP(Aspect Oriented Programming)面向切面编程，一种编程范式
 * 作用：在不惊动原始设计的基础上为方法进行功能==增强==
@@ -2065,7 +2065,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
   * 切面（Aspect）：描述通知与切入点的对应关系
   * 目标对象（Target）：被代理的原始对象成为目标对象
 
-### 5.2 切入点表达式
+## 5.2 切入点表达式
 
 * 切入点表达式标准格式：动作关键字(访问修饰符  返回值  包名.类/接口名.方法名（参数）异常名)
 
@@ -2089,7 +2089,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
   5.方法名书写保留动词，例如get，使用\*表示名词，例如getById匹配描述为getBy\*
   6.参数根据实际情况灵活调整
 
-### 5.3 五种通知类型
+## 5.3 五种通知类型
 
 - 前置通知
 - 后置通知
@@ -2101,7 +2101,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 - 返回后通知
 - 抛出异常后通知
 
-### 5.4 通知中获取参数
+## 5.4 通知中获取参数
 
 - 获取切入点方法的参数，所有的通知类型都可以获取参数
   - JoinPoint：适用于前置、后置、返回后、抛出异常后通知
@@ -2113,11 +2113,11 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
   - 抛出异常后通知
   - 环绕通知
 
-## 6，AOP事务管理
+# 6，AOP事务管理
 
-### 6.1 Spring事务简介
+## 6.1 Spring事务简介
 
-#### 6.1.1 相关概念介绍
+## 6.1.1 相关概念介绍
 
 - 事务作用：在数据层保障一系列的数据库操作同成功同失败
 - Spring事务作用：在数据层或**==业务层==**保障一系列的数据库操作同成功同失败
@@ -2143,7 +2143,7 @@ PlatformTransactionManager只是一个接口，Spring还为其提供了一个具
 
 从名称上可以看出，我们只需要给它一个DataSource对象，它就可以帮你去在业务层管理事务。其内部采用的是JDBC的事务。所以说如果你持久层采用的是JDBC相关的技术，就可以采用这个事务管理器来管理你的事务。而Mybatis内部采用的就是JDBC的事务，所以后期我们Spring整合Mybatis就采用的这个DataSourceTransactionManager事务管理器。
 
-#### 6.1.2 转账案例-需求分析
+## 6.1.2 转账案例-需求分析
 
 接下来通过一个案例来学习下Spring是如何来管理事务的。
 
@@ -2162,9 +2162,9 @@ PlatformTransactionManager只是一个接口，Spring还为其提供了一个具
 
 ④：基于Spring整合MyBatis环境搭建上述操作
 
-#### 6.1.3 转账案例-环境搭建
+## 6.1.3 转账案例-环境搭建
 
-##### 步骤1:准备数据库表
+### 步骤1:准备数据库表
 
 之前我们在整合Mybatis的时候已经创建了这个表,可以直接使用
 
@@ -2180,7 +2180,7 @@ insert into tbl_account values(1,'Tom',1000);
 insert into tbl_account values(2,'Jerry',1000);
 ```
 
-##### 步骤2:创建项目导入jar包
+### 步骤2:创建项目导入jar包
 
 项目的pom.xml添加相关依赖
 
@@ -2237,7 +2237,7 @@ insert into tbl_account values(2,'Jerry',1000);
   </dependencies>
 ```
 
-##### 步骤3:根据表创建模型类
+### 步骤3:根据表创建模型类
 
 ```java
 public class Account implements Serializable {
@@ -2249,7 +2249,7 @@ public class Account implements Serializable {
 }
 ```
 
-##### 步骤4:创建Dao接口
+### 步骤4:创建Dao接口
 
 ```java
 public interface AccountDao {
@@ -2262,7 +2262,7 @@ public interface AccountDao {
 }
 ```
 
-##### 步骤5:创建Service接口和实现类
+### 步骤5:创建Service接口和实现类
 
 ```java
 public interface AccountService {
@@ -2289,7 +2289,7 @@ public class AccountServiceImpl implements AccountService {
 }
 ```
 
-##### 步骤6:添加jdbc.properties文件
+### 步骤6:添加jdbc.properties文件
 
 ```properties
 jdbc.driver=com.mysql.jdbc.Driver
@@ -2298,7 +2298,7 @@ jdbc.username=root
 jdbc.password=root
 ```
 
-##### 步骤7:创建JdbcConfig配置类
+### 步骤7:创建JdbcConfig配置类
 
 ```java
 public class JdbcConfig {
@@ -2323,7 +2323,7 @@ public class JdbcConfig {
 }
 ```
 
-##### 步骤8:创建MybatisConfig配置类
+### 步骤8:创建MybatisConfig配置类
 
 ```java
 public class MybatisConfig {
@@ -2345,7 +2345,7 @@ public class MybatisConfig {
 }
 ```
 
-##### 步骤9:创建SpringConfig配置类
+### 步骤9:创建SpringConfig配置类
 
 ```java
 @Configuration
@@ -2357,7 +2357,7 @@ public class SpringConfig {
 
 ```
 
-##### 步骤10:编写测试类
+### 步骤10:编写测试类
 
 ```java
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -2379,7 +2379,7 @@ public class AccountServiceTest {
 
 ![1630247220645](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630247220645.png)
 
-#### 6.1.4 事务管理
+## 6.1.4 事务管理
 
 上述环境，运行单元测试类，会执行转账操作，`Tom`的账户会减少100，`Jerry`的账户会加100。
 
@@ -2413,7 +2413,7 @@ public class AccountServiceImpl implements AccountService {
 
 Spring事务管理具体的实现步骤为:
 
-##### 步骤1:在需要被事务管理的方法上添加注解
+### 步骤1:在需要被事务管理的方法上添加注解
 
 ```java
 public interface AccountService {
@@ -2452,7 +2452,7 @@ public class AccountServiceImpl implements AccountService {
 * 写在实现类方法上，该方法上有事务
 * ==建议写在实现类或实现类的方法上==
 
-##### 步骤2:在JdbcConfig类中配置事务管理器
+### 步骤2:在JdbcConfig类中配置事务管理器
 
 ```java
 public class JdbcConfig {
@@ -2487,7 +2487,7 @@ public class JdbcConfig {
 
 **注意：**事务管理器要根据使用技术进行选择，Mybatis框架使用的是JDBC事务，可以直接使用`DataSourceTransactionManager`
 
-##### 步骤3：开启事务注解
+### 步骤3：开启事务注解
 
 在SpringConfig的配置类中开启
 
@@ -2503,11 +2503,11 @@ public class SpringConfig {
 
 ```
 
-##### 步骤4:运行测试类
+### 步骤4:运行测试类
 
 会发现在转换的业务出现错误后，事务就可以控制回顾，保证数据的正确性。
 
-##### 知识点1：@EnableTransactionManagement
+### 知识点1：@EnableTransactionManagement
 
 | 名称 | @EnableTransactionManagement           |
 | ---- | -------------------------------------- |
@@ -2515,7 +2515,7 @@ public class SpringConfig {
 | 位置 | 配置类定义上方                         |
 | 作用 | 设置当前Spring环境中开启注解式事务支持 |
 
-##### 知识点2：@Transactional   
+### 知识点2：@Transactional   
 
 | 名称 | @Transactional                                               |
 | ---- | ------------------------------------------------------------ |
@@ -2523,7 +2523,7 @@ public class SpringConfig {
 | 位置 | 业务层接口上方  业务层实现类上方  业务方法上方               |
 | 作用 | 为当前业务层方法添加事务（如果设置在类或接口上方则类或接口中所有方法均添加事务） |
 
-### 6.2 Spring事务角色
+## 6.2 Spring事务角色
 
 这节中我们重点要理解两个概念，分别是`事务管理员`和`事务协调员`。
 
@@ -2558,13 +2558,13 @@ public class SpringConfig {
 
 目前的事务管理是基于`DataSourceTransactionManager`和`SqlSessionFactoryBean`使用的是同一个数据源。
 
-### 6.3 Spring事务属性
+## 6.3 Spring事务属性
 
 上一节我们介绍了两个概念，事务的管理员和事务的协同员，对于这两个概念具体做什么的，我们待会通过案例来使用下。除了这两个概念，还有就是事务的其他相关配置都有哪些，就是我们接下来要学习的内容。
 
 在这一节中，我们主要学习三部分内容`事务配置`、`转账业务追加日志`、`事务传播行为`。
 
-#### 6.3.1 事务配置
+## 6.3.1 事务配置
 
 ![1630250069844](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630250069844.png)
 
@@ -2654,9 +2654,9 @@ public class SpringConfig {
 介绍完上述属性后，还有最后一个事务的传播行为，为了讲解该属性的设置，我们需要完成下面的案例。
 
 
-#### 6.3.2 转账业务追加日志案例
+## 6.3.2 转账业务追加日志案例
 
-##### 6.3.2.1 需求分析
+### 6.3.2.1 需求分析
 
 在前面的转案例的基础上添加新的需求，完成转账后记录日志。
 
@@ -2673,11 +2673,11 @@ public class SpringConfig {
 
 ==无论转账操作是否成功，均进行转账操作的日志留痕==
 
-##### 6.3.2.2 环境准备
+### 6.3.2.2 环境准备
 
 该环境是基于转账环境来完成的，所以环境的准备可以参考`6.1.3的环境搭建步骤`，在其基础上，我们继续往下写
 
-###### 步骤1:创建日志表
+### 步骤1:创建日志表
 
 ```sql
 create table tbl_log(
@@ -2687,7 +2687,7 @@ create table tbl_log(
 )
 ```
 
-###### 步骤2:添加LogDao接口
+### 步骤2:添加LogDao接口
 
 ```java
 public interface LogDao {
@@ -2697,7 +2697,7 @@ public interface LogDao {
 
 ```
 
-###### 步骤3:添加LogService接口与实现类
+### 步骤3:添加LogService接口与实现类
 
 ```java
 public interface LogService {
@@ -2715,7 +2715,7 @@ public class LogServiceImpl implements LogService {
 }
 ```
 
-###### 步骤4:在转账的业务中添加记录日志
+### 步骤4:在转账的业务中添加记录日志
 
 ```java
 public interface AccountService {
@@ -2748,7 +2748,7 @@ public class AccountServiceImpl implements AccountService {
 }
 ```
 
-###### 步骤5:运行程序
+### 步骤5:运行程序
 
 * 当程序正常运行，tbl_account表中转账成功，tbl_log表中日志记录成功
 
@@ -2757,7 +2757,7 @@ public class AccountServiceImpl implements AccountService {
 * 失败原因:日志的记录与转账操作隶属同一个事务，同成功同失败
 * 最终效果:无论转账操作是否成功，日志必须保留
 
-#### 6.3.3 事务传播行为
+## 6.3.3 事务传播行为
 
 ![1630253779575](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630253779575.png)
 
@@ -2775,7 +2775,7 @@ public class AccountServiceImpl implements AccountService {
 
 具体如何解决，就需要用到之前我们没有说的`propagation属性`。
 
-##### 1.修改logService改变事务的传播行为
+### 1.修改logService改变事务的传播行为
 
 ```java
 @Service
@@ -2793,7 +2793,7 @@ public class LogServiceImpl implements LogService {
 
 运行后，就能实现我们想要的结果，不管转账是否成功，都会记录日志。
 
-##### 2.事务传播行为的可选值
+### 2.事务传播行为的可选值
 
 ![1630254257628](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630254257628.png)
 

@@ -1,13 +1,13 @@
 ---
-title: itheima JavaWeb-day10-SpringBootWeb案例-1
+title: itheima-JavaWeb day10-SpringBootWeb案例-1
 tags:
   - itheima
   - SpringBoot
   - 后端
 categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg
 ---
-## SpringBootWeb案例
+# SpringBootWeb案例
 
 前面我们已经讲解了Web前端开发的基础知识，也讲解了Web后端开发的基础(HTTP协议、请求响应)，并且也讲解了数据库MySQL，以及通过Mybatis框架如何来完成数据库的基本操作。 那接下来，我们就通过一个案例，来将前端开发、后端开发、数据库整合起来。 而这个案例呢，就是我们前面提到的Tlias智能学习辅助系统。
 
@@ -41,13 +41,13 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg'
 
 
 
-## 1. 准备工作
+# 1. 准备工作
 
 准备工作的学习，我们先从"需求"和"环境搭建"开始入手。
 
-### 1.1 需求&环境搭建
+## 1.1 需求&环境搭建
 
-#### 1.1.1 需求说明
+## 1.1.1 需求说明
 
 **1、部门管理**
 
@@ -75,7 +75,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg'
 
 
 
-#### 1.1.2 环境搭建
+## 1.1.2 环境搭建
 
 ![image-20221213230710821](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213230710821.png)
 
@@ -396,7 +396,7 @@ public class EmpController {
 
 
 
-### 1.2 开发规范
+## 1.2 开发规范
 
 了解完需求也完成了环境搭建了，我们下面开始学习开发的一些规范。
 
@@ -536,7 +536,7 @@ public class Result {
 
 
 
-## 2. 部门管理
+# 2. 部门管理
 
 我们按照前面学习的开发流程，开始完成功能开发。首先按照之前分析的需求，完成`部门管理`的功能开发。
 
@@ -547,9 +547,9 @@ public class Result {
 3. 新增部门
 4. 更新部门（不讲解，自己独立完成）
 
-### 2.1 查询部门
+## 2.1 查询部门
 
-#### 2.1.1 原型和需求
+## 2.1.1 原型和需求
 
 ![image-20221213234154699](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213234154699.png)
 
@@ -559,7 +559,7 @@ public class Result {
 
 
 
-#### 2.1.2 接口文档
+## 2.1.2 接口文档
 
 **部门列表查询**
 
@@ -618,13 +618,13 @@ public class Result {
 
 
 
-#### 2.1.3 思路分析
+## 2.1.3 思路分析
 
 ![image-20221213235157345](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213235157345.png)
 
 
 
-#### 2.1.4 功能开发
+## 2.1.4 功能开发
 
 通过查看接口文档：部门列表查询
 
@@ -703,7 +703,7 @@ public interface DeptMapper {
 
 
 
-#### 2.1.5 功能测试
+## 2.1.5 功能测试
 
 功能开发完成后，我们就可以启动项目，然后打开postman，发起GET请求，访问 ：http://localhost:8080/depts
 
@@ -713,7 +713,7 @@ public interface DeptMapper {
 
 
 
-### 2.2 前后端联调
+## 2.2 前后端联调
 
 完成了查询部门的功能，我们也通过postman工具测试通过了，下面我们再基于前后端分离的方式进行接口联调。具体操作如下：
 
@@ -758,11 +758,11 @@ public interface DeptMapper {
 
 
 
-### 2.3 删除部门
+## 2.3 删除部门
 
 查询部门的功能我们搞定了，下面我们开始完成`删除部门`的功能开发。
 
-#### 2.3.1 需求
+## 2.3.1 需求
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904132440220.png)
 
@@ -770,7 +770,7 @@ public interface DeptMapper {
 
 
 
-#### 2.3.2 接口文档
+## 2.3.2 接口文档
 
 **删除部门**
 
@@ -822,7 +822,7 @@ public interface DeptMapper {
 
 
 
-#### 2.3.3 思路分析
+## 2.3.3 思路分析
 
 ![image-20221214102705490](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221214102705490.png)
 
@@ -845,7 +845,7 @@ public interface DeptMapper {
 
 
 
-#### 2.3.4 功能开发
+## 2.3.4 功能开发
 
 通过查看接口文档：删除部门
 
@@ -932,7 +932,7 @@ public interface DeptMapper {
 
 
 
-#### 2.3.5 功能测试
+## 2.3.5 功能测试
 
 删除功能开发完成后，重新启动项目，使用postman，发起DELETE请求：
 
@@ -940,7 +940,7 @@ public interface DeptMapper {
 
 
 
-#### 2.3.6 前后端联调
+## 2.3.6 前后端联调
 
 打开浏览器，测试后端功能接口：
 
@@ -954,11 +954,11 @@ public interface DeptMapper {
 
 
 
-### 2.4 新增部门
+## 2.4 新增部门
 
 我们前面已完成了`查询部门`、`删除部门`两个功能，也熟悉了开发的流程。下面我们继续完成`新增部门`功能。
 
-#### 2.4.1 需求
+## 2.4.1 需求
 
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904150427982.png" style="zoom:80%;" />
 
@@ -966,7 +966,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.2 接口文档
+## 2.4.2 接口文档
 
 **添加部门**
 
@@ -1022,7 +1022,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.3 思路分析
+## 2.4.3 思路分析
 
 ![image-20221214115519648](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221214115519648.png)
 
@@ -1046,7 +1046,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.4 功能开发
+## 2.4.4 功能开发
 
 通过查看接口文档：新增部门
 
@@ -1135,7 +1135,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.5 功能测试
+## 2.4.5 功能测试
 
 新增功能开发完成后，重新启动项目，使用postman，发起POST请求：
 
@@ -1143,7 +1143,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.6 前后端联调
+## 2.4.6 前后端联调
 
 打开浏览器，测试后端功能接口：
 
@@ -1153,7 +1153,7 @@ public interface DeptMapper {
 
 
 
-#### 2.4.7 请求路径
+## 2.4.7 请求路径
 
 我们部门管理的`查询`、`删除`、`新增`功能全部完成了，接下来我们要对controller层的代码进行优化。
 
@@ -1181,7 +1181,7 @@ public interface DeptMapper {
 
 
 
-## 3. 员工管理
+# 3. 员工管理
 
 完成了部门管理的功能开发之后，我们进入到下一环节员工管理功能的开发。
 
@@ -1197,11 +1197,11 @@ public interface DeptMapper {
 
 那下面我们就先从分页查询功能开始学习。
 
-### 3.1 分页查询
+## 3.1 分页查询
 
-#### 3.1.1 基础分页
+## 3.1.1 基础分页
 
-##### 3.1.1.1 需求分析
+### 3.1.1.1 需求分析
 
 我们之前做的查询功能，是将数据库中所有的数据查询出来并展示到页面上，试想如果数据库中的数据有很多(假设有十几万条)的时候，将数据全部展示出来肯定不现实，那如何解决这个问题呢？
 
@@ -1260,7 +1260,7 @@ public interface DeptMapper {
 
 
 
-##### 3.1.1.2 接口文档
+### 3.1.1.2 接口文档
 
 **员工列表查询**
 
@@ -1362,7 +1362,7 @@ public interface DeptMapper {
 
 
 
-##### 3.1.1.3 思路分析
+### 3.1.1.3 思路分析
 
 ![image-20221215153413290](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221215153413290.png)
 
@@ -1372,7 +1372,7 @@ public interface DeptMapper {
 
 
 
-##### 3.1.1.4 功能开发
+### 3.1.1.4 功能开发
 
 通过查看接口文档：员工列表查询
 
@@ -1489,7 +1489,7 @@ public interface EmpMapper {
 
 
 
-##### 3.1.1.5 功能测试
+### 3.1.1.5 功能测试
 
 功能开发完成后，重新启动项目，使用postman，发起POST请求：
 
@@ -1497,7 +1497,7 @@ public interface EmpMapper {
 
 
 
-##### 3.1.1.6 前后端联调
+### 3.1.1.6 前后端联调
 
 打开浏览器，测试后端功能接口：
 
@@ -1507,9 +1507,9 @@ public interface EmpMapper {
 
 
 
-#### 3.1.2 分页插件
+## 3.1.2 分页插件
 
-##### 3.1.2.1 介绍
+### 3.1.2.1 介绍
 
 前面我们已经完了基础的分页查询，大家会发现：分页查询功能编写起来比较繁琐。
 
@@ -1548,7 +1548,7 @@ public interface EmpMapper {
 
 
 
-##### 3.1.2.2 代码实现
+### 3.1.2.2 代码实现
 
 当使用了PageHelper分页插件进行分页，就无需再Mapper中进行手动分页了。 在Mapper中我们只需要进行正常的列表查询即可。在Service层中，调用Mapper的方法之前设置分页参数，在调用Mapper方法执行查询之后，解析分页结果，并将结果封装到PageBean对象中返回。
 
@@ -1596,7 +1596,7 @@ public PageBean page(Integer page, Integer pageSize) {
 
 
 
-##### 3.1.2.3 测试
+### 3.1.2.3 测试
 
 功能开发完成后，我们重启项目工程，打开postman，发起GET请求，访问 ：http://localhost:8080/emps?page=1&pageSize=5
 
@@ -1612,11 +1612,11 @@ public PageBean page(Integer page, Integer pageSize) {
 
 
 
-### 3.2 分页查询(带条件)
+## 3.2 分页查询(带条件)
 
 完了分页查询后，下面我们需要在分页查询的基础上，添加条件。
 
-#### 3.2.1 需求
+## 3.2.1 需求
 
 ![image-20221215175639974](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221215175639974.png)
 
@@ -1642,13 +1642,13 @@ order by update_time desc;
 
 
 
-#### 3.2.2 思路分析
+## 3.2.2 思路分析
 
 ![image-20221215180528415](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221215180528415.png)
 
 
 
-#### 3.2.3 功能开发
+## 3.2.3 功能开发
 
 通过查看接口文档：员工列表查询
 
@@ -1781,7 +1781,7 @@ public interface EmpMapper {
 
 
 
-#### 3.2.4 功能测试
+## 3.2.4 功能测试
 
 功能开发完成后，重启项目工程，打开postman，发起GET请求：
 
@@ -1793,7 +1793,7 @@ public interface EmpMapper {
 
 
 
-#### 3.2.5 前后端联调
+## 3.2.5 前后端联调
 
 打开浏览器，测试后端功能接口：
 
@@ -1813,11 +1813,11 @@ public interface EmpMapper {
 
 
 
-### 3.3 删除员工
+## 3.3 删除员工
 
 查询员完成之后，我们继续开发新的功能：删除员工。
 
-#### 3.3.1 需求
+## 3.3.1 需求
 
 ![image-20221215183657413](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221215183657413.png)
 
@@ -1829,7 +1829,7 @@ public interface EmpMapper {
 
 
 
-#### 3.3.2 接口文档
+## 3.3.2 接口文档
 
 **删除员工**
 
@@ -1883,7 +1883,7 @@ public interface EmpMapper {
 
   
 
-#### 3.3.3 思路分析
+## 3.3.3 思路分析
 
 ![image-20221215184714815](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221215184714815.png)
 
@@ -1912,7 +1912,7 @@ public interface EmpMapper {
 
 
 
-#### 3.3.4 功能开发
+## 3.3.4 功能开发
 
 通过查看接口文档：删除员工
 
@@ -2028,7 +2028,7 @@ public interface EmpMapper {
 
 
 
-#### 3.3.5 功能测试
+## 3.3.5 功能测试
 
 功能开发完成后，重启项目工程，打开postman，发起DELETE请求：
 
@@ -2040,7 +2040,7 @@ public interface EmpMapper {
 
 
 
-#### 3.3.6 前后端联调
+## 3.3.6 前后端联调
 
 打开浏览器，测试后端功能接口：
 

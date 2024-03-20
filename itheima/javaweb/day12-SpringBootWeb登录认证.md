@@ -8,7 +8,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 ---
-## 案例-登录认证
+# 案例-登录认证
 
 在前面的课程中，我们已经实现了部门管理、员工管理的基本功能，但是大家会发现，我们并没有登录，就直接访问到了Tlias智能学习辅助系统的后台。 这是不安全的，所以我们今天的主题就是登录认证。 最终我们要实现的效果就是用户必须登录之后，才可以访问后台系统中的功能。
 
@@ -18,9 +18,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 
 
 
-## 1. 登录功能
+# 1. 登录功能
 
-### 1.1 需求
+## 1.1 需求
 
 ![image-20230105085404855](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230105085404855.png)
 
@@ -28,7 +28,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 
 
 
-### 1.2 接口文档
+## 1.2 接口文档
 
 我们参照接口文档来开发登录功能
 
@@ -86,7 +86,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 
 
 
-### 1.3 思路分析
+## 1.3 思路分析
 
 ![image-20230105175310401](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230105175310401.png)
 
@@ -94,7 +94,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 
 
 
-### 1.4 功能开发
+## 1.4 功能开发
 
 **LoginController**
 
@@ -168,7 +168,7 @@ public interface EmpMapper {
 
 
 
-### 1.5 测试
+## 1.5 测试
 
 功能开发完毕后，我们就可以启动服务，打开postman进行测试了。 
 
@@ -202,9 +202,9 @@ postman测试通过了，那接下来，我们就可以结合着前端工程进�
 
 
 
-## 2. 登录校验
+# 2. 登录校验
 
-### 2.1 问题分析
+## 2.1 问题分析
 
 我们已经完成了基础登录功能的开发与测试，在我们登录成功后就可以进入到后台管理系统中进行数据的操作。
 
@@ -277,11 +277,11 @@ postman测试通过了，那接下来，我们就可以结合着前端工程进�
 
 
 
-### 2.2 会话技术
+## 2.2 会话技术
 
 介绍了登录校验的大概思路之后，我们先来学习下会话技术。
 
-#### 2.2.1 会话技术介绍
+## 2.2.1 会话技术介绍
 
 什么是会话？
 
@@ -331,11 +331,11 @@ postman测试通过了，那接下来，我们就可以结合着前端工程进�
 
 
 
-#### 2.2.2 会话跟踪方案
+## 2.2.2 会话跟踪方案
 
 上面我们介绍了什么是会话，什么是会话跟踪，并且也提到了会话跟踪 3 种常见的技术方案。接下来，我们就来对比一下这 3 种会话跟踪的技术方案，来看一下具体的实现思路，以及它们之间的优缺点。
 
-##### 2.2.2.1 方案一 - Cookie
+### 2.2.2.1 方案一 - Cookie
 
 cookie 是客户端会话跟踪技术，它是存储在客户端浏览器的，我们使用 cookie 来跟踪会话，我们就可以在浏览器第一次发起请求来请求服务器的时候，我们在服务器端来设置一个cookie。
 
@@ -461,7 +461,7 @@ B. 访问c2接口 http://localhost:8080/c2，此时浏览器会自动的将Cooki
 
 
 
-##### 2.2.2.2 方案二 - Session
+### 2.2.2.2 方案二 - Session
 
 前面介绍的时候，我们提到Session，它是服务器端会话跟踪技术，所以它是存储在服务器端的。而 Session 的底层其实就是基于我们刚才所介绍的 Cookie 来实现的。
 
@@ -591,7 +591,7 @@ B. 访问 s2 接口，http://localhost:8080/s2
 
 
 
-##### 2.2.2.3 方案三 - 令牌技术
+### 2.2.2.3 方案三 - 令牌技术
 
 这里我们所提到的令牌，其实它就是一个用户身份的标识，看似很高大上，很神秘，其实本质就是一个字符串。
 
@@ -625,11 +625,11 @@ B. 访问 s2 接口，http://localhost:8080/s2
 
 
 
-### 2.3 JWT令牌
+## 2.3 JWT令牌
 
 前面我们介绍了基于令牌技术来实现会话追踪。这里所提到的令牌就是用户身份的标识，其本质就是一个字符串。令牌的形式有很多，我们使用的是功能强大的 JWT令牌。
 
-#### 2.3.1 介绍
+## 2.3.1 介绍
 
 JWT全称：JSON Web Token  （官网：https://jwt.io/）
 
@@ -690,7 +690,7 @@ JWT令牌最典型的应用场景就是登录认证：
 
 
 
-#### 2.3.2 生成和校验
+## 2.3.2 生成和校验
 
 简单介绍了JWT令牌以及JWT令牌的组成之后，接下来我们就来学习基于Java代码如何生成和校验JWT令牌。
 
@@ -827,7 +827,7 @@ public void parseJwt(){
 
 
 
-#### 2.3.3 登录下发令牌
+## 2.3.3 登录下发令牌
 
 JWT令牌的生成和校验的基本操作我们已经学习完了，接下来我们就需要在案例当中通过JWT令牌技术来跟踪会话。具体的思路我们前面已经分析过了，主要就是两步操作：
 
@@ -1000,7 +1000,7 @@ public class LoginController {
 
 
 
-### 2.4 过滤器Filter
+## 2.4 过滤器Filter
 
 刚才通过浏览器的开发者工具，我们可以看到在后续的请求当中，都会在请求头中携带JWT令牌到服务端，而服务端需要统一拦截所有的请求，从而判断是否携带的有合法的JWT令牌。
 那怎么样来统一拦截到所有的请求校验令牌的有效性呢？这里我们会学习两种解决方案：
@@ -1012,7 +1012,7 @@ public class LoginController {
 
 
 
-#### 2.4.1 快速入门
+## 2.4.1 快速入门
 
 什么是Filter？
 
@@ -1122,7 +1122,7 @@ public class TliasWebManagementApplication {
 
 
 
-#### 2.4.2 Filter详解
+## 2.4.2 Filter详解
 
 Filter过滤器的快速入门程序我们已经完成了，接下来我们就要详细的介绍一下过滤器Filter在使用中的一些细节。主要介绍以下3个方面的细节：
 
@@ -1132,7 +1132,7 @@ Filter过滤器的快速入门程序我们已经完成了，接下来我们就�
 
 
 
-##### 2.4.2.1 执行流程
+### 2.4.2.1 执行流程
 
 首先我们先来看下过滤器的执行流程：
 
@@ -1178,7 +1178,7 @@ public class DemoFilter implements Filter {
 
 
 
-##### 2.4.2.2 拦截路径
+### 2.4.2.2 拦截路径
 
 执行流程我们搞清楚之后，接下来再来介绍一下过滤器的拦截路径，Filter可以根据需求，配置不同的拦截资源路径：
 
@@ -1276,7 +1276,7 @@ public class DemoFilter implements Filter {
 
 
 
-##### 2.4.2.3 过滤器链
+### 2.4.2.3 过滤器链
 
 最后我们在来介绍下过滤器链，什么是过滤器链呢？所谓过滤器链指的是在一个web应用程序当中，可以配置多个过滤器，多个过滤器就形成了一个过滤器链。
 
@@ -1379,9 +1379,9 @@ public class XbcFilter implements Filter {
 
 
 
-#### 2.4.3 登录校验-Filter
+## 2.4.3 登录校验-Filter
 
-##### 2.4.3.1 分析
+### 2.4.3.1 分析
 
 过滤器Filter的快速入门以及使用细节我们已经介绍完了，接下来最后一步，我们需要使用过滤器Filter来完成案例当中的登录校验功能。
 
@@ -1409,7 +1409,7 @@ public class XbcFilter implements Filter {
 
 
 
-##### 2.4.3.2 具体流程
+### 2.4.3.2 具体流程
 
 我们要完成登录校验，主要是利用Filter过滤器实现，而Filter过滤器的流程步骤：
 
@@ -1428,7 +1428,7 @@ public class XbcFilter implements Filter {
 
 
 
-##### 2.4.3.3 代码实现
+### 2.4.3.3 代码实现
 
 分析清楚了以上的问题后，我们就参照接口文档来开发登录功能了，登录接口描述如下：
 
@@ -1610,7 +1610,7 @@ public class LoginCheckFilter implements Filter {
 
 
 
-### 2.5 拦截器Interceptor
+## 2.5 拦截器Interceptor
 
 学习完了过滤器Filter之后，接下来我们继续学习拦截器Interseptor。
 
@@ -1624,7 +1624,7 @@ public class LoginCheckFilter implements Filter {
 
 
 
-#### 2.5.1 快速入门
+## 2.5.1 快速入门
 
 什么是拦截器？
 
@@ -1732,7 +1732,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-#### 2.5.2 Interceptor详解
+## 2.5.2 Interceptor详解
 
 拦截器的入门程序完成之后，接下来我们来介绍拦截器的使用细节。拦截器的使用细节我们主要介绍两个部分：
 
@@ -1741,7 +1741,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-##### 2.5.2.1 拦截路径
+### 2.5.2.1 拦截路径
 
 首先我们先来看拦截器的拦截路径的配置，在注册配置拦截器的时候，我们要指定拦截器的拦截路径，通过`addPathPatterns("要拦截路径")`方法，就可以指定要拦截哪些资源。
 
@@ -1814,7 +1814,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-##### 2.5.2.2 执行流程
+### 2.5.2.2 执行流程
 
 介绍完拦截路径的配置之后，接下来我们再来介绍拦截器的执行流程。通过执行流程，大家就能够清晰的知道过滤器与拦截器的执行时机。
 
@@ -1914,7 +1914,7 @@ public class DemoFilter implements Filter {
 
 
 
-#### 2.5.3 登录校验- Interceptor
+## 2.5.3 登录校验- Interceptor
 
 讲解完了拦截器的基本操作之后，接下来我们需要完成最后一步操作：通过拦截器来完成案例当中的登录校验功能。
 
@@ -2033,9 +2033,9 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-## 3. 异常处理
+# 3. 异常处理
 
-### 3.1 当前问题
+## 3.1 当前问题
 
 登录功能和登录校验功能我们都实现了，下面我们学习下今天最后一块技术点：异常处理。首先我们先来看一下系统出现异常之后会发生什么现象，再来介绍异常处理的方案。
 
@@ -2081,7 +2081,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-### 3.2 解决方案
+## 3.2 解决方案
 
 那么在三层构架项目中，出现了异常，该如何处理?
 
@@ -2094,7 +2094,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-### 3.3 全局异常处理器
+## 3.3 全局异常处理器
 
 我们该怎么样定义全局异常处理器？
 

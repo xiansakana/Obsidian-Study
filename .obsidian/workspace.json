@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9d64262498afea9e",
+        "id": "3807658e64d32077",
         "type": "tabs",
         "children": [
           {
-            "id": "9a65a23af81c021e",
+            "id": "20f32aa473d52b58",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "itheima/javaweb/day15-Maven高级.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima/javaweb/day15-Maven高级.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima/javaweb/day15-Maven高级.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "itheima/javaweb/day15-Maven高级.md"
-              }
+              "state": {}
             }
           },
           {
@@ -169,10 +161,10 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "9a65a23af81c021e",
+  "active": "20f32aa473d52b58",
   "lastOpenFiles": [
-    "itheima/javaweb/day14-SpringBoot原理篇.md",
     "itheima/javaweb/day15-Maven高级.md",
+    "itheima/javaweb/day14-SpringBoot原理篇.md",
     "itheima/javaweb/day13-SpringBootWeb AOP.md",
     "itheima/javaweb/day12-SpringBootWeb登录认证.md",
     "itheima/javaweb/day11-SpringBootWeb案例-2.md",
@@ -186,10 +178,17 @@
     "itheima/javaweb/day04-SpringBootWeb入门.md",
     "itheima/javaweb/day04-Maven.md",
     "itheima/javaweb/day03-Vue-Element.md",
-    "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/javaweb/day01-Web开发介绍.md",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/javaweb/day01-HTML-CSS.md",
-    "frontend/Advanced HTML-CSS.md",
+    "itheima/ssm/SpringMVC_day02.md",
+    "itheima/ssm/SpringMVC_day01.md",
+    "itheima/ssm/SpringBoot.md",
+    "itheima/ssm/Spring_day03.md",
+    "itheima/ssm/Spring_day02.md",
+    "itheima/ssm/Spring_day01.md",
+    "itheima/ssm/MyBatisPlus.md",
+    "itheima/ssm/Maven高级.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",
@@ -208,14 +207,7 @@
     "interview/awesome resume/imgs/2.png",
     "interview/awesome resume/imgs/1.png",
     "interview/awesome resume/imgs",
-    "interview/awesome resume/Awesome-Resume.md",
     "interview/awesome resume",
-    "frontend/Advanced-JavaScript.md",
-    "backend/Springboot.md",
-    "itheima/ssm/Spring_day03.md",
-    "itheima/ssm/SpringBoot.md",
-    "itheima/ssm/Spring_day02.md",
-    "itheima/ssm/Spring_day01.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630680579735.png",
     "未命名.canvas",
     "未命名 1.canvas"

@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 ---
-## SpringBootWeb请求响应
+# SpringBootWeb请求响应
 
 
 
@@ -17,7 +17,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 
 
 
-## 前言
+# 前言
 
 在上一次的课程中，我们开发了springbootweb的入门程序。 基于SpringBoot的方式开发一个web应用，浏览器发起请求 /hello 后 ，给浏览器返回字符串 “Hello World ~”。
 
@@ -57,11 +57,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 
 
 
-## 1. 请求
+# 1. 请求
 
 在本章节呢，我们主要讲解，如何接收页面传递过来的请求数据。
 
-### 1.1 Postman
+## 1.1 Postman
 
 之前我们课程中有提到当前最为主流的开发模式：前后端分离
 
@@ -78,7 +78,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 
 方式2：使用专业的接口测试工具（课程中我们使用Postman工具）
 
-#### 1.1.1 介绍
+## 1.1.1 介绍
 
 ![image-20220826173003949](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173003949.png) 
 
@@ -99,7 +99,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 
 
 
-#### 1.1.2 安装
+## 1.1.2 安装
 
 ![image-20220826173919556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173919556.png) 
 
@@ -159,7 +159,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 
 
 
-### 1.2 简单参数
+## 1.2 简单参数
 
 简单参数：在向服务器发起请求时，向服务器传递的是一些普通的请求数据。
 
@@ -172,7 +172,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 1. 原始方式   
 2. SpringBoot方式
 
-#### 1.2.1 原始方式
+## 1.2.1 原始方式
 
 在原始的Web程序当中，需要通过Servlet中提供的API：HttpServletRequest（请求对象），获取请求的相关信息。比如获取请求参数：
 
@@ -210,7 +210,7 @@ public class RequestController {
 
 
 
-#### 1.2.2 SpringBoot方式
+## 1.2.2 SpringBoot方式
 
 在Springboot的环境中，对原始的API进行了封装，接收参数的形式更加简单。 如果是简单参数，参数名与形参变量名相同，定义同名的形参即可接收参数。
 
@@ -242,7 +242,7 @@ public class RequestController {
 
 
 
-#### 1.2.3 参数名不一致
+## 1.2.3 参数名不一致
 
 如果方法形参名称与请求参数名称不一致，controller方法中的形参还能接收到请求参数值吗？
 
@@ -308,7 +308,7 @@ public class RequestController {
 
 
 
-### 1.3 实体参数
+## 1.3 实体参数
 
 在使用简单参数做为数据传递方式时，前端传递了多少个请求参数，后端controller方法中的形参就要书写多少个。如果请求参数比较多，通过上述的方式一个参数一个参数的接收，会比较繁琐。 
 
@@ -316,7 +316,7 @@ public class RequestController {
 
 ![image-20221203131954932](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203131954932.png)
 
-#### 1.3.1 简单实体对象
+## 1.3.1 简单实体对象
 
 定义POJO实体类：
 
@@ -380,7 +380,7 @@ Postman测试：
 
 
 
-#### 1.3.2 复杂实体对象
+## 1.3.2 复杂实体对象
 
 上面我们讲的呢是简单的实体对象，下面我们在来学习下复杂的实体对象。
 
@@ -494,7 +494,7 @@ Postman测试：
 
 
 
-### 1.4 数组集合参数
+## 1.4 数组集合参数
 
 数组集合参数的使用场景：在HTML的表单中，有一个表单项是支持多选的(复选框)，可以提交选择的多个值。
 
@@ -511,7 +511,7 @@ Postman测试：
 
 
 
-#### 1.4.1 数组
+## 1.4.1 数组
 
 数组参数：**请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数**
 
@@ -547,7 +547,7 @@ Postman测试：
 
  
 
-#### 1.4.2 集合
+## 1.4.2 集合
 
 集合参数：**请求参数名与形参集合对象名相同且请求参数为多个，@RequestParam 绑定参数关系**
 
@@ -583,7 +583,7 @@ Postman测试：
 
 
 
-### 1.5 日期参数
+## 1.5 日期参数
 
 上述演示的都是一些普通的参数，在一些特殊的需求中，可能会涉及到日期类型数据的封装。比如，如下需求：
 
@@ -618,7 +618,7 @@ Postman测试：
 
 
 
-### 1.6 JSON参数
+## 1.6 JSON参数
 
 在学习前端技术时，我们有讲到过JSON，而在前后端进行交互时，如果是比较复杂的参数，前后端通过会使用JSON格式的数据进行传输。 （JSON是开发中最常用的前后端数据交互方式）
 
@@ -685,7 +685,7 @@ Postman测试：
 
 
 
-### 1.7 路径参数
+## 1.7 路径参数
 
 传统的开发中请求参数是放在请求体(POST请求)传递或跟在URL后面通过?key=value的形式传递(GET请求)。
 
@@ -753,13 +753,13 @@ public class RequestController {
 
 
 
-## 2. 响应
+# 2. 响应
 
 前面我们学习过HTTL协议的交互方式：请求响应模式（有请求就有响应）
 
 那么Controller程序呢，除了接收请求外，还可以进行响应。
 
-### 2.1 @ResponseBody
+## 2.1 @ResponseBody
 
 在我们前面所编写的controller方法中，都已经设置了响应数据。
 
@@ -863,7 +863,7 @@ public class ResponseController {
 
 
 
-### 2.2 统一响应结果
+## 2.2 统一响应结果
 
 大家有没有发现一个问题，我们在前面所编写的这些Controller方法中，返回值各种各样，没有任何的规范。
 
@@ -991,11 +991,11 @@ public class ResponseController {
 
 
 
-### 2.3 案例
+## 2.3 案例
 
 下面我们通过一个案例，来加强对请求响应的学习。
 
-#### 2.3.1 需求说明
+## 2.3.1 需求说明
 
 需求：加载并解析xml文件中的数据，完成数据处理，并在页面展示
 
@@ -1005,7 +1005,7 @@ public class ResponseController {
 
 
 
-#### 2.3.2 准备工作
+## 2.3.2 准备工作
 
 案例准备：
 
@@ -1033,7 +1033,7 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
 
 
 
-#### 2.3.3 实现步骤
+## 2.3.3 实现步骤
 
 1. 在pom.xml文件中引入dom4j的依赖，用于解析XML文件
 
@@ -1059,7 +1059,7 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
 
 
 
-#### 2.3.4 代码实现
+## 2.3.4 代码实现
 
 Contriller代码：
 
@@ -1146,7 +1146,7 @@ public class Result {
 
 
 
-#### 2.3.5 测试
+## 2.3.5 测试
 
 代码编写完毕之后，我们就可以运行引导类，启动服务进行测试了。 
 
@@ -1162,7 +1162,7 @@ public class Result {
 
 
 
-#### 2.3.6 问题分析
+## 2.3.6 问题分析
 
 上述案例的功能，我们虽然已经实现，但是呢，我们会发现案例中：解析XML数据，获取数据的代码，处理数据的逻辑的代码，给页面响应的代码全部都堆积在一起了，全部都写在controller方法中了。
 
@@ -1182,11 +1182,11 @@ public class Result {
 
 
 
-## 3. 分层解耦
+# 3. 分层解耦
 
-### 3.1 三层架构
+## 3.1 三层架构
 
-#### 3.1.1 介绍
+## 3.1.1 介绍
 
 在我们进行程序设计以及程序开发时，尽可能让每一个接口、类、方法的职责更单一些（单一职责原则）。
 
@@ -1231,7 +1231,7 @@ public class Result {
 
 
 
-#### 3.1.2 代码拆分
+## 3.1.2 代码拆分
 
 我们使用三层架构思想，来改造下之前的程序：
 
@@ -1350,13 +1350,13 @@ public class EmpDaoA implements EmpDao {
 
 
 
-### 3.2 分层解耦
+## 3.2 分层解耦
 
 刚才我们学习过程序分层思想了，接下来呢，我们来学习下程序的解耦思想。
 
 解耦：解除耦合。
 
-#### 3.2.1 耦合问题
+## 3.2.1 耦合问题
 
 首先需要了解软件开发涉及到的两个概念：内聚和耦合。
 
@@ -1390,7 +1390,7 @@ public class EmpDaoA implements EmpDao {
 
 
 
-#### 3.2.2  解耦思路
+## 3.2.2  解耦思路
 
 之前我们在编写代码时，需要什么对象，就直接new一个就可以了。 这种做法呢，层与层之间代码就耦合了，当service层的实现变了之后， 我们还需要修改controller层的代码。
 
@@ -1425,11 +1425,11 @@ IOC容器中创建、管理的对象，称之为：bean对象
 
 
 
-### 3.3 IOC&DI
+## 3.3 IOC&DI
 
 上面我们引出了Spring中IOC和DI的基本概念，下面我们就来具体学习下IOC和DI的代码实现。
 
-#### 3.3.1 IOC&DI入门
+## 3.3.1 IOC&DI入门
 
 任务：完成Controller层、Service层、Dao层的代码解耦
 
@@ -1555,11 +1555,11 @@ public class EmpDaoA implements EmpDao {
 
 
 
-#### 3.3.2 IOC详解
+## 3.3.2 IOC详解
 
 通过IOC和DI的入门程序呢，我们已经基本了解了IOC和DI的基础操作。接下来呢，我们学习下IOC控制反转和DI依赖注入的细节。
 
-##### 3.3.2.1 bean的声明
+### 3.3.2.1 bean的声明
 
 前面我们提到IOC控制反转，就是将对象的控制权交给Spring的IOC容器，由IOC容器创建及管理对象。IOC容器创建的对象称为bean对象。
 
@@ -1676,7 +1676,7 @@ public class EmpDaoA implements EmpDao {
 
 
 
-##### 3.3.2.2 组件扫描
+### 3.3.2.2 组件扫描
 
 问题：使用前面学习的四个注解声明的bean，一定会生效吗？
 
@@ -1716,7 +1716,7 @@ public class EmpDaoA implements EmpDao {
 
 
 
-#### 3.3.3 DI详解
+## 3.3.3 DI详解
 
 上一小节我们讲解了控制反转IOC的细节，接下来呢，我们学习依赖注解DI的细节。
 
