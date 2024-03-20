@@ -1,4 +1,13 @@
-# SpringBoot基础 
+---
+title: itheima-JavaWeb-day04-SpringBoot入门
+tags:
+  - itheima
+  - SpringBoot
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192155572.jpg'
+---
+# SpringBoot基础
 
 ## 课程内容
 

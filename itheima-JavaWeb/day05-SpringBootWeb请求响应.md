@@ -1,3 +1,12 @@
+---
+title: itheima-JavaWeb-day05-SpringBootWeb请求响应
+tags:
+  - itheima
+  - SpringBoot
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192157955.jpg'
+---
 # SpringBootWeb请求响应
 
 

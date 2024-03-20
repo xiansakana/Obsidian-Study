@@ -1,7 +1,13 @@
 ---
-title: SpringMVC_day01
+title: itheima-SSM-SpringMVC_day01
+tags:
+  - itheima
+  - SpringMVC
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192142673.png'
 ---
-## SpringMVC_day01
+## itheima-SSM-SpringMVC_day01
 
 **今日内容**
 

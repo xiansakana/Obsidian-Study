@@ -1,11 +1,11 @@
 ---
 title: Springboot
 tags:
-  - springboot
-  - java
   - 后端
+  - Java
+  - SpringBoot
 categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg
 abbrlink: cf14bd9c
 date: 2024-01-26 22:39:38
 ---

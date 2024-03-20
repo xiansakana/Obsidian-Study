@@ -1,7 +1,13 @@
 ---
-title: Spring_day02
+title: itheima-SSM-Spring_day02
+tags:
+  - itheima
+  - Spring
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192139626.jpg'
 ---
-## Spring_day02
+## itheima-SSM-Spring_day02
 
 **今日目标**
 

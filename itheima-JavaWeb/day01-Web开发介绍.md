@@ -1,3 +1,11 @@
+---
+title: itheima-JavaWeb-day01-Web开发介绍
+tags:
+  - itheima
+  - Web
+categories: 杂项
+cover: 'https://img.xiansakana.xyz/202403192151538.png'
+---
 # Web开发介绍
 
 # 1 什么是web开发

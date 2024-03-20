@@ -1,3 +1,14 @@
+---
+title: itheima-JavaWeb-day01-HTML-CSS
+tags:
+  - itheima
+  - HTML
+  - CSS
+  - 前端
+categories: 前端
+cover: 'https://img.xiansakana.xyz/202403192146376.png'
+---
+
 # 1. 前端开发介绍
 
 我们介绍Web网站工作流程的时候提到，前端开发，主要的职责就是将数据以好看的样式呈现出来。说白了，就是开发网页程序，如下图所示：

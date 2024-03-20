@@ -1,10 +1,10 @@
 ---
-title: Rest
+title: REST
 tags:
-  - Rest
   - API
   - 前端
   - Express.js
+  - REST
 categories: 前端
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222253181.jpg
 abbrlink: 5d268eee

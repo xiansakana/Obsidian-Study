@@ -1,3 +1,12 @@
+---
+title: itheima-JavaWeb-day03-Vue-Element
+tags:
+  - itheima
+  - Vue
+  - 前端
+categories: 前端
+cover: 'https://img.xiansakana.xyz/202403192153002.png'
+---
 # 1 Ajax
 
 ## 1.1 Ajax介绍

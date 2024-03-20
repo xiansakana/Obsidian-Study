@@ -1,4 +1,13 @@
-# Mybatis入门
+---
+title: itheima-JavaWeb-day08-MyBatis入门
+tags:
+  - itheima
+  - MyBatis
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192158138.jpg'
+---
+# MyBatis入门
 
 
 

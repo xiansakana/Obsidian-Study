@@ -2,7 +2,6 @@
 title: JWT
 tags:
   - JWT
-  - State
 categories: 前端
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242029724.jpg
 abbrlink: 1bb08f7a

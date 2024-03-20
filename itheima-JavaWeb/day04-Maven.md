@@ -1,3 +1,12 @@
+---
+title: itheima-JavaWeb-day04-Maven
+tags:
+  - itheima
+  - Maven
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192154716.jpg'
+---
 # Maven
 
 ## 课程内容

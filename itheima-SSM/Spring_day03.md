@@ -1,7 +1,13 @@
 ---
-title: Spring_day03
+title: itheima-SSM-Spring_day03
+tags:
+  - itheima
+  - Spring
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192139235.png'
 ---
-## Spring_day03
+## itheima-SSM-Spring_day03
 
 **今日目标**
 
@@ -2609,7 +2615,7 @@ public class SpringConfig {
       
       }
       ```
-      
+  
 * 出现这个问题的原因是，Spring的事务只会对`Error异常`和`RuntimeException异常`及其子类进行事务回顾，其他的异常类型是不会回滚的，对应IOException不符合上述条件所以不回滚
       
     * 此时就可以使用rollbackFor属性来设置出现IOException异常不回滚

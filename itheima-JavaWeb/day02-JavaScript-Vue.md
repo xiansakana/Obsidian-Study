@@ -1,3 +1,12 @@
+---
+title: itheima-JavaWeb-day02-JavaScript
+tags:
+  - itheima
+  - JavaScript
+  - 前端
+categories: 前端
+cover: 'https://img.xiansakana.xyz/202403192152556.png'
+---
 # 1 JavaScript
 
 html完成了架子，css做了美化，但是网页是死的，我们需要给他注入灵魂，所以接下来我们需要学习JavaScript，这门语言会让我们的页面能够和用户进行交互。

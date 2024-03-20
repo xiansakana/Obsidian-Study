@@ -1,6 +1,14 @@
+---
+title: itheima-JavaWeb-day09-MyBatis
+tags:
+  - itheima
+  - MyBatis
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192203566.jpg'
+---
 
-
-# 1. Mybatis基础操作
+# 1. MyBatis基础操作
 
 学习完mybatis入门后，我们继续学习mybatis基础操作。
 

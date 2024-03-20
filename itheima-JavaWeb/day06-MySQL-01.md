@@ -1,3 +1,13 @@
+---
+title: itheima-JavaWeb-day06-MySQL-01
+tags:
+  - itheima
+  - MySQL
+  - 数据库
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192158138.jpg'
+---
 # 数据库开发-MySQL
 
 

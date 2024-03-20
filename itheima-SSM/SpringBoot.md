@@ -1,7 +1,13 @@
 ---
-title: SpringBoot
+title: itheima-SSM-SpringBoot
+tags:
+  - itheima
+  - SpringBoot
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192139626.jpg'
 ---
-## SpringBoot
+## itheima-SSM-SpringBoot
 
 **今日目标：**
 
