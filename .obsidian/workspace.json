@@ -18,33 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "7fe3de175793e7b2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/bq/Behavior-Questions.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2e9273bc5c596d24",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/国内/bq.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/国内/bq.md",
+                "file": "backend/Java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/国内/bq.md",
+                "file": "backend/Java.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/国内/bq.md"
+                "file": "backend/Java.md"
               }
             }
           },
@@ -194,11 +169,12 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "2e9273bc5c596d24",
+  "active": "6ac5818d92ae7f06",
   "lastOpenFiles": [
+    "interview/国内/Behavior-Questions.md",
+    "interview/bq/Behavior-Questions.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC_day02.md",
     "interview/国内/bq.md",
-    "interview/国内/Behavior-Questions.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC_day01.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringBoot.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/Spring_day03.md",
@@ -241,7 +217,6 @@
     "itheima/最新版JavaWeb开发教程/day08-MySQL-03.md",
     "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md",
     "itheima/最新版JavaWeb开发教程/day07-MySQL-02.md",
-    "itheima/最新版JavaWeb开发教程/day06-MySQL-01.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
