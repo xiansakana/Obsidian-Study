@@ -390,7 +390,7 @@ public class UserController{
 
 # @Bean
 
-`@Bean`注解主要的作用是告知 Spring，被此注解所标注的类将需要纳入到 Bean 管理工厂中。注解后，spring 容器就会调用接口对应的方法，并将方法的返回结果存入容器。
+`@Bean`注解主要的作用是告知 Spring，被此注解所标注的类将需要纳入到 Bean 管理工厂中。注解后，Spring 容器就会调用接口对应的方法，并将方法的返回结果存入容器。如果要管理的Bean对象来自第三方（非自定义的），是无法用@Component及衍生注解生命Bean的，就需要用刀@Bean注解。
 
 ```java
 // MyBeans
