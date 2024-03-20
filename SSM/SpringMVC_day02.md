@@ -82,7 +82,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192143345.jpg'
 
 可以使用Maven的骨架创建
 
-![1630561266760](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630561266760.png)
+![1630561266760](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630561266760.png)
 
 #### 步骤2:添加依赖
 
@@ -184,7 +184,7 @@ pom.xml添加SSM所需要的依赖jar包
 
 #### 步骤3:创建项目包结构
 
-![1630561591931](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630561591931.png)
+![1630561591931](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630561591931.png)
 
 * config目录存放的是相关的配置类
 * controller编写的是Controller类
@@ -451,7 +451,7 @@ public class BookServiceImpl implements BookService {
 
   * 设置错误提示级别
 
-    ![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630600227357.png)
+    ![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630600227357.png)
 
 
 
@@ -551,11 +551,11 @@ public class BookServiceTest {
 
 根据ID查询，测试的结果为:
 
-![1630600844191](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630600844191.png)
+![1630600844191](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630600844191.png)
 
 查询所有，测试的结果为:
 
-![1630600927486](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630600927486.png)
+![1630600927486](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630600927486.png)
 
 ### 1.5 PostMan测试
 
@@ -571,7 +571,7 @@ public class BookServiceTest {
 }
 ```
 
-![1630652582425](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630652582425.png)
+![1630652582425](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630652582425.png)
 
 #### 修改
 
@@ -586,25 +586,25 @@ public class BookServiceTest {
 }
 ```
 
-![1630652758221](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630652758221.png)
+![1630652758221](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630652758221.png)
 
 #### 删除
 
 `http://localhost/books/14`
 
-![1630652796605](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630652796605.png)
+![1630652796605](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630652796605.png)
 
 #### 查询单个
 
 `http://localhost/books/1`
 
-![1630652837682](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630652837682.png)
+![1630652837682](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630652837682.png)
 
 #### 查询所有
 
 `http://localhost/books`
 
-![1630652867493](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630652867493.png)
+![1630652867493](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630652867493.png)
 
 ## 2，统一结果封装
 
@@ -614,15 +614,15 @@ SSM整合以及功能模块开发完成后，接下来，我们在上述案例�
 
 * 在Controller层增删改返回给前端的是boolean类型数据
 
-  ![1630653359533](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630653359533.png)
+  ![1630653359533](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653359533.png)
 
 * 在Controller层查询单个返回给前端的是对象
 
-  ![1630653385377](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630653385377.png)
+  ![1630653385377](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653385377.png)
 
 * 在Controller层查询所有返回给前端的是集合对象
 
-  ![1630653468887](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630653468887.png)
+  ![1630653468887](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653468887.png)
 
 目前我们就已经有三种数据类型返回给前端，如果随着业务的增长，我们需要返回的数据类型会越来越多。对于前端开发人员在解析数据的时候就比较凌乱了，所以对于前端来说，如果后台能够返回一个统一的数据结果，前端在解析的时候就可以按照一种方式进行解析。开发就会变得更加简单。
 
@@ -632,7 +632,7 @@ SSM整合以及功能模块开发完成后，接下来，我们在上述案例�
 * 为了封装返回的数据是何种操作及是否操作成功:==封装操作结果到code属性中==
 * 操作失败后为了封装返回的错误信息:==封装特殊消息到message(msg)属性中==
 
-![1630654293972](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630654293972.png)
+![1630654293972](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630654293972.png)
 
 根据分析，我们可以设置统一数据返回结果类
 
@@ -662,7 +662,7 @@ public class Result{
 
 最终创建好的项目结构如下:
 
-![1630654870632](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630654870632.png)
+![1630654870632](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630654870632.png)
 
 #### 2.2.2 结果封装
 
@@ -765,7 +765,7 @@ public class BookController {
 
 ##### 步骤4:启动服务测试
 
-![1630656326477](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630656326477.png)
+![1630656326477](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630656326477.png)
 
 至此，我们的返回结果就已经能以一种统一的格式返回给前端。前端根据返回的结果，先从中获取`code`,根据code判断，如果成功则取`data`属性的值，如果失败，则取`msg`中的值做提示。
 
@@ -791,7 +791,7 @@ public Result getById(@PathVariable Integer id) {
 
 重新启动运行项目，使用PostMan发送请求，当传入的id为1，则会出现如下效果：
 
-![1630656982337](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630656982337.png)
+![1630656982337](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630656982337.png)
 
 前端接收到这个信息后和之前我们约定的格式不一致，这个问题该如何解决?
 
@@ -825,7 +825,7 @@ public Result getById(@PathVariable Integer id) {
 
   * 集中的、统一的处理项目中出现的异常。
 
-    ![1630657791653](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630657791653.png)
+    ![1630657791653](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630657791653.png)
 
 ### 3.2 异常处理器的使用
 
@@ -841,7 +841,7 @@ public Result getById(@PathVariable Integer id) {
 
 最终创建好的项目结构如下:
 
-![1630657972564](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630657972564.png)
+![1630657972564](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630657972564.png)
 
 #### 3.2.2 使用步骤
 
@@ -879,7 +879,7 @@ public Result getById(@PathVariable Integer id) {
 
 ##### 步骤3:运行程序，测试
 
-![1630658350945](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630658350945.png)
+![1630658350945](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630658350945.png)
 
 说明异常已经被拦截并执行了`doException`方法。
 
@@ -901,7 +901,7 @@ public class ProjectExceptionAdvice {
 
 启动运行程序，测试
 
-![1630658606549](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630658606549.png)
+![1630658606549](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630658606549.png)
 
 至此，就算后台执行的过程中抛出异常，最终也能按照我们和前端约定好的格式返回给前端。
 
@@ -915,7 +915,7 @@ public class ProjectExceptionAdvice {
 
 **说明:**此注解自带@ResponseBody注解与@Component注解，具备对应的功能
 
-![1630659060451](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630659060451.png)
+![1630659060451](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659060451.png)
 
 #### 知识点2：@ExceptionHandler
 
@@ -941,13 +941,13 @@ public class ProjectExceptionAdvice {
 
     - 用户在页面输入内容的时候未按照指定格式进行数据填写，如在年龄框输入的是字符串
 
-      ![1630659599983](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630659599983.png)
+      ![1630659599983](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659599983.png)
 
   - 不规范的用户行为操作产生的异常
 
     - 如用户故意传递错误数据
 
-      ![1630659622958](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630659622958.png)
+      ![1630659622958](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659622958.png)
 
 - 系统异常（SystemException）
 
@@ -958,7 +958,7 @@ public class ProjectExceptionAdvice {
 
   - 编程人员未预期到的异常，如:用到的文件不存在
 
-    ![1630659690341](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630659690341.png)
+    ![1630659690341](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659690341.png)
 
 将异常分类以后，针对不同类型的异常，要提供具体的解决方案:
 
@@ -1136,11 +1136,11 @@ public class ProjectExceptionAdvice {
 
 如果传入的参数为1，会报`BusinessException`
 
-![1630661162758](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630661162758.png)
+![1630661162758](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630661162758.png)
 
 如果传入的是其他参数，会报`SystemException`
 
-![1630661192383](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630661192383.png)
+![1630661192383](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630661192383.png)
 
 对于异常我们就已经处理完成了，不管后台哪一层抛出异常，都会以我们与前端约定好的方式进行返回，前端只需要把信息获取到，根据返回的正确与否来展示不同的内容即可。
 
@@ -1148,7 +1148,7 @@ public class ProjectExceptionAdvice {
 
 以后项目中的异常处理方式为:
 
-![1630658821746](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630658821746.png)
+![1630658821746](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630658821746.png)
 
 ## 4，前后台协议联调
 
@@ -1164,11 +1164,11 @@ public class ProjectExceptionAdvice {
 
 最终创建好的项目结构如下:
 
-![1630661781776](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630661781776.png)
+![1630661781776](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630661781776.png)
 
 1. 将`资料\SSM功能页面`下面的静态资源拷贝到webapp下。
 
-![1630663662691](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630663662691.png)
+![1630663662691](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630663662691.png)
 
 2. 因为添加了静态资源，SpringMVC会拦截，所有需要在SpringConfig的配置类中将静态资源进行放行。
 
@@ -1201,7 +1201,7 @@ public class ProjectExceptionAdvice {
 
 ### 4.2 列表功能
 
-![1630670317859](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630670317859.png)
+![1630670317859](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630670317859.png)
 
 > 需求:页面加载完后发送异步请求到后台获取列表数据进行展示。
 >
@@ -1249,11 +1249,11 @@ getAll() {
 }
 ```
 
-![1630666787456](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630666787456.png)
+![1630666787456](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630666787456.png)
 
 ### 4.3 添加功能
 
-![1630670332168](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630670332168.png)
+![1630670332168](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630670332168.png)
 
 > 需求:完成图片的新增功能模块
 >
@@ -1386,7 +1386,7 @@ public class BookServiceImpl implements BookService {
 
 (4)测试错误情况，将图书类别长度设置超出范围即可
 
-![1630668954348](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630668954348.png)
+![1630668954348](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630668954348.png)
 
 处理完新增后，会发现新增还存在一个问题，
 
@@ -1404,7 +1404,7 @@ handleCreate() {
 
 ### 4.5 修改功能
 
-![1630670367812](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630670367812.png)
+![1630670367812](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630670367812.png)
 
 >需求:完成图书信息的修改功能
 >
@@ -1479,7 +1479,7 @@ handleEdit() {
 
 ### 4.6 删除功能
 
-![1630673984385](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630673984385.png)
+![1630673984385](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630673984385.png)
 
 > 需求:完成页面的删除功能。
 >
@@ -1874,7 +1874,7 @@ handleDelete(row) {
 
 讲解拦截器的概念之前，我们先看一张图:
 
-![1630676280170](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630676280170.png)
+![1630676280170](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630676280170.png)
 
 (1)浏览器发送一个请求会先到Tomcat的web服务器
 
@@ -1911,7 +1911,7 @@ handleDelete(row) {
 - 归属不同：Filter属于Servlet技术，Interceptor属于SpringMVC技术
 - 拦截内容不同：Filter对所有访问进行增强，Interceptor仅针对SpringMVC的访问进行增强
 
-![1630676903190](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630676903190.png)
+![1630676903190](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630676903190.png)
 
 ### 5.2 拦截器入门案例
 
@@ -2084,7 +2084,7 @@ handleDelete(row) {
 
 最终创建好的项目结构如下:
 
-![1630677370998](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630677370998.png)
+![1630677370998](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630677370998.png)
 
 #### 5.2.2 拦截器开发
 
@@ -2156,7 +2156,7 @@ public class SpringMvcConfig{
 
 使用PostMan发送`http://localhost/books`
 
-![1630678114224](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630678114224.png)
+![1630678114224](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630678114224.png)
 
 如果发送`http://localhost/books/100`会发现拦截器没有被执行，原因是拦截器的`addPathPatterns`方法配置的拦截路径是`/books`,我们现在发送的是`/books/100`，所以没有匹配上，因此没有拦截，拦截器就不会执行。
 
@@ -2208,7 +2208,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
 最后我们来看下拦截器的执行流程:
 
-![1630679464294](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630679464294.png)
+![1630679464294](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630679464294.png)
 
 当有拦截器后，请求会先进入preHandle方法，
 
@@ -2351,7 +2351,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
 步骤3:运行程序，观察顺序
 
-![1630680435269](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630680435269.png)
+![1630680435269](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630680435269.png)
 
 拦截器执行的顺序是和配置顺序有关。就和前面所提到的运维人员进入机房的案例，先进后出。
 
@@ -2360,7 +2360,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 * 当拦截器中出现对原始处理器的拦截，后面的拦截器均终止运行
 * 当拦截器运行中断，仅运行配置在前面的拦截器的afterCompletion操作
 
-![1630680579735](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630680579735.png)
+![1630680579735](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630680579735.png)
 
 preHandle：与配置顺序相同，必定运行
 

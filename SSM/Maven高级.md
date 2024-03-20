@@ -36,7 +36,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 比如电商的项目中，有订单和商品两个模块，订单中需要包含商品的详细信息，所以需要商品的模型类，商品模块也会用到商品的模型类，这个时候如果两个模块中都写模型类，就会出现重复代码，后期的维护成本就比较高。我们就想能不能将它们公共的部分抽取成一个独立的模块，其他模块要想使用可以像添加第三方jar包依赖一样来使用我们自己抽取的模块，这样就解决了代码重复的问题,这种拆分方式就说我们所说的==按照模块==拆分。
 
-![1630768703430](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630768703430.png)
+![1630768703430](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630768703430.png)
 
 经过两个案例的分析，我们就知道:
 
@@ -44,7 +44,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 刚刚我们说了可以将domain层进行拆分，除了domain层，我们也可以将其他的层也拆成一个个对立的模块，如:
 
-![1630768869208](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630768869208.png)
+![1630768869208](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630768869208.png)
 
 这样的话，项目中的每一层都可以单独维护，也可以很方便的被别人使用。关于分模块开发的意义，我们就说完了，说了这么多好处，那么该如何实现呢?
 
@@ -56,7 +56,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 将`资料\maven_02_ssm`部署到IDEA中，将环境快速准备好，部署成功后，项目的格式如下:
 
-![1630769969416](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630769969416.png)
+![1630769969416](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630769969416.png)
 
 #### 1.2.2 抽取domain层
 
@@ -64,19 +64,19 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 创建一个名称为`maven_03_pojo`的jar项目,为什么项目名是从02到03这样创建，原因后面我们会提到，这块的名称可以任意。
 
-![1630771178137](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630771178137.png)
+![1630771178137](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771178137.png)
 
 ##### 步骤2:项目中创建domain包
 
 在`maven_03_pojo`项目中创建`com.itheima.domain`包，并将`maven_02_ssm`中Book类拷贝到该包中
 
-![1630771371487](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630771371487.png)
+![1630771371487](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771371487.png)
 
 ##### 步骤3:删除原项目中的domain包
 
 删除后，`maven_02_ssm`项目中用到`Book`的类中都会有红色提示，如下:
 
-![1630771505703](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630771505703.png)
+![1630771505703](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771505703.png)
 
 **说明:**出错的原因是`maven_02_ssm`中已经将Book类删除，所以该项目找不到Book类，所以报错
 
@@ -100,7 +100,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 编译`maven_02_ssm`你会在控制台看到如下错误
 
-![1630771987325](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630771987325.png)
+![1630771987325](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771987325.png)
 
 错误信息为：不能解决`maven_02_ssm`项目的依赖问题，找不到`maven_03_pojo`这个jar包。
 
@@ -114,11 +114,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 将需要被依赖的项目`maven_03_pojo`，使用maven的install命令，把其安装到Maven的本地仓库中。
 
-![1630773180969](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630773180969.png)
+![1630773180969](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773180969.png)
 
 安装成功后，在对应的路径下就看到安装好的jar包
 
-![1630773262441](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630773262441.png)
+![1630773262441](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773262441.png)
 
 **说明:**具体安装在哪里，和你们自己电脑上Maven的本地仓库配置的位置有关。
 
@@ -130,17 +130,17 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 创建一个名称为`maven_04_dao`的jar项目
 
-![1630773580067](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630773580067.png)
+![1630773580067](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773580067.png)
 
 ##### 步骤2:项目中创建dao包
 
 在`maven_04_dao`项目中创建`com.itheima.dao`包，并将`maven_02_ssm`中BookDao类拷贝到该包中
 
-![1630773695062](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630773695062.png)
+![1630773695062](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773695062.png)
 
 在`maven_04_dao`中会有如下几个问题需要解决下:
 
-![1630773958756](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630773958756.png)
+![1630773958756](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773958756.png)
 
 * 项目`maven_04_dao`的BookDao接口中Book类找不到报错
 
@@ -190,11 +190,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 此时在`maven_02_ssm`项目中就已经添加了`maven_03_pojo`和`maven_04_dao`包
 
-![1630774696344](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630774696344.png)
+![1630774696344](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630774696344.png)
 
 再次对`maven_02_ssm`项目进行编译，又会报错，如下:
 
-![1630774780211](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630774780211.png)
+![1630774780211](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630774780211.png)
 
 和刚才的错误原因是一样的，maven在仓库中没有找到`maven_04_dao`,所以此时我们只需要将`maven_04_dao`安装到Maven的本地仓库即可。
 
@@ -202,11 +202,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 将需要被依赖的项目`maven_04_dao`，使用maven的install命令，把其安装到Maven的本地仓库中。
 
-![1630774917743](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630774917743.png)
+![1630774917743](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630774917743.png)
 
 安装成功后，在对应的路径下就看到了安装好对应的jar包
 
-![1630774946856](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630774946856.png)
+![1630774946856](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630774946856.png)
 
 当再次执行`maven_02_ssm`的compile的指令后，就已经能够成功编译。
 
@@ -261,7 +261,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 回到我们刚才的项目案例中，打开Maven的面板，你会发现:
 
-![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630818930387.png)
+![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630818930387.png)
 
 在项目所依赖的这些jar包中，有一个比较大的区别就是**有的依赖前面有箭头`>`,有的依赖前面没有。**
 
@@ -269,23 +269,23 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 打开前面的箭头，你会发现这个jar包下面还包含有其他的jar包
 
-![1630819455928](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630819455928.png)
+![1630819455928](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630819455928.png)
 
 你会发现有两个`maven_03_pojo`的依赖被加载到Dependencies中，那么`maven_04_dao`中的`maven_03_pojo`能不能使用呢?
 
 要想验证非常简单，只需要把`maven_02_ssm`项目中pom.xml关于`maven_03_pojo`的依赖注释或删除掉
 
-![1630819768305](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630819768305.png)
+![1630819768305](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630819768305.png)
 
 在Dependencies中移除自己所添加`maven_03_pojo`依赖后，打开BookServiceImpl的类，你会发现Book类依然存在，可以被正常使用
 
-![1630819826163](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630819826163.png)
+![1630819826163](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630819826163.png)
 
 这个特性其实就是我们要讲解的==依赖传递==。
 
 依赖是具有传递性的:
 
-![1630853726532](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630853726532.png)
+![1630853726532](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630853726532.png)
 
 **说明:**A代表自己的项目；B,C,D,E,F,G代表的是项目所依赖的jar包；D1和D2 E1和E2代表是相同jar包的不同版本
 
@@ -321,7 +321,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 </dependencies>
 ```
 
-![1630820964663](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630820964663.png)
+![1630820964663](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630820964663.png)
 
 通过对比，会发现一个结论
 
@@ -341,11 +341,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 但是对应上面这些结果，大家不需要刻意去记它。因为不管Maven怎么选，最终的结果都会在Maven的`Dependencies`面板中展示出来，展示的是哪个版本，也就是说它选择的就是哪个版本，如:
 
-![1630853443920](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630853443920.png)
+![1630853443920](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630853443920.png)
 
 如果想更全面的查看Maven中各个坐标的依赖关系，可以点击Maven面板中的`show Dependencies`
 
-![1630853519736](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630853519736.png)
+![1630853519736](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630853519736.png)
 
 在这个视图中就能很明显的展示出jar包之间的相互依赖关系。
 
@@ -353,7 +353,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 依赖传递介绍完以后，我们来思考一个问题，
 
-![1630854436435](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630854436435.png)
+![1630854436435](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630854436435.png)
 
 * maven_02_ssm 依赖了 maven_04_dao
 * maven_04_dao 依赖了 maven_03_pojo
@@ -380,7 +380,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 此时BookServiceImpl就已经报错了,说明由于maven_04_dao将maven_03_pojo设置成可选依赖，导致maven_02_ssm无法引用到maven_03_pojo中的内容，导致Book类找不到。
 
-![1630854923484](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630854923484.png)
+![1630854923484](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630854923484.png)
 
 #### 方案二:排除依赖
 
@@ -442,7 +442,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 ### 3.1 聚合
 
-![1630858596147](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630858596147.png)
+![1630858596147](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630858596147.png)
 
 * 分模块开发后，需要将这四个项目都安装到本地仓库，目前我们只能通过项目Maven面板的`install`来安装，并且需要安装四个，如果我们的项目足够多，那么一个个安装起来还是比较麻烦的
 * 如果四个项目都已经安装成功，当ssm_pojo发生变化后，我们就得将ssm_pojo重新安装到maven仓库，但是为了确保我们对ssm_pojo的修改不会影响到其他项目模块，我们需要对所有的模块进行重新编译，那又需要将所有的模块再来一遍
@@ -460,7 +460,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 #### 步骤1:创建一个空的maven项目
 
-![1630859532119](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630859532119.png)
+![1630859532119](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630859532119.png)
 
 #### 步骤2:将项目的打包方式改为pom
 
@@ -510,7 +510,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 #### 步骤4:使用聚合统一管理项目
 
-![1630859797123](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630859797123.png)
+![1630859797123](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630859797123.png)
 
 测试发现，当`maven_01_parent`的`compile`被点击后，所有被其管理的项目都会被执行编译操作。这就是聚合工程的作用。
 
@@ -522,7 +522,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 我们已经完成了使用聚合工程去管理项目，聚合工程进行某一个构建操作，其他被其管理的项目也会执行相同的构建操作。那么接下来，我们再来分析下，多模块开发存在的另外一个问题，`重复配置`的问题，我们先来看张图:
 
-![1630860344968](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630860344968.png)
+![1630860344968](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630860344968.png)
 
 * `spring-webmvc`、`spring-jdbc`在三个项目模块中都有出现，这样就出现了重复的内容
 * `spring-test`只在ssm_crm和ssm_goods中出现，而在ssm_order中没有，这里是部分重复的内容
@@ -745,17 +745,17 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 刷新并查看Maven的面板，会发现maven_04_dao同样引入了父项目中的所有依赖。
 
-![1630862406709](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630862406709.png)
+![1630862406709](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630862406709.png)
 
 这样我们就可以解决刚才提到的第一个问题，将子项目中的公共jar包抽取到父工程中进行统一添加依赖，这样做的可以简化配置，并且当父工程中所依赖的jar包版本发生变化，所有子项目中对应的jar包版本也会跟着更新。
 
-![1630943390187](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630943390187.png)
+![1630943390187](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630943390187.png)
 
 #### 步骤4:优化子项目依赖版本问题
 
 如果把所有用到的jar包都管理在父项目的pom.xml，看上去更简单些，但是这样就会导致有很多项目引入了过多自己不需要的jar包。如上面看到的这张图:
 
-![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630860344968.png)
+![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630860344968.png)
 
 如果把所有的依赖都放在了父工程中进行统一维护，就会导致ssm_order项目中多引入了`spring-test`的jar包，如果这样的jar包过多的话，对于ssm_order来说也是一种"负担"。
 
@@ -779,7 +779,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 2. 将maven_02_ssm的pom.xml中的junit依赖删除掉，刷新Maven
 
-![1630944335419](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630944335419.png)
+![1630944335419](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630944335419.png)
 
 刷新完会发现，在maven_02_ssm项目中的junit依赖并没有出现，所以我们得到一个结论:
 
@@ -918,13 +918,13 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 创建一个空的Maven项目，可以将项目中的`src`目录删除掉，这个项目作为聚合工程和父工程。
 
-![1630946592924](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630946592924.png)
+![1630946592924](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630946592924.png)
 
 ##### 步骤2:创建子项目
 
 该项目可以被聚合工程管理，同时会继承父工程。
 
-![1630947082716](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630947082716.png)
+![1630947082716](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630947082716.png)
 
 创建成功后，maven_parent即是聚合工程又是父工程，maven_web中也有parent标签，继承的就是maven_parent,对于难以配置的内容都自动生成。
 
@@ -947,13 +947,13 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 
 前面我们已经在父工程中的dependencyManagement标签中对项目中所使用的jar包版本进行了统一的管理，但是如果在标签中有如下的内容:
 
-![1630947403475](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630947403475.png)
+![1630947403475](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630947403475.png)
 
 你会发现，如果我们现在想更新Spring的版本，你会发现我们依然需要更新多个jar包的版本，这样的话还是有可能出现漏改导致程序出问题，而且改起来也是比较麻烦。
 
 问题清楚后，我们需要解决的话，就可以参考咱们java基础所学习的变量，声明一个变量，在其他地方使用该变量，当变量的值发生变化后，所有使用变量的地方，就会跟着修改，即:
 
-![1630947749661](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630947749661.png)
+![1630947749661](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630947749661.png)
 
 #### 4.1.2 解决步骤
 
@@ -1044,7 +1044,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 修改完后，注意maven_02_ssm项目的resources目录就多了些东西，如下:
 
-![1630977419627](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630977419627.png)
+![1630977419627](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977419627.png)
 
 
 
@@ -1052,7 +1052,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 测试的时候，只需要将maven_02_ssm项目进行打包，然后观察打包结果中最终生成的内容是否为Maven中配置的内容。
 
-![1630977885030](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630977885030.png)
+![1630977885030](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977885030.png)
 
 上面的属性管理就已经完成，但是有一个问题没有解决，因为不只是maven_02_ssm项目需要有属性被父工程管理，如果有多个项目需要配置，该如何实现呢?
 
@@ -1096,7 +1096,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 **说明:**打包的过程中如果报如下错误:
 
-![1630948929828](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630948929828.png)
+![1630948929828](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630948929828.png)
 
 原因就是Maven发现你的项目为web项目，就会去找web项目的入口web.xml[配置文件配置的方式]，发现没有找到，就会报错。
 
@@ -1138,13 +1138,13 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 - Java系统属性
 - 环境变量属性
 
-![1630981519370](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630981519370.png)
+![1630981519370](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630981519370.png)
 
 具体如何查看这些属性:
 
 在cmd命令行中输入`mvn help:system`
 
-![1630981585748](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630981585748.png)
+![1630981585748](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630981585748.png)
 
 具体使用，就是使用 `${key}`来获取，key为等号左边的，值为等号右边的，比如获取红线的值，对应的写法为 `${java.runtime.name}`。
 
@@ -1152,13 +1152,13 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 关于这个版本管理解决的问题是，在Maven创建项目和引用别人项目的时候，我们都看到过如下内容:
 
-![1630982018031](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630982018031.png)
+![1630982018031](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630982018031.png)
 
 这里面有两个单词，SNAPSHOT和RELEASE，它们所代表的含义是什么呢?
 
 我们打开Maven仓库地址`https://mvnrepository.com/`
 
-![1630983148662](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630983148662.png)
+![1630983148662](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630983148662.png)
 
 在我们jar包的版本定义中，有两个工程版本用的比较多:
 
@@ -1183,7 +1183,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 
 ### 5.1 多环境开发
 
-![1630983617755](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630983617755.png)
+![1630983617755](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630983617755.png)
 
 * 我们平常都是在自己的开发环境进行开发，
 * 当开发完成后，需要把开发的功能部署到测试环境供测试人员进行测试使用，
@@ -1228,11 +1228,11 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 #### 步骤2:执行安装查看env_dep环境是否生效
 
-![1630983967960](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630983967960.png)
+![1630983967960](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630983967960.png)
 
 查看到的结果为:
 
-![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630977885030.png)
+![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977885030.png)
 
 #### 步骤3:切换默认环境为生产环境
 
@@ -1270,19 +1270,19 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 查看到的结果为`jdbc:mysql://127.2.2.2:3306/ssm_db`
 
-![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630977885031.png)
+![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977885031.png)
 
 虽然已经能够实现不同环境的切换，但是每次切换都是需要手动修改，如何来实现在不改变代码的前提下完成环境的切换呢?
 
 #### 步骤5:命令行实现环境切换
 
-![1630984476202](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630984476202.png)
+![1630984476202](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630984476202.png)
 
 #### 步骤6:执行安装并查看env_test环境是否生效
 
 查看到的结果为`jdbc:mysql://127.3.3.3:3306/ssm_db`
 
-![](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630977885032.png)
+![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977885032.png)
 
 所以总结来说，对于多环境切换只需要两步即可:
 
@@ -1322,7 +1322,7 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
 
 #### 方式一:IDEA工具实现跳过测试
 
-![1630985300814](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630985300814.png)
+![1630985300814](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630985300814.png)
 
 图中的按钮为`Toggle 'Skip Tests' Mode`,
 
@@ -1330,7 +1330,7 @@ Toggle翻译为切换的意思，也就是说在测试与不测试之间进行�
 
 点击一下，出现测试画横线的图片，如下:
 
-![1630985411766](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630985411766.png)
+![1630985411766](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630985411766.png)
 
 说明测试已经被关闭，再次点击就会恢复。
 
@@ -1366,7 +1366,7 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
 
 #### 方式三:命令行跳过测试
 
-![1630986926124](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630986926124.png)
+![1630986926124](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630986926124.png)
 
 使用Maven的命令行，`mvn 指令 -D skipTests`
 
@@ -1389,7 +1389,7 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
 
 团队开发现状分析
 
-![1630987192620](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630987192620.png)
+![1630987192620](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630987192620.png)
 
 (1)张三负责ssm_crm的开发，自己写了一个ssm_pojo模块，要想使用直接将ssm_pojo安装到本地仓库即可
 
@@ -1423,11 +1423,11 @@ includes: 哪些测试类要参与测试，即包含,针对skipTests为true来�
 
 将`资料\latest-win64.zip`解压到一个空目录下。
 
-![1630988572349](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630988572349.png)
+![1630988572349](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988572349.png)
 
 #### 步骤2:启动Nexus
 
-![1630988673245](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630988673245.png)
+![1630988673245](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988673245.png)
 
 使用cmd进入到解压目录下的`nexus-3.30.1-01\bin`,执行如下命令:
 
@@ -1437,7 +1437,7 @@ nexus.exe /run nexus
 
 看到如下内容，说明启动成功。
 
-![1630988939301](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630988939301.png)
+![1630988939301](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988939301.png)
 
 #### 步骤3:浏览器访问
 
@@ -1447,27 +1447,27 @@ nexus.exe /run nexus
 http://localhost:8081
 ```
 
-![1630988857125](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630988857125.png)
+![1630988857125](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988857125.png)
 
 #### 步骤4:首次登录重置密码
 
-![1630988983159](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630988983159.png)
+![1630988983159](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630988983159.png)
 
 输入用户名和密码进行登录，登录成功后，出现如下页面
 
-![1630989052183](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630989052183.png)
+![1630989052183](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630989052183.png)
 
 点击下一步，需要重新输入新密码，为了和后面的保持一致，密码修改为`admin`
 
-![1630989094756](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630989094756.png)
+![1630989094756](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630989094756.png)
 
 设置是否运行匿名访问
 
-![1630989122737](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630989122737.png)
+![1630989122737](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630989122737.png)
 
 点击完成
 
-![1630989136097](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630989136097.png)
+![1630989136097](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630989136097.png)
 
 至此私服就已经安装成功。如果要想修改一些基础配置信息，可以使用:
 
@@ -1480,7 +1480,7 @@ http://localhost:8081
 
 私服资源操作流程分析:
 
-![1630989320979](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630989320979.png)
+![1630989320979](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630989320979.png)
 
 (1)在没有私服的情况下，我们自己创建的服务都是安装在Maven的本地仓库中
 
@@ -1515,7 +1515,7 @@ http://localhost:8081
 - 将若干个仓库组成一个群组，简化配置
 - 仓库组不能保存资源，属于设计型仓库
 
-![1630990244010](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630990244010.png)
+![1630990244010](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630990244010.png)
 
 ### 6.4 本地仓库访问私服配置
 
@@ -1524,13 +1524,13 @@ http://localhost:8081
 * 私服中的仓库很多，Maven最终要把资源上传到哪个仓库?
 * Maven下载的时候，又需要携带用户名和密码到私服上找对应的仓库组进行下载，然后再给IDEA
 
-![1630990538229](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630990538229.png)
+![1630990538229](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630990538229.png)
 
 上面所说的这些内容，我们需要在本地Maven的配置文件`settings.xml`中进行配置。
 
 #### 步骤1:私服上配置仓库
 
-![1630991211000](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630991211000.png)
+![1630991211000](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630991211000.png)
 
 **说明:**
 
@@ -1572,7 +1572,7 @@ http://localhost:8081
 
 为了避免阿里云Maven私服地址的影响，建议先将之前配置的阿里云Maven私服镜像地址注释掉，等练习完后，再将其恢复。
 
-![1630991535107](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630991535107.png)
+![1630991535107](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630991535107.png)
 
 至此本地仓库就能与私服进行交互了。
 
@@ -1602,7 +1602,7 @@ http://localhost:8081
 
 #### 步骤2:发布资源到私服
 
-![1630992305191](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630992305191.png)
+![1630992305191](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630992305191.png)
 
 或者执行Maven命令
 
@@ -1616,16 +1616,16 @@ mvn deploy
 
 发布成功，在私服中就能看到:
 
-![1630992513299](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630992513299.png)
+![1630992513299](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630992513299.png)
 
 现在发布是在itheima-snapshot仓库中，如果想发布到itheima-release仓库中就需要将项目pom.xml中的version修改成RELEASE即可。
 
 如果想删除已经上传的资源，可以在界面上进行删除操作:
 
-![1630992952378](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630992952378.png)
+![1630992952378](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630992952378.png)
 
 如果私服中没有对应的jar，会去中央仓库下载，速度很慢。可以配置让私服去阿里云中下载依赖。
 
-![1630993028454](https://cdn.jsdelivr.net/npm/itheima-ssm/assets/1630993028454.png)
+![1630993028454](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630993028454.png)
 
 至此私服的搭建就已经完成，相对来说有点麻烦，但是步骤都比较固定，后期大家如果需要的话，就可以参考上面的步骤一步步完成搭建即可。
