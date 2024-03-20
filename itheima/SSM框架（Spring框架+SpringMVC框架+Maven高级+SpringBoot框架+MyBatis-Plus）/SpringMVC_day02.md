@@ -1,3 +1,6 @@
+---
+title: SpringMVC_day02
+---
 ## SpringMVC_day02
 
 **今日内容**
