@@ -32,8 +32,8 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
 
 * 创建一个Maven项目
 
-  ![1629860338328](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629860338328.png)
-
+	<img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629860338328.png" alt="image-20230309173355794" style="zoom:67%;" />  
+  
 * pom.xml添加依赖
 
   ```xml
@@ -149,7 +149,7 @@ public class App {
 
 打印如下结果: 说明第三方bean对象已经被spring的IOC容器进行管理
 
-![1629887733081](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629887733081.png)
+<img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629887733081.png" style="zoom: 80%;" />
 
 做完案例后，我们可以将刚才思考的两个问题答案说下:
 
@@ -207,7 +207,7 @@ pom.xml中添加依赖
 </bean>
 ```
 
-**==注意:==**
+**注意:**
 
 * ComboPooledDataSource的属性是通过setter方式进行注入
 * 想注入属性就需要在ComboPooledDataSource类或其上层类中有提供属性对应的setter方法
@@ -219,7 +219,7 @@ pom.xml中添加依赖
 
 ![1629889170229](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629889170229.png)
 
-报的错为==ClassNotFoundException==,翻译出来是`类没有发现的异常`，具体的类为`com.mysql.jdbc.Driver`。错误的原因是缺少mysql的驱动包。
+报的错为ClassNotFoundException,翻译出来是`类没有发现的异常`，具体的类为`com.mysql.jdbc.Driver`。错误的原因是缺少mysql的驱动包。
 
 分析出错误的原因，具体的解决方案就比较简单，只需要在pom.xml把驱动包引入即可。
 
@@ -483,22 +483,24 @@ public class App {
 
 * 问题二:当有多个properties配置文件需要被加载，该如何配置?
 
-  1.调整下配置文件的内容，在resources下添加`jdbc.properties`,`jdbc2.properties`,内容如下:
+  1. 调整下配置文件的内容，在resources下添加`jdbc.properties`,`jdbc2.properties`,内容如下:
 
-  jdbc.properties
+jdbc.properties
 
-  ```properties
-  jdbc.driver=com.mysql.jdbc.Driver
-  jdbc.url=jdbc:mysql://127.0.0.1:3306/spring_db
-  jdbc.username=root
-  jdbc.password=root
-  ```
+```properties
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://127.0.0.1:3306/spring_db
+jdbc.username=root
+jdbc.password=root
+```
 
-  jdbc2.properties
+jdbc2.properties
 
-  ```properties
-  username=root666
-  ```
+```properties
+username=root666
+```
+
+
 
   2.修改applicationContext.xml
 
@@ -552,7 +554,7 @@ public class App {
 
 # 2，核心容器
 
-前面已经完成bean与依赖注入的相关知识学习，接下来我们主要学习的是IOC容器中的==核心容器==。
+前面已经完成bean与依赖注入的相关知识学习，接下来我们主要学习的是IOC容器中的核心容器。
 
 这里所说的核心容器，大家可以把它简单的理解为`ApplicationContext`，前面虽然已经用到过，但是并没有系统的学习，接下来咱们从以下几个问题入手来学习下容器的相关知识:
 
@@ -630,7 +632,7 @@ public class App {
 ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 ```
 
-这种方式翻译为:==类路径下的XML配置文件==
+这种方式翻译为:类路径下的XML配置文件
 
 除了上面这种方式，Spring还提供了另外一种创建方式为:
 
@@ -638,7 +640,7 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.
 ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext.xml");
 ```
 
-这种方式翻译为:==文件系统下的XML配置文件==
+这种方式翻译为:文件系统下的XML配置文件
 
 使用这种方式，运行，会出现如下错误:
 
@@ -775,14 +777,14 @@ public class BookDaoImpl implements BookDao {
 - ApplicationContext接口是Spring容器的核心接口，初始化时bean立即加载
 - ApplicationContext接口提供基础的bean操作相关方法，通过其他接口扩展其功能
 - ApplicationContext接口常用初始化类
-  - **==ClassPathXmlApplicationContext(常用)==**
+  - **ClassPathXmlApplicationContext(常用)**
   - FileSystemXmlApplicationContext
 
 ## 2.2.2 bean相关
 
 ![1629986510487](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629986510487.png)
 
-其实整个配置中最常用的就两个属性==id==和==class==。
+其实整个配置中最常用的就两个属性id和class。
 
 把scope、init-method、destroy-method框起来的原因是，后面注解在讲解的时候还会用到，所以大家对这三个属性关注下。
 
@@ -792,7 +794,7 @@ public class BookDaoImpl implements BookDao {
 
 # 3，IOC/DI注解开发
 
-Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来相对来说还是比较复杂的，复杂的地方在==配置文件==。
+Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来相对来说还是比较复杂的，复杂的地方在配置文件。
 
 前面咱们聊Spring的时候说过，Spring可以简化代码的开发，到现在并没有体会到。
 
@@ -1225,7 +1227,7 @@ public class BookDaoImpl implements BookDao {
 | 类型 | 类注解                                                       |
 | 位置 | 类定义上方                                                   |
 | 作用 | 设置该类创建对象的作用范围<br/>可用于设置创建出的bean是否为单例对象 |
-| 属性 | value（默认）：定义bean作用范围，<br/>==默认值singleton（单例），可选值prototype（非单例）== |
+| 属性 | value（默认）：定义bean作用范围，<br/>默认值singleton（单例），可选值prototype（非单例） |
 
 ## 3.3.3 Bean的生命周期
 
@@ -1288,7 +1290,7 @@ public class App {
 
 ![1630032385498](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630032385498.png)
 
-==**注意:**@PostConstruct和@PreDestroy注解如果找不到，需要导入下面的jar包==
+**注意:**@PostConstruct和@PreDestroy注解如果找不到，需要导入下面的jar包
 
 ```java
 <dependency>

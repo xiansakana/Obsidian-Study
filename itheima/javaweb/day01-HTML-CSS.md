@@ -95,7 +95,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192146376.png'
 
 下面展示的是一段 html代码 及 CSS样式 经过浏览器解析，呈现的效果如右图所示：
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20230309172634388.png" alt="image-20230309172634388" style="zoom: 80%;" /> 
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20230309172634388.png" alt="image-20230309172634388" style="zoom: 80%;" />
+
+ 
 
 ​	
 
@@ -109,15 +111,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192146376.png'
 
 第一步:创建一个名为HTML的文件夹，然后找到课程资料中的 1.jpg 文件放到该目录下，此时HTML文件夹中内容如下：
 
-![1668011569718](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668011569718.png) 
-
-
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668011569718.png" style="zoom: 80%;" />
 
 第二步：创建一个文本文件，然后修改文件名为hello.html,注意文件的后缀是.html,如下图所示：
 
-![1668012052140](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668012052140.png) 
-
-
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668012052140.png " style="zoom: 80%;" />
 
 第三步：选中文件，鼠标右击，选择使用记事本打开文件，并且编写前端代码
 
@@ -144,6 +142,8 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192146376.png'
 
 
 第四步：然后选中文件，鼠标右击，选择使用浏览器打开文件，浏览器呈现效果如下:
+
+  
 
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20230309173355794.png" alt="image-20230309173355794" style="zoom:67%;" />  
 

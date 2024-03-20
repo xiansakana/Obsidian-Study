@@ -20,9 +20,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
 
 前面我们在介绍Spring的时候说过，Spring有两个核心的概念，一个是`IOC/DI`，一个是`AOP`。
 
-前面已经对`IOC/DI`进行了系统的学习，接下来要学习它的另一个核心内容，就是==AOP==。
+前面已经对`IOC/DI`进行了系统的学习，接下来要学习它的另一个核心内容，就是AOP。
 
-对于AOP,我们前面提过一句话是:==AOP是在不改原有代码的前提下对其进行增强。==
+对于AOP,我们前面提过一句话是:AOP是在不改原有代码的前提下对其进行增强。
 
 对于下面的内容，我们主要就是围绕着这一句话进行展开学习，主要学习两方面内容`AOP核心概念`,`AOP作用`:
 
@@ -91,15 +91,15 @@ public class BookDaoImpl implements BookDao {
 
 ![1630144353462](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630144353462.png)
 
-(1)前面一直在强调，Spring的AOP是对一个类的方法在不进行任何修改的前提下实现增强。对于上面的案例中BookServiceImpl中有`save`,`update`,`delete`和`select`方法,这些方法我们给起了一个名字叫==连接点==
+(1)前面一直在强调，Spring的AOP是对一个类的方法在不进行任何修改的前提下实现增强。对于上面的案例中BookServiceImpl中有`save`,`update`,`delete`和`select`方法,这些方法我们给起了一个名字叫连接点
 
-(2)在BookServiceImpl的四个方法中，`update`和`delete`只有打印没有计算万次执行消耗时间，但是在运行的时候已经有该功能，那也就是说`update`和`delete`方法都已经被增强，所以对于需要增强的方法我们给起了一个名字叫==切入点==
+(2)在BookServiceImpl的四个方法中，`update`和`delete`只有打印没有计算万次执行消耗时间，但是在运行的时候已经有该功能，那也就是说`update`和`delete`方法都已经被增强，所以对于需要增强的方法我们给起了一个名字叫切入点
 
-(3)执行BookServiceImpl的update和delete方法的时候都被添加了一个计算万次执行消耗时间的功能，将这个功能抽取到一个方法中，换句话说就是存放共性功能的方法，我们给起了个名字叫==通知==
+(3)执行BookServiceImpl的update和delete方法的时候都被添加了一个计算万次执行消耗时间的功能，将这个功能抽取到一个方法中，换句话说就是存放共性功能的方法，我们给起了个名字叫通知
 
-(4)通知是要增强的内容，会有多个，切入点是需要被增强的方法，也会有多个，那哪个切入点需要添加哪个通知，就需要提前将它们之间的关系描述清楚，那么对于通知和切入点之间的关系描述，我们给起了个名字叫==切面==
+(4)通知是要增强的内容，会有多个，切入点是需要被增强的方法，也会有多个，那哪个切入点需要添加哪个通知，就需要提前将它们之间的关系描述清楚，那么对于通知和切入点之间的关系描述，我们给起了个名字叫切面
 
-(5)通知是一个方法，方法不能独立存在需要被写在一个类中，这个类我们也给起了个名字叫==通知类==
+(5)通知是一个方法，方法不能独立存在需要被写在一个类中，这个类我们也给起了个名字叫通知类
 
 至此AOP中的核心概念就已经介绍完了，总结下:
 
@@ -136,7 +136,7 @@ public class BookDaoImpl implements BookDao {
 
 简化设定：在方法执行前输出当前系统时间。
 
-对于SpringAOP的开发有两种方式，XML 和 ==注解==，我们使用哪个呢?
+对于SpringAOP的开发有两种方式，XML 和 注解，我们使用哪个呢?
 
 因为现在注解使用的比较多，所以本次课程就采用注解完成AOP的开发。
 
@@ -301,7 +301,7 @@ public class MyAdvice {
 }
 ```
 
-绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行==位置==
+绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行位置
 
 ![1630148447689](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630148447689.png)
 
@@ -415,7 +415,7 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
 
   * 匹配失败，创建原始对象,如`UserDao`
     * 匹配失败说明不需要增强，直接调用原始对象的方法即可。
-  * 匹配成功，创建原始对象（==目标对象==）的==代理==对象,如:`BookDao`
+  * 匹配成功，创建原始对象（目标对象）的代理对象,如:`BookDao`
     * 匹配成功说明需要对其进行增强
     * 对哪个类做增强，这个类对应的对象就叫做目标对象
     * 因为要对目标对象进行功能增强，而采用的技术是动态代理，所以会为其创建一个代理对象
@@ -657,14 +657,14 @@ execution(* com.itheima.*.*Service.save*(..))
 对于切入点表达式的编写其实是很灵活的，那么在编写的时候，有没有什么好的技巧让我们用用:
 
 - 所有代码按照标准规范开发，否则以下技巧全部失效
-- 描述切入点通**==常描述接口==**，而不描述实现类,如果描述到实现类，就出现紧耦合了
-- 访问控制修饰符针对接口开发均采用public描述（**==可省略访问控制修饰符描述==**）
+- 描述切入点通**常描述接口**，而不描述实现类,如果描述到实现类，就出现紧耦合了
+- 访问控制修饰符针对接口开发均采用public描述（**可省略访问控制修饰符描述**）
 - 返回值类型对于增删改类使用精准类型加速匹配，对于查询类使用\*通配快速描述
-- **==包名==**书写**==尽量不使用..匹配==**，效率过低，常用\*做单个包描述匹配，或精准匹配
-- **==接口名/类名==**书写名称与模块相关的**==采用\*匹配==**，例如UserService书写成\*Service，绑定业务层接口名
-- **==方法名==**书写以**==动词==**进行**==精准匹配==**，名词采用*匹配，例如getById书写成getBy*,selectAll书写成selectAll
+- **包名**书写**尽量不使用..匹配**，效率过低，常用\*做单个包描述匹配，或精准匹配
+- **接口名/类名**书写名称与模块相关的**采用匹配**，例如UserService书写成\*Service，绑定业务层接口名
+- **方法名**书写以**动词**进行**精准匹配**，名词采用*匹配，例如getById书写成getBy*,selectAll书写成selectAll
 - 参数规则较为复杂，根据业务方法灵活调整
-- 通常**==不使用异常==**作为**==匹配==**规则
+- 通常**不使用异常**作为**匹配**规则
 
 ## 4.2 AOP通知类型
 
@@ -672,7 +672,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 ![1630164718080](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630164718080.png)
 
-它所代表的含义是将`通知`添加到`切入点`方法执行的==前面==。
+它所代表的含义是将`通知`添加到`切入点`方法执行的前面。
 
 除了这个注解外，还有没有其他的注解，换个问题就是除了可以在前面加，能不能在其他的地方加?
 
@@ -688,7 +688,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 - 前置通知
 - 后置通知
-- **==环绕通知(重点)==**
+- **环绕通知(重点)**
 - 返回后通知(了解)
 - 抛出异常后通知(了解)
 
@@ -943,7 +943,7 @@ public class App {
 
 运行后会报错，错误内容为:
 
-Exception in thread "main" org.springframework.aop.AopInvocationException: ==Null return value from advice does not match primitive return type for: public abstract int com.itheima.dao.BookDao.select()==
+Exception in thread "main" org.springframework.aop.AopInvocationException: Null return value from advice does not match primitive return type for: public abstract int com.itheima.dao.BookDao.select()
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:226)
 	at com.sun.proxy.$Proxy19.select(Unknown Source)
 	at com.itheima.App.main(App.java:12)
@@ -1070,7 +1070,7 @@ public class MyAdvice {
 | 位置 | 通知方法定义上方                                             |
 | 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前后运行 |
 
-==**环绕通知注意事项**==
+**环绕通知注意事项**
 
 1. 环绕通知必须依赖形参ProceedingJoinPoint才能实现对原始方法的调用，进而实现原始方法调用前后同时添加通知
 2. 通知中如果未使用ProceedingJoinPoint对原始方法进行调用将跳过原始方法的执行
@@ -1437,7 +1437,7 @@ public class ProjectAdvice {
 
 
 
-==补充说明==
+补充说明
 
 当前测试的接口执行效率仅仅是一个理论值，并不是一次完整的执行过程。
 
@@ -1735,7 +1735,7 @@ public class MyAdvice {
 }
 ```
 
-==注意:==
+注意:
 
 (1)参数名的问题
 
@@ -1820,7 +1820,7 @@ public class BookDaoImpl implements BookDao {
 }
 ```
 
-==注意:==
+注意:
 
 ![1630239939043](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630239939043.png)
 
@@ -2056,7 +2056,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 ## 5.1 AOP的核心概念
 
 * 概念：AOP(Aspect Oriented Programming)面向切面编程，一种编程范式
-* 作用：在不惊动原始设计的基础上为方法进行功能==增强==
+* 作用：在不惊动原始设计的基础上为方法进行功能增强
 * 核心概念
   * 代理（Proxy）：SpringAOP的核心本质是采用代理模式实现的
   * 连接点（JoinPoint）：在SpringAOP中，理解为任意方法的执行
@@ -2082,10 +2082,10 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 
 * 切入点表达式书写技巧
 
-  1.按==标准规范==开发
+  1.按标准规范开发
   2.查询操作的返回值建议使用\*匹配
   3.减少使用..的形式描述包
-  4.==对接口进行描述==，使用\*表示模块名，例如UserService的匹配描述为*Service
+  4.对接口进行描述，使用\*表示模块名，例如UserService的匹配描述为*Service
   5.方法名书写保留动词，例如get，使用\*表示名词，例如getById匹配描述为getBy\*
   6.参数根据实际情况灵活调整
 
@@ -2120,7 +2120,7 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 ## 6.1.1 相关概念介绍
 
 - 事务作用：在数据层保障一系列的数据库操作同成功同失败
-- Spring事务作用：在数据层或**==业务层==**保障一系列的数据库操作同成功同失败
+- Spring事务作用：在数据层或**业务层**保障一系列的数据库操作同成功同失败
 
 数据层有事务我们可以理解，为什么业务层也需要处理事务呢?
 
@@ -2442,7 +2442,7 @@ public class AccountServiceImpl implements AccountService {
 }
 ```
 
-==注意:==
+注意:
 
 @Transactional可以写在接口类上、接口方法上、实现类上和实现类方法上
 
@@ -2450,7 +2450,7 @@ public class AccountServiceImpl implements AccountService {
 * 写在接口方法上，该接口的所有实现类的该方法都会有事务
 * 写在实现类上，该类中的所有方法都会有事务
 * 写在实现类方法上，该方法上有事务
-* ==建议写在实现类或实现类的方法上==
+* 建议写在实现类或实现类的方法上
 
 ### 步骤2:在JdbcConfig类中配置事务管理器
 
@@ -2554,7 +2554,7 @@ public class SpringConfig {
 - 事务管理员：发起事务方，在Spring中通常指代业务层开启事务的方法
 - 事务协调员：加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法
 
-==注意:==
+注意:
 
 目前的事务管理是基于`DataSourceTransactionManager`和`SqlSessionFactoryBean`使用的是同一个数据源。
 
@@ -2671,7 +2671,7 @@ public class SpringConfig {
 
 需要注意一点就是，我们这个案例的预期效果为:
 
-==无论转账操作是否成功，均进行转账操作的日志留痕==
+无论转账操作是否成功，均进行转账操作的日志留痕
 
 ### 6.3.2.2 环境准备
 
