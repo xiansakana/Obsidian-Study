@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day06-MySQL-03
+title: itheima-JavaWeb-day08-MySQL-03
 tags:
   - itheima
   - MySQL

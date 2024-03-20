@@ -1,5 +1,12 @@
 ---
-title: itheima-JavaWeb-day01-HTML-CSS
+title: itheima-JavaWeb-day12-SpringBootWeb登陆认证
+tags:
+  - itheima
+  - SpringBoot
+  - 后端
+  - JWT
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192207523.jpg'
 ---
 # 案例-登录认证
 

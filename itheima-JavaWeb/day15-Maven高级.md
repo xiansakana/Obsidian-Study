@@ -1,5 +1,11 @@
 ---
-title: itheima-JavaWeb-day01-HTML-CSS
+title: itheima-JavaWeb-day15-Maven高级
+tags:
+  - itheima
+  - Maven
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192209962.jpg'
 ---
 # Maven高级
 

@@ -1,5 +1,11 @@
 ---
-title: itheima-JavaWeb-day01-HTML-CSS
+title: itheima-JavaWeb-day11-SpringBootWeb案例-2
+tags:
+  - itheima
+  - SpringBoot
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192206099.jpg'
 ---
 # SpringBootWeb案例
 
