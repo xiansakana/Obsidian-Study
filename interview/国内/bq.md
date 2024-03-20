@@ -1,10 +1,10 @@
 ---
-title: Behavior Questions
+title: bq
 tags:
   - 面试
   - BQ
 categories: 求职
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050449090.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050449090.jpg
 abbrlink: 28a412e9
 ---
 
