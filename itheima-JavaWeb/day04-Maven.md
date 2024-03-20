@@ -5,7 +5,7 @@ tags:
   - Maven
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192154716.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192154716.jpg'
 ---
 # Maven
 

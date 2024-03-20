@@ -5,7 +5,7 @@ tags:
   - MyBatis
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192204537.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192204537.jpg'
 ---
 
 # 1. MyBatis基础操作

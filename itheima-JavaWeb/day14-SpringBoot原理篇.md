@@ -5,7 +5,7 @@ tags:
   - SpringBoot
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192208857.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208857.jpg'
 ---
 在前面十多天的课程当中，我们学习的都是web开发的技术使用，都是面向应用层面的，我们学会了怎么样去用。而我们今天所要学习的是web后端开发的最后一个篇章springboot原理篇，主要偏向于底层原理。
 

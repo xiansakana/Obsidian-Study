@@ -6,7 +6,7 @@ tags:
   - CSS
   - 前端
 categories: 前端
-cover: 'https://img.xiansakana.xyz/202403192146376.png'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192146376.png'
 ---
 
 # 1. 前端开发介绍

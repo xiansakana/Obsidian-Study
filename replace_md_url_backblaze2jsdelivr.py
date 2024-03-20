@@ -19,17 +19,17 @@ def replace_image_links_in_directory(directory, old_link_prefix, new_link_prefix
                     file.write(new_content)
 
 # 指定目录和需要替换的链接前缀
-directory_path = 'd:/notes/study/itheima/最新版JavaWeb开发教程'
-# old_link_prefix = 'img.xiansakana.xyz'
-old_link_prefix = 'assets/'
+directory_path = 'd:/notes/study/'
+old_link_prefix = 'img.xiansakana.xyz'
+# old_link_prefix = 'assets/'
 # old_link_prefix = 'zui-xin-ban-java-web-kai-fa-jiao-cheng1.0.2/assets2/'
 # old_link_prefix = 'cdn.cbd.int/xiansakana-blog-img'
 # old_link_prefix = 'cdn.jsdelivr.net/npm/xiansakana-blog-img'
 
 # new_link_prefix = 'img.xiansakana.xyz'
 # new_link_prefix = 'cdn.cbd.int/xiansakana-blog-img'
-# new_link_prefix = 'cdn.jsdelivr.net/npm/xiansakana-blog-img'
-new_link_prefix = 'https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets/'
+new_link_prefix = 'cdn.jsdelivr.net/npm/xiansakana-blog-img'
+# new_link_prefix = 'https://cdn.jsdelivr.net/npm/itheima-ssm/assets/'
 # new_link_prefix = 'zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/'
 # 执行替换操作
 replace_image_links_in_directory(directory_path, old_link_prefix, new_link_prefix)

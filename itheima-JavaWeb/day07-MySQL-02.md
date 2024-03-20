@@ -6,7 +6,7 @@ tags:
   - 数据库
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192159317.png'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192159317.png'
 ---
 # 数据库开发-MySQL
 

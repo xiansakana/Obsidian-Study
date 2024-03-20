@@ -6,7 +6,7 @@ tags:
   - 后端
   - AOP
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192208941.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
 ---
 
 

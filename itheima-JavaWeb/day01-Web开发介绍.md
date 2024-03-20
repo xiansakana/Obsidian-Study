@@ -4,7 +4,7 @@ tags:
   - itheima
   - Web
 categories: 杂项
-cover: 'https://img.xiansakana.xyz/202403192151538.png'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192151538.png'
 ---
 # Web开发介绍
 

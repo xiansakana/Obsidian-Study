@@ -6,7 +6,7 @@ tags:
   - 后端
   - JWT
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192207523.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
 ---
 # 案例-登录认证
 

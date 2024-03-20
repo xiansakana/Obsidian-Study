@@ -5,7 +5,7 @@ tags:
   - SpringBoot
   - 后端
 categories: 后端
-cover: 'https://img.xiansakana.xyz/202403192157955.jpg'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
 ---
 # SpringBootWeb请求响应
 

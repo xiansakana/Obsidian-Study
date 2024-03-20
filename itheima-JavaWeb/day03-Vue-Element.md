@@ -5,7 +5,7 @@ tags:
   - Vue
   - 前端
 categories: 前端
-cover: 'https://img.xiansakana.xyz/202403192153002.png'
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192153002.png'
 ---
 # 1 Ajax
 
