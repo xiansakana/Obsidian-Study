@@ -1,5 +1,11 @@
 ---
 title: Maven高级
+tags:
+  - itheima
+  - Maven
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192130933.jpg'
 ---
 
 ## Maven高级

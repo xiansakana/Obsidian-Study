@@ -1,5 +1,11 @@
 ---
 title: MyBatisPlus
+tags:
+  - itheima
+  - MyBatisPlus
+  - 后端
+categories: 后端
+cover: 'https://img.xiansakana.xyz/202403192132831.jpg'
 ---
 ## MyBatisPlus
 
