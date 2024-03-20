@@ -6,6 +6,7 @@ tags:
   - 前端
 categories: 前端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192153002.png'
+abbrlink: 4d5c83b2
 ---
 # 1 Ajax
 

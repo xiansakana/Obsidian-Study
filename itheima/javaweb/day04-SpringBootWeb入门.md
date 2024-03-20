@@ -6,6 +6,7 @@ tags:
   - 后端
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192155572.jpg'
+abbrlink: ab2f8f86
 ---
 # SpringBoot基础
 

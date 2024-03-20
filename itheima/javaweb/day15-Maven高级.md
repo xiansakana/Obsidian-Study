@@ -6,6 +6,7 @@ tags:
   - 后端
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192209962.jpg'
+abbrlink: c0746c51
 ---
 # Maven高级
 

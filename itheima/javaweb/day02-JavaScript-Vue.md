@@ -5,7 +5,8 @@ tags:
   - JavaScript
   - 前端
 categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192152556.png
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192152556.png'
+abbrlink: c57a55d4
 ---
 # 1 JavaScript
 

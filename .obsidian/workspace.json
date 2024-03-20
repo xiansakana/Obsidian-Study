@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "95c2d737be8f11b7",
+        "id": "3fa246dd5a2af5b5",
         "type": "tabs",
         "children": [
           {
-            "id": "898220b3cdd6a066",
+            "id": "a63a8ec78fcb4bfb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "itheima/javaweb/day01-HTML-CSS.md"
+              }
             }
           },
           {
@@ -161,15 +169,20 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "6ac5818d92ae7f06",
+  "active": "a63a8ec78fcb4bfb",
   "lastOpenFiles": [
+    "itheima/javaweb/day07-MySQL-02.md",
+    "itheima/javaweb/day09-MyBatis.md",
+    "itheima/ssm/Maven高级.md",
+    "itheima/ssm/MyBatisPlus.md",
+    "backend/Java.md",
+    "backend/Springboot.md",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/ssm/Spring_day02.md",
     "itheima/javaweb/day01-HTML-CSS.md",
     "itheima/ssm/SpringMVC_day02.md",
     "itheima/ssm/Spring_day01.md",
     "itheima/ssm/SpringMVC_day01.md",
-    "itheima/ssm/MyBatisPlus.md",
-    "itheima/ssm/Maven高级.md",
     "itheima/javaweb/day15-Maven高级.md",
     "itheima/javaweb/day12-SpringBootWeb登录认证.md",
     "itheima/javaweb/day13-SpringBootWeb AOP.md",
@@ -177,18 +190,13 @@
     "itheima/javaweb/day10-SpringBootWeb案例-1.md",
     "itheima/javaweb/day08-MySQL-03.md",
     "itheima/javaweb/day04-SpringBootWeb入门.md",
-    "backend/Springboot.md",
     "itheima/ssm/SpringBoot.md",
     "itheima/ssm/Spring_day03.md",
     "itheima/javaweb/day08-MyBatis入门.md",
     "frontend/React.md",
-    "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/javaweb/day03-Vue-Element.md",
     "itheima/javaweb/day14-SpringBoot原理篇.md",
-    "itheima/javaweb/day09-MyBatis.md",
-    "itheima/javaweb/day07-MySQL-02.md",
     "itheima/javaweb/day06-MySQL-01.md",
-    "itheima/javaweb/day05-SpringBootWeb请求响应.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",

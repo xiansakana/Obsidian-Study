@@ -5,7 +5,8 @@ tags:
   - MyBatis
   - 后端
 categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192204537.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192204537.jpg'
+abbrlink: 965bc544
 ---
 
 # 1. MyBatis基础操作
@@ -892,7 +893,7 @@ Mybatis的开发有两种方式：
 
 ![image-20221212153529732](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212153529732.png)
 
-> \<select>标签：就是用于编写select查询语句的。
+> `<select>`标签：就是用于编写select查询语句的。
 >
 > - resultType属性，指的是查询返回的单条记录所封装的类型。
 

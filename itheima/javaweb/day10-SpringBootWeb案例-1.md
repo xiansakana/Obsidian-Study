@@ -5,7 +5,8 @@ tags:
   - SpringBoot
   - 后端
 categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192205858.jpg'
+abbrlink: f7d4614b
 ---
 # SpringBootWeb案例
 
