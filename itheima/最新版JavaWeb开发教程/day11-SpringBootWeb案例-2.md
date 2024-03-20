@@ -5,7 +5,7 @@
 - 新增员工
 - 修改员工
 
-![image-20221216160009145](assets/image-20221216160009145.png)
+![image-20221216160009145](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216160009145.png)
 
 首先我们先完成"新增员工"的功能开发，再完成"修改员工"的功能开发。而在"新增员工"中，需要添加头像，而头像需要用到"文件上传"技术。 当整个员工管理功能全部开发完成之后，我们再通过配置文件来优化一些内容。
 
@@ -28,7 +28,7 @@
 
 ### 1.1 需求
 
-![image-20221216162622582](assets/image-20221216162622582.png) 
+![image-20221216162622582](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216162622582.png) 
 
 在新增用户时，我们需要保存用户的基本信息，并且还需要上传的员工的图片，目前我们先完成第一步操作，保存用户的基本信息。 
 
@@ -106,7 +106,7 @@
 
 新增员工的具体的流程：
 
-![image-20221216170946166](assets/image-20221216170946166.png)
+![image-20221216170946166](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216170946166.png)
 
 > 接口文档规定：
 >
@@ -216,7 +216,7 @@ public interface EmpMapper {
 
 代码开发完成后，重启服务器，打开Postman发送 POST 请求，请求路径：http://localhost:8080/emps
 
-![image-20221216181017910](assets/image-20221216181017910.png)
+![image-20221216181017910](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181017910.png)
 
 
 
@@ -224,9 +224,9 @@ public interface EmpMapper {
 
 功能测试通过后，我们再进行通过打开浏览器，测试后端功能接口：
 
-![image-20221216181511401](assets/image-20221216181511401.png)
+![image-20221216181511401](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181511401.png)
 
-![image-20221216181628331](assets/image-20221216181628331.png)
+![image-20221216181628331](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181628331.png)
 
 
 
@@ -240,7 +240,7 @@ public interface EmpMapper {
 
 在我们完成的新增员工功能中，还存在一个问题：没有头像(图片缺失)
 
-![image-20221216200653717](assets/image-20221216200653717.png)
+![image-20221216200653717](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216200653717.png)
 
 上述问题，需要我们通过文件上传技术来解决。下面我们就进入到文件上传技术的学习。
 
@@ -256,7 +256,7 @@ public interface EmpMapper {
 
 文件上传在项目中应用非常广泛，我们经常发微博、发微信朋友圈都用到了文件上传功能。
 
-![image-20221216203904713](assets/image-20221216203904713.png)
+![image-20221216203904713](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216203904713.png)
 
 > 在我们的案例中，在新增员工的时候，要上传员工的头像，此时就会涉及到文件上传的功能。在进行文件上传时，我们点击加号或者是点击图片，就可以选择手机或者是电脑本地的图片文件了。当我们选择了某一个图片文件之后，这个文件就会上传到服务器，从而完成文件上传的操作。
 
@@ -302,7 +302,7 @@ public interface EmpMapper {
 
 在提供的"课程资料"中有一个名叫"文件上传"的文件夹，直接将里的"upload.html"文件，复制到springboot项目工程下的static目录里面。
 
-![image-20221216210054136](assets/image-20221216210054136.png)
+![image-20221216210054136](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210054136.png)
 
 
 
@@ -312,21 +312,21 @@ public interface EmpMapper {
 
 1. 在IDEA中直接使用浏览器打开upload.html页面
 
-![image-20221216210643628](assets/image-20221216210643628.png)
+![image-20221216210643628](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210643628.png)
 
 
 
 2. 选择要上传的本地文件
 
-![image-20221216210938612](assets/image-20221216210938612.png)
+![image-20221216210938612](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210938612.png)
 
 
 
 3. 点击"提交"按钮，进入到开发者模式观察
 
-![image-20221216211629307](assets/image-20221216211629307.png)
+![image-20221216211629307](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216211629307.png)
 
-![image-20221216212152607](assets/image-20221216212152607.png)
+![image-20221216212152607](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216212152607.png)
 
 
 
@@ -343,9 +343,9 @@ public interface EmpMapper {
     </form>
 ~~~
 
-![image-20221216215320623](assets/image-20221216215320623.png)
+![image-20221216215320623](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216215320623.png)
 
-![image-20221216215041710](assets/image-20221216215041710.png)
+![image-20221216215041710](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216215041710.png)
 
 
 
@@ -361,7 +361,7 @@ public interface EmpMapper {
 
   > Spring中提供了一个API：MultipartFile，使用这个API就可以来接收到上传的文件
 
-![image-20221216215930807](assets/image-20221216215930807.png)
+![image-20221216215930807](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216215930807.png)
 
 > 问题：如果表单项的名字和方法中形参名不一致，该怎么办？
 >
@@ -399,23 +399,23 @@ public class UploadController {
 
 > 后端程序编写完成之后，打个断点，以debug方式启动SpringBoot项目
 
-![image-20221216222533720](assets/image-20221216222533720.png)
+![image-20221216222533720](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216222533720.png)
 
 > 打开浏览器输入：http://localhost:8080/upload.html ， 录入数据并提交
 
-![image-20221216222412510](assets/image-20221216222412510.png)
+![image-20221216222412510](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216222412510.png)
 
 通过后端程序控制台可以看到，上传的文件是存放在一个临时目录
 
-![image-20221216222802617](assets/image-20221216222802617.png)
+![image-20221216222802617](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216222802617.png)
 
 > 打开临时目录可以看到以下内容：
 
-![image-20221216223328710](assets/image-20221216223328710.png)
+![image-20221216223328710](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216223328710.png)
 
 > 表单提交的三项数据(姓名、年龄、文件)，分别存储在不同的临时文件中：
 
-![image-20221216223300846](assets/image-20221216223300846.png)
+![image-20221216223300846](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216223300846.png)
 
 > 当我们程序运行完毕之后，这个临时文件会自动删除。 
 >
@@ -465,11 +465,11 @@ public class UploadController {
 
 > 注意：请求参数名和controller方法形参名保持一致
 
-![image-20221227211742547](assets/image-20221227211742547.png)
+![image-20221227211742547](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221227211742547.png)
 
-![image-20221227214219279](assets/image-20221227214219279.png)
+![image-20221227214219279](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221227214219279.png)
 
-![image-20221227214753358](assets/image-20221227214753358.png)
+![image-20221227214753358](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221227214753358.png)
 
 通过postman测试，我们发现文件上传是没有问题的。但是由于我们是使用原始文件名作为所上传文件的存储名字，当我们再次上传一个名为1.jpg文件时，发现会把之前已经上传成功的文件覆盖掉。
 
@@ -504,7 +504,7 @@ public class UploadController {
 
 在解决了文件名唯一性的问题后，我们再次上传一个较大的文件(超出1M)时发现，后端程序报错：
 
-![image-20221227223851924](assets/image-20221227223851924.png)
+![image-20221227223851924](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221227223851924.png)
 
 报错原因呢是因为：在SpringBoot中，文件上传时默认单个文件最大大小为1M
 
@@ -522,7 +522,7 @@ spring.servlet.multipart.max-request-size=100MB
 
 到时此，我们文件上传的本地存储方式已完成了。但是这种本地存储方式还存在一问题： 
 
-![image-20220904200320964](assets/image-20220904200320964.png) 
+![image-20220904200320964](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200320964.png) 
 
 如果直接存储在服务器的磁盘目录中，存在以下缺点：
 
@@ -547,7 +547,7 @@ spring.servlet.multipart.max-request-size=100MB
 
 阿里云是阿里巴巴集团旗下全球领先的云计算公司，也是国内最大的云服务提供商 。
 
-![image-20221229093412464](assets/image-20221229093412464.png)
+![image-20221229093412464](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229093412464.png)
 
 > 云服务指的就是通过互联网对外提供的各种各样的服务，比如像：语音服务、短信服务、邮件服务、视频直播服务、文字识别服务、对象存储服务等等。
 >
@@ -557,17 +557,17 @@ spring.servlet.multipart.max-request-size=100MB
 
 阿里云对象存储OSS（Object Storage Service），是一款海量、安全、低成本、高可靠的云存储服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种文件。
 
-![image-20220904200642064](assets/image-20220904200642064.png) 
+![image-20220904200642064](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200642064.png) 
 
 在我们使用了阿里云OSS对象存储服务之后，我们的项目当中如果涉及到文件上传这样的业务，在前端进行文件上传并请求到服务端时，在服务器本地磁盘当中就不需要再来存储文件了。我们直接将接收到的文件上传到oss，由 oss帮我们存储和管理，同时阿里云的oss存储服务还保障了我们所存储内容的安全可靠。
 
-![image-20221229095709505](assets/image-20221229095709505.png)
+![image-20221229095709505](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229095709505.png)
 
 
 
 那我们学习使用这类云服务，我们主要学习什么呢？其实我们主要学习的是如何在项目当中来使用云服务完成具体的业务功能。而无论使用什么样的云服务，阿里云也好，腾讯云、华为云也罢，在使用第三方的服务时，操作的思路都是一样的。
 
-![image-20221229093911113](assets/image-20221229093911113.png)
+![image-20221229093911113](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229093911113.png)
 
 > SDK：Software Development Kit 的缩写，软件开发工具包，包括辅助软件开发的依赖（jar包）、代码示例等，都可以叫做SDK。
 >
@@ -575,7 +575,7 @@ spring.servlet.multipart.max-request-size=100MB
 
 第三方服务使用的通用思路，我们做一个简单介绍之后，接下来我们就来介绍一下我们当前要使用的阿里云oss对象存储服务具体的使用步骤。
 
-![image-20221229112451120](assets/image-20221229112451120.png)
+![image-20221229112451120](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229112451120.png)
 
 > Bucket：存储空间是用户用于存储对象（Object，就是文件）的容器，所有的对象都必须隶属于某个存储空间。
 
@@ -584,27 +584,27 @@ spring.servlet.multipart.max-request-size=100MB
 1. 注册阿里云账户（注册完成后需要实名认证）
 2. 注册完账号之后，就可以登录阿里云
 
-![image-20220904201839857](assets/image-20220904201839857.png) 
+![image-20220904201839857](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201839857.png) 
 
 3. 通过控制台找到对象存储OSS服务
 
-![image-20220904201932884](assets/image-20220904201932884.png) 
+![image-20220904201932884](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201932884.png) 
 
 > 如果是第一次访问，还需要开通对象存储服务OSS
 
-![image-20220904202537579](assets/image-20220904202537579.png) 
+![image-20220904202537579](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202537579.png) 
 
-![image-20220904202618423](assets/image-20220904202618423.png) 
+![image-20220904202618423](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202618423.png) 
 
 4. 开通OSS服务之后，就可以进入到阿里云对象存储的控制台
 
-![image-20220904201810832](assets/image-20220904201810832.png) 
+![image-20220904201810832](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201810832.png) 
 
 5. 点击左侧的 "Bucket列表"，创建一个Bucket
 
-![image-20220904202235180](assets/image-20220904202235180.png) 
+![image-20220904202235180](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202235180.png) 
 
-![](assets/image-20220904202824901.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202824901.png)
 
 > 大家可以参照"资料\04. 阿里云oss\"中提供的文档，开通阿里云OSS服务。
 
@@ -620,15 +620,15 @@ spring.servlet.multipart.max-request-size=100MB
 
 首先我们需要来打开阿里云OSS的官方文档，在官方文档中找到 SDK 的示例代码：
 
-![image-20221229121848524](assets/image-20221229121848524.png)
+![image-20221229121848524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229121848524.png)
 
-![image-20221229122046597](assets/image-20221229122046597.png)
+![image-20221229122046597](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229122046597.png)
 
 > 如果是在实际开发当中，我们是需要从前往后仔细的去阅读这一份文档的，但是由于现在是教学，我们就只挑重点的去看。有兴趣的同学大家下来也可以自己去看一下这份官方文档。
 
-![image-20221229144342148](assets/image-20221229144342148.png)
+![image-20221229144342148](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229144342148.png)
 
-![image-20221229160827124](assets/image-20221229160827124.png)
+![image-20221229160827124](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229160827124.png)
 
 参照官方提供的SDK，改造一下，即可实现文件上传功能：
 
@@ -705,11 +705,11 @@ public class AliOssTest {
 >
 > AccessKey ：
 >
-> ![image-20221128020105943](assets/image-20221128020105943.png) 
+> ![image-20221128020105943](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221128020105943.png) 
 
 运行以上程序后，会把本地的文件上传到阿里云OSS服务器上：
 
-![image-20221229161326919](assets/image-20221229161326919.png)
+![image-20221229161326919](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229161326919.png)
 
 
 
@@ -721,7 +721,7 @@ public class AliOssTest {
 
 阿里云oss对象存储服务的准备工作以及入门程序我们都已经完成了，接下来我们就需要在案例当中集成oss对象存储服务，来存储和管理案例中上传的图片。
 
-![image-20221229170235632](assets/image-20221229170235632.png)
+![image-20221229170235632](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229170235632.png)
 
 > 在新增员工的时候，上传员工的图像，而之所以需要上传员工的图像，是因为将来我们需要在系统页面当中访问并展示员工的图像。而要想完成这个操作，需要做两件事：
 >
@@ -853,7 +853,7 @@ public class UploadController {
 
 使用postman测试：
 
-![image-20230102175353270](assets/image-20230102175353270.png)
+![image-20230102175353270](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102175353270.png)
 
  
 
@@ -869,9 +869,9 @@ public class UploadController {
 
 需求：修改员工信息
 
-![image-20220904220001994](assets/image-20220904220001994.png)
+![image-20220904220001994](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220001994.png)
 
- <img src="assets/image-20220904220006578.png" style="zoom: 50%;" />
+ <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom: 50%;" />
 
 在进行修改员工信息的时候，我们首先先要根据员工的ID查询员工的信息用于页面回显展示，然后用户修改员工数据之后，点击保存按钮，就可以将修改的数据提交到服务端，保存到数据库。 具体操作为：
 
@@ -961,7 +961,7 @@ public class UploadController {
 
 #### 3.1.2 实现思路
 
-![image-20221230161841795](assets/image-20221230161841795.png)
+![image-20221230161841795](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230161841795.png)
 
 
 
@@ -1044,7 +1044,7 @@ public class EmpController {
 
 #### 3.1.4 postman测试
 
-![image-20221230170926513](assets/image-20221230170926513.png)
+![image-20221230170926513](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230170926513.png)
 
 
 
@@ -1054,7 +1054,7 @@ public class EmpController {
 
 ### 3.2 修改员工
 
-<img src="assets/image-20220904220006578.png" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom:67%;" />
 
 > 当用户修改完数据之后，点击保存按钮，就需要将数据提交到服务端，然后服务端需要将修改后的数据更新到数据库中。 
 
@@ -1128,7 +1128,7 @@ public class EmpController {
 
 #### 3.2.2 实现思路
 
-![image-20221230171342318](assets/image-20221230171342318.png)
+![image-20221230171342318](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230171342318.png)
 
 
 
@@ -1255,13 +1255,13 @@ public class EmpController {
 
 #### 3.2.4 postman测试
 
-![image-20220904221941144](assets/image-20220904221941144.png) 
+![image-20220904221941144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904221941144.png) 
 
 
 
 #### 3.2.5 前后端联调测试
 
-![image-20220904222028501](assets/image-20220904222028501.png) 
+![image-20220904222028501](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904222028501.png) 
 
 
 
@@ -1277,7 +1277,7 @@ public class EmpController {
 
 ### 4.1 参数配置化
 
-<img src="assets/image-20221231085558457.png" alt="image-20221231085558457" style="zoom: 80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221231085558457.png" alt="image-20221231085558457" style="zoom: 80%;" />
 
 在我们之前编写的程序中进行文件上传时，需要调用AliOSSUtils工具类，将文件上传到阿里云OSS对象存储服务当中。而在调用工具类进行文件上传时，需要一些参数：
 
@@ -1352,11 +1352,11 @@ public class AliOSSUtils {
  }   
 ~~~
 
-![image-20230102173905913](assets/image-20230102173905913.png)
+![image-20230102173905913](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102173905913.png)
 
 使用postman测试：
 
-![image-20230102175353270](assets/image-20230102175353270.png)
+![image-20230102175353270](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102175353270.png)
 
 
 
@@ -1401,7 +1401,7 @@ public class AliOSSUtils {
 
 常见配置文件格式对比：
 
-![image-20230102181215809](assets/image-20230102181215809.png)
+![image-20230102181215809](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102181215809.png)
 
 我们可以看到配置同样的数据信息，yml格式的数据有以下特点：
 
@@ -1419,7 +1419,7 @@ public class AliOSSUtils {
 - 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
 - `#`表示注释，从这个字符一直到行尾，都会被解析器忽略
 
-![image-20230103084645450](assets/image-20230103084645450.png)
+![image-20230103084645450](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103084645450.png)
 
 
 
@@ -1455,7 +1455,7 @@ hobby:
 
 原有application.properties文件：
 
-![image-20230103202630793](assets/image-20230103202630793.png)
+![image-20230103202630793](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103202630793.png)
 
 新建的application.yml文件：
 
@@ -1494,7 +1494,7 @@ aliyun:
 
 讲解完了yml配置文件之后，最后再来介绍一个注解`@ConfigurationProperties`。在介绍注解之前，我们先来看一个场景，分析下代码当中可能存在的问题：
 
-![image-20230103202919756](assets/image-20230103202919756.png)
+![image-20230103202919756](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103202919756.png)
 
 我们在application.properties或者application.yml中配置了阿里云OSS的四项参数之后，如果java程序中需要这四项参数数据，我们直接通过@Value注解来进行注入。这种方式本身没有什么问题问题，但是如果说需要注入的属性较多(例：需要20多个参数数据)，我们写起来就会比较繁琐。
 
@@ -1512,7 +1512,7 @@ Spring提供的简化方式套路：
 
 3. 在实体类上添加`@ConfigurationProperties`注解，并通过perfect属性来指定配置参数项的前缀
 
-![image-20230103210827003](assets/image-20230103210827003.png)
+![image-20230103210827003](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103210827003.png)
 
 
 
@@ -1592,7 +1592,7 @@ public class AliOSSUtils {
 
 在我们添加上注解后，会发现idea窗口上面出现一个红色警告：
 
-![image-20230103212042823](assets/image-20230103212042823.png) 
+![image-20230103212042823](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103212042823.png) 
 
 这个警告提示是告知我们还需要引入一个依赖：
 

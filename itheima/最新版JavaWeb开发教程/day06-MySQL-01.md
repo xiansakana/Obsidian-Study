@@ -10,11 +10,11 @@
 
 之前我们的案例中，是这样子的请求流程：浏览器发起请求，先请求Controller；Controller接收到请求之后，调用Service进行业务逻辑处理；Service再调用Dao，Dao再解析user.xml中所存储的数据。
 
-![image-20221205001241294](assets/image-20221205001241294.png)
+![image-20221205001241294](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205001241294.png)
 
 xml文件中可以存储数据，但是在企业项目开发中不会使用xml文件存储数据，因为不便管理维护，操作难度大。 在真实的企业开发中呢，都会采用数据库来存储和管理数据，那此时，web开发调用流程图如下所示：
 
-![image-20221205001346266](assets/image-20221205001346266.png)
+![image-20221205001346266](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205001346266.png)
 
 首先来了解一下什么是数据库。
 
@@ -22,7 +22,7 @@ xml文件中可以存储数据，但是在企业项目开发中不会使用xml�
 
 像我们日常访问的电商网站京东，企业内部的管理系统OA、ERP、CRM这类的系统，以及大家每天都会刷的头条、抖音类的app，那这些大家所看到的数据，其实都是存储在数据库中的。最终这些数据，只是在浏览器或app中展示出来而已，最终数据的存储和管理都是数据库负责的。
 
-![image-20221205001501275](assets/image-20221205001501275.png)
+![image-20221205001501275](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205001501275.png)
 
 数据是存储在数据库中的，那我们要如何来操作数据库以及数据库中所存放的数据呢？
 
@@ -38,7 +38,7 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 > 关系型数据库：我们后面会详细讲解，现在大家只需要知道我们学习的数据库属于关系型数据库即可。
 
-![image-20221205095039939](assets/image-20221205095039939.png)
+![image-20221205095039939](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205095039939.png)
 
 结论：程序员给数据库管理系统(DBMS)发送SQL语句，再由数据库管理系统操作数据库当中的数据。
 
@@ -46,7 +46,7 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 了解了数据库的一些简单概念之后，接下来我们再来介绍下目前主流的数据库，这里截取了排名前十的数据库：
 
-![image-20221205120408757](assets/image-20221205120408757.png) 
+![image-20221205120408757](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205120408757.png) 
 
 - Oracle：大型的收费数据库，Oracle公司产品，价格昂贵。（通常是不差钱的公司会选择使用这个数据库）
 - MySQL：开源免费的中小型数据库，后来Sun公司收购了MySQL，而Oracle又收购了Sun公司。目前Oracle推出两个版本的Mysql：社区版(开源免费)、商业版(收费)。
@@ -66,11 +66,11 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 课程内容安排：
 
-![image-20221205122731402](assets/image-20221205122731402.png)
+![image-20221205122731402](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205122731402.png)
 
 以上课程内容拆解为3部分知识点：
 
-![image-20221205122937131](assets/image-20221205122937131.png)
+![image-20221205122937131](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205122937131.png)
 
 接下来我们就先进入到第一天的Mysql概述学习。
 
@@ -80,7 +80,7 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 ## 1. MySQL概述
 
-![image-20220610191829748](assets/image-20220610191829748.png) 
+![image-20220610191829748](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220610191829748.png) 
 
 官网：https://dev.mysql.com/
 
@@ -104,9 +104,9 @@ MySQL官方提供了两个版本：
 
 官网下载地址：https://downloads.mysql.com/archives/community/
 
-![image-20221205140643412](assets/image-20221205140643412.png)
+![image-20221205140643412](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205140643412.png)
 
-这个安装包呢，大家可以不用下载，因为资料中已提供现成的安装包。 ![image-20221205140732982](assets/image-20221205140732982.png)
+这个安装包呢，大家可以不用下载，因为资料中已提供现成的安装包。 ![image-20221205140732982](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205140732982.png)
 
 > 安装MySQL具体的步骤，参考资料中提供的 《MySQL安装文档》 ，进行软件的安装即可。
 
@@ -128,11 +128,11 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 - 密码直接在-p参数之后直接指定 （这种方式不安全，密码直接以明文形式出现在命令行）
 
-![image-20221205143139656](assets/image-20221205143139656.png)
+![image-20221205143139656](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205143139656.png)
 
 - 密码在-p回车之后，在命令行中输入密码，然后回车
 
-![image-20221205143418632](assets/image-20221205143418632.png) 
+![image-20221205143418632](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205143418632.png) 
 
 
 
@@ -142,15 +142,15 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 上述的MySQL服务器我们是安装在本地的，这个仅仅是在我们学习阶段，在真实的企业开发中，MySQL数据库服务器是不会在我们本地安装的，是在公司的服务器上安装的，而服务器还需要放置在专门的IDC机房中的，IDC机房呢，就需要保证恒温、恒湿、恒压，而且还要保证网络、电源的可靠性(备用电源及网络)。
 
-![image-20220829110618240](assets/image-20220829110618240.png) 
+![image-20220829110618240](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110618240.png) 
 
 那我们要想使用服务器上的这台MySQL服务器，就需要在我们的电脑上去远程连接这台MySQL。 而服务器上安装的MySQL数据库呢，并不是你一个人在访问，我们项目组的其他开发人员也是需要访问这台MySQL的。
 
-![image-20220829110723526](assets/image-20220829110723526.png) 
+![image-20220829110723526](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110723526.png) 
 
 我们在学习阶段，如果想提前体验一下企业中数据库的使用方式，可以借助于VMware虚拟机来实现。我们可以在我们的电脑上安装一个VMware，然后在Vmware虚拟机上在安装一个服务器操作系统Linux，然后再在Linux服务器上安装各种企业级软件。
 
-![image-20220829111237340](assets/image-20220829111237340.png) 
+![image-20220829111237340](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111237340.png) 
 
 
 
@@ -162,7 +162,7 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 ```
 
-![image-20220829111522126](assets/image-20220829111522126.png)
+![image-20220829111522126](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111522126.png)
 
 
 
@@ -180,7 +180,7 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 而所谓二维表，指的是由行和列组成的表，如下图：
 
-![image-20221205145028667](assets/image-20221205145028667.png) 
+![image-20221205145028667](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205145028667.png) 
 
 二维表的优点：
 
@@ -200,7 +200,7 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 MySQL是关系型数据库，是基于二维表进行数据存储的，具体的结构图下:
 
-![image-20220829111741419](assets/image-20220829111741419.png) 
+![image-20220829111741419](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111741419.png) 
 
 - 通过MySQL客户端连接数据库管理系统DBMS，然后通过DBMS操作数据库
 - 使用MySQL客户端，向数据库管理系统发送一条SQL语句，由数据库管理系统根据SQL语句指令去操作数据库中的表结构及数据
@@ -226,15 +226,15 @@ SQL：结构化查询语言。一门操作关系型数据库的编程语言，�
 
 1、SQL语句可以单行或多行书写，以分号结尾。
 
-![image-20221205151656214](assets/image-20221205151656214.png)
+![image-20221205151656214](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205151656214.png)
 
 2、SQL语句可以使用空格/缩进来增强语句的可读性。
 
-![image-20221205151953441](assets/image-20221205151953441.png)
+![image-20221205151953441](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205151953441.png)
 
 3、MySQL数据库的SQL语句不区分大小写。
 
-![image-20221205152112070](assets/image-20221205152112070.png)
+![image-20221205152112070](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205152112070.png)
 
 4、注释：
 
@@ -256,7 +256,7 @@ SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
 | DQL      | Data Query Language         | 数据查询语言，用来查询数据库中表的记录                 |
 | DCL      | Data Control  Language      | 数据控制语言，用来创建数据库用户、控制数据库的访问权限 |
 
-![image-20221205152804250](assets/image-20221205152804250.png)  
+![image-20221205152804250](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205152804250.png)  
 
 
 
@@ -270,13 +270,13 @@ SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
 
 ### 2.1 项目开发流程
 
-![image-20220829112953742](assets/image-20220829112953742.png)
+![image-20220829112953742](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829112953742.png)
 
 需求文档：
 
 - 在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。
 
-![image-20221205154101142](assets/image-20221205154101142.png)
+![image-20221205154101142](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205154101142.png)
 
 设计：
 
@@ -324,7 +324,7 @@ show databases;
 
 命令行中执行效果如下：
 
-![image-20220829124104154](assets/image-20220829124104154.png) 
+![image-20220829124104154](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124104154.png) 
 
 **查询当前数据库：**
 
@@ -334,7 +334,7 @@ select database();
 
 命令行中执行效果如果：
 
-![image-20221205174615074](assets/image-20221205174615074.png)
+![image-20221205174615074](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205174615074.png)
 
 > 我们要操作某一个数据库，必须要切换到对应的数据库中。 
 >
@@ -358,11 +358,11 @@ create database itcast;
 
 命令行执行效果如下：
 
-![image-20220829124219427](assets/image-20220829124219427.png) 
+![image-20220829124219427](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124219427.png) 
 
 ==注意：在同一个数据库服务器中，不能创建两个名称相同的数据库，否则将会报错。==
 
-![image-20220829124250514](assets/image-20220829124250514.png)
+![image-20220829124250514](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124250514.png)
 
 - 可以使用if not exists来避免这个问题
 
@@ -371,7 +371,7 @@ create database itcast;
 create database if not extists itcast; 
 ```
 
- 命令行执行效果如下： ![image-20220829124326741](assets/image-20220829124326741.png) 
+ 命令行执行效果如下： ![image-20220829124326741](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124326741.png) 
 
 
 
@@ -393,7 +393,7 @@ use itcast;
 
 命令执行效果如下：
 
-![image-20220829124929708](assets/image-20220829124929708.png) 
+![image-20220829124929708](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124929708.png) 
 
 
 
@@ -417,14 +417,14 @@ drop database if exists itcast; -- itcast数据库存在时删除
 
 命令执行效果如下：
 
-![image-20220829125006142](assets/image-20220829125006142.png) 
+![image-20220829125006142](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829125006142.png) 
 
 > 说明：上述语法中的database，也可以替换成 schema
 >
 > - 如：create schema db01;
 > - 如：show schemas;
 >
-> ![image-20221205180608004](assets/image-20221205180608004.png)
+> ![image-20221205180608004](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205180608004.png)
 
 
 
@@ -444,7 +444,7 @@ drop database if exists itcast; -- itcast数据库存在时删除
 
 目前MySQL主流的图形化界面工具有以下几种：
 
-![image-20221205184802646](assets/image-20221205184802646.png)
+![image-20221205184802646](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205184802646.png)
 
 DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MySQL、Oracle、PostgreSQL的理想解决方案。
 
@@ -466,43 +466,43 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 1、打开IDEA自带的Database
 
-![image-20221205190929756](assets/image-20221205190929756.png)
+![image-20221205190929756](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205190929756.png)
 
 
 
 2、配置MySQL
 
-![image-20221205191143072](assets/image-20221205191143072.png)
+![image-20221205191143072](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205191143072.png)
 
 
 
 3、输入相关信息
 
-![image-20221205192606038](assets/image-20221205192606038.png) 
+![image-20221205192606038](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205192606038.png) 
 
 
 
 4、下载MySQL连接驱动
 
-![image-20221205192847190](assets/image-20221205192847190.png)
+![image-20221205192847190](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205192847190.png)
 
 
 
 5、测试数据库连接
 
-![image-20221205193304124](assets/image-20221205193304124.png)
+![image-20221205193304124](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205193304124.png)
 
 
 
 6、保存配置
 
-![image-20221205193409856](assets/image-20221205193409856.png)
+![image-20221205193409856](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205193409856.png)
 
 
 
 默认情况下，连接上了MySQL数据库之后， 数据库并没有全部展示出来。 需要选择要展示哪些数据库。具体操作如下：
 
-![](assets/8.gif)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/8.gif)
 
 
 
@@ -510,9 +510,9 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 **创建数据库：**
 
-![image-20221205195346655](assets/image-20221205195346655.png)
+![image-20221205195346655](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195346655.png)
 
-![image-20221205195510716](assets/image-20221205195510716.png)
+![image-20221205195510716](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195510716.png)
 
 > 有了图形化界面工具后，就可以方便的使用图形化工具：创建数据库，创建表、修改表等DDL操作。
 >
@@ -522,9 +522,9 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 **查看所有数据库：**
 
-![image-20221205195128343](assets/image-20221205195128343.png)
+![image-20221205195128343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195128343.png)
 
-![image-20221205195833439](assets/image-20221205195833439.png)
+![image-20221205195833439](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195833439.png)
 
 
 
@@ -557,7 +557,7 @@ create table  表名(
 
 - 对应的结构如下：
 
-![image-20220829143005524](assets/image-20220829143005524.png)  
+![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png)  
 
 - 建表语句： 
 
@@ -575,15 +575,15 @@ create table tb_user (
 
 双击打开tb_user表结构，大家会发现里面没有数据：
 
-![image-20221205211008929](assets/image-20221205211008929.png)
+![image-20221205211008929](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205211008929.png)
 
 添加数据：
 
-![](assets/9.gif) 
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/9.gif) 
 
 此时我们再插入一条数据：
 
-![image-20221205214447060](assets/image-20221205214447060.png) 
+![image-20221205214447060](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205214447060.png) 
 
 我们之前提到过：id字段是一行数据的唯一标识，不能有重复值。但是现在数据表中有两个相同的id值，这是为什么呢？
 
@@ -619,7 +619,7 @@ create table tb_user (
 
 - 对应的结构如下：
 
-![image-20220829143005524](assets/image-20220829143005524.png) 
+![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png) 
 
 > 在上述的表结构中:
 >
@@ -645,9 +645,9 @@ create table tb_user (
 
 > 数据表创建完成，接下来测试一下表中字段上的约束是否生效
 
-![image-20221205215309011](assets/image-20221205215309011.png)
+![image-20221205215309011](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205215309011.png)
 
-![image-20221205215632599](assets/image-20221205215632599.png)
+![image-20221205215632599](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205215632599.png)
 
 
 
@@ -670,7 +670,7 @@ create table tb_user (
 
 测试：主键自增
 
-![](assets/10.gif)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/10.gif)
 
 
 
@@ -765,11 +765,11 @@ char 与 varchar 都可以描述字符串，char是定长字符串，指定长�
 
 产品原型及需求如下：
 
-![image-20220829151032029](assets/image-20220829151032029.png)
+![image-20220829151032029](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151032029.png)
 
- ![](assets/image-20220829151228102.png)
+ ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151228102.png)
 
-![](assets/image-20220829151245450.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151245450.png)
 
 **步骤：**
 
@@ -802,11 +802,11 @@ create table emp (
 
 1. 在指定操作的数据库上，右键New ==> Table
 
-![image-20221205230447721](assets/image-20221205230447721.png)
+![image-20221205230447721](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205230447721.png)
 
 2. 编辑表结构的相关信息
 
-![image-20221205231846161](assets/image-20221205231846161.png)
+![image-20221205231846161](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205231846161.png)
 
 
 
@@ -820,7 +820,7 @@ create table emp (
 
 3. 再增加表设计所需要的业务基础字段(id主键、插入时间、修改时间)
 
-![image-20221205232253088](assets/image-20221205232253088.png)
+![image-20221205232253088](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205232253088.png)
 
 > 说明：
 >
@@ -844,7 +844,7 @@ create table emp (
 show tables;
 ```
 
-![image-20221205233746548](assets/image-20221205233746548.png)
+![image-20221205233746548](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205233746548.png)
 
 **查看指定表结构**
 
@@ -852,7 +852,7 @@ show tables;
 desc 表名 ;#可以查看指定表的字段、字段的类型、是否可以为NULL、是否存在默认值等信息
 ```
 
-![image-20221205234114053](assets/image-20221205234114053.png)
+![image-20221205234114053](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205234114053.png)
 
 **查询指定表的建表语句**
 
@@ -860,9 +860,9 @@ desc 表名 ;#可以查看指定表的字段、字段的类型、是否可以为
 show create table 表名 ;
 ```
 
-![image-20221205234334696](assets/image-20221205234334696.png)
+![image-20221205234334696](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205234334696.png)
 
-![image-20221205234444906](assets/image-20221205234444906.png)
+![image-20221205234444906](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205234444906.png)
 
 
 
@@ -884,9 +884,9 @@ alter table tb_emp add  qq  varchar(11) comment 'QQ号码';
 
 > 图形化操作：添加字段
 
-![image-20221205235542272](assets/image-20221205235542272.png)
+![image-20221205235542272](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205235542272.png)
 
-![image-20221205235657807](assets/image-20221205235657807.png)
+![image-20221205235657807](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205235657807.png)
 
 
 
@@ -914,9 +914,9 @@ alter table tb_emp change qq qq_num varchar(13) comment 'QQ号码';
 
 > 图形化操作：修改数据类型和字段名
 
-![image-20221205235950010](assets/image-20221205235950010.png)
+![image-20221205235950010](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205235950010.png)
 
-![image-20221206000030734](assets/image-20221206000030734.png)
+![image-20221206000030734](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000030734.png)
 
 
 
@@ -934,7 +934,7 @@ alter table tb_emp drop qq_num;
 
 > 图形化操作：删除字段
 
-![image-20221206000159237](assets/image-20221206000159237.png)
+![image-20221206000159237](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000159237.png)
 
 
 
@@ -952,7 +952,7 @@ rename table tb_emp to emp;
 
 > 图形化操作：修改表名
 
-![image-20221206000636659](assets/image-20221206000636659.png)
+![image-20221206000636659](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000636659.png)
 
 
 
@@ -976,7 +976,7 @@ drop table if exists tb_emp;  -- 在删除表时，表中的全部数据也会�
 
 > 图形化操作：删除表
 
-![image-20221206001026916](assets/image-20221206001026916.png) 
+![image-20221206001026916](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206001026916.png) 
 
 
 
@@ -1047,7 +1047,7 @@ values ('weifuwang', '韦一笑', 1, now(), now()),
 
 > 图形化操作：双击tb_emp表查看数据
 
-![image-20221206002807531](assets/image-20221206002807531.png)
+![image-20221206002807531](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206002807531.png)
 
 Insert操作的注意事项：
 
@@ -1081,7 +1081,7 @@ update tb_emp set name='张三',update_time=now() where id=1;
 update tb_emp set entrydate='2010-01-01',update_time=now();
 ```
 
-![image-20221206004425527](assets/image-20221206004425527.png)
+![image-20221206004425527](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206004425527.png)
 
 > 注意事项:
 >

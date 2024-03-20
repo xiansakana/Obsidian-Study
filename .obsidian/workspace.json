@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2f9c99b720aa90df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "8ba6fe9779eddec3",
             "type": "leaf",
             "state": {
@@ -54,20 +42,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "158228532100a60e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "miscellaneous/图床使用方案.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -133,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md",
+                "file": "miscellaneous/一些问题记录.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -173,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md"
+                "file": "miscellaneous/一些问题记录.md"
               }
             }
           },
@@ -217,36 +194,45 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "2f9c99b720aa90df",
+  "active": "2e9273bc5c596d24",
   "lastOpenFiles": [
     "itheima/最新版JavaWeb开发教程/day01-HTML-CSS.md",
-    "miscellaneous/图床使用方案.md",
-    "backend/Java.md",
-    "interview/bq/Behavior-Questions.md",
+    "itheima/最新版JavaWeb开发教程/day09-Mybatis.md",
+    "itheima/最新版JavaWeb开发教程/day08-MySQL-03.md",
+    "itheima/最新版JavaWeb开发教程/day08-Mybatis入门.md",
+    "itheima/最新版JavaWeb开发教程/day07-MySQL-02.md",
+    "itheima/最新版JavaWeb开发教程/day06-MySQL-01.md",
+    "itheima/最新版JavaWeb开发教程/day05-SpringBootWeb请求响应.md",
+    "itheima/最新版JavaWeb开发教程/day04-SpringBootWeb入门.md",
     "itheima/最新版JavaWeb开发教程/day04-Maven.md",
-    "backend/Springboot常用注解.md",
-    "algorithm/Top Interview 150.md",
-    "miscellaneous/一些问题记录.md",
-    "miscellaneous/Hexo搭建个人网站.md",
-    "miscellaneous/关于美国身份问题的常识.md",
-    "miscellaneous/前后端分离项目云服务器部署.md",
+    "itheima/最新版JavaWeb开发教程/day03-Vue-Element.md",
+    "itheima/最新版JavaWeb开发教程/day02-JavaScript-Vue.md",
+    "itheima/最新版JavaWeb开发教程/day01-Web开发介绍.md",
+    "itheima/最新版JavaWeb开发教程/day10-SpringBootWeb案例-1.md",
+    "miscellaneous/图床使用方案.md",
+    "itheima/day08-MySQL-03.md",
+    "itheima/day08-Mybatis入门.md",
+    "itheima/day07-MySQL-02.md",
+    "itheima/day06-MySQL-01.md",
+    "itheima/day05-SpringBootWeb请求响应.md",
+    "itheima/day04-SpringBootWeb入门.md",
+    "itheima/day04-Maven.md",
+    "itheima/day03-Vue-Element.md",
+    "itheima/day02-JavaScript-Vue.md",
+    "itheima/day01-Web开发介绍.md",
+    "itheima/day01-HTML-CSS.md",
+    "itheima/最新版JavaWeb开发教程/day15-Maven高级.md",
     "interview/国内/alternative.txt",
     "interview/国内",
     "interview/resume/others/74bd15c0a79dd43a50cb7dd5b93d84f7.jpg",
-    "(.md",
     "interview/inland/alternative.txt",
     "interview/inland/新建 文本文档.txt",
     "interview/inland",
     "interview/新建文件夹",
-    "interview/awesome-resume/Awesome-Resume.md",
-    "miscellaneous/Obsidian同步到Github-Windows.md",
-    "interview/resume/中文/Markdown-Resume/README.md",
     "copy_md_blog2obsidian.py",
     "copy_md_obsidian2blog copy.py",
     "copy_md_obsidian2blog.py",
     "replace_md_url_backblaze2jsdelivr.py",
-    "miscellaneous/Git常用版本控制指令.md",
-    "miscellaneous/Git-bash配置多个Github用户.md",
     "interview/resume/中文/Markdown-Resume/assets/tools-solid.svg",
     "interview/resume/中文/Markdown-Resume/assets/rss-solid.svg",
     "interview/resume/中文/Markdown-Resume/assets/project-diagram-solid.svg",
@@ -256,15 +242,6 @@
     "interview/resume/中文/Markdown-Resume/assets/info-circle-solid.svg",
     "interview/resume/中文/Markdown-Resume/assets/how-to.gif",
     "interview/resume/中文/Markdown-Resume/assets/graduation-cap-solid.svg",
-    "miscellaneous/Unblock-Netease-Music.md",
-    "backend/Springboot.md",
-    "language/Python.md",
-    "miscellaneous/Hexo博客增加书单集.md",
-    "interview/awesome-resume/Awesome-Resume 1.md",
-    "interview/awesome-resume/Awesome-resume.md",
-    "algorithm/lc预备知识.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/Github搭建免费图床.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

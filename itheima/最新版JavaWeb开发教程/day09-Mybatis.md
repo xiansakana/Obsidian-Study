@@ -10,11 +10,11 @@
 
 - 根据资料中提供的《tlias智能学习辅助系统》页面原型及需求，完成员工管理的需求开发。
 
-![image-20221210180155700](assets/image-20221210180155700.png) 
+![image-20221210180155700](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210180155700.png) 
 
-![image-20221210180343288](assets/image-20221210180343288.png)
+![image-20221210180343288](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210180343288.png)
 
-![image-20221210180515206](assets/image-20221210180515206.png)
+![image-20221210180515206](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210180515206.png)
 
 通过分析以上的页面原型和需求，我们确定了功能列表：
 
@@ -105,7 +105,7 @@ VALUES
 
 **创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）**
 
-![image-20221210182008131](assets/image-20221210182008131.png)
+![image-20221210182008131](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210182008131.png)
 
 
 
@@ -163,7 +163,7 @@ public interface EmpMapper {
 
 完成以上操作后，项目工程结构目录如下：
 
-![image-20221210182500817](assets/image-20221210182500817.png)
+![image-20221210182500817](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210182500817.png)
 
 
 
@@ -175,7 +175,7 @@ public interface EmpMapper {
 
 页面原型：
 
-![image-20221210183336095](assets/image-20221210183336095.png)
+![image-20221210183336095](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210183336095.png)
 
 > 当我们点击后面的"删除"按钮时，前端页面会给服务端传递一个参数，也就是该行数据的ID。 我们接收到ID后，根据ID删除数据即可。
 
@@ -255,7 +255,7 @@ mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 
 开启日志之后，我们再次运行单元测试，可以看到在控制台中，输出了以下的SQL语句信息：
 
-![image-20220901164225644](assets/image-20220901164225644.png) 
+![image-20220901164225644](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901164225644.png) 
 
 > 但是我们发现输出的SQL语句：delete from emp where id = ?，我们输入的参数16并没有在后面拼接，id的值是使用?进行占位。那这种SQL语句我们称为预编译SQL。
 
@@ -272,7 +272,7 @@ mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 1. 性能更高
 2. 更安全(防止SQL注入)
 
-![image-20221210202222206](assets/image-20221210202222206.png)
+![image-20221210202222206](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210202222206.png)
 
 > 性能更高：预编译SQL，编译一次之后会将编译后的SQL语句缓存起来，后面再次执行这条语句时，不会再次编译。（只是输入的参数不同）
 >
@@ -288,13 +288,13 @@ SQL注入：是通过操作输入的数据来修改事先定义好的SQL语句�
 
 **测试1：使用资料中提供的程序，来验证SQL注入问题**
 
-![image-20221210205419634](assets/image-20221210205419634.png)
+![image-20221210205419634](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210205419634.png)
 
 第1步：进入到DOS
 
-![image-20221211124744203](assets/image-20221211124744203.png)
+![image-20221211124744203](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211124744203.png)
 
-![image-20221211124840720](assets/image-20221211124840720.png)
+![image-20221211124840720](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211124840720.png)
 
 第2步：执行以下命令，启动程序
 
@@ -303,15 +303,15 @@ SQL注入：是通过操作输入的数据来修改事先定义好的SQL语句�
 java -jar sql_Injection_demo-0.0.1-SNAPSHOT.jar 
 ~~~
 
-![image-20221210211605231](assets/image-20221210211605231.png)
+![image-20221210211605231](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210211605231.png)
 
 第3步：打开浏览器输入`http://localhost:9090/login.html`
 
-![image-20221210212406527](assets/image-20221210212406527.png)
+![image-20221210212406527](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210212406527.png)
 
 发现竟然能够登录成功：
 
-![image-20221210212511915](assets/image-20221210212511915.png)
+![image-20221210212511915](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210212511915.png)
 
 
 
@@ -319,9 +319,9 @@ java -jar sql_Injection_demo-0.0.1-SNAPSHOT.jar
 
 - 由于没有对用户输入内容进行充分检查，而SQL又是字符串拼接方式而成，在用户输入参数时，在参数中添加一些SQL关键字，达到改变SQL运行结果的目的，从而完成恶意攻击。
 
-![image-20221210213311518](assets/image-20221210213311518.png)
+![image-20221210213311518](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210213311518.png)
 
-> ![image-20221210214431228](assets/image-20221210214431228.png)
+> ![image-20221210214431228](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210214431228.png)
 >
 > 用户在页面提交数据的时候人为的添加一些特殊字符，使得sql语句的结构发生了变化，最终可以在没有用户名或者密码的情况下进行登录。
 
@@ -340,15 +340,15 @@ java -jar sql_prepared_demo-0.0.1-SNAPSHOT.jar
 
 第3步：打开浏览器输入`http://localhost:9090/login.html`
 
-![image-20221210212406527](assets/image-20221210212406527.png)
+![image-20221210212406527](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221210212406527.png)
 
 发现无法登录：
 
-![image-20221211125751981](assets/image-20221211125751981.png)
+![image-20221211125751981](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211125751981.png)
 
 以上操作SQL语句的执行：
 
-![image-20221211130011973](assets/image-20221211130011973.png)
+![image-20221211130011973](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211130011973.png)
 
 > 把整个`' or '1'='1`作为一个完整的参数，赋值给第2个问号（`' or '1'='1`进行了转义，只当做字符串使用）
 
@@ -378,13 +378,13 @@ java -jar sql_prepared_demo-0.0.1-SNAPSHOT.jar
 
 功能：新增员工信息
 
-![image-20221211134239610](assets/image-20221211134239610.png)
+![image-20221211134239610](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211134239610.png)
 
 ### 1.4.1 基本新增
 
 员工表结构：
 
-![image-20221211134746319](assets/image-20221211134746319.png)
+![image-20221211134746319](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211134746319.png)
 
 SQL语句：
 
@@ -444,7 +444,7 @@ class SpringbootMybatisCrudApplicationTests {
 
 > 日志输出：
 >
-> ![image-20221211140222240](assets/image-20221211140222240.png)
+> ![image-20221211140222240](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211140222240.png)
 
 
 
@@ -458,11 +458,11 @@ class SpringbootMybatisCrudApplicationTests {
 
 > 如：添加套餐数据时，还需要维护套餐菜品关系表数据。
 >
-> ![image-20221211150353385](assets/image-20221211150353385.png)
+> ![image-20221211150353385](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221211150353385.png)
 >
 > 业务场景：在前面讲解到的苍穹外卖菜品与套餐模块的表结构，菜品与套餐是多对多的关系，一个套餐对应多个菜品。既然是多对多的关系，是不是有一张套餐菜品中间表来维护它们之间的关系。
 >
-> ![image-20221212093655389](assets/image-20221212093655389.png)
+> ![image-20221212093655389](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212093655389.png)
 >
 > 在添加套餐的时候，我们需要在界面当中来录入套餐的基本信息，还需要来录入套餐与菜品的关联信息。这些信息录入完毕之后，我们一点保存，就需要将套餐的信息以及套餐与菜品的关联信息都需要保存到数据库当中。其实具体的过程包括两步，首先第一步先需要将套餐的基本信息保存了，接下来第二步再来保存套餐与菜品的关联信息。套餐与菜品的关联信息就是往中间表当中来插入数据，来维护它们之间的关系。而中间表当中有两个外键字段，一个是菜品的ID，就是当前菜品的ID，还有一个就是套餐的ID，而这个套餐的 ID 指的就是此次我所添加的套餐的ID，所以我们在第一步保存完套餐的基本信息之后，就需要将套餐的主键值返回来供第二步进行使用。这个时候就需要用到主键返回功能。
 
@@ -525,7 +525,7 @@ class SpringbootMybatisCrudApplicationTests {
 
 功能：修改员工信息
 
-![image-20221212095605863](assets/image-20221212095605863.png)
+![image-20221212095605863](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212095605863.png)
 
 > 点击"编辑"按钮后，会查询所在行记录的员工信息，并把员工信息回显在修改员工的窗体上(下个知识点学习)
 >
@@ -595,7 +595,7 @@ class SpringbootMybatisCrudApplicationTests {
 
 在员工管理的页面中，当我们进行更新数据时，会点击 “编辑” 按钮，然后此时会发送一个请求到服务端，会根据Id查询该员工信息，并将员工数据回显在页面上。
 
-![image-20221212101331292](assets/image-20221212101331292.png) 
+![image-20221212101331292](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212101331292.png) 
 
 SQL语句：
 
@@ -631,7 +631,7 @@ class SpringbootMybatisCrudApplicationTests {
 
 > 执行结果：
 >
-> ![image-20221212103004961](assets/image-20221212103004961.png)
+> ![image-20221212103004961](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212103004961.png)
 >
 > 而在测试的过程中，我们会发现有几个字段(deptId、createTime、updateTime)是没有数据值的
 
@@ -643,7 +643,7 @@ class SpringbootMybatisCrudApplicationTests {
 
 我们看到查询返回的结果中大部分字段是有值的，但是deptId，createTime，updateTime这几个字段是没有值的，而数据库中是有对应的字段值的，这是为什么呢？
 
-![image-20221212103124490](assets/image-20221212103124490.png)
+![image-20221212103124490](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212103124490.png)
 
 原因如下： 
 
@@ -672,7 +672,7 @@ public Emp getById(Integer id);
 
 > 再次执行测试类：
 >
-> ![image-20221212111027396](assets/image-20221212111027396.png)
+> ![image-20221212111027396](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212111027396.png)
 
 
 
@@ -749,7 +749,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
 
 在员工管理的列表页面中，我们需要根据条件查询员工信息，查询条件包括：姓名、性别、入职时间。 
 
-![image-20221212113422924](assets/image-20221212113422924.png)
+![image-20221212113422924](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212113422924.png)
 
 通过页面原型以及需求描述我们要实现的查询：
 
@@ -787,7 +787,7 @@ public interface EmpMapper {
 }
 ```
 
-> ![image-20221212115149151](assets/image-20221212115149151.png)
+> ![image-20221212115149151](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212115149151.png)
 >
 > 以上方式注意事项：
 >
@@ -817,7 +817,7 @@ public interface EmpMapper {
 
 > 执行结果：生成的SQL都是预编译的SQL语句（性能高、安全）
 >
-> ![image-20221212120006242](assets/image-20221212120006242.png)
+> ![image-20221212120006242](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212120006242.png)
 
 
 
@@ -829,7 +829,7 @@ public interface EmpMapper {
 
 > 当方法中的形参名和SQL语句中的占位符参数名不相同时，就会出现以下问题：
 >
-> ![image-20221212150611796](assets/image-20221212150611796.png)
+> ![image-20221212150611796](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212150611796.png)
 
 
 
@@ -837,21 +837,21 @@ public interface EmpMapper {
 
 - 在springBoot的2.x版本（保证参数名一致）
 
-![image-20221212151156273](assets/image-20221212151156273.png)
+![image-20221212151156273](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212151156273.png)
 
 > springBoot的父工程对compiler编译插件进行了默认的参数parameters配置，使得在编译时，会在生成的字节码文件中保留原方法形参的名称，所以#{…}里面可以直接通过形参名获取对应的值
 >
-> ![image-20221212151411154](assets/image-20221212151411154.png)
+> ![image-20221212151411154](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212151411154.png)
 
 
 
 - 在springBoot的1.x版本/单独使用mybatis（使用@Param注解来指定SQL语句中的参数名）
 
-![image-20221212151628715](assets/image-20221212151628715.png)
+![image-20221212151628715](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212151628715.png)
 
 > 在编译时，生成的字节码文件当中，不会保留Mapper接口中方法的形参名称，而是使用var1、var2、...这样的形参名字，此时要获取参数值时，就要通过@Param注解来指定SQL语句中的参数名
 >
-> ![image-20221212151736274](assets/image-20221212151736274.png)
+> ![image-20221212151736274](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212151736274.png)
 
 
 
@@ -882,7 +882,7 @@ Mybatis的开发有两种方式：
 
 3. XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。
 
-![image-20221212153529732](assets/image-20221212153529732.png)
+![image-20221212153529732](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212153529732.png)
 
 > \<select>标签：就是用于编写select查询语句的。
 >
@@ -896,11 +896,11 @@ Mybatis的开发有两种方式：
 
 第1步：创建XML映射文件
 
-![image-20221212154908306](assets/image-20221212154908306.png)
+![image-20221212154908306](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212154908306.png)
 
-![image-20221212155304635](assets/image-20221212155304635.png)
+![image-20221212155304635](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212155304635.png)
 
-![image-20221212155544404](assets/image-20221212155544404.png)
+![image-20221212155544404](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212155544404.png)
 
 
 
@@ -922,7 +922,7 @@ Mybatis的开发有两种方式：
 
 配置：XML映射文件的namespace属性为Mapper接口全限定名
 
-![image-20221212160316644](assets/image-20221212160316644.png)
+![image-20221212160316644](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212160316644.png)
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -938,7 +938,7 @@ Mybatis的开发有两种方式：
 
 配置：XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致
 
-![image-20221212163528787](assets/image-20221212163528787.png)
+![image-20221212163528787](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212163528787.png)
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -960,7 +960,7 @@ Mybatis的开发有两种方式：
 
 > 运行测试类，执行结果：
 >
-> ![image-20221212163719534](assets/image-20221212163719534.png)
+> ![image-20221212163719534](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221212163719534.png)
 
 
 
@@ -972,11 +972,11 @@ MybatisX是一款基于IDEA的快速开发Mybatis的插件，为效率而生。
 
 MybatisX的安装：
 
-![image-20221213120923252](assets/image-20221213120923252.png)
+![image-20221213120923252](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213120923252.png)
 
 可以通过MybatisX快速定位：
 
-![image-20221213121521406](assets/image-20221213121521406.png)
+![image-20221213121521406](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213121521406.png)
 
 > MybatisX的使用在后续学习中会继续分享
 
@@ -986,7 +986,7 @@ MybatisX的安装：
 
 > 官方说明：https://mybatis.net.cn/getting-started.html
 >
-> ![image-20220901173948645](assets/image-20220901173948645.png) 
+> ![image-20220901173948645](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901173948645.png) 
 
 **结论：**使用Mybatis的注解，主要是来完成一些简单的增删改查功能。如果需要实现复杂的SQL功能，建议使用XML来配置映射语句。
 
@@ -1006,15 +1006,15 @@ MybatisX的安装：
 
 在页面原型中，列表上方的条件是动态的，是可以不传递的，也可以只传递其中的1个或者2个或者全部。
 
-![](assets/image-20220901172933012.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901172933012.png)
 
-![image-20220901173203491](assets/image-20220901173203491.png)
+![image-20220901173203491](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901173203491.png)
 
 而在我们刚才编写的SQL语句中，我们会看到，我们将三个条件直接写死了。 如果页面只传递了参数姓名name 字段，其他两个字段 性别 和 入职时间没有传递，那么这两个参数的值就是null。
 
 此时，执行的SQL语句为：
 
-![image-20220901173431554](assets/image-20220901173431554.png) 
+![image-20220901173431554](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901173431554.png) 
 
 
 
@@ -1040,7 +1040,7 @@ select *  from emp where name like '%张%' and gender = 1 order by update_time d
 
 SQL语句会随着用户的输入或外部条件的变化而变化，我们称为：**动态SQL**。
 
-![image-20221213122623278](assets/image-20221213122623278.png)
+![image-20221213122623278](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213122623278.png)
 
 在Mybatis中提供了很多实现动态SQL的标签，我们学习Mybatis中的动态SQL就是掌握这些动态SQL标签。
 
@@ -1114,7 +1114,7 @@ public void testList(){
 
 > 执行的SQL语句： 
 >
-> ![image-20221213140353285](assets/image-20221213140353285.png)
+> ![image-20221213140353285](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213140353285.png)
 
 
 
@@ -1135,9 +1135,9 @@ public void testList(){
 
 执行结果：
 
-![image-20221213141139015](assets/image-20221213141139015.png) 
+![image-20221213141139015](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213141139015.png) 
 
-![image-20221213141253355](assets/image-20221213141253355.png) 
+![image-20221213141253355](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213141253355.png) 
 
 
 
@@ -1156,7 +1156,7 @@ public void testList(){
 
 执行的SQL语句：
 
-![image-20221213143854434](assets/image-20221213143854434.png)
+![image-20221213143854434](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213143854434.png)
 
 
 
@@ -1200,7 +1200,7 @@ public void testList(){
 
 > 执行的SQL语句：
 >
-> ![image-20221213141909455](assets/image-20221213141909455.png)
+> ![image-20221213141909455](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213141909455.png)
 
 
 
@@ -1287,7 +1287,7 @@ public void testUpdate2(){
 
 > 执行的SQL语句：
 >
-> ![image-20221213152533851](assets/image-20221213152533851.png)
+> ![image-20221213152533851](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213152533851.png)
 
 
 
@@ -1308,7 +1308,7 @@ public void testUpdate2(){
 
 > 执行的SQL语句：
 >
-> ![image-20221213152850322](assets/image-20221213152850322.png)
+> ![image-20221213152850322](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213152850322.png)
 
 以上问题的解决方案：使用`<set>`标签代替SQL语句中的set关键字
 
@@ -1358,7 +1358,7 @@ public void testUpdate2(){
 
 > 再次执行测试方法，执行的SQL语句：
 >
-> ![image-20221213153329553](assets/image-20221213153329553.png)
+> ![image-20221213153329553](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213153329553.png)
 
 
 
@@ -1394,7 +1394,7 @@ public void testUpdate2(){
 
 案例：员工删除功能（既支持删除单条记录，又支持批量删除）
 
-![image-20220901181751004](assets/image-20220901181751004.png) 
+![image-20220901181751004](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901181751004.png) 
 
 SQL语句：
 
@@ -1438,11 +1438,11 @@ XML映射文件：
 </mapper> 
 ~~~
 
-> ![image-20221213165710141](assets/image-20221213165710141.png)
+> ![image-20221213165710141](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213165710141.png)
 
 > 执行的SQL语句：
 >
-> ![image-20221213164957636](assets/image-20221213164957636.png)
+> ![image-20221213164957636](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213164957636.png)
 
 
 
@@ -1454,9 +1454,9 @@ XML映射文件：
 
 - 在xml映射文件中配置的SQL，有时可能会存在很多重复的片段，此时就会存在很多冗余的代码
 
-![](assets/image-20220901182204358.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901182204358.png)
 
-![](assets/image-20220901182249421.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220901182249421.png)
 
 我们可以对重复的代码片段进行抽取，将其通过`<sql>`标签封装到一个SQL片段，然后再通过`<include>`标签进行引用。
 
@@ -1464,7 +1464,7 @@ XML映射文件：
 
 - `<include>`：通过属性refid，指定包含的SQL片段
 
-![image-20221213171244796](assets/image-20221213171244796.png)
+![image-20221213171244796](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221213171244796.png)
 
 SQL片段： 抽取重复的代码
 

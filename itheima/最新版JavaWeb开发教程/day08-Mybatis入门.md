@@ -30,7 +30,7 @@
 
 - 持久层：指的是就是数据访问层(dao)，是用来操作数据库的。
 
-![image-20220901114951631](assets/image-20220901114951631.png) 
+![image-20220901114951631](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901114951631.png) 
 
 - 框架：是一个半成品软件，是一套可重用的、通用的、软件基础代码模型。在框架的基础上进行软件开发更加高效、规范、通用、可拓展。
 
@@ -62,25 +62,25 @@ Mybatis课程安排：
 
 以前我们是在图形化客户端工具中编写SQL查询代码，发送给数据库执行，数据库执行后返回操作结果。
 
-![image-20221209155704203](assets/image-20221209155704203.png) 
+![image-20221209155704203](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209155704203.png) 
 
 
 
 图形化工具会把数据库执行的查询结果，使用表格的形式展现出来
 
-![image-20220901121116813](assets/image-20220901121116813.png) 
+![image-20220901121116813](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901121116813.png) 
 
 
 
 现在使用Mybatis操作数据库，就是在Mybatis中编写SQL查询代码，发送给数据库执行，数据库执行后返回结果。
 
-![image-20221209155904370](assets/image-20221209155904370.png)
+![image-20221209155904370](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209155904370.png)
 
 
 
  Mybatis会把数据库执行的查询结果，使用实体类封装起来（一行记录对应一个实体类对象）
 
-![image-20221209161623051](assets/image-20221209161623051.png)
+![image-20221209161623051](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209161623051.png)
 
 
 
@@ -104,9 +104,9 @@ Mybatis操作数据库的步骤：
 
 创建springboot工程，并导入 mybatis的起步依赖、mysql的驱动包。
 
-![image-20221209162827242](assets/image-20221209162827242.png)
+![image-20221209162827242](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209162827242.png)
 
-![image-20221209163123443](assets/image-20221209163123443.png)
+![image-20221209163123443](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209163123443.png)
 
 > 项目工程创建完成后，自动在pom.xml文件中，导入Mybatis依赖和MySQL驱动依赖
 
@@ -167,7 +167,7 @@ insert into user(id, name, age, gender, phone) VALUES (null,'光明左使',37,'1
 insert into user(id, name, age, gender, phone) VALUES (null,'光明右使',48,'1','18800000005');
 ```
 
-![image-20220901121116813](assets/image-20220901121116813.png) 
+![image-20220901121116813](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901121116813.png) 
 
 - 实体类
 
@@ -185,7 +185,7 @@ public class User {
 }
 ```
 
-![image-20221209170354143](assets/image-20221209170354143.png)
+![image-20221209170354143](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209170354143.png)
 
 
 
@@ -195,7 +195,7 @@ public class User {
 
 > 在之前使用图形化客户端工具，连接MySQL数据库时，需要配置：
 >
-> ![image-20221209172527630](assets/image-20221209172527630.png)
+> ![image-20221209172527630](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209172527630.png)
 >
 > 连接数据库的四大参数：
 >
@@ -235,7 +235,7 @@ spring.datasource.password=1234
 
 在创建出来的springboot工程中，在引导类所在包下，在创建一个包 mapper。在mapper包下创建一个接口 UserMapper ，这是一个持久层接口（Mybatis的持久层接口规范一般都叫 XxxMapper）。
 
-![image-20221209175843651](assets/image-20221209175843651.png)
+![image-20221209175843651](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209175843651.png)
 
 UserMapper：
 
@@ -308,17 +308,17 @@ public class MybatisQuickstartApplicationTests {
 
 默认我们在UserMapper接口上的@Select注解中编写SQL语句是没有提示的。如果想让idea给出提示，可以做如下配置：
 
-![image-20221210143348119](assets/image-20221210143348119.png)
+![image-20221210143348119](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210143348119.png)
 
 配置完成之后，发现SQL语句中的关键字有提示了，但还存在不识别表名(列名)的情况：
 
-![image-20221210143934318](assets/image-20221210143934318.png)
+![image-20221210143934318](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210143934318.png)
 
 > 产生原因：Idea和数据库没有建立连接，不识别表信息
 >
 > 解决方案：在Idea中配置MySQL数据库连接
 
-![image-20221210144139792](assets/image-20221210144139792.png) 
+![image-20221210144139792](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210144139792.png) 
 
 > 在配置的时候指定连接那个数据库，如上图所示连接的就是mybatis数据库。
 
@@ -342,7 +342,7 @@ public class MybatisQuickstartApplicationTests {
 
 JDBC： ( Java DataBase Connectivity )，就是使用Java语言操作关系型数据库的一套API。
 
-![image-20221210144811961](assets/image-20221210144811961.png) 
+![image-20221210144811961](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210144811961.png) 
 
 
 
@@ -455,7 +455,7 @@ public class JdbcTest {
 2. 查询结果的解析及封装非常繁琐
 3. 每一次查询数据库都需要获取连接,操作完毕后释放连接, 资源浪费, 性能降低
 
-![image-20221210153407998](assets/image-20221210153407998.png)
+![image-20221210153407998](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210153407998.png)
 
 
 
@@ -469,7 +469,7 @@ public class JdbcTest {
 
 3. 在mybatis中使用了数据库连接池技术，从而避免了频繁的创建连接、销毁连接而带来的资源浪费。
 
-![image-20221210154324151](assets/image-20221210154324151.png)
+![image-20221210154324151](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210154324151.png)
 
 > 使用SpringBoot+Mybatis的方式操作数据库，能够提升开发效率、降低资源浪费
 
@@ -512,13 +512,13 @@ public class JdbcTest {
 
 ### 3.1 介绍
 
-![image-20221210160341852](assets/image-20221210160341852.png)
+![image-20221210160341852](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210160341852.png)
 
 > 没有使用数据库连接池：
 >
 > - 客户端执行SQL语句：要先创建一个新的连接对象，然后执行SQL语句，SQL语句执行后又需要关闭连接对象从而释放资源，每次执行SQL时都需要创建连接、销毁链接，这种频繁的重复创建销毁的过程是比较耗费计算机的性能。
 
-![image-20221210161016314](assets/image-20221210161016314.png)
+![image-20221210161016314](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210161016314.png)
 
 数据库连接池是个容器，负责分配、管理数据库连接(Connection)
 
@@ -567,7 +567,7 @@ public class JdbcTest {
 
 - Hikari（追光者） [默认的连接池] 
 
-![image-20220901144923251](assets/image-20220901144923251.png) 
+![image-20220901144923251](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901144923251.png) 
 
 * Druid（德鲁伊）
 
@@ -626,7 +626,7 @@ spring.datasource.password=1234
 
 Lombok是一个实用的Java类库，可以通过简单的注解来简化和消除一些必须有但显得很臃肿的Java代码。
 
-![image-20221210164641266](assets/image-20221210164641266.png)
+![image-20221210164641266](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210164641266.png)
 
 > 通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。
 
@@ -670,7 +670,7 @@ public class User {
 
 > 在实体类上添加了@Data注解，那么这个类在编译时期，就会生成getter/setter、equals、hashcode、toString等方法。
 >
-> ![image-20221210170733921](assets/image-20221210170733921.png)
+> ![image-20221210170733921](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210170733921.png)
 
 说明：@Data注解中不包含全参构造方法，通常在实体类上，还会添加上：全参构造、无参构造
 
@@ -696,7 +696,7 @@ Lombok的注意事项：
 - Lombok会在编译时，会自动生成对应的java代码
 - 在使用lombok时，还需要安装一个lombok的插件（新版本的IDEA中自带）
 
-![image-20221210165506359](assets/image-20221210165506359.png)
+![image-20221210165506359](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210165506359.png)
 
 
 

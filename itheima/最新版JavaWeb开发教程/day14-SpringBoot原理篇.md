@@ -48,7 +48,7 @@ server:
 
 - properties、yaml、yml三种配置文件同时存在
 
-![image-20230113144757856](assets/image-20230113144757856.png)
+![image-20230113144757856](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113144757856.png)
 
 > properties、yaml、yml三种配置文件，优先级最高的是properties
 
@@ -56,7 +56,7 @@ server:
 
 - yaml、yml两种配置文件同时存在
 
-![image-20230113145158771](assets/image-20230113145158771.png)
+![image-20230113145158771](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113145158771.png)
 
 > 配置文件优先级排名（从高到低）：
 >
@@ -88,19 +88,19 @@ server:
 
 - 编辑启动程序的配置信息
 
-![image-20230113162746634](assets/image-20230113162746634.png)
+![image-20230113162746634](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113162746634.png)
 
-![image-20230113162639630](assets/image-20230113162639630.png)
+![image-20230113162639630](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113162639630.png)
 
 重启服务，同时配置Tomcat端口(三种配置文件、系统属性、命令行参数)，测试哪个Tomcat端口号生效：
 
-![image-20230113165006550](assets/image-20230113165006550.png)
+![image-20230113165006550](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113165006550.png)
 
 
 
 删除命令行参数配置，重启SpringBoot服务：
 
-![image-20230113170841253](assets/image-20230113170841253.png)
+![image-20230113170841253](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113170841253.png)
 
 > 优先级： 命令行参数 >  系统属性参数 > properties参数 > yml参数 > yaml参数
 
@@ -121,19 +121,19 @@ java -Dserver.port=9000 -jar XXXXX.jar --server.port=10010
 
 项目打包：
 
-![image-20230113172313655](assets/image-20230113172313655.png)
+![image-20230113172313655](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113172313655.png)
 
-![image-20230113172854016](assets/image-20230113172854016.png)
+![image-20230113172854016](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113172854016.png)
 
 运行jar程序：
 
 - 同时设置Java系统属性和命令行参数
 
-![image-20230113172659269](assets/image-20230113172659269.png)
+![image-20230113172659269](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113172659269.png)
 
 - 仅设置Java系统属性
 
-![image-20230113173228232](assets/image-20230113173228232.png)
+![image-20230113173228232](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113173228232.png)
 
 > 注意事项：
 >
@@ -311,7 +311,7 @@ class SpringbootWebConfig2ApplicationTests {
 
 程序运行后控制台日志：
 
-![image-20230113211619818](assets/image-20230113211619818.png)
+![image-20230113211619818](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113211619818.png)
 
 > 问题：输出的bean对象地址值是一样的，说明IOC容器当中的bean对象有几个？
 >
@@ -347,7 +347,7 @@ class SpringbootWebConfig2ApplicationTests {
 
 - 可以借助Spring中的@Scope注解来进行配置作用域
 
-![image-20230113214244144](assets/image-20230113214244144.png)
+![image-20230113214244144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230113214244144.png)
 
 
 
@@ -397,7 +397,7 @@ class SpringbootWebConfig2ApplicationTests {
 
 重启SpringBoot服务，运行测试方法，查看控制台打印的日志：
 
-![image-20230114001348839](assets/image-20230114001348839.png)
+![image-20230114001348839](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114001348839.png)
 
 > 注意事项：
 >
@@ -433,7 +433,7 @@ public class DeptController {
 
 重启SpringBoot服务，再次执行测试方法，查看控制吧打印的日志：
 
-![image-20230114001736151](assets/image-20230114001736151.png)
+![image-20230114001736151](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114001736151.png)
 
 > 注意事项：
 >
@@ -470,7 +470,7 @@ public class DeptController {
 
 - 按照我们之前的做法，需要在SAXReader类上添加一个注解@Component（将当前类交给IOC容器管理）
 
-![image-20230114003903285](assets/image-20230114003903285.png)
+![image-20230114003903285](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114003903285.png)
 
 > 结论：第三方提供的类是只读的。无法在第三方类上添加@Component注解或衍生注解。
 
@@ -606,7 +606,7 @@ SpringBoot使我们能够集中精力地去关注业务功能的开发，而不�
 
 在剖析SpringBoot的原理之前，我们先来快速回顾一下我们前面所讲解的Spring家族的框架。
 
-![image-20230114171304644](assets/image-20230114171304644.png)
+![image-20230114171304644](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114171304644.png)
 
 Spring是目前世界上最流行的Java框架，它可以帮助我们更加快速、更加容易的来构建Java项目。而在Spring家族当中提供了很多优秀的框架，而所有的框架都是基于一个基础框架的SpringFramework(也就是Spring框架)。而前面我们也提到，如果我们直接基于Spring框架进行项目的开发，会比较繁琐。
 
@@ -617,7 +617,7 @@ Spring是目前世界上最流行的Java框架，它可以帮助我们更加快�
 1. 在pom.xml中依赖配置比较繁琐，在项目开发时，需要自己去找到对应的依赖，还需要找到依赖它所配套的依赖以及对应版本，否则就会出现版本冲突问题。
 2. 在使用Spring框架进行项目开发时，需要在Spring的配置文件中做大量的配置，这就造成Spring框架入门难度较大，学习成本较高。
 
-![image-20230114170610438](assets/image-20230114170610438.png)
+![image-20230114170610438](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114170610438.png)
 
 > 基于Spring存在的问题，官方在Spring框架4.0版本之后，又推出了一个全新的框架：SpringBoot。
 >
@@ -625,7 +625,7 @@ Spring是目前世界上最流行的Java框架，它可以帮助我们更加快�
 
 SpringBoot框架之所以使用起来更简单更快捷，是因为SpringBoot框架底层提供了两个非常重要的功能：一个是起步依赖，一个是自动配置。
 
-![image-20230114172442018](assets/image-20230114172442018.png)
+![image-20230114172442018](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114172442018.png)
 
 > 通过SpringBoot所提供的起步依赖，就可以大大的简化pom文件当中依赖的配置，从而解决了Spring框架当中依赖配置繁琐的问题。
 >
@@ -641,7 +641,7 @@ SpringBoot框架之所以使用起来更简单更快捷，是因为SpringBoot框
 
 假如我们没有使用SpringBoot，用的是Spring框架进行web程序的开发，此时我们就需要引入web程序开发所需要的一些依赖。
 
-![image-20230114173645101](assets/image-20230114173645101.png)
+![image-20230114173645101](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114173645101.png)
 
 > spring-webmvc依赖：这是Spring框架进行web程序开发所需要的依赖
 >
@@ -657,7 +657,7 @@ SpringBoot框架之所以使用起来更简单更快捷，是因为SpringBoot框
 
 如果我们使用了SpringBoot，就不需要像上面这么繁琐的引入依赖了。我们只需要引入一个依赖就可以了，那就是web开发的起步依赖：springboot-starter-web。
 
-![image-20230114174805852](assets/image-20230114174805852.png)
+![image-20230114174805852](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114174805852.png)
 
 为什么我们只需要引入一个web开发的起步依赖，web开发所需要的所有的依赖都有了呢？
 
@@ -687,17 +687,17 @@ SpringBoot的自动配置就是当Spring容器启动后，一些配置类、bean
 
 - 运行SpringBoot启动类
 
-![image-20230114205745221](assets/image-20230114205745221.png)
+![image-20230114205745221](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114205745221.png)
 
-![image-20230114213945851](assets/image-20230114213945851.png)
+![image-20230114213945851](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114213945851.png)
 
-![image-20230114212750007](assets/image-20230114212750007.png)
+![image-20230114212750007](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114212750007.png)
 
 大家会看到有两个CommonConfig，在第一个CommonConfig类中定义了一个bean对象，bean对象的名字叫reader。
 
 在第二个CommonConfig中它的bean名字叫commonConfig，为什么还会有这样一个bean对象呢？原因是在CommonConfig配置类上添加了一个注解@Configuration，而@Configuration底层就是@Component
 
-![image-20230114220159619](assets/image-20230114220159619.png)
+![image-20230114220159619](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114220159619.png)
 
 > 所以配置类最终也是SpringIOC容器当中的一个bean对象
 
@@ -705,7 +705,7 @@ SpringBoot的自动配置就是当Spring容器启动后，一些配置类、bean
 
 在IOC容器中除了我们自己定义的bean以外，还有很多配置类，这些配置类都是SpringBoot在启动的时候加载进来的配置类。这些配置类加载进来之后，它也会生成很多的bean对象。
 
-![image-20230114221341811](assets/image-20230114221341811.png)
+![image-20230114221341811](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114221341811.png)
 
 > 比如：配置类GsonAutoConfiguration里面有一个bean，bean的名字叫gson，它的类型是Gson。 
 >
@@ -739,7 +739,7 @@ public class AutoConfigurationTests {
 
 添加断点，使用debug模式运行测试类程序：
 
-![image-20230114222245520](assets/image-20230114222245520.png)
+![image-20230114222245520](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114222245520.png)
 
 
 
@@ -767,7 +767,7 @@ public class AutoConfigurationTests {
 
 1、在SpringBoot项目 spring-boot-web-config2 工程中，通过坐标引入itheima-utils依赖
 
-![image-20230114224107653](assets/image-20230114224107653.png)
+![image-20230114224107653](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114224107653.png)
 
 ~~~java
 @Component
@@ -803,7 +803,7 @@ public class AutoConfigurationTests {
 
 3、执行测试方法
 
-![image-20230114225018255](assets/image-20230114225018255.png)
+![image-20230114225018255](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114225018255.png)
 
 > 异常信息描述： 没有com.example.TokenParse类型的bean
 >
@@ -843,7 +843,7 @@ public class SpringbootWebConfig2Application {
 
 重新执行测试方法，控制台日志输出：
 
-![image-20230114231121016](assets/image-20230114231121016.png)
+![image-20230114231121016](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114231121016.png)
 
 > 大家可以想象一下，如果采用以上这种方式来完成自动配置，那我们进行项目开发时，当需要引入大量的第三方的依赖，就需要在启动类上配置N多要扫描的包，这种方式会很繁琐。而且这种大面积的扫描性能也比较低。
 >
@@ -881,7 +881,7 @@ public class SpringbootWebConfig2Application {
 
 > 重新执行测试方法，控制台日志输出：
 >
-> ![image-20230114231709392](assets/image-20230114231709392.png)
+> ![image-20230114231709392](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114231709392.png)
 
 
 
@@ -940,7 +940,7 @@ public class AutoConfigurationTests {
 
 > 执行测试方法：
 >
-> ![image-20230114233252259](assets/image-20230114233252259.png)
+> ![image-20230114233252259](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114233252259.png)
 
 
 
@@ -973,7 +973,7 @@ public class SpringbootWebConfig2Application {
 
 > 执行测试方法：
 >
-> ![image-20230114234222946](assets/image-20230114234222946.png)
+> ![image-20230114234222946](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114234222946.png)
 
 
 
@@ -1028,7 +1028,7 @@ public class SpringbootWebConfig2Application {
 
 > 执行测试方法：
 >
-> ![image-20230114233252259](assets/image-20230114233252259.png)
+> ![image-20230114233252259](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114233252259.png)
 
 以上四种方式都可以完成导入操作，但是第4种方式会更方便更优雅，而这种方式也是SpringBoot当中所采用的方式。
 
@@ -1048,7 +1048,7 @@ public class SpringbootWebConfig2Application {
 
 要搞清楚SpringBoot的自动配置原理，要从SpringBoot启动类上使用的核心注解@SpringBootApplication开始分析：
 
-![image-20230115001439110](assets/image-20230115001439110.png)
+![image-20230115001439110](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115001439110.png)
 
 
 
@@ -1063,7 +1063,7 @@ public class SpringbootWebConfig2Application {
 
 我们先来看第一个注解：@SpringBootConfiguration
 
-![image-20230115001950076](assets/image-20230115001950076.png)
+![image-20230115001950076](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115001950076.png)
 
 > @SpringBootConfiguration注解上使用了@Configuration，表明SpringBoot启动类就是一个配置类。
 >
@@ -1073,7 +1073,7 @@ public class SpringbootWebConfig2Application {
 
 接下来再先看@ComponentScan注解：
 
-![image-20230115002450993](assets/image-20230115002450993.png)
+![image-20230115002450993](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115002450993.png)
 
 > @ComponentScan注解是用来进行组件扫描的，扫描启动类所在的包及其子包下所有被@Component及其衍生注解声明的类。
 >
@@ -1083,7 +1083,7 @@ public class SpringbootWebConfig2Application {
 
 最后我们来看看@EnableAutoConfiguration注解（自动配置核心注解）：
 
-![image-20230115002743115](assets/image-20230115002743115.png)
+![image-20230115002743115](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115002743115.png)
 
 
 
@@ -1091,19 +1091,19 @@ public class SpringbootWebConfig2Application {
 >
 > AutoConfigurationImportSelector类是ImportSelector接口的实现类。
 >
-> ![image-20230115003242549](assets/image-20230115003242549.png)
+> ![image-20230115003242549](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115003242549.png)
 
 AutoConfigurationImportSelector类中重写了ImportSelector接口的selectImports()方法：
 
-![image-20230115003348288](assets/image-20230115003348288.png)
+![image-20230115003348288](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115003348288.png)
 
 > selectImports()方法底层调用getAutoConfigurationEntry()方法，获取可自动配置的配置类信息集合
 
-![image-20230115003704385](assets/image-20230115003704385.png)
+![image-20230115003704385](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115003704385.png)
 
 > getAutoConfigurationEntry()方法通过调用getCandidateConfigurations(annotationMetadata, attributes)方法获取在配置文件中配置的所有自动配置类的集合
 
-![image-20230115003903302](assets/image-20230115003903302.png)
+![image-20230115003903302](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115003903302.png)
 
 > getCandidateConfigurations方法的功能：
 >
@@ -1115,9 +1115,9 @@ META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
 
 - 通常在引入的起步依赖中，都有包含以上两个文件
 
-![image-20230129090835964](assets/image-20230129090835964.png) 
+![image-20230129090835964](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230129090835964.png) 
 
-![image-20230115064329460](assets/image-20230115064329460.png)
+![image-20230115064329460](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115064329460.png)
 
 
 
@@ -1125,17 +1125,17 @@ META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
 
 在META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports配置文件中指定了第三方依赖Gson的配置类：GsonAutoConfiguration
 
-![image-20230115005159530](assets/image-20230115005159530.png)
+![image-20230115005159530](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115005159530.png)
 
 
 
 第三方依赖中提供的GsonAutoConfiguration类：
 
-![image-20230115005418900](assets/image-20230115005418900.png)
+![image-20230115005418900](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115005418900.png)
 
 > 在GsonAutoConfiguration类上，添加了注解@AutoConfiguration，通过查看源码，可以明确：GsonAutoConfiguration类是一个配置。
 >
-> ![image-20230115065247287](assets/image-20230115065247287.png)
+> ![image-20230115065247287](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115065247287.png)
 
 看到这里，大家就应该明白为什么可以完成自动配置了，原理就是在配置类中定义一个@Bean标识的方法，而Spring会自动调用配置类中使用@Bean标识的方法，并把方法的返回值注册到IOC容器中。
 
@@ -1232,7 +1232,7 @@ public class AutoConfigurationTests {
 
 > 执行testHeaderParser()测试方法：
 >
-> ![image-20230115203748022](assets/image-20230115203748022.png)
+> ![image-20230115203748022](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115203748022.png)
 >
 > 因为io.jsonwebtoken.Jwts字节码文件在启动SpringBoot程序时已存在，所以创建HeaderParser对象并注册到IOC容器中。
 
@@ -1256,7 +1256,7 @@ public class HeaderConfig {
 
 > 执行testHeaderParser()测试方法：
 >
-> ![image-20230115211029855](assets/image-20230115211029855.png)
+> ![image-20230115211029855](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115211029855.png)
 >
 > SpringBoot在调用@Bean标识的headerParser()前，IOC容器中是没有HeaderParser类型的bean，所以HeaderParser对象正常创建，并注册到IOC容器中。
 
@@ -1280,7 +1280,7 @@ public class HeaderConfig {
 
 > 执行testHeaderParser()测试方法：
 >
-> ![image-20230115211351681](assets/image-20230115211351681.png)
+> ![image-20230115211351681](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115211351681.png)
 >
 > 因为在SpringBoot环境中不存在名字叫deptController2的bean对象，所以创建HeaderParser对象并注册到IOC容器中。
 
@@ -1319,7 +1319,7 @@ public class AutoConfigurationTests {
 
 > 执行testHeaderParser()测试方法：
 >
-> ![image-20230115211957191](assets/image-20230115211957191.png)
+> ![image-20230115211957191](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115211957191.png)
 >
 > 因为HeaderConfig类中添加@Configuration注解，而@Configuration注解中包含了@Component，所以SpringBoot启动时会创建HeaderConfig类对象，并注册到IOC容器中。
 >
@@ -1356,7 +1356,7 @@ public class HeaderConfig {
 
 > 执行testHeaderParser()测试方法：
 >
-> ![image-20230115220235511](assets/image-20230115220235511.png)
+> ![image-20230115220235511](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115220235511.png)
 
 
 
@@ -1374,7 +1374,7 @@ public HeaderParser headerParser(){
 
 > 再次执行testHeaderParser()测试方法：
 >
-> ![image-20230115211957191](assets/image-20230115211957191.png)
+> ![image-20230115211957191](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115211957191.png)
 >
 > 因为application.yml配置文件中，不存在： name:  itheima2，所以HeaderParser对象在IOC容器中不存在
 
@@ -1384,13 +1384,13 @@ public HeaderParser headerParser(){
 
 我们再回头看看之前讲解SpringBoot源码时提到的一个配置类：GsonAutoConfiguration
 
-![image-20230115222128740](assets/image-20230115222128740.png)
+![image-20230115222128740](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115222128740.png)
 
 
 
 最后再给大家梳理一下自动配置原理：
 
-![image-20230115222302753](assets/image-20230115222302753.png)
+![image-20230115222302753](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115222302753.png)
 
 > 自动配置的核心就在@SpringBootApplication注解上，SpringBootApplication这个注解底层包含了3个注解，分别是：
 >
@@ -1431,7 +1431,7 @@ public HeaderParser headerParser(){
 
 在SpringBoot项目中，一般都会将这些公共组件封装为SpringBoot当中的starter，也就是我们所说的起步依赖。
 
-![image-20230115224939131](assets/image-20230115224939131.png)
+![image-20230115224939131](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115224939131.png)
 
 > SpringBoot官方starter命名： spring-boot-starter-xxxx
 >
@@ -1439,7 +1439,7 @@ public HeaderParser headerParser(){
 
 
 
-![image-20230115225703863](assets/image-20230115225703863.png)
+![image-20230115225703863](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115225703863.png)
 
 > Mybatis提供了配置类，并且也提供了springboot会自动读取的配置文件。当SpringBoot项目启动时，会读取到spring.factories配置文件中的配置类并加载配置类，生成相关bean对象注册到IOC容器中。
 >
@@ -1569,13 +1569,13 @@ public class AliOSSUtils {
 
 1). aliyun-oss-spring-boot-starter模块
 
-![image-20230115234739988](assets/image-20230115234739988.png)
+![image-20230115234739988](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115234739988.png)
 
-![image-20230115234823134](assets/image-20230115234823134.png)
+![image-20230115234823134](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115234823134.png)
 
 创建完starter模块后，删除多余的文件，最终保留内容如下：
 
-![image-20230115235429353](assets/image-20230115235429353.png)
+![image-20230115235429353](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115235429353.png)
 
 删除pom.xml文件中多余的内容后：
 
@@ -1613,15 +1613,15 @@ public class AliOSSUtils {
 
 2). aliyun-oss-spring-boot-autoconfigure模块
 
-![image-20230116000302319](assets/image-20230116000302319.png)
+![image-20230116000302319](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116000302319.png)
 
-![image-20230115235921014](assets/image-20230115235921014.png)
+![image-20230115235921014](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230115235921014.png)
 
 
 
 创建完starter模块后，删除多余的文件，最终保留内容如下：
 
-![image-20230116000542905](assets/image-20230116000542905.png)
+![image-20230116000542905](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116000542905.png)
 
 
 
@@ -1708,7 +1708,7 @@ public class AliOSSUtils {
 
 >  我们将之前案例中所使用的阿里云OSS部分的代码直接拷贝到autoconfigure模块下，然后进行改造就行了。
 
-![image-20230116001622679](assets/image-20230116001622679.png)
+![image-20230116001622679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116001622679.png)
 
 
 
@@ -1783,9 +1783,9 @@ public class AliOSSUtils {
 
 现在大家思考下，在类上添加的@Component注解还有用吗？
 
-![image-20230116002417105](assets/image-20230116002417105.png)
+![image-20230116002417105](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116002417105.png)
 
-![image-20230116002442736](assets/image-20230116002442736.png)
+![image-20230116002442736](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116002442736.png)
 
 
 
@@ -1797,17 +1797,17 @@ public class AliOSSUtils {
 >
 > 删除后报红色错误，暂时不理会，后面再来处理。
 >
-> ![image-20230116002747681](assets/image-20230116002747681.png)
+> ![image-20230116002747681](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116002747681.png)
 >
 > 删除AliOSSUtils类中的@Component注解、@Autowired注解
 >
-> ![image-20230116003046768](assets/image-20230116003046768.png)
+> ![image-20230116003046768](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116003046768.png)
 
 
 
 下面我们就要定义一个自动配置类了，在自动配置类当中来声明AliOSSUtils的bean对象。
 
-![image-20230116003513900](assets/image-20230116003513900.png)
+![image-20230116003513900](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116003513900.png)
 
 
 
@@ -1894,7 +1894,7 @@ public class AliOSSUtils {
   com.aliyun.oss.AliOSSAutoConfiguration
   ~~~
 
-![image-20230116004957697](assets/image-20230116004957697.png)
+![image-20230116004957697](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116004957697.png)
 
 
 
@@ -1906,7 +1906,7 @@ public class AliOSSUtils {
 
 > 今天的课程资料当中，提供了一个自定义starter的测试工程。我们直接打开文件夹，里面有一个测试工程。测试工程就是springboot-autoconfiguration-test，我们只需要将测试工程直接导入到Idea当中即可。
 
-![image-20230116005530815](assets/image-20230116005530815.png)
+![image-20230116005530815](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116005530815.png)
 
 测试前准备：
 
@@ -1960,15 +1960,15 @@ public class AliOSSUtils {
 
 - 随着SpringBoot项目启动，自动配置会把AliOSSUtils的bean对象装配到IOC容器中
 
-![image-20230116011039611](assets/image-20230116011039611.png)
+![image-20230116011039611](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116011039611.png)
 
 用postman工具进行文件上传：
 
-![image-20230116010731914](assets/image-20230116010731914.png)
+![image-20230116010731914](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116010731914.png)
 
 通过断点可以看到自动注入AliOSSUtils的bean对象：
 
-![image-20230116011501201](assets/image-20230116011501201.png)
+![image-20230116011501201](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116011501201.png)
 
 
 
@@ -1986,7 +1986,7 @@ public class AliOSSUtils {
 
 web后端开发现在基本上都是基于标准的三层架构进行开发的，在三层架构当中，Controller控制器层负责接收请求响应数据，Service业务层负责具体的业务逻辑处理，而Dao数据访问层也叫持久层，就是用来处理数据访问操作的，来完成数据库当中数据的增删改查操作。
 
-![image-20230114180044897](assets/image-20230114180044897.png)
+![image-20230114180044897](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114180044897.png)
 
 > 在三层架构当中，前端发起请求首先会到达Controller(不进行逻辑处理)，然后Controller会直接调用Service 进行逻辑处理， Service再调用Dao完成数据访问操作。
 
@@ -1994,7 +1994,7 @@ web后端开发现在基本上都是基于标准的三层架构进行开发的�
 
 如果我们在执行具体的业务处理之前，需要去做一些通用的业务处理，比如：我们要进行统一的登录校验，我们要进行统一的字符编码等这些操作时，我们就可以借助于Javaweb当中三大组件之一的过滤器Filter或者是Spring当中提供的拦截器Interceptor来实现。
 
-![image-20230114191737227](assets/image-20230114191737227.png)
+![image-20230114191737227](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114191737227.png)
 
 
 
@@ -2008,13 +2008,13 @@ web后端开发现在基本上都是基于标准的三层架构进行开发的�
 
 除了IOC与DI我们还讲到了AOP面向切面编程，还有Spring中的事务管理、全局异常处理器，以及传递会话技术Cookie、Session以及新的会话跟踪解决方案JWT令牌，阿里云OSS对象存储服务，以及通过Mybatis持久层架构操作数据库等技术。
 
-![image-20230114192921673](assets/image-20230114192921673.png)
+![image-20230114192921673](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114192921673.png)
 
 
 
 我们在学习这些web后端开发技术的时候，我们都是基于主流的SpringBoot进行整合使用的。而SpringBoot又是用来简化开发，提高开发效率的。像过滤器、拦截器、IOC、DI、AOP、事务管理等这些技术到底是哪个框架提供的核心功能？
 
-![image-20230114193609782](assets/image-20230114193609782.png)
+![image-20230114193609782](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114193609782.png)
 
 > Filter过滤器、Cookie、 Session这些都是传统的JavaWeb提供的技术。
 >
@@ -2028,7 +2028,7 @@ web后端开发现在基本上都是基于标准的三层架构进行开发的�
 
 在Spring框架的生态中，对web程序开发提供了很好的支持，如：全局异常处理器、拦截器这些都是Spring框架中web开发模块所提供的功能，而Spring框架的web开发模块，我们也称为：SpringMVC
 
-![image-20230114195143418](assets/image-20230114195143418.png)
+![image-20230114195143418](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230114195143418.png)
 
 > SpringMVC不是一个单独的框架，它是Spring框架的一部分，是Spring框架中的web开发模块，是用来简化原始的Servlet程序开发的。
 

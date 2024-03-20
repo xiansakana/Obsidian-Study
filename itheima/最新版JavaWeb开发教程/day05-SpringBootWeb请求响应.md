@@ -12,7 +12,7 @@
 
 在上一次的课程中，我们开发了springbootweb的入门程序。 基于SpringBoot的方式开发一个web应用，浏览器发起请求 /hello 后 ，给浏览器返回字符串 “Hello World ~”。
 
-![image-20220826161735076](assets/image-20220826161735076.png)
+![image-20220826161735076](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826161735076.png)
 
 其实呢，是我们在浏览器发起请求，请求了我们的后端web服务器(也就是内置的Tomcat)。而我们在开发web程序时呢，定义了一个控制器类Controller，请求会被部署在Tomcat中的Controller接收，然后Controller再给浏览器一个响应，响应一个字符串 “Hello World”。 而在请求响应的过程中是遵循HTTP协议的。
 
@@ -20,15 +20,15 @@
 
 其实呢，在SpringBoot进行web程序开发时，它内置了一个核心的Servlet程序 DispatcherServlet，称之为 核心控制器。 DispatcherServlet 负责接收页面发送的请求，然后根据执行的规则，将请求再转发给后面的请求处理器Controller，请求处理器处理完请求之后，最终再由DispatcherServlet给浏览器响应数据。
 
-![image-20220826165340157](assets/image-20220826165340157.png)
+![image-20220826165340157](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826165340157.png)
 
 那将来浏览器发送请求，会携带请求数据，包括：请求行、请求头；请求到达tomcat之后，tomcat会负责解析这些请求数据，然后呢将解析后的请求数据会传递给Servlet程序的HttpServletRequest对象，那也就意味着 HttpServletRequest 对象就可以获取到请求数据。 而Tomcat，还给Servlet程序传递了一个参数 HttpServletResponse，通过这个对象，我们就可以给浏览器设置响应数据 。
 
-![image-20220826171407354](assets/image-20220826171407354.png) 
+![image-20220826171407354](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171407354.png) 
 
 那上述所描述的这种浏览器/服务器的架构模式呢，我们称之为：BS架构。
 
-![image-20220826171454775](assets/image-20220826171454775.png) 
+![image-20220826171454775](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171454775.png) 
 
 • BS架构：Browser/Server，浏览器/服务器架构模式。客户端只需要浏览器，应用程序的逻辑和数据都存储在服务端。
 
@@ -56,7 +56,7 @@
 
 之前我们课程中有提到当前最为主流的开发模式：前后端分离
 
-![image-20221203095553048](assets/image-20221203095553048.png)
+![image-20221203095553048](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203095553048.png)
 
 在这种模式下，前端技术人员基于"接口文档"，开发前端程序；后端技术人员也基于"接口文档"，开发后端程序。
 
@@ -71,7 +71,7 @@
 
 #### 1.1.1 介绍
 
-![image-20220826173003949](assets/image-20220826173003949.png) 
+![image-20220826173003949](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173003949.png) 
 
 - Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。
 
@@ -92,57 +92,57 @@
 
 #### 1.1.2 安装
 
-![image-20220826173919556](assets/image-20220826173919556.png) 
+![image-20220826173919556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173919556.png) 
 
 双击资料中提供的`Postman-win64-8.3.1-Setup.exe`即可自动安装。
 
-![image-20220826174601266](assets/image-20220826174601266.png) 
+![image-20220826174601266](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826174601266.png) 
 
 安装完成之后，进入页面中会提示有新版本可以升级（无需升级）
 
-![image-20220826174900779](assets/image-20220826174900779.png)
+![image-20220826174900779](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826174900779.png)
 
-![image-20221203112117979](assets/image-20221203112117979.png)
+![image-20221203112117979](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112117979.png)
 
 界面介绍:
 
-![image-20220826175306141](assets/image-20220826175306141.png) 
+![image-20220826175306141](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826175306141.png) 
 
 
 
 **如果我们需要将测试的请求信息保存下来，就需要创建一个postman的账号，然后登录之后才可以。**
 
-![image-20221203103623435](assets/image-20221203103623435.png)
+![image-20221203103623435](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203103623435.png)
 
-![image-20221203112252985](assets/image-20221203112252985.png) 
+![image-20221203112252985](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112252985.png) 
 
-![image-20221203112320687](assets/image-20221203112320687.png) 
+![image-20221203112320687](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112320687.png) 
 
 登录完成之后，可以创建工作空间：
 
-![image-20221203113552785](assets/image-20221203113552785.png)
+![image-20221203113552785](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203113552785.png)
 
-![image-20221203113925733](assets/image-20221203113925733.png)
+![image-20221203113925733](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203113925733.png)
 
-![image-20221203113847126](assets/image-20221203113847126.png)
+![image-20221203113847126](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203113847126.png)
 
 创建请求：
 
-![image-20221203114031824](assets/image-20221203114031824.png)
+![image-20221203114031824](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203114031824.png)
 
 点击"Save"，保存当前请求
 
-![image-20221203114231572](assets/image-20221203114231572.png)
+![image-20221203114231572](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203114231572.png)
 
-![image-20221203114806665](assets/image-20221203114806665.png)
+![image-20221203114806665](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203114806665.png)
 
-![image-20221203114852752](assets/image-20221203114852752.png)
+![image-20221203114852752](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203114852752.png)
 
-![image-20221203115001098](assets/image-20221203115001098.png)
+![image-20221203115001098](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203115001098.png)
 
-![image-20221203115041949](assets/image-20221203115041949.png)
+![image-20221203115041949](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203115041949.png)
 
-![image-20221203115110440](assets/image-20221203115110440.png)
+![image-20221203115110440](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203115110440.png)
 
 
 
@@ -154,7 +154,7 @@
 
 简单参数：在向服务器发起请求时，向服务器传递的是一些普通的请求数据。
 
-![image-20220826180550583](assets/image-20220826180550583.png)
+![image-20220826180550583](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826180550583.png)
 
 那么在后端程序中，如何接收传递过来的普通参数数据呢？
 
@@ -223,11 +223,11 @@ public class RequestController {
 
 **postman测试( GET 请求)：**
 
-![image-20221203122405075](assets/image-20221203122405075.png) 
+![image-20221203122405075](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203122405075.png) 
 
 **postman测试( POST请求 )：**
 
-![image-20220826181117898](assets/image-20220826181117898.png)
+![image-20220826181117898](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826181117898.png)
 
 > **结论：不论是GET请求还是POST请求，对于简单参数来讲，只要保证==请求参数名和Controller方法中的形参名保持一致==，就可以获取到请求参数中的数据值。**
 
@@ -281,7 +281,7 @@ public class RequestController {
 >
 > @RequestParam中的required属性默认为true（默认值也是true），代表该请求参数必须传递，如果不传递将报错
 >
-> ![image-20221203130726310](assets/image-20221203130726310.png)
+> ![image-20221203130726310](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203130726310.png)
 >
 > 如果该参数是可选的，可以将required属性设置为false
 >
@@ -305,7 +305,7 @@ public class RequestController {
 
 此时，我们可以考虑将请求参数封装到一个实体类对象中。 要想完成数据封装，需要遵守如下规则：**请求参数名与实体类的属性名相同**
 
-![image-20221203131954932](assets/image-20221203131954932.png)
+![image-20221203131954932](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203131954932.png)
 
 #### 1.3.1 简单实体对象
 
@@ -361,11 +361,11 @@ Postman测试：
 
 - 参数名和实体类属性名一致时
 
-![image-20221203161246168](assets/image-20221203161246168.png) 
+![image-20221203161246168](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203161246168.png) 
 
 - 参数名和实体类属性名不一致时
 
-![image-20221203161004349](assets/image-20221203161004349.png)
+![image-20221203161004349](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203161004349.png)
 
 
 
@@ -379,7 +379,7 @@ Postman测试：
 
 - User类中有一个Address类型的属性（Address是一个实体类）
 
-![image-20221203160447953](assets/image-20221203160447953.png)
+![image-20221203160447953](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203160447953.png)
 
 复杂实体对象的封装，需要遵守如下规则：
 
@@ -479,7 +479,7 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221203162706175](assets/image-20221203162706175.png) 
+![image-20221203162706175](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203162706175.png) 
 
 
 
@@ -489,11 +489,11 @@ Postman测试：
 
 数组集合参数的使用场景：在HTML的表单中，有一个表单项是支持多选的(复选框)，可以提交选择的多个值。
 
-![image-20221203164114083](assets/image-20221203164114083.png) 
+![image-20221203164114083](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164114083.png) 
 
 多个值是怎么提交的呢？其实多个值也是一个一个的提交。
 
-![image-20221203164944144](assets/image-20221203164944144.png) 
+![image-20221203164944144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164944144.png) 
 
 后端程序接收上述多个值的方式有两种：
 
@@ -506,7 +506,7 @@ Postman测试：
 
 数组参数：**请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数**
 
-![image-20221203190218468](assets/image-20221203190218468.png)
+![image-20221203190218468](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203190218468.png)
 
 Controller方法：
 
@@ -528,11 +528,11 @@ Postman测试：
 
 方式一： xxxxxxxxxx?hobby=game&hobby=java
 
-![image-20221203191732601](assets/image-20221203191732601.png) 
+![image-20221203191732601](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203191732601.png) 
 
 方式二：xxxxxxxxxxxxx?hobby=game,java
 
-![image-20221203191822996](assets/image-20221203191822996.png)
+![image-20221203191822996](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203191822996.png)
 
 
 
@@ -544,7 +544,7 @@ Postman测试：
 
 > 默认情况下，请求中参数名相同的多个值，是封装到数组。如果要封装到集合，要使用@RequestParam绑定参数关系
 
-![image-20221203211640646](assets/image-20221203211640646.png)
+![image-20221203211640646](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203211640646.png)
 
 Controller方法：
 
@@ -564,11 +564,11 @@ Postman测试：
 
 方式一： xxxxxxxxxx?hobby=game&hobby=java
 
-![image-20221203212221939](assets/image-20221203212221939.png) 
+![image-20221203212221939](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203212221939.png) 
 
 方式二：xxxxxxxxxxxxx?hobby=game,java
 
-![image-20221203212024679](assets/image-20221203212024679.png)
+![image-20221203212024679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203212024679.png)
 
 
 
@@ -578,11 +578,11 @@ Postman测试：
 
 上述演示的都是一些普通的参数，在一些特殊的需求中，可能会涉及到日期类型数据的封装。比如，如下需求：
 
-![image-20220826194159343](assets/image-20220826194159343.png) 
+![image-20220826194159343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826194159343.png) 
 
 因为日期的格式多种多样（如：2022-12-12 10:05:45 、2022/12/12 10:05:45），那么对于日期类型的参数在进行封装的时候，需要通过@DateTimeFormat注解，以及其pattern属性来设置日期的格式。
 
-![image-20221203213120692](assets/image-20221203213120692.png)
+![image-20221203213120692](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203213120692.png)
 
 - @DateTimeFormat注解的pattern属性中指定了哪种日期格式，前端的日期参数就必须按照指定的格式传递。
 - 后端controller方法中，需要使用Date类型或LocalDateTime类型，来封装传递的参数。
@@ -603,7 +603,7 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221203214600716](assets/image-20221203214600716.png)
+![image-20221203214600716](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203214600716.png)
 
 
 
@@ -620,14 +620,14 @@ Postman测试：
 
 Postman发送JSON格式数据：
 
-![image-20221203225623337](assets/image-20221203225623337.png)
+![image-20221203225623337](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203225623337.png)
 
 服务端Controller方法接收JSON格式数据：
 
 - 传递json格式的参数，在Controller中会使用实体类进行封装。 
 - 封装规则：**JSON数据键名与形参对象属性名相同，定义POJO类型形参即可接收参数。需要使用 @RequestBody标识。**
 
-![image-20221203230457901](assets/image-20221203230457901.png)
+![image-20221203230457901](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203230457901.png)
 
 - @RequestBody注解：将JSON数据映射到形参的实体类对象中（JSON中的key和实体类中的属性名保持一致）
 
@@ -670,7 +670,7 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221203231803000](assets/image-20221203231803000.png) 
+![image-20221203231803000](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203231803000.png) 
 
 
 
@@ -680,7 +680,7 @@ Postman测试：
 
 传统的开发中请求参数是放在请求体(POST请求)传递或跟在URL后面通过?key=value的形式传递(GET请求)。
 
-![image-20221203235715804](assets/image-20221203235715804.png)
+![image-20221203235715804](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203235715804.png)
 
 在现在的开发中，经常还会直接在请求的URL中传递参数。例如：
 
@@ -698,7 +698,7 @@ http://localhost:880/user/1/0
 - 前端：通过请求URL直接传递参数
 - 后端：使用{…}来标识该路径参数，需要使用@PathVariable获取路径参数
 
-![image-20221204001520756](assets/image-20221204001520756.png)
+![image-20221204001520756](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204001520756.png)
 
 Controller方法：
 
@@ -716,7 +716,7 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221204002040184](assets/image-20221204002040184.png)
+![image-20221204002040184](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204002040184.png)
 
  
 
@@ -724,7 +724,7 @@ Postman测试：
 
 Postman：
 
-![image-20221204002306288](assets/image-20221204002306288.png)
+![image-20221204002306288](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204002306288.png)
 
 Controller方法：
 
@@ -754,7 +754,7 @@ public class RequestController {
 
 在我们前面所编写的controller方法中，都已经设置了响应数据。
 
-![image-20221204100656376](assets/image-20221204100656376.png)
+![image-20221204100656376](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204100656376.png)
 
 controller方法中的return的结果，怎么就可以响应给浏览器呢？
 
@@ -848,9 +848,9 @@ public class ResponseController {
 
 在服务端响应了一个对象或者集合，那私前端获取到的数据是什么样子的呢？我们使用postman发送请求来测试下。测试效果如下：
 
-![image-20221204172339375](assets/image-20221204172339375.png)
+![image-20221204172339375](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204172339375.png)
 
-![image-20221204172705426](assets/image-20221204172705426.png)
+![image-20221204172705426](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204172705426.png)
 
 
 
@@ -858,13 +858,13 @@ public class ResponseController {
 
 大家有没有发现一个问题，我们在前面所编写的这些Controller方法中，返回值各种各样，没有任何的规范。
 
-![image-20221204174052622](assets/image-20221204174052622.png)
+![image-20221204174052622](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204174052622.png)
 
 如果我们开发一个大型项目，项目中controller方法将成千上万，使用上述方式将造成整个项目难以维护。那在真实的项目开发中是什么样子的呢？
 
 在真实的项目开发中，无论是哪种方法，我们都会定义一个统一的返回结果。方案如下：
 
-![image-20221204174537686](assets/image-20221204174537686.png)
+![image-20221204174537686](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204174537686.png)
 
 > 前端：只需要按照统一格式的返回结果进行解析(仅一种解析方案)，就可以拿到数据。
 
@@ -974,9 +974,9 @@ public class ResponseController {
 
 使用Postman测试：
 
-![image-20221204180946963](assets/image-20221204180946963.png)
+![image-20221204180946963](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204180946963.png)
 
-![image-20221204180744084](assets/image-20221204180744084.png)
+![image-20221204180744084](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204180744084.png)
 
 
 
@@ -990,7 +990,7 @@ public class ResponseController {
 
 需求：加载并解析xml文件中的数据，完成数据处理，并在页面展示
 
-![image-20221204185928260](assets/image-20221204185928260.png)  
+![image-20221204185928260](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185928260.png)  
 
 - 获取员工数据，返回统一响应结果，在页面渲染展示
 
@@ -1038,15 +1038,15 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
 
 2. 引入资料中提供的：解析XML的工具类XMLParserUtils、实体类Emp、XML文件emp.xml
 
-   ![image-20221204182828547](assets/image-20221204182828547.png) 
+   ![image-20221204182828547](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204182828547.png) 
 
 3. 引入资料中提供的静态页面文件，放在resources下的static目录下
 
-   ![image-20221204183044848](assets/image-20221204183044848.png) 
+   ![image-20221204183044848](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204183044848.png) 
 
 4. 创建EmpController类，编写Controller程序，处理请求，响应数据
 
-   ![image-20221204184313822](assets/image-20221204184313822.png) 
+   ![image-20221204184313822](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204184313822.png) 
 
 
 
@@ -1143,11 +1143,11 @@ public class Result {
 
 使用Postman测试：
 
-![image-20221204190341389](assets/image-20221204190341389.png)
+![image-20221204190341389](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204190341389.png)
 
 打开浏览器，在浏览器地址栏输入： http://localhost:8080/emp.html
 
-![image-20221204185455556](assets/image-20221204185455556.png) 
+![image-20221204185455556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185455556.png) 
 
 
 
@@ -1157,7 +1157,7 @@ public class Result {
 
 上述案例的功能，我们虽然已经实现，但是呢，我们会发现案例中：解析XML数据，获取数据的代码，处理数据的逻辑的代码，给页面响应的代码全部都堆积在一起了，全部都写在controller方法中了。
 
-![image-20221204190712411](assets/image-20221204190712411.png)
+![image-20221204190712411](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204190712411.png)
 
 当前程序的这个业务逻辑还是比较简单的，如果业务逻辑再稍微复杂一点，我们会看到Controller方法的代码量就很大了。
 
@@ -1187,7 +1187,7 @@ public class Result {
 
 我们之前开发的程序呢，并不满足单一职责原则。下面我们来分析下之前的程序：
 
-![image-20221204191650390](assets/image-20221204191650390.png) 
+![image-20221204191650390](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204191650390.png) 
 
 那其实我们上述案例的处理逻辑呢，从组成上看可以分为三个部分：
 
@@ -1197,7 +1197,7 @@ public class Result {
 
 按照上述的三个组成部分，在我们项目开发中呢，可以将代码分为三层：
 
-![image-20221204193837678](assets/image-20221204193837678.png)
+![image-20221204193837678](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204193837678.png)
 
 - Controller：控制层。接收前端发送的请求，对请求进行处理，并响应数据。
 - Service：业务逻辑层。处理具体的业务逻辑。
@@ -1207,7 +1207,7 @@ public class Result {
 
 基于三层架构的程序执行流程：
 
-![image-20221204194207812](assets/image-20221204194207812.png)
+![image-20221204194207812](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204194207812.png)
 
 - 前端发起的请求，由Controller层接收（Controller响应数据给前端）
 - Controller层调用Service层来进行逻辑处理（Service层处理完后，把处理结果返回给Controller层）
@@ -1230,7 +1230,7 @@ public class Result {
 - 业务逻辑层包名：xxxx.service
 - 数据访问层包名：xxxx.dao
 
-![image-20221204195812200](assets/image-20221204195812200.png)
+![image-20221204195812200](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204195812200.png)
 
 **控制层：**接收前端发送的请求，对请求进行处理，并响应数据
 
@@ -1329,7 +1329,7 @@ public class EmpDaoA implements EmpDao {
 }
 ```
 
-![image-20221204201342490](assets/image-20221204201342490.png)
+![image-20221204201342490](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204201342490.png)
 
 三层架构的好处：
 
@@ -1365,17 +1365,17 @@ public class EmpDaoA implements EmpDao {
 
 - EmpServiceA类中只编写了和员工相关的逻辑处理代码
 
-![image-20221204202531571](assets/image-20221204202531571.png) 
+![image-20221204202531571](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204202531571.png) 
 
 程序中耦合代码的体现：
 
 - 把业务类变为EmpServiceB时，需要修改controller层中的代码
 
-![image-20221204203904900](assets/image-20221204203904900.png)
+![image-20221204203904900](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204203904900.png)
 
 高内聚、低耦合的目的是使程序模块的可重用性、移植性大大增强。
 
-![](assets/image-20220828215549593.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220828215549593.png)
 
 
 
@@ -1385,13 +1385,13 @@ public class EmpDaoA implements EmpDao {
 
 之前我们在编写代码时，需要什么对象，就直接new一个就可以了。 这种做法呢，层与层之间代码就耦合了，当service层的实现变了之后， 我们还需要修改controller层的代码。
 
-![image-20221204204916033](assets/image-20221204204916033.png)
+![image-20221204204916033](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204204916033.png)
 
  那应该怎么解耦呢？
 
 - 首先不能在EmpController中使用new对象。代码如下：
 
-![image-20221204205328069](assets/image-20221204205328069.png)
+![image-20221204205328069](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204205328069.png)
 
 - 此时，就存在另一个问题了，不能new，就意味着没有业务层对象（程序运行就报错），怎么办呢？
   - 我们的解决思路是：
@@ -1435,7 +1435,7 @@ IOC容器中创建、管理的对象，称之为：bean对象
 
 第1步：删除Controller层、Service层中new对象的代码
 
-![image-20221204212807207](assets/image-20221204212807207.png)
+![image-20221204212807207](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204212807207.png)
 
 
 
@@ -1443,7 +1443,7 @@ IOC容器中创建、管理的对象，称之为：bean对象
 
 - 使用Spring提供的注解：@Component ，就可以实现类交给IOC容器管理
 
-![image-20221204213328034](assets/image-20221204213328034.png)
+![image-20221204213328034](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204213328034.png)
 
 
 
@@ -1451,7 +1451,7 @@ IOC容器中创建、管理的对象，称之为：bean对象
 
 - 使用Spring提供的注解：@Autowired ，就可以实现程序运行时IOC容器自动注入需要的依赖对象
 
-![image-20221204213859112](assets/image-20221204213859112.png)
+![image-20221204213859112](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204213859112.png)
 
 
 
@@ -1538,7 +1538,7 @@ public class EmpDaoA implements EmpDao {
 
 - 启动SpringBoot引导类，打开浏览器，输入：http://localhost:8080/emp.html
 
-![image-20221204185455556](assets/image-20221204185455556.png)
+![image-20221204185455556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185455556.png)
 
 
 
@@ -1652,11 +1652,11 @@ public class EmpDaoA implements EmpDao {
 | @Repository | @Component的衍生注解 | 标注在数据访问类上（由于与mybatis整合，用的少） |
 | @Component  | 声明bean的基础注解   | 不属于以上三类时，用此注解                      |
 
-> 查看源码：![image-20221204221320230](assets/image-20221204221320230.png)
+> 查看源码：![image-20221204221320230](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204221320230.png)
 
 在IOC容器中，每一个Bean都有一个属于自己的名字，可以通过注解的value属性指定bean的名字。如果没有指定，默认为类名首字母小写。
 
-![image-20221204222650873](assets/image-20221204222650873.png)
+![image-20221204222650873](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204222650873.png)
 
 > 注意事项: 
 >
@@ -1677,11 +1677,11 @@ public class EmpDaoA implements EmpDao {
 
  下面我们通过修改项目工程的目录结构，来测试bean对象是否生效：
 
-![image-20221204223602694](assets/image-20221204223602694.png)
+![image-20221204223602694](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204223602694.png)
 
 运行程序后，报错：
 
-![image-20221204223815554](assets/image-20221204223815554.png)
+![image-20221204223815554](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204223815554.png)
 
 为什么没有找到bean对象呢？
 
@@ -1689,11 +1689,11 @@ public class EmpDaoA implements EmpDao {
 
 > @ComponentScan注解虽然没有显式配置，但是实际上已经包含在了引导类声明注解 @SpringBootApplication 中，==**默认扫描的范围是SpringBoot启动类所在包及其子包**==。
 >
-> ![image-20221204224643683](assets/image-20221204224643683.png) 
+> ![image-20221204224643683](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204224643683.png) 
 
 - 解决方案：手动添加@ComponentScan注解，指定要扫描的包   （==仅做了解，不推荐==）
 
-![image-20221204225437297](assets/image-20221204225437297.png)
+![image-20221204225437297](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204225437297.png)
 
 
 
@@ -1701,7 +1701,7 @@ public class EmpDaoA implements EmpDao {
 
 - 将我们定义的controller，service，dao这些包呢，都放在引导类所在包com.itheima的子包下，这样我们定义的bean就会被自动的扫描到
 
-![image-20221204225815624](assets/image-20221204225815624.png)
+![image-20221204225815624](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204225815624.png)
 
 
 
@@ -1723,11 +1723,11 @@ public class EmpDaoA implements EmpDao {
 
 那如果在IOC容器中，存在多个相同类型的bean对象，会出现什么情况呢？
 
-![image-20221204232154445](assets/image-20221204232154445.png)
+![image-20221204232154445](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204232154445.png)
 
 - 程序运行会报错
 
-![image-20221204231616724](assets/image-20221204231616724.png)
+![image-20221204231616724](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204231616724.png)
 
 
 
@@ -1743,7 +1743,7 @@ public class EmpDaoA implements EmpDao {
 
 使用@Primary注解：当存在多个相同类型的Bean注入时，加上@Primary注解，来确定默认的实现。
 
-![image-20221204232501679](assets/image-20221204232501679.png) 
+![image-20221204232501679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204232501679.png) 
 
 
 
@@ -1751,13 +1751,13 @@ public class EmpDaoA implements EmpDao {
 
 - @Qualifier注解不能单独使用，必须配合@Autowired使用
 
-![image-20221204233333606](assets/image-20221204233333606.png)
+![image-20221204233333606](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204233333606.png)
 
 
 
 使用@Resource注解：是按照bean的名称进行注入。通过name属性指定要注入的bean的名称。
 
-![image-20221204233637735](assets/image-20221204233637735.png)
+![image-20221204233637735](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204233637735.png)
 
 
 

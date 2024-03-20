@@ -26,7 +26,7 @@ DQL英文全称是Data Query Language(数据查询语言)，用来查询数据�
 
 查询操作是所有SQL语句当中最为常见，也是最为重要的操作。在一个正常的业务系统中，查询操作的使用频次是要远高于增删改操作的。当我们打开某个网站或APP所看到的展示信息，都是通过从数据库中查询得到的，而在这个查询过程中，还会涉及到条件、排序、分页等操作。
 
-![image-20220611103943417](assets/image-20220611103943417.png) 
+![image-20220611103943417](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220611103943417.png) 
 
 
 
@@ -151,7 +151,7 @@ INSERT INTO tb_emp (id, username, password, name, gender, image, job, entrydate,
 select name,entrydate from tb_emp;
 ~~~
 
-![image-20221206112810199](assets/image-20221206112810199.png)
+![image-20221206112810199](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206112810199.png)
 
 
 
@@ -163,7 +163,7 @@ select * from tb_emp;
 
 > `*`号代表查询所有字段，在实际开发中尽量少用（不直观、影响效率）
 
-![image-20221206113904763](assets/image-20221206113904763.png)
+![image-20221206113904763](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206113904763.png)
 
 
 
@@ -178,7 +178,7 @@ select name AS '姓 名', entrydate AS '入职日期' from tb_emp;
 select name AS "姓名", entrydate AS "入职日期" from tb_emp;
 ~~~
 
-![image-20221206114752149](assets/image-20221206114752149.png)
+![image-20221206114752149](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206114752149.png)
 
 
 
@@ -188,7 +188,7 @@ select name AS "姓名", entrydate AS "入职日期" from tb_emp;
 select distinct job from tb_emp;
 ~~~
 
-![image-20221206115440117](assets/image-20221206115440117.png)
+![image-20221206115440117](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206115440117.png)
 
 
 
@@ -240,7 +240,7 @@ from tb_emp
 where name = '杨逍'; -- 字符串使用''或""包含
 ~~~
 
-![image-20221206121255784](assets/image-20221206121255784.png)
+![image-20221206121255784](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206121255784.png)
 
 
 
@@ -252,7 +252,7 @@ from tb_emp
 where id <=5;
 ~~~
 
-![image-20221206121523712](assets/image-20221206121523712.png)
+![image-20221206121523712](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206121523712.png)
 
 
 
@@ -264,11 +264,11 @@ from tb_emp
 where job is null ;
 ~~~
 
-![image-20221206121754267](assets/image-20221206121754267.png)
+![image-20221206121754267](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206121754267.png)
 
 > 注意：查询为NULL的数据时，不能使用 `= null`
 >
-> ![image-20221206122036970](assets/image-20221206122036970.png)
+> ![image-20221206122036970](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206122036970.png)
 
 
 
@@ -280,7 +280,7 @@ from tb_emp
 where job is not null ;
 ~~~
 
-![image-20221206122454101](assets/image-20221206122454101.png)
+![image-20221206122454101](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206122454101.png)
 
 
 
@@ -297,7 +297,7 @@ from tb_emp
 where password != '123456';
 ~~~
 
-![image-20221206122712152](assets/image-20221206122712152.png)
+![image-20221206122712152](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206122712152.png)
 
 
 
@@ -314,7 +314,7 @@ from tb_emp
 where entrydate between '2000-01-01' and '2010-01-01';
 ~~~
 
-![image-20221206125100857](assets/image-20221206125100857.png)
+![image-20221206125100857](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206125100857.png)
 
 
 
@@ -327,7 +327,7 @@ where entrydate between '2000-01-01' and '2010-01-01'
       and gender = 2;
 ~~~
 
-![image-20221206125356737](assets/image-20221206125356737.png)
+![image-20221206125356737](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206125356737.png)
 
 
 
@@ -344,7 +344,7 @@ from tb_emp
 where job in (2,3,4);
 ~~~
 
-![image-20221206141451342](assets/image-20221206141451342.png)
+![image-20221206141451342](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206141451342.png)
 
 
 
@@ -356,7 +356,7 @@ from tb_emp
 where name like '__';  # 通配符 "_" 代表任意1个字符
 ~~~
 
-![image-20221206141937293](assets/image-20221206141937293.png)
+![image-20221206141937293](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206141937293.png)
 
 
 
@@ -368,7 +368,7 @@ from tb_emp
 where name like '张%'; # 通配符 "%" 代表任意个字符（0个 ~ 多个）
 ~~~
 
-![image-20221206142156154](assets/image-20221206142156154.png)
+![image-20221206142156154](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206142156154.png)
 
 
 
@@ -435,7 +435,7 @@ select count(*) from tb_emp;
 select min(entrydate) from tb_emp;
 ~~~
 
-![image-20221206160145339](assets/image-20221206160145339.png)
+![image-20221206160145339](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206160145339.png)
 
 
 
@@ -445,7 +445,7 @@ select min(entrydate) from tb_emp;
 select max(entrydate) from tb_emp;
 ~~~
 
-![image-20221206160307416](assets/image-20221206160307416.png)
+![image-20221206160307416](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206160307416.png)
 
 
 
@@ -455,7 +455,7 @@ select max(entrydate) from tb_emp;
 select avg(id) from tb_emp;
 ~~~
 
-![image-20221206160416605](assets/image-20221206160416605.png)
+![image-20221206160416605](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206160416605.png)
 
 
 
@@ -465,7 +465,7 @@ select avg(id) from tb_emp;
 select sum(id) from tb_emp;
 ~~~
 
-![image-20221206160604073](assets/image-20221206160604073.png)
+![image-20221206160604073](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206160604073.png)
 
 
 
@@ -495,7 +495,7 @@ from tb_emp
 group by gender; -- 按照gender字段进行分组（gender字段下相同的数据归为一组）
 ~~~
 
-![image-20221206172615000](assets/image-20221206172615000.png)
+![image-20221206172615000](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206172615000.png)
 
 
 
@@ -509,7 +509,7 @@ group by job                      -- 按照job字段分组
 having count(*) >= 2;             -- 分组后条件
 ~~~
 
-![](assets/image-20221206172431873.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206172431873.png)
 
 > 注意事项:
 >
@@ -562,7 +562,7 @@ from tb_emp
 order by  entrydate; -- 默认就是ASC（升序）
 ~~~
 
-![image-20221206175720337](assets/image-20221206175720337.png)
+![image-20221206175720337](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206175720337.png)
 
 > 注意事项：如果是升序, 可以不指定排序方式ASC 
 
@@ -576,7 +576,7 @@ from tb_emp
 order by entrydate DESC; -- 按照entrydate字段下的数据进行降序排序
 ~~~
 
-![image-20221206180358367](assets/image-20221206180358367.png)
+![image-20221206180358367](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206180358367.png)
 
 
 
@@ -588,7 +588,7 @@ from tb_emp
 order by entrydate ASC , update_time DESC;
 ~~~
 
-![image-20221206180824583](assets/image-20221206180824583.png)
+![image-20221206180824583](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206180824583.png)
 
 > 注意事项：如果是多字段排序，当第一个字段值相同时，才会根据第二个字段进行排序 
 
@@ -602,7 +602,7 @@ order by entrydate ASC , update_time DESC;
 
 分页操作在业务系统开发时，也是非常常见的一个功能，日常我们在网站中看到的各种各样的分页条，后台也都需要借助于数据库的分页操作。
 
-![image-20221206183310586](assets/image-20221206183310586.png)
+![image-20221206183310586](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206183310586.png)
 
 分页查询语法：
 
@@ -620,7 +620,7 @@ from tb_emp
 limit 0 , 5; -- 从索引0开始，向后取5条记录
 ~~~
 
-![image-20221206185257834](assets/image-20221206185257834.png)
+![image-20221206185257834](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206185257834.png)
 
 
 
@@ -632,7 +632,7 @@ from tb_emp
 limit 5; -- 如果查询的是第1页数据，起始索引可以省略，直接简写为：limit 条数
 ~~~
 
-![image-20221206184957410](assets/image-20221206184957410.png)
+![image-20221206184957410](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206184957410.png)
 
 
 
@@ -644,7 +644,7 @@ from tb_emp
 limit 5 , 5; -- 从索引5开始，向后取5条记录
 ~~~
 
-![image-20221206184602569](assets/image-20221206184602569.png)
+![image-20221206184602569](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206184602569.png)
 
 
 
@@ -656,7 +656,7 @@ from tb_emp
 limit 10 , 5; -- 从索引10开始，向后取5条记录
 ~~~
 
-![image-20221206184414356](assets/image-20221206184414356.png)
+![image-20221206184414356](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206184414356.png)
 
 > 注意事项:
 >
@@ -680,7 +680,7 @@ DQL的基本语法我们学习结束了，接下来我们就运用所掌握的DQ
 
 案例：根据需求完成员工管理的条件分页查询
 
-![image-20221206212240773](assets/image-20221206212240773.png)
+![image-20221206212240773](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206212240773.png)
 
 > 分析：根据输入的条件，查询第1页数据
 >
@@ -712,7 +712,7 @@ order by update_time desc
 limit 0 , 10;
 ~~~
 
-![image-20221206213235786](assets/image-20221206213235786.png)
+![image-20221206213235786](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206213235786.png)
 
 
 
@@ -724,7 +724,7 @@ limit 0 , 10;
 
 案例：根据需求完成员工信息的统计
 
-![image-20221206210536118](assets/image-20221206210536118.png)
+![image-20221206210536118](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206210536118.png)
 
 > 分析：以上信息统计在开发中也叫图形报表(将统计好的数据以可视化的形式展示出来)
 >
@@ -744,7 +744,7 @@ from tb_emp
 group by gender;
 ~~~
 
-![image-20221206220908397](assets/image-20221206220908397.png)
+![image-20221206220908397](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206220908397.png)
 
 > if(表达式, tvalue, fvalue) ：当表达式为true时，取值tvalue；当表达式为false时，取值fvalue
 
@@ -766,7 +766,7 @@ from tb_emp
 group by job;
 ~~~
 
-![image-20221206221718731](assets/image-20221206221718731.png)
+![image-20221206221718731](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206221718731.png)
 
 > case   表达式    when   值1   then  结果1   [when 值2  then  结果2 ...]     [else result]     end
 
@@ -794,13 +794,13 @@ group by job;
 
 - 员工管理页面原型：（前面已完成tb_emp表结构设计）
 
-![](assets/image-20220831195520739.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831195520739.png)
 
 - 部门管理页面原型：
 
-![](assets/image-20220831195603106.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831195603106.png)
 
-![image-20221206224149094](assets/image-20221206224149094.png)
+![image-20221206224149094](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206224149094.png)
 
 > 经过上述分析，现已明确的部门表结构：
 >
@@ -826,7 +826,7 @@ create table tb_dept
 
 部门表创建好之后，我们还需要再修改下员工表。为什么要修改员工表呢？是因为我们之前设计员工表(单表)的时候，并没有考虑员工的归属部门。
 
-![image-20221206224642902](assets/image-20221206224642902.png)
+![image-20221206224642902](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206224642902.png)
 
 员工表：添加归属部门字段
 
@@ -885,7 +885,7 @@ INSERT INTO tb_emp
 
 员工表 - 部门表之间的关系：
 
-![image-20221206230156403](assets/image-20221206230156403.png)
+![image-20221206230156403](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206230156403.png)
 
 > **一对多关系实现：在数据库表中多的一方，添加字段，来关联属于一这方的主键。**
 
@@ -899,11 +899,11 @@ INSERT INTO tb_emp
 
 - 表结构创建完毕后，我们看到两张表的数据分别为：
 
-![image-20220831201844375](assets/image-20220831201844375.png) 
+![image-20220831201844375](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831201844375.png) 
 
 现在员工表中有五个员工都归属于1号部门(学工部)，当删除了1号部门后，数据变为：
 
-![image-20220831202111247](assets/image-20220831202111247.png) 
+![image-20220831202111247](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831202111247.png) 
 
 1号部门被删除了，但是依然还有5个员工是属于1号部门的。 此时：就出现数据的不完整、不一致了。 
 
@@ -954,13 +954,13 @@ add  constraint  fk_dept_id  foreign key (dept_id)  references  tb_dept(id);
 
 方式2：图形化界面操作
 
-![image-20221206232750376](assets/image-20221206232750376.png) 
+![image-20221206232750376](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206232750376.png) 
 
 > 当我们添加外键约束时，我们得保证当前数据库表中的数据是完整的。 所以，我们需要将之前删除掉的数据再添加回来。
 
 > 当我们添加了外键之后，再删除ID为1的部门，就会发现，此时数据库报错了，不允许删除。
 >
-> ![](assets/image-20220831205523647.png)
+> ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831205523647.png)
 >
 > 外键约束（foreign key）：保证了数据的完整性和一致性。
 
@@ -995,7 +995,7 @@ add  constraint  fk_dept_id  foreign key (dept_id)  references  tb_dept(id);
 
 > 一对一的应用场景： 用户表(基本信息+身份信息)
 >
-> ![image-20221207104508080](assets/image-20221207104508080.png)
+> ![image-20221207104508080](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207104508080.png)
 >
 > - 基本信息：用户的ID、姓名、性别、手机号、学历
 > - 身份信息：民族、生日、身份证号、身份证签发机关，身份证的有效期(开始时间、结束时间)
@@ -1006,7 +1006,7 @@ add  constraint  fk_dept_id  foreign key (dept_id)  references  tb_dept(id);
 
 其实一对一我们可以看成一种特殊的一对多。一对多我们是怎么设计表关系的？是不是在多的一方添加外键。同样我们也可以通过外键来体现一对一之间的关系，我们只需要在任意一方来添加一个外键就可以了。
 
-![image-20221207105632634](assets/image-20221207105632634.png)
+![image-20221207105632634](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207105632634.png)
 
 > 一对一 ：在任意一方加入外键，关联另外一方的主键，并且设置外键为唯一的(UNIQUE)
 
@@ -1062,7 +1062,7 @@ insert into tb_user_card values (1,'汉','1960-11-06','100000100000100001','朝�
 
 - 实现关系：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键
 
-![image-20221207113341028](assets/image-20221207113341028.png)
+![image-20221207113341028](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207113341028.png)
 
 
 
@@ -1124,13 +1124,13 @@ insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2
 
 - 页面原型-分类管理
 
-![image-20221207114241260](assets/image-20221207114241260.png)
+![image-20221207114241260](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207114241260.png)
 
 > 分类的信息：分类名称、分类类型[菜品/套餐]、分类排序、分类状态[禁用/启用]、分类的操作时间(修改时间)。
 
 - 页面原型-菜品管理
 
-![image-20221207114300057](assets/image-20221207114300057.png)
+![image-20221207114300057](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207114300057.png)
 
 > 菜品的信息：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态、菜品的操作时间(修改时间)。
 
@@ -1144,7 +1144,7 @@ insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2
 
 - 页面原型-套餐管理
 
-![image-20221207114327139](assets/image-20221207114327139.png) 
+![image-20221207114327139](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207114327139.png) 
 
 > 套餐的信息：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态、套餐的操作时间。
 
@@ -1177,7 +1177,7 @@ insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2
 - 菜品表 - 套餐表 ： 多对多
   - 创建第三张中间表(套餐菜品关联表)，在中间表上添加两个字段(菜品id、套餐id)，分别关联菜品表和分类表
 
-![](assets/image-20220831211756004.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220831211756004.png)
 
 
 
@@ -1188,7 +1188,7 @@ insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2
 - 业务字段：分类名称、分类类型、分类排序、分类状态
 - 基础字段：id(主键)、创建时间、修改时间
 
-![image-20221207143907853](assets/image-20221207143907853.png)
+![image-20221207143907853](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207143907853.png)
 
 ~~~mysql
 -- 分类表
@@ -1211,7 +1211,7 @@ create table category
 - 业务字段：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态
 - 基础字段：id(主键)、分类的创建时间、分类的修改时间
 
-![image-20221207144323100](assets/image-20221207144323100.png)
+![image-20221207144323100](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207144323100.png)
 
 ~~~mysql
 -- 菜品表
@@ -1236,7 +1236,7 @@ create table dish
 - 业务字段：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态
 - 基础字段：id(主键)、分类的创建时间、分类的修改时间
 
-![image-20221207144723621](assets/image-20221207144723621.png)
+![image-20221207144723621](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207144723621.png)
 
 ~~~mysql
 -- 套餐表
@@ -1258,7 +1258,7 @@ create table setmeal
 
 套餐菜品关联表：setmeal_dish
 
-![image-20221207145016440](assets/image-20221207145016440.png)
+![image-20221207145016440](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207145016440.png)
 
 ~~~mysql
 -- 套餐菜品关联表

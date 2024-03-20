@@ -84,17 +84,17 @@ VALUES
 select * from  tb_emp , tb_dept;
 ~~~
 
-![image-20220901093654673](assets/image-20220901093654673.png)  
+![image-20220901093654673](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901093654673.png)  
 
 此时,我们看到查询结果中包含了大量的结果集，总共85条记录，而这其实就是员工表所有的记录(17行)与部门表所有记录(5行)的所有组合情况，这种现象称之为笛卡尔积。
 
 笛卡尔积：笛卡尔乘积是指在数学中，两个集合(A集合和B集合)的所有组合情况。
 
-![image-20221207155509696](assets/image-20221207155509696.png)
+![image-20221207155509696](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207155509696.png)
 
 > 在多表查询时，需要消除无效的笛卡尔积，只保留表关联部分的数据
 
-![](assets/image-20220901093756992.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901093756992.png)
 
 在SQL语句中，如何去除无效的笛卡尔积呢？只需要给多表查询加上连接查询的条件即可。
 
@@ -102,7 +102,7 @@ select * from  tb_emp , tb_dept;
 select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;
 ~~~
 
-![image-20221207164518904](assets/image-20221207164518904.png)
+![image-20221207164518904](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207164518904.png)
 
 > 由于id为17的员工，没有dept_id字段值，所以在多表查询时，根据连接查询的条件并没有查询到。
 
@@ -118,7 +118,7 @@ select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;
 
    - 内连接：相当于查询A、B交集部分数据
 
-   ![image-20221207165446062](assets/image-20221207165446062.png) 
+   ![image-20221207165446062](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207165446062.png) 
 
 2. 外连接
 
@@ -176,7 +176,7 @@ from tb_emp inner join tb_dept
 on tb_emp.dept_id = tb_dept.id;
 ~~~
 
-![image-20221207173435289](assets/image-20221207173435289.png)
+![image-20221207173435289](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207173435289.png)
 
 
 
@@ -186,7 +186,7 @@ on tb_emp.dept_id = tb_dept.id;
 
 - tableA  别名1  ,  tableB  别名2 ;
 
-![image-20221207174234522](assets/image-20221207174234522.png)
+![image-20221207174234522](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207174234522.png)
 
 使用了别名的多表查询：
 
@@ -235,7 +235,7 @@ from tb_emp AS emp left join tb_dept AS dept
      on emp.dept_id = dept.id;
 ~~~
 
-![image-20221207181204792](assets/image-20221207181204792.png)
+![image-20221207181204792](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207181204792.png)
 
 案例：查询部门表中所有部门的名称, 和对应的员工名称 
 
@@ -246,7 +246,7 @@ from tb_emp AS emp right join  tb_dept AS dept
      on emp.dept_id = dept.id;
 ~~~
 
-![image-20221207181048208](assets/image-20221207181048208.png)
+![image-20221207181048208](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207181048208.png)
 
 
 
@@ -317,7 +317,7 @@ select * from tb_emp where dept_id = 2;
 select * from tb_emp where dept_id = (select id from tb_dept where name = '教研部');
 ```
 
-![image-20221207202215946](assets/image-20221207202215946.png)
+![image-20221207202215946](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207202215946.png)
 
 
 
@@ -338,7 +338,7 @@ select * from tb_emp where entrydate > '2012-11-01';
 select * from tb_emp where entrydate > (select entrydate from tb_emp where name = '方东白');
 ```
 
-![image-20221207203000445](assets/image-20221207203000445.png)
+![image-20221207203000445](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207203000445.png)
 
 
 
@@ -372,7 +372,7 @@ select * from tb_emp where dept_id in (3,2);
 select * from tb_emp where dept_id in (select id from tb_dept where name = '教研部' or name = '咨询部');
 ```
 
-![image-20221207203620472](assets/image-20221207203620472.png)
+![image-20221207203620472](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207203620472.png)
 
 
 
@@ -403,7 +403,7 @@ select * from tb_emp where (entrydate,job) = ('2007-01-01',2);
 select * from tb_emp where (entrydate,job) = (select entrydate , job from tb_emp where name = '韦一笑');
 ```
 
-![image-20221207204452202](assets/image-20221207204452202.png)
+![image-20221207204452202](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207204452202.png)
 
 
 
@@ -428,7 +428,7 @@ select * from emp where entrydate > '2006-01-01';
 select e.*, d.* from (select * from emp where entrydate > '2006-01-01') e left join dept d on e.dept_id = d.id ;
 ~~~
 
-![image-20221208142154263](assets/image-20221208142154263.png)
+![image-20221208142154263](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208142154263.png)
 
 
 
@@ -440,14 +440,14 @@ select e.*, d.* from (select * from emp where entrydate > '2006-01-01') e left j
 
 将资料中准备好的多表查询的数据准备的SQL脚本导入数据库中。
 
-![image-20221208143318921](assets/image-20221208143318921.png) 
+![image-20221208143318921](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143318921.png) 
 
 - 分类表：category
 - 菜品表：dish
 - 套餐表：setmeal
 - 套餐菜品关系表：setmeal_dish
 
-![image-20221208143312292](assets/image-20221208143312292.png) 
+![image-20221208143312292](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143312292.png) 
 
 
 
@@ -473,7 +473,7 @@ where d.category_id = c.id
       and d.price < 10;
 ~~~
 
-![image-20221208145036602](assets/image-20221208145036602.png)
+![image-20221208145036602](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208145036602.png)
 
 
 
@@ -486,7 +486,7 @@ where d.price between 10 and 50
       and d.status = 1;
 ~~~
 
-![image-20221208145432077](assets/image-20221208145432077.png)
+![image-20221208145432077](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208145432077.png)
 
 
 
@@ -499,7 +499,7 @@ where d.category_id = c.id
 group by c.name;
 ~~~
 
-![image-20221208150016895](assets/image-20221208150016895.png)
+![image-20221208150016895](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208150016895.png)
 
 
 
@@ -527,7 +527,7 @@ group by c.name  -- 按照分类名分组
 having count(*)>=3; -- 各组后筛选菜品总数据>=3
 ~~~
 
-![image-20221208152107502](assets/image-20221208152107502.png)
+![image-20221208152107502](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208152107502.png)
 
 
 
@@ -540,7 +540,7 @@ where s.id = sd.setmeal_id and sd.dish_id = d.id
       and s.name='商务套餐A';
 ~~~
 
-![image-20221208152626138](assets/image-20221208152626138.png)
+![image-20221208152626138](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208152626138.png)
 
 
 
@@ -556,7 +556,7 @@ select * from dish where price < 37.736842;
 select * from dish where price < (select avg(price) from dish);
 ~~~
 
-![image-20221208153051333](assets/image-20221208153051333.png)
+![image-20221208153051333](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208153051333.png)
 
 
 
@@ -694,7 +694,7 @@ rollback ;
 
 测试没有使用索引的查询：
 
-![image-20221209115617429](assets/image-20221209115617429.png)
+![image-20221209115617429](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209115617429.png)
 
 添加索引后查询：
 
@@ -706,7 +706,7 @@ create index idx_sku_sn on tb_sku (sn);  #在添加索引时，也需要消耗�
 select * from tb_sku where sn = '100000003145008';
 ~~~
 
-![image-20221209120107543](assets/image-20221209120107543.png)
+![image-20221209120107543](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209120107543.png)
 
 
 
@@ -734,15 +734,15 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引�
 
 > 二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大
 
-![image-20221208174135229](assets/image-20221208174135229.png) 
+![image-20221208174135229](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174135229.png) 
 
 > 当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。
 
-![image-20221208174859866](assets/image-20221208174859866.png) 
+![image-20221208174859866](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174859866.png) 
 
 > 可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵平衡的二叉树）
 
-![image-20221209100647867](assets/image-20221209100647867.png)
+![image-20221209100647867](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209100647867.png)
 
 > 但是在Mysql数据库中并没有使用二叉搜索数或二叉平衡数或红黑树来作为索引的结构。
 
@@ -758,7 +758,7 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引�
 
 下面我们来看看B+Tree(多路平衡搜索树)结构中如何避免这个问题：
 
-![image-20221208181315728](assets/image-20221208181315728.png)
+![image-20221208181315728](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208181315728.png)
 
 B+Tree结构：
 
@@ -803,11 +803,11 @@ create  [ unique ]  index 索引名 on  表名 (字段名,... ) ;
 create index idx_emp_name on tb_emp(name);
 ~~~
 
-![image-20221209105119159](assets/image-20221209105119159.png)
+![image-20221209105119159](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209105119159.png)
 
 > 在创建表时，如果添加了主键和唯一约束，就会默认创建：主键索引、唯一约束
 >
-> ![image-20221209105846211](assets/image-20221209105846211.png)
+> ![image-20221209105846211](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209105846211.png)
 
 
 
@@ -823,7 +823,7 @@ show  index  from  表名;
 show  index  from  tb_emp;
 ~~~
 
-![image-20221209110317092](assets/image-20221209110317092.png)
+![image-20221209110317092](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209110317092.png)
 
 
 

@@ -6,7 +6,7 @@
 
 所以**Web开发**说白了，就是**开发网站**的，例如下图所示的网站：**淘宝**，**京东**等等
 
-![1667546541068](assets/1667546541068.png)
+![1667546541068](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667546541068.png)
 
 
 
@@ -20,23 +20,23 @@
 
 1.首先我们需要通过**浏览器**访问发布到**前端服务器**中的**前端程序**，这时候前端程序会将前端代码返回给浏览器。如下图所示：
 
-![1667546920773](assets/1667546920773.png)
+![1667546920773](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667546920773.png)
 
 
 
 2.浏览器得到前端代码，此时浏览器会将前端代码进行解析，然后展示到浏览器的窗口中，这时候我们就看到了**网站**的**页面**，如下图所示：
 
-![1667547421140](assets/1667547421140.png)
+![1667547421140](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667547421140.png)
 
 3.但是此时这个页面是没有数据的，因为数据在我们的数据库中，所以我们浏览器需要根据**前端代码中指定的后台服务器的地址** 向 我们的**后台服务器**（内部有java程序）发起**请求**，后台服务器再去从**数据库**中获取数据，然后返回给浏览器。
 
-![1667547561387](assets/1667547561387.png)
+![1667547561387](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667547561387.png)
 
 4.浏览器拿到后台返回的数据后，然后将数据展示在前端资源也就是**网页**上，然后我们就看到了如下图所示的完整的内容
 
 
 
-![1667547604517](assets/1667547604517.png)
+![1667547604517](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667547604517.png)
 
 
 
@@ -59,17 +59,17 @@
 - 后端人员开开发后端程序，后端程序单独部署到后端服务器上
 
 
-![1667548530745](assets/1667548530745.png)
+![1667548530745](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667548530745.png)
 
 **混合开发：**（早期的开发技术，目前慢慢退出市场），这种开发模式的特点是：前端人员开发的代码和后端人员开发的代码在同一个项目中，一起打包部署。
 
-![1667548590602](assets/1667548590602.png)
+![1667548590602](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667548590602.png)
 
 # 4 网站的开发技术
 
 最后我们来看看web阶段需要学习哪些技术呢？如下图我们列举了课程中需要学习的知识点
 
-![1667548969631](assets/1667548969631.png)
+![1667548969631](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667548969631.png)
 
 以下是图表的方式整理了我们web阶段要学习的技术和其对应的作用
 
