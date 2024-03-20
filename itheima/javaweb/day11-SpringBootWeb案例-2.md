@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 ---
-# SpringBootWeb案例
+## SpringBootWeb案例
 
 前面我们已经实现了员工信息的条件分页查询以及删除操作。 关于员工管理的功能，还有两个需要实现：
 
@@ -124,17 +124,20 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
 > - 请求参数：Json格式数据
 > - 响应数据：Json格式数据
 >
-> 问题1：如何限定请求方式是POST？
->
-> ~~~java
-> @PostMapping
-> ~~~
->
-> 问题2：怎么在controller中接收json格式的请求参数？
->
-> ~~~java
-> @RequestBody  //把前端传递的json数据填充到实体类中
-> ~~~
+
+问题1：如何限定请求方式是POST？
+
+~~~java
+@PostMapping
+~~~
+
+问题2：怎么在controller中接收json格式的请求参数？
+
+```java
+@RequestBody  //把前端传递的json数据填充到实体类中
+```
+
+
 
 
 

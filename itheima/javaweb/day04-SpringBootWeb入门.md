@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192155572.jpg'
 ---
-# SpringBoot基础
+## SpringBoot基础
 
 ## 课程内容
 

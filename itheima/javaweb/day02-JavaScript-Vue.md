@@ -1,11 +1,11 @@
 ---
-title: itheima-JavaWeb day02-JavaScript
+title: itheima-JavaWeb day02-JavaScript-Vue
 tags:
   - itheima
   - JavaScript
   - 前端
 categories: 前端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192152556.png'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192152556.png
 ---
 # 1 JavaScript
 

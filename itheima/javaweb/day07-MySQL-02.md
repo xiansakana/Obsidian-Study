@@ -8,7 +8,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192159317.png'
 ---
-# 数据库开发-MySQL
+## 数据库开发-MySQL
 
 在上次学习的内容中，我们讲解了：
 
