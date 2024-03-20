@@ -27,12 +27,12 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192143345.jpg'
 * 创建一个Maven的web工程
 * pom.xml添加SSM需要的依赖jar包
 * 编写Web项目的入口配置类，实现`AbstractAnnotationConfigDispatcherServletInitializer`重写以下方法
-  * getRootConfigClasses()	：返回Spring的配置类->需要==SpringConfig==配置类
-  * getServletConfigClasses() ：返回SpringMVC的配置类->需要==SpringMvcConfig==配置类
+  * getRootConfigClasses()	：返回Spring的配置类->需要SpringConfig配置类
+  * getServletConfigClasses() ：返回SpringMVC的配置类->需要SpringMvcConfig配置类
   * getServletMappings()      : 设置SpringMVC请求拦截路径规则
   * getServletFilters()       ：设置过滤器，解决POST请求中文乱码问题
 
-(2)SSM整合[==重点是各个配置的编写==]
+(2)SSM整合[重点是各个配置的编写]
 
 * SpringConfig
   * 标识该类为配置类 @Configuration
@@ -628,9 +628,9 @@ SSM整合以及功能模块开发完成后，接下来，我们在上述案例�
 
 所以我们就想能不能将返回结果的数据进行统一，具体如何来做，大体的思路为:
 
-* 为了封装返回的结果数据:==创建结果模型类，封装数据到data属性中==
-* 为了封装返回的数据是何种操作及是否操作成功:==封装操作结果到code属性中==
-* 操作失败后为了封装返回的错误信息:==封装特殊消息到message(msg)属性中==
+* 为了封装返回的结果数据:创建结果模型类，封装数据到data属性中
+* 为了封装返回的数据是何种操作及是否操作成功:封装操作结果到code属性中
+* 操作失败后为了封装返回的错误信息:封装特殊消息到message(msg)属性中
 
 ![1630654293972](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630654293972.png)
 
@@ -809,15 +809,15 @@ public Result getById(@PathVariable Integer id) {
 
 1. 各个层级均出现异常，异常处理代码书写在哪一层?
 
-   ==所有的异常均抛出到表现层进行处理==
+   所有的异常均抛出到表现层进行处理
 
 2. 异常的种类很多，表现层如何将所有的异常都处理到呢?
 
-   ==异常分类==
+   异常分类
 
 3. 表现层处理异常，每个方法中单独书写，代码书写量巨大且意义不强，如何解决?
 
-   ==AOP==
+   AOP
 
 对于上面这些问题及解决方案，SpringMVC已经为我们提供了一套解决方案:
 
@@ -860,7 +860,7 @@ public class ProjectExceptionAdvice {
 
 ```
 
-==确保SpringMvcConfig能够扫描到异常处理器类==
+确保SpringMvcConfig能够扫描到异常处理器类
 
 ### 步骤2:让程序抛出异常
 
@@ -909,7 +909,7 @@ public class ProjectExceptionAdvice {
 
 | 名称 | @RestControllerAdvice              |
 | ---- | ---------------------------------- |
-| 类型 | ==类注解==                         |
+| 类型 | 类注解                         |
 | 位置 | Rest风格开发的控制器增强类定义上方 |
 | 作用 | 为Rest风格开发的控制器类做增强     |
 
@@ -921,7 +921,7 @@ public class ProjectExceptionAdvice {
 
 | 名称 | @ExceptionHandler                                            |
 | ---- | ------------------------------------------------------------ |
-| 类型 | ==方法注解==                                                 |
+| 类型 | 方法注解                                                 |
 | 位置 | 专用于异常处理的控制器方法上方                               |
 | 作用 | 设置指定异常的处理方案，功能等同于控制器方法，<br/>出现异常后终止原始控制器执行,并转入当前方法执行 |
 
@@ -2294,7 +2294,7 @@ ex:如果处理器执行过程中出现异常对象，可以针对异常情况�
 
 因为我们现在已经有全局异常处理器类，所以该参数的使用率也不高。
 
-这三个方法中，最常用的是==preHandle==,在这个方法中可以通过返回值来决定是否要进行放行，我们可以把业务逻辑放在该方法中，如果满足业务则返回true放行，不满足则返回false拦截。
+这三个方法中，最常用的是preHandle,在这个方法中可以通过返回值来决定是否要进行放行，我们可以把业务逻辑放在该方法中，如果满足业务则返回true放行，不满足则返回false拦截。
 
 ## 5.4 拦截器链配置
 
@@ -2368,4 +2368,4 @@ postHandle:与配置顺序相反，可能不运行
 
 afterCompletion:与配置顺序相反，可能不运行。
 
-这个顺序不太好记，最终只需要把握住一个原则即可:==以最终的运行结果为准==
+这个顺序不太好记，最终只需要把握住一个原则即可:以最终的运行结果为准

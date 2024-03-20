@@ -23,9 +23,9 @@ SpringMVC是隶属于Spring框架的一部分，主要是用来进行Web开发�
 对于SpringMVC我们主要学习如下内容:
 
 * SpringMVC简介
-* ==请求与响应==
-* ==REST风格==
-* ==SSM整合(注解版)==
+* 请求与响应
+* REST风格
+* SSM整合(注解版)
 * 拦截器
 
 SpringMVC是处于Web层的框架，所以其主要的作用就是用来接收前端发过来的请求和数据然后经过处理并将处理的结果响应给前端，所以如何处理请求和响应是SpringMVC中非常重要的一块内容。
@@ -36,10 +36,10 @@ SSM整合是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来完�
 
 对于SpringMVC的学习，最终要达成的目标:
 
-1. ==掌握基于SpringMVC获取请求参数和响应json数据操作==
-2. ==熟练应用基于REST风格的请求路径设置与参数传递==
+1. 掌握基于SpringMVC获取请求参数和响应json数据操作
+2. 熟练应用基于REST风格的请求路径设置与参数传递
 3. 能够根据实际业务建立前后端开发通信协议并进行实现
-4. ==基于SSM整合技术开发任意业务模块功能==
+4. 基于SSM整合技术开发任意业务模块功能
 
 # 1，SpringMVC概述
 
@@ -73,7 +73,7 @@ SSM整合是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来完�
 
 * 因为是异步调用，所以后端不需要返回view视图，将其去除
 * 前端如果通过异步调用的方式进行交互，后台就需要将返回的数据转换成json格式进行返回
-* SpringMVC==主要==负责的就是
+* SpringMVC主要负责的就是
   * controller如何接收请求和数据
   * 如何将请求和数据转发给业务层
   * 如何将响应数据转换成json发回到前端
@@ -109,13 +109,13 @@ SpringMVC的制作过程和上述流程几乎是一致的，具体的实现流�
 
 2.设置tomcat服务器，加载web工程(tomcat插件)
 
-3.导入坐标(==SpringMVC==+Servlet)
+3.导入坐标(SpringMVC+Servlet)
 
-4.定义处理请求的功能类(==UserController==)
+4.定义处理请求的功能类(UserController)
 
-5.==设置请求映射(配置映射关系)==
+5.设置请求映射(配置映射关系)
 
-6.==将SpringMVC设定加载到Tomcat容器中==
+6.将SpringMVC设定加载到Tomcat容器中
 
 ## 2.1 需求分析
 
@@ -433,7 +433,7 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
 
 从包结构来看的话，Spring已经多把SpringMVC的controller类也给扫描到，所以针对这个问题该如何解决，就是咱们接下来要学习的内容。
 
-概括的描述下咱们现在的问题就是==因为功能不同，如何避免Spring错误加载到SpringMVC的bean?==
+概括的描述下咱们现在的问题就是因为功能不同，如何避免Spring错误加载到SpringMVC的bean?
 
 ## 2.5.2 思路分析
 
@@ -653,7 +653,7 @@ public class App{
 
 ![1630462200947](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630462200947.png)
 
-==注意:测试的时候，需要把SpringMvcConfig配置类上的@ComponentScan注解注释掉，否则不会报错==
+注意:测试的时候，需要把SpringMvcConfig配置类上的@ComponentScan注解注释掉，否则不会报错
 
 出现问题的原因是，
 
@@ -760,7 +760,7 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 
 # 4，请求与响应
 
-前面我们已经完成了入门案例相关的知识学习，接来了我们就需要针对SpringMVC相关的知识点进行系统的学习，之前我们提到过，SpringMVC是web层的框架，主要的作用是接收请求、接收数据、响应结果，所以这一章节是学习SpringMVC的==重点==内容，我们主要会讲解四部分内容:
+前面我们已经完成了入门案例相关的知识学习，接来了我们就需要针对SpringMVC相关的知识点进行系统的学习，之前我们提到过，SpringMVC是web层的框架，主要的作用是接收请求、接收数据、响应结果，所以这一章节是学习SpringMVC的重点内容，我们主要会讲解四部分内容:
 
 * 请求映射路径
 * 请求参数
@@ -1334,7 +1334,7 @@ public String pojoParam(User user){
 **注意:**
 
 * POJO参数接收，前端GET和POST发送请求数据的方式不变。
-* ==请求参数key的名称要和POJO中属性的名称一致，否则无法封装。==
+* 请求参数key的名称要和POJO中属性的名称一致，否则无法封装。
 
 ## 4.3.3 嵌套POJO类型参数
 
@@ -1367,14 +1367,14 @@ public class User {
 @RequestMapping("/pojoParam")
 @ResponseBody
 public String pojoParam(User user){
-    System.out.println("pojo参数传递 user ==> "+user);
+    System.out.println("pojo方法\类注解 user ==> "+user);
     return "{'module':'pojo param'}";
 }
 ```
 
 **注意:**
 
-==请求参数key的名称要和POJO中属性的名称一致，否则无法封装==
+请求参数key的名称要和POJO中属性的名称一致，否则无法封装
 
 ## 4.3.4 数组类型参数
 
@@ -1450,7 +1450,7 @@ public String listParam(@RequestParam List<String> likes){
 
 ## 4.4 JSON数据传输参数
 
-前面我们说过，现在比较流行的开发方式为异步调用。前后台以异步方式进行交换，传输的数据使用的是==JSON==,所以前端如果发送的是JSON数据，后端该如何接收?
+前面我们说过，现在比较流行的开发方式为异步调用。前后台以异步方式进行交换，传输的数据使用的是JSON,所以前端如果发送的是JSON数据，后端该如何接收?
 
 对于JSON数据类型，我们常见的有三种:
 
@@ -1606,7 +1606,7 @@ SpringMVC接收JSON数据的实现步骤为:
 
 | 名称 | @EnableWebMvc             |
 | ---- | ------------------------- |
-| 类型 | ==配置类注解==            |
+| 类型 | 配置类注解            |
 | 位置 | SpringMVC配置类定义上方   |
 | 作用 | 开启SpringMVC多项辅助功能 |
 
@@ -1614,7 +1614,7 @@ SpringMVC接收JSON数据的实现步骤为:
 
 | 名称 | @RequestBody                                                 |
 | ---- | ------------------------------------------------------------ |
-| 类型 | ==形参注解==                                                 |
+| 类型 | 形参注解                                                 |
 | 位置 | SpringMVC控制器方法形参定义前面                              |
 | 作用 | 将请求中请求体所包含的数据传递给请求参数，此注解一个处理器方法只能使用一次 |
 
@@ -1695,7 +1695,7 @@ public String dataParam(Date date,Date date1)
 
 发送请求和数据后，页面会报400，控制台会报出一个错误
 
-Resolved [org.springframework.web.method.annotation.==MethodArgumentTypeMismatchException==: Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'; nested exception is org.springframework.core.convert.==ConversionFailedException==: Failed to convert from type [java.lang.String] to type [java.util.Date] for value '2088-08-08'; nested exception is java.lang.IllegalArgumentException]
+Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.util.Date] for value '2088-08-08'; nested exception is java.lang.IllegalArgumentException]
 
 从错误信息可以看出，错误的原因是在将`2088-08-08`转换成日期类型的时候失败了，原因是SpringMVC默认支持的字符串转日期的格式为`yyyy/MM/dd`,而我们现在传递的不符合其默认格式，SpringMVC就无法进行格式转换，所以报错。
 
@@ -1751,7 +1751,7 @@ public String dataParam(Date date,
 
 | 名称     | @DateTimeFormat                 |
 | -------- | ------------------------------- |
-| 类型     | ==形参注解==                    |
+| 类型     | 形参注解                    |
 | 位置     | SpringMVC控制器方法形参前面     |
 | 作用     | 设定日期时间型数据格式          |
 | 相关属性 | pattern：指定日期时间格式字符串 |
@@ -1806,7 +1806,7 @@ Converter接口的实现类
 
 该接口是实现对象与JSON之间的转换工作
 
-**==注意:SpringMVC的配置类把@EnableWebMvc当做标配配置上去，不要省略==**
+**注意:SpringMVC的配置类把@EnableWebMvc当做标配配置上去，不要省略**
 
 ## 4.6 响应
 
@@ -2020,7 +2020,7 @@ public class UserController {
 }
 ```
 
-返回值为实体类对象，设置返回值为实体类类型，即可实现返回对应对象的json数据，需要依赖==@ResponseBody==注解和==@EnableWebMvc==注解
+返回值为实体类对象，设置返回值为实体类类型，即可实现返回对应对象的json数据，需要依赖@ResponseBody注解和@EnableWebMvc注解
 
 重新启动服务器，访问`http://localhost/toJsonPOJO`
 
@@ -2061,12 +2061,12 @@ public class UserController {
 
 ## 知识点1：@ResponseBody
 
-| 名称     | @ResponseBody                                                |
-| -------- | ------------------------------------------------------------ |
-| 类型     | ==方法\类注解==                                              |
-| 位置     | SpringMVC控制器方法定义上方和控制类上                        |
-| 作用     | 设置当前控制器返回值作为响应体,<br/>写在类上，该类的所有方法都有该注解功能 |
-| 相关属性 | pattern：指定日期时间格式字符串                              |
+| 名称   | @ResponseBody                            |
+| ---- | ---------------------------------------- |
+| 类型   | 方法/类注解                                   |
+| 位置   | SpringMVC控制器方法定义上方和控制类上                  |
+| 作用   | 设置当前控制器返回值作为响应体,<br/>写在类上，该类的所有方法都有该注解功能 |
+| 相关属性 | pattern：指定日期时间格式字符串                      |
 
 **说明:**
 
@@ -2092,7 +2092,7 @@ public class UserController {
 
 ## 5.1 REST简介
 
-* ==REST==（Representational State Transfer），表现形式状态转换,它是一种软件架构==风格==
+* REST（Representational State Transfer），表现形式状态转换,它是一种软件架构风格
 
   当我们想表示一个网络资源的时候，可以使用两种方式:
 
@@ -2114,7 +2114,7 @@ public class UserController {
 
 但是我们的问题也随之而来了，一个相同的url地址即可以是新增也可以是修改或者查询，那么到底我们该如何区分该请求到底是什么操作呢?
 
-* 按照REST风格访问资源时使用==行为动作==区分对资源进行了何种操作
+* 按照REST风格访问资源时使用行为动作区分对资源进行了何种操作
   * `http://localhost/users`	查询全部用户信息 GET（查询）
   * `http://localhost/users/1`  查询指定用户信息 GET（查询）
   * `http://localhost/users`    添加用户信息    POST（新增/保存）
@@ -2130,7 +2130,7 @@ public class UserController {
 * 发送PUT请求是用来做修改
 * 发送DELETE请求是用来做删除
 
-但是==注意==:
+但是注意:
 
 * 上述行为是约定方式，约定不是规范，可以打破，所以称REST风格，而不是REST规范
   * REST提供了对应的架构方式，按照这种架构设计项目可以降低开发的复杂性，提高系统的可伸缩性
@@ -2140,7 +2140,7 @@ public class UserController {
 
 清楚了什么是REST风格后，我们后期会经常提到一个概念叫`RESTful`，那什么又是RESTful呢?
 
-* 根据REST风格对资源进行访问称为==RESTful==。
+* 根据REST风格对资源进行访问称为RESTful。
 
 后期我们在进行开发的过程中，大多是都是遵从REST风格来访问我们的后台服务，所以可以说咱们以后都是基于RESTful来进行开发的。
 
@@ -2513,15 +2513,15 @@ RESTful入门案例，我们需要学习的内容如下:
 
 (1)设定Http请求动作(动词)
 
-@RequestMapping(value="",==method== = RequestMethod.==POST|GET|PUT|DELETE==)
+@RequestMapping(value="",method = RequestMethod.POST|GET|PUT|DELETE)
 
 (2)设定请求参数(路径变量)
 
-@RequestMapping(value="/users/=={id}==",method = RequestMethod.DELETE)
+@RequestMapping(value="/users/{id}",method = RequestMethod.DELETE)
 
 @ReponseBody
 
-public String delete(==@PathVariable== Integer ==id==){
+public String delete(@PathVariable Integer id){
 
 }
 
@@ -2529,7 +2529,7 @@ public String delete(==@PathVariable== Integer ==id==){
 
 | 名称 | @PathVariable                                                |
 | ---- | ------------------------------------------------------------ |
-| 类型 | ==形参注解==                                                 |
+| 类型 | 形参注解                                                 |
 | 位置 | SpringMVC控制器方法形参定义前面                              |
 | 作用 | 绑定路径参数与处理器方法形参间的关系，要求路径参数名与形参名一一对应 |
 
@@ -2546,7 +2546,7 @@ public String delete(==@PathVariable== Integer ==id==){
 
 ## 5.3 RESTful快速开发
 
-做完了RESTful的开发，你会发现==好麻烦==，麻烦在哪?
+做完了RESTful的开发，你会发现好麻烦，麻烦在哪?
 
 ![1630507339724](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630507339724.png)
 
@@ -2626,7 +2626,7 @@ public class BookController {
 
 | 名称 | @RestController                                              |
 | ---- | ------------------------------------------------------------ |
-| 类型 | ==类注解==                                                   |
+| 类型 | 类注解                                                   |
 | 位置 | 基于SpringMVC的RESTful开发控制器类定义上方                   |
 | 作用 | 设置当前控制器类为RESTful风格，<br/>等同于@Controller与@ResponseBody两个注解组合功能 |
 
@@ -2634,7 +2634,7 @@ public class BookController {
 
 | 名称     | @GetMapping @PostMapping @PutMapping @DeleteMapping          |
 | -------- | ------------------------------------------------------------ |
-| 类型     | ==方法注解==                                                 |
+| 类型     | 方法注解                                                 |
 | 位置     | 基于SpringMVC的RESTful开发控制器方法定义上方                 |
 | 作用     | 设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，<br/>例如@GetMapping对应GET请求 |
 | 相关属性 | value（默认）：请求访问路径                                  |

@@ -28,7 +28,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
 
   * Spring在企业的技术选型命中率高
 
-  * 所以说,Spring技术是JavaEE开发必备技能，企业开发技术选型命中率>==90%==
+  * 所以说,Spring技术是JavaEE开发必备技能，企业开发技术选型命中率>90%
 
     ![image-20210729171139088](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729171139088.png)
 
@@ -37,11 +37,11 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
 * 从专业角度看
 
   * 随着时代发展，软件规模与功能都呈几何式增长，开发难度也在不断递增，该如何解决?
-    * Spring可以==简化开发==，降低企业级开发的复杂性，使开发变得更简单快捷
+    * Spring可以简化开发，降低企业级开发的复杂性，使开发变得更简单快捷
   * 随着项目规模与功能的增长,遇到的问题就会增多，为了解决问题会引入更多的框架，这些框架如何协调工作?
-    * Spring可以==框架整合==，高效整合其他技术，提高企业级应用开发与运行效率
+    * Spring可以框架整合，高效整合其他技术，提高企业级应用开发与运行效率
 
-  综上所述，==Spring是一款非常优秀而且功能强大的框架，不仅要学，而且还要学好。==
+  综上所述，Spring是一款非常优秀而且功能强大的框架，不仅要学，而且还要学好。
 
 ## 1.2 学什么?
 
@@ -49,9 +49,9 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
 
 * 简化开发: Spring框架中提供了两个大的核心技术，分别是:
 
-  * ==IOC==
-  * ==AOP==
-    * ==事务处理==
+  * IOC
+  * AOP
+    * 事务处理
 
    1.Spring的简化操作都是基于这两块内容,所以这也是Spring学习中最为重要的两个知识点。
 
@@ -59,7 +59,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
 
 * 框架整合: Spring在框架整合这块已经做到了极致，它可以整合市面上几乎所有主流框架，比如:
 
-  - ==MyBatis==
+  - MyBatis
   - MyBatis-plus
   - Struts
   - Struts2
@@ -70,7 +70,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
   
   综上所述，对于Spring的学习，主要学习四块内容:
   
-  ==(1)IOC,(2)整合Mybatis(IOC的具体应用)，(3)AOP,(4)声明式事务(AOP的具体应用)==
+  (1)IOC,(2)整合Mybatis(IOC的具体应用)，(3)AOP,(4)声明式事务(AOP的具体应用)
 
 ## 1.3 怎么学?
 

@@ -881,7 +881,7 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
 
 在上述环境的基础上，我们来学一学Spring是如何通过注解实现bean的定义开发?
 
-## 步骤1:删除原XML配置
+## 步骤1: 删除原XML配置
 
 将配置文件中的`<bean>`标签删除掉
 
@@ -889,7 +889,7 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
 <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl"/>
 ```
 
-## 步骤2:Dao上添加注解
+## 步骤2: Dao上添加注解
 
 在BookDaoImpl类上添加`@Component`注解
 
@@ -902,13 +902,13 @@ public class BookDaoImpl implements BookDao {
 }
 ```
 
-==注意:@Component注解不可以添加在接口上，因为接口是无法创建对象的。==
+注意:@Component注解不可以添加在接口上，因为接口是无法创建对象的。
 
 XML与注解配置的对应关系:
 
 ![1629990315619](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629990315619.png)
 
-## 步骤3:配置Spring的注解包扫描
+## 步骤3: 配置Spring的注解包扫描
 
 为了让Spring框架能够扫描到写在类上的注解，需要在配置文件上进行包扫描
 
@@ -935,13 +935,13 @@ base-package指定Spring框架扫描的包路径，它会扫描指定包及其�
 * 包路径越少[如:com.itheima],扫描的范围越大速度越慢
 * 一般扫描到项目的组织名称即Maven的groupId下[如:com.itheima]即可。
 
-## 步骤4：运行程序
+## 步骤4: 运行程序
 
 运行`App`类查看打印结果
 
 ![1630027590558](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630027590558.png)
 
-## 步骤5:Service上添加注解
+## 步骤5: Service上添加注解
 
 在BookServiceImpl类上也添加`@Component`交给Spring框架管理
 
@@ -961,7 +961,7 @@ public class BookServiceImpl implements BookService {
 }
 ```
 
-## 步骤6:运行程序
+## 步骤6: 运行程序
 
 在App类中，从IOC容器中获取BookServiceImpl对应的bean对象，打印
 
@@ -1003,7 +1003,7 @@ public class App {
 
 方便我们后期在编写类的时候能很好的区分出这个类是属于`表现层`、`业务层`还是`数据层`的类。
 
-## 知识点1:@Component等
+## 知识点1: @Component等
 
 | 名称 | @Component/@Controller/@Service/@Repository |
 | ---- | ------------------------------------------- |
@@ -1028,7 +1028,7 @@ public class App {
 
 ## 3.2.2 实现步骤
 
-### 步骤1:创建配置类
+### 步骤1: 创建配置类
 
 创建一个配置类`SpringConfig`
 
@@ -1038,7 +1038,7 @@ public class SpringConfig {
 
 ```
 
-### 步骤2:标识该类为配置类
+### 步骤2: 标识该类为配置类
 
 在配置类上添加`@Configuration`注解，将其标识为一个配置类,替换`applicationContext.xml`
 
@@ -1048,7 +1048,7 @@ public class SpringConfig {
 }
 ```
 
-### 步骤3:用注解替换包扫描配置
+### 步骤3: 用注解替换包扫描配置
 
 在配置类上添加包扫描注解`@ComponentScan`替换`<context:component-scan base-package=""/>`
 
@@ -1059,7 +1059,7 @@ public class SpringConfig {
 }
 ```
 
-### 步骤4:创建运行类并执行
+### 步骤4: 创建运行类并执行
 
 创建一个新的运行类`AppForAnnotation`
 
@@ -1500,7 +1500,7 @@ public class BookServiceImpl implements BookService {
 
 @Qualifier注解后的值就是需要注入的bean的名称。
 
-==注意:@Qualifier不能独立使用，必须和@Autowired一起使用==
+注意:@Qualifier不能独立使用，必须和@Autowired一起使用
 
 ## 3.4.4 简单数据类型注入
 
@@ -1638,7 +1638,7 @@ public class BookDaoImpl implements BookDao {
 
 前面定义bean的时候都是在自己开发的类上面写个注解就完成了，但如果是第三方的类，这些类都是在jar包中，我们没有办法在类上面添加注解，这个时候该怎么办?
 
-遇到上述问题，我们就需要有一种更加灵活的方式来定义bean,这种方式不能在原始代码上面书写注解，一样能定义bean,这就用到了一个全新的注解==@Bean==。
+遇到上述问题，我们就需要有一种更加灵活的方式来定义bean,这种方式不能在原始代码上面书写注解，一样能定义bean,这就用到了一个全新的注解@Bean。
 
 这个注解该如何使用呢?
 
@@ -1869,7 +1869,7 @@ public class SpringConfig {
 
 * @Import参数需要的是一个数组，可以引入多个配置类。
 
-* @Import注解在配置类中只能写一次，下面的方式是==不允许的==
+* @Import注解在配置类中只能写一次，下面的方式是不允许的
 
   ```java
   @Configuration
@@ -2040,7 +2040,7 @@ public DataSource dataSource(BookDao bookDao){
 }
 ```
 
-==引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型自动装配对象。==
+引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型自动装配对象。
 
 ### 步骤3:运行程序
 
@@ -2269,7 +2269,7 @@ Mybatis的基础环境我们已经准备好了，接下来就得分析下在上�
 
   ![1630137189480](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630137189480.png)
 
-  从图中可以获取到，真正需要交给Spring管理的是==SqlSessionFactory==
+  从图中可以获取到，真正需要交给Spring管理的是SqlSessionFactory
 
 * 整合Mybatis，就是将Mybatis用到的内容交给Spring管理，分析下配置文件
 
@@ -2439,8 +2439,8 @@ public class App2 {
 
 支持Spring与Mybatis的整合就已经完成了，其中主要用到的两个类分别是:
 
-* ==SqlSessionFactoryBean==
-* ==MapperScannerConfigurer==
+* SqlSessionFactoryBean
+* MapperScannerConfigurer
 
 ## 6.3 Spring整合Junit
 

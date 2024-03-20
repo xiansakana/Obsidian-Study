@@ -30,7 +30,7 @@ cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg'
 * 开发方式
   * 基于MyBatis使用MyBatisPlus
   * 基于Spring使用MyBatisPlus
-  * ==基于SpringBoot使用MyBatisPlus==
+  * 基于SpringBoot使用MyBatisPlus
 
 SpringBoot刚刚我们学习完成，它能快速构建Spring开发环境用以整合其他技术，使用起来是非常简单，对于MP的学习，我们也基于SpringBoot来构建学习。
 
@@ -121,7 +121,7 @@ spring:
     password: root
 ```
 
-**说明:**==serverTimezone是用来设置时区，UTC是标准时区，和咱们的时间差8小时，所以可以将其修改为`Asia/Shanghai`==
+**说明:**serverTimezone是用来设置时区，UTC是标准时区，和咱们的时间差8小时，所以可以将其修改为`Asia/Shanghai`
 
 ## 步骤6:根据数据库表创建实体类
 
@@ -198,7 +198,7 @@ userDao注入的时候下面有红线提示的原因是什么?
 
 ## 1.2 MybatisPlus简介
 
-MyBatisPlus（简称MP）是基于MyBatis框架基础上开发的增强型工具，旨在==简化开发、提高效率==
+MyBatisPlus（简称MP）是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提高效率
 
 通过刚才的案例，相信大家能够体会简化开发和提高效率这两个方面的优点。
 
@@ -445,7 +445,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 ### 步骤2:安装Lombok的插件
 
-==新版本IDEA已经内置了该插件，如果删除setter和getter方法程序有报红，则需要安装插件==
+新版本IDEA已经内置了该插件，如果删除setter和getter方法程序有报红，则需要安装插件
 
 ![1631016543648](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631016543648.png)
 
@@ -465,9 +465,9 @@ Lombok常见的注解有:
 * @Getter:为模型类的属性提供getter方法
 * @ToString:为模型类的属性提供toString方法
 * @EqualsAndHashCode:为模型类的属性提供equals和hashcode方法
-* ==@Data:是个组合注解，包含上面的注解的功能==
-* ==@NoArgsConstructor:提供一个无参构造函数==
-* ==@AllArgsConstructor:提供一个包含所有参数的构造函数==
+* @Data:是个组合注解，包含上面的注解的功能
+* @NoArgsConstructor:提供一个无参构造函数
+* @AllArgsConstructor:提供一个包含所有参数的构造函数
 
 Lombok的注解还有很多，上面标红的三个是比较常用的，其他的大家后期用到了，再去补充学习。
 
@@ -806,7 +806,7 @@ mybatis-plus:
 
 ![1631021942869](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631021942869.png)
 
-1. 先来看第一种:==QueryWrapper==
+1. 先来看第一种:QueryWrapper
 
 ```java
 @SpringBootTest
@@ -833,7 +833,7 @@ class Mybatisplus02DqlApplicationTests {
 
 第一种方式介绍完后，有个小问题就是在写条件的时候，容易出错，比如age写错，就会导致查询不成功
 
-2. 接着来看第二种:==QueryWrapper的基础上使用lambda==
+2. 接着来看第二种:QueryWrapper的基础上使用lambda
 
 ```java
 @SpringBootTest
@@ -862,7 +862,7 @@ SELECT id,name,password,age,tel FROM user WHERE (age < ?)
 
 此时我们再次编写条件的时候，就不会存在写错名称的情况，但是qw后面多了一层lambda()调用
 
-3. 接着来看第三种:==LambdaQueryWrapper==
+3. 接着来看第三种:LambdaQueryWrapper
 
 ```java
 @SpringBootTest
@@ -1372,7 +1372,7 @@ MP给我们提供了一个注解`@TableField`,使用该注解可以实现模型�
 
 当模型类中多了一个数据库表不存在的字段，就会导致生成的sql语句中在select的时候查询了数据库不存在的字段，程序运行就会报错，错误信息为:
 
-==Unknown column '多出来的字段名称' in 'field list'==
+Unknown column '多出来的字段名称' in 'field list'
 
 具体的解决方案用到的还是`@TableField`注解，它有一个属性叫`exist`，设置该字段是否在数据库表中存在，如果设置为false则不存在，生成sql语句查询的时候，就不会再查询该字段了。
 
@@ -1388,7 +1388,7 @@ MP给我们提供了一个注解`@TableField`,使用该注解可以实现模型�
 
 | 名称     | @TableField                                                  |
 | -------- | ------------------------------------------------------------ |
-| 类型     | ==属性注解==                                                 |
+| 类型     | 属性注解                                                 |
 | 位置     | 模型类属性定义上方                                           |
 | 作用     | 设置当前属性对应的数据库表中的字段关系                       |
 | 相关属性 | value(默认)：设置数据库表字段名称<br/>exist:设置属性在数据库表字段中是否存在，默认为true，此属性不能与value合并使用<br/>select:设置属性是否参与查询，此属性与select()映射配置不冲突 |
@@ -1397,7 +1397,7 @@ MP给我们提供了一个注解`@TableField`,使用该注解可以实现模型�
 
 该问题主要是表的名称和模型类的名称不一致，导致查询失败，这个时候通常会报如下错误信息:
 
-==Table 'databaseName.tableNaem' doesn't exist==,翻译过来就是数据库中的表不存在。
+Table 'databaseName.tableNaem' doesn't exist,翻译过来就是数据库中的表不存在。
 
 ![1631031828378](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631031828378.png)
 
@@ -1409,7 +1409,7 @@ MP给我们提供了一个注解`@TableField`,使用该注解可以实现模型�
 
 | 名称     | @TableName                    |
 | -------- | ----------------------------- |
-| 类型     | ==类注解==                    |
+| 类型     | 类注解                    |
 | 位置     | 模型类定义上方                |
 | 作用     | 设置当前类对应于数据库表关系  |
 | 相关属性 | value(默认)：设置数据库表名称 |
@@ -1536,7 +1536,7 @@ public class User {
 
 | 名称     | @TableId                                                     |
 | -------- | ------------------------------------------------------------ |
-| 类型     | ==属性注解==                                                 |
+| 类型     | 属性注解                                                 |
 | 位置     | 模型类中用于表示主键的属性定义上方                           |
 | 作用     | 设置当前类中主键属性的生成策略                               |
 | 相关属性 | value(默认)：设置数据库表主键名称<br/>type:设置主键属性的生成策略，值查照IdType的枚举值 |
@@ -1765,7 +1765,7 @@ public class User {
 
 ![1631211383421](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631211383421.png)
 
-经过这三步的演示，会发现`AUTO`的作用是==使用数据库ID自增==，在使用该策略的时候一定要确保对应的数据库表设置了ID主键自增，否则无效。
+经过这三步的演示，会发现`AUTO`的作用是使用数据库ID自增，在使用该策略的时候一定要确保对应的数据库表设置了ID主键自增，否则无效。
 
 接下来，我们可以进入源码查看下ID的生成策略有哪些?
 
@@ -2229,7 +2229,7 @@ class Mybatisplus03DqlApplicationTests {
 
 执行的SQL语句为:
 
-UPDATE tbl_user SET ==deleted===1 where id = ? AND ==deleted===0
+UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 
 执行数据结果为:
 
@@ -2239,11 +2239,11 @@ UPDATE tbl_user SET ==deleted===1 where id = ? AND ==deleted===0
 
 ## 知识点1：@TableLogic
 
-| 名称     | @TableLogic                               |
-| -------- | ----------------------------------------- |
-| 类型     | ==属性注解==                              |
-| 位置     | 模型类中用于表示删除字段的属性定义上方    |
-| 作用     | 标识该字段为进行逻辑删除的字段            |
+| 名称   | @TableLogic                   |
+| ---- | ----------------------------- |
+| 类型   | 属性注解                          |
+| 位置   | 模型类中用于表示删除字段的属性定义上方           |
+| 作用   | 标识该字段为进行逻辑删除的字段               |
 | 相关属性 | value：逻辑未删除值<br/>delval:逻辑删除值 |
 
 ## 4.4 乐观锁
@@ -2252,7 +2252,7 @@ UPDATE tbl_user SET ==deleted===1 where id = ? AND ==deleted===0
 
 在讲解乐观锁之前，我们还是先来分析下问题:
 
-业务并发现象带来的问题:==秒杀==
+业务并发现象带来的问题:秒杀
 
 * 假如有100个商品或者票在出售，为了能保证每个商品或者票只能被一个人购买，如何保证不会出现超买或者重复卖
 * 对于这一类问题，其实有很多的解决方案可以使用
@@ -2453,7 +2453,7 @@ class Mybatisplus03DqlApplicationTests {
 
 ![1631254119948](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631254119948.png)
 
-所以我们会发现，做任何模块的开发，对于这段代码，基本上都是对红色部分的调整，所以我们把去掉红色内容的东西称之为==模板==，红色部分称之为==参数==，以后只需要传入不同的参数，就可以根据模板创建出不同模块的dao代码。
+所以我们会发现，做任何模块的开发，对于这段代码，基本上都是对红色部分的调整，所以我们把去掉红色内容的东西称之为模板，红色部分称之为参数，以后只需要传入不同的参数，就可以根据模板创建出不同模块的dao代码。
 
 除了Dao可以抽取模块，其实我们常见的类都可以进行抽取，只要他们有公共部分即可。再来看下模型类的模板：
 
