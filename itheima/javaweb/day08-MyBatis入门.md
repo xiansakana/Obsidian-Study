@@ -484,9 +484,10 @@ public class JdbcTest {
 
 而对于Mybatis来说，我们在开发持久层程序操作数据库时，需要重点关注以下两个方面：
 
+
 1. application.properties
 
-   ~~~properties
+~~~properties
    #驱动类名称
    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
    #数据库连接的url
@@ -495,7 +496,9 @@ public class JdbcTest {
    spring.datasource.username=root
    #连接数据库的密码
    spring.datasource.password=1234
-   ~~~
+~~~
+
+
 
 2. Mapper接口（编写SQL语句）
 

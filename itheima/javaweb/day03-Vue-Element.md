@@ -365,7 +365,7 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
   1. 首先创建文件，提前准备基础代码，包括表格以及vue.js和axios.js文件的引入
   2. 我们需要在vue的mounted钩子函数中发送ajax请求，获取数据
   3. 拿到数据，数据需要绑定给vue的data属性
-  4. 在&lt;tr&gt;标签上通过v-for指令遍历数据，展示数据
+  4. 在`&lt;tr&gt;`标签上通过v-for指令遍历数据，展示数据
 
 - 代码实现：
 
@@ -459,7 +459,7 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
      },
      ~~~
 
-  4. 在&lt;tr&gt;标签上通过v-for指令遍历数据，展示数据，其中需要注意的是图片的值，需要使用vue的属性绑定，男女的展示需要使用条件判断，其代码如下：
+  4. 在`&lt;tr&gt;`标签上通过v-for指令遍历数据，展示数据，其中需要注意的是图片的值，需要使用vue的属性绑定，男女的展示需要使用条件判断，其代码如下：
 
      ~~~html
      <tr align="center" v-for="(emp,index) in emps">
