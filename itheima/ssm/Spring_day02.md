@@ -1,5 +1,5 @@
 ---
-title: Spring_day02
+title: itheima-SSM Spring_day02
 tags:
   - itheima
   - Spring
@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
 ---
-## itheima-SSM-Spring_day02
+## Spring_day02
 
 **今日目标**
 

@@ -1,5 +1,5 @@
 ---
-title: SpringBoot
+title: itheima-SSM SpringBoot
 tags:
   - itheima
   - SpringBoot
@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
 ---
-## itheima-SSM-SpringBoot
+## SpringBoot
 
 **今日目标：**
 

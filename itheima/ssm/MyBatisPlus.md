@@ -1,5 +1,5 @@
 ---
-title: MyBatisPlus
+title: itheima-SSM MyBatisPlus
 tags:
   - itheima
   - MyBatisPlus
@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg'
 ---
-## itheima-SSM-MyBatisPlus
+## MyBatisPlus
 
 **今日目标**
 

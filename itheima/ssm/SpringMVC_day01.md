@@ -1,5 +1,5 @@
 ---
-title: SpringMVC_day01
+title: itheima-SSM SpringMVC_day01
 tags:
   - itheima
   - SpringMVC
@@ -7,7 +7,7 @@ tags:
 categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png'
 ---
-## itheima-SSM-SpringMVC_day01
+## SpringMVC_day01
 
 **今日内容**
 

@@ -1,5 +1,5 @@
 ---
-title: Maven高级
+title: itheima-SSM Maven高级
 tags:
   - itheima
   - Maven
@@ -8,7 +8,7 @@ categories: 后端
 cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
 ---
 
-## itheima-SSM-Maven高级
+## Maven高级
 
 **今日目标**
 
