@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "itheima-SSM/SpringBoot.md",
+                "file": "itheima-SSM/Spring_day03.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima-SSM/SpringBoot.md",
+                "file": "itheima-SSM/Spring_day03.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima-SSM/SpringBoot.md",
+                "file": "itheima-SSM/Spring_day03.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima-SSM/SpringBoot.md"
+                "file": "itheima-SSM/Spring_day03.md"
               }
             }
           },
@@ -171,6 +171,8 @@
   },
   "active": "7af53440c53b9e5a",
   "lastOpenFiles": [
+    "itheima-SSM/Spring_day01.md",
+    "itheima-SSM/SpringBoot.md",
     "itheima-JavaWeb/day10-SpringBootWeb案例-1.md",
     "itheima-JavaWeb/day12-SpringBootWeb登录认证.md",
     "itheima-JavaWeb/day02-JavaScript-Vue.md",
@@ -195,8 +197,6 @@
     "itheima-JavaWeb/day06-MySQL-01.md",
     "itheima-JavaWeb/day04-Maven.md",
     "frontend/REST.md",
-    "interview/bq/Behavior-Questions.md",
-    "miscellaneous/前后端分离项目云服务器部署.md",
     "interview/resume/Jie_Cheng_resume.pdf",
     "itheima-JavaWeb/PDF讲义/day08-Mybatis入门.pdf",
     "itheima-JavaWeb/PDF讲义/day14-SpringBoot原理篇.pdf",

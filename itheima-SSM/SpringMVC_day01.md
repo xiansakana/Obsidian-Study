@@ -1,5 +1,5 @@
 ---
-title: itheima-SSM-SpringMVC_day01
+title: SpringMVC_day01
 tags:
   - itheima
   - SpringMVC

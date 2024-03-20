@@ -1,5 +1,5 @@
 ---
-title: itheima-SSM-Spring_day01
+title: Spring_day01
 tags:
   - itheima
   - Spring

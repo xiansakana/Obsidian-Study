@@ -1,5 +1,5 @@
 ---
-title: itheima-SSM-Maven高级
+title: Maven高级
 tags:
   - itheima
   - Maven

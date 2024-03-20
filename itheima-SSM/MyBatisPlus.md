@@ -1,5 +1,5 @@
 ---
-title: itheima-SSM-MyBatisPlus
+title: MyBatisPlus
 tags:
   - itheima
   - MyBatisPlus

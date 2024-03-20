@@ -1,5 +1,5 @@
 ---
-title: itheima-SSM-SpringBoot
+title: SpringBoot
 tags:
   - itheima
   - SpringBoot
