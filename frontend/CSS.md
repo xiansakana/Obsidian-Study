@@ -14,7 +14,7 @@ date: 2023-10-19 01:24:41
 - [DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM) Tree (Document Object Model)：加载到浏览器中的网页的树状表示。浏览器加载网页时，会创建该页面的 DOM Tree。
 - [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) (Cascading Style Sheet)：用来设定网页的样式和布局。Comment 语法为`/**/`。
 
-## 基本语法
+# 基本语法
 
 ## 放置位置
 

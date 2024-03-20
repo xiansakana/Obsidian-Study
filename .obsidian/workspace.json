@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md",
+                "file": "frontend/CSS.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md",
+                "file": "frontend/CSS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md",
+                "file": "frontend/CSS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md"
+                "file": "frontend/CSS.md"
               }
             }
           },
@@ -169,8 +169,11 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "8ba6fe9779eddec3",
   "lastOpenFiles": [
+    "frontend/Authentication.md",
+    "frontend/CSS.md",
+    "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md",
     "PDF讲义/Spring_day01.pdf",
     "PDF讲义/Spring_day03.pdf",
     "PDF讲义/Spring_day02.pdf",
@@ -185,7 +188,6 @@
     "backend/Springboot常用注解.md",
     "itheima-SSM框架/Maven高级.md",
     "itheima-最新版JavaWeb开发教程/PDF讲义/day09-Mybatis.pdf",
-    "itheima-最新版JavaWeb开发教程/PDF讲义/day15-Maven高级.pdf",
     "itheima-最新版JavaWeb开发教程/day14-SpringBoot原理篇.md",
     "itheima-最新版JavaWeb开发教程/day15-Maven高级.md",
     "itheima-最新版JavaWeb开发教程/day13-SpringBootWeb AOP.md",
@@ -202,11 +204,9 @@
     "itheima-最新版JavaWeb开发教程/day04-Maven.md",
     "itheima-最新版JavaWeb开发教程/day03-Vue-Element.md",
     "itheima-最新版JavaWeb开发教程/day02-JavaScript-Vue.md",
-    "itheima-最新版JavaWeb开发教程/day01-Web开发介绍.md",
     "itheima-最新版JavaWeb开发教程/day01-HTML-CSS.md",
     "最新版JavaWeb开发教程/day15-Maven高级.md",
     "最新版JavaWeb开发教程/day14-SpringBoot原理篇.md",
-    "最新版JavaWeb开发教程/day13-SpringBootWeb AOP.md",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630680579735.png",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630680435269.png",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630678114224.png",
