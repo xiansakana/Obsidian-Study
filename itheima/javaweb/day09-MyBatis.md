@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day09-MyBatis
+title: itheima JavaWeb-day09-MyBatis
 tags:
   - itheima
   - MyBatis

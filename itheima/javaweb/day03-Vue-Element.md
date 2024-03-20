@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day03-Vue-Element
+title: itheima-JavaWeb day03-Vue-Element
 tags:
   - itheima
   - Vue

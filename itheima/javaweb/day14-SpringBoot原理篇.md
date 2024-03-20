@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day14-SpringBoot原理篇
+title: itheima-JavaWeb day14-SpringBoot原理篇
 tags:
   - itheima
   - SpringBoot

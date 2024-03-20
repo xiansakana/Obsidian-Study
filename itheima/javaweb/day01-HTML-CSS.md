@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day01-HTML-CSS
+title: itheima-JavaWeb day01-HTML-CSS
 tags:
   - itheima
   - HTML

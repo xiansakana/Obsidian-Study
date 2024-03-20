@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day05-SpringBootWeb请求响应
+title: itheima-JavaWeb day05-SpringBootWeb请求响应
 tags:
   - itheima
   - SpringBoot

@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day12-SpringBootWeb登陆认证
+title: itheima-JavaWeb day12-SpringBootWeb登陆认证
 tags:
   - itheima
   - SpringBoot

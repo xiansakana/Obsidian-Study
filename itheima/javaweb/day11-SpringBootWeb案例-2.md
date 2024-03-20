@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day11-SpringBootWeb案例-2
+title: itheima-JavaWeb day11-SpringBootWeb案例-2
 tags:
   - itheima
   - SpringBoot

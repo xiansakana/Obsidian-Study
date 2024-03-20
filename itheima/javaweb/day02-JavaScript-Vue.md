@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day02-JavaScript
+title: itheima-JavaWeb day02-JavaScript
 tags:
   - itheima
   - JavaScript

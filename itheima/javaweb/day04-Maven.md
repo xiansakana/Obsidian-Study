@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day04-Maven
+title: itheima-JavaWeb day04-Maven
 tags:
   - itheima
   - Maven

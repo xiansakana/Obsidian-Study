@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day04-SpringBoot入门
+title: itheima-JavaWeb day04-SpringBoot入门
 tags:
   - itheima
   - SpringBoot

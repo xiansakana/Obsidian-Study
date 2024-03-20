@@ -1,5 +1,5 @@
 ---
-title: itheima-JavaWeb-day01-Web开发介绍
+title: itheima-JavaWeb day01-Web开发介绍
 tags:
   - itheima
   - Web
