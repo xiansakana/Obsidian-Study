@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 287.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/Git常用版本控制指令.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/Springboot常用注解.md"
+                "file": "miscellaneous/Git常用版本控制指令.md"
               }
             }
           },
@@ -171,6 +171,7 @@
   },
   "active": "d3412d26fe09474f",
   "lastOpenFiles": [
+    "backend/Springboot常用注解.md",
     "frontend/SQL.md",
     "itheima/javaweb/day01-HTML-CSS.md",
     "itheima/javaweb/day07-MySQL-02.md",
@@ -196,7 +197,6 @@
     "itheima/javaweb/day08-MyBatis入门.md",
     "frontend/React.md",
     "itheima/javaweb/day03-Vue-Element.md",
-    "itheima/javaweb/day14-SpringBoot原理篇.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",
