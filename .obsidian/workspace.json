@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "backend/Springboot常用注解.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "backend/Springboot常用注解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/一些问题记录.md",
+                "file": "backend/Springboot常用注解.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/一些问题记录.md"
+                "file": "backend/Springboot常用注解.md"
               }
             }
           },
@@ -171,6 +171,7 @@
   },
   "active": "d3412d26fe09474f",
   "lastOpenFiles": [
+    "miscellaneous/一些问题记录.md",
     "miscellaneous/Git常用版本控制指令.md",
     "backend/Springboot常用注解.md",
     "frontend/SQL.md",
@@ -196,7 +197,6 @@
     "itheima/ssm/SpringBoot.md",
     "itheima/ssm/Spring_day03.md",
     "itheima/javaweb/day08-MyBatis入门.md",
-    "frontend/React.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",
