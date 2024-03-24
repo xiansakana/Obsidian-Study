@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/Springboot常用注解.md"
+                "file": "miscellaneous/前后端分离项目云服务器部署.md"
               }
             }
           },
@@ -171,9 +171,9 @@
   },
   "active": "d3412d26fe09474f",
   "lastOpenFiles": [
+    "backend/Springboot常用注解.md",
     "miscellaneous/一些问题记录.md",
     "miscellaneous/Git常用版本控制指令.md",
-    "backend/Springboot常用注解.md",
     "frontend/SQL.md",
     "itheima/javaweb/day01-HTML-CSS.md",
     "itheima/javaweb/day07-MySQL-02.md",
