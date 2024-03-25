@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/Springboot常用注解.md",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/Springboot常用注解.md"
+                "file": "miscellaneous/前后端分离项目云服务器部署.md"
               }
             }
           },
@@ -169,10 +169,13 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "d3412d26fe09474f",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
-    "miscellaneous/前后端分离项目云服务器部署.md",
+    "itheima/docker",
+    "itheima/doocker",
+    "itheima/新建文件夹",
     "backend/Springboot常用注解.md",
+    "miscellaneous/前后端分离项目云服务器部署.md",
     "miscellaneous/一些问题记录.md",
     "miscellaneous/Git常用版本控制指令.md",
     "frontend/SQL.md",
@@ -196,7 +199,6 @@
     "itheima/javaweb/day08-MySQL-03.md",
     "itheima/javaweb/day04-SpringBootWeb入门.md",
     "itheima/ssm/SpringBoot.md",
-    "itheima/ssm/Spring_day03.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",
@@ -214,8 +216,6 @@
     "interview/awesome resume/imgs/3.png",
     "interview/awesome resume/imgs/2.png",
     "interview/awesome resume/imgs/1.png",
-    "interview/awesome resume/imgs",
-    "interview/awesome resume",
     "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630680579735.png",
     "未命名.canvas",
     "未命名 1.canvas"
