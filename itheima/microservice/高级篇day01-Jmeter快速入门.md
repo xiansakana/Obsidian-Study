@@ -5,7 +5,7 @@ tags:
   - 微服务
   - Jmeter
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292201194.png
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201194.png
 ---
 # Jmeter快速入门
 

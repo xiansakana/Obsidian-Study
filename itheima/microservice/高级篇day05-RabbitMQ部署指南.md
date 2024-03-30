@@ -5,7 +5,7 @@ tags:
   - 微服务
   - RabbitMQ
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292208274.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292208274.jpg
 ---
 # RabbitMQ部署指南
 

@@ -4,7 +4,7 @@ tags:
   - itheima
   - "#Nacos"
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292212834.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg
 ---
 # Nacos集群搭建
 

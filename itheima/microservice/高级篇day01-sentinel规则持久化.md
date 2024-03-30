@@ -5,7 +5,7 @@ tags:
   - 微服务
   - "#Sentinel"
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292201584.png
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201584.png
 ---
 # Sentinel 规则持久化
 

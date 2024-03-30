@@ -4,7 +4,7 @@ tags:
   - itheima
   - "#RabbitMQ"
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292213876.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213876.jpg
 ---
 # RabbitMQ部署指南
 

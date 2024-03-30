@@ -6,7 +6,7 @@ tags:
   - Redis
   - 分布式
 categories: 微服务
-cover: https://img.xiansakana.xyz/202403292203456.jpg
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292203456.jpg
 ---
 # 分布式缓存
 
