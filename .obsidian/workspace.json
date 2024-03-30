@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/前后端分离项目云服务器部署.md",
+                "file": "interview/bq/Behavior-Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/前后端分离项目云服务器部署.md",
+                "file": "interview/bq/Behavior-Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/前后端分离项目云服务器部署.md",
+                "file": "interview/bq/Behavior-Questions.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/前后端分离项目云服务器部署.md"
+                "file": "interview/bq/Behavior-Questions.md"
               }
             }
           },
@@ -171,11 +171,28 @@
   },
   "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "interview/bq/Behavior-Questions - 副本.md",
+    "miscellaneous/前后端分离项目云服务器部署.md",
+    "springcloud/assets/image-20210402172334810.png",
+    "springcloud/assets/image-20210402163858429.png",
+    "springcloud/assets/image-20210402162709515.png",
+    "springcloud/assets/image-20210402163715580.png",
+    "springcloud/assets/image-20210402164414827.png",
+    "springcloud/assets/image-20210402162630427.png",
+    "springcloud/assets/image-20210402162526774.png",
+    "springcloud/assets/image-20210402162350977.png",
+    "springcloud/assets/image-20210402162251093.png",
+    "springcloud/assets/image-20210402161130261.png",
+    "springcloud/Nacos安装指南.md",
+    "springcloud/assets",
+    "springcloud",
+    "itheima/springcloud/assets",
+    "itheima/springcloud/Nacos安装指南.md",
+    "itheima/springcloud",
+    "itheima/新建文件夹",
     "itheima/docker",
     "itheima/doocker",
-    "itheima/新建文件夹",
     "backend/Springboot常用注解.md",
-    "miscellaneous/前后端分离项目云服务器部署.md",
     "miscellaneous/一些问题记录.md",
     "miscellaneous/Git常用版本控制指令.md",
     "frontend/SQL.md",
@@ -197,26 +214,9 @@
     "itheima/javaweb/day11-SpringBootWeb案例-2.md",
     "itheima/javaweb/day10-SpringBootWeb案例-1.md",
     "itheima/javaweb/day08-MySQL-03.md",
-    "itheima/javaweb/day04-SpringBootWeb入门.md",
-    "itheima/ssm/SpringBoot.md",
     "interview/CN/alternative.txt",
     "interview/CN",
     "interview/China/alternative.txt",
-    "interview/China",
-    "interview/china/alternative.txt",
-    "interview/china",
-    "interview/inland/alternative.txt",
-    "interview/inland",
-    "interview/awesome resume/imgs/wrong_all.png",
-    "interview/awesome resume/imgs/rabbit-256.png",
-    "interview/awesome resume/imgs/pdf.png",
-    "interview/awesome resume/imgs/banner.jpg",
-    "interview/awesome resume/imgs/all.jpg",
-    "interview/awesome resume/imgs/4.png",
-    "interview/awesome resume/imgs/3.png",
-    "interview/awesome resume/imgs/2.png",
-    "interview/awesome resume/imgs/1.png",
-    "itheima/SSM框架（Spring框架+SpringMVC框架+Maven高级+SpringBoot框架+MyBatis-Plus）/SpringMVC笔记/SpringMVC_day02/assets/1630680579735.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
