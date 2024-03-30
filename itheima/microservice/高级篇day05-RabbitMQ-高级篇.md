@@ -4,7 +4,7 @@
 
 消息队列在使用过程中，面临着很多实际问题需要思考：
 
-![image-20210718155003157](assets/image-20210718155003157.png)
+![image-20210718155003157](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155003157.png)
 
 
 
@@ -14,7 +14,7 @@
 
 消息从发送，到消费者接收，会经理多个过程：
 
-![image-20210718155059371](assets/image-20210718155059371.png)
+![image-20210718155059371](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155059371.png)
 
 
 
@@ -41,11 +41,11 @@
 
 首先，导入课前资料提供的demo工程：
 
-![image-20210718155328927](assets/image-20210718155328927.png)
+![image-20210718155328927](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155328927.png)
 
 项目结构如下：
 
-![image-20210718155448734](assets/image-20210718155448734.png)
+![image-20210718155448734](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155448734.png)
 
 
 
@@ -62,13 +62,13 @@ RabbitMQ提供了publisher confirm机制来避免消息发送到MQ过程中丢�
 - publisher-return，发送者回执
   - 消息投递到交换机了，但是没有路由到队列。返回ACK，及路由失败原因。
 
-![image-20210718160907166](assets/image-20210718160907166.png)
+![image-20210718160907166](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718160907166.png)
 
 
 
 注意：
 
-![image-20210718161707992](assets/image-20210718161707992.png)
+![image-20210718161707992](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718161707992.png)
 
 
 
@@ -203,7 +203,7 @@ public DirectExchange simpleExchange(){
 
 可以在RabbitMQ控制台看到持久化的交换机都会带上`D`的标示：
 
-![image-20210718164412450](assets/image-20210718164412450.png)
+![image-20210718164412450](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718164412450.png)
 
 
 
@@ -225,7 +225,7 @@ public Queue simpleQueue(){
 
 可以在RabbitMQ控制台看到持久化的队列都会带上`D`的标示：
 
-![image-20210718164729543](assets/image-20210718164729543.png)
+![image-20210718164729543](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718164729543.png)
 
 
 
@@ -238,7 +238,7 @@ public Queue simpleQueue(){
 
 用java代码指定：
 
-![image-20210718165100016](assets/image-20210718165100016.png)
+![image-20210718165100016](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718165100016.png)
 
 
 
@@ -329,11 +329,11 @@ spring:
 
 在异常位置打断点，再次发送消息，程序卡在断点时，可以发现此时消息状态为unack（未确定状态）：
 
-![image-20210718171705383](assets/image-20210718171705383.png)
+![image-20210718171705383](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718171705383.png)
 
 抛出异常后，因为Spring会自动返回nack，所以消息恢复至Ready状态，并且没有被RabbitMQ删除：
 
-![image-20210718171759179](assets/image-20210718171759179.png)
+![image-20210718171759179](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718171759179.png)
 
 
 
@@ -341,7 +341,7 @@ spring:
 
 当消费者出现异常后，消息会不断requeue（重入队）到队列，再重新发送给消费者，然后再次异常，再次requeue，无限循环，导致mq的消息处理飙升，带来不必要的压力：
 
-![image-20210718172746378](assets/image-20210718172746378.png)
+![image-20210718172746378](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718172746378.png)
 
 怎么办呢？
 
@@ -509,15 +509,15 @@ public class ErrorMessageConfig {
 
 如图，一个消息被消费者拒绝了，变成了死信：
 
-![image-20210718174328383](assets/image-20210718174328383.png)
+![image-20210718174328383](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718174328383.png)
 
 因为simple.queue绑定了死信交换机 dl.direct，因此死信会投递给这个交换机：
 
-![image-20210718174416160](assets/image-20210718174416160.png)
+![image-20210718174416160](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718174416160.png)
 
 如果这个死信交换机也绑定了一个队列，则消息最终会进入这个存放死信的队列：
 
-![image-20210718174506856](assets/image-20210718174506856.png)
+![image-20210718174506856](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718174506856.png)
 
 
 
@@ -528,7 +528,7 @@ public class ErrorMessageConfig {
 
 这样才能确保投递的消息能到达死信交换机，并且正确的路由到死信队列。
 
-![image-20210821073801398](assets/image-20210821073801398.png)
+![image-20210821073801398](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210821073801398.png)
 
 
 
@@ -544,7 +544,7 @@ public class ErrorMessageConfig {
 
 
 
-![image-20210718174506856](assets/image-20210718174506856.png)
+![image-20210718174506856](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718174506856.png)
 
 
 
@@ -605,7 +605,7 @@ public Binding dlBinding(){
 - 消息所在的队列设置了超时时间
 - 消息本身设置了超时时间
 
-![image-20210718182643311](assets/image-20210718182643311.png)
+![image-20210718182643311](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718182643311.png)
 
 
 
@@ -677,13 +677,13 @@ public void testTTLQueue() {
 
 发送消息的日志：
 
-![image-20210718191657478](assets/image-20210718191657478.png)
+![image-20210718191657478](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718191657478.png)
 
 
 
 查看下接收消息的日志：
 
-![image-20210718191738706](assets/image-20210718191738706.png)
+![image-20210718191738706](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718191738706.png)
 
 
 
@@ -715,11 +715,11 @@ public void testTTLMsg() {
 
 查看发送消息日志：
 
-![image-20210718191939140](assets/image-20210718191939140.png)
+![image-20210718191939140](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718191939140.png)
 
 接收消息日志：
 
-![image-20210718192004662](assets/image-20210718192004662.png)
+![image-20210718192004662](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718192004662.png)
 
 
 
@@ -758,7 +758,7 @@ public void testTTLMsg() {
 
 这个插件就是DelayExchange插件。参考RabbitMQ的插件列表页面：https://www.rabbitmq.com/community-plugins.html
 
-![image-20210718192529342](assets/image-20210718192529342.png)
+![image-20210718192529342](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718192529342.png)
 
 
 
@@ -770,7 +770,7 @@ public void testTTLMsg() {
 
 参考课前资料：
 
-![image-20210718193409812](assets/image-20210718193409812.png)
+![image-20210718193409812](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193409812.png)
 
 
 
@@ -794,11 +794,11 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 
 基于注解方式（推荐）：
 
-![image-20210718193747649](assets/image-20210718193747649.png)
+![image-20210718193747649](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193747649.png)
 
 也可以基于@Bean的方式：
 
-![image-20210718193831076](assets/image-20210718193831076.png)
+![image-20210718193831076](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193831076.png)
 
 
 
@@ -806,7 +806,7 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 
 发送消息时，一定要携带x-delay属性，指定延迟的时间：
 
-![image-20210718193917009](assets/image-20210718193917009.png)
+![image-20210718193917009](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193917009.png)
 
 
 
@@ -828,7 +828,7 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 
 
 
-![image-20210718194040498](assets/image-20210718194040498.png)
+![image-20210718194040498](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718194040498.png)
 
 
 
@@ -876,11 +876,11 @@ rabbitmqctl set_policy Lazy "^lazy-queue$" '{"queue-mode":"lazy"}' --apply-to qu
 
 ### 3.2.2.基于@Bean声明lazy-queue
 
-![image-20210718194522223](assets/image-20210718194522223.png)
+![image-20210718194522223](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718194522223.png)
 
 ### 3.2.3.基于@RabbitListener声明LazyQueue
 
-![image-20210718194539054](assets/image-20210718194539054.png)
+![image-20210718194539054](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718194539054.png)
 
 
 
@@ -939,7 +939,7 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 结构如图：
 
-![image-20210718220843323](assets/image-20210718220843323.png)
+![image-20210718220843323](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718220843323.png)
 
 
 
@@ -967,7 +967,7 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 结构如图：
 
-![image-20210718221039542](assets/image-20210718221039542.png)
+![image-20210718221039542](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718221039542.png)
 
 
 

@@ -18,23 +18,23 @@
 
 微服务中，服务间调用关系错综复杂，一个微服务往往依赖于多个其它微服务。
 
- ![1533829099748](assets/1533829099748.png)
+ ![1533829099748](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1533829099748.png)
 
 
 
 如图，如果服务提供者I发生了故障，当前的应用的部分业务因为依赖于服务I，因此也会被阻塞。此时，其它不依赖于服务I的业务似乎不受影响。
 
- ![1533829198240](assets/1533829198240.png)
+ ![1533829198240](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1533829198240.png)
 
 但是，依赖服务I的业务请求被阻塞，用户不会得到响应，则tomcat的这个线程不会释放，于是越来越多的用户请求到来，越来越多的线程会阻塞：
 
- ![1533829307389](assets/1533829307389.png)
+ ![1533829307389](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1533829307389.png)
 
 服务器支持的线程和并发数有限，请求一直阻塞，会导致服务器资源耗尽，从而导致所有其它服务都不可用，那么当前服务也就不可用了。
 
 那么，依赖于当前服务的其它服务随着时间的推移，最终也都会变的不可用，形成级联失败，雪崩就发生了：
 
-![image-20210715172710340](assets/image-20210715172710340.png)
+![image-20210715172710340](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715172710340.png)
 
 
 
@@ -44,7 +44,7 @@
 
 •超时处理：设定超时时间，请求超过一定时间没有响应就返回错误信息，不会无休止等待
 
-![image-20210715172820438](assets/image-20210715172820438.png)
+![image-20210715172820438](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715172820438.png)
 
 
 
@@ -54,7 +54,7 @@
 
 仓壁模式来源于船舱的设计：
 
-![image-20210715172946352](assets/image-20210715172946352.png)
+![image-20210715172946352](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715172946352.png)
 
 船舱都会被隔板分离为多个独立空间，当船体破损时，只会导致部分空间进入，将故障控制在一定范围内，避免整个船体都被淹没。
 
@@ -62,7 +62,7 @@
 
 于此类似，我们可以限定每个业务能使用的线程数，避免耗尽整个tomcat的资源，因此也叫线程隔离。
 
-![image-20210715173215243](assets/image-20210715173215243.png)
+![image-20210715173215243](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173215243.png)
 
 
 
@@ -72,11 +72,11 @@
 
 断路器会统计访问某个服务的请求数量，异常比例：
 
-![image-20210715173327075](assets/image-20210715173327075.png)
+![image-20210715173327075](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173327075.png)
 
 当发现访问服务D的请求异常比例过高时，认为服务D有导致雪崩的风险，会拦截访问服务D的一切请求，形成熔断：
 
-![image-20210715173428073](assets/image-20210715173428073.png)
+![image-20210715173428073](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173428073.png)
 
 
 
@@ -84,7 +84,7 @@
 
 **流量控制**：限制业务访问的QPS，避免服务因流量的突增而故障。
 
-![image-20210715173555158](assets/image-20210715173555158.png)
+![image-20210715173555158](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173555158.png)
 
 
 
@@ -168,7 +168,7 @@ sentinel官方提供了UI控制台，方便我们对系统做限流设置。大�
 
 课前资料也提供了下载好的jar包：
 
-![image-20210715174252531](assets/image-20210715174252531.png)
+![image-20210715174252531](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715174252531.png)
 
 
 
@@ -202,7 +202,7 @@ java -Dserver.port=8090 -jar sentinel-dashboard-1.8.1.jar
 
 访问http://localhost:8080页面，就可以看到sentinel的控制台了：
 
-![image-20210715190827846](assets/image-20210715190827846.png)
+![image-20210715190827846](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715190827846.png)
 
 需要输入账号和密码，默认都是：sentinel
 
@@ -210,7 +210,7 @@ java -Dserver.port=8090 -jar sentinel-dashboard-1.8.1.jar
 
 登录后，发现一片空白，什么都没有：
 
-![image-20210715191134448](assets/image-20210715191134448.png)
+![image-20210715191134448](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715191134448.png)
 
 这是因为我们还没有与微服务整合。
 
@@ -256,7 +256,7 @@ spring:
 
 然后再访问sentinel的控制台，查看效果：
 
-![image-20210715191241799](assets/image-20210715191241799.png)
+![image-20210715191241799](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715191241799.png)
 
 
 
@@ -276,7 +276,7 @@ spring:
 
 例如，我们刚才访问的order-service中的OrderController中的端点：/order/{orderId}
 
-![image-20210715191757319](assets/image-20210715191757319.png)
+![image-20210715191757319](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715191757319.png)
 
 
 
@@ -299,11 +299,11 @@ spring:
 
 点击资源/order/{orderId}后面的流控按钮，就可以弹出表单。
 
-![image-20210715191757319](assets/image-20210715191757319.png)
+![image-20210715191757319](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715191757319.png)
 
 表单中可以填写限流规则，如下：
 
-![image-20210715192010657](assets/image-20210715192010657.png)
+![image-20210715192010657](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715192010657.png)
 
 其含义是限制 /order/{orderId}这个资源的单机QPS为1，即每秒只允许1次请求，超出的请求会被拦截并报错。
 
@@ -321,7 +321,7 @@ spring:
 
 1）首先在sentinel控制台添加限流规则
 
-![image-20210715192455429](assets/image-20210715192455429.png)
+![image-20210715192455429](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715192455429.png)
 
 2）利用jmeter测试
 
@@ -329,21 +329,21 @@ spring:
 
 课前资料提供了编写好的Jmeter测试样例：
 
-![image-20210715200431615](assets/image-20210715200431615.png)
+![image-20210715200431615](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200431615.png)
 
 打开jmeter，导入课前资料提供的测试样例：
 
-![image-20210715200537171](assets/image-20210715200537171.png)
+![image-20210715200537171](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200537171.png)
 
 选择：
 
-![image-20210715200635414](assets/image-20210715200635414.png)
+![image-20210715200635414](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200635414.png)
 
 20个用户，2秒内运行完，QPS是10，超过了5.
 
 选中`流控入门，QPS<5`右键运行：
 
-![image-20210715200804594](assets/image-20210715200804594.png)
+![image-20210715200804594](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200804594.png)
 
 
 
@@ -353,7 +353,7 @@ spring:
 
 结果：
 
-![image-20210715200853671](assets/image-20210715200853671.png)
+![image-20210715200853671](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200853671.png)
 
 可以看到，成功的请求每次只有5个
 
@@ -369,7 +369,7 @@ spring:
 - 关联：统计与当前资源相关的另一个资源，触发阈值时，对当前资源限流
 - 链路：统计从指定链路访问到本资源的请求，触发阈值时，对指定链路限流
 
-![image-20210715201827886](assets/image-20210715201827886.png)
+![image-20210715201827886](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715201827886.png)
 
 
 
@@ -383,7 +383,7 @@ spring:
 
 **配置规则**：
 
-![image-20210715202540786](assets/image-20210715202540786.png)
+![image-20210715202540786](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715202540786.png)
 
 **语法说明**：当/write资源访问量触发阈值时，就会对/read资源限流，避免影响/write资源。
 
@@ -421,7 +421,7 @@ public String updateOrder() {
 
 重启服务，查看sentinel控制台的簇点链路：
 
-![image-20210716101805951](assets/image-20210716101805951.png)
+![image-20210716101805951](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716101805951.png)
 
 
 
@@ -429,11 +429,11 @@ public String updateOrder() {
 
 对哪个端点限流，就点击哪个端点后面的按钮。我们是对订单查询/order/query限流，因此点击它后面的按钮：
 
-![image-20210716101934499](assets/image-20210716101934499.png)
+![image-20210716101934499](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716101934499.png)
 
 在表单中填写流控规则：
 
-![image-20210716102103814](assets/image-20210716102103814.png)
+![image-20210716102103814](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716102103814.png)
 
 
 
@@ -441,19 +441,19 @@ public String updateOrder() {
 
 选择《流控模式-关联》：
 
-![image-20210716102416266](assets/image-20210716102416266.png)
+![image-20210716102416266](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716102416266.png)
 
 可以看到1000个用户，100秒，因此QPS为10，超过了我们设定的阈值：5
 
 查看http请求：
 
-![image-20210716102532554](assets/image-20210716102532554.png)
+![image-20210716102532554](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716102532554.png)
 
 请求的目标是/order/update，这样这个断点就会触发阈值。
 
 但限流的目标是/order/query，我们在浏览器访问，可以发现：
 
-![image-20210716102636030](assets/image-20210716102636030.png)
+![image-20210716102636030](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716102636030.png)
 
 确实被限流了。
 
@@ -461,7 +461,7 @@ public String updateOrder() {
 
 5）总结
 
-![image-20210716103143002](assets/image-20210716103143002.png)
+![image-20210716103143002](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716103143002.png)
 
 
 
@@ -481,7 +481,7 @@ public String updateOrder() {
 
 如果只希望统计从/test2进入到/common的请求，则可以这样配置：
 
-![image-20210716103536346](assets/image-20210716103536346.png)
+![image-20210716103536346](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716103536346.png)
 
 **实战案例**
 
@@ -575,7 +575,7 @@ spring:
 
 重启服务，访问/order/query和/order/save，可以查看到sentinel的簇点链路规则中，出现了新的资源：
 
-![image-20210716105227163](assets/image-20210716105227163.png)
+![image-20210716105227163](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105227163.png)
 
 
 
@@ -583,7 +583,7 @@ spring:
 
 点击goods资源后面的流控按钮，在弹出的表单中填写下面信息：
 
-![image-20210716105408723](assets/image-20210716105408723.png)
+![image-20210716105408723](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105408723.png)
 
 
 
@@ -595,17 +595,17 @@ spring:
 
 选择《流控模式-链路》：
 
-![image-20210716105612312](assets/image-20210716105612312.png)
+![image-20210716105612312](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105612312.png)
 
 可以看到这里200个用户，50秒内发完，QPS为4，超过了我们设定的阈值2
 
 一个http请求是访问/order/save：
 
-![image-20210716105812789](assets/image-20210716105812789.png)
+![image-20210716105812789](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105812789.png)
 
 运行的结果：
 
-![image-20210716110027064](assets/image-20210716110027064.png)
+![image-20210716110027064](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716110027064.png)
 
 完全不受影响。
 
@@ -613,11 +613,11 @@ spring:
 
 另一个是访问/order/query：
 
-![image-20210716105855951](assets/image-20210716105855951.png)
+![image-20210716105855951](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105855951.png)
 
 运行结果：
 
-![image-20210716105956401](assets/image-20210716105956401.png)
+![image-20210716105956401](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105956401.png)
 
 每次只有2个通过。
 
@@ -639,7 +639,7 @@ spring:
 
 在流控的高级选项中，还有一个流控效果选项：
 
-![image-20210716110225104](assets/image-20210716110225104.png)
+![image-20210716110225104](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716110225104.png)
 
 流控效果是指请求达到流控阈值时应该采取的措施，包括三种：
 
@@ -661,7 +661,7 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 例如，我设置QPS的maxThreshold为10，预热时间为5秒，那么初始阈值就是 10 / 3 ，也就是3，然后在5秒后逐渐增长到10.
 
-![image-20210716110629796](assets/image-20210716110629796.png)
+![image-20210716110629796](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716110629796.png)
 
 
 
@@ -673,7 +673,7 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 #### 1）配置流控规则：
 
-![image-20210716111012387](assets/image-20210716111012387.png)
+![image-20210716111012387](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111012387.png)
 
 
 
@@ -681,27 +681,27 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 选择《流控效果，warm up》：
 
-![image-20210716111136699](assets/image-20210716111136699.png)
+![image-20210716111136699](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111136699.png)
 
 QPS为10.
 
 刚刚启动时，大部分请求失败，成功的只有3个，说明QPS被限定在3：
 
-![image-20210716111303701](assets/image-20210716111303701.png)
+![image-20210716111303701](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111303701.png)
 
 随着时间推移，成功比例越来越高：
 
-![image-20210716111404717](assets/image-20210716111404717.png)
+![image-20210716111404717](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111404717.png)
 
 
 
 到Sentinel控制台查看实时监控：
 
-![image-20210716111526480](assets/image-20210716111526480.png)
+![image-20210716111526480](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111526480.png)
 
 一段时间后：
 
-![image-20210716111658541](assets/image-20210716111658541.png)
+![image-20210716111658541](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111658541.png)
 
 
 
@@ -728,11 +728,11 @@ QPS为10.
 
 现在，第1秒同时接收到10个请求，但第2秒只有1个请求，此时QPS的曲线这样的：
 
-![image-20210716113147176](assets/image-20210716113147176.png)
+![image-20210716113147176](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716113147176.png)
 
 如果使用队列模式做流控，所有进入的请求都要排队，以固定的200ms的间隔执行，QPS会变的很平滑：
 
-![image-20210716113426524](assets/image-20210716113426524.png)
+![image-20210716113426524](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716113426524.png)
 
 
 
@@ -748,7 +748,7 @@ QPS为10.
 
 #### 1）添加流控规则
 
-![image-20210716114048918](assets/image-20210716114048918.png)
+![image-20210716114048918](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114048918.png)
 
 
 
@@ -756,7 +756,7 @@ QPS为10.
 
 选择《流控效果，队列》：
 
-![image-20210716114243558](assets/image-20210716114243558.png)
+![image-20210716114243558](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114243558.png)
 
 QPS为15，已经超过了我们设定的10。
 
@@ -764,19 +764,19 @@ QPS为15，已经超过了我们设定的10。
 
 但是我们看看队列模式的运行结果：
 
-![image-20210716114429361](assets/image-20210716114429361.png)
+![image-20210716114429361](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114429361.png)
 
 全部都通过了。
 
 再去sentinel查看实时监控的QPS曲线：
 
-![image-20210716114522935](assets/image-20210716114522935.png)
+![image-20210716114522935](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114522935.png)
 
 QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而是放入队列。因此**响应时间**（等待时间）会越来越长。
 
 当队列满了以后，才会有部分请求失败：
 
-![image-20210716114651137](assets/image-20210716114651137.png)
+![image-20210716114651137](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114651137.png)
 
 
 
@@ -804,11 +804,11 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 例如，一个根据id查询商品的接口：
 
-![image-20210716115014663](assets/image-20210716115014663.png)
+![image-20210716115014663](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716115014663.png)
 
 访问/goods/{id}的请求中，id参数值会有变化，热点参数限流会根据参数值分别统计QPS，统计结果：
 
-![image-20210716115131463](assets/image-20210716115131463.png)
+![image-20210716115131463](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716115131463.png)
 
 当id=1的请求触发阈值被限流时，id值不为1的请求不受影响。
 
@@ -816,7 +816,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 配置示例：
 
-![image-20210716115232426](assets/image-20210716115232426.png)
+![image-20210716115232426](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716115232426.png)
 
 代表的含义是：对hot这个资源的0号参数（第一个参数）做统计，每1秒**相同参数值**的请求数不能超过5
 
@@ -828,7 +828,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 而在实际开发中，可能部分商品是热点商品，例如秒杀商品，我们希望这部分商品的QPS限制与其它商品不一样，高一些。那就需要配置热点参数限流的高级选项了：
 
-![image-20210716115717523](assets/image-20210716115717523.png)
+![image-20210716115717523](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716115717523.png)
 
 结合上一个配置，这里的含义是对0号的long类型参数限流，每1秒相同参数的QPS不能超过5，有两个例外：
 
@@ -858,7 +858,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 给order-service中的OrderController中的/order/{orderId}资源添加注解：
 
-![image-20210716120033572](assets/image-20210716120033572.png)
+![image-20210716120033572](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120033572.png)
 
 
 
@@ -866,7 +866,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 访问该接口，可以看到我们标记的hot资源出现了：
 
-![image-20210716120208509](assets/image-20210716120208509.png)
+![image-20210716120208509](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120208509.png)
 
 这里不要点击hot后面的按钮，页面有BUG
 
@@ -874,11 +874,11 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 点击左侧菜单中**热点规则**菜单：
 
-![image-20210716120319009](assets/image-20210716120319009.png)
+![image-20210716120319009](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120319009.png)
 
 点击新增，填写表单：
 
-![image-20210716120536714](assets/image-20210716120536714.png)
+![image-20210716120536714](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120536714.png)
 
 
 
@@ -886,7 +886,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 选择《热点参数限流 QPS1》：
 
-![image-20210716120754527](assets/image-20210716120754527.png)
+![image-20210716120754527](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120754527.png)
 
 这里发起请求的QPS为5.
 
@@ -894,31 +894,31 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 普通参数，QPS阈值为2
 
-![image-20210716120840501](assets/image-20210716120840501.png)
+![image-20210716120840501](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120840501.png)
 
 运行结果：
 
-![image-20210716121105567](assets/image-20210716121105567.png)
+![image-20210716121105567](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716121105567.png)
 
 
 
 例外项，QPS阈值为4
 
-![image-20210716120900365](assets/image-20210716120900365.png)
+![image-20210716120900365](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120900365.png)
 
 运行结果：
 
-![image-20210716121201630](assets/image-20210716121201630.png)
+![image-20210716121201630](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716121201630.png)
 
 
 
 例外项，QPS阈值为10
 
-![image-20210716120919131](assets/image-20210716120919131.png)
+![image-20210716120919131](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120919131.png)
 
 运行结果：
 
-![image-20210716121220305](assets/image-20210716121220305.png)
+![image-20210716121220305](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716121220305.png)
 
 
 
@@ -932,13 +932,13 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 **线程隔离**之前讲到过：调用者在调用服务提供者时，给每个调用的请求分配独立线程池，出现故障时，最多消耗这个线程池内资源，避免把调用者的所有资源耗尽。
 
-![image-20210715173215243](assets/image-20210715173215243.png)
+![image-20210715173215243](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173215243.png)
 
 
 
 **熔断降级**：是在调用方这边加入断路器，统计对服务提供者的调用，如果调用的失败比例过高，则熔断该业务，不允许访问该服务的提供者了。
 
-![image-20210715173428073](assets/image-20210715173428073.png)
+![image-20210715173428073](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173428073.png)
 
 
 
@@ -984,7 +984,7 @@ feign:
 
 **步骤一**：在feing-api项目中定义类，实现FallbackFactory：
 
-![image-20210716122403502](assets/image-20210716122403502.png)
+![image-20210716122403502](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716122403502.png)
 
 代码：
 
@@ -1044,7 +1044,7 @@ public interface UserClient {
 
 重启后，访问一次订单查询业务，然后查看sentinel控制台，可以看到新的簇点链路：
 
-![image-20210716123705780](assets/image-20210716123705780.png)
+![image-20210716123705780](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123705780.png)
 
 
 
@@ -1083,7 +1083,7 @@ Feign整合Sentinel的步骤：
 
 如图：
 
-![image-20210716123036937](assets/image-20210716123036937.png)
+![image-20210716123036937](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123036937.png)
 
 
 
@@ -1095,7 +1095,7 @@ Feign整合Sentinel的步骤：
 
 两者的优缺点：
 
-![image-20210716123240518](assets/image-20210716123240518.png)
+![image-20210716123240518](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123240518.png)
 
 
 
@@ -1107,7 +1107,7 @@ Feign整合Sentinel的步骤：
 
 在添加限流规则时，可以选择两种阈值类型：
 
-![image-20210716123411217](assets/image-20210716123411217.png)
+![image-20210716123411217](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123411217.png)
 
 - QPS：就是每秒的请求数，在快速入门中已经演示过
 
@@ -1123,11 +1123,11 @@ Feign整合Sentinel的步骤：
 
 选择feign接口后面的流控按钮：
 
-![image-20210716123831992](assets/image-20210716123831992.png)
+![image-20210716123831992](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123831992.png)
 
 填写表单：
 
-![image-20210716123936844](assets/image-20210716123936844.png)
+![image-20210716123936844](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123936844.png)
 
 
 
@@ -1135,7 +1135,7 @@ Feign整合Sentinel的步骤：
 
 选择《阈值类型-线程数<2》：
 
-![image-20210716124229894](assets/image-20210716124229894.png)
+![image-20210716124229894](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716124229894.png)
 
 一次发生10个请求，有较大概率并发线程数超过2，而超出的请求会走之前定义的失败降级逻辑。
 
@@ -1143,7 +1143,7 @@ Feign整合Sentinel的步骤：
 
 查看运行结果：
 
-![image-20210716124147820](assets/image-20210716124147820.png)
+![image-20210716124147820](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716124147820.png)
 
 发现虽然结果都是通过了，不过部分请求得到的响应是降级返回的null信息。
 
@@ -1177,7 +1177,7 @@ Feign整合Sentinel的步骤：
 
 断路器控制熔断和放行是通过状态机来完成的：
 
-![image-20210716130958518](assets/image-20210716130958518.png)
+![image-20210716130958518](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716130958518.png)
 
 状态机包括三个状态：
 
@@ -1199,7 +1199,7 @@ Feign整合Sentinel的步骤：
 
 例如：
 
-![image-20210716145934347](assets/image-20210716145934347.png)
+![image-20210716145934347](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716145934347.png)
 
 解读：RT超过500ms的调用是慢调用，统计最近10000ms内的请求，如果请求量超过10次，并且慢调用比例不低于0.5，则触发熔断，熔断时长为5秒。然后进入half-open状态，放行一次请求做测试。
 
@@ -1215,17 +1215,17 @@ Feign整合Sentinel的步骤：
 
 修改user-service中的/user/{id}这个接口的业务。通过休眠模拟一个延迟时间：
 
-![image-20210716150234787](assets/image-20210716150234787.png)
+![image-20210716150234787](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150234787.png)
 
 
 
 此时，orderId=101的订单，关联的是id为1的用户，调用时长为60ms：
 
-![image-20210716150510956](assets/image-20210716150510956.png)
+![image-20210716150510956](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150510956.png)
 
 orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
-![image-20210716150605208](assets/image-20210716150605208.png)
+![image-20210716150605208](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150605208.png)
 
 
 
@@ -1233,11 +1233,11 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 下面，给feign接口设置降级规则：
 
-![image-20210716150654094](assets/image-20210716150654094.png)
+![image-20210716150654094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150654094.png)
 
 规则：
 
-![image-20210716150740434](assets/image-20210716150740434.png)
+![image-20210716150740434](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150740434.png)
 
 超过50ms的请求都会被认为是慢请求
 
@@ -1247,7 +1247,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 在浏览器访问：http://localhost:8088/order/101，快速刷新5次，可以发现：
 
-![image-20210716150911004](assets/image-20210716150911004.png)
+![image-20210716150911004](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150911004.png)
 
 触发了熔断，请求时长缩短至5ms，快速失败了，并且走降级逻辑，返回的null
 
@@ -1255,7 +1255,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 在浏览器访问：http://localhost:8088/order/102，竟然也被熔断了：
 
-![image-20210716151107785](assets/image-20210716151107785.png)
+![image-20210716151107785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151107785.png)
 
 
 
@@ -1267,13 +1267,13 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 例如，一个异常比例设置：
 
-![image-20210716131430682](assets/image-20210716131430682.png)
+![image-20210716131430682](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716131430682.png)
 
 解读：统计最近1000ms内的请求，如果请求量超过10次，并且异常比例不低于0.4，则触发熔断。
 
 一个异常数设置：
 
-![image-20210716131522912](assets/image-20210716131522912.png)
+![image-20210716131522912](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716131522912.png)
 
 解读：统计最近1000ms内的请求，如果请求量超过10次，并且异常比例不低于2次，则触发熔断。
 
@@ -1289,7 +1289,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 首先，修改user-service中的/user/{id}这个接口的业务。手动抛出异常，以触发异常比例的熔断：
 
-![image-20210716151348183](assets/image-20210716151348183.png)
+![image-20210716151348183](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151348183.png)
 
 也就是说，id 为 2时，就会触发异常
 
@@ -1299,11 +1299,11 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 下面，给feign接口设置降级规则：
 
-![image-20210716150654094](assets/image-20210716150654094.png)
+![image-20210716150654094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150654094.png)
 
 规则：
 
-![image-20210716151538785](assets/image-20210716151538785.png)
+![image-20210716151538785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151538785.png)
 
 在5次请求中，只要异常比例超过0.4，也就是有2次以上的异常，就会触发熔断。
 
@@ -1313,13 +1313,13 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 在浏览器快速访问：http://localhost:8088/order/102，快速刷新5次，触发熔断：
 
-![image-20210716151722916](assets/image-20210716151722916.png)
+![image-20210716151722916](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151722916.png)
 
 
 
 此时，我们去访问本来应该正常的103：
 
-![image-20210716151844817](assets/image-20210716151844817.png)
+![image-20210716151844817](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151844817.png)
 
 
 
@@ -1341,7 +1341,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 点击左侧菜单的授权，可以看到授权规则：
 
-![image-20210716152010750](assets/image-20210716152010750.png)
+![image-20210716152010750](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716152010750.png)
 
 - 资源名：就是受保护的资源，例如/order/{orderId}
 
@@ -1351,7 +1351,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 比如：
 
-![image-20210716152349191](assets/image-20210716152349191.png)
+![image-20210716152349191](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716152349191.png)
 
 我们允许请求从gateway到order-service，不允许浏览器访问order-service，那么白名单中就要填写**网关的来源名称（origin）**。
 
@@ -1434,19 +1434,19 @@ spring:
 
 接下来，我们添加一个授权规则，放行origin值为gateway的请求。
 
-![image-20210716153250134](assets/image-20210716153250134.png)
+![image-20210716153250134](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153250134.png)
 
 配置如下：
 
-![image-20210716153301069](assets/image-20210716153301069.png)
+![image-20210716153301069](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153301069.png)
 
 现在，我们直接跳过网关，访问order-service服务：
 
-![image-20210716153348396](assets/image-20210716153348396.png)
+![image-20210716153348396](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153348396.png)
 
 通过网关访问：
 
-![image-20210716153434095](assets/image-20210716153434095.png)
+![image-20210716153434095](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153434095.png)
 
 
 
@@ -1542,11 +1542,11 @@ public class SentinelExceptionHandler implements BlockExceptionHandler {
 
 限流：
 
-![image-20210716153938887](assets/image-20210716153938887.png)
+![image-20210716153938887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153938887.png)
 
 授权拦截时：
 
-![image-20210716154012736](assets/image-20210716154012736.png)
+![image-20210716154012736](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154012736.png)
 
 
 
@@ -1570,7 +1570,7 @@ public class SentinelExceptionHandler implements BlockExceptionHandler {
 
 pull模式：控制台将配置的规则推送到Sentinel客户端，而客户端会将配置规则保存在本地文件或数据库中。以后会定时去本地文件或数据库中查询，更新本地规则。
 
-![image-20210716154155238](assets/image-20210716154155238.png)
+![image-20210716154155238](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154155238.png)
 
 
 
@@ -1578,7 +1578,7 @@ pull模式：控制台将配置的规则推送到Sentinel客户端，而客户�
 
 push模式：控制台将配置规则推送到远程配置中心，例如Nacos。Sentinel客户端监听Nacos，获取配置变更的推送消息，完成本地配置更新。
 
-![image-20210716154215456](assets/image-20210716154215456.png)
+![image-20210716154215456](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154215456.png)
 
 
 
@@ -1590,4 +1590,4 @@ push模式：控制台将配置规则推送到远程配置中心，例如Nacos�
 
 详细步骤可以参考课前资料的《sentinel规则持久化》：
 
-![image-20210716154255466](assets/image-20210716154255466.png)
+![image-20210716154255466](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154255466.png)

@@ -16,13 +16,13 @@ GitHub的Release下载页：https://github.com/alibaba/nacos/releases
 
 如图：
 
-![image-20210402161102887](assets/image-20210402161102887.png)
+![image-20210402161102887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161102887.png)
 
 
 
 本课程采用1.4.1.版本的Nacos，课前资料已经准备了安装包：
 
-![image-20210402161130261](assets/image-20210402161130261.png)
+![image-20210402161130261](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161130261.png)
 
 windows版本使用`nacos-server-1.4.1.zip`包即可。
 
@@ -32,7 +32,7 @@ windows版本使用`nacos-server-1.4.1.zip`包即可。
 
 将这个包解压到任意非中文目录下，如图：
 
-![image-20210402161843337](assets/image-20210402161843337.png)
+![image-20210402161843337](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161843337.png)
 
 目录说明：
 
@@ -47,11 +47,11 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 
 **如果无法关闭占用8848端口的进程**，也可以进入nacos的conf目录，修改配置文件中的端口：
 
-![image-20210402162008280](assets/image-20210402162008280.png)
+![image-20210402162008280](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162008280.png)
 
 修改其中的内容：
 
-![image-20210402162251093](assets/image-20210402162251093.png)
+![image-20210402162251093](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162251093.png)
 
 
 
@@ -59,7 +59,7 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 
 启动非常简单，进入bin目录，结构如下：
 
-![image-20210402162350977](assets/image-20210402162350977.png)
+![image-20210402162350977](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162350977.png)
 
 然后执行命令即可：
 
@@ -72,7 +72,7 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 
 执行后的效果如图：
 
-![image-20210402162526774](assets/image-20210402162526774.png)
+![image-20210402162526774](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162526774.png)
 
 
 
@@ -80,11 +80,11 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 
 在浏览器输入地址：http://127.0.0.1:8848/nacos即可：
 
-![image-20210402162630427](assets/image-20210402162630427.png)
+![image-20210402162630427](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162630427.png)
 
 默认的账号和密码都是nacos，进入后：
 
-![image-20210402162709515](assets/image-20210402162709515.png)
+![image-20210402162709515](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162709515.png)
 
 
 
@@ -100,7 +100,7 @@ Nacos依赖于JDK运行，索引Linux上也需要安装JDK才行。
 
 上传jdk安装包：
 
-![image-20210402172334810](assets/image-20210402172334810.png)
+![image-20210402172334810](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402172334810.png)
 
 上传到某个目录，例如：`/usr/local/`
 
@@ -137,15 +137,15 @@ source /etc/profile
 
 如图：
 
-![image-20210402161102887](assets/image-20210402161102887.png)
+![image-20210402161102887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161102887.png)
 
 也可以直接使用课前资料中的tar.gz：
 
-![image-20210402161130261](assets/image-20210402161130261.png)
+![image-20210402161130261](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161130261.png)
 
 上传到Linux服务器的某个目录，例如`/usr/local/src`目录下：
 
-![image-20210402163715580](assets/image-20210402163715580.png)
+![image-20210402163715580](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402163715580.png)
 
 
 
@@ -165,11 +165,11 @@ rm -rf nacos-server-1.4.1.tar.gz
 
 目录中最终样式：
 
-![image-20210402163858429](assets/image-20210402163858429.png)
+![image-20210402163858429](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402163858429.png)
 
 目录内部：
 
-![image-20210402164414827](assets/image-20210402164414827.png)
+![image-20210402164414827](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402164414827.png)
 
 
 

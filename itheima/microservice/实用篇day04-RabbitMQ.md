@@ -16,7 +16,7 @@
 
 异步通讯：就像发邮件，不需要马上回复。
 
-![image-20210717161939695](assets/image-20210717161939695.png)
+![image-20210717161939695](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717161939695.png)
 
 两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
 
@@ -26,7 +26,7 @@
 
 我们之前学习的Feign调用就属于同步方式，虽然调用可以实时得到结果，但存在下面的问题：
 
-![image-20210717162004285](assets/image-20210717162004285.png)
+![image-20210717162004285](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717162004285.png)
 
 
 
@@ -61,7 +61,7 @@
 
 为了解除事件发布者与订阅者之间的耦合，两者并不是直接通信，而是有一个中间人（Broker）。发布者发布事件到Broker，不关心谁来订阅事件。订阅者从Broker订阅事件，不关心谁发来的消息。
 
-![image-20210422095356088](assets/image-20210422095356088.png)
+![image-20210422095356088](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210422095356088.png)
 
 
 
@@ -134,11 +134,11 @@ MQ，中文是消息队列（MessageQueue），字面来看就是存放消息的
 
 安装RabbitMQ，参考课前资料：
 
-![image-20210717162628635](assets/image-20210717162628635.png)
+![image-20210717162628635](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717162628635.png)
 
 MQ的基本结构：
 
-![image-20210717162752376](assets/image-20210717162752376.png)
+![image-20210717162752376](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717162752376.png)
 
 
 
@@ -158,7 +158,7 @@ RabbitMQ中的一些角色：
 
 RabbitMQ官方提供了5个不同的Demo示例，对应了不同的消息模型：
 
-![image-20210717163332646](assets/image-20210717163332646.png)
+![image-20210717163332646](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717163332646.png)
 
 
 
@@ -170,11 +170,11 @@ RabbitMQ官方提供了5个不同的Demo示例，对应了不同的消息模型�
 
 课前资料提供了一个Demo工程，mq-demo:
 
-![image-20210717163253264](assets/image-20210717163253264.png)
+![image-20210717163253264](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717163253264.png)
 
 导入后可以看到结构如下：
 
-![image-20210717163604330](assets/image-20210717163604330.png)
+![image-20210717163604330](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717163604330.png)
 
 包括三部分：
 
@@ -188,7 +188,7 @@ RabbitMQ官方提供了5个不同的Demo示例，对应了不同的消息模型�
 
 简单队列模式的模型图：
 
- ![image-20210717163434647](assets/image-20210717163434647.png)
+ ![image-20210717163434647](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717163434647.png)
 
 官方的HelloWorld是基于最基础的消息队列模型来实现的，只包括三个角色：
 
@@ -360,9 +360,9 @@ SpringAMQP是基于RabbitMQ封装的一套模板，并且还利用SpringBoot对�
 
 SpringAmqp的官方地址：https://spring.io/projects/spring-amqp
 
-![image-20210717164024967](assets/image-20210717164024967.png)
+![image-20210717164024967](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717164024967.png)
 
-![image-20210717164038678](assets/image-20210717164038678.png)
+![image-20210717164038678](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717164038678.png)
 
 
 
@@ -487,7 +487,7 @@ public class SpringRabbitListener {
 
 Work queues，也被称为（Task queues），任务模型。简单来说就是**让多个消费者绑定到一个队列，共同消费队列中的消息**。
 
-![image-20210717164238910](assets/image-20210717164238910.png)
+![image-20210717164238910](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717164238910.png)
 
 当消息处理比较耗时的时候，可能生产消息的速度会远远大于消息的消费速度。长此以往，消息就会堆积越来越多，无法及时处理。
 
@@ -591,7 +591,7 @@ Work模型的使用：
 
 发布订阅的模型如图：
 
-![image-20210717165309625](assets/image-20210717165309625.png)
+![image-20210717165309625](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717165309625.png)
 
 
 
@@ -615,7 +615,7 @@ Work模型的使用：
 
 Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 
-![image-20210717165438225](assets/image-20210717165438225.png)
+![image-20210717165438225](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717165438225.png)
 
 在广播模式下，消息发送流程是这样的：
 
@@ -632,7 +632,7 @@ Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 - 创建一个交换机 itcast.fanout，类型是Fanout
 - 创建两个队列fanout.queue1和fanout.queue2，绑定到交换机itcast.fanout
 
-![image-20210717165509466](assets/image-20210717165509466.png)
+![image-20210717165509466](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717165509466.png)
 
 
 
@@ -642,7 +642,7 @@ Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 
 Spring提供了一个接口Exchange，来表示所有不同类型的交换机：
 
-![image-20210717165552676](assets/image-20210717165552676.png)
+![image-20210717165552676](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717165552676.png)
 
 
 
@@ -763,7 +763,7 @@ public void listenFanoutQueue2(String msg) {
 
 在Fanout模式中，一条消息，会被所有订阅的队列都消费。但是，在某些场景下，我们希望不同的消息被不同的队列消费。这时就要用到Direct类型的Exchange。
 
-![image-20210717170041447](assets/image-20210717170041447.png)
+![image-20210717170041447](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717170041447.png)
 
  在Direct模型下：
 
@@ -783,7 +783,7 @@ public void listenFanoutQueue2(String msg) {
 
 3. 在publisher中编写测试方法，向itcast. direct发送消息
 
-![image-20210717170223317](assets/image-20210717170223317.png)
+![image-20210717170223317](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717170223317.png)
 
 
 
@@ -884,7 +884,7 @@ public void testSendDirectExchange() {
 
 图示：
 
- ![image-20210717170705380](assets/image-20210717170705380.png)
+ ![image-20210717170705380](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717170705380.png)
 
 解释：
 
@@ -905,7 +905,7 @@ public void testSendDirectExchange() {
 
 
 
-![image-20210717170829229](assets/image-20210717170829229.png)
+![image-20210717170829229](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717170829229.png)
 
 
 
@@ -975,7 +975,7 @@ public void listenTopicQueue2(String msg){
 
 之前说过，Spring会把你发送的消息序列化为字节发送给MQ，接收消息的时候，还会把字节反序列化为Java对象。
 
-![image-20200525170410401](assets/image-20200525170410401.png)
+![image-20200525170410401](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20200525170410401.png)
 
 只不过，默认情况下Spring采用的序列化方式是JDK序列化。众所周知，JDK序列化存在下列问题：
 
@@ -1013,7 +1013,7 @@ public void testSendMap() throws InterruptedException {
 
 发送消息后查看控制台：
 
-![image-20210422232835363](assets/image-20210422232835363.png)
+![image-20210422232835363](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210422232835363.png)
 
 
 

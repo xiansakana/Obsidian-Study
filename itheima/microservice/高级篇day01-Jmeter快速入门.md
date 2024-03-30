@@ -16,13 +16,13 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 可以Apache Jmeter官网下载，地址：http://jmeter.apache.org/download_jmeter.cgi
 
-![image-20210715193149837](assets/image-20210715193149837.png)
+![image-20210715193149837](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193149837.png)
 
 
 
 当然，我们课前资料也提供了下载好的安装包：
 
-![image-20210715193224094](assets/image-20210715193224094.png)
+![image-20210715193224094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193224094.png)
 
 
 
@@ -30,11 +30,11 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 因为下载的是zip包，解压缩即可使用，目录结构如下：
 
-![image-20210715193334367](assets/image-20210715193334367.png)
+![image-20210715193334367](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193334367.png)
 
 其中的bin目录就是执行的脚本，其中包含启动脚本：
 
-![image-20210715193414601](assets/image-20210715193414601.png)
+![image-20210715193414601](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193414601.png)
 
 ### 1.3.运行
 
@@ -43,7 +43,7 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 - 启动速度比较慢，要耐心等待
 - 启动后黑窗口不能关闭，否则Jmeter也跟着关闭了
 
-![image-20210715193730096](assets/image-20210715193730096.png)
+![image-20210715193730096](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193730096.png)
 
 
 
@@ -55,11 +55,11 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 默认Jmeter的语言是英文，需要设置：
 
-![image-20210715193838719](assets/image-20210715193838719.png)
+![image-20210715193838719](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193838719.png)
 
 效果：
 
-![image-20210715193914039](assets/image-20210715193914039.png)
+![image-20210715193914039](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193914039.png)
 
 
 
@@ -73,7 +73,7 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 language=zh_CN
 ```
 
-![image-20210715194137982](assets/image-20210715194137982.png)
+![image-20210715194137982](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715194137982.png)
 
 
 
@@ -87,41 +87,41 @@ language=zh_CN
 
 在测试计划上点鼠标右键，选择添加 > 线程（用户） > 线程组：
 
-![image-20210715194413178](assets/image-20210715194413178.png)
+![image-20210715194413178](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715194413178.png)
 
 在新增的线程组中，填写线程信息：
 
-![image-20210715195053807](assets/image-20210715195053807.png)
+![image-20210715195053807](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195053807.png)
 
 
 
 给线程组点鼠标右键，添加http取样器：
 
-![image-20210715195144130](assets/image-20210715195144130.png)
+![image-20210715195144130](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195144130.png)
 
 
 
 编写取样器内容：
 
-![image-20210715195410764](assets/image-20210715195410764.png)
+![image-20210715195410764](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195410764.png)
 
 
 
 添加监听报告：
 
-![image-20210715195844978](assets/image-20210715195844978.png)
+![image-20210715195844978](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195844978.png)
 
 添加监听结果树：
 
-![image-20210715200155537](assets/image-20210715200155537.png)
+![image-20210715200155537](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200155537.png)
 
 
 
 汇总报告结果：
 
-![image-20210715200243194](assets/image-20210715200243194.png)
+![image-20210715200243194](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200243194.png)
 
 结果树：
 
-![image-20210715200336526](assets/image-20210715200336526.png)
+![image-20210715200336526](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200336526.png)
 

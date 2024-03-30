@@ -25,7 +25,7 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
 
 其工作流如图：
 
-![image-20210925092845529](assets/image-20210925092845529.png)
+![image-20210925092845529](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925092845529.png)
 
 
 
@@ -48,7 +48,7 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
 
 Sentinel中的簇点链路是由一个个的Node组成的，Node是一个接口，包括下面的实现：
 
-![image-20210925103029924](assets/image-20210925103029924.png)
+![image-20210925103029924](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925103029924.png)
 
 所有的节点都可以记录对资源的访问统计数据，所以都是StatisticNode的子类。
 
@@ -70,7 +70,7 @@ DefaultNode记录的是资源在当前链路中的访问数据，用来实现基
 
 创建的链路图如下：
 
-![image-20210925104726158](assets/image-20210925104726158.png)
+![image-20210925104726158](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925104726158.png)
 
 
 
@@ -148,7 +148,7 @@ public Order queryOrderById(Long orderId) {
 
 然后打开sentinel控制台，查看簇点链路：
 
-![image-20210925113122759](assets/image-20210925113122759.png)
+![image-20210925113122759](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925113122759.png)
 
 
 
@@ -158,7 +158,7 @@ public Order queryOrderById(Long orderId) {
 
 在之前学习Sentinel的时候，我们知道可以通过给方法添加@SentinelResource注解的形式来标记资源。
 
-![image-20210925141507603](assets/image-20210925141507603.png)
+![image-20210925141507603](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925141507603.png)
 
 
 
@@ -166,15 +166,15 @@ public Order queryOrderById(Long orderId) {
 
 来看下我们引入的Sentinel依赖包：
 
-![image-20210925115601560](assets/image-20210925115601560.png)
+![image-20210925115601560](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115601560.png)
 
 其中的spring.factories声明需要就是自动装配的配置类，内容如下：
 
-![image-20210925115740281](assets/image-20210925115740281.png)
+![image-20210925115740281](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115740281.png)
 
 我们来看下`SentinelAutoConfiguration`这个类：
 
-![image-20210925141553785](assets/image-20210925141553785.png)
+![image-20210925141553785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925141553785.png)
 
 可以看到，在这里声明了一个Bean，`SentinelResourceAspect`：
 
@@ -283,29 +283,29 @@ ContextUtil.enter("contextName", "originName");
 
 来看下我们引入的Sentinel依赖包：
 
-![image-20210925115601560](assets/image-20210925115601560.png)
+![image-20210925115601560](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115601560.png)
 
 其中的spring.factories声明需要就是自动装配的配置类，内容如下：
 
-![image-20210925115740281](assets/image-20210925115740281.png)
+![image-20210925115740281](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115740281.png)
 
 我们先看SentinelWebAutoConfiguration这个类：
 
-![image-20210925115824345](assets/image-20210925115824345.png)
+![image-20210925115824345](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115824345.png)
 
 这个类实现了WebMvcConfigurer，我们知道这个是SpringMVC自定义配置用到的类，可以配置HandlerInterceptor：
 
-![image-20210925115946064](assets/image-20210925115946064.png)
+![image-20210925115946064](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925115946064.png)
 
 可以看到这里配置了一个`SentinelWebInterceptor`的拦截器。
 
 `SentinelWebInterceptor`的声明如下：
 
-![image-20210925120119030](assets/image-20210925120119030.png)
+![image-20210925120119030](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925120119030.png)
 
 发现它继承了`AbstractSentinelInterceptor`这个类。
 
-![image-20210925120221883](assets/image-20210925120221883.png)
+![image-20210925120221883](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925120221883.png)
 
 
 
@@ -422,11 +422,11 @@ protected static Context trueEnter(String name, String origin) {
 
 首先，回到一切的入口，`AbstractSentinelInterceptor`类的`preHandle`方法：
 
-![image-20210925142313050](assets/image-20210925142313050.png)
+![image-20210925142313050](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925142313050.png)
 
 还有，`SentinelResourceAspect`的环绕增强方法：
 
-![image-20210925142438552](assets/image-20210925142438552.png)
+![image-20210925142438552](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925142438552.png)
 
 
 
@@ -508,11 +508,11 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object t, in
 
 这里的first，类型是AbstractLinkedProcessorSlot：
 
-![image-20210925144355865](assets/image-20210925144355865.png)
+![image-20210925144355865](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925144355865.png)
 
 看下继承关系：
 
-![image-20210925144010507](assets/image-20210925144010507.png)
+![image-20210925144010507](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925144010507.png)
 
 
 
@@ -522,7 +522,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object t, in
 
 不过，既然是基于责任链模式，所以这里只要记住下一个slot就可以了，也就是next：
 
-![image-20210925144233302](assets/image-20210925144233302.png)
+![image-20210925144233302](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925144233302.png)
 
 next确实是NodeSelectSlot类型。
 
@@ -530,7 +530,7 @@ next确实是NodeSelectSlot类型。
 
 而NodeSelectSlot的next一定是ClusterBuilderSlot，依次类推：
 
-![image-20210925101327080](assets/image-20210925101327080.png)
+![image-20210925101327080](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925101327080.png)
 
 责任链就建立起来了。
 
@@ -701,7 +701,7 @@ public void addPassRequest(int count) {
 
 负责请求来源origin的授权规则判断，如图：
 
-![image-20210925152626648](assets/image-20210925152626648.png)
+![image-20210925152626648](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925152626648.png)
 
 核心API：
 
@@ -789,7 +789,7 @@ static boolean passCheck(AuthorityRule rule, Context context) {
 
 SystemSlot是对系统保护的规则校验：
 
-![image-20210925153228036](assets/image-20210925153228036.png)
+![image-20210925153228036](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925153228036.png)
 
 核心API：
 
@@ -858,7 +858,7 @@ public static void checkSystem(ResourceWrapper resourceWrapper) throws BlockExce
 
 ParamFlowSlot就是热点参数限流，如图：
 
-![image-20210925153719891](assets/image-20210925153719891.png)
+![image-20210925153719891](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925153719891.png)
 
 是针对进入资源的请求，针对不同的请求参数值分别统计QPS的限流方式。
 
@@ -894,7 +894,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 
 热点规则判断采用了令牌桶算法来实现参数限流，为每一个不同参数值设置令牌桶，Sentinel的令牌桶有两部分组成：
 
-![image-20210925163744108](assets/image-20210925163744108.png)
+![image-20210925163744108](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925163744108.png)
 
 这两个Map的key都是请求的参数值，value却不同，其中：
 
@@ -905,7 +905,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 
 当一个携带参数的请求到来后，基本判断流程是这样的：
 
-![sentinel](assets/sentinel.jpg)
+![sentinel](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/sentinel.jpg)
 
 
 
@@ -919,7 +919,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 
 FlowSlot是负责限流规则的判断，如图：
 
-![image-20210925172542274](assets/image-20210925172542274.png)
+![image-20210925172542274](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925172542274.png)
 
 包括：
 
@@ -1069,7 +1069,7 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 
 而`TrafficShapingController`有3种实现：
 
-![image-20210925175221211](assets/image-20210925175221211.png)
+![image-20210925175221211](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925175221211.png)
 
 - DefaultController：快速失败，默认的方式，基于滑动时间窗口算法
 - WarmUpController：预热模式，基于滑动时间窗口算法，只不过阈值是动态的
@@ -1096,23 +1096,23 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 
 回顾2.5章节中的StatisticSlot部分，有这样一段代码：
 
-![image-20210925180522926](assets/image-20210925180522926.png)
+![image-20210925180522926](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925180522926.png)
 
 
 
 就是在统计通过该节点的QPS，我们跟入看看，这里进入了DefaultNode内部：
 
-![image-20210925180619492](assets/image-20210925180619492.png)
+![image-20210925180619492](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925180619492.png)
 
 发现同时对`DefaultNode`和`ClusterNode`在做QPS统计，我们知道`DefaultNode`和`ClusterNode`都是`StatisticNode`的子类，这里调用`addPassRequest()`方法，最终都会进入`StatisticNode`中。
 
 随便跟入一个：
 
-![image-20210925180810181](assets/image-20210925180810181.png)
+![image-20210925180810181](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925180810181.png)
 
 这里有秒、分两种纬度的统计，对应两个计数器。找到对应的成员变量，可以看到：
 
-![image-20210925180954856](assets/image-20210925180954856.png)
+![image-20210925180954856](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925180954856.png)
 
 两个计数器都是ArrayMetric类型，并且传入了两个参数：
 
@@ -1126,7 +1126,7 @@ public ArrayMetric(int sampleCount, int intervalInMs) {
 
 如图：
 
-![image-20210925181359203](assets/image-20210925181359203.png)
+![image-20210925181359203](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925181359203.png)
 
 
 
@@ -1148,7 +1148,7 @@ public void addPass(int count) {
 
 这里的data是一个LeapArray：
 
-![image-20210925181714605](assets/image-20210925181714605.png)
+![image-20210925181714605](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925181714605.png)
 
 LeapArray的四个属性：
 
@@ -1169,7 +1169,7 @@ public abstract class LeapArray<T> {
 
 LeapArray是一个环形数组，因为时间是无限的，数组长度不可能无限，因此数组中每一个格子放入一个时间窗（window），当数组放满后，角标归0，覆盖最初的window。
 
-![image-20210925182127206](assets/image-20210925182127206.png)
+![image-20210925182127206](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925182127206.png)
 
 因为滑动窗口最多分成sampleCount数量的小窗口，因此数组长度只要大于sampleCount，那么最近的一个滑动窗口内的2个小窗口就永远不会被覆盖，就不用担心旧数据被覆盖的问题了。
 
@@ -1443,7 +1443,7 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
 
 与我们之前分析的漏桶算法基本一致：
 
-![image-20210925210716675](assets/image-20210925210716675.png)
+![image-20210925210716675](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925210716675.png)
 
 
 
@@ -1453,7 +1453,7 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
 
 Sentinel的降级是基于状态机来实现的：
 
-![image-20210925211020881](assets/image-20210925211020881.png)
+![image-20210925211020881](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925211020881.png)
 
 
 
@@ -1560,11 +1560,11 @@ protected boolean fromOpenToHalfOpen(Context context) {
 
 请求经过所有插槽 后，一定会执行exit方法，而在DegradeSlot的exit方法中：
 
-![image-20210925213440686](assets/image-20210925213440686.png)
+![image-20210925213440686](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925213440686.png)
 
 会调用CircuitBreaker的onRequestComplete方法。而CircuitBreaker有两个实现：
 
-![image-20210925213939035](assets/image-20210925213939035.png)
+![image-20210925213939035](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925213939035.png)
 
 
 

@@ -26,7 +26,7 @@ docker pull rabbitmq:3.8-management
 
 在课前资料已经提供了镜像包：
 
-![image-20210423191210349](assets/image-20210423191210349.png) 
+![image-20210423191210349](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210423191210349.png) 
 
 上传到虚拟机中后，使用命令加载镜像即可：
 
@@ -73,7 +73,7 @@ RabbitMQ有一个官方的插件社区，地址为：https://www.rabbitmq.com/co
 
 其中包含各种各样的插件，包括我们要使用的DelayExchange插件：
 
-![image-20210713104511055](assets/image-20210713104511055.png)
+![image-20210713104511055](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713104511055.png)
 
 
 
@@ -83,7 +83,7 @@ RabbitMQ有一个官方的插件社区，地址为：https://www.rabbitmq.com/co
 
 课前资料也提供了下载好的插件：
 
-![image-20210713104808909](assets/image-20210713104808909.png)
+![image-20210713104808909](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713104808909.png)
 
 
 
@@ -99,11 +99,11 @@ docker volume inspect mq-plugins
 
 可以得到下面结果：
 
-![image-20210713105135701](assets/image-20210713105135701.png)
+![image-20210713105135701](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713105135701.png)
 
 接下来，将插件上传到这个目录即可：
 
-![image-20210713105339785](assets/image-20210713105339785.png)
+![image-20210713105339785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713105339785.png)
 
 
 
@@ -125,7 +125,7 @@ rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 
 结果如下：
 
-![image-20210713105829435](assets/image-20210713105829435.png)
+![image-20210713105829435](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713105829435.png)
 
 
 
@@ -194,7 +194,7 @@ docker rm -f mq
 
 
 
-![image-20210717212345165](assets/image-20210717212345165.png)
+![image-20210717212345165](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717212345165.png)
 
 
 
@@ -330,11 +330,11 @@ rabbitmq:3.8-management
 
 在mq1这个节点上添加一个队列：
 
-![image-20210717222833196](assets/image-20210717222833196.png)
+![image-20210717222833196](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717222833196.png)
 
 如图，在mq2和mq3两个控制台也都能看到：
 
-![image-20210717223057902](assets/image-20210717223057902.png)
+![image-20210717223057902](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223057902.png)
 
 
 
@@ -342,17 +342,17 @@ rabbitmq:3.8-management
 
 点击这个队列，进入管理页面：
 
-![image-20210717223421750](assets/image-20210717223421750.png)
+![image-20210717223421750](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223421750.png)
 
 然后利用控制台发送一条消息到这个队列：
 
-![image-20210717223320238](assets/image-20210717223320238.png)
+![image-20210717223320238](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223320238.png)
 
 
 
 结果在mq2、mq3上都能看到这条消息：
 
-![image-20210717223603628](assets/image-20210717223603628.png)
+![image-20210717223603628](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223603628.png)
 
 
 
@@ -368,7 +368,7 @@ docker stop mq1
 
 然后登录mq2或mq3的控制台，发现simple.queue也不可用了：
 
-![image-20210717223800203](assets/image-20210717223800203.png)
+![image-20210717223800203](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223800203.png)
 
 
 
@@ -477,13 +477,13 @@ docker exec -it mq1 rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly"
 
 下面，我们创建一个新的队列：
 
-![image-20210717231751411](assets/image-20210717231751411.png)
+![image-20210717231751411](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717231751411.png)
 
 
 
 在任意一个mq控制台查看队列：
 
-![image-20210717231829505](assets/image-20210717231829505.png)
+![image-20210717231829505](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717231829505.png)
 
 
 
@@ -491,13 +491,13 @@ docker exec -it mq1 rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly"
 
 给two.queue发送一条消息：
 
-![image-20210717231958996](assets/image-20210717231958996.png)
+![image-20210717231958996](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717231958996.png)
 
 
 
 然后在mq1、mq2、mq3的任意控制台查看消息：
 
-![image-20210717232108584](assets/image-20210717232108584.png)
+![image-20210717232108584](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717232108584.png)
 
 
 
@@ -515,13 +515,13 @@ docker stop mq1
 
 查看集群状态：
 
-![image-20210717232257420](assets/image-20210717232257420.png)
+![image-20210717232257420](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717232257420.png)
 
 
 
 查看队列状态：
 
-![image-20210717232322646](assets/image-20210717232322646.png)
+![image-20210717232322646](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717232322646.png)
 
 发现依然是健康的！并且其主节点切换到了rabbit@mq2上
 
@@ -539,13 +539,13 @@ docker stop mq1
 
 在任意控制台添加一个队列，一定要选择队列类型为Quorum类型。
 
-![image-20210717234329640](assets/image-20210717234329640.png)
+![image-20210717234329640](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717234329640.png)
 
 
 
 在任意控制台查看队列：
 
-![image-20210717234426209](assets/image-20210717234426209.png)
+![image-20210717234426209](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717234426209.png)
 
 
 
@@ -619,7 +619,7 @@ rabbitmqctl start_app
 
 
 
-![image-20210718001909492](assets/image-20210718001909492.png)
+![image-20210718001909492](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718001909492.png)
 
 
 
@@ -641,7 +641,7 @@ rabbitmq-queues quorum_status "quorum.queue"
 
 结果：
 
-![image-20210718002118357](assets/image-20210718002118357.png)
+![image-20210718002118357](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718002118357.png)
 
 现在，我们让mq4也加入进来：
 
@@ -651,7 +651,7 @@ rabbitmq-queues add_member "quorum.queue" "rabbit@mq4"
 
 结果：
 
-![image-20210718002253226](assets/image-20210718002253226.png)
+![image-20210718002253226](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718002253226.png)
 
 
 
@@ -661,13 +661,13 @@ rabbitmq-queues add_member "quorum.queue" "rabbit@mq4"
 rabbitmq-queues quorum_status "quorum.queue"
 ```
 
-![image-20210718002342603](assets/image-20210718002342603.png)
+![image-20210718002342603](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718002342603.png)
 
 
 
 查看控制台，发现quorum.queue的镜像数量也从原来的 +2 变成了 +3：
 
-![image-20210718002422365](assets/image-20210718002422365.png)
+![image-20210718002422365](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718002422365.png)
 
 
 

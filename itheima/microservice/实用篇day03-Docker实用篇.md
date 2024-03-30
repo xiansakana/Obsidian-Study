@@ -31,7 +31,7 @@
 
 
 
-![image-20210731141907366](assets/image-20210731141907366.png)
+![image-20210731141907366](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731141907366.png)
 
 
 
@@ -49,7 +49,7 @@ Docker为了解决依赖的兼容问题的，采用了两个手段：
 
 - 将每个应用放到一个隔离**容器**去运行，避免互相干扰
 
-![image-20210731142219735](assets/image-20210731142219735.png)
+![image-20210731142219735](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731142219735.png)
 
 
 
@@ -65,7 +65,7 @@ Docker为了解决依赖的兼容问题的，采用了两个手段：
 
 要解决不同操作系统环境差异问题，必须先了解操作系统结构。以一个Ubuntu操作系统为例，结构如下：
 
-![image-20210731143401460](assets/image-20210731143401460.png)
+![image-20210731143401460](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731143401460.png)
 
 
 
@@ -89,13 +89,13 @@ Docker为了解决依赖的兼容问题的，采用了两个手段：
 
 Ubuntu和CentOSpringBoot都是基于Linux内核，无非是系统应用不同，提供的函数库有差异：
 
-![image-20210731144304990](assets/image-20210731144304990.png)
+![image-20210731144304990](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731144304990.png)
 
 
 
 此时，如果将一个Ubuntu版本的MySQL应用安装到CentOS系统，MySQL在调用Ubuntu函数库时，会发现找不到或者不匹配，就会报错了：
 
-![image-20210731144458680](assets/image-20210731144458680.png)
+![image-20210731144458680](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731144458680.png)
 
 
 
@@ -106,7 +106,7 @@ Docker如何解决不同系统环境的问题？
 
 如图：
 
-![image-20210731144820638](assets/image-20210731144820638.png)
+![image-20210731144820638](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731144820638.png)
 
 
 
@@ -147,11 +147,11 @@ Docker可以让一个应用在任何操作系统中非常方便的运行。而�
 
 **Docker**仅仅是封装函数库，并没有模拟完整的操作系统，如图：
 
-![image-20210731145914960](assets/image-20210731145914960.png)
+![image-20210731145914960](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731145914960.png)
 
 对比来看：
 
-![image-20210731152243765](assets/image-20210731152243765.png)
+![image-20210731152243765](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731152243765.png)
 
 
 
@@ -193,7 +193,7 @@ Docker中有几个重要的概念：
 
 
 
-![image-20210731153059464](assets/image-20210731153059464.png)
+![image-20210731153059464](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731153059464.png)
 
 
 
@@ -213,7 +213,7 @@ Docker中有几个重要的概念：
 
 我们一方面可以将自己的镜像共享到DockerHub，另一方面也可以从DockerHub拉取镜像：
 
-![image-20210731153743354](assets/image-20210731153743354.png)
+![image-20210731153743354](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731153743354.png)
 
 
 
@@ -231,7 +231,7 @@ Docker是一个CS架构的程序，由两部分组成：
 
 如图：
 
-![image-20210731154257653](assets/image-20210731154257653.png)
+![image-20210731154257653](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731154257653.png)
 
 
 
@@ -263,7 +263,7 @@ DockerHub：
 
 企业部署一般都是采用Linux操作系统，而其中又数CentOS发行版占比最多，因此我们在CentOS下安装Docker。参考课前资料中的文档：
 
-![image-20210731155002425](assets/image-20210731155002425.png)
+![image-20210731155002425](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155002425.png)
 
 
 
@@ -284,7 +284,7 @@ DockerHub：
 
 如图：
 
-![image-20210731155141362](assets/image-20210731155141362.png)
+![image-20210731155141362](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155141362.png)
 
 这里的mysql就是repository，5.7就是tag，合一起就是镜像名称，代表5.7版本的MySQL镜像。
 
@@ -294,7 +294,7 @@ DockerHub：
 
 常见的镜像操作命令如图：
 
-![image-20210731155649535](assets/image-20210731155649535.png)
+![image-20210731155649535](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155649535.png)
 
 
 
@@ -304,15 +304,15 @@ DockerHub：
 
 1）首先去镜像仓库搜索nginx镜像，比如[DockerHub](https://hub.docker.com/):
 
-![image-20210731155844368](assets/image-20210731155844368.png)
+![image-20210731155844368](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155844368.png)
 
 2）根据查看到的镜像名称，拉取自己需要的镜像，通过命令：docker pull nginx
 
-![image-20210731155856199](assets/image-20210731155856199.png)
+![image-20210731155856199](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155856199.png)
 
 3）通过命令：docker images 查看拉取到的镜像
 
-![image-20210731155903037](assets/image-20210731155903037.png)
+![image-20210731155903037](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155903037.png)
 
 
 
@@ -330,7 +330,7 @@ docker save --help
 
 结果：
 
-![image-20210731161104732](assets/image-20210731161104732.png)
+![image-20210731161104732](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731161104732.png)
 
 
 
@@ -352,7 +352,7 @@ docker save -o nginx.tar nginx:latest
 
 结果如图：
 
-![image-20210731161354344](assets/image-20210731161354344.png)
+![image-20210731161354344](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731161354344.png)
 
 
 
@@ -374,7 +374,7 @@ docker load -i nginx.tar
 
 结果：
 
-![image-20210731161746245](assets/image-20210731161746245.png)
+![image-20210731161746245](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731161746245.png)
 
 
 
@@ -406,7 +406,7 @@ docker load -i nginx.tar
 
 容器操作的命令如图：
 
-![image-20210731161950495](assets/image-20210731161950495.png)
+![image-20210731161950495](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731161950495.png)
 
 容器保护三个状态：
 
@@ -452,7 +452,7 @@ docker run --name containerName -p 80:80 -d nginx
 
 现在，将容器的80与宿主机的80关联起来，当我们访问宿主机的80端口时，就会被映射到容器的80，这样就能访问到nginx了：
 
-![image-20210731163255863](assets/image-20210731163255863.png)
+![image-20210731163255863](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731163255863.png)
 
 
 
@@ -488,7 +488,7 @@ docker exec -it mn bash
 
 容器内部会模拟一个独立的Linux文件系统，看起来如同一个linux服务器一样：
 
-![image-20210731164159811](assets/image-20210731164159811.png)
+![image-20210731164159811](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731164159811.png)
 
 nginx的环境、配置、运行文件全部都在这个文件系统中，包括我们要修改的html文件。
 
@@ -502,7 +502,7 @@ cd /usr/share/nginx/html
 
  查看目录下文件：
 
-![image-20210731164455818](assets/image-20210731164455818.png)
+![image-20210731164455818](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731164455818.png)
 
 
 
@@ -520,7 +520,7 @@ sed -i -e 's#Welcome to nginx#传智教育欢迎您#g' -e 's#<head>#<head><meta 
 
 在浏览器访问自己的虚拟机地址，例如我的是：http://192.168.150.101，即可看到结果：
 
-![image-20210731164717604](assets/image-20210731164717604.png)
+![image-20210731164717604](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731164717604.png)
 
 
 
@@ -558,7 +558,7 @@ docker run命令的常见参数有哪些？
 
 这就是因为容器与数据（容器内文件）耦合带来的后果。
 
-![image-20210731172440275](assets/image-20210731172440275.png)
+![image-20210731172440275](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731172440275.png)
 
 要解决这个问题，必须将数据与容器解耦，这就要用到数据卷了。
 
@@ -568,7 +568,7 @@ docker run命令的常见参数有哪些？
 
 **数据卷（volume）**是一个虚拟目录，指向宿主机文件系统中的某个目录。
 
-![image-20210731173541846](assets/image-20210731173541846.png)
+![image-20210731173541846](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731173541846.png)
 
 一旦完成数据卷挂载，对容器的一切操作都会作用在数据卷对应的宿主机目录了。
 
@@ -618,7 +618,7 @@ docker volume ls
 
 结果：
 
-![image-20210731173746910](assets/image-20210731173746910.png)
+![image-20210731173746910](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731173746910.png)
 
 
 
@@ -632,7 +632,7 @@ docker volume inspect html
 
 结果：
 
-![image-20210731173809877](assets/image-20210731173809877.png)
+![image-20210731173809877](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731173809877.png)
 
 可以看到，我们创建的html这个数据卷关联的宿主机目录为`/var/lib/docker/volumes/html/_data`目录。
 
@@ -718,7 +718,7 @@ vi index.html
 
 如图：
 
-![image-20210731175155453](assets/image-20210731175155453.png)
+![image-20210731175155453](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731175155453.png)
 
 **语法**：
 
@@ -784,7 +784,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 我们以MySQL为例，来看看镜像的组成结构：
 
-![image-20210731175806273](assets/image-20210731175806273.png)
+![image-20210731175806273](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731175806273.png)
 
 
 
@@ -810,7 +810,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 **Dockerfile**就是一个文本文件，其中包含一个个的**指令(Instruction)**，用指令来说明要执行什么操作来构建镜像。每一个指令都会形成一层Layer。
 
-![image-20210731180321133](assets/image-20210731180321133.png)
+![image-20210731180321133](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731180321133.png)
 
 
 
@@ -832,19 +832,19 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 - 步骤1：新建一个空文件夹docker-demo
 
-  ![image-20210801101207444](assets/image-20210801101207444.png)
+  ![image-20210801101207444](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801101207444.png)
 
 - 步骤2：拷贝课前资料中的docker-demo.jar文件到docker-demo这个目录
 
-  ![image-20210801101314816](assets/image-20210801101314816.png)
+  ![image-20210801101314816](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801101314816.png)
 
 - 步骤3：拷贝课前资料中的jdk8.tar.gz文件到docker-demo这个目录
 
-  ![image-20210801101410200](assets/image-20210801101410200.png)
+  ![image-20210801101410200](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801101410200.png)
 
 - 步骤4：拷贝课前资料提供的Dockerfile到docker-demo这个目录
 
-  ![image-20210801101455590](assets/image-20210801101455590.png)
+  ![image-20210801101455590](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801101455590.png)
 
   其中的内容如下：
 
@@ -950,7 +950,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 Docker Compose可以基于Compose文件帮我们快速的部署分布式应用，而无需手动一个个创建和运行容器！
 
-![image-20210731180921742](assets/image-20210731180921742.png)
+![image-20210731180921742](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731180921742.png)
 
 ## 4.1.初识DockerCompose
 
@@ -1018,7 +1018,7 @@ DockerCompose的详细语法参考官网：https://docs.docker.com/compose/compo
 
 查看课前资料提供的cloud-demo文件夹，里面已经编写好了docker-compose文件，而且每个微服务都准备了一个独立的目录：
 
-![image-20210731181341330](assets/image-20210731181341330.png)
+![image-20210731181341330](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731181341330.png)
 
 内容如下：
 
@@ -1067,11 +1067,11 @@ services:
 
 查看mysql目录，可以看到其中已经准备好了cloud_order、cloud_user表：
 
-![image-20210801095205034](assets/image-20210801095205034.png)
+![image-20210801095205034](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801095205034.png)
 
 查看微服务目录，可以看到都包含Dockerfile文件：
 
-![image-20210801095320586](assets/image-20210801095320586.png)
+![image-20210801095320586](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801095320586.png)
 
 内容如下：
 
@@ -1128,7 +1128,7 @@ spring:
 
 打包后：
 
-![image-20210801095951030](assets/image-20210801095951030.png)
+![image-20210801095951030](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801095951030.png)
 
 ### 4.3.4.拷贝jar包到部署目录
 
@@ -1136,15 +1136,15 @@ spring:
 
 user-service：
 
-![image-20210801100201253](assets/image-20210801100201253.png)
+![image-20210801100201253](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801100201253.png)
 
 order-service：
 
-![image-20210801100231495](assets/image-20210801100231495.png)
+![image-20210801100231495](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801100231495.png)
 
 gateway：
 
-![image-20210801100308102](assets/image-20210801100308102.png)
+![image-20210801100308102](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801100308102.png)
 
 ### 4.3.5.部署
 
@@ -1152,7 +1152,7 @@ gateway：
 
 上传到任意目录：
 
-![image-20210801100955653](assets/image-20210801100955653.png)
+![image-20210801100955653](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801100955653.png)
 
 部署：
 

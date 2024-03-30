@@ -20,7 +20,7 @@
 
 **单体架构**：将业务的所有功能集中在一个项目中开发，打成一个包部署。
 
-![image-20210713202807818](assets/image-20210713202807818.png)
+![image-20210713202807818](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713202807818.png)
 
 单体架构的优缺点如下：
 
@@ -39,7 +39,7 @@
 
 **分布式架构**：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一个服务。
 
-![image-20210713203124797](assets/image-20210713203124797.png)
+![image-20210713203124797](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713203124797.png)
 
 
 
@@ -75,7 +75,7 @@
 - 面向服务：服务提供统一标准的接口，与语言和技术无关
 - 隔离性强：服务调用做好隔离、容错、降级，避免出现级联问题
 
-![image-20210713203753373](assets/image-20210713203753373.png)
+![image-20210713203753373](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713203753373.png)
 
 微服务的上述特性其实是在给分布式架构制定一个标准，进一步降低服务之间的耦合度，提供服务的独立性和灵活性。做到高内聚，低耦合。
 
@@ -93,13 +93,13 @@ SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了�
 
 其中常见的组件包括：
 
-![image-20210713204155887](assets/image-20210713204155887.png)
+![image-20210713204155887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713204155887.png)
 
 
 
 另外，SpringCloud底层是依赖于SpringBoot的，并且有版本的兼容关系，如下：
 
-![image-20210713205003790](assets/image-20210713205003790.png)
+![image-20210713205003790](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713205003790.png)
 
 我们课堂学习的版本是 Hoxton.SR10，因此对应的SpringBoot版本是2.3.x版本。
 
@@ -135,7 +135,7 @@ SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了�
 - 微服务数据独立，不要访问其它微服务的数据库
 - 微服务可以将自己的业务暴露为接口，供其它微服务调用
 
-![image-20210713210800950](assets/image-20210713210800950.png)
+![image-20210713210800950](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713210800950.png)
 
 
 
@@ -143,7 +143,7 @@ SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了�
 
 以课前资料中的微服务cloud-demo为例，其结构如下：
 
-![image-20210713211009593](assets/image-20210713211009593.png)
+![image-20210713211009593](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211009593.png)
 
 cloud-demo：父工程，管理依赖
 
@@ -162,17 +162,17 @@ cloud-demo：父工程，管理依赖
 
 首先，将课前资料提供的`cloud-order.sql`和`cloud-user.sql`导入到mysql中：
 
-![image-20210713211417049](assets/image-20210713211417049.png)
+![image-20210713211417049](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211417049.png)
 
 
 
 cloud-user表中初始数据如下：
 
-![image-20210713211550169](assets/image-20210713211550169.png)
+![image-20210713211550169](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211550169.png)
 
 cloud-order表中初始数据如下：
 
-![image-20210713211657319](assets/image-20210713211657319.png)
+![image-20210713211657319](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211657319.png)
 
 
 
@@ -184,13 +184,13 @@ cloud-order表中持有cloud-user表中的id字段。
 
 用IDEA导入课前资料提供的Demo：
 
-![image-20210713211814094](assets/image-20210713211814094.png)
+![image-20210713211814094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211814094.png)
 
 
 
 项目结构如下：
 
-![image-20210713212656887](assets/image-20210713212656887.png)
+![image-20210713212656887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212656887.png)
 
 
 
@@ -198,21 +198,21 @@ cloud-order表中持有cloud-user表中的id字段。
 
 导入后，会在IDEA右下角出现弹窗：
 
-![image-20210713212349272](assets/image-20210713212349272.png)
+![image-20210713212349272](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212349272.png)
 
 点击弹窗，然后按下图选择：
 
-![image-20210713212336185](assets/image-20210713212336185.png)
+![image-20210713212336185](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212336185.png)
 
 会出现这样的菜单：
 
-![image-20210713212513324](assets/image-20210713212513324.png)
+![image-20210713212513324](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212513324.png)
 
 
 
 配置下项目使用的JDK：
 
-![image-20210713220736408](assets/image-20210713220736408.png)
+![image-20210713220736408](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220736408.png)
 
 
 
@@ -222,11 +222,11 @@ cloud-order表中持有cloud-user表中的id字段。
 
 在order-service服务中，有一个根据id查询订单的接口：
 
-![image-20210713212749575](assets/image-20210713212749575.png)
+![image-20210713212749575](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212749575.png)
 
 根据id查询订单，返回值是Order对象，如图：
 
-![image-20210713212901725](assets/image-20210713212901725.png)
+![image-20210713212901725](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212901725.png)
 
 其中的user为null
 
@@ -236,11 +236,11 @@ cloud-order表中持有cloud-user表中的id字段。
 
 在user-service中有一个根据id查询用户的接口：
 
-![image-20210713213146089](assets/image-20210713213146089.png)
+![image-20210713213146089](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213146089.png)
 
 查询的结果如图：
 
-![image-20210713213213075](assets/image-20210713213213075.png)
+![image-20210713213213075](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213213075.png)
 
 
 
@@ -250,7 +250,7 @@ cloud-order表中持有cloud-user表中的id字段。
 
 修改order-service中的根据id查询订单业务，要求在查询订单的同时，根据订单中包含的userId查询出用户信息，一起返回。
 
-![image-20210713213312278](assets/image-20210713213312278.png)
+![image-20210713213312278](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213312278.png)
 
 
 
@@ -298,7 +298,7 @@ public class OrderApplication {
 
 修改order-service服务中的cn.itcast.order.service包下的OrderService类中的queryOrderById方法：
 
-![image-20210713213959569](assets/image-20210713213959569.png)
+![image-20210713213959569](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213959569.png)
 
 
 
@@ -314,7 +314,7 @@ public class OrderApplication {
 
 **服务消费者**：一次业务中，调用其它微服务的服务。（调用其它微服务提供的接口）
 
-![image-20210713214404481](assets/image-20210713214404481.png)
+![image-20210713214404481](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713214404481.png)
 
 
 
@@ -339,7 +339,7 @@ public class OrderApplication {
 
 假如我们的服务提供者user-service部署了多个实例，如图：
 
-![image-20210713214925388](assets/image-20210713214925388.png)
+![image-20210713214925388](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713214925388.png)
 
 
 
@@ -355,7 +355,7 @@ public class OrderApplication {
 
 这些问题都需要利用SpringCloud中的注册中心来解决，其中最广为人知的注册中心就是Eureka，其结构如下：
 
-![image-20210713220104956](assets/image-20210713220104956.png)
+![image-20210713220104956](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220104956.png)
 
 
 
@@ -392,7 +392,7 @@ public class OrderApplication {
 
 因此，接下来我们动手实践的步骤包括：
 
-![image-20210713220509769](assets/image-20210713220509769.png)
+![image-20210713220509769](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220509769.png)
 
 
 
@@ -404,17 +404,17 @@ public class OrderApplication {
 
 在cloud-demo父工程下，创建一个子模块：
 
-![image-20210713220605881](assets/image-20210713220605881.png)
+![image-20210713220605881](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220605881.png)
 
 填写模块信息：
 
-![image-20210713220857396](assets/image-20210713220857396.png)
+![image-20210713220857396](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220857396.png)
 
 
 
 然后填写服务信息：
 
-![image-20210713221339022](assets/image-20210713221339022.png)
+![image-20210713221339022](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713221339022.png)
 
 
 
@@ -477,7 +477,7 @@ eureka:
 
 看到下面结果应该是成功了：
 
-![image-20210713222157190](assets/image-20210713222157190.png)
+![image-20210713222157190](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222157190.png)
 
 
 
@@ -526,27 +526,27 @@ eureka:
 
 首先，复制原来的user-service启动配置：
 
-![image-20210713222656562](assets/image-20210713222656562.png)
+![image-20210713222656562](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222656562.png)
 
 然后，在弹出的窗口中，填写信息：
 
-![image-20210713222757702](assets/image-20210713222757702.png)
+![image-20210713222757702](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222757702.png)
 
 
 
 现在，SpringBoot窗口会出现两个user-service启动配置：
 
-![image-20210713222841951](assets/image-20210713222841951.png)
+![image-20210713222841951](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222841951.png)
 
 不过，第一个是8081端口，第二个是8082端口。
 
 启动两个user-service实例：
 
-![image-20210713223041491](assets/image-20210713223041491.png)
+![image-20210713223041491](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713223041491.png)
 
 查看eureka-server管理页面：
 
-![image-20210713223150650](assets/image-20210713223150650.png)
+![image-20210713223150650](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713223150650.png)
 
 
 
@@ -599,13 +599,13 @@ eureka:
 
 在order-service的OrderApplication中，给RestTemplate这个Bean添加一个@LoadBalanced注解：
 
-![image-20210713224049419](assets/image-20210713224049419.png)
+![image-20210713224049419](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224049419.png)
 
 
 
 修改order-service服务中的cn.itcast.order.service包下的OrderService类中的queryOrderById方法。修改访问的url路径，用服务名代替ip、端口：
 
-![image-20210713224245731](assets/image-20210713224245731.png)
+![image-20210713224245731](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224245731.png)
 
 
 
@@ -623,7 +623,7 @@ spring会自动帮助我们从eureka-server端，根据userservice这个服务�
 
 SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载均衡功能的。
 
-![image-20210713224517686](assets/image-20210713224517686.png)
+![image-20210713224517686](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224517686.png)
 
 那么我们发出的请求明明是http://userservice/user/1，怎么变成了http://localhost:8081的呢？
 
@@ -639,7 +639,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 ### 1）LoadBalancerIntercepor
 
-![1525620483637](assets/1525620483637.png)
+![1525620483637](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620483637.png)
 
 可以看到这里的intercept方法，拦截了用户的HttpRequest请求，然后做了几件事：
 
@@ -655,7 +655,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 继续跟入execute方法：
 
-![1525620787090](assets/1525620787090.png)
+![1525620787090](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620787090.png)
 
 代码是这样的：
 
@@ -666,7 +666,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 放行后，再次访问并跟踪，发现获取的是8081：
 
- ![1525620835911](assets/1525620835911.png)
+ ![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
 
 果然实现了负载均衡。
 
@@ -676,23 +676,23 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 在刚才的代码中，可以看到获取服务使通过一个`getServer`方法来做负载均衡:
 
- ![1525620835911](assets/1525620835911.png)
+ ![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
 
 我们继续跟入：
 
-![1544361421671](assets/1544361421671.png)
+![1544361421671](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1544361421671.png)
 
 继续跟踪源码chooseServer方法，发现这么一段代码：
 
- ![1525622652849](assets/1525622652849.png)
+ ![1525622652849](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622652849.png)
 
 我们看看这个rule是谁：
 
- ![1525622699666](assets/1525622699666.png)
+ ![1525622699666](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622699666.png)
 
 这里的rule默认值是一个`RoundRobinRule`，看类的介绍：
 
- ![1525622754316](assets/1525622754316.png)
+ ![1525622754316](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622754316.png)
 
 这不就是轮询的意思嘛。
 
@@ -704,7 +704,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出的请求，对地址做了修改。用一幅图来总结一下：
 
-![image-20210713224724673](assets/image-20210713224724673.png)
+![image-20210713224724673](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224724673.png)
 
 
 
@@ -727,7 +727,7 @@ SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出
 
 负载均衡的规则都定义在IRule接口中，而IRule有很多不同的实现类：
 
-![image-20210713225653000](assets/image-20210713225653000.png)
+![image-20210713225653000](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713225653000.png)
 
 不同规则的含义如下：
 
@@ -799,7 +799,7 @@ ribbon:
 
 [Nacos](https://nacos.io/)是阿里巴巴的产品，现在是[SpringCloud](https://spring.io/projects/spring-cloud)中的一个组件。相比[Eureka](https://github.com/Netflix/eureka)功能更加丰富，在国内受欢迎程度较高。
 
-![image-20210713230444308](assets/image-20210713230444308.png)
+![image-20210713230444308](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713230444308.png)
 
 
 
@@ -870,7 +870,7 @@ spring:
 
 重启微服务后，登录nacos管理页面，可以看到微服务信息：
 
-![image-20210713231439607](assets/image-20210713231439607.png)
+![image-20210713231439607](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713231439607.png)
 
 
 
@@ -892,13 +892,13 @@ Nacos就将同一机房内的实例 划分为一个**集群**。
 
 也就是说，user-service是服务，一个服务可以包含多个集群，如杭州、上海，每个集群下可以有多个实例，形成分级模型，如图：
 
-![image-20210713232522531](assets/image-20210713232522531.png)
+![image-20210713232522531](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232522531.png)
 
 
 
 微服务互相访问时，应该尽可能访问同集群实例，因为本地访问速度更快。当本集群内不可用时，才访问其它集群。例如：
 
-![image-20210713232658928](assets/image-20210713232658928.png)
+![image-20210713232658928](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232658928.png)
 
 杭州机房内的order-service应该优先访问同机房的user-service。
 
@@ -923,7 +923,7 @@ spring:
 
 重启两个user-service实例后，我们可以在nacos控制台看到下面结果：
 
-![image-20210713232916215](assets/image-20210713232916215.png)
+![image-20210713232916215](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232916215.png)
 
 
 
@@ -935,13 +935,13 @@ spring:
 
 配置如图所示：
 
-![image-20210713233528982](assets/image-20210713233528982.png)
+![image-20210713233528982](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713233528982.png)
 
 
 
 启动UserApplication3后再次查看nacos控制台：
 
-![image-20210713233727923](assets/image-20210713233727923.png)
+![image-20210713233727923](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713233727923.png)
 
 
 
@@ -994,11 +994,11 @@ userservice:
 
 在nacos控制台，找到user-service的实例列表，点击编辑，即可修改权重：
 
-![image-20210713235133225](assets/image-20210713235133225.png)
+![image-20210713235133225](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713235133225.png)
 
 在弹出的编辑窗口，修改权重：
 
-![image-20210713235235219](assets/image-20210713235235219.png)
+![image-20210713235235219](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713235235219.png)
 
 
 
@@ -1018,7 +1018,7 @@ Nacos提供了namespace来实现环境隔离功能。
 
 
 
-![image-20210714000101516](assets/image-20210714000101516.png)
+![image-20210714000101516](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000101516.png)
 
 
 
@@ -1026,23 +1026,23 @@ Nacos提供了namespace来实现环境隔离功能。
 
 默认情况下，所有service、data、group都在同一个namespace，名为public：
 
-![image-20210714000414781](assets/image-20210714000414781.png)
+![image-20210714000414781](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000414781.png)
 
 
 
 我们可以点击页面新增按钮，添加一个namespace：
 
-![image-20210714000440143](assets/image-20210714000440143.png)
+![image-20210714000440143](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000440143.png)
 
 
 
 然后，填写表单：
 
-![image-20210714000505928](assets/image-20210714000505928.png)
+![image-20210714000505928](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000505928.png)
 
 就能在页面看到一个新的namespace：
 
-![image-20210714000522913](assets/image-20210714000522913.png)
+![image-20210714000522913](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000522913.png)
 
 
 
@@ -1066,15 +1066,15 @@ spring:
 
 重启order-service后，访问控制台，可以看到下面的结果：
 
-![image-20210714000830703](assets/image-20210714000830703.png)
+![image-20210714000830703](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000830703.png)
 
 
 
-![image-20210714000837140](assets/image-20210714000837140.png)
+![image-20210714000837140](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000837140.png)
 
 此时访问order-service，因为namespace不同，会导致找不到userservice，控制台会报错：
 
-![image-20210714000941256](assets/image-20210714000941256.png)
+![image-20210714000941256](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000941256.png)
 
 
 
@@ -1104,7 +1104,7 @@ spring:
 
 Nacos和Eureka整体结构类似，服务注册、服务拉取、心跳等待，但是也存在一些差异：
 
-![image-20210714001728017](assets/image-20210714001728017.png)
+![image-20210714001728017](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714001728017.png)
 
 
 

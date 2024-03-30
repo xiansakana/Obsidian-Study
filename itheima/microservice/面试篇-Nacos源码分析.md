@@ -16,7 +16,7 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 课前资料中已经提供了下载好的1.4.2版本的Nacos源码：
 
-![image-20210906105652113](assets/image-20210906105652113.png) 
+![image-20210906105652113](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906105652113.png) 
 
 
 
@@ -24,11 +24,11 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 大家找到其release页面：https://github.com/alibaba/nacos/tags，找到其中的1.4.2.版本：
 
-![image-20210906105157409](assets/image-20210906105157409.png)
+![image-20210906105157409](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906105157409.png)
 
 点击进入后，下载Source code(zip)：
 
-![image-20210906105102668](assets/image-20210906105102668.png)
+![image-20210906105102668](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906105102668.png)
 
 
 
@@ -36,11 +36,11 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 我们的课前资料提供了一个微服务Demo，包含了服务注册、发现等业务。
 
-![image-20210906105858000](assets/image-20210906105858000.png) 
+![image-20210906105858000](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906105858000.png) 
 
 导入该项目后，查看其项目结构：
 
-![image-20210906110014198](assets/image-20210906110014198.png) 
+![image-20210906110014198](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906110014198.png) 
 
 结构说明：
 
@@ -55,33 +55,33 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 将之前下载好的Nacos源码解压到cloud-source-demo项目目录中：
 
-![image-20210906111053263](assets/image-20210906111053263.png) 
+![image-20210906111053263](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111053263.png) 
 
 然后，使用IDEA将其作为一个module来导入：
 
 1）选择项目结构选项：
 
-![image-20210906111152447](assets/image-20210906111152447.png) 
+![image-20210906111152447](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111152447.png) 
 
 然后点击导入module：
 
-![image-20210906111259352](assets/image-20210906111259352.png) 
+![image-20210906111259352](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111259352.png) 
 
 在弹出窗口中，选择nacos源码目录：
 
-![image-20210906111422406](assets/image-20210906111422406.png)
+![image-20210906111422406](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111422406.png)
 
 然后选择maven模块，finish：
 
-![image-20210906111519198](assets/image-20210906111519198.png)
+![image-20210906111519198](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111519198.png)
 
 最后，点击OK即可：
 
-![image-20210906111543747](assets/image-20210906111543747.png)
+![image-20210906111543747](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111543747.png)
 
 导入后的项目结构：
 
-![image-20210906111632336](assets/image-20210906111632336.png)
+![image-20210906111632336](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111632336.png)
 
 
 
@@ -89,7 +89,7 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 Nacos底层的数据通信会基于protobuf对数据做序列化和反序列化。并将对应的proto文件定义在了consistency这个子模块中：
 
-![image-20210906111941399](assets/image-20210906111941399.png)
+![image-20210906111941399](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111941399.png)
 
 我们需要先将proto文件编译为对应的Java代码。
 
@@ -111,21 +111,21 @@ Protobuf的GitHub地址：https://github.com/protocolbuffers/protobuf/releases
 
 我们可以下载windows版本的来使用：
 
-![image-20210906112814549](assets/image-20210906112814549.png)
+![image-20210906112814549](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906112814549.png)
 
 另外，课前资料也提供了下载好的安装包：
 
-![image-20210906112920575](assets/image-20210906112920575.png) 
+![image-20210906112920575](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906112920575.png) 
 
 
 
 解压到任意非中文目录下，其中的bin目录中的protoc.exe可以帮助我们编译：
 
-![image-20210906113011871](assets/image-20210906113011871.png)
+![image-20210906113011871](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113011871.png)
 
 然后将这个bin目录配置到你的环境变量path中，可以参考JDK的配置方式：
 
-![image-20210906113552081](assets/image-20210906113552081.png)
+![image-20210906113552081](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113552081.png)
 
 
 
@@ -133,7 +133,7 @@ Protobuf的GitHub地址：https://github.com/protocolbuffers/protobuf/releases
 
 进入nacos-1.4.2的consistency模块下的src/main目录下：
 
-![image-20210906113655302](assets/image-20210906113655302.png)
+![image-20210906113655302](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113655302.png)
 
 然后打开cmd窗口，运行下面的两个命令：
 
@@ -144,11 +144,11 @@ protoc --java_out=./java ./proto/Data.proto
 
 如图：
 
-![image-20210906113829647](assets/image-20210906113829647.png)
+![image-20210906113829647](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113829647.png)
 
 会在nacos的consistency模块中编译出这些java代码：
 
-![image-20210906113923430](assets/image-20210906113923430.png)
+![image-20210906113923430](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113923430.png)
 
 
 
@@ -156,31 +156,31 @@ protoc --java_out=./java ./proto/Data.proto
 
 nacos服务端的入口是在console模块中的Nacos类：
 
-![image-20210906114035628](assets/image-20210906114035628.png) 
+![image-20210906114035628](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906114035628.png) 
 
 我们需要让它单机启动：
 
-![image-20210906114143669](assets/image-20210906114143669.png) 
+![image-20210906114143669](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906114143669.png) 
 
 然后新建一个SpringBootApplication：
 
-![image-20210906114220412](assets/image-20210906114220412.png) 
+![image-20210906114220412](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906114220412.png) 
 
 然后填写应用信息：
 
-![image-20210906114519073](assets/image-20210906114519073.png)
+![image-20210906114519073](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906114519073.png)
 
 
 
 然后运行Nacos这个main函数：
 
-![image-20210906114705910](assets/image-20210906114705910.png)
+![image-20210906114705910](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906114705910.png)
 
 
 
 将order-service和user-service服务启动后，可以查看nacos控制台：
 
-![image-20210906151358154](assets/image-20210906151358154.png)
+![image-20210906151358154](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906151358154.png)
 
 
 
@@ -190,7 +190,7 @@ nacos服务端的入口是在console模块中的Nacos类：
 
 服务注册到Nacos以后，会保存在一个本地注册表中，其结构如下：
 
-![image-20210922111651314](assets/image-20210922111651314.png)
+![image-20210922111651314](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922111651314.png)
 
 首先最外层是一个Map，结构为：`Map<String, Map<String, Service>>`：
 
@@ -258,7 +258,7 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 
 这个包中找到Nacos自动装配信息：
 
-![image-20210907201333049](assets/image-20210907201333049.png)
+![image-20210907201333049](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907201333049.png)
 
 可以看到，有很多个自动配置类被加载了，其中跟服务注册有关的就是NacosServiceRegistryAutoConfiguration这个类，我们跟入其中。
 
@@ -266,7 +266,7 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 
 可以看到，在NacosServiceRegistryAutoConfiguration这个类中，包含一个跟自动注册有关的Bean：
 
-![image-20210907201612322](assets/image-20210907201612322.png)
+![image-20210907201612322](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907201612322.png)
 
 
 
@@ -274,7 +274,7 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 
 `NacosAutoServiceRegistration`源码如图：
 
-![image-20210907213647145](assets/image-20210907213647145.png)
+![image-20210907213647145](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907213647145.png)
 
 可以看到在初始化时，其父类`AbstractAutoServiceRegistration`也被初始化了。
 
@@ -282,13 +282,13 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 
 `AbstractAutoServiceRegistration`如图：
 
-![image-20210907214111801](assets/image-20210907214111801.png)
+![image-20210907214111801](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907214111801.png)
 
 可以看到它实现了`ApplicationListener`接口，监听Spring容器启动过程中的事件。
 
 在监听到`WebServerInitializedEvent`（web服务初始化完成）的事件后，执行了`bind` 方法。
 
-![image-20210907214411267](assets/image-20210907214411267.png)
+![image-20210907214411267](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907214411267.png)
 
 
 
@@ -355,7 +355,7 @@ protected void register() {
 
 此处的this.serviceRegistry就是NacosServiceRegistry：
 
-![image-20210907215903335](assets/image-20210907215903335.png)
+![image-20210907215903335](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907215903335.png)
 
 ### 2.2.3.NacosServiceRegistry
 
@@ -476,7 +476,7 @@ public void registerService(String serviceName, String groupName, Instance insta
 
 而在NacosNamingService的registerInstance方法中，有一段是与服务心跳有关的代码，我们在后续会继续学习。
 
-![image-20210908141019175](assets/image-20210908141019175.png)
+![image-20210908141019175](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210908141019175.png)
 
 
 
@@ -484,7 +484,7 @@ public void registerService(String serviceName, String groupName, Instance insta
 
 如图：
 
-![image-20210923185331470](assets/image-20210923185331470.png)
+![image-20210923185331470](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923185331470.png)
 
 
 
@@ -494,15 +494,15 @@ public void registerService(String serviceName, String groupName, Instance insta
 
 在nacos-console的模块中，会引入nacos-naming这个模块：
 
-![image-20210922112801808](assets/image-20210922112801808.png)
+![image-20210922112801808](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922112801808.png)
 
 模块结构如下：
 
-![image-20210922112954630](assets/image-20210922112954630.png)
+![image-20210922112954630](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922112954630.png)
 
 其中的com.alibaba.nacos.naming.controllers包下就有服务注册、发现等相关的各种接口，其中的服务注册是在`InstanceController`类中：
 
-![image-20210922113158618](assets/image-20210922113158618.png)
+![image-20210922113158618](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922113158618.png)
 
 
 
@@ -539,7 +539,7 @@ public String register(HttpServletRequest request) throws Exception {
 
 ServiceManager就是Nacos中管理服务、实例信息的核心API，其中就包含Nacos的服务注册表：
 
-![image-20210922141703128](assets/image-20210922141703128.png)
+![image-20210922141703128](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922141703128.png)
 
 而其中的registerInstance方法就是注册服务实例的方法：
 
@@ -715,7 +715,7 @@ public List<Instance> updateIpAddresses(Service service, String action, boolean 
 
 这里的ConsistencyService接口，代表集群一致性的接口，有很多中不同实现：
 
-![image-20210922161705573](assets/image-20210922161705573.png)
+![image-20210922161705573](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922161705573.png)
 
 
 
@@ -800,7 +800,7 @@ public void onPut(String key, Record value) {
 
 notifier的类型就是`DistroConsistencyServiceImpl.Notifier`，内部维护了一个阻塞队列，存放服务列表变更的事件：
 
-![image-20210922180246555](assets/image-20210922180246555.png)
+![image-20210922180246555](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922180246555.png)
 
 addTask时，将任务加入该阻塞队列：
 
@@ -1034,7 +1034,7 @@ public void updateIps(List<Instance> ips, boolean ephemeral) {
 
 在DistroConsistencyServiceImpl的put方法中分为两步：
 
-![image-20210922195603450](assets/image-20210922195603450.png)
+![image-20210922195603450](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922195603450.png)
 
 其中的onPut方法已经分析过了。
 
@@ -1105,7 +1105,7 @@ protected void processTasks() {
 
 ### 2.3.5.服务端流程图
 
-![image-20210923214042926](assets/image-20210923214042926.png)
+![image-20210923214042926](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923214042926.png)
 
 
 
@@ -1221,7 +1221,7 @@ public void registerInstance(String serviceName, String groupName, Instance inst
 
 这里的BeanInfo就包含心跳需要的各种信息：
 
-![image-20210922213313677](assets/image-20210922213313677.png)
+![image-20210922213313677](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922213313677.png)
 
 
 
@@ -1229,7 +1229,7 @@ public void registerInstance(String serviceName, String groupName, Instance inst
 
 而`BeatReactor`这个类则维护了一个线程池：
 
-![image-20210922213455549](assets/image-20210922213455549.png)
+![image-20210922213455549](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922213455549.png)
 
 
 
@@ -1255,7 +1255,7 @@ public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
 
 心跳周期的默认值在`com.alibaba.nacos.api.common.Constants`类中：
 
-![image-20210922213829632](assets/image-20210922213829632.png)
+![image-20210922213829632](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922213829632.png)
 
 可以看到是5秒，默认5秒一次心跳。
 
@@ -1537,7 +1537,7 @@ public void init() {
 
 其中HealthCheckReactor.scheduleCheck就是执行心跳检测的定时任务：
 
-![image-20210922221022107](assets/image-20210922221022107.png)
+![image-20210922221022107](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922221022107.png)
 
 可以看到，该任务是5000ms执行一次，也就是5秒对实例的心跳状态做一次检测。
 
@@ -1599,7 +1599,7 @@ public void run() {
 
 其中的超时时间同样是在`com.alibaba.nacos.api.common.Constants`这个类中：
 
-![image-20210922221344417](assets/image-20210922221344417.png)
+![image-20210922221344417](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922221344417.png)
 
 
 
@@ -1609,7 +1609,7 @@ public void run() {
 
 入口在2.3.2小节的`ServiceManager`类中的registerInstance方法：
 
-![image-20210923100740065](assets/image-20210923100740065.png)
+![image-20210923100740065](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923100740065.png)
 
 创建空服务时：
 
@@ -1733,7 +1733,7 @@ public void run() {
 
 健康检测逻辑定义在`healthCheckProcessor.process(this);`方法中，在HealthCheckProcessor接口中，这个接口也有很多实现，默认是`TcpSuperSenseProcessor`：
 
-![image-20210923102824451](assets/image-20210923102824451.png)
+![image-20210923102824451](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923102824451.png)
 
 
 
@@ -1923,7 +1923,7 @@ Nacos提供了一个根据serviceId查询实例列表的接口：
 
 在2.2.4小节中，我们讲到一个类`NacosNamingService`，这个类不仅仅提供了服务注册功能，同样提供了服务发现的功能。
 
-![image-20210923153419392](assets/image-20210923153419392.png)
+![image-20210923153419392](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923153419392.png)
 
 
 
@@ -2012,17 +2012,17 @@ public ServiceInfo getServiceInfo(final String serviceName, final String cluster
 
 - 如果本地缓存没有，立即去nacos读取，`updateServiceNow(serviceName, clusters)`
 
-  ![image-20210923161528710](assets/image-20210923161528710.png)
+  ![image-20210923161528710](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923161528710.png)
 
 - 如果本地缓存有，则开启定时更新功能，并返回缓存结果：
 
   - `scheduleUpdateIfAbsent(serviceName, clusters)`
 
-  ![image-20210923161630575](assets/image-20210923161630575.png)
+  ![image-20210923161630575](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923161630575.png)
 
   在UpdateTask中，最终还是调用updateService方法：
 
-  ![image-20210923161752521](assets/image-20210923161752521.png)
+  ![image-20210923161752521](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923161752521.png)
 
 
 
@@ -2079,7 +2079,7 @@ public String queryList(String serviceName, String clusters, int udpPort, boolea
 
 在HostReactor类的构造函数中，有非常重要的几个步骤：
 
-![image-20210923164145915](assets/image-20210923164145915.png)
+![image-20210923164145915](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923164145915.png)
 
 
 
@@ -2345,13 +2345,13 @@ pushService.addClient(namespaceId, serviceName, clusters, agent,
 
 PushService类本身实现了`ApplicationListener`接口：
 
-![image-20210923182429636](assets/image-20210923182429636.png)
+![image-20210923182429636](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923182429636.png)
 
 这个是事件监听器接口，监听的是ServiceChangeEvent（服务变更事件）。
 
 当服务列表变化时，就会通知我们：
 
-![image-20210923183017424](assets/image-20210923183017424.png)
+![image-20210923183017424](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923183017424.png)
 
 
 
