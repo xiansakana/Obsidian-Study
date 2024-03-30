@@ -1,4 +1,12 @@
-# 安装elasticsearch
+---
+title: itheima-Microservice 实用篇day05-安装Elasticsearch
+tags:
+  - itheima
+  - Elesticsearch
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292214426.jpg
+---
+# 安装Elasticsearch
 
 
 

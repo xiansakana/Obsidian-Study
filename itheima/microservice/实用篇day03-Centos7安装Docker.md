@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 实用篇day03-Centos7安装Docker
+tags:
+  - itheima
+  - Centos
+  - Docker
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292212095.jpg
+---
 # 0.安装Docker
 
 Docker 分为 CE 和 EE 两大版本。CE 即社区版（免费，支持周期 7 个月），EE 即企业版，强调安全，付费使用，支持周期 24 个月。

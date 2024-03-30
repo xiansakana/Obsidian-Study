@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day01-sentinel规则持久化
+tags:
+  - itheima
+  - 微服务
+  - "#Sentinel"
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292201584.png
+---
 # Sentinel 规则持久化
 
 
@@ -6,7 +15,7 @@
 
 
 
-## 一、修改order-service服务
+# 一、修改order-service服务
 
 
 
@@ -14,7 +23,7 @@
 
 具体步骤如下：
 
-### 1.引入依赖
+## 1.引入依赖
 
 在order-service中引入sentinel监听nacos的依赖：
 
@@ -27,7 +36,7 @@
 
 
 
-### 2.配置nacos地址
+## 2.配置nacos地址
 
 在order-service中的application.yml文件配置nacos地址及监听的配置信息：
 
@@ -48,13 +57,13 @@ spring:
 
 
 
-## 二、修改sentinel-dashboard源码
+# 二、修改sentinel-dashboard源码
 
 SentinelDashboard默认不支持nacos的持久化，需要修改源码。
 
 
 
-### 1. 解压
+## 1. 解压
 
 解压课前资料中的sentinel源码包：
 
@@ -64,7 +73,7 @@ SentinelDashboard默认不支持nacos的持久化，需要修改源码。
 
 ![image-20210618201412878](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210618201412878.png)
 
-### 2. 修改nacos依赖
+## 2. 修改nacos依赖
 
 在sentinel-dashboard源码的pom文件中，nacos的依赖默认的scope是test，只能在测试时使用，这里要去除：
 
@@ -81,7 +90,7 @@ SentinelDashboard默认不支持nacos的持久化，需要修改源码。
 
 
 
-### 3. 添加nacos支持
+## 3. 添加nacos支持
 
 在sentinel-dashboard的test包下，已经编写了对nacos的支持，我们需要将其拷贝到main下。
 
@@ -89,7 +98,7 @@ SentinelDashboard默认不支持nacos的持久化，需要修改源码。
 
 
 
-### 4. 修改nacos地址
+## 4. 修改nacos地址
 
 然后，还需要修改测试代码中的NacosConfig类：
 
@@ -107,7 +116,7 @@ nacos.addr=localhost:8848
 
 
 
-### 5. 配置nacos数据源
+## 5. 配置nacos数据源
 
 另外，还需要修改com.alibaba.csp.sentinel.dashboard.controller.v2包下的FlowControllerV2类：
 
@@ -119,7 +128,7 @@ nacos.addr=localhost:8848
 
 
 
-### 6. 修改前端页面
+## 6. 修改前端页面
 
 接下来，还要修改前端页面，添加一个支持nacos的菜单。
 
@@ -141,7 +150,7 @@ nacos.addr=localhost:8848
 
 
 
-### 7. 重新编译、打包项目
+## 7. 重新编译、打包项目
 
 运行IDEA中的maven插件，编译和打包修改好的Sentinel-Dashboard：
 
@@ -149,7 +158,7 @@ nacos.addr=localhost:8848
 
 
 
-### 8.启动
+## 8.启动
 
 启动方式跟官方一样：
 

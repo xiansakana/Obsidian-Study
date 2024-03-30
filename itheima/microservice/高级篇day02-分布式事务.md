@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day02-分布式事务
+tags:
+  - itheima
+  - 微服务
+  - 分布式
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292201990.jpg
+---
 # 分布式事务
 
 

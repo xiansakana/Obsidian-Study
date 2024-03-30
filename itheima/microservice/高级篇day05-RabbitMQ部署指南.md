@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day05-RabbitMQ部署指南
+tags:
+  - itheima
+  - 微服务
+  - RabbitMQ
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292208274.jpg
+---
 # RabbitMQ部署指南
 
 

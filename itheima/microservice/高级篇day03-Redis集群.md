@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day03-Redis集群
+tags:
+  - itheima
+  - 微服务
+  - Redis
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292204705.jpg
+---
 # Redis集群
 
 本章是基于CentOS7下的Redis集群教程，包括：

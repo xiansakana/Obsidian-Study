@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day04-案例导入说明
+tags:
+  - itheima
+  - 微服务
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292205829.jpg
+---
+
 # 案例导入说明
 
 

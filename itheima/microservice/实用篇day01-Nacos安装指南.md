@@ -1,3 +1,11 @@
+---
+title: itheima-Microservice 实用篇day01-Nacos安装指南
+tags:
+  - itheima
+  - Nacos
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292210818.jpg
+---
 # Nacos安装指南
 
 

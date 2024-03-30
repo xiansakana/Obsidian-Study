@@ -1,3 +1,11 @@
+---
+title: itheima-Microservice 实用篇day04-RabbitMQ
+tags:
+  - itheima
+  - "#RabbitMQ"
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292213261.jpg
+---
 # RabbitMQ
 
 

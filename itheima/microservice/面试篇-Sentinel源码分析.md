@@ -1,3 +1,11 @@
+---
+title: itheima-Microservice 面试篇-Sentinel源码分析
+tags:
+  - itheima
+  - "#Sentinel"
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292210713.jpg
+---
 # Sentinel源码分析
 
 

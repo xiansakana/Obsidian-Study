@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day05-RabbitMQ-高级篇
+tags:
+  - itheima
+  - 微服务
+  - RabbitMQ
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292207735.png
+---
 # 服务异步通信-高级篇
 
 

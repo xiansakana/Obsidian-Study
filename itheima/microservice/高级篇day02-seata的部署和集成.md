@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day02-seata的部署和集成
+tags:
+  - itheima
+  - 微服务
+  - Seata
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292203252.jpg
+---
 # seata的部署和集成
 
 

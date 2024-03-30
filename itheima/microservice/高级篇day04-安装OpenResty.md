@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day04-安装OpenResty
+tags:
+  - itheima
+  - 微服务
+  - OpenResty
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292205390.jpg
+---
 # 安装OpenResty
 
 

@@ -1,3 +1,12 @@
+---
+title: itheima-Microservice 高级篇day01-微服务保护
+tags:
+  - itheima
+  - 微服务
+  - Sentinel
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292157100.jpg
+---
 # 微服务保护
 
 

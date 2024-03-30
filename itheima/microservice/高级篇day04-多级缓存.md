@@ -1,3 +1,13 @@
+---
+title: itheima-Microservice 高级篇day04-多级缓存
+tags:
+  - itheima
+  - 微服务
+  - Lua
+  - 多级缓存
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292206231.jpg
+---
 # 多级缓存
 
 

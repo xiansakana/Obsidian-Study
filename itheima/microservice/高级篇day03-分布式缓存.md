@@ -1,3 +1,13 @@
+---
+title: itheima-Microservice 高级篇day03-分布式缓存
+tags:
+  - itheima
+  - 微服务
+  - Redis
+  - 分布式
+categories: 微服务
+cover: https://img.xiansakana.xyz/202403292203456.jpg
+---
 # 分布式缓存
 
 -- 基于Redis集群解决单机Redis存在的问题
