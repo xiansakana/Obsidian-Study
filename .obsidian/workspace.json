@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d2216e98d8f7d781",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "miscellaneous/图床使用方案.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/bq/Behavior-Questions.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/bq/Behavior-Questions.md",
+                "file": "miscellaneous/图床使用方案.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/bq/Behavior-Questions.md"
+                "file": "miscellaneous/图床使用方案.md"
               }
             }
           },
@@ -169,8 +182,11 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "d2216e98d8f7d781",
   "lastOpenFiles": [
+    "interview/bq/其他/Behavior-Questions.md",
+    "interview/bq/其他/Behavior-Questions - 副本.md",
+    "interview/bq/Behavior-Questions.md",
     "interview/bq/test/Behavior-Questions.md",
     "interview/bq/test/Behavior-Questions - 副本.md",
     "interview/bq/test",
@@ -213,9 +229,6 @@
     "itheima/ssm/Spring_day01.md",
     "itheima/ssm/SpringMVC_day01.md",
     "itheima/javaweb/day15-Maven高级.md",
-    "itheima/javaweb/day12-SpringBootWeb登录认证.md",
-    "itheima/javaweb/day13-SpringBootWeb AOP.md",
-    "itheima/javaweb/day11-SpringBootWeb案例-2.md",
     "interview/CN/alternative.txt",
     "未命名.canvas",
     "未命名 1.canvas"
