@@ -2,9 +2,10 @@
 title: itheima-Microservice 实用篇day02-Nacos集群搭建
 tags:
   - itheima
-  - "#Nacos"
+  - '#Nacos'
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg'
+abbrlink: cf50504b
 ---
 # Nacos集群搭建
 

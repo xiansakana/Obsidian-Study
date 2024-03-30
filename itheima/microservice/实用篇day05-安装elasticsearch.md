@@ -4,7 +4,8 @@ tags:
   - itheima
   - Elesticsearch
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292214426.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292214426.jpg'
+abbrlink: f2513cc0
 ---
 # 安装Elasticsearch
 

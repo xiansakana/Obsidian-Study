@@ -5,7 +5,8 @@ tags:
   - 微服务
   - Redis
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204705.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204705.jpg'
+abbrlink: f9972978
 ---
 # Redis集群
 

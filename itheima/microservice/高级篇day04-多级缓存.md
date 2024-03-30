@@ -6,7 +6,8 @@ tags:
   - Lua
   - 多级缓存
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292206231.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292206231.jpg'
+abbrlink: 64a56646
 ---
 # 多级缓存
 

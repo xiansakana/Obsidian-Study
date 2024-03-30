@@ -4,7 +4,8 @@ tags:
   - itheima
   - Nacos
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292209900.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292209900.jpg'
+abbrlink: 3c8a1125
 ---
 # Nacos源码分析
 

@@ -5,7 +5,8 @@ tags:
   - 微服务
   - 分布式
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201990.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201990.jpg'
+abbrlink: '989839e4'
 ---
 # 分布式事务
 

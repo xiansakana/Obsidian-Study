@@ -5,7 +5,8 @@ tags:
   - 微服务
   - Canal
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204600.png
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204600.png'
+abbrlink: 7dc060ae
 ---
 # 安装和配置Canal
 

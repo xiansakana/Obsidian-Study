@@ -4,7 +4,8 @@ tags:
   - itheima
   - 微服务
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205829.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205829.jpg'
+abbrlink: 17b9eeb0
 ---
 
 # 案例导入说明

@@ -5,7 +5,8 @@ tags:
   - 微服务
   - OpenResty
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205390.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205390.jpg'
+abbrlink: a2c926fe
 ---
 # 安装OpenResty
 

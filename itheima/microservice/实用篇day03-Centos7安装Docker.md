@@ -5,7 +5,8 @@ tags:
   - Centos
   - Docker
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212095.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212095.jpg'
+abbrlink: 9c07ac7e
 ---
 # 0.安装Docker
 

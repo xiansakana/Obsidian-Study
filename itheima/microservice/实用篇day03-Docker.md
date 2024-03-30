@@ -4,7 +4,8 @@ tags:
   - itheima
   - Docker
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213634.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213634.jpg'
+abbrlink: 8b8c57b
 ---
 # Docker实用篇
 

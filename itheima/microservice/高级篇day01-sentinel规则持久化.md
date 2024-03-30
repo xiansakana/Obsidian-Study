@@ -3,9 +3,10 @@ title: itheima-Microservice 高级篇day01-sentinel规则持久化
 tags:
   - itheima
   - 微服务
-  - "#Sentinel"
+  - '#Sentinel'
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201584.png
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201584.png'
+abbrlink: ba7af4f
 ---
 # Sentinel 规则持久化
 

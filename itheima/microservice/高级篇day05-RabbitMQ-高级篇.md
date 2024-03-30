@@ -5,7 +5,8 @@ tags:
   - 微服务
   - RabbitMQ
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292207735.png
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292207735.png'
+abbrlink: f9a25802
 ---
 # 服务异步通信-高级篇
 

@@ -4,7 +4,8 @@ tags:
   - itheima
   - SpringCloud
 categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211064.jpg
+cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211064.jpg'
+abbrlink: 11bcc8a9
 ---
 # SpringCloud实用篇02
 
