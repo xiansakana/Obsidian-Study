@@ -5,7 +5,7 @@ tags:
   - 数据库
   - 后端
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121237821.png
-categories: 前端
+categories: 后端
 abbrlink: 4d712855
 date: 2023-11-12 12:35:07
 ---

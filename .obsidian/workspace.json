@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "frontend/React.md",
+                "file": "itheima/javaweb/day07-MySQL-02.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "frontend/React.md",
+                "file": "itheima/javaweb/day07-MySQL-02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "frontend/React.md",
+                "file": "itheima/javaweb/day07-MySQL-02.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "frontend/React.md"
+                "file": "itheima/javaweb/day07-MySQL-02.md"
               }
             }
           },
@@ -171,32 +171,32 @@
   },
   "active": "d2216e98d8f7d781",
   "lastOpenFiles": [
-    "frontend/OAuth.md",
-    "frontend/Next-js.md",
-    "frontend/Node-js.md",
-    "frontend/Mongoose.md",
-    "frontend/MongoDB.md",
-    "frontend/Middlewares-Cookies-Sessions.md",
-    "frontend/JWT.md",
-    "frontend/JavaScript-Basics.md",
-    "frontend/JavaScipt-Basics-2.md",
-    "frontend/HTML.md",
-    "frontend/Express-js.md",
-    "frontend/Document-Object-Model-DOM.md",
-    "frontend/EJS.md",
-    "frontend/CSS.md",
-    "frontend/Authentication.md",
-    "frontend/Async-JavaScript.md",
-    "frontend/Advanced-JavaScript-3.md",
-    "frontend/Advanced-JavaScript-2.md",
-    "frontend/Advanced-JavaScript.md",
-    "frontend/Advanced HTML-CSS.md",
-    "backend/Java.md",
-    "backend/Springboot常用注解.md",
-    "backend/Springboot.md",
-    "algorithm/lc预备知识.md",
-    "algorithm/Top Interview 150.md",
-    "itheima/microservice/高级篇day02-分布式事务.md",
+    "itheima/javaweb/day06-MySQL-01.md",
+    "itheima/javaweb/day05-SpringBootWeb请求响应.md",
+    "itheima/javaweb/day04-Maven.md",
+    "itheima/javaweb/day04-SpringBootWeb入门.md",
+    "itheima/javaweb/day03-Vue-Element.md",
+    "itheima/javaweb/day01-Web开发介绍.md",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
+    "itheima/javaweb/day01-HTML-CSS.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/一些问题记录.md",
+    "miscellaneous/前后端分离项目云服务器部署.md",
+    "miscellaneous/图床使用方案.md",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Hexo博客增加书单集.md",
+    "miscellaneous/Git-bash配置多个Github用户.md",
+    "miscellaneous/Github搭建免费图床.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "interview/awesome resume/Awesome-Resume.md",
+    "interview/bq/Behavior-Questions.md",
+    "frontend/Version-Control.md",
+    "frontend/SQL.md",
+    "frontend/REST.md",
+    "frontend/React.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",

@@ -5,7 +5,7 @@ tags:
   - Unix
   - CMD
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120955919.png
-categories: 前端
+categories: 杂项
 abbrlink: 231a4d21
 date: 2023-11-12 09:43:35
 ---

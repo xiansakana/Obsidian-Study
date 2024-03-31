@@ -2,10 +2,9 @@
 title: Obsidian同步到Github (Windows)
 tags:
   - Obsidian
-  - 笔记
   - Git
 categories: 杂项
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262304183.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262304183.jpg
 abbrlink: 3c869818
 date: 2024-01-26 23:03:09
 ---
