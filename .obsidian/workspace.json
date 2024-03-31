@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/lc预备知识.md",
+                "file": "frontend/React.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "path:",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/lc预备知识.md",
+                "file": "frontend/React.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/lc预备知识.md",
+                "file": "frontend/React.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/lc预备知识.md"
+                "file": "frontend/React.md"
               }
             }
           },
@@ -171,32 +171,32 @@
   },
   "active": "d2216e98d8f7d781",
   "lastOpenFiles": [
+    "frontend/OAuth.md",
+    "frontend/Next-js.md",
+    "frontend/Node-js.md",
+    "frontend/Mongoose.md",
+    "frontend/MongoDB.md",
+    "frontend/Middlewares-Cookies-Sessions.md",
+    "frontend/JWT.md",
+    "frontend/JavaScript-Basics.md",
+    "frontend/JavaScipt-Basics-2.md",
+    "frontend/HTML.md",
+    "frontend/Express-js.md",
+    "frontend/Document-Object-Model-DOM.md",
+    "frontend/EJS.md",
+    "frontend/CSS.md",
+    "frontend/Authentication.md",
+    "frontend/Async-JavaScript.md",
+    "frontend/Advanced-JavaScript-3.md",
+    "frontend/Advanced-JavaScript-2.md",
+    "frontend/Advanced-JavaScript.md",
+    "frontend/Advanced HTML-CSS.md",
+    "backend/Java.md",
+    "backend/Springboot常用注解.md",
+    "backend/Springboot.md",
+    "algorithm/lc预备知识.md",
     "algorithm/Top Interview 150.md",
     "itheima/microservice/高级篇day02-分布式事务.md",
-    "itheima/javaweb/day01-HTML-CSS.md",
-    "itheima/microservice/实用篇day05-分布式搜索引擎01.md",
-    "itheima/microservice/实用篇day05-安装Elasticsearch.md",
-    "itheima/microservice/实用篇day04-RabbitMQ部署指南.md",
-    "itheima/microservice/实用篇day04-RabbitMQ.md",
-    "itheima/microservice/实用篇day03-Docker.md",
-    "itheima/microservice/实用篇day03-Centos7安装Docker.md",
-    "itheima/microservice/实用篇day02-SpringCloud02.md",
-    "itheima/microservice/实用篇day02-Nacos集群搭建.md",
-    "itheima/microservice/实用篇day01-SpringCloud01.md",
-    "itheima/microservice/实用篇day01-Nacos安装指南.md",
-    "itheima/microservice/面试篇-微服务常见面试题.md",
-    "itheima/microservice/面试篇-Sentinel源码分析.md",
-    "itheima/microservice/面试篇-Nacos源码分析.md",
-    "itheima/microservice/高级篇day05-RabbitMQ-高级篇.md",
-    "itheima/microservice/高级篇day05-RabbitMQ部署指南.md",
-    "itheima/microservice/高级篇day04-多级缓存.md",
-    "itheima/microservice/高级篇day04-案例导入说明.md",
-    "itheima/microservice/高级篇day04-安装OpenResty.md",
-    "itheima/microservice/高级篇day04-安装Canal.md",
-    "itheima/microservice/高级篇day03-分布式缓存.md",
-    "itheima/microservice/高级篇day03-Redis集群.md",
-    "itheima/microservice/高级篇day02-seata的部署和集成.md",
-    "itheima/microservice/高级篇day01-微服务保护.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",

@@ -4,7 +4,7 @@ tags:
   - Mongoose
   - 数据库
   - 后端
-categories: 前端
+categories: 后端
 cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140944975.jpg
 abbrlink: aaac2584
 date: 2023-11-14 09:43:11
