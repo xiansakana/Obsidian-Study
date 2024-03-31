@@ -3,9 +3,9 @@ title: itheima-SSM Maven高级
 tags:
   - itheima
   - Maven
-  - 后端
+  - SpringBoot
 categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg
 abbrlink: 21afdd51
 ---
 

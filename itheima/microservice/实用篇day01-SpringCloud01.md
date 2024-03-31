@@ -1,10 +1,10 @@
 ---
-title: itheima-Microservice 实用篇day01-Nacos安装指南
+title: itheima-Microservice 实用篇day01--SpringCloud01
 tags:
   - itheima
   - SpringCloud
 categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211101.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211101.jpg
 abbrlink: 36ab066a
 ---
 # SpringCloud01

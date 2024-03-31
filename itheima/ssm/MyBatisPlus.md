@@ -4,8 +4,9 @@ tags:
   - itheima
   - MyBatisPlus
   - 后端
+  - SpringBoot
 categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg
 abbrlink: 159f8f6d
 ---
 # MyBatisPlus

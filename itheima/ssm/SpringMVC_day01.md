@@ -4,8 +4,9 @@ tags:
   - itheima
   - SpringMVC
   - 后端
+  - Spring
 categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png'
+cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png
 abbrlink: f67b5216
 ---
 # SpringMVC_day01
