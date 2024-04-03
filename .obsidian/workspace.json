@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/Top Interview 150.md",
+                "file": "miscellaneous/Hexo搭建个人网站.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/Top Interview 150.md"
+                "file": "miscellaneous/Hexo搭建个人网站.md"
               }
             }
           },
@@ -171,6 +171,7 @@
   },
   "active": "d2216e98d8f7d781",
   "lastOpenFiles": [
+    "algorithm/Top Interview 150.md",
     "miscellaneous/Hexo搭建个人网站.md",
     "miscellaneous/Hexo博客增加书单集.md",
     "itheima/microservice/高级篇day05-RabbitMQ部署指南.md",
@@ -196,7 +197,6 @@
     "itheima/microservice/实用篇day04-RabbitMQ部署指南.md",
     "itheima/microservice/实用篇day04-RabbitMQ.md",
     "itheima/microservice/实用篇day03-Docker.md",
-    "itheima/microservice/实用篇day03-Centos7安装Docker.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",
