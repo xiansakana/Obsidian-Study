@@ -48,10 +48,6 @@ git checkout -b <本地分支名> origin/<远程分支名>
 git pull origin dev
 ```
 
-
-
-
-
 # pull
 
 将远程指定分支拉取到本地指定分支上
@@ -80,7 +76,6 @@ git reset --hard origin/master
 ```
 
 
-
 # push
 
 将本地当前分支推送到远程指定分支上
@@ -102,7 +97,6 @@ git push
 ```
 
 
-
 # 删除远端commit
 
 先删除本地的几次提交，"HEAD~1"里面的1代表撤回几次提交
@@ -115,4 +109,33 @@ git reset --soft HEAD~1
 
 ```bash
 git push origin branchname --force
+```
+
+
+# merge
+
+**切换到`main`分支**：首先确保你当前在`main`分支上。
+
+```bash
+git checkout main
+```
+
+**拉取最新的`main`分支代码**：确保你的`main`分支是最新的。
+
+```bash
+git pull origin main
+```
+
+**合并`dev`分支**：将`dev`分支合并到`main`分支上。
+
+```bash
+git merge dev
+```
+
+如果有冲突发生，在合并过程中Git会提示你进行解决。你需要手动解决冲突，并提交合并后的结果。
+
+**推送到远程仓库**：合并完成后，将更新的`main`分支推送到远程仓库。
+
+```bash
+git push origin main
 ```
