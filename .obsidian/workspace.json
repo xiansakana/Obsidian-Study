@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "miscellaneous/Hexo搭建个人网站.md",
+                "file": "itheima/redis/Redis实战篇.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Hexo搭建个人网站.md",
+                "file": "itheima/redis/Redis实战篇.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Hexo搭建个人网站.md",
+                "file": "itheima/redis/Redis实战篇.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Hexo搭建个人网站.md"
+                "file": "itheima/redis/Redis实战篇.md"
               }
             }
           },
@@ -171,8 +171,14 @@
   },
   "active": "d2216e98d8f7d781",
   "lastOpenFiles": [
-    "miscellaneous/Hexo博客增加书单集.md",
+    "itheima/redis/Redis原理篇.md",
+    "itheima/redis/Redis实战篇.md",
+    "itheima/redis/Redis基础篇.md",
+    "itheima/redis/Redis高级篇-最佳实践.md",
+    "itheima/redis/Redis高级篇-分布式缓存.md",
+    "itheima/redis/Redis高级篇-多级缓存.md",
     "miscellaneous/Hexo搭建个人网站.md",
+    "miscellaneous/Hexo博客增加书单集.md",
     "miscellaneous/Git常用版本控制指令.md",
     "algorithm/Top Interview 150.md",
     "itheima/microservice/高级篇day05-RabbitMQ部署指南.md",
@@ -191,12 +197,6 @@
     "itheima/microservice/面试篇-微服务常见面试题.md",
     "itheima/microservice/面试篇-Sentinel源码分析.md",
     "itheima/microservice/面试篇-Nacos源码分析.md",
-    "itheima/microservice/实用篇day07-分布式搜索引擎03.md",
-    "itheima/microservice/实用篇day06-分布式搜索引擎02.md",
-    "itheima/microservice/实用篇day05-分布式搜索引擎01.md",
-    "itheima/microservice/实用篇day05-安装Elasticsearch.md",
-    "itheima/microservice/实用篇day04-RabbitMQ部署指南.md",
-    "itheima/microservice/实用篇day04-RabbitMQ.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",
