@@ -11,8 +11,10 @@
             "id": "8ef96585262a7b85",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "pdf",
+              "state": {
+                "file": "interview/oa/UberOA.pdf"
+              }
             }
           }
         ]
@@ -81,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "interview/oa/UberOA.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "interview/oa/UberOA.pdf",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "interview/oa/UberOA.pdf"
+              }
             }
           },
           {
@@ -161,8 +167,12 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "8ef96585262a7b85",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "interview/oa/CodeSignal题库/22Oct/uniqueColorColorCoordinates/蝶之毒华之锁.png",
+    "interview/oa/CodeSignal题库/22Oct/bigFileChunkRangeByte/anego.png",
+    "interview/oa/Amazon/Amazon VO .pdf",
+    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
     "frontend/Advanced-JavaScript-3.md",
     "frontend/Async-JavaScript.md",
     "interview/stereotype/Java基础入门80问.md",
@@ -192,13 +202,10 @@
     "itheima/microservice/高级篇day04-安装OpenResty.md",
     "itheima/microservice/高级篇day04-安装Canal.md",
     "itheima/microservice/高级篇day03-Redis集群.md",
-    "itheima/microservice/高级篇day03-分布式缓存.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",
     "itheima/microservice/PPT/服务异步通信-实用篇.pptx",
-    "itheima/microservice/PPT/服务框架学习路线.pptx",
-    "itheima/microservice/PPT/分布式事务.pptx",
     "interview/bq/others/IMG_1194.JPG",
     "interview/bq/others/IMG_1193.JPG",
     "interview/bq/others/IMG_1192.JPG",
@@ -208,7 +215,6 @@
     "interview/bq/others/IMG_1190.JPG",
     "interview/bq/others/IMG_1187.JPG",
     "springcloud/assets/image-20210402172334810.png",
-    "springcloud/assets/image-20210402163858429.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
