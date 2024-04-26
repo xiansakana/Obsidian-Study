@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "itheima/javaweb/day02-JavaScript-Vue.md",
+                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima/javaweb/day02-JavaScript-Vue.md",
+                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima/javaweb/day02-JavaScript-Vue.md",
+                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima/javaweb/day02-JavaScript-Vue.md"
+                "file": "miscellaneous/Obsidian同步到Github-Windows.md"
               }
             }
           },
@@ -171,6 +171,12 @@
   },
   "active": "8ef96585262a7b85",
   "lastOpenFiles": [
+    "interview/oa/UberOA.pdf",
+    "interview/oa/Amazon/Amazon VO .pdf",
+    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
+    "interview/oa/CodeSignal题库/22Oct/uniqueColorColorCoordinates/蝶之毒华之锁.png",
+    "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/javaweb/day06-MySQL-01.md",
     "itheima/ssm/MyBatisPlus.md",
     "miscellaneous/关于美国身份问题的常识.md",
@@ -179,11 +185,7 @@
     "itheima/javaweb/day12-SpringBootWeb登录认证.md",
     "itheima/microservice/高级篇day02-seata的部署和集成.md",
     "itheima/redis/Redis高级篇-分布式缓存.md",
-    "interview/oa/UberOA.pdf",
-    "interview/oa/CodeSignal题库/22Oct/uniqueColorColorCoordinates/蝶之毒华之锁.png",
     "interview/oa/CodeSignal题库/22Oct/bigFileChunkRangeByte/anego.png",
-    "interview/oa/Amazon/Amazon VO .pdf",
-    "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
     "frontend/Advanced-JavaScript-3.md",
     "frontend/Async-JavaScript.md",
     "interview/stereotype/Java基础入门80问.md",
@@ -204,8 +206,6 @@
     "itheima/redis/Redis高级篇-最佳实践.md",
     "miscellaneous/Git常用版本控制指令.md",
     "itheima/microservice/高级篇day05-RabbitMQ部署指南.md",
-    "itheima/microservice/高级篇day05-RabbitMQ-高级篇.md",
-    "itheima/microservice/高级篇day04-多级缓存.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",
@@ -216,7 +216,6 @@
     "interview/bq/others/IMG_1191.JPG",
     "interview/bq/others/IMG_1188.JPG",
     "interview/bq/others/IMG_1190.JPG",
-    "interview/bq/others/IMG_1187.JPG",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
