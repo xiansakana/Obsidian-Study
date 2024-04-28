@@ -11,11 +11,9 @@
             "id": "8ef96585262a7b85",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
-                "mode": "source",
-                "source": false
+                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md",
+                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/Obsidian同步到Github-Windows.md"
+                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png"
               }
             }
           },
@@ -169,8 +167,10 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "8ef96585262a7b85",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
+    "interview/resume/en/24summer sde简历求狠批🥹现在一整个无面试_1_🐡._来自小红书网页版.jpg",
+    "miscellaneous/Obsidian同步到Github-Windows.md",
     "interview/oa/UberOA.pdf",
     "interview/oa/Amazon/Amazon VO .pdf",
     "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
@@ -205,7 +205,6 @@
     "itheima/redis/Redis原理篇.md",
     "itheima/redis/Redis高级篇-最佳实践.md",
     "miscellaneous/Git常用版本控制指令.md",
-    "itheima/microservice/高级篇day05-RabbitMQ部署指南.md",
     "itheima/microservice/PPT/微服务常见面试题.pptx",
     "itheima/microservice/PPT/微服务保护.pptx",
     "itheima/microservice/PPT/深入Elasticsearch.pptx",
