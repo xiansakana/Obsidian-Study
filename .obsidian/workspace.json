@@ -11,9 +11,11 @@
             "id": "8ef96585262a7b85",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png"
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
+                "file": "miscellaneous/前后端分离项目云服务器部署.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png"
+                "file": "miscellaneous/前后端分离项目云服务器部署.md"
               }
             }
           },
@@ -167,15 +169,16 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "8ef96585262a7b85",
   "lastOpenFiles": [
-    "interview/resume/en/24summer sde简历求狠批🥹现在一整个无面试_1_🐡._来自小红书网页版.jpg",
     "miscellaneous/Obsidian同步到Github-Windows.md",
+    "itheima/redis/Redis高级篇-分布式缓存.md",
+    "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
+    "interview/resume/en/24summer sde简历求狠批🥹现在一整个无面试_1_🐡._来自小红书网页版.jpg",
     "interview/oa/UberOA.pdf",
     "interview/oa/Amazon/Amazon VO .pdf",
     "interview/oa/Amazon/amazon OA/AMAZON_50_OA.pdf",
     "interview/oa/CodeSignal题库/22Oct/uniqueColorColorCoordinates/蝶之毒华之锁.png",
-    "interview/oa/CodeSignal题库/22Oct/collidingCoordinatesAbsLessThanTwo/sigma.png",
     "itheima/javaweb/day02-JavaScript-Vue.md",
     "itheima/javaweb/day06-MySQL-01.md",
     "itheima/ssm/MyBatisPlus.md",
@@ -184,7 +187,6 @@
     "itheima/redis/Redis高级篇-多级缓存.md",
     "itheima/javaweb/day12-SpringBootWeb登录认证.md",
     "itheima/microservice/高级篇day02-seata的部署和集成.md",
-    "itheima/redis/Redis高级篇-分布式缓存.md",
     "interview/oa/CodeSignal题库/22Oct/bigFileChunkRangeByte/anego.png",
     "frontend/Advanced-JavaScript-3.md",
     "frontend/Async-JavaScript.md",
@@ -214,7 +216,6 @@
     "interview/bq/others/IMG_1189.JPG",
     "interview/bq/others/IMG_1191.JPG",
     "interview/bq/others/IMG_1188.JPG",
-    "interview/bq/others/IMG_1190.JPG",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
