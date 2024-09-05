@@ -4,8 +4,6 @@ date: 2024-04-25T19:15:59Z
 lastmod: 2024-04-25T19:15:59Z
 ---
 
-# SpringBootWeb请求响应
-
 # 前言
 
 在上一次的课程中，我们开发了springbootweb的入门程序。 基于SpringBoot的方式开发一个web应用，浏览器发起请求 /hello 后 ，给浏览器返回字符串 “Hello World ~”。

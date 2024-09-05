@@ -4,8 +4,6 @@ date: 2024-04-25T19:18:05Z
 lastmod: 2024-04-25T19:18:05Z
 ---
 
-# 数据库开发-MySQL
-
 # 前言
 
 在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。

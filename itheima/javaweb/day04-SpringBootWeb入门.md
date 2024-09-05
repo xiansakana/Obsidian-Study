@@ -4,8 +4,6 @@ date: 2024-04-25T19:19:17Z
 lastmod: 2024-04-25T19:19:17Z
 ---
 
-# SpringBoot基础
-
 # 课程内容
 
 > 1. SpringBootWeb入门

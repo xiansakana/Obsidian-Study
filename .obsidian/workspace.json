@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md",
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 487.5
+    "width": 323.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md",
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md",
+                "file": "itheima/javaweb/day01-HTML-CSS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md"
+                "file": "itheima/javaweb/day01-HTML-CSS.md"
               }
             }
           },
@@ -172,6 +172,25 @@
   },
   "active": "e19b8aa74b4a5ccc",
   "lastOpenFiles": [
+    "itheima/javaweb/day15-Maven高级.md",
+    "itheima/javaweb/day14-SpringBoot原理篇.md",
+    "itheima/javaweb/day13-SpringBootWeb AOP.md",
+    "itheima/javaweb/day12-SpringBootWeb登录认证.md",
+    "itheima/javaweb/day11-SpringBootWeb案例-2.md",
+    "itheima/javaweb/day10-SpringBootWeb案例-1.md",
+    "itheima/javaweb/day09-MyBatis.md",
+    "itheima/javaweb/day08-MySQL-03.md",
+    "itheima/javaweb/day08-MyBatis入门.md",
+    "itheima/javaweb/day07-MySQL-02.md",
+    "itheima/javaweb/day06-MySQL-01.md",
+    "itheima/javaweb/day05-SpringBootWeb请求响应.md",
+    "itheima/javaweb/day04-SpringBootWeb入门.md",
+    "itheima/javaweb/day04-Maven.md",
+    "itheima/javaweb/day03-Vue-Element.md",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
+    "itheima/javaweb/day01-Web开发介绍.md",
+    "itheima/javaweb/day01-HTML-CSS.md",
+    "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md",
     "tools/Obsidian.md",
     "tools/云盘.md",
     "itheima/react/day02-React基础-下.md",
@@ -179,25 +198,6 @@
     "itheima/redis/Redis高级篇-分布式缓存.md",
     "itheima/redis/Redis基础篇.md",
     "itheima/redis/Redis原理篇.md",
-    "itheima/redis/Redis实战篇.md",
-    "itheima/redis/Redis高级篇-最佳实践.md",
-    "itheima/react/day05-ReactRouter记账本.md",
-    "itheima/react/day03-Redux.md",
-    "itheima/react/day12-03.详情模块.md",
-    "itheima/react/day12-02.列表模块.md",
-    "itheima/react/day12-01.项目初始化.md",
-    "itheima/react/day11-03.Component与TypeScript.md",
-    "itheima/react/day11-02.Hooks与TypeScript.md",
-    "itheima/react/day11-01.阶段重点与环境搭建.md",
-    "itheima/react/day10-05.zustand.md",
-    "itheima/react/day10-04.Class API.md",
-    "itheima/react/day10-03.forwardRef + useImperativeHandle.md",
-    "itheima/react/day10-02.渲染性能优化.md",
-    "itheima/react/day10-01.useReducer.md",
-    "itheima/react/day09-07.项目打包.md",
-    "itheima/react/day09-06.编辑文章.md",
-    "itheima/react/day09-05.文章列表模块.md",
-    "itheima/react/day08-04.发布文章模块.md",
     "redis/assets/net-img-1653813047671-20240905172655-xqfzy6e.png",
     "redis/assets/net-img-1653806140822-20240905172647-q6m67uk.png",
     "redis/assets/net-img-1653805203758-20240905172646-yzfcpl7.png",
