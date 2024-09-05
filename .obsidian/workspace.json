@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b370348da747a4e0",
+        "id": "03e0dde1aa40389b",
         "type": "tabs",
         "children": [
           {
-            "id": "00d700b882722bff",
+            "id": "e19b8aa74b4a5ccc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "itheima/react/day01-React基础-上.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 290.5
+    "width": 487.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "itheima/react/day01-React基础-上.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "itheima/react/day01-React基础-上.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "itheima/react/day01-React基础-上.md"
+              }
             }
           },
           {
@@ -162,54 +170,54 @@
       "univer:Univer": false
     }
   },
-  "active": "00d700b882722bff",
+  "active": "e19b8aa74b4a5ccc",
   "lastOpenFiles": [
+    "frontend/Advanced HTML CSS.md",
+    "tools/tools.md",
+    "tools/Obsidian.md",
+    "tools/云盘.md",
+    "tools/电脑应用.md",
+    "itheima/react/day12-01.项目初始化.md",
+    "itheima/react/day12-02.列表模块.md",
+    "itheima/react/day10-05.zustand.md",
+    "itheima/react/day04-ReactRouter基础.md",
+    "redis/Redis实战篇.md",
+    "redis/assets/net-img-1653813047671-20240905172655-xqfzy6e.png",
+    "redis/assets/net-img-1653806140822-20240905172647-q6m67uk.png",
+    "redis/assets/net-img-1653805203758-20240905172646-yzfcpl7.png",
+    "itheima/redis/Redis实战篇.md",
+    "redis/assets/net-img-1653812346852-20240905172654-pel4v2x.png",
+    "redis/assets/net-img-1653809875208-20240905172652-is4dtms.png",
+    "redis/assets/net-img-1653809450816-20240905172652-p8nv716.png",
+    "redis/assets/net-img-1653808993693-20240905172651-c10dz20.png",
+    "redis/assets/net-img-1653808641260-20240905172650-bamyyi8.png",
+    "redis/assets/net-img-1653806973212-20240905172650-rzhd678.png",
+    "redis/assets/net-img-1653806706296-20240905172650-e1o19ql.png",
+    "redis/assets",
+    "redis",
+    "itheima/redis/Redis原理篇.md",
+    "itheima/redis/Redis基础篇.md",
+    "itheima/react/day05-ReactRouter记账本.md",
+    "itheima/redis/Redis高级篇-多级缓存.md",
+    "itheima/redis/Redis高级篇-最佳实践.md",
+    "itheima/redis/Redis高级篇-分布式缓存.md",
+    "miscellaneous/运维/前后端分离项目云服务器部署.md",
+    "miscellaneous/运维/常用Linux操作.md",
+    "miscellaneous/Git bash配置多个Github用户.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "itheima/ssm/SpringMVC_day01.md",
+    "itheima/ssm/SpringBoot.md",
+    "itheima/ssm/MyBatisPlus.md",
+    "itheima/react/day09-05.文章列表模块.md",
+    "itheima/react/day07-03.Layout模块.md",
     "Untitled.usheet",
     "~$Untitled.xlsx",
     "Untitled.xlsx",
     "Job Applications.xlsx",
     "Untitled (1).xlsx",
     "~$Job Applications.xlsx",
-    "tools/Obsidian.md",
-    "tools/电脑应用.md",
-    "tools/云盘.md",
-    "tools/tools.md",
     "sql/assets/sql_cheat_sheet_sqlserver-20240701154738-pod70n4.pdf",
     "sql/assets/sql_cheat_sheet_pgsql-20240701154738-12mzcwd.pdf",
-    "sql/assets/sql_cheat_sheet_mysql-20240701154738-b271lyd.pdf",
-    "sql/assets/cheat_sheet_data_type_oracle-20240701154738-ipg13je.pdf",
-    "sql/assets/cheat_sheet_data_type_mysql-20240701154738-bjoln1g.pdf",
-    "sql/sql.md",
-    "os/Deep_into_OperatingSystem.md",
-    "miscellaneous/Unblock Netease Music.md",
-    "miscellaneous/Git bash配置多个Github用户.md",
-    "miscellaneous/Git常用版本控制指令.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/关于美国身份问题的常识.md",
-    "interview/awesome resume.md",
-    "interview/resume/en.md",
-    "interview/oa.md",
-    "interview/bq.md",
-    "interview/resume/cn.md",
-    "interview/oa/Citadel Securities.md",
-    "interview/awesome resume/Awesome-Resume.md",
-    "algorithm/刷题记录.md",
-    "itheima/Java面试.md",
-    "assets/image-20240810165339-3xv6ku8.png",
-    "algorithm/Top Interview 150.md",
-    "interview/bq/亚麻官方STAR.md",
-    "interview/bq/Behavior-Questions.md",
-    "interview/bq/ebook.md",
-    "Fulltime.md",
-    "assets/image-20240904133207-7cg72l8.png",
-    "assets/image-20240904132923-1c8urud.png",
-    "assets/image-20240903180211-2y6ocu3.png",
-    "assets/image-20240903174924-4mo5il5.png",
-    "assets/image-20240902134450-muri4fc.png",
-    "assets/image-20240901121659-2qi9bi7.png",
-    "assets/image-20240901121544-vw7usnc.png",
-    "assets/image-20240901120634-0pek7z1.png",
-    "assets/image-20240901120410-zvwf49x.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
