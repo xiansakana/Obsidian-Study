@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "7edc471bfbebcd26",
+        "id": "b370348da747a4e0",
         "type": "tabs",
         "children": [
           {
-            "id": "503bf9e2c37ef859",
+            "id": "00d700b882722bff",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "os/Deep_into_OperatingSystem.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "os/Deep_into_OperatingSystem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "os/Deep_into_OperatingSystem.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "os/Deep_into_OperatingSystem.md"
-              }
+              "state": {}
             }
           },
           {
@@ -150,7 +142,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -167,13 +159,28 @@
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
       "audio-recorder:开始/结束录音": false,
-      "sheet-plus:创建 Excel 文件": false,
-      "excel:创建 Excel 文件": false,
       "univer:Univer": false
     }
   },
-  "active": "503bf9e2c37ef859",
+  "active": "00d700b882722bff",
   "lastOpenFiles": [
+    "Untitled.usheet",
+    "~$Untitled.xlsx",
+    "Untitled.xlsx",
+    "Job Applications.xlsx",
+    "Untitled (1).xlsx",
+    "~$Job Applications.xlsx",
+    "tools/Obsidian.md",
+    "tools/电脑应用.md",
+    "tools/云盘.md",
+    "tools/tools.md",
+    "sql/assets/sql_cheat_sheet_sqlserver-20240701154738-pod70n4.pdf",
+    "sql/assets/sql_cheat_sheet_pgsql-20240701154738-12mzcwd.pdf",
+    "sql/assets/sql_cheat_sheet_mysql-20240701154738-b271lyd.pdf",
+    "sql/assets/cheat_sheet_data_type_oracle-20240701154738-ipg13je.pdf",
+    "sql/assets/cheat_sheet_data_type_mysql-20240701154738-bjoln1g.pdf",
+    "sql/sql.md",
+    "os/Deep_into_OperatingSystem.md",
     "miscellaneous/Unblock Netease Music.md",
     "miscellaneous/Git bash配置多个Github用户.md",
     "miscellaneous/Git常用版本控制指令.md",
@@ -193,17 +200,7 @@
     "interview/bq/亚麻官方STAR.md",
     "interview/bq/Behavior-Questions.md",
     "interview/bq/ebook.md",
-    "D5F99500",
-    "~$Job Applications.xlsx",
-    "B3D99500",
-    "61599500",
     "Fulltime.md",
-    "Job Applications.xlsx",
-    "41DA8500",
-    "tools/tools.md",
-    "Excel 2024-09-05 14.21.03.sheet.md",
-    "59FD7500",
-    "407B7500",
     "assets/image-20240904133207-7cg72l8.png",
     "assets/image-20240904132923-1c8urud.png",
     "assets/image-20240903180211-2y6ocu3.png",
@@ -213,13 +210,6 @@
     "assets/image-20240901121544-vw7usnc.png",
     "assets/image-20240901120634-0pek7z1.png",
     "assets/image-20240901120410-zvwf49x.png",
-    "assets",
-    "Untitled.xlsx",
-    "未命名.md",
-    "Excel 2024-09-05 13.58.43.sheet.md",
-    "Intern.md",
-    "sql/sql.md",
-    "os/Deep_into_OperatingSystem.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
