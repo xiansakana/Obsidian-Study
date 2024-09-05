@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "itheima/react/day01-React基础-上.md",
+                "file": "itheima/react/day02-React基础-下.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima/react/day01-React基础-上.md",
+                "file": "itheima/react/day02-React基础-下.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima/react/day01-React基础-上.md",
+                "file": "itheima/react/day02-React基础-下.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima/react/day01-React基础-上.md"
+                "file": "itheima/react/day02-React基础-下.md"
               }
             }
           },
@@ -172,20 +172,35 @@
   },
   "active": "e19b8aa74b4a5ccc",
   "lastOpenFiles": [
-    "frontend/Advanced HTML CSS.md",
-    "tools/tools.md",
-    "tools/Obsidian.md",
-    "tools/云盘.md",
-    "tools/电脑应用.md",
-    "itheima/react/day12-01.项目初始化.md",
+    "itheima/redis/Redis高级篇-多级缓存.md",
+    "itheima/redis/Redis高级篇-分布式缓存.md",
+    "itheima/redis/Redis基础篇.md",
+    "itheima/redis/Redis原理篇.md",
+    "itheima/redis/Redis实战篇.md",
+    "itheima/redis/Redis高级篇-最佳实践.md",
+    "itheima/react/day05-ReactRouter记账本.md",
+    "itheima/react/day03-Redux.md",
+    "itheima/react/day12-03.详情模块.md",
     "itheima/react/day12-02.列表模块.md",
+    "itheima/react/day12-01.项目初始化.md",
+    "itheima/react/day11-03.Component与TypeScript.md",
+    "itheima/react/day11-02.Hooks与TypeScript.md",
+    "itheima/react/day11-01.阶段重点与环境搭建.md",
     "itheima/react/day10-05.zustand.md",
-    "itheima/react/day04-ReactRouter基础.md",
-    "redis/Redis实战篇.md",
+    "itheima/react/day10-04.Class API.md",
+    "itheima/react/day10-03.forwardRef + useImperativeHandle.md",
+    "itheima/react/day10-02.渲染性能优化.md",
+    "itheima/react/day10-01.useReducer.md",
+    "itheima/react/day09-07.项目打包.md",
+    "itheima/react/day09-06.编辑文章.md",
+    "itheima/react/day09-05.文章列表模块.md",
+    "itheima/react/day08-04.发布文章模块.md",
+    "itheima/react/day07-03.Layout模块.md",
+    "itheima/react/day06-02.登录模块.md",
+    "itheima/react/day06-01.项目前置准备.md",
     "redis/assets/net-img-1653813047671-20240905172655-xqfzy6e.png",
     "redis/assets/net-img-1653806140822-20240905172647-q6m67uk.png",
     "redis/assets/net-img-1653805203758-20240905172646-yzfcpl7.png",
-    "itheima/redis/Redis实战篇.md",
     "redis/assets/net-img-1653812346852-20240905172654-pel4v2x.png",
     "redis/assets/net-img-1653809875208-20240905172652-is4dtms.png",
     "redis/assets/net-img-1653809450816-20240905172652-p8nv716.png",
@@ -195,21 +210,6 @@
     "redis/assets/net-img-1653806706296-20240905172650-e1o19ql.png",
     "redis/assets",
     "redis",
-    "itheima/redis/Redis原理篇.md",
-    "itheima/redis/Redis基础篇.md",
-    "itheima/react/day05-ReactRouter记账本.md",
-    "itheima/redis/Redis高级篇-多级缓存.md",
-    "itheima/redis/Redis高级篇-最佳实践.md",
-    "itheima/redis/Redis高级篇-分布式缓存.md",
-    "miscellaneous/运维/前后端分离项目云服务器部署.md",
-    "miscellaneous/运维/常用Linux操作.md",
-    "miscellaneous/Git bash配置多个Github用户.md",
-    "miscellaneous/关于美国身份问题的常识.md",
-    "itheima/ssm/SpringMVC_day01.md",
-    "itheima/ssm/SpringBoot.md",
-    "itheima/ssm/MyBatisPlus.md",
-    "itheima/react/day09-05.文章列表模块.md",
-    "itheima/react/day07-03.Layout模块.md",
     "Untitled.usheet",
     "~$Untitled.xlsx",
     "Untitled.xlsx",

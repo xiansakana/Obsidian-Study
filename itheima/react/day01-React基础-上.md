@@ -7,7 +7,7 @@ lastmod: 2024-05-05T01:43:26Z
 # React介绍
 
 React由Meta公司开发，是一个用于 构建Web和原生交互界面的库  
-​![image.png](assets/01-20240504032629-zi3jca4.png)​
+​![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/01-20240504032629-zi3jca4.png)​
 
 ## React的优势
 
@@ -24,7 +24,7 @@ React由Meta公司开发，是一个用于 构建Web和原生交互界面的库
 ## React的市场情况
 
 全球最流行，大厂必备
-![image.png](assets/02-20240504032629-znpq3u8.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/02-20240504032629-znpq3u8.png)
 
 # 开发环境创建
 
@@ -71,7 +71,7 @@ function App(){
 
 > JSX并不是标准的JS语法，它是 JS的语法扩展，浏览器本身不能识别，需要通过解析工具做解析之后才能在浏览器中使用
 
-![image.png](assets/03-20240504032629-tcb1osp.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/03-20240504032629-tcb1osp.png)
 
 ## JSX高频场景-JS表达式
 
@@ -111,7 +111,7 @@ function App(){
 
 ## JSX高频场景-列表渲染
 
-![image.png](assets/04-20240504032629-xhzxj03.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/04-20240504032629-xhzxj03.png)
 
 > 在JSX中可以使用原生js种的`map方法` 实现列表渲染
 
@@ -133,7 +133,7 @@ function App(){
 
 ## JSX高频场景-条件渲染
 
-![image.png](assets/05-20240504032629-23f7j0j.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/05-20240504032629-23f7j0j.png)
 
 > 在React中，可以通过逻辑与运算符&&、三元表达式(?:) 实现基础的条件渲染
 
@@ -153,7 +153,7 @@ function App(){
 
 ## JSX高频场景-复杂条件渲染
 
-![image.png](assets/06-20240504032629-pqyz5c1.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/06-20240504032629-pqyz5c1.png)
 
 > 需求：列表中需要根据文章的状态适配
 > 解决方案：自定义函数 + 判断语句
@@ -251,7 +251,7 @@ function App(){
 ## 组件是什么
 
 概念：一个组件就是一个用户界面的一部分，它可以有自己的逻辑和外观，组件之间可以互相嵌套，也可以服用多次
-![image.png](assets/07-20240504032629-tywwckx.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/07-20240504032629-tywwckx.png)
 
 ## 组件基础使用
 
@@ -283,7 +283,7 @@ function App(){
 > useState 是一个 React Hook（函数），它允许我们向组件添加一个`状态变量`, 从而控制影响组件的渲染结果
 > 和普通JS变量不同的是，状态变量一旦发生变化组件的视图UI也会跟着变化（数据驱动视图）
 
-![image.png](assets/08-20240504032629-g3k7554.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/08-20240504032629-g3k7554.png)
 
 ```jsx
 function App(){
@@ -300,13 +300,13 @@ function App(){
 
 > 在React中状态被认为是只读的，我们应该始终`替换它而不是修改它`, 直接修改状态不能引发视图更新
 
-![image.png](assets/09-20240504032629-2hpy10y.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/09-20240504032629-2hpy10y.png)
 
 ## 修改对象状态
 
 > 对于对象类型的状态变量，应该始终给set方法一个`全新的对象` 来进行修改
 
-![image.png](assets/10-20240504032629-u4hsvqa.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/10-20240504032629-u4hsvqa.png)
 
 # 组件的基础样式处理
 
@@ -336,7 +336,7 @@ function App(){
 
 # B站评论案例
 
-![image.png](assets/11-20240504032629-gf73buv.png)
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/11-20240504032629-gf73buv.png)
 
 1. 渲染评论列表
 2. 删除评论实现
