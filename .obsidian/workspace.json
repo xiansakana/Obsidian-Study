@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job Application/Fulltime.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.5
+    "width": 282.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Job Application/Fulltime.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Job Application/Fulltime.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Job Application/Fulltime.md"
+                "file": "os/Deep_into_OperatingSystem.md"
               }
             }
           },
@@ -169,11 +169,37 @@
       "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "6ac5818d92ae7f06",
+  "active": "3d2bd5fe0a56762f",
   "lastOpenFiles": [
-    "Job Application/国内.md",
-    "Job Application/Fulltime.md",
-    "sql.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "miscellaneous/Git-bash配置多个Github用户.md",
+    "miscellaneous/运维.md",
+    "miscellaneous/笔记.md",
+    "miscellaneous/运维/常用Linux操作.md",
+    "miscellaneous/运维/前后端分离项目云服务器部署.md",
+    "miscellaneous/笔记/Obsidian同步到Github.md",
+    "miscellaneous/笔记/Hexo搭建个人网站.md",
+    "miscellaneous/笔记/Hexo博客增加书单集.md",
+    "miscellaneous/笔记/Github搭建免费图床.md",
+    "miscellaneous/笔记/图床使用方案.md",
+    "miscellaneous/笔记/笔记软件测评.md",
+    "algorithm/基本语法.md",
+    "algorithm/lc预备知识.md",
+    "algorithm/Top Interview 150.md",
+    "algorithm/刷题记录.md",
+    "algorithm/刷题记录/637. Average of Levels in Binary Tree（二叉树的层平均值）.md",
+    "algorithm/刷题记录/2. Add Two Numbers（两数相加）.md",
+    "algorithm/刷题记录/assets/image-20240702124405-rf4gniw.png",
+    "algorithm/基本语法/Python.md",
+    "algorithm/基本语法/JavaScript.md",
+    "backend/Springboot常用注解.md",
+    "backend/Springboot.md",
+    "backend/Java.md",
+    "sql/assets/image-20240517000412-dlawlod.png",
+    "sql",
     "Job Application/assets/image-20240904133207-7cg72l8.png",
     "Job Application/assets/image-20240904132923-1c8urud.png",
     "Job Application/assets/image-20240903180211-2y6ocu3.png",
@@ -182,40 +208,15 @@
     "Job Application/assets/image-20240901121659-2qi9bi7.png",
     "Job Application/assets/image-20240901121544-vw7usnc.png",
     "Job Application/assets/image-20240901120634-0pek7z1.png",
-    "Job Application/assets/image-20240901120410-zvwf49x.png",
-    "Job Application/assets/image-20240901115842-2j4rq1m.png",
     "Job Application/assets",
-    "Job Application/Intern.md",
     "Job Application",
-    "tools.md",
-    "interview/resume.md",
-    "interview/resume/cn.md",
-    "interview/resume/en.md",
-    "interview/awesome resume/Awesome-Resume.md",
     "interview/bq/assets/How-to-Answer-the-64-Toughest-Interview-Questions-20240701153936-iukmvw5.pdf",
-    "interview/bq/ebook.md",
     "interview/bq/assets/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions-20240701153936-7j85zn4.pdf",
     "interview/bq/assets/CodingBook-20240701153936-gub0ykt.pdf",
-    "interview/oa/Citadel Securities.md",
-    "os.md",
-    "algorithm.md",
-    "miscellaneous.md",
-    "itheima.md",
-    "interview.md",
-    "frontend.md",
-    "backend.md",
-    "tools/云盘.md",
-    "tools/电脑应用.md",
     "tools",
-    "os/Deep_into_OperatingSystem.md",
     "os",
-    "miscellaneous/笔记/Obsidian同步到Github.md",
-    "miscellaneous/运维/常用Linux操作.md",
-    "miscellaneous/运维/前后端分离项目云服务器部署.md",
-    "miscellaneous/笔记/笔记软件测评.md",
     "miscellaneous/笔记/assets",
     "miscellaneous/运维",
-    "miscellaneous/笔记",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

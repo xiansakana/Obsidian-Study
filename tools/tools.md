@@ -283,4 +283,4 @@ Windows Registry Editor Version 5.00
 
 ## 开源协议比较
 
-​![image](assets/image-20240517000412-dlawlod.png)​
+​![image](image-20240517000412-dlawlod.png)​
