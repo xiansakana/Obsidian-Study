@@ -1,7 +1,6 @@
 # Hexo博客增加书单集
 
 ---
-
 title: Hexo博客增加书单集
 tags:
 
@@ -10,7 +9,6 @@ tags:
   cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309282106651.jpg
   abbrlink: 3acbfff3
   date: 2023-09-28 21:05:33
-
 ---
 
 前几天突然想给博客添加书单的功能，但是搜了很多教程，大多是那种豆瓣的书单，我想要的是自定义而且能够在线预览的那种。偶然间翻到一位大佬的书单，刚好符合我的想法，就拿过来参考了一下（[hexo 博客增加书单](https://www.mz-zone.cn/2021/11/12/20211112001/)）。
