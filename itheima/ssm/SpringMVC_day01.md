@@ -1,18 +1,7 @@
-# SpringMVC_day01
-
 ---
-
-title: itheima-SSM SpringMVC_day01
-tags:
-
-- itheima
-- SpringMVC
-- 后端
-- Spring
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png
-  abbrlink: f67b5216
-
+title: SpringMVC_day01
+date: 2024-04-25T19:08:21Z
+lastmod: 2024-04-25T19:08:21Z
 ---
 
 # SpringMVC_day01

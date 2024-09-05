@@ -1,15 +1,7 @@
-# Deep_into_OperatingSystem
-
 ---
-
-title: 深入理解操作系统学习笔记
-date: 2020-11-08 20:07:00
-tags:
-
-- 深入理解操作系统学习笔记
-  categories:
-- 操作系统
-
+title: Deep_into_OperatingSystem
+date: 2024-04-25T18:45:04Z
+lastmod: 2024-04-25T18:45:04Z
 ---
 
 # 第一章

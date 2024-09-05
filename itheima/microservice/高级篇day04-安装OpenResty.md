@@ -1,17 +1,7 @@
-# 高级篇day04-安装OpenResty
-
 ---
-
-title: itheima-Microservice 高级篇day04-安装OpenResty
-tags:
-
-- itheima
-- 微服务
-- OpenResty
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205390.jpg'
-  abbrlink: a2c926fe
-
+title: 高级篇day04-安装OpenResty
+date: 2024-04-25T19:26:39Z
+lastmod: 2024-04-25T19:26:39Z
 ---
 
 # 安装OpenResty

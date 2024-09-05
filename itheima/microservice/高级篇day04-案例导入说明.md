@@ -1,16 +1,7 @@
-# 高级篇day04-案例导入说明
-
 ---
-
-title: itheima-Microservice 高级篇day04-案例导入说明
-tags:
-
-- itheima
-- 微服务
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205829.jpg'
-  abbrlink: 17b9eeb0
-
+title: 高级篇day04-案例导入说明
+date: 2024-04-25T19:25:48Z
+lastmod: 2024-04-25T19:25:48Z
 ---
 
 # 案例导入说明

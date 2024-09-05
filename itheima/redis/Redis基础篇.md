@@ -1,4 +1,8 @@
-# Redis基础篇
+---
+title: Redis基础篇
+date: 2024-04-25T19:16:36Z
+lastmod: 2024-04-25T19:16:36Z
+---
 
 # 基础篇Redis
 

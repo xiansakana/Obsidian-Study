@@ -1,4 +1,8 @@
-# Python
+---
+title: Python
+date: 2024-05-21T15:11:53Z
+lastmod: 2024-05-27T16:45:15Z
+---
 
 # Int
 

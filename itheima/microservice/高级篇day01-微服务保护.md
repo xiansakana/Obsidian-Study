@@ -1,17 +1,7 @@
-# 高级篇day01-微服务保护
-
 ---
-
-title: itheima-Microservice 高级篇day01-微服务保护
-tags:
-
-- itheima
-- 微服务
-- Sentinel
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292157100.jpg'
-  abbrlink: 3de73e32
-
+title: 高级篇day01-微服务保护
+date: 2024-04-25T19:17:03Z
+lastmod: 2024-04-25T19:17:03Z
 ---
 
 # 微服务保护

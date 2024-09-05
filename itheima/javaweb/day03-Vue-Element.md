@@ -1,17 +1,7 @@
-# day03-Vue-Element
-
 ---
-
-title: itheima-JavaWeb day03-Vue-Element
-tags:
-
-- itheima
-- Vue
-- 前端
-  categories: 前端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192153002.png'
-  abbrlink: 4d5c83b2
-
+title: day03-Vue-Element
+date: 2024-04-25T19:14:36Z
+lastmod: 2024-04-25T19:14:36Z
 ---
 
 # 1 Ajax

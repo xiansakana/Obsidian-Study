@@ -1,18 +1,7 @@
-# day01-HTML-CSS
-
 ---
-
-title: itheima-JavaWeb day01-HTML-CSS
-tags:
-
-- itheima
-- HTML
-- CSS
-- 前端
-  categories: 前端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192146376.png'
-  abbrlink: 7a46d99f
-
+title: day01-HTML-CSS
+date: 2024-04-25T19:20:07Z
+lastmod: 2024-04-25T19:20:07Z
 ---
 
 # 1. 前端开发介绍

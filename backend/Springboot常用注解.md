@@ -1,17 +1,7 @@
-# Springboot常用注解
-
 ---
-
-title: SpringBoot常用注解
-tags:
-
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202312180825037.jpg
-  abbrlink: e750a506
-  date: 2023-12-18 08:13:42
-
+title: Springboot常用注解
+date: 2024-04-25T19:26:29Z
+lastmod: 2024-04-25T19:26:29Z
 ---
 
 # @SpringBootApplication

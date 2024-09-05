@@ -1,17 +1,7 @@
-# 实用篇day03-Centos7安装Docker
-
 ---
-
-title: itheima-Microservice 实用篇day03-Centos7安装Docker
-tags:
-
-- itheima
-- Centos
-- Docker
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212095.jpg'
-  abbrlink: 9c07ac7e
-
+title: 实用篇day03-Centos7安装Docker
+date: 2024-04-25T19:26:31Z
+lastmod: 2024-04-25T19:26:31Z
 ---
 
 # 0.安装Docker

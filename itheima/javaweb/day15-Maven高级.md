@@ -1,17 +1,7 @@
-# day15-Maven高级
-
 ---
-
-title: itheima-JavaWeb day15-Maven高级
-tags:
-
-- itheima
-- Maven
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192209962.jpg'
-  abbrlink: c0746c51
-
+title: day15-Maven高级
+date: 2024-04-25T19:21:44Z
+lastmod: 2024-04-25T19:21:44Z
 ---
 
 # Maven高级

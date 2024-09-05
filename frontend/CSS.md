@@ -1,17 +1,7 @@
-# CSS
-
 ---
-
 title: CSS
-tags:
-
-- CSS
-- 前端
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310190107034.png
-  abbrlink: d54bd6b
-  date: 2023-10-19 01:24:41
-
+date: 2024-04-25T19:23:08Z
+lastmod: 2024-07-10T21:10:59Z
 ---
 
 # 基本概念

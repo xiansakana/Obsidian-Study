@@ -1,16 +1,7 @@
-# 实用篇day05-安装Elasticsearch
-
 ---
-
-title: itheima-Microservice 实用篇day05-安装Elasticsearch
-tags:
-
-- itheima
-- Elesticsearch
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292214426.jpg'
-  abbrlink: f2513cc0
-
+title: 实用篇day05-安装Elasticsearch
+date: 2024-04-25T19:24:49Z
+lastmod: 2024-04-25T19:24:49Z
 ---
 
 # 安装Elasticsearch

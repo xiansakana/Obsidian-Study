@@ -1,16 +1,7 @@
-# JWT
-
 ---
-
 title: JWT
-tags:
-
-- JWT
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242029724.jpg
-  abbrlink: 1bb08f7a
-  date: 2023-11-24 20:48:25
-
+date: 2024-04-25T19:26:47Z
+lastmod: 2024-04-25T19:26:47Z
 ---
 
 # HTTP is a stateless protocol

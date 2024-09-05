@@ -1,16 +1,7 @@
-# 面试篇-Nacos源码分析
-
 ---
-
-title: itheima-Microservice 面试篇-Nacos源码分析
-tags:
-
-- itheima
-- Nacos
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292209900.jpg'
-  abbrlink: 3c8a1125
-
+title: 面试篇-Nacos源码分析
+date: 2024-04-25T19:19:24Z
+lastmod: 2024-04-25T19:19:24Z
 ---
 
 # Nacos源码分析

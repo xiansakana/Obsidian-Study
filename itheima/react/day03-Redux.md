@@ -1,4 +1,8 @@
-# day03-Redux
+---
+title: day03-Redux
+date: 2024-05-04T03:23:27Z
+lastmod: 2024-05-04T21:00:48Z
+---
 
 # Redux介绍
 

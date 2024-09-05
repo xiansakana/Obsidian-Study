@@ -1,4 +1,8 @@
-# sql
+---
+title: sql
+date: 2024-07-01T15:47:29Z
+lastmod: 2024-08-13T01:02:01Z
+---
 
 [cheat_sheet_data_type_mysql.pdf](cheat_sheet_data_type_mysql-20240701154738-bjoln1g.pdf)
 

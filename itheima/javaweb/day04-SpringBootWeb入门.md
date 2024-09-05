@@ -1,17 +1,7 @@
-# day04-SpringBootWeb入门
-
 ---
-
-title: itheima-JavaWeb day04-SpringBoot入门
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192155572.jpg'
-  abbrlink: ab2f8f86
-
+title: day04-SpringBootWeb入门
+date: 2024-04-25T19:19:17Z
+lastmod: 2024-04-25T19:19:17Z
 ---
 
 # SpringBoot基础

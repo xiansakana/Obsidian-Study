@@ -1,17 +1,7 @@
-# Top Interview 150
-
 ---
-
 title: Top Interview 150
-tags:
-
-- Leetcode
-- 算法
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050327460.jpg
-  categories: 算法
-  abbrlink: b6d1a2e5
-  date: 2024-03-05 03:41:00
-
+date: 2024-04-25T19:20:43Z
+lastmod: 2024-09-05T13:11:44Z
 ---
 
 # Easy
@@ -826,7 +816,7 @@ class Solution:
 
 ## [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/) （[盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)）
 
-![](https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg)
+![image](assets/net-img-question_11-20240905131112-mgnj358.jpg)
 
 ```
 Input: height = [1,8,6,2,5,4,8,3,7]
@@ -1012,24 +1002,24 @@ Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[7,4,1],[8,5,2],[9,6,3]]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
+![image](assets/net-img-mat1-20240905131113-wsuf49i.jpg)
 
 ```
 Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
 Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg)
+![image](assets/net-img-mat2-20240905131113-yurkoa6.jpg)
 
 **原地旋转**
 
 - 当 n 为偶数时
 
-![](https://assets.leetcode-cn.com/solution-static/48/1.png)
+![image](assets/net-img-1-20240905131114-jisg5ds.png)
 
 - 当 n 为奇数时
 
-![](https://assets.leetcode-cn.com/solution-static/48/2.png)
+![image](assets/net-img-2-20240905131114-a6zqoyn.png)
 
 ```python
 class Solution:
@@ -1160,15 +1150,15 @@ Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [1,2,3,6,9,8,7,4,5]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg)
+![image](assets/net-img-spiral1-20240905131114-q7kr78a.jpg)
 
 ```
 Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+Output: [1,2,3,4,8,12,11,10,9,5,6
 ```
 
-![]()
-![](https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg)
+  
+​![image](assets/net-img-spiral-20240905131114-0rz45qs.jpg)​
 
 **模拟**
 
@@ -1214,7 +1204,7 @@ class Solution:
         return res
 ```
 
-![](https://assets.leetcode-cn.com/solution-static/54/54_fig1.png)
+![image](assets/net-img-54_fig1-20240905131115-hrz6xh4.png)
 
 时间复杂度：O(mn)，其中 m 和 n 分别是输入矩阵的行数和列数。矩阵中的每个元素都要被访问一次。
 
@@ -1255,14 +1245,14 @@ Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
 Output: [[1,0,1],[0,0,0],[1,0,1]]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg)
+![image](assets/net-img-mat1-20240905131115-s8w2w9u.jpg)
 
 ```
 Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg)
+![image](assets/net-img-mat2-20240905131115-o8xxk43.jpg)
 
 **使用标记数组**
 
@@ -1811,14 +1801,14 @@ class Solution:
 3. Any live cell with more than three live neighbors dies, as if by over-population.
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-​![](https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg)​
+​![grid1](assets/net-img-grid1-20240905131115-6bw3ses.jpg)​
 
 ```
 Input: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
 Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
-​![](https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg)​
+​![grid2](assets/net-img-grid2-20240905131115-o94829r.jpg)​
 
 ```
 Input: board = [[1,1],[1,0]]
@@ -1919,7 +1909,7 @@ Output: 6
 Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
 ```
 
-![img](https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png)
+![img](assets/net-img-rainwatertrap-20240905131115-jhkb969.png)
 
 ```python
 class Solution:

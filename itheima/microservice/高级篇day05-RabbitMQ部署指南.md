@@ -1,17 +1,7 @@
-# 高级篇day05-RabbitMQ部署指南
-
 ---
-
-title: itheima-Microservice 高级篇day05-RabbitMQ部署指南
-tags:
-
-- itheima
-- 微服务
-- RabbitMQ
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292208274.jpg'
-  abbrlink: 20d78c4f
-
+title: 高级篇day05-RabbitMQ部署指南
+date: 2024-04-25T19:23:32Z
+lastmod: 2024-04-25T19:23:32Z
 ---
 
 # RabbitMQ部署指南

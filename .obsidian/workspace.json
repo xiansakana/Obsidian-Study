@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "0663a53fc0e81f89",
+        "id": "c8d5778a3a3951e3",
         "type": "tabs",
         "children": [
           {
-            "id": "78b9cb2bbe500285",
+            "id": "88a811b6a46f5157",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "univer-xlsx",
               "state": {
-                "file": "miscellaneous/笔记/Hexo博客增加书单集.md",
-                "mode": "source",
-                "source": false
+                "file": "Job Applications.xlsx"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "miscellaneous/笔记/Hexo博客增加书单集.md",
+                "file": "Job Applications.xlsx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "miscellaneous/笔记/Hexo博客增加书单集.md",
+                "file": "Job Applications.xlsx",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "miscellaneous/笔记/Hexo博客增加书单集.md"
+                "file": "Job Applications.xlsx"
               }
             }
           },
@@ -150,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -166,56 +164,59 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
-      "audio-recorder:开始/结束录音": false
+      "audio-recorder:开始/结束录音": false,
+      "sheet-plus:创建 Excel 文件": false,
+      "excel:创建 Excel 文件": false,
+      "univer:Univer": false
     }
   },
-  "active": "78b9cb2bbe500285",
+  "active": "88a811b6a46f5157",
   "lastOpenFiles": [
-    "miscellaneous/笔记/Hexo搭建个人网站.md",
-    "miscellaneous/笔记/Obsidian同步到Github.md",
-    "miscellaneous/笔记/Github搭建免费图床.md",
-    "miscellaneous/笔记/笔记软件测评.md",
-    "miscellaneous/笔记/assets/image-20240426002356-43jclqt.png",
-    "miscellaneous/笔记/Hexo博客增加书单集.md",
+    "Fulltime.md",
+    "tools/tools.md",
+    "Job Applications.xlsx",
+    "Excel 2024-09-05 14.21.03.sheet.md",
+    "~$Job Applications.xlsx",
+    "59FD7500",
+    "407B7500",
+    "assets/image-20240904133207-7cg72l8.png",
+    "assets/image-20240904132923-1c8urud.png",
+    "assets/image-20240903180211-2y6ocu3.png",
+    "assets/image-20240903174924-4mo5il5.png",
+    "assets/image-20240902134450-muri4fc.png",
+    "assets/image-20240901121659-2qi9bi7.png",
+    "assets/image-20240901121544-vw7usnc.png",
+    "assets/image-20240901120634-0pek7z1.png",
+    "assets/image-20240901120410-zvwf49x.png",
+    "assets/image-20240901115842-2j4rq1m.png",
+    "assets",
+    "Untitled.xlsx",
+    "未命名.md",
+    "Excel 2024-09-05 13.58.43.sheet.md",
+    "Intern.md",
+    "sql/sql.md",
     "os/Deep_into_OperatingSystem.md",
-    "miscellaneous/Unblock-Netease-Music.md",
-    "miscellaneous/关于美国身份问题的常识.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/Git常用版本控制指令.md",
-    "miscellaneous/Git-bash配置多个Github用户.md",
-    "miscellaneous/运维.md",
-    "miscellaneous/笔记.md",
-    "miscellaneous/运维/常用Linux操作.md",
-    "miscellaneous/运维/前后端分离项目云服务器部署.md",
-    "miscellaneous/笔记/图床使用方案.md",
-    "algorithm/基本语法.md",
-    "algorithm/lc预备知识.md",
-    "algorithm/Top Interview 150.md",
+    "os/assets",
     "algorithm/刷题记录.md",
-    "algorithm/刷题记录/637. Average of Levels in Binary Tree（二叉树的层平均值）.md",
-    "algorithm/刷题记录/2. Add Two Numbers（两数相加）.md",
-    "algorithm/刷题记录/assets/image-20240702124405-rf4gniw.png",
-    "algorithm/基本语法/Python.md",
-    "algorithm/基本语法/JavaScript.md",
-    "backend/Springboot常用注解.md",
-    "sql/assets/image-20240517000412-dlawlod.png",
+    "algorithm/Top Interview 150.md",
+    "algorithm/未命名.md",
+    "algorithm/基本语法.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/笔记.md",
+    "miscellaneous/Git-bash配置多个Github用户.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "miscellaneous/运维.md",
+    "backend.md",
+    "algorithm.md",
+    "os.md",
+    "itheima/Java面试/Redis面试题-参考回答.md",
     "sql",
-    "Job Application/assets/image-20240904133207-7cg72l8.png",
-    "Job Application/assets/image-20240904132923-1c8urud.png",
-    "Job Application/assets/image-20240903180211-2y6ocu3.png",
-    "Job Application/assets/image-20240903174924-4mo5il5.png",
-    "Job Application/assets/image-20240902134450-muri4fc.png",
-    "Job Application/assets/image-20240901121659-2qi9bi7.png",
-    "Job Application/assets/image-20240901121544-vw7usnc.png",
-    "Job Application/assets",
-    "Job Application",
-    "interview/bq/assets/How-to-Answer-the-64-Toughest-Interview-Questions-20240701153936-iukmvw5.pdf",
-    "interview/bq/assets/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions-20240701153936-7j85zn4.pdf",
-    "interview/bq/assets/CodingBook-20240701153936-gub0ykt.pdf",
-    "tools",
-    "os",
-    "miscellaneous/笔记/assets",
-    "miscellaneous/运维",
+    "tools/云盘.md",
+    "tools/assets",
+    "sql/assets/sql_cheat_sheet_sqlserver-20240701154738-pod70n4.pdf",
+    "miscellaneous.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

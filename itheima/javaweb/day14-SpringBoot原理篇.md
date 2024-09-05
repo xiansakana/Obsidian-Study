@@ -1,17 +1,7 @@
-# day14-SpringBoot原理篇
-
 ---
-
-title: itheima-JavaWeb day14-SpringBoot原理篇
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208857.jpg'
-  abbrlink: 754b9031
-
+title: day14-SpringBoot原理篇
+date: 2024-04-25T19:14:18Z
+lastmod: 2024-04-25T19:14:18Z
 ---
 
 在前面十多天的课程当中，我们学习的都是web开发的技术使用，都是面向应用层面的，我们学会了怎么样去用。而我们今天所要学习的是web后端开发的最后一个篇章springboot原理篇，主要偏向于底层原理。

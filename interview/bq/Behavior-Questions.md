@@ -1,16 +1,7 @@
-# Behavior-Questions
-
 ---
-
-title: Behavior Questions
-tags:
-
-- 面试
-- BQ
-  categories: 求职
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050449090.jpg'
-  abbrlink: 28a412e9
-
+title: Behavior-Questions
+date: 2024-04-25T19:24:52Z
+lastmod: 2024-07-01T15:36:44Z
 ---
 
 # Basics

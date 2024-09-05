@@ -1,18 +1,7 @@
-# 高级篇day03-分布式缓存
-
 ---
-
-title: itheima-Microservice 高级篇day03-分布式缓存
-tags:
-
-- itheima
-- 微服务
-- Redis
-- 分布式
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292203456.jpg'
-  abbrlink: 68730b4
-
+title: 高级篇day03-分布式缓存
+date: 2024-04-25T19:20:10Z
+lastmod: 2024-04-25T19:20:10Z
 ---
 
 # 分布式缓存

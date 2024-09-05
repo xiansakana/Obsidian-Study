@@ -1,17 +1,7 @@
-# SpringBoot
-
 ---
-
-title: itheima-SSM SpringBoot
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
-  abbrlink: 4fd98fb2
-
+title: SpringBoot
+date: 2024-04-25T19:16:29Z
+lastmod: 2024-04-25T19:16:29Z
 ---
 
 # SpringBoot

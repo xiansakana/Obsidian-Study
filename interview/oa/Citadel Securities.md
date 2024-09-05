@@ -1,4 +1,8 @@
-# Citadel Securities
+---
+title: Citadel Securities
+date: 2024-08-27T19:57:04Z
+lastmod: 2024-08-27T20:46:00Z
+---
 
 # Q1
 
@@ -167,7 +171,7 @@ Given *n* and *friendships* ,for each of the *n* users, find the index of the fr
 **Example**  
 Suppose *n = 5, m = 5*, and c*onnections* =[[0,1], [0,2], [1,3], [2,3], [3,4]]
 
-​![image](image-20240827202825-krdxyit.png)​
+​![image](assets/image-20240827202825-krdxyit.png)​
 
 |User|Max Common Friends With|Recommendation|
 | ------| -------------------------| -------------------|
@@ -245,7 +249,7 @@ STDIN		Function
 
 **Explanation**
 
-​![image](image-20240827204538-129enec.png)​
+​![image](assets/image-20240827204538-129enec.png)​
 
 ‍
 

@@ -1,16 +1,7 @@
-# 实用篇day04-RabbitMQ部署指南
-
 ---
-
-title: itheima-Microservice 实用篇day04-RabbitMQ部署指南
-tags:
-
-- itheima
-- '#RabbitMQ'
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213876.jpg'
-  abbrlink: ae33f2da
-
+title: 实用篇day04-RabbitMQ部署指南
+date: 2024-04-25T19:27:05Z
+lastmod: 2024-04-25T19:27:05Z
 ---
 
 # RabbitMQ部署指南

@@ -1,18 +1,7 @@
-# EJS
-
 ---
-
 title: EJS
-tags:
-
-- EJS
-- 前端
-- Express.js
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121034957.jpg
-  categories: 前端
-  abbrlink: 71e431f8
-  date: 2023-11-12 10:45:48
-
+date: 2024-04-25T19:26:43Z
+lastmod: 2024-04-25T19:26:43Z
 ---
 
 VScode extension: EJS language support

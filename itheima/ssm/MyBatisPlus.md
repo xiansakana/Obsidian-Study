@@ -1,18 +1,7 @@
-# MyBatisPlus
-
 ---
-
-title: itheima-SSM MyBatisPlus
-tags:
-
-- itheima
-- MyBatisPlus
-- 后端
-- SpringBoot
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg
-  abbrlink: 159f8f6d
-
+title: MyBatisPlus
+date: 2024-04-25T19:11:13Z
+lastmod: 2024-04-25T19:11:13Z
 ---
 
 # MyBatisPlus

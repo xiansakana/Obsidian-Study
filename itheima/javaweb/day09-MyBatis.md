@@ -1,17 +1,7 @@
-# day09-MyBatis
-
 ---
-
-title: itheima-JavaWeb day09-MyBatis
-tags:
-
-- itheima
-- MyBatis
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192204537.jpg'
-  abbrlink: 965bc544
-
+title: day09-MyBatis
+date: 2024-04-25T19:18:56Z
+lastmod: 2024-04-25T19:18:56Z
 ---
 
 # 1. MyBatis基础操作

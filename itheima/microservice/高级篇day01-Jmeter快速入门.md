@@ -1,17 +1,7 @@
-# 高级篇day01-Jmeter快速入门
-
 ---
-
-title: itheima-Microservice 高级篇day01-Jmeter快速入门
-tags:
-
-- itheima
-- 微服务
-- Jmeter
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201194.png'
-  abbrlink: f9ad4dd6
-
+title: 高级篇day01-Jmeter快速入门
+date: 2024-04-25T19:26:41Z
+lastmod: 2024-04-25T19:26:41Z
 ---
 
 # Jmeter快速入门

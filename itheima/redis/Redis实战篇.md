@@ -1,4 +1,8 @@
-# Redis实战篇
+---
+title: Redis实战篇
+date: 2024-04-25T19:08:20Z
+lastmod: 2024-04-25T19:08:20Z
+---
 
 # 实战篇Redis
 

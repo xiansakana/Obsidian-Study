@@ -1,17 +1,7 @@
-# day08-MyBatis入门
-
 ---
-
-title: itheima-JavaWeb day08-MyBatis入门
-tags:
-
-- itheima
-- MyBatis
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192209962.jpg'
-  abbrlink: 5d9399b7
-
+title: day08-MyBatis入门
+date: 2024-04-25T19:22:11Z
+lastmod: 2024-04-25T19:22:11Z
 ---
 
 # MyBatis入门

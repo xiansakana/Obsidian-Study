@@ -1,19 +1,7 @@
-# REST
-
 ---
-
 title: REST
-tags:
-
-- API
-- 前端
-- Express.js
-- REST
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222253181.jpg
-  abbrlink: 5d268eee
-  date: 2023-11-22 22:37:26
-
+date: 2024-04-25T19:27:18Z
+lastmod: 2024-04-25T19:27:18Z
 ---
 
 # REST

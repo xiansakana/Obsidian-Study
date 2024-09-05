@@ -1,4 +1,8 @@
-# JavaScript
+---
+title: JavaScript
+date: 2024-05-21T15:15:54Z
+lastmod: 2024-09-05T13:12:42Z
+---
 
 # String
 
@@ -119,48 +123,5 @@ console.log(intervals);
 ```
 
 # 其他
-
-## 关于 relative 和 absolute
-
-当遇到以图片为背景的一块页面时，如果需要将元素覆盖在图片上面，而且还遵循flex box原则的时候，可以考虑 relative 和 absolute的positiion关系。
-
-```html
-<div className="relative">
-  <img
-	src="/assets/home/1.svg"
-	alt="Background"
-	className="w-full object-cover"
-  />
-  <div className="md:absolute top-0 left-1/2 right-0 bottom-0 flex flex-row justify-center items-center p-8 md:p-16 lg:p-24">
-	<div>
-	  <h1 className="font-bold text-left text-black text-3xl md:text-2xl lg:text-4xl">
-		<span className="text-green-800">Green grass</span> on your side
-		of the fence.
-		<br />
-		<span className="text-green-800">Always.</span>
-	  </h1>
-	  <p className="text-black font-bold text-lg md:text-sm lg:text-base mt-4 text-left">
-		Lorem ipsum dolor sit amet.
-	  </p>
-	  <p className="text-black text-sm md:text-xs lg:text-sm mt-4 text-left">
-		Lorem ipsum dolor sit amet consectetur adipisicing elit.
-		Necessitatibus hic quas, sit reprehenderit quam molestiae quod
-		maiores officiis tenetur nihil?
-	  </p>
-	  <div className="flex">
-		<button className="mt-6 px-8 py-3 bg-orange-500 text-white rounded-lg shadow-md hover:bg-green-600 transition-colors ">
-		  <p className="text-xs md:text-sm lg:text-base">
-			Visit the Shop
-		  </p>
-		</button>
-	  </div>
-	</div>
-  </div>
-        </div>
-```
-
-结果如下图
-
-​![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403042252297.png)​
 
 ‍

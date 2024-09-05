@@ -1,17 +1,7 @@
-# Java
-
 ---
-
 title: Java
-tags:
-
-- Java
-- 后端
-- OOP
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512455.jpg'
-  abbrlink: df2849ec
-
+date: 2024-04-25T19:26:26Z
+lastmod: 2024-05-17T00:36:55Z
 ---
 
 # 基础知识

@@ -1,18 +1,7 @@
-# day12-SpringBootWeb登录认证
-
 ---
-
-title: itheima-JavaWeb day12-SpringBootWeb登陆认证
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-- JWT
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192207523.jpg'
-  abbrlink: 1299e1d8
-
+title: day12-SpringBootWeb登录认证
+date: 2024-04-25T19:14:04Z
+lastmod: 2024-04-25T19:14:04Z
 ---
 
 # 案例-登录认证

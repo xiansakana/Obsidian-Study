@@ -1,16 +1,7 @@
-# day01-Web开发介绍
-
 ---
-
-title: itheima-JavaWeb day01-Web开发介绍
-tags:
-
-- itheima
-- Web
-  categories: 杂项
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192151538.png'
-  abbrlink: 75e3b39e
-
+title: day01-Web开发介绍
+date: 2024-04-25T19:26:53Z
+lastmod: 2024-04-25T19:26:53Z
 ---
 
 # Web开发介绍

@@ -1,17 +1,7 @@
-# 高级篇day02-seata的部署和集成
-
 ---
-
-title: itheima-Microservice 高级篇day02-seata的部署和集成
-tags:
-
-- itheima
-- 微服务
-- Seata
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292203252.jpg'
-  abbrlink: cec7834a
-
+title: 高级篇day02-seata的部署和集成
+date: 2024-04-25T19:26:28Z
+lastmod: 2024-04-25T19:26:28Z
 ---
 
 # seata的部署和集成

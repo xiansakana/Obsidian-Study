@@ -1,18 +1,7 @@
-# Springboot
-
 ---
-
 title: Springboot
-tags:
-
-- 后端
-- Java
-- SpringBoot
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg
-  abbrlink: cf14bd9c
-  date: 2024-01-26 22:39:38
-
+date: 2024-04-25T19:24:05Z
+lastmod: 2024-04-25T19:24:05Z
 ---
 
 # 开发环境热部署
@@ -179,7 +168,7 @@ public class ParamsController {
 - 当表单的`enctype="application/x-www-form-urlencoded”`（默认） 时，form 表单中的数据格式为: `key=value&key=value`
 - 当表单的`enctype="multipart/form-data"`时，其传输数据形式如下
 
-  ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401191420448.png)
+  ![image](assets/net-img-202401191420448-20240905131449-qihdjzr.png)
 - SpringBoot 工程嵌入的 tomcat 限制了请求的文件大小，每个文件的配置最大为 1Mb，单次请求的文件的总数不能大于 10Mb。
 - 要更改这个默认值需要在配置文件(如`application.properties`)中加入两个配置。
 

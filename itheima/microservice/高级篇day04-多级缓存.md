@@ -1,18 +1,7 @@
-# 高级篇day04-多级缓存
-
 ---
-
-title: itheima-Microservice 高级篇day04-多级缓存
-tags:
-
-- itheima
-- 微服务
-- Lua
-- 多级缓存
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292206231.jpg'
-  abbrlink: 64a56646
-
+title: 高级篇day04-多级缓存
+date: 2024-04-25T19:19:16Z
+lastmod: 2024-04-25T19:19:16Z
 ---
 
 # 多级缓存

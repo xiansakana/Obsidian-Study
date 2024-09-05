@@ -1,17 +1,7 @@
-# Authentication
-
 ---
-
 title: Authentication
-tags:
-
-- Authentication
-- Bcrypt
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222256191.jpg
-  abbrlink: 33d0b125
-  date: 2023-11-22 22:55:29
-
+date: 2024-04-25T19:26:42Z
+lastmod: 2024-04-25T19:26:42Z
 ---
 
 # Authentication and Authorizations

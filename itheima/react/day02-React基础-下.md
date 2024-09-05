@@ -1,4 +1,8 @@
-# day02-React基础-下
+---
+title: day02-React基础-下
+date: 2024-05-04T03:24:38Z
+lastmod: 2024-05-04T21:01:15Z
+---
 
 # React表单控制
 

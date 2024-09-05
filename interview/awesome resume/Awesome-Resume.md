@@ -1,16 +1,7 @@
-# Awesome-Resume
-
 ---
-
-title: Awesome Resume
-tags:
-
-- 简历
-- 项目
-  categories: 求职
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512957.jpg'
-  abbrlink: 1162e00e
-
+title: Awesome-Resume
+date: 2024-04-25T19:17:54Z
+lastmod: 2024-07-01T15:36:27Z
 ---
 
 <div>

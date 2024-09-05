@@ -1,17 +1,7 @@
-# 高级篇day02-分布式事务
-
 ---
-
-title: itheima-Microservice 高级篇day02-分布式事务
-tags:
-
-- itheima
-- 微服务
-- 分布式
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201990.jpg'
-  abbrlink: '989839e4'
-
+title: 高级篇day02-分布式事务
+date: 2024-04-25T19:19:24Z
+lastmod: 2024-04-25T19:19:24Z
 ---
 
 # 分布式事务

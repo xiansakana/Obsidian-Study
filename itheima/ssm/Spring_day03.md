@@ -1,17 +1,7 @@
-# Spring_day03
-
 ---
-
-title: itheima-SSM Spring_day03
-tags:
-
-- itheima
-- Spring
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
-  abbrlink: aa249c7c
-
+title: Spring_day03
+date: 2024-04-25T19:09:23Z
+lastmod: 2024-04-25T19:09:23Z
 ---
 
 # Spring_day03

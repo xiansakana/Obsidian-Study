@@ -1,18 +1,7 @@
-# day07-MySQL-02
-
 ---
-
-title: itheima-JavaWeb day07-MySQL-02
-tags:
-
-- itheima
-- MySQL
-- 数据库
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192159317.png'
-  abbrlink: 85c8d0de
-
+title: day07-MySQL-02
+date: 2024-04-25T19:19:06Z
+lastmod: 2024-04-25T19:19:06Z
 ---
 
 # 数据库开发-MySQL

@@ -1,17 +1,7 @@
-# 高级篇day05-RabbitMQ-高级篇
-
 ---
-
-title: itheima-Microservice 高级篇day05-RabbitMQ-高级篇
-tags:
-
-- itheima
-- 微服务
-- RabbitMQ
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292207735.png'
-  abbrlink: f9a25802
-
+title: 高级篇day05-RabbitMQ-高级篇
+date: 2024-04-25T19:19:59Z
+lastmod: 2024-04-25T19:19:59Z
 ---
 
 # 服务异步通信-高级篇

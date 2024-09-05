@@ -1,17 +1,7 @@
-# day05-SpringBootWeb请求响应
-
 ---
-
-title: itheima-JavaWeb day05-SpringBootWeb请求响应
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
-  abbrlink: '24e2833'
-
+title: day05-SpringBootWeb请求响应
+date: 2024-04-25T19:15:59Z
+lastmod: 2024-04-25T19:15:59Z
 ---
 
 # SpringBootWeb请求响应

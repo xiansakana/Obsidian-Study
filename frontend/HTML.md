@@ -1,17 +1,7 @@
-# HTML
-
 ---
-
 title: HTML
-tags:
-
-- HTML
-- 前端
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310180425942.png
-  abbrlink: 9192d298
-  date: 2023-10-18 04:18:54
-
+date: 2024-04-25T19:25:58Z
+lastmod: 2024-04-25T19:25:58Z
 ---
 
 # vscode 扩展

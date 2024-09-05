@@ -1,16 +1,7 @@
-# 实用篇day04-RabbitMQ
-
 ---
-
-title: itheima-Microservice 实用篇day04-RabbitMQ
-tags:
-
-- itheima
-- '#RabbitMQ'
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213261.jpg'
-  abbrlink: bf87f639
-
+title: 实用篇day04-RabbitMQ
+date: 2024-04-25T19:20:46Z
+lastmod: 2024-04-25T19:20:46Z
 ---
 
 # RabbitMQ

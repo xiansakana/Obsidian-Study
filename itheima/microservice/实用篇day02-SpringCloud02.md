@@ -1,16 +1,7 @@
-# 实用篇day02-SpringCloud02
-
 ---
-
-title: itheima-Microservice 实用篇day02-SpringCloud02
-tags:
-
-- itheima
-- SpringCloud
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211064.jpg'
-  abbrlink: 11bcc8a9
-
+title: 实用篇day02-SpringCloud02
+date: 2024-04-25T19:20:59Z
+lastmod: 2024-04-25T19:20:59Z
 ---
 
 # SpringCloud实用篇02

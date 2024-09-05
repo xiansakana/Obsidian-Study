@@ -1,4 +1,8 @@
-# ebook
+---
+title: ebook
+date: 2024-07-01T15:39:28Z
+lastmod: 2024-07-01T15:40:06Z
+---
 
 [CodingBook.pdf](assets/CodingBook-20240701153936-gub0ykt.pdf)
 

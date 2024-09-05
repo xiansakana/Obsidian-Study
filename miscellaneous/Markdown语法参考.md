@@ -1,16 +1,7 @@
-# Markdown语法参考
-
 ---
-
 title: Markdown语法参考
-tags:
-
-- Markdown
-  categories: 杂项
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201855290.png
-  abbrlink: bc03c1d4
-  date: 2023-10-18 04:03:23
-
+date: 2024-04-25T19:24:57Z
+lastmod: 2024-04-25T19:24:57Z
 ---
 
 # [Typora 的 Markdown 语法](https://support.typoraio.cn/zh/Markdown-Reference/)
@@ -669,7 +660,7 @@ $$
 ![原神](./QQ截图20220110160242.png)
 ```
 
-![【静止画MAD】FRIEND](https://i0.hdslb.com/bfs/archive/3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c.webp)
+![【静止画MAD】FRIEND](assets/net-img-3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c-20240905130715-nz3n2az.webp)
 
 # 代码块
 

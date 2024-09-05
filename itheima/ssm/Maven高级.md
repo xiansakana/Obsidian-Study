@@ -1,17 +1,7 @@
-# Maven高级
-
 ---
-
-title: itheima-SSM Maven高级
-tags:
-
-- itheima
-- Maven
-- SpringBoot
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg
-  abbrlink: 21afdd51
-
+title: Maven高级
+date: 2024-04-25T19:15:30Z
+lastmod: 2024-04-25T19:15:30Z
 ---
 
 # Maven高级

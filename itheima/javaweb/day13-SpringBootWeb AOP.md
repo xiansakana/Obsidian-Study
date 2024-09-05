@@ -1,18 +1,7 @@
-# day13-SpringBootWeb AOP
-
 ---
-
-title: itheima-JavaWeb day13-SpringBootWeb-AOP
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-- AOP
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
-  abbrlink: 9cf23d6
-
+title: day13-SpringBootWeb AOP
+date: 2024-04-25T19:15:29Z
+lastmod: 2024-04-25T19:15:29Z
 ---
 
 # 事务&AOP

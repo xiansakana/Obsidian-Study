@@ -1,17 +1,7 @@
-# day04-Maven
-
 ---
-
-title: itheima-JavaWeb day04-Maven
-tags:
-
-- itheima
-- Maven
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192154716.jpg'
-  abbrlink: 2edd0237
-
+title: day04-Maven
+date: 2024-04-25T19:19:32Z
+lastmod: 2024-04-25T19:19:32Z
 ---
 
 # Maven

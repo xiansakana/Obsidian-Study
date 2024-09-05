@@ -1,13 +1,7 @@
-
 ---
 title: Hexo搭建个人网站
-tags:
-- Hexo
-- Git
-  categories: 杂项
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309210911702.png
-  abbrlink: 186d25a2
-  date: 2023-09-20 03:11:12
+date: 2024-04-25T23:42:30Z
+lastmod: 2024-04-25T23:44:37Z
 ---
 
 # 准备工作
@@ -77,7 +71,7 @@ npm config delete registry
 
 在浏览器打开`localhost:4000`，就能看到
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201250749.png)
+![image](assets/net-img-202309201250749-20240905130948-s9hziu0.png)
 
 如果你安装了`hexo-admin`插件，就可以通过访问`localhost:4000/admin`来管理你的文章了，并且在可视化界面中操作文章内容。
 
@@ -205,18 +199,18 @@ start cmd /k "d: && cd Hexo && hexo cl && hexo g && hexo d && git add  --all && 
    获取到的`ip`地址填入域名解析
 
    这里以腾讯云为例。进入控制台->域名注册->我的域名。在购买的域名的操作栏选择解析。
-   ![img](https://npm.elemecdn.com/akilar-candyassets/image/20200723101044570.png)
+   ![img](assets/net-img-20200723101044570-20240905130956-314oziu.png)
 3. 进入解析页面后需要添加两条记录。
-   ![img](https://npm.elemecdn.com/akilar-candyassets/image/20200723101444765.png)
+   ![img](assets/net-img-20200723101444765-20240905130959-c89nwdm.png)
 
    > 关于为什么要添加两条记录。此处有必要说明一下，实质起作用的其实是第一条`A`记录，而第二条`CNAME`记录指向的其实是`www`的二级域名。例如此处指向`www.akilar.top`。然后当有人用`www.akilar.top`访问时，会重定向到`akilar.top`。emmm,虽然看起来有点多此一举啦，但是听说这样可以提升访问成功几率。毕竟很多人习惯在域名前面敲个`www`。
    >
 4. 在根目录`\source\`下新建`CNAME`文件（注意不要有后缀名，就叫`CNAME`即可，什么`.txt`、`.js`之类的后缀都不能有），在`CNAME`文件中添加上你购买的域名。
 5. 配置`username.github.io`仓库。
 6. 打开`username.github.io`，点击仓库页面右上角的 setting
-   ![img](https://npm.elemecdn.com/akilar-candyassets/image/20200723102148239.png)
+   ![img](assets/net-img-20200723102148239-20240905131000-i3d6xko.png)
    下拉找到 Github Pages 栏，在 Custom domain 中填入你购买的域名。
-   ![img](https://npm.elemecdn.com/akilar-candyassets/image/20200723102314604.png)
+   ![img](assets/net-img-20200723102314604-20240905131001-wkg7r11.png)
 7. 最后，重新部署一下
 
    ```bash
@@ -1560,13 +1554,13 @@ social:
 
 以上所有的 `top_img` 可配置以下值
 
-| 配置的值                                                                                                                | 效果                                                          |
-| ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| 留空                                                                                                                  | 显示默认的 top_img（如有），否则显示默认的顔色 （文章页 top_img 留空的话，会显示 cover 的值） |
-| img 链接                                                                                                              | 图片的链接，显示所配置的图片                                              |
-| 顔色( HEX 值 - #0000FF# RGB 值 - rgb(0,0,255) 顔色单词 - orange 渐变色 - linear-gradient( 135deg, #E2B0FF# 10%, #9F44D3# 100%) | 对应的顔色                                                       |
-| transparent                                                                                                         | 透明                                                          |
-| false                                                                                                               | 不显示 top_img                                                 |
+|配置的值|效果|
+| ------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------|
+|留空|显示默认的 top_img（如有），否则显示默认的顔色 （文章页 top_img 留空的话，会显示 cover 的值）|
+|img 链接|图片的链接，显示所配置的图片|
+|顔色( HEX 值 - #0000FF# RGB 值 - rgb(0,0,255) 顔色单词 - orange 渐变色 - linear-gradient( 135deg, #E2B0FF# 10%, #9F44D3# 100%)|对应的顔色|
+|transparent|透明|
+|false|不显示 top_img|
 
 ### 文章封面
 
@@ -3501,7 +3495,7 @@ inject:
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=725692&auto=1&height=66"></iframe>
 ```
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309231720550.png)
+![image](assets/net-img-202309231720550-20240905131009-34gxwuj.png)
 
 ### 左下角歌单
 
@@ -3544,7 +3538,7 @@ dplayer:
 
 - 文章中引用视频可以直接用 iframe 格式，而 iframe 外链一般可以通过视频网站生成，例如 b 站
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309231748785.png)
+![image](assets/net-img-202309231748785-20240905131009-hdbhvu3.png)
 
 ```markdown
 <iframe src="//player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

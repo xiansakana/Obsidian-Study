@@ -1,18 +1,7 @@
-# Mongoose
-
 ---
-
 title: Mongoose
-tags:
-
-- Mongoose
-- 数据库
-- 后端
-  categories: 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140944975.jpg
-  abbrlink: aaac2584
-  date: 2023-11-14 09:43:11
-
+date: 2024-04-25T19:25:50Z
+lastmod: 2024-04-25T19:25:50Z
 ---
 
 # Mongoose

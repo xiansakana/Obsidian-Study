@@ -1,4 +1,8 @@
-# day04-ReactRouter基础
+---
+title: day04-ReactRouter基础
+date: 2024-05-04T03:25:37Z
+lastmod: 2024-05-04T21:01:04Z
+---
 
 # 路由快速上手
 

@@ -1,17 +1,7 @@
-# day02-JavaScript-Vue
-
 ---
-
-title: itheima-JavaWeb day02-JavaScript-Vue
-tags:
-
-- itheima
-- JavaScript
-- 前端
-  categories: 前端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192152556.png'
-  abbrlink: c57a55d4
-
+title: day02-JavaScript-Vue
+date: 2024-04-25T19:12:40Z
+lastmod: 2024-04-25T19:12:40Z
 ---
 
 # 1 JavaScript

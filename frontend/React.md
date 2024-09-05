@@ -1,18 +1,7 @@
-# React
-
 ---
-
 title: React
-tags:
-
-- React
-- JSX
-- SPA
-  categories: 前端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg
-  abbrlink: d8a440d1
-  date: 2023-11-22 23:04:10
-
+date: 2024-04-25T19:24:32Z
+lastmod: 2024-04-25T19:24:32Z
 ---
 
 # SPA

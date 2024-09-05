@@ -1,18 +1,7 @@
-# SQL
-
 ---
-
 title: SQL
-tags:
-
-- SQL
-- 数据库
-- 后端
-  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121237821.png
-  categories: 后端
-  abbrlink: 4d712855
-  date: 2023-11-12 12:35:07
-
+date: 2024-04-25T19:25:47Z
+lastmod: 2024-04-25T19:25:47Z
 ---
 
 # 数据库管理系统 DBMS

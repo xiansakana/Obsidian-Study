@@ -1,17 +1,7 @@
-# day11-SpringBootWeb案例-2
-
 ---
-
-title: itheima-JavaWeb day11-SpringBootWeb案例-2
-tags:
-
-- itheima
-- SpringBoot
-- 后端
-  categories: 后端
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
-  abbrlink: f5aeda25
-
+title: day11-SpringBootWeb案例-2
+date: 2024-04-25T19:17:56Z
+lastmod: 2024-04-25T19:17:56Z
 ---
 
 # SpringBootWeb案例

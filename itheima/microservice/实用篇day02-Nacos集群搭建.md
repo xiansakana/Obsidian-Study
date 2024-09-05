@@ -1,16 +1,7 @@
-# 实用篇day02-Nacos集群搭建
-
 ---
-
-title: itheima-Microservice 实用篇day02-Nacos集群搭建
-tags:
-
-- itheima
-- '#Nacos'
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg'
-  abbrlink: cf50504b
-
+title: 实用篇day02-Nacos集群搭建
+date: 2024-04-25T19:26:19Z
+lastmod: 2024-04-25T19:26:19Z
 ---
 
 # Nacos集群搭建

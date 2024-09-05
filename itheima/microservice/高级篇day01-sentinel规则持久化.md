@@ -1,17 +1,7 @@
-# 高级篇day01-sentinel规则持久化
-
 ---
-
-title: itheima-Microservice 高级篇day01-sentinel规则持久化
-tags:
-
-- itheima
-- 微服务
-- '#Sentinel'
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201584.png'
-  abbrlink: ba7af4f
-
+title: 高级篇day01-sentinel规则持久化
+date: 2024-04-25T19:26:39Z
+lastmod: 2024-04-25T19:26:39Z
 ---
 
 # Sentinel 规则持久化

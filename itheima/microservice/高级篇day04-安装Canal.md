@@ -1,17 +1,7 @@
-# 高级篇day04-安装Canal
-
 ---
-
-title: itheima-Microservice 高级篇day04-安装Canal
-tags:
-
-- itheima
-- 微服务
-- Canal
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204600.png'
-  abbrlink: 7dc060ae
-
+title: 高级篇day04-安装Canal
+date: 2024-04-25T19:26:37Z
+lastmod: 2024-04-25T19:26:37Z
 ---
 
 # 安装和配置Canal

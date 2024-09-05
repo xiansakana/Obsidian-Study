@@ -1,17 +1,7 @@
-# 高级篇day03-Redis集群
-
 ---
-
-title: itheima-Microservice 高级篇day03-Redis集群
-tags:
-
-- itheima
-- 微服务
-- Redis
-  categories: 微服务
-  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204705.jpg'
-  abbrlink: f9972978
-
+title: 高级篇day03-Redis集群
+date: 2024-04-25T19:24:10Z
+lastmod: 2024-04-25T19:24:10Z
 ---
 
 # Redis集群
