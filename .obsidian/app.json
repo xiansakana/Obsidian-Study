@@ -13,5 +13,6 @@
   "strictLineBreaks": true,
   "propertiesInDocument": "visible",
   "attachmentFolderPath": "./assets",
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": false
 }

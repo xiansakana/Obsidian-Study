@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/bq/亚麻官方STAR.md",
+                "file": "interview/resume/en.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/bq/亚麻官方STAR.md",
+                "file": "interview/resume/en.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/bq/亚麻官方STAR.md",
+                "file": "interview/resume/en.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/bq/亚麻官方STAR.md"
+                "file": "interview/resume/en.md"
               }
             }
           },
@@ -174,8 +174,20 @@
   },
   "active": "503bf9e2c37ef859",
   "lastOpenFiles": [
-    "interview/bq/Behavior-Questions.md",
+    "interview/resume/cn.md",
+    "interview/oa/Citadel Securities.md",
+    "interview/awesome resume/Awesome-Resume.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "miscellaneous/Git-bash配置多个Github用户.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/Unblock-Netease-Music.md",
+    "algorithm/刷题记录.md",
+    "itheima/Java面试.md",
+    "assets/image-20240810165339-3xv6ku8.png",
+    "algorithm/Top Interview 150.md",
     "interview/bq/亚麻官方STAR.md",
+    "interview/bq/Behavior-Questions.md",
     "interview/bq/ebook.md",
     "D5F99500",
     "~$Job Applications.xlsx",
@@ -197,7 +209,6 @@
     "assets/image-20240901121544-vw7usnc.png",
     "assets/image-20240901120634-0pek7z1.png",
     "assets/image-20240901120410-zvwf49x.png",
-    "assets/image-20240901115842-2j4rq1m.png",
     "assets",
     "Untitled.xlsx",
     "未命名.md",
@@ -205,21 +216,10 @@
     "Intern.md",
     "sql/sql.md",
     "os/Deep_into_OperatingSystem.md",
-    "algorithm/刷题记录.md",
-    "algorithm/Top Interview 150.md",
     "algorithm/未命名.md",
     "algorithm/基本语法.md",
-    "miscellaneous/关于美国身份问题的常识.md",
     "miscellaneous/笔记.md",
-    "miscellaneous/Git-bash配置多个Github用户.md",
-    "miscellaneous/Git常用版本控制指令.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/Unblock-Netease-Music.md",
     "miscellaneous/运维.md",
-    "backend.md",
-    "algorithm.md",
-    "os.md",
-    "itheima/Java面试/Redis面试题-参考回答.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
