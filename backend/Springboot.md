@@ -1,13 +1,18 @@
+# Springboot
+
 ---
+
 title: Springboot
 tags:
-  - 后端
-  - Java
-  - SpringBoot
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg
-abbrlink: cf14bd9c
-date: 2024-01-26 22:39:38
+
+- 后端
+- Java
+- SpringBoot
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401262242149.jpg
+  abbrlink: cf14bd9c
+  date: 2024-01-26 22:39:38
+
 ---
 
 # 开发环境热部署
@@ -21,7 +26,6 @@ date: 2024-01-26 22:39:38
 并不是所有的更改都需要重启应用(如静态资源、视图模板)，可以通过设置`spring.devtools.restart.exclude`属性来指定一些文件或目录的修改不用重启应用并不是所有的更改都需要重启应用(如静态资源、视图模板)，可以通过设置`spring.devtools.restart`排除属性来指定一些文件或目录的修改不用重启应用。
 
 1. 在`pom.xml`配置文件中添加`dev-tools`依赖
-
 2. 使用 optional=true 表示依赖不会传递，即该项目依赖`devtools`；其他项目如果引入此项目生成的 JAR 包，则不会包含`devtools`
 
    ```xml
@@ -31,7 +35,6 @@ date: 2024-01-26 22:39:38
    	<optional>true</optional>
    </dependency>
    ```
-
 3. 在`application.properties`中配置`devtools`
 
 ```properties
@@ -42,7 +45,6 @@ date: 2024-01-26 22:39:38
    #设置cLasspath月灵下的WEB-INF文件夹内容修改不重启
    spring.devtools.restart.exclude=static/**
 ```
-
 
 如果使用了`Eclipse`，那么在修改完代码并保存之后，项目将自动编译并触发重启，而如果使用了`IntelliJIDEA`，还需要配置项目自动编译。
 
@@ -71,9 +73,7 @@ public class TestController {
 ## RequestMapping
 
 - `@RequestMapping`注解主要负责 URL 的路由映射。它可以添加在 Controller 类或者具体的方法上。
-
 - 如果添加在 Controller 类上，则这个 Controller 中的所有路由映射都将会加上此映射规则，如果添加在方法上，则只对当前方法生效。
-
 - `@RequestMapping`注解包含很多属性参数来定义 HTTP 的请求映射规则。常用的属性参数如下:
 
   - value: 请求 URL 的路径，支持 URL 模板、正则表达式
@@ -164,37 +164,29 @@ public class ParamsController {
 ## 静态资源访问
 
 - 使用 IDEA 创建 Spring Boot 项目会默认创建出`classpath:/static/`目录，静态资源一般放在这个目录下即可。
-
 - 如果默认的静态资源过滤策略不能满足开发需求，也可以自定义静态资源过滤策略。
-
 - 在`application.properties`中直接定义过滤规则和静态资源位置:
 
   ```properties
   spring.mvc.static-path-pattern=/static/**
   spring.web.resources,static-locations=classpath:/static/
   ```
-
 - 过滤规则为`/static/**`，静态资源位置为`classpath:/static/`
 
 ## 文件上传原理
 
 - 表单的`enctype`属性规定在发送到服务器之前应该如何对表单数据进行编码。
-
 - 当表单的`enctype="application/x-www-form-urlencoded”`（默认） 时，form 表单中的数据格式为: `key=value&key=value`
-
 - 当表单的`enctype="multipart/form-data"`时，其传输数据形式如下
 
   ![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202401191420448.png)
-
 - SpringBoot 工程嵌入的 tomcat 限制了请求的文件大小，每个文件的配置最大为 1Mb，单次请求的文件的总数不能大于 10Mb。
-
 - 要更改这个默认值需要在配置文件(如`application.properties`)中加入两个配置。
 
   ```properties
   spring.servlet.multipart.max-file-size=10MB
   spring.servlet.multipart.max-request-size=10MB
   ```
-
 - 当表单的`enctype="multipart/form-data"`时,可以使用`MultipartFile`获取上传的文件数据，再通过`transferTo`方法将其写入到磁盘中。
 
   ```java
@@ -226,7 +218,6 @@ public class ParamsController {
       }
   }
   ```
-
 - 如想要用户能够访问上传的图片，应该在配置文件加入如下配置
 
   ```properties
@@ -300,13 +291,13 @@ public class WebConfig implements WebMvcConfigurer {
 - HTTP 提供了 POST、GET、PUT、DELETE 等操作类型对某个 Web 资源进行 Create、Read、Update 和 Delete 操作。
 - 一个 HTTP 请求除了利用 URI 标志目标资源之外，还需要通过 HTTP Method 指定针对该资源的操作类型，一些常见的 HTTP 方法及其在 RESTful 风格下的使用:
 
-| HTTP 方法 | 操作   | 返回值                                                 | 特定返回值                                                              |
-| --------- | ------ | ------------------------------------------------------ | ----------------------------------------------------------------------- |
-| POST      | Create | 201 (Created), 提交或保存资源                          | 404 (Not Found), 409 (Conflict) 资源已存在                              |
-| GET       | Read   | 200 (OK), 获取资源或数据列表，支持分页、排序和条件查询 | 200 (OK) 返回资源, 404 (Not Found) 资源不存在                           |
-| PUT       | Update | 200 (OK) or 204 (Not Content), 修改资源                | 404 (Not Found) 资源不存在, 405 (Method Not Allowed) 禁止使用该方法调用 |
-| PATCH     | Update | 200 (OK) or 204 (Not Content), 部分修改                | 404 (Not Found) 资源不存在                                              |
-| DELETE    | Delete | 200 (OK), 资源删除成功                                 | 404 (Not Found) 资源不存在, 405 (Method Not Allowed) 禁止使用该方法调用 |
+|HTTP 方法|操作|返回值|特定返回值|
+| ---------| ------| ------------------------------------------------------| -----------------------------------------------------------------------|
+|POST|Create|201 (Created), 提交或保存资源|404 (Not Found), 409 (Conflict) 资源已存在|
+|GET|Read|200 (OK), 获取资源或数据列表，支持分页、排序和条件查询|200 (OK) 返回资源, 404 (Not Found) 资源不存在|
+|PUT|Update|200 (OK) or 204 (Not Content), 修改资源|404 (Not Found) 资源不存在, 405 (Method Not Allowed) 禁止使用该方法调用|
+|PATCH|Update|200 (OK) or 204 (Not Content), 部分修改|404 (Not Found) 资源不存在|
+|DELETE|Delete|200 (OK), 资源删除成功|404 (Not Found) 资源不存在, 405 (Method Not Allowed) 禁止使用该方法调用|
 
 ## HTTP 状态码
 
@@ -376,7 +367,6 @@ public class UsersController {
       <version>2.1.0</version>
   </dependency>
   ```
-
 - 在`http://127.0.0.1:8080/swagger-ui/index.html`打开即可
 
 # Mybatis Plus

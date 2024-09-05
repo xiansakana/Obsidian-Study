@@ -1,13 +1,19 @@
+# Spring_day01
+
 ---
+
 title: itheima-SSM Spring_day01
 tags:
-  - itheima
-  - Spring
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
-abbrlink: 442afd50
+
+- itheima
+- Spring
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192138024.jpg'
+  abbrlink: 442afd50
+
 ---
+
 # Spring_day01
 
 **今日目标**
@@ -26,15 +32,12 @@ abbrlink: 442afd50
 * 从使用和占有率看
 
   * Spring在市场的占有率与使用率高
-
   * Spring在企业的技术选型命中率高
-
   * 所以说,Spring技术是JavaEE开发必备技能，企业开发技术选型命中率>90%
 
     ![image-20210729171139088](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729171139088.png)
 
     **说明**:对于未使用Spring的项目一般都是些比较老的项目，大多都处于维护阶段。
-
 * 从专业角度看
 
   * 随着时代发展，软件规模与功能都呈几何式增长，开发难度也在不断递增，该如何解决?
@@ -54,10 +57,9 @@ abbrlink: 442afd50
   * AOP
     * 事务处理
 
-   1.Spring的简化操作都是基于这两块内容,所以这也是Spring学习中最为重要的两个知识点。
+  1.Spring的简化操作都是基于这两块内容,所以这也是Spring学习中最为重要的两个知识点。
 
-   2.事务处理属于Spring中AOP的具体应用，可以简化项目中的事务管理，也是Spring技术中的一大亮点。
-
+  2.事务处理属于Spring中AOP的具体应用，可以简化项目中的事务管理，也是Spring技术中的一大亮点。
 * 框架整合: Spring在框架整合这块已经做到了极致，它可以整合市面上几乎所有主流框架，比如:
 
   - MyBatis
@@ -66,11 +68,11 @@ abbrlink: 442afd50
   - Struts2
   - Hibernate
   - ……
-  
+
   这些框架中，我们目前只学习了MyBatis，所以在Spring框架的学习中，主要是学习如何整合MyBatis。
-  
+
   综上所述，对于Spring的学习，主要学习四块内容:
-  
+
   (1)IOC,(2)整合Mybatis(IOC的具体应用)，(3)AOP,(4)声明式事务(AOP的具体应用)
 
 ## 1.3 怎么学?
@@ -101,11 +103,9 @@ abbrlink: 442afd50
 
   * Spring能做什么:用以开发web、微服务以及分布式系统等,光这三块就已经占了JavaEE开发的九成多。
   * Spring并不是单一的一个技术，而是一个大家族，可以从官网的`Projects`中查看其包含的所有技术。
-
 * Spring发展到今天已经形成了一种开发的生态圈,Spring提供了若干个项目,每个项目用于完成特定的功能。
 
   * Spring已形成了完整的生态圈，也就是说我们可以完全使用Spring技术完成整个项目的构建、设计与开发。
-
   * Spring有若干个项目，可以根据需要自行选择，把这些个项目组合起来，起了一个名称叫==全家桶==，如下图所示
 
     ![image-20210729171850181](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729171850181.png)
@@ -123,11 +123,10 @@ abbrlink: 442afd50
     * SpringCloud:这个是用来做分布式之微服务架构的相关开发。
 
     除了上面的这三个技术外，还有很多其他的技术，也比较流行，如SpringData,SpringSecurity等，这些都可以被应用在我们的项目中。我们今天所学习的Spring其实指的是==Spring Framework==。
-  
 
 ## 2.1.2 了解Spring发展史
 
- 接下来我们介绍下Spring Framework这个技术是如何来的呢?
+接下来我们介绍下Spring Framework这个技术是如何来的呢?
 
 ![image-20210729171926576](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729171926576.png)
 
@@ -157,11 +156,9 @@ Spring发展史
 ## 2.2.1 系统架构图
 
 * Spring Framework是Spring生态圈中最基础的项目，是其他项目的根基。
-
 * Spring Framework的发展也经历了很多版本的变更，每个版本都有相应的调整
 
   ![image-20210729172153796](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729172153796.png)
-
 * Spring Framework的5版本目前没有最新的架构图，而最新的是4版本，所以接下来主要研究的是4的架构图
 
   ![1629720945720](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629720945720.png)
@@ -316,7 +313,7 @@ Spring创建了一个容器用来存放所创建的对象，这个容器就叫IO
 
 ## 3.1.1 入门案例思路分析
 
-(1)Spring是使用容器来管理bean对象的，那么管什么? 
+(1)Spring是使用容器来管理bean对象的，那么管什么?
 
 * 主要管理项目中所使用到的类对象，比如(Service和Dao)
 
@@ -581,7 +578,7 @@ public class BookServiceImpl implements BookService {
 
 ## 4.1 bean基础配置
 
-对于bean的配置中，主要会讲解`bean基础配置`,`bean的别名配置`,`bean的作用范围配置`==(重点)==,这三部分内容：
+对于bean的配置中，主要会讲解`bean基础配置`,`bean的别名配置`,`bean的作用范围配置`​==(重点)==,这三部分内容：
 
 ## 4.1.1 bean基础配置(id与class)
 
@@ -608,7 +605,6 @@ public class BookServiceImpl implements BookService {
 在解决这个问题之前，我们需要准备下开发环境，对于开发环境我们可以有两种解决方案:
 
 * 使用前面IOC和DI的案例
-
 * 重新搭建一个新的案例环境,目的是方便大家查阅代码
 
   * 搭建的内容和前面的案例是一样的，内容如下：
@@ -669,7 +665,6 @@ public class AppForName {
 * bean依赖注入的ref属性指定bean，必须在容器中存在
 
   ![1629771744003](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629771744003.png)
-
 * 如果不存在,则会报错，如下:
 
   ![1629771880920](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629771880920.png)
@@ -705,7 +700,7 @@ public class AppForName {
       public static void main(String[] args) {
           ApplicationContext ctx = new 
               ClassPathXmlApplicationContext("applicationContext.xml");
-  
+
           BookDao bookDao1 = (BookDao) ctx.getBean("bookDao");
           BookDao bookDao2 = (BookDao) ctx.getBean("bookDao");
           System.out.println(bookDao1);
@@ -713,11 +708,9 @@ public class AppForName {
       }
   }
   ```
-
 * 打印，观察控制台的打印结果
 
   ![1629772538893](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629772538893.png)
-
 * 结论:默认情况下，Spring创建的bean对象都是单例的
 
 获取到结论后，问题就来了，那如果我想创建出来非单例的bean对象，该如何实现呢?
@@ -731,7 +724,6 @@ public class AppForName {
   ```xml
   <bean id="bookDao" name="dao" class="com.itheima.dao.impl.BookDaoImpl" scope=""/>
   ```
-
 * 将scope设置为`singleton`
 
   ```xml
@@ -741,7 +733,6 @@ public class AppForName {
   运行AppForScope，打印看结果
 
   ![1629772538893](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629772538893.png)
-
 * 将scope设置为`prototype`
 
   ```
@@ -751,7 +742,6 @@ public class AppForName {
   运行AppForScope，打印看结果
 
   ![1629772928714](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629772928714.png)
-
 * 结论，使用bean的`scope`属性可以控制bean的创建是否为单例：
 
   * `singleton`默认为单例
@@ -932,7 +922,7 @@ public class BookDaoImpl implements BookDao {
 Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.itheima.dao.impl.BookDaoImpl]: No default constructor found; nested exception is java.lang.NoSuchMethodException: com.itheima.dao.impl.BookDaoImpl.`<init>`()
 
 * nested:嵌套的意思，后面的异常内容和最底层的异常是一致的
-* Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.itheima.dao.impl.BookDaoImpl]: No default constructor found; 
+* Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.itheima.dao.impl.BookDaoImpl]: No default constructor found;
   * Caused by: `引发`
   * BeanInstantiationException:翻译为`bean实例化异常`
   * No default constructor found:没有一个默认的构造函数被发现
@@ -1116,11 +1106,9 @@ public class AppForInstanceUser {
 实例化工厂运行的顺序是:
 
 * 创建实例化工厂对象,对应的是第一行配置
-
 * 调用对象中的方法来创建bean，对应的是第二行配置
 
   * factory-bean:工厂的实例对象
-
   * factory-method:工厂对象中的具体创建对象的方法名,对应关系如下:
 
     ![image-20210729200203249](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210729200203249.png)
@@ -1397,20 +1385,17 @@ public class BookDaoImpl implements BookDao {
 ## 4.3.3 close关闭容器
 
 * ApplicationContext中没有close方法
-
 * 需要将ApplicationContext更换成ClassPathXmlApplicationContext
 
   ```java
   ClassPathXmlApplicationContext ctx = new 
       ClassPathXmlApplicationContext("applicationContext.xml");
   ```
-
 * 调用ctx的close()方法
 
   ```
   ctx.close();
   ```
-
 * 运行程序，就能执行destroy方法的内容
 
   ![1629792857608](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629792857608.png)
@@ -1418,15 +1403,13 @@ public class BookDaoImpl implements BookDao {
 ## 4.3.4 注册钩子关闭容器
 
 * 在容器未关闭之前，提前设置好回调函数，让JVM在退出之前回调此函数来关闭容器
-
 * 调用ctx的registerShutdownHook()方法
 
   ```
   ctx.registerShutdownHook();
   ```
 
-  **注意:**registerShutdownHook在ApplicationContext中也没有
-
+  **注意:** registerShutdownHook在ApplicationContext中也没有
 * 运行后，查询打印结果
 
   ![1629792857608](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629792857608.png)
@@ -1473,15 +1456,11 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
 **小细节**
 
 * 对于InitializingBean接口中的afterPropertiesSet方法，翻译过来为`属性设置之后`。
-
 * 对于BookServiceImpl来说，bookDao是它的一个属性
-
 * setBookDao方法是Spring的IOC容器为其注入属性的方法
-
 * 思考:afterPropertiesSet和setBookDao谁先执行?
 
   * 从方法名分析，猜想应该是setBookDao方法先执行
-
   * 验证思路，在setBookDao方法中添加一句话
 
     ```java
@@ -1489,9 +1468,8 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
             System.out.println("set .....");
             this.bookDao = bookDao;
         }
-    
-    ```
 
+    ```
   * 重新运行AppForLifeCycle，打印结果如下:
 
     ![1629794928636](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629794928636.png)
@@ -1791,7 +1769,7 @@ value:后面跟的是简单数据类型，对于参数类型，Spring在注入�
 
 ![1629800324721](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629800324721.png)
 
-**注意:**两个property注入标签的顺序可以任意。
+**注意:** 两个property注入标签的顺序可以任意。
 
 对于setter注入方式的基本使用就已经介绍完了，
 
@@ -1935,7 +1913,6 @@ public class BookServiceImpl implements BookService{
 标签`<constructor-arg>`中
 
 * name属性对应的值为构造函数中方法形参的参数名，必须要保持一致。
-
 * ref属性指向的是spring的IOC容器中其他bean对象。
 
 ### 步骤3：运行程序
@@ -1995,7 +1972,7 @@ public class BookServiceImpl implements BookService{
 </beans>
 ```
 
-**说明:**这两个`<contructor-arg>`的配置顺序可以任意
+**说明:** 这两个`<contructor-arg>`的配置顺序可以任意
 
 ### 步骤3:运行程序
 
@@ -2055,7 +2032,7 @@ public class BookDaoImpl implements BookDao {
 </beans>
 ```
 
-**说明:**这两个`<contructor-arg>`的配置顺序可以任意
+**说明:** 这两个`<contructor-arg>`的配置顺序可以任意
 
 ### 步骤3:运行程序
 
@@ -2118,7 +2095,6 @@ public class BookDaoImpl implements BookDao {
     	<property name="" value=""/>
     </bean>
     ```
-
   * 引用数据类型
 
     ```xml
@@ -2126,7 +2102,6 @@ public class BookDaoImpl implements BookDao {
     	<property name="" ref=""/>
     </bean>
     ```
-
 * 构造器注入
 
   * 简单数据类型
@@ -2136,7 +2111,6 @@ public class BookDaoImpl implements BookDao {
     	<constructor-arg name="" index="" type="" value=""/>
     </bean>
     ```
-
   * 引用数据类型
 
     ```xml
@@ -2144,7 +2118,6 @@ public class BookDaoImpl implements BookDao {
     	<constructor-arg name="" index="" type="" ref=""/>
     </bean>
     ```
-
 * 依赖注入的方式选择上
 
   * 建议使用setter注入
@@ -2304,10 +2277,8 @@ public class AppForAutoware {
     * 为什么是去掉set首字母小写?
     * 这个规则是set方法生成的默认规则，set方法的生成是把属性名首字母大写前面加set形成的方法名
   * 所以按照名称注入，其实是和对应的set方法有关，但是如果按照标准起名称，属性名和set对应的名是一致的
-
 * 如果按照名称去找对应的bean对象，找不到则注入Null
-
-* 当某一个类型在IOC容器中有多个对象，按照名称注入只找其指定名称对应的bean对象，不会报错 
+* 当某一个类型在IOC容器中有多个对象，按照名称注入只找其指定名称对应的bean对象，不会报错
 
 两种方式介绍完后，以后用的更多的是==按照类型==注入。
 

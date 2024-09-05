@@ -1,11 +1,16 @@
+# Markdown语法参考
+
 ---
+
 title: Markdown语法参考
 tags:
-  - Markdown
-categories: 杂项
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201855290.png
-abbrlink: bc03c1d4
-date: 2023-10-18 04:03:23
+
+- Markdown
+  categories: 杂项
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309201855290.png
+  abbrlink: bc03c1d4
+  date: 2023-10-18 04:03:23
+
 ---
 
 # [Typora 的 Markdown 语法](https://support.typoraio.cn/zh/Markdown-Reference/)
@@ -58,7 +63,9 @@ date: 2023-10-18 04:03:23
 
 ---
 
+<div>
 <hr style="border:1px solid red;">
+</div>
 
 # 字体
 
@@ -85,26 +92,26 @@ date: 2023-10-18 04:03:23
 ```
 
 <font face="kaiti">这里是楷体</font>
-<br/>
+
 <font face="heiti">这里是黑体</font>
-<br/>
+
 <font face="simsun">这里是宋体</font>
-<br/>
+
 <font face="幼圆">这里是幼圆</font>
-<br/>
+
 <font face="华文彩云">这里是华文彩云</font>
-<br/>
+
 <font face="Arial">This is Arial</font>
-<br/>
+
 <font face="Arial Narrow">This is Arial Narrow</font>
-<br/>
+
 <font face="Times New Roman">This is Times New Roman</font>
-<br/>
+
 <font face="Calibri">This is Calibri</font>
-<br/>
+
 <font color="red"><b>红色加粗</b></font>
-<br/>
-<font style="background: linear-gradient( to right, #ff1616, #ff7716, #ffdc16, #36c945, #10a5ce, #Of0096, #a51eff, #ff1616); ">这是七色光彩背景颜色</font>
+
+<font style="background: linear-gradient( to right, #ff1616,# #ff7716,# #ffdc16,# #36c945,# #10a5ce,# #Of0096,# #a51eff,# #ff1616);# ">这是七色光彩背景颜色</font>
 
 ## 其他
 
@@ -122,8 +129,8 @@ $\theta=x^2$
 ==高亮==
 ~~删除线~~
 **粗\*\***体**
-_斜体_
-**_粗_\***\*_斜_**_**体**_
+*斜体*
+**_粗_\***\**斜_*​ ***_***​*体*** 
 <u>下划线</u>
 😄
 [emoji 链接](https://unicode.org/emoji/charts/full-emoji-list.html)
@@ -169,9 +176,12 @@ $\theta=x^2$
 
 > 一级引用
 
-> > 二级引用
+>> 二级引用
+>>
 
-> > > 三级引用
+>>> 三级引用
+>>>
+>>
 
 # 脚注
 
@@ -232,7 +242,7 @@ $\theta=x^2$
 * 无序列表 2
   - [ ] 子序列 1
   - [ ] 子序列 2
-  - [x] 子序列 3
+  - [X] 子序列 3
 
 - 无序列表 3
 
@@ -553,10 +563,10 @@ $$
 |travelling|是否启用 nav 开往按钮|
 ```
 
-|    参数    |                     解释                      |
+|参数|解释|
 | :--------: | :-------------------------------------------: |
-|   enable   | 是否启用 nav 左侧项目按钮，仅控制左侧项目按钮 |
-| travelling |             是否启用 nav 开往按钮             |
+|enable|是否启用 nav 左侧项目按钮，仅控制左侧项目按钮|
+|travelling|是否启用 nav 开往按钮|
 
 ### 真值表
 
@@ -645,7 +655,9 @@ $$
 
 [【静止画 MAD】FRIEND](https://www.bilibili.com/video/BV1uL411W7HT)
 
-  <!--<iframe src="https://player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &danmaku="1" width="90%" height="360" autoplay="false"> </iframe>-->
+<div>
+<!--<iframe src="https://player.bilibili.com/player.html?aid=461536590&bvid=BV1uL411W7HT&cid=368370249&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &danmaku="1" width="90%" height="360" autoplay="false"> </iframe>-->
+</div>
 
 # 图片
 

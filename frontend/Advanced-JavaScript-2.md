@@ -1,12 +1,17 @@
+# Advanced-JavaScript-2
+
 ---
+
 title: Advanced JavaScript 2
 tags:
-  - JavaScript
-  - 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120954245.jpg
-categories: 前端
-abbrlink: fe499abe
-date: 2023-11-12 09:01:24
+
+- JavaScript
+- 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120954245.jpg
+  categories: 前端
+  abbrlink: fe499abe
+  date: 2023-11-12 09:01:24
+
 ---
 
 # Execution Context 执行环境
@@ -78,13 +83,10 @@ hello2()可以访问到的全局变量(global variable)的 x = 10 吗？（可�
 JavaScript 的变数有以下几种 Scope ：
 
 1. Global scope: The default scope for all code running in the script.
-
 2. Module scope: The scope for code running in module mode.
-
 3. Function scope: The scope is created with a function.
 
    此外，用 let 或是 const 去声明的变量属于下面这个额外的 scope：
-
 4. Block scope: The scope created with a pair of curly braces (a block).
 
 在 function execution context 中，如果发现不在 function scope 内部的变量，JavaScript 将转到其他地方查找。Closure（闭包）就是指这种将函数与其周围的状态或语词环境结合在一起的组合。在 JavaScript 中，每次 function execution context 都会在 creation phase 创建 closure。

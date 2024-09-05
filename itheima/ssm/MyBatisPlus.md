@@ -1,14 +1,20 @@
+# MyBatisPlus
+
 ---
+
 title: itheima-SSM MyBatisPlus
 tags:
-  - itheima
-  - MyBatisPlus
-  - 后端
-  - SpringBoot
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg
-abbrlink: 159f8f6d
+
+- itheima
+- MyBatisPlus
+- 后端
+- SpringBoot
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192132831.jpg
+  abbrlink: 159f8f6d
+
 ---
+
 # MyBatisPlus
 
 **今日目标**
@@ -28,8 +34,8 @@ abbrlink: 159f8f6d
 ## 1.1 入门案例
 
 * MybatisPlus(简称MP)是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提供效率。
-
 * 开发方式
+
   * 基于MyBatis使用MyBatisPlus
   * 基于Spring使用MyBatisPlus
   * 基于SpringBoot使用MyBatisPlus
@@ -41,15 +47,12 @@ SpringBoot刚刚我们学习完成，它能快速构建Spring开发环境用以�
 * 创建SpringBoot工程
 
   ![1630997819698](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630997819698.png)
-
 * 勾选配置使用的技术，能够实现自动添加起步依赖包
 
   ![1630997860020](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630997860020.png)
-
 * 设置dataSource相关属性(JDBC参数)
 
   ![1630997901479](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630997901479.png)
-
 * 定义数据层接口映射配置
 
   ![1630997929891](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630997929891.png)
@@ -104,7 +107,6 @@ insert into user values(4,'传智播客','itcast',15,'4006184000');
 **说明:**
 
 * druid数据源可以加也可以不加，SpringBoot有内置的数据源，可以配置成使用Druid数据源
-
 * 从MP的依赖关系可以看出，通过依赖传递已经将MyBatis与MyBatis整合Spring的jar包导入，我们不需要额外在添加MyBatis的相关jar包
 
   ![1631206757758](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631206757758.png)
@@ -123,7 +125,7 @@ spring:
     password: root
 ```
 
-**说明:**serverTimezone是用来设置时区，UTC是标准时区，和咱们的时间差8小时，所以可以将其修改为`Asia/Shanghai`
+**说明:** serverTimezone是用来设置时区，UTC是标准时区，和咱们的时间差8小时，所以可以将其修改为`Asia/Shanghai`
 
 ## 步骤6:根据数据库表创建实体类
 
@@ -159,7 +161,7 @@ public class Mybatisplus01QuickstartApplication {
 }
 ```
 
-**说明:**Dao接口要想被容器扫描到，有两种解决方案:
+**说明:** Dao接口要想被容器扫描到，有两种解决方案:
 
 * 方案一:在Dao接口上添加`@Mapper`注解，并且确保Dao处在引导类所在包或其子包中
   * 该方案的缺点是需要在每一Dao接口中添加注解
@@ -187,7 +189,6 @@ class MpDemoApplicationTests {
 userDao注入的时候下面有红线提示的原因是什么?
 
 * UserDao是一个接口，不能实例化对象
-
 * 只有在服务器启动IOC容器初始化后，由框架创建DAO接口的代理对象来注入
 * 现在服务器并未启动，所以代理对象也未创建，IDEA查找不到对应的对象注入，所以提示报红
 * 一旦服务启动，就能注入其代理对象，所以该错误提示不影响正常运行。
@@ -254,7 +255,6 @@ int insert (T t)
 ```
 
 * T:泛型，新增用来保存新增数据
-
 * int:返回值，新增成功后返回1，没有新增成功返回的是0
 
 在测试类中进行新增操作:
@@ -304,7 +304,6 @@ int deleteById (Serializable id)
     * Number又是Float,Double,Integer等类的父类，
     * 能作为主键的数据类型都已经是Serializable的子类，
     * MP使用Serializable作为参数类型，就好比我们可以用Object接收任何数据类型一样。
-
 * int:返回值类型，数据删除成功返回1，未删除数据返回0。
 
 在测试类中进行新增操作:
@@ -333,7 +332,6 @@ int updateById(T t);
 ```
 
 - T:泛型，需要修改的数据内容，注意因为是根据ID进行修改，所以传入的对象中需要有ID属性值
-
 - int:返回值，修改成功后返回1，未修改数据返回0
 
 在测试类中进行新增操作:
@@ -356,7 +354,7 @@ class Mybatisplus01QuickstartApplicationTests {
 }
 ```
 
-**说明:**修改的时候，只修改实体对象中有值的字段。
+**说明:** 修改的时候，只修改实体对象中有值的字段。
 
 ## 2.5 根据ID查询
 
@@ -443,7 +441,7 @@ class Mybatisplus01QuickstartApplicationTests {
 </dependency>
 ```
 
-**注意：**版本可以不用写，因为SpringBoot中已经管理了lombok的版本。
+**注意：** 版本可以不用写，因为SpringBoot中已经管理了lombok的版本。
 
 ### 步骤2:安装Lombok的插件
 
@@ -571,7 +569,7 @@ public class MybatisPlusConfig {
 }
 ```
 
-**说明:**上面的代码记不住咋办呢?
+**说明:** 上面的代码记不住咋办呢?
 
 这些内容在MP的官方文档中有详细的说明，我们可以查看官方文档类配置
 
@@ -619,7 +617,6 @@ mybatis-plus:
 在构建条件查询之前，我们先来准备下环境
 
 * 创建一个SpringBoot项目
-
 * pom.xml中添加对应的依赖
 
   ```xml
@@ -639,43 +636,43 @@ mybatis-plus:
           <java.version>1.8</java.version>
       </properties>
       <dependencies>
-  
+
           <dependency>
               <groupId>com.baomidou</groupId>
               <artifactId>mybatis-plus-boot-starter</artifactId>
               <version>3.4.1</version>
           </dependency>
-  
+
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter</artifactId>
           </dependency>
-  
+
           <dependency>
               <groupId>com.alibaba</groupId>
               <artifactId>druid</artifactId>
               <version>1.1.16</version>
           </dependency>
-  
+
           <dependency>
               <groupId>mysql</groupId>
               <artifactId>mysql-connector-java</artifactId>
               <scope>runtime</scope>
           </dependency>
-  
+
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-test</artifactId>
               <scope>test</scope>
           </dependency>
-  
+
           <dependency>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
           </dependency>
-  
+
       </dependencies>
-  
+
       <build>
           <plugins>
               <plugin>
@@ -684,11 +681,10 @@ mybatis-plus:
               </plugin>
           </plugins>
       </build>
-  
+
   </project>
-  
+
   ```
-  
 * 编写UserDao接口
 
   ```java
@@ -696,7 +692,6 @@ mybatis-plus:
   public interface UserDao extends BaseMapper<User> {
   }
   ```
-
 * 编写模型类
 
   ```java
@@ -709,20 +704,18 @@ mybatis-plus:
       private String tel;
   }
   ```
-
 * 编写引导类
 
   ```java
   @SpringBootApplication
   public class Mybatisplus02DqlApplication {
-  
+
       public static void main(String[] args) {
           SpringApplication.run(Mybatisplus02DqlApplication.class, args);
       }
-  
+
   }
   ```
-
 * 编写配置文件
 
   ```yml
@@ -739,16 +732,15 @@ mybatis-plus:
     configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   ```
-
 * 编写测试类
 
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-  
+
       @Autowired
       private UserDao userDao;
-      
+
       @Test
       void testGetAll(){
           List<User> userList = userDao.selectList(null);
@@ -760,7 +752,6 @@ mybatis-plus:
   最终创建的项目结构为:
 
   ![1631033477792](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631033477792.png)
-
 * 测试的时候，控制台打印的日志比较多，速度有点慢而且不利于查看运行结果，所以接下来我们把这个日志处理下:
 
   * 取消初始化spring日志打印，resources目录下添加logback.xml，名称固定，内容如下:
@@ -771,8 +762,7 @@ mybatis-plus:
     </configuration>
     ```
 
-    **说明:**logback.xml的配置内容，不是我们学习的重点，如果有兴趣可以自行百度查询。
-
+    **说明:** logback.xml的配置内容，不是我们学习的重点，如果有兴趣可以自行百度查询。
   * 取消MybatisPlus启动banner图标
 
     ![1631021315906](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631021315906.png)
@@ -787,7 +777,6 @@ mybatis-plus:
       global-config:
         banner: off # 关闭mybatisplus启动图标
     ```
-
   * 取消SpringBoot的log打印
 
     ![1631021269422](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631021269422.png)
@@ -860,7 +849,7 @@ class Mybatisplus02DqlApplicationTests {
 SELECT id,name,password,age,tel FROM user WHERE (age < ?)
 ```
 
-**注意:**构建LambdaQueryWrapper的时候泛型不能省。
+**注意:** 构建LambdaQueryWrapper的时候泛型不能省。
 
 此时我们再次编写条件的时候，就不会存在写错名称的情况，但是qw后面多了一层lambda()调用
 
@@ -914,7 +903,6 @@ class Mybatisplus02DqlApplicationTests {
   ```sql
   SELECT id,name,password,age,tel FROM user WHERE (age < ? AND age > ?)
   ```
-
 * 构建多条件的时候，可以支持链式编程
 
   ```java
@@ -1111,16 +1099,15 @@ class Mybatisplus02DqlApplicationTests {
   ```sql
   SELECT id,name,age FROM user
   ```
-
 * 如果使用的不是lambda，就需要手动指定字段
 
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-  
+
       @Autowired
       private UserDao userDao;
-      
+
       @Test
       void testGetAll(){
           QueryWrapper<User> lqw = new QueryWrapper<User>();
@@ -1248,9 +1235,7 @@ class Mybatisplus02DqlApplicationTests {
   ```sql
   SELECT id,name,password,age,tel FROM user WHERE (name = ? AND password = ?)
   ```
-
 * selectList：查询结果为多个或者单个
-
 * selectOne:查询结果为单个
 
 ## 3.3.2 范围查询
@@ -1388,12 +1373,12 @@ Unknown column '多出来的字段名称' in 'field list'
 
 ## 知识点1：@TableField
 
-| 名称     | @TableField                                                  |
-| -------- | ------------------------------------------------------------ |
-| 类型     | 属性注解                                                 |
-| 位置     | 模型类属性定义上方                                           |
-| 作用     | 设置当前属性对应的数据库表中的字段关系                       |
-| 相关属性 | value(默认)：设置数据库表字段名称<br/>exist:设置属性在数据库表字段中是否存在，默认为true，此属性不能与value合并使用<br/>select:设置属性是否参与查询，此属性与select()映射配置不冲突 |
+|名称|@TableField|
+| --------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|类型|属性注解|
+|位置|模型类属性定义上方|
+|作用|设置当前属性对应的数据库表中的字段关系|
+|相关属性|value(默认)：设置数据库表字段名称<br />exist:设置属性在数据库表字段中是否存在，默认为true，此属性不能与value合并使用<br />select:设置属性是否参与查询，此属性与select()映射配置不冲突|
 
 ## 问题4:表名与编码开发设计不同步
 
@@ -1409,12 +1394,12 @@ Table 'databaseName.tableNaem' doesn't exist,翻译过来就是数据库中的�
 
 ## 知识点2：@TableName
 
-| 名称     | @TableName                    |
-| -------- | ----------------------------- |
-| 类型     | 类注解                    |
-| 位置     | 模型类定义上方                |
-| 作用     | 设置当前类对应于数据库表关系  |
-| 相关属性 | value(默认)：设置数据库表名称 |
+|名称|@TableName|
+| --------| -----------------------------|
+|类型|类注解|
+|位置|模型类定义上方|
+|作用|设置当前类对应于数据库表关系|
+|相关属性|value(默认)：设置数据库表名称|
 
 ## 代码演示
 
@@ -1536,19 +1521,18 @@ public class User {
 
 ## 知识点1：@TableId
 
-| 名称     | @TableId                                                     |
-| -------- | ------------------------------------------------------------ |
-| 类型     | 属性注解                                                 |
-| 位置     | 模型类中用于表示主键的属性定义上方                           |
-| 作用     | 设置当前类中主键属性的生成策略                               |
-| 相关属性 | value(默认)：设置数据库表主键名称<br/>type:设置主键属性的生成策略，值查照IdType的枚举值 |
+|名称|@TableId|
+| --------| ----------------------------------------------------------------------------------|
+|类型|属性注解|
+|位置|模型类中用于表示主键的属性定义上方|
+|作用|设置当前类中主键属性的生成策略|
+|相关属性|value(默认)：设置数据库表主键名称<br />type:设置主键属性的生成策略，值查照IdType的枚举值|
 
 ## 4.1.1 环境构建
 
 在构建条件查询之前，我们先来准备下环境
 
 - 创建一个SpringBoot项目
-
 - pom.xml中添加对应的依赖
 
   ```xml
@@ -1569,44 +1553,44 @@ public class User {
           <java.version>1.8</java.version>
       </properties>
       <dependencies>
-  
+
           <dependency>
               <groupId>com.baomidou</groupId>
               <artifactId>mybatis-plus-boot-starter</artifactId>
               <version>3.4.1</version>
           </dependency>
-  
+
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter</artifactId>
           </dependency>
-  
+
           <dependency>
               <groupId>com.alibaba</groupId>
               <artifactId>druid</artifactId>
               <version>1.1.16</version>
           </dependency>
-  
+
           <dependency>
               <groupId>mysql</groupId>
               <artifactId>mysql-connector-java</artifactId>
               <scope>runtime</scope>
           </dependency>
-  
+
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-test</artifactId>
               <scope>test</scope>
           </dependency>
-  
+
           <dependency>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
               <version>1.18.12</version>
           </dependency>
-  
+
       </dependencies>
-  
+
       <build>
           <plugins>
               <plugin>
@@ -1615,11 +1599,10 @@ public class User {
               </plugin>
           </plugins>
       </build>
-  
-  </project>
-  
-  ```
 
+  </project>
+
+  ```
 - 编写UserDao接口
 
   ```java
@@ -1627,7 +1610,6 @@ public class User {
   public interface UserDao extends BaseMapper<User> {
   }
   ```
-
 - 编写模型类
 
   ```java
@@ -1644,20 +1626,18 @@ public class User {
       private Integer online;
   }
   ```
-
 - 编写引导类
 
   ```java
   @SpringBootApplication
   public class Mybatisplus03DqlApplication {
-  
+
       public static void main(String[] args) {
           SpringApplication.run(Mybatisplus03DqlApplication.class, args);
       }
-  
+
   }
   ```
-
 - 编写配置文件
 
   ```yml
@@ -1674,16 +1654,15 @@ public class User {
     configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   ```
-
 - 编写测试类
 
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-  
+
       @Autowired
       private UserDao userDao;
-      
+
       @Test
       void testGetAll(){
           List<User> userList = userDao.selectList(null);
@@ -1691,16 +1670,15 @@ public class User {
       }
   }
   ```
-
 - 测试
 
   ```java
   @SpringBootTest
   class Mybatisplus03DqlApplicationTests {
-  
+
       @Autowired
       private UserDao userDao;
-  	
+
       @Test
       void testSave(){
           User user = new User();
@@ -1724,7 +1702,6 @@ public class User {
       }
   }
   ```
-
 - 最终创建的项目结构为:
 
   ![1631033634879](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631033634879.png)
@@ -1756,12 +1733,11 @@ public class User {
 * 删除测试数据
 
   ![1631211291677](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631211291677.png)
-
 * 因为之前生成主键ID的值比较长，会把MySQL的自动增长的值变的很大，所以需要将其调整为目前最新的id值。
 
 ![1631211080703](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631211080703.png)
 
-### 步骤3:运行新增方法  
+### 步骤3:运行新增方法
 
 会发现，新增成功，并且主键id也是从5开始
 
@@ -1816,7 +1792,7 @@ public class User {
 }
 ```
 
-**注意:**这种ID生成策略，需要将表的自增策略删除掉
+**注意:** 这种ID生成策略，需要将表的自增策略删除掉
 
 ![1631212246124](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631212246124.png)
 
@@ -1894,9 +1870,9 @@ class Mybatisplus03DqlApplicationTests {
 }
 ```
 
-**注意:**这种生成策略，不需要手动设置ID，如果手动设置ID，则会使用自己设置的值。
+**注意:** 这种生成策略，不需要手动设置ID，如果手动设置ID，则会使用自己设置的值。
 
-### 步骤3:运行新增方法  
+### 步骤3:运行新增方法
 
 ![1631242753467](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631242753467.png)
 
@@ -1954,8 +1930,6 @@ class Mybatisplus03DqlApplicationTests {
 ### 步骤4:运行新增方法
 
 ![1631243810974](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631243810974.png)
-
-
 
 接下来我们来聊一聊雪花算法:
 
@@ -2097,21 +2071,15 @@ class Mybatisplus03DqlApplicationTests {
 ![1631246806130](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631246806130.png)
 
 * 这是一个员工和其所签的合同表，关系是一个员工可以签多个合同，是一个一(员工)对多(合同)的表
-
 * 员工ID为1的张业绩，总共签了三个合同，如果此时他离职了，我们需要将员工表中的数据进行删除，会执行delete操作
-
 * 如果表在设计的时候有主外键关系，那么同时也得将合同表中的前三条数据也删除掉
 
   ![1631246997190](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631246997190.png)
-
 * 后期要统计所签合同的总金额，就会发现对不上，原因是已经将员工1签的合同信息删除掉了
-
 * 如果只删除员工不删除合同表数据，那么合同的员工编号对应的员工信息不存在，那么就会出现垃圾数据，就会出现无主合同，根本不知道有张业绩这个人的存在
-
 * 所以经过分析，我们不应该将表中的数据删除掉，而是需要进行保留，但是又得把离职的人和在职的人进行区分，这样就解决了上述问题，如:
 
   ![1631247188218](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631247188218.png)
-
 * 区分的方式，就是在员工表中添加一列数据`deleted`，如果为0说明在职员工，如果离职则将其改完1，（0和1所代表的含义是可以自定义的）
 
 所以对于删除操作业务问题来说有:
@@ -2181,10 +2149,10 @@ class Mybatisplus03DqlApplicationTests {
   ```java
   @SpringBootTest
   class Mybatisplus03DqlApplicationTests {
-  
+
       @Autowired
       private UserDao userDao;
-  	
+
       @Test
       void testFind(){
          System.out.println(userDao.selectList(null));
@@ -2197,7 +2165,6 @@ class Mybatisplus03DqlApplicationTests {
   ![1631248019999](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631248019999.png)
 
   可想而知，MP的逻辑删除会将所有的查询都添加一个未被删除的条件，也就是已经被删除的数据是不应该被查询出来的。
-
 * 如果还是想把已经删除的数据都查询出来该如何实现呢?
 
   ```java
@@ -2208,7 +2175,6 @@ class Mybatisplus03DqlApplicationTests {
       public List<User> selectAll();
   }
   ```
-
 * 如果每个表都要有逻辑删除，那么就需要在每个模型类的属性上添加`@TableLogic`注解，如何优化?
 
   在配置文件中添加全局配置，如下:
@@ -2237,16 +2203,14 @@ UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 
 ![1631248494929](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631248494929.png)
 
-
-
 ## 知识点1：@TableLogic
 
-| 名称   | @TableLogic                   |
-| ---- | ----------------------------- |
-| 类型   | 属性注解                          |
-| 位置   | 模型类中用于表示删除字段的属性定义上方           |
-| 作用   | 标识该字段为进行逻辑删除的字段               |
-| 相关属性 | value：逻辑未删除值<br/>delval:逻辑删除值 |
+|名称|@TableLogic|
+| --------| --------------------------------------|
+|类型|属性注解|
+|位置|模型类中用于表示删除字段的属性定义上方|
+|作用|标识该字段为进行逻辑删除的字段|
+|相关属性|value：逻辑未删除值<br />delval:逻辑删除值|
 
 ## 4.4 乐观锁
 
@@ -2706,9 +2670,8 @@ class Mybatisplus04GeneratorApplicationTests {
 }
 ```
 
-**注意:** mybatisplus_04_generator项目中对于MyBatis的环境是没有进行配置，如果想要运行，需要提取将配置文件中的内容进行完善后在运行。
+**注意:**  mybatisplus_04_generator项目中对于MyBatis的环境是没有进行配置，如果想要运行，需要提取将配置文件中的内容进行完善后在运行。
 
 思考:在MP封装的Service层都有哪些方法可以用?
 
 查看官方文档:`https://mp.baomidou.com/guide/crud-interface.html`,这些提供的方法大家可以参考官方文档进行学习使用，方法的名称可能有些变化，但是方法对应的参数和返回值基本类似。
-

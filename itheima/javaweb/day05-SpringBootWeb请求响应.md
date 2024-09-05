@@ -1,22 +1,20 @@
+# day05-SpringBootWeb请求响应
+
 ---
+
 title: itheima-JavaWeb day05-SpringBootWeb请求响应
 tags:
-  - itheima
-  - SpringBoot
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
-abbrlink: '24e2833'
+
+- itheima
+- SpringBoot
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192157955.jpg'
+  abbrlink: '24e2833'
+
 ---
+
 # SpringBootWeb请求响应
-
-
-
-
-
-
-
-
 
 # 前言
 
@@ -34,11 +32,11 @@ abbrlink: '24e2833'
 
 那将来浏览器发送请求，会携带请求数据，包括：请求行、请求头；请求到达tomcat之后，tomcat会负责解析这些请求数据，然后呢将解析后的请求数据会传递给Servlet程序的HttpServletRequest对象，那也就意味着 HttpServletRequest 对象就可以获取到请求数据。 而Tomcat，还给Servlet程序传递了一个参数 HttpServletResponse，通过这个对象，我们就可以给浏览器设置响应数据 。
 
-![image-20220826171407354](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171407354.png) 
+![image-20220826171407354](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171407354.png)
 
 那上述所描述的这种浏览器/服务器的架构模式呢，我们称之为：BS架构。
 
-![image-20220826171454775](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171454775.png) 
+![image-20220826171454775](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826171454775.png)
 
 • BS架构：Browser/Server，浏览器/服务器架构模式。客户端只需要浏览器，应用程序的逻辑和数据都存储在服务端。
 
@@ -47,16 +45,6 @@ abbrlink: '24e2833'
 > - 请求
 > - 响应
 > - 分层解耦
-
-
-
-
-
-
-
-
-
-
 
 # 1. 请求
 
@@ -81,16 +69,15 @@ abbrlink: '24e2833'
 
 ## 1.1.1 介绍
 
-![image-20220826173003949](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173003949.png) 
+![image-20220826173003949](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173003949.png)
 
 - Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。
 
   > Postman原是Chrome浏览器的插件，可以模拟浏览器向后端服务器发起任何形式(如:get、post)的HTTP请求
   >
   > 使用Postman还可以在发起请求时，携带一些请求参数、请求头等信息
-
+  >
 - 作用：常用于进行接口测试
-
 - 特征
 
   - 简单
@@ -98,15 +85,13 @@ abbrlink: '24e2833'
   - 美观
   - 大方
 
-
-
 ## 1.1.2 安装
 
-![image-20220826173919556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173919556.png) 
+![image-20220826173919556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826173919556.png)
 
 双击资料中提供的`Postman-win64-8.3.1-Setup.exe`即可自动安装。
 
-![image-20220826174601266](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826174601266.png) 
+![image-20220826174601266](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826174601266.png)
 
 安装完成之后，进入页面中会提示有新版本可以升级（无需升级）
 
@@ -116,17 +101,15 @@ abbrlink: '24e2833'
 
 界面介绍:
 
-![image-20220826175306141](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826175306141.png) 
-
-
+![image-20220826175306141](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826175306141.png)
 
 **如果我们需要将测试的请求信息保存下来，就需要创建一个postman的账号，然后登录之后才可以。**
 
 ![image-20221203103623435](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203103623435.png)
 
-![image-20221203112252985](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112252985.png) 
+![image-20221203112252985](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112252985.png)
 
-![image-20221203112320687](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112320687.png) 
+![image-20221203112320687](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203112320687.png)
 
 登录完成之后，可以创建工作空间：
 
@@ -154,12 +137,6 @@ abbrlink: '24e2833'
 
 ![image-20221203115110440](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203115110440.png)
 
-
-
-
-
-
-
 ## 1.2 简单参数
 
 简单参数：在向服务器发起请求时，向服务器传递的是一些普通的请求数据。
@@ -170,7 +147,7 @@ abbrlink: '24e2833'
 
 我们在这里讲解两种方式：
 
-1. 原始方式   
+1. 原始方式
 2. SpringBoot方式
 
 ## 1.2.1 原始方式
@@ -209,8 +186,6 @@ public class RequestController {
 
 > 以上这种方式，我们仅做了解。（在以后的开发中不会使用到）
 
-
-
 ## 1.2.2 SpringBoot方式
 
 在Springboot的环境中，对原始的API进行了封装，接收参数的形式更加简单。 如果是简单参数，参数名与形参变量名相同，定义同名的形参即可接收参数。
@@ -233,15 +208,13 @@ public class RequestController {
 
 **postman测试( GET 请求)：**
 
-![image-20221203122405075](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203122405075.png) 
+![image-20221203122405075](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203122405075.png)
 
 **postman测试( POST请求 )：**
 
 ![image-20220826181117898](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826181117898.png)
 
-> **结论：不论是GET请求还是POST请求，对于简单参数来讲，只要保证==请求参数名和Controller方法中的形参名保持一致==，就可以获取到请求参数中的数据值。**
-
-
+> **结论：不论是GET请求还是POST请求，对于简单参数来讲，只要保证**​**==请求参数名和Controller方法中的形参名保持一致==**​ **，就可以获取到请求参数中的数据值。**
 
 ## 1.2.3 参数名不一致
 
@@ -303,15 +276,9 @@ public class RequestController {
 > }
 > ~~~
 
-
-
-
-
-
-
 ## 1.3 实体参数
 
-在使用简单参数做为数据传递方式时，前端传递了多少个请求参数，后端controller方法中的形参就要书写多少个。如果请求参数比较多，通过上述的方式一个参数一个参数的接收，会比较繁琐。 
+在使用简单参数做为数据传递方式时，前端传递了多少个请求参数，后端controller方法中的形参就要书写多少个。如果请求参数比较多，通过上述的方式一个参数一个参数的接收，会比较繁琐。
 
 此时，我们可以考虑将请求参数封装到一个实体类对象中。 要想完成数据封装，需要遵守如下规则：**请求参数名与实体类的属性名相同**
 
@@ -371,15 +338,11 @@ Postman测试：
 
 - 参数名和实体类属性名一致时
 
-![image-20221203161246168](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203161246168.png) 
+![image-20221203161246168](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203161246168.png)
 
 - 参数名和实体类属性名不一致时
 
 ![image-20221203161004349](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203161004349.png)
-
-
-
-
 
 ## 1.3.2 复杂实体对象
 
@@ -489,28 +452,22 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221203162706175](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203162706175.png) 
-
-
-
-
+![image-20221203162706175](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203162706175.png)
 
 ## 1.4 数组集合参数
 
 数组集合参数的使用场景：在HTML的表单中，有一个表单项是支持多选的(复选框)，可以提交选择的多个值。
 
-![image-20221203164114083](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164114083.png) 
+![image-20221203164114083](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164114083.png)
 
 多个值是怎么提交的呢？其实多个值也是一个一个的提交。
 
-![image-20221203164944144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164944144.png) 
+![image-20221203164944144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203164944144.png)
 
 后端程序接收上述多个值的方式有两种：
 
 1. 数组
 2. 集合
-
-
 
 ## 1.4.1 数组
 
@@ -538,15 +495,11 @@ Postman测试：
 
 方式一： xxxxxxxxxx?hobby=game&hobby=java
 
-![image-20221203191732601](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203191732601.png) 
+![image-20221203191732601](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203191732601.png)
 
 方式二：xxxxxxxxxxxxx?hobby=game,java
 
 ![image-20221203191822996](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203191822996.png)
-
-
-
- 
 
 ## 1.4.2 集合
 
@@ -574,21 +527,17 @@ Postman测试：
 
 方式一： xxxxxxxxxx?hobby=game&hobby=java
 
-![image-20221203212221939](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203212221939.png) 
+![image-20221203212221939](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203212221939.png)
 
 方式二：xxxxxxxxxxxxx?hobby=game,java
 
 ![image-20221203212024679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203212024679.png)
 
-
-
-
-
 ## 1.5 日期参数
 
 上述演示的都是一些普通的参数，在一些特殊的需求中，可能会涉及到日期类型数据的封装。比如，如下需求：
 
-![image-20220826194159343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826194159343.png) 
+![image-20220826194159343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220826194159343.png)
 
 因为日期的格式多种多样（如：2022-12-12 10:05:45 、2022/12/12 10:05:45），那么对于日期类型的参数在进行封装的时候，需要通过@DateTimeFormat注解，以及其pattern属性来设置日期的格式。
 
@@ -615,10 +564,6 @@ Postman测试：
 
 ![image-20221203214600716](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203214600716.png)
 
-
-
-
-
 ## 1.6 JSON参数
 
 在学习前端技术时，我们有讲到过JSON，而在前后端进行交互时，如果是比较复杂的参数，前后端通过会使用JSON格式的数据进行传输。 （JSON是开发中最常用的前后端数据交互方式）
@@ -634,7 +579,7 @@ Postman发送JSON格式数据：
 
 服务端Controller方法接收JSON格式数据：
 
-- 传递json格式的参数，在Controller中会使用实体类进行封装。 
+- 传递json格式的参数，在Controller中会使用实体类进行封装。
 - 封装规则：**JSON数据键名与形参对象属性名相同，定义POJO类型形参即可接收参数。需要使用 @RequestBody标识。**
 
 ![image-20221203230457901](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203230457901.png)
@@ -680,11 +625,7 @@ public class RequestController {
 
 Postman测试：
 
-![image-20221203231803000](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203231803000.png) 
-
-
-
-
+![image-20221203231803000](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221203231803000.png)
 
 ## 1.7 路径参数
 
@@ -728,8 +669,6 @@ Postman测试：
 
 ![image-20221204002040184](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204002040184.png)
 
- 
-
 **传递多个路径参数：**
 
 Postman：
@@ -750,10 +689,6 @@ public class RequestController {
 }
 ~~~
 
-
-
-
-
 # 2. 响应
 
 前面我们学习过HTTL协议的交互方式：请求响应模式（有请求就有响应）
@@ -770,7 +705,7 @@ controller方法中的return的结果，怎么就可以响应给浏览器呢？
 
 答案：使用@ResponseBody注解
 
-**@ResponseBody注解：**
+ **@ResponseBody注解：**
 
 - 类型：方法注解、类注解
 - 位置：书写在Controller方法上或类上
@@ -792,7 +727,7 @@ public class HelloController {
 
 原因：在类上添加的@RestController注解，是一个组合注解。
 
-- @RestController = @Controller + @ResponseBody 
+- @RestController = @Controller + @ResponseBody
 
 @RestController源码：
 
@@ -814,8 +749,6 @@ public @interface RestController {
 
 - 类上有@RestController注解或@ResponseBody注解时：表示当前类下所有的方法返回值做为响应数据
   - 方法的返回值，如果是一个POJO对象或集合时，会先转换为JSON格式，在响应给浏览器
-
-
 
 下面我们来测试下响应数据：
 
@@ -862,8 +795,6 @@ public class ResponseController {
 
 ![image-20221204172705426](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204172705426.png)
 
-
-
 ## 2.2 统一响应结果
 
 大家有没有发现一个问题，我们在前面所编写的这些Controller方法中，返回值各种各样，没有任何的规范。
@@ -881,9 +812,7 @@ public class ResponseController {
 统一的返回结果使用类来描述，在这个结果中包含：
 
 - 响应状态码：当前请求是成功，还是失败
-
 - 状态码信息：给页面的提示信息
-
 - 返回的数据：给前端响应的数据（字符串、对象、集合）
 
 定义在一个实体类Result来包含以上信息。代码如下：
@@ -988,10 +917,6 @@ public class ResponseController {
 
 ![image-20221204180744084](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204180744084.png)
 
-
-
-
-
 ## 2.3 案例
 
 下面我们通过一个案例，来加强对请求响应的学习。
@@ -1000,23 +925,23 @@ public class ResponseController {
 
 需求：加载并解析xml文件中的数据，完成数据处理，并在页面展示
 
-![image-20221204185928260](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185928260.png)  
+![image-20221204185928260](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185928260.png)
 
 - 获取员工数据，返回统一响应结果，在页面渲染展示
-
-
 
 ## 2.3.2 准备工作
 
 案例准备：
 
 1. XML文件
+
    - 已经准备好(emp.xml)，直接导入进来，放在 src/main/resources目录下
 2. 工具类
+
    - 已经准备好解析XML文件的工具类，无需自己实现
    - 直接在创建一个包 com.itheima.utils ，然后将工具类拷贝进来
-
 3. 前端页面资源
+
    - 已经准备好，直接拷贝进来，放在src/main/resources下的static目录下
 
 Springboot项目的静态资源(html，css，js等前端资源)默认存放目录为：classpath:/static 、 classpath:/public、 classpath:/resources
@@ -1032,8 +957,6 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
 >
 > - 代表的是类路径，在maven的项目中，其实指的就是 src/main/resources 或者 src/main/java，但是java目录是存放java代码的，所以相关的配置文件及静态资源文档，就放在 src/main/resources下。
 
-
-
 ## 2.3.3 实现步骤
 
 1. 在pom.xml文件中引入dom4j的依赖，用于解析XML文件
@@ -1045,20 +968,15 @@ Springboot项目的静态资源(html，css，js等前端资源)默认存放目�
        <version>2.1.3</version>
    </dependency>
    ~~~
-
 2. 引入资料中提供的：解析XML的工具类XMLParserUtils、实体类Emp、XML文件emp.xml
 
-   ![image-20221204182828547](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204182828547.png) 
-
+   ![image-20221204182828547](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204182828547.png)
 3. 引入资料中提供的静态页面文件，放在resources下的static目录下
 
-   ![image-20221204183044848](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204183044848.png) 
-
+   ![image-20221204183044848](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204183044848.png)
 4. 创建EmpController类，编写Controller程序，处理请求，响应数据
 
-   ![image-20221204184313822](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204184313822.png) 
-
-
+   ![image-20221204184313822](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204184313822.png)
 
 ## 2.3.4 代码实现
 
@@ -1145,11 +1063,9 @@ public class Result {
 }
 ~~~
 
-
-
 ## 2.3.5 测试
 
-代码编写完毕之后，我们就可以运行引导类，启动服务进行测试了。 
+代码编写完毕之后，我们就可以运行引导类，启动服务进行测试了。
 
 使用Postman测试：
 
@@ -1157,11 +1073,7 @@ public class Result {
 
 打开浏览器，在浏览器地址栏输入： http://localhost:8080/emp.html
 
-![image-20221204185455556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185455556.png) 
-
-
-
-
+![image-20221204185455556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185455556.png)
 
 ## 2.3.6 问题分析
 
@@ -1172,16 +1084,10 @@ public class Result {
 当前程序的这个业务逻辑还是比较简单的，如果业务逻辑再稍微复杂一点，我们会看到Controller方法的代码量就很大了。
 
 - 当我们要修改操作数据部分的代码，需要改动Controller
-
 - 当我们要完善逻辑处理部分的代码，需要改动Controller
-
 - 当我们需要修改数据响应的代码，还是需要改动Controller
 
 这样呢，就会造成我们整个工程代码的复用性比较差，而且代码难以维护。 那如何解决这个问题呢？其实在现在的开发中，有非常成熟的解决思路，那就是分层开发。
-
-
-
-
 
 # 3. 分层解耦
 
@@ -1197,7 +1103,7 @@ public class Result {
 
 我们之前开发的程序呢，并不满足单一职责原则。下面我们来分析下之前的程序：
 
-![image-20221204191650390](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204191650390.png) 
+![image-20221204191650390](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204191650390.png)
 
 那其实我们上述案例的处理逻辑呢，从组成上看可以分为三个部分：
 
@@ -1213,8 +1119,6 @@ public class Result {
 - Service：业务逻辑层。处理具体的业务逻辑。
 - Dao：数据访问层(Data Access Object)，也称为持久层。负责数据访问操作，包括数据的增、删、改、查。
 
-
-
 基于三层架构的程序执行流程：
 
 ![image-20221204194207812](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204194207812.png)
@@ -1224,13 +1128,9 @@ public class Result {
 - Serivce层调用Dao层（逻辑处理过程中需要用到的一些数据要从Dao层获取）
 - Dao层操作文件中的数据（Dao拿到的数据会返回给Service层）
 
-> 思考：按照三层架构的思想，如何要对业务逻辑(Service层)进行变更，会影响到Controller层和Dao层吗？ 
+> 思考：按照三层架构的思想，如何要对业务逻辑(Service层)进行变更，会影响到Controller层和Dao层吗？
 >
 > 答案：不会影响。 （程序的扩展性、维护性变得更好了）
-
-
-
-
 
 ## 3.1.2 代码拆分
 
@@ -1242,7 +1142,7 @@ public class Result {
 
 ![image-20221204195812200](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204195812200.png)
 
-**控制层：**接收前端发送的请求，对请求进行处理，并响应数据
+**控制层：** 接收前端发送的请求，对请求进行处理，并响应数据
 
 ```java
 @RestController
@@ -1261,7 +1161,7 @@ public class EmpController {
 }
 ```
 
-**业务逻辑层：**处理具体的业务逻辑
+**业务逻辑层：** 处理具体的业务逻辑
 
 - 业务接口
 
@@ -1311,7 +1211,7 @@ public class EmpServiceA implements EmpService {
 }
 ```
 
-**数据访问层：**负责数据的访问操作，包含数据的增、删、改、查
+**数据访问层：** 负责数据的访问操作，包含数据的增、删、改、查
 
 - 数据访问接口
 
@@ -1347,10 +1247,6 @@ public class EmpDaoA implements EmpDao {
 2. 便于维护
 3. 利用扩展
 
-
-
-
-
 ## 3.2 分层解耦
 
 刚才我们学习过程序分层思想了，接下来呢，我们来学习下程序的解耦思想。
@@ -1362,7 +1258,6 @@ public class EmpDaoA implements EmpDao {
 首先需要了解软件开发涉及到的两个概念：内聚和耦合。
 
 - 内聚：软件中各个功能模块内部的功能联系。
-
 - 耦合：衡量软件中各个层/模块之间的依赖、关联的程度。
 
 **软件设计原则：高内聚低耦合。**
@@ -1375,7 +1270,7 @@ public class EmpDaoA implements EmpDao {
 
 - EmpServiceA类中只编写了和员工相关的逻辑处理代码
 
-![image-20221204202531571](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204202531571.png) 
+![image-20221204202531571](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204202531571.png)
 
 程序中耦合代码的体现：
 
@@ -1387,17 +1282,13 @@ public class EmpDaoA implements EmpDao {
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220828215549593.png)
 
-
-
-
-
 ## 3.2.2  解耦思路
 
 之前我们在编写代码时，需要什么对象，就直接new一个就可以了。 这种做法呢，层与层之间代码就耦合了，当service层的实现变了之后， 我们还需要修改controller层的代码。
 
 ![image-20221204204916033](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204204916033.png)
 
- 那应该怎么解耦呢？
+那应该怎么解耦呢？
 
 - 首先不能在EmpController中使用new对象。代码如下：
 
@@ -1410,21 +1301,18 @@ public class EmpDaoA implements EmpDao {
 
 我们想要实现上述解耦操作，就涉及到Spring中的两个核心概念：
 
-- **控制反转：** Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转。
+- **控制反转：**  Inversion Of Control，简称IOC。对象的创建控制权由程序自身转移到外部（容器），这种思想称为控制反转。
 
   > 对象的创建权由程序员主动创建转移到容器(由容器创建、管理对象)。这个容器称为：IOC容器或Spring容器
-
-- **依赖注入：** Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入。
+  >
+- **依赖注入：**  Dependency Injection，简称DI。容器为应用程序提供运行时，所依赖的资源，称之为依赖注入。
 
   > 程序运行时需要某个资源，此时容器就为其提供这个资源。
   >
   > 例：EmpController程序运行时需要EmpService对象，Spring容器就为其提供并注入EmpService对象
+  >
 
 IOC容器中创建、管理的对象，称之为：bean对象
-
-
-
-
 
 ## 3.3 IOC&DI
 
@@ -1441,13 +1329,9 @@ IOC容器中创建、管理的对象，称之为：bean对象
      - Controller程序中注入依赖的Service层对象
      - Service程序中注入依赖的Dao层对象
 
-
-
 第1步：删除Controller层、Service层中new对象的代码
 
 ![image-20221204212807207](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204212807207.png)
-
-
 
 第2步：Service层及Dao层的实现类，交给IOC容器管理
 
@@ -1455,15 +1339,11 @@ IOC容器中创建、管理的对象，称之为：bean对象
 
 ![image-20221204213328034](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204213328034.png)
 
-
-
 第3步：为Controller及Service注入运行时依赖的对象
 
 - 使用Spring提供的注解：@Autowired ，就可以实现程序运行时IOC容器自动注入需要的依赖对象
 
 ![image-20221204213859112](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204213859112.png)
-
-
 
 完整的三层代码：
 
@@ -1542,19 +1422,11 @@ public class EmpDaoA implements EmpDao {
 }
 ~~~
 
-
-
 运行测试：
 
 - 启动SpringBoot引导类，打开浏览器，输入：http://localhost:8080/emp.html
 
 ![image-20221204185455556](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204185455556.png)
-
-
-
- 
-
-
 
 ## 3.3.2 IOC详解
 
@@ -1564,15 +1436,13 @@ public class EmpDaoA implements EmpDao {
 
 前面我们提到IOC控制反转，就是将对象的控制权交给Spring的IOC容器，由IOC容器创建及管理对象。IOC容器创建的对象称为bean对象。
 
-在之前的入门案例中，要把某个对象交给IOC容器管理，需要在类上添加一个注解：@Component 
+在之前的入门案例中，要把某个对象交给IOC容器管理，需要在类上添加一个注解：@Component
 
 而Spring框架为了更好的标识web应用程序开发当中，bean对象到底归属于哪一层，又提供了@Component的衍生注解：
 
 - @Controller    （标注在控制层类上）
 - @Service          （标注在业务层类上）
 - @Repository    （标注在数据访问层类上）
-
-
 
 修改入门案例代码：
 
@@ -1651,16 +1521,14 @@ public class EmpDaoA implements EmpDao {
 }
 ~~~
 
-
-
 要把某个对象交给IOC容器管理，需要在对应的类上加上如下注解之一：
 
-| 注解        | 说明                 | 位置                                            |
-| :---------- | -------------------- | ----------------------------------------------- |
-| @Controller | @Component的衍生注解 | 标注在控制器类上                                |
-| @Service    | @Component的衍生注解 | 标注在业务类上                                  |
-| @Repository | @Component的衍生注解 | 标注在数据访问类上（由于与mybatis整合，用的少） |
-| @Component  | 声明bean的基础注解   | 不属于以上三类时，用此注解                      |
+|注解|说明|位置|
+| :----------| --------------------| -----------------------------------------------|
+|@Controller|@Component的衍生注解|标注在控制器类上|
+|@Service|@Component的衍生注解|标注在业务类上|
+|@Repository|@Component的衍生注解|标注在数据访问类上（由于与mybatis整合，用的少）|
+|@Component|声明bean的基础注解|不属于以上三类时，用此注解|
 
 > 查看源码：![image-20221204221320230](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204221320230.png)
 
@@ -1668,14 +1536,10 @@ public class EmpDaoA implements EmpDao {
 
 ![image-20221204222650873](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204222650873.png)
 
-> 注意事项: 
+> 注意事项:
 >
 > - 声明bean的时候，可以通过value属性指定bean的名字，如果没有指定，默认为类名首字母小写。
 > - 使用以上四个注解都可以声明bean，但是在springboot集成web开发中，声明控制器bean只能用@Controller。
-
-
-
-
 
 ### 3.3.2.2 组件扫描
 
@@ -1683,9 +1547,7 @@ public class EmpDaoA implements EmpDao {
 
 答案：不一定。（原因：bean想要生效，还需要被组件扫描）
 
-
-
- 下面我们通过修改项目工程的目录结构，来测试bean对象是否生效：
+下面我们通过修改项目工程的目录结构，来测试bean对象是否生效：
 
 ![image-20221204223602694](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204223602694.png)
 
@@ -1699,23 +1561,17 @@ public class EmpDaoA implements EmpDao {
 
 > @ComponentScan注解虽然没有显式配置，但是实际上已经包含在了引导类声明注解 @SpringBootApplication 中，==**默认扫描的范围是SpringBoot启动类所在包及其子包**==。
 >
-> ![image-20221204224643683](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204224643683.png) 
+> ![image-20221204224643683](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204224643683.png)
 
 - 解决方案：手动添加@ComponentScan注解，指定要扫描的包   （==仅做了解，不推荐==）
 
 ![image-20221204225437297](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204225437297.png)
-
-
 
 推荐做法（如下图）：
 
 - 将我们定义的controller，service，dao这些包呢，都放在引导类所在包com.itheima的子包下，这样我们定义的bean就会被自动的扫描到
 
 ![image-20221204225815624](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204225815624.png)
-
-
-
-
 
 ## 3.3.3 DI详解
 
@@ -1729,8 +1585,6 @@ public class EmpDaoA implements EmpDao {
 
 > 入门程序举例：在EmpController运行的时候，就要到IOC容器当中去查找EmpService这个类型的对象，而我们的IOC容器中刚好有一个EmpService这个类型的对象，所以就找到了这个类型的对象完成注入操作。
 
-
-
 那如果在IOC容器中，存在多个相同类型的bean对象，会出现什么情况呢？
 
 ![image-20221204232154445](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204232154445.png)
@@ -1739,23 +1593,15 @@ public class EmpDaoA implements EmpDao {
 
 ![image-20221204231616724](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204231616724.png)
 
-
-
 如何解决上述问题呢？Spring提供了以下几种解决方案：
 
 - @Primary
-
 - @Qualifier
-
 - @Resource
-
-
 
 使用@Primary注解：当存在多个相同类型的Bean注入时，加上@Primary注解，来确定默认的实现。
 
-![image-20221204232501679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204232501679.png) 
-
-
+![image-20221204232501679](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204232501679.png)
 
 使用@Qualifier注解：指定当前要注入的bean对象。 在@Qualifier的value属性中，指定注入的bean的名称。
 
@@ -1763,26 +1609,11 @@ public class EmpDaoA implements EmpDao {
 
 ![image-20221204233333606](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204233333606.png)
 
-
-
 使用@Resource注解：是按照bean的名称进行注入。通过name属性指定要注入的bean的名称。
 
 ![image-20221204233637735](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221204233637735.png)
-
-
 
 > 面试题 ： @Autowird 与 @Resource的区别
 >
 > - @Autowired 是spring框架提供的注解，而@Resource是JDK提供的注解
 > - @Autowired 默认是按照类型注入，而@Resource是按照名称注入
-
-
-
-
-
-
-
-
-
-
-

@@ -1,17 +1,21 @@
+# day08-MySQL-03
+
 ---
+
 title: itheima-JavaWeb day08-MySQL-03
 tags:
-  - itheima
-  - MySQL
-  - 数据库
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192203566.jpg'
-abbrlink: 3c4bbc5
+
+- itheima
+- MySQL
+- 数据库
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192203566.jpg'
+  abbrlink: 3c4bbc5
+
 ---
+
 # 数据库开发-MySQL
-
-
 
 # 1. 多表查询
 
@@ -79,8 +83,6 @@ VALUES
 (17,'chenyouliang','123456','陈友谅',1,'17.jpg',NULL,'2015-03-21',NULL,now(),now());
 ~~~
 
-
-
 ### 1.1.2 介绍
 
 多表查询：查询时从多张表中获取所需数据
@@ -95,7 +97,7 @@ VALUES
 select * from  tb_emp , tb_dept;
 ~~~
 
-![image-20220901093654673](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901093654673.png)  
+![image-20220901093654673](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220901093654673.png)
 
 此时,我们看到查询结果中包含了大量的结果集，总共85条记录，而这其实就是员工表所有的记录(17行)与部门表所有记录(5行)的所有组合情况，这种现象称之为笛卡尔积。
 
@@ -117,10 +119,6 @@ select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;
 
 > 由于id为17的员工，没有dept_id字段值，所以在多表查询时，根据连接查询的条件并没有查询到。
 
-
-
-
-
 ### 1.1.3 分类
 
 多表查询可以分为：
@@ -129,21 +127,12 @@ select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;
 
    - 内连接：相当于查询A、B交集部分数据
 
-   ![image-20221207165446062](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207165446062.png) 
-
+   ![image-20221207165446062](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207165446062.png)
 2. 外连接
 
    - 左外连接：查询左表所有数据(包括两张表交集部分数据)
-
    - 右外连接：查询右表所有数据(包括两张表交集部分数据)
-
 3. 子查询
-
-
-
-
-
-
 
 ## 1.2 内连接
 
@@ -152,22 +141,19 @@ select * from tb_emp , tb_dept where tb_emp.dept_id = tb_dept.id ;
 内连接从语法上可以分为：
 
 - 隐式内连接
-
 - 显式内连接
 
 隐式内连接语法：
 
-``` mysql
+```mysql
 select  字段列表   from   表1 , 表2   where  条件 ... ;
 ```
 
 显式内连接语法：
 
-``` mysql
+```mysql
 select  字段列表   from   表1  [ inner ]  join 表2  on  连接条件 ... ;
 ```
-
-
 
 案例：查询员工的姓名及所属的部门名称
 
@@ -189,12 +175,9 @@ on tb_emp.dept_id = tb_dept.id;
 
 ![image-20221207173435289](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207173435289.png)
 
-
-
 多表查询时给表起别名：
 
 - tableA  as  别名1  ,  tableB  as  别名2 ;
-
 - tableA  别名1  ,  tableB  别名2 ;
 
 ![image-20221207174234522](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207174234522.png)
@@ -210,10 +193,6 @@ on emp.dept_id = dept.id;
 > 注意事项:
 >
 > 一旦为表起了别名，就不能再使用表名来指定对应的字段了，此时只能够使用别名来指定字段。
-
-
-
-
 
 ## 1.3 外连接
 
@@ -235,8 +214,6 @@ select  字段列表   from   表1  right  [ outer ]  join 表2  on  连接条�
 
 > 右外连接相当于查询表2(右表)的所有数据，当然也包含表1和表2交集部分的数据。
 
-
-
 案例：查询员工表中所有员工的姓名, 和对应的部门名称
 
 ~~~mysql
@@ -248,7 +225,7 @@ from tb_emp AS emp left join tb_dept AS dept
 
 ![image-20221207181204792](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207181204792.png)
 
-案例：查询部门表中所有部门的名称, 和对应的员工名称 
+案例：查询部门表中所有部门的名称, 和对应的员工名称
 
 ~~~mysql
 -- 右外连接
@@ -259,15 +236,9 @@ from tb_emp AS emp right join  tb_dept AS dept
 
 ![image-20221207181048208](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207181048208.png)
 
-
-
 > 注意事项：
 >
 > 左外连接和右外连接是可以相互替换的，只需要调整连接查询时SQL语句中表的先后顺序就可以了。而我们在日常开发使用时，更偏向于左外连接。
-
-
-
-
 
 ## 1.4 子查询
 
@@ -281,16 +252,11 @@ SELECT  *  FROM   t1   WHERE  column1 =  ( SELECT  column1  FROM  t2 ... );
 
 > 子查询外部的语句可以是insert / update / delete / select 的任何一个，最常见的是 select。
 
-
-
 根据子查询结果的不同分为：
 
 1. 标量子查询（子查询结果为单个值[一行一列]）
-
 2. 列子查询（子查询结果为一列，但可以是多行）
-
 3. 行子查询（子查询结果为一行，但可以是多列）
-
 4. 表子查询（子查询结果为多行多列[相当于子查询结果是一张表]）
 
 子查询可以书写的位置：
@@ -299,17 +265,11 @@ SELECT  *  FROM   t1   WHERE  column1 =  ( SELECT  column1  FROM  t2 ... );
 2. from之后
 3. select之后
 
-
-
-
-
 ### 1.4.2 标量子查询
 
 子查询返回的结果是单个值(数字、字符串、日期等)，最简单的形式，这种子查询称为标量子查询。
 
-常用的操作符： =   <>   >    >=    <   <=   
-
-
+常用的操作符： =   <>   >    >=    <   <=
 
 案例1：查询"教研部"的所有员工信息
 
@@ -330,8 +290,6 @@ select * from tb_emp where dept_id = (select id from tb_dept where name = '教�
 
 ![image-20221207202215946](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207202215946.png)
 
-
-
 案例2：查询在 "方东白" 入职之后的员工信息
 
 > 可以将需求分解为两步：
@@ -351,20 +309,16 @@ select * from tb_emp where entrydate > (select entrydate from tb_emp where name 
 
 ![image-20221207203000445](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207203000445.png)
 
-
-
-
-
 ### 1.4.3 列子查询
 
 子查询返回的结果是一列(可以是多行)，这种子查询称为列子查询。
 
 常用的操作符：
 
-| **操作符** | **描述**                     |
-| ---------- | ---------------------------- |
-| IN         | 在指定的集合范围之内，多选一 |
-| NOT IN     | 不在指定的集合范围之内       |
+|**操作符**|**描述**|
+| ------| ----------------------------|
+|IN|在指定的集合范围之内，多选一|
+|NOT IN|不在指定的集合范围之内|
 
 案例：查询"教研部"和"咨询部"的所有员工信息
 
@@ -385,24 +339,18 @@ select * from tb_emp where dept_id in (select id from tb_dept where name = '教�
 
 ![image-20221207203620472](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207203620472.png)
 
-
-
-
-
 ### 1.4.4 行子查询
 
 子查询返回的结果是一行(可以是多列)，这种子查询称为行子查询。
 
 常用的操作符：= 、<> 、IN 、NOT IN
 
+案例：查询与"韦一笑"的入职日期及职位都相同的员工信息
 
-
-案例：查询与"韦一笑"的入职日期及职位都相同的员工信息 
-
-> 可以拆解为两步进行： 
+> 可以拆解为两步进行：
 >
 > 1. 查询 "韦一笑" 的入职日期 及 职位
-> 2. 查询与"韦一笑"的入职日期及职位相同的员工信息 
+> 2. 查询与"韦一笑"的入职日期及职位相同的员工信息
 
 ```mysql
 -- 查询"韦一笑"的入职日期 及 职位
@@ -416,15 +364,9 @@ select * from tb_emp where (entrydate,job) = (select entrydate , job from tb_emp
 
 ![image-20221207204452202](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221207204452202.png)
 
-
-
-
-
 ### 1.4.5 表子查询
 
 子查询返回的结果是多行多列，常作为临时表，这种子查询称为表子查询。
-
-
 
 案例：查询入职日期是 "2006-01-01" 之后的员工信息 , 及其部门信息
 
@@ -441,8 +383,6 @@ select e.*, d.* from (select * from emp where entrydate > '2006-01-01') e left j
 
 ![image-20221208142154263](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208142154263.png)
 
-
-
 ## 1.5 案例
 
 基于之前设计的多表案例的表结构，我们来完成今天的多表查询案例需求。
@@ -451,16 +391,14 @@ select e.*, d.* from (select * from emp where entrydate > '2006-01-01') e left j
 
 将资料中准备好的多表查询的数据准备的SQL脚本导入数据库中。
 
-![image-20221208143318921](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143318921.png) 
+![image-20221208143318921](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143318921.png)
 
 - 分类表：category
 - 菜品表：dish
 - 套餐表：setmeal
 - 套餐菜品关系表：setmeal_dish
 
-![image-20221208143312292](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143312292.png) 
-
-
+![image-20221208143312292](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208143312292.png)
 
 **需求实现**
 
@@ -486,8 +424,6 @@ where d.category_id = c.id
 
 ![image-20221208145036602](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208145036602.png)
 
-
-
 2. 查询所有价格在 10元(含)到50元(含)之间 且 状态为"起售"的菜品名称、价格及其分类名称 (即使菜品没有分类 , 也要将菜品查询出来)
 
 ~~~mysql
@@ -499,9 +435,7 @@ where d.price between 10 and 50
 
 ![image-20221208145432077](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208145432077.png)
 
-
-
-3. 查询每个分类下最贵的菜品, 展示出分类的名称、最贵的菜品的价格 
+3. 查询每个分类下最贵的菜品, 展示出分类的名称、最贵的菜品的价格
 
 ~~~mysql
 select c.name , max(d.price)
@@ -511,8 +445,6 @@ group by c.name;
 ~~~
 
 ![image-20221208150016895](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208150016895.png)
-
-
 
 4. 查询各个分类下 菜品状态为 "起售" , 并且 该分类下菜品总数量大于等于3 的 分类名称
 
@@ -540,8 +472,6 @@ having count(*)>=3; -- 各组后筛选菜品总数据>=3
 
 ![image-20221208152107502](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208152107502.png)
 
-
-
 5. 查询出 "商务套餐A" 中包含了哪些菜品 （展示出套餐名称、价格, 包含的菜品名称、价格、份数）
 
 ~~~mysql
@@ -552,8 +482,6 @@ where s.id = sd.setmeal_id and sd.dish_id = d.id
 ~~~
 
 ![image-20221208152626138](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208152626138.png)
-
-
 
 6. 查询出低于菜品平均价格的菜品信息 (展示出菜品名称、菜品价格)
 
@@ -569,12 +497,6 @@ select * from dish where price < (select avg(price) from dish);
 
 ![image-20221208153051333](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208153051333.png)
 
-
-
-
-
-
-
 # 2. 事务
 
 场景：学工部整个部门解散了，该部门及部门下的员工都需要删除了。
@@ -584,16 +506,13 @@ select * from dish where price < (select avg(price) from dish);
   ```sql
   -- 删除学工部
   delete from dept where id = 1;  -- 删除成功
-  
+
   -- 删除学工部的员工
   delete from emp where dept_id = 1; -- 删除失败（操作过程中出现错误：造成删除没有成功）
   ```
-
 - 问题：如果删除部门成功了，而删除该部门的员工时失败了，此时就造成了数据的不一致。
 
 ​	要解决上述的问题，就需要通过数据库中的事务来解决。
-
-
 
 ## 2.1 介绍
 
@@ -603,29 +522,25 @@ select * from dish where price < (select avg(price) from dish);
 
 事务作用：保证在一个事务中多次操作数据库表中数据时，要么全都成功,要么全都失败。
 
-
-
 ## 2.2 操作
 
 MYSQL中有两种方式进行事务的操作：
 
 1. 自动提交事务：即执行一条sql语句提交一次事务。（默认MySQL的事务是自动提交）
-2. 手动提交事务：先开启，再提交 
+2. 手动提交事务：先开启，再提交
 
 事务操作有关的SQL语句：
 
-| SQL语句                        | 描述             |
-| ------------------------------ | ---------------- |
-| start transaction;  /  begin ; | 开启手动控制事务 |
-| commit;                        | 提交事务         |
-| rollback;                      | 回滚事务         |
+|SQL语句|描述|
+| ------------------------------| ----------------|
+|start transaction;  /  begin ;|开启手动控制事务|
+|commit;|提交事务|
+|rollback;|回滚事务|
 
 > 手动提交事务使用步骤：
 >
 > - 第1种情况：开启事务  =>  执行SQL语句   =>  成功  =>  提交事务
 > - 第2种情况：开启事务  =>  执行SQL语句   =>  失败  =>  回滚事务
-
-
 
 使用事务控制删除部门和删除该部门下的员工的操作：
 
@@ -654,10 +569,6 @@ commit ;
 rollback ;
 ```
 
-
-
-
-
 ## 2.3 四大特性
 
 面试题：事务有哪些特性？
@@ -669,39 +580,26 @@ rollback ;
 
 > 事务的四大特性简称为：ACID
 
-
-
-- **原子性（Atomicity）** ：原子性是指事务包装的一组sql是一个不可分割的工作单元，事务中的操作要么全部成功，要么全部失败。
-
-- **一致性（Consistency）**：一个事务完成之后数据都必须处于一致性状态。
+- **原子性（Atomicity）**  ：原子性是指事务包装的一组sql是一个不可分割的工作单元，事务中的操作要么全部成功，要么全部失败。
+- **一致性（Consistency）** ：一个事务完成之后数据都必须处于一致性状态。
 
 ​		如果事务成功的完成，那么数据库的所有变化将生效。
 
 ​		如果事务执行出现错误，那么数据库的所有变化将会被回滚(撤销)，返回到原始状态。
 
-- **隔离性（Isolation）**：多个用户并发的访问数据库时，一个用户的事务不能被其他用户的事务干扰，多个并发的事务之间要相互隔离。
+- **隔离性（Isolation）** ：多个用户并发的访问数据库时，一个用户的事务不能被其他用户的事务干扰，多个并发的事务之间要相互隔离。
 
 ​		一个事务的成功或者失败对于其他的事务是没有影响。
 
-- **持久性（Durability）**：一个事务一旦被提交或回滚，它对数据库的改变将是永久性的，哪怕数据库发生异常，重启之后数据亦然存在。
-
-
-
-
-
-
-
-
+- **持久性（Durability）** ：一个事务一旦被提交或回滚，它对数据库的改变将是永久性的，哪怕数据库发生异常，重启之后数据亦然存在。
 
 # 3. 索引
 
-## 3.1 介绍 
+## 3.1 介绍
 
 索引(index)：是帮助数据库高效获取数据的数据结构 。
 
 - 简单来讲，就是使用索引可以提高查询的效率。
-
-
 
 测试没有使用索引的查询：
 
@@ -719,8 +617,6 @@ select * from tb_sku where sn = '100000003145008';
 
 ![image-20221209120107543](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209120107543.png)
 
-
-
 优点：
 
 1. 提高数据查询的效率，降低数据库的IO成本。
@@ -730,10 +626,6 @@ select * from tb_sku where sn = '100000003145008';
 
 1. 索引会占用存储空间。
 2. 索引大大提高了查询效率，同时却也降低了insert、update、delete的效率。
-
-
-
-
 
 ## 3.2 结构
 
@@ -745,11 +637,11 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引�
 
 > 二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大
 
-![image-20221208174135229](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174135229.png) 
+![image-20221208174135229](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174135229.png)
 
 > 当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。
 
-![image-20221208174859866](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174859866.png) 
+![image-20221208174859866](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221208174859866.png)
 
 > 可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵平衡的二叉树）
 
@@ -759,11 +651,12 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、B+Tree索引�
 
 思考：采用二叉搜索树或者是红黑树来作为索引的结构有什么问题？
 
+<div>
 <details>
     <summary>答案</summary>
     最大的问题就是在数据量大的情况下，树的层级比较深，会影响检索速度。因为不管是二叉搜索数还是红黑数，一个节点下面只能有两个子节点。此时在数据量大的情况下，就会造成数的高度比较高，树的高度一旦高了，检索速度就会降低。
 </details>
-
+</div>
 
 > 说明：如果数据结构是红黑树，那么查询1000万条数据，根据计算树的高度大概是23左右，这样确实比之前的方式快了很多，但是如果高并发访问，那么一个用户有可能需要23次磁盘IO，那么100万用户，那么会造成效率极其低下。所以为了减少红黑树的高度，那么就得增加树的宽度，就是不再像红黑树一样每个节点只能保存一个数据，可以引入另外一种数据结构，一个节点可以保存多个数据，这样宽度就会增加从而降低树的高度。这种数据结构例如BTree就满足。
 
@@ -779,8 +672,6 @@ B+Tree结构：
   - 非叶子节点，不是树结构最下面的节点，用于索引数据，存储的的是：key+指针
 - 为了提高范围查询效率，叶子节点形成了一个双向链表，便于数据的排序及区间范围查询
 
-
-
 > **拓展：**
 >
 > 非叶子节点都是由key+指针域组成的，一个key占8字节，一个指针占6字节，而一个节点总共容量是16KB，那么可以计算出一个节点可以存储的元素个数：16*1024字节 / (8+6)=1170个元素。
@@ -795,10 +686,6 @@ B+Tree结构：
 >
 > - 千万条数据，B+Tree可以控制在小于等于3的高度
 > - 所有的数据都存储在叶子节点上，并且底层已经实现了按照索引进行排序，还可以支持范围查询，叶子节点是一个双向链表，支持从小到大或者从大到小查找
-
-
-
-
 
 ## 3.3 语法
 
@@ -820,8 +707,6 @@ create index idx_emp_name on tb_emp(name);
 >
 > ![image-20221209105846211](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209105846211.png)
 
-
-
 **查看索引**
 
 ~~~mysql
@@ -836,8 +721,6 @@ show  index  from  tb_emp;
 
 ![image-20221209110317092](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209110317092.png)
 
-
-
 **删除索引**
 
 ~~~mysql
@@ -850,19 +733,7 @@ drop  index  索引名  on  表名;
 drop index idx_emp_name on tb_emp;
 ~~~
 
-
-
 > 注意事项：
 >
 > - 主键字段，在建表时，会自动创建主键索引
->
 > - 添加唯一约束时，数据库实际上会添加唯一索引
-
-
-
-
-
-
-
-
-

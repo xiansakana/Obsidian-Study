@@ -1,16 +1,20 @@
+# 高级篇day04-安装OpenResty
+
 ---
+
 title: itheima-Microservice 高级篇day04-安装OpenResty
 tags:
-  - itheima
-  - 微服务
-  - OpenResty
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205390.jpg'
-abbrlink: a2c926fe
+
+- itheima
+- 微服务
+- OpenResty
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205390.jpg'
+  abbrlink: a2c926fe
+
 ---
+
 # 安装OpenResty
-
-
 
 # 1.安装
 
@@ -24,8 +28,6 @@ abbrlink: a2c926fe
 yum install -y pcre-devel openssl-devel gcc --skip-broken
 ```
 
-
-
 ## **2）安装OpenResty仓库**
 
 你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。运行下面的命令就可以添加我们的仓库：
@@ -33,8 +35,6 @@ yum install -y pcre-devel openssl-devel gcc --skip-broken
 ```
 yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
 ```
-
-
 
 如果提示说命令不存在，则运行：
 
@@ -44,8 +44,6 @@ yum install -y yum-utils
 
 然后再重复上面的命令
 
-
-
 ## **3）安装OpenResty**
 
 然后就可以像下面这样安装软件包，比如 `openresty`：
@@ -53,8 +51,6 @@ yum install -y yum-utils
 ```bash
 yum install -y openresty
 ```
-
-
 
 ## **4）安装opm工具**
 
@@ -66,17 +62,13 @@ opm是OpenResty的一个管理工具，可以帮助我们安装一个第三方�
 yum install -y openresty-opm
 ```
 
-
-
 ## **5）目录结构**
 
 默认情况下，OpenResty安装的目录是：/usr/local/openresty
 
-![image-20200310225539214](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20200310225539214.png) 
+![image-20200310225539214](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20200310225539214.png)
 
 看到里面的nginx目录了吗，OpenResty就是在Nginx基础上集成了一些Lua模块。
-
-
 
 ## **6）配置nginx的环境变量**
 
@@ -101,8 +93,6 @@ NGINX_HOME：后面是OpenResty安装目录下的nginx的目录
 source /etc/profile
 ```
 
-
-
 # 2.启动和运行
 
 OpenResty底层是基于Nginx的，查看OpenResty目录的nginx目录，结构与windows中安装的nginx基本一致：
@@ -119,10 +109,6 @@ nginx -s reload
 # 停止
 nginx -s stop
 ```
-
-
-
-
 
 nginx的默认配置文件注释太多，影响后续我们的编辑，这里将nginx.conf中的注释部分删除，保留有效部分。
 
@@ -159,25 +145,13 @@ http {
 }
 ```
 
-
-
 在Linux的控制台输入命令以启动nginx：
 
 ```sh
 nginx
 ```
 
-
-
 然后访问页面：http://192.168.150.101:8081，注意ip地址替换为你自己的虚拟机IP：
-
-
-
-
-
-
-
-
 
 # 3.备注
 
@@ -189,8 +163,6 @@ lua_package_path "/usr/local/openresty/lualib/?.lua;;";
 #c模块     
 lua_package_cpath "/usr/local/openresty/lualib/?.so;;";  
 ```
-
-
 
 common.lua
 
@@ -214,8 +186,6 @@ local _M = {
 }  
 return _M
 ```
-
-
 
 释放Redis连接API：
 
@@ -258,12 +228,9 @@ local function read_redis(ip, port, key)
 end
 ```
 
-
-
 开启共享词典：
 
 ```nginx
 # 共享字典，也就是本地缓存，名称叫做：item_cache，大小150m
 lua_shared_dict item_cache 150m; 
 ```
-

@@ -1,13 +1,19 @@
+# day11-SpringBootWeb案例-2
+
 ---
+
 title: itheima-JavaWeb day11-SpringBootWeb案例-2
 tags:
-  - itheima
-  - SpringBoot
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
-abbrlink: f5aeda25
+
+- itheima
+- SpringBoot
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192206099.jpg'
+  abbrlink: f5aeda25
+
 ---
+
 # SpringBootWeb案例
 
 前面我们已经实现了员工信息的条件分页查询以及删除操作。 关于员工管理的功能，还有两个需要实现：
@@ -26,23 +32,13 @@ abbrlink: f5aeda25
 - 修改员工
 - 配置文件
 
-
-
-
-
-
-
-
-
 # 1. 新增员工
 
 ## 1.1 需求
 
-![image-20221216162622582](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216162622582.png) 
+![image-20221216162622582](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216162622582.png)
 
-在新增用户时，我们需要保存用户的基本信息，并且还需要上传的员工的图片，目前我们先完成第一步操作，保存用户的基本信息。 
-
-
+在新增用户时，我们需要保存用户的基本信息，并且还需要上传的员工的图片，目前我们先完成第一步操作，保存用户的基本信息。
 
 ## 1.2 接口文档
 
@@ -52,42 +48,40 @@ abbrlink: f5aeda25
 
   ~~~
   请求路径：/emps
-  
+
   请求方式：POST
-  
+
   接口描述：该接口用于添加员工的信息
   ~~~
-
 - 请求参数
 
   参数格式：application/json
 
   参数说明：
 
-| 名称        | 类型     | 是否必须 | 备注                                        |
-| --------- | ------ | ---- | ----------------------------------------- |
-| username  | string | 必须   | 用户名                                       |
-| name      | string | 必须   | 姓名                                        |
-| gender    | number | 必须   | 性别, 说明: 1 男, 2 女                          |
-| image     | string | 非必须  | 图像                                        |
-| deptId    | number | 非必须  | 部门id                                      |
-| entrydate | string | 非必须  | 入职日期                                      |
-| job       | number | 非必须  | 职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师 |
+|名称|类型|是否必须|备注|
+| ---------| ------| --------| -------------------------------------------------------------|
+|username|string|必须|用户名|
+|name|string|必须|姓名|
+|gender|number|必须|性别, 说明: 1 男, 2 女|
+|image|string|非必须|图像|
+|deptId|number|非必须|部门id|
+|entrydate|string|非必须|入职日期|
+|job|number|非必须|职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师|
 
-  
-  请求数据样例：
+请求数据样例：
 
-  ~~~json
-  {
-    "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-03-07-37-38222.jpg",
-    "username": "linpingzhi",
-    "name": "林平之",
-    "gender": 1,
-    "job": 1,
-    "entrydate": "2022-09-18",
-    "deptId": 1
-  }
-  ~~~
+~~~json
+{
+  "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-03-07-37-38222.jpg",
+  "username": "linpingzhi",
+  "name": "林平之",
+  "gender": 1,
+  "job": 1,
+  "entrydate": "2022-09-18",
+  "deptId": 1
+}
+~~~
 
 - 响应数据
 
@@ -95,23 +89,21 @@ abbrlink: f5aeda25
 
   参数说明：
 
-| 参数名 | 类型   | 是否必须 | 备注                           |
-| ------ | ------ | -------- | ------------------------------ |
-| code   | number | 必须     | 响应码，1 代表成功，0 代表失败 |
-| msg    | string | 非必须   | 提示信息                       |
-| data   | object | 非必须   | 返回的数据                     |
+|参数名|类型|是否必须|备注|
+| ------| ------| --------| ------------------------------|
+|code|number|必须|响应码，1 代表成功，0 代表失败|
+|msg|string|非必须|提示信息|
+|data|object|非必须|返回的数据|
 
-  响应数据样例：
+响应数据样例：
 
-  ~~~json
-  {
-      "code":1,
-      "msg":"success",
-      "data":null
-  }
-  ~~~
-
-
+~~~json
+{
+    "code":1,
+    "msg":"success",
+    "data":null
+}
+~~~
 
 ## 1.3 思路分析
 
@@ -125,7 +117,6 @@ abbrlink: f5aeda25
 > - 请求方式：POST
 > - 请求参数：Json格式数据
 > - 响应数据：Json格式数据
->
 
 问题1：如何限定请求方式是POST？
 
@@ -138,10 +129,6 @@ abbrlink: f5aeda25
 ```java
 @RequestBody  //把前端传递的json数据填充到实体类中
 ```
-
-
-
-
 
 ## 1.4 功能开发
 
@@ -224,15 +211,11 @@ public interface EmpMapper {
 
 ~~~
 
-
-
 ## 1.5 功能测试
 
 代码开发完成后，重启服务器，打开Postman发送 POST 请求，请求路径：http://localhost:8080/emps
 
 ![image-20221216181017910](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181017910.png)
-
-
 
 ## 1.6 前后端联调
 
@@ -241,14 +224,6 @@ public interface EmpMapper {
 ![image-20221216181511401](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181511401.png)
 
 ![image-20221216181628331](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216181628331.png)
-
-
-
-
-
-
-
-
 
 # 2. 文件上传
 
@@ -262,9 +237,7 @@ public interface EmpMapper {
 
 接下来我们就先来学习下什么是文件上传。
 
-
-
-## 2.1 简介 
+## 2.1 简介
 
 文件上传，是指将本地图片、视频、音频等文件上传到服务器，供其他用户浏览或下载的过程。
 
@@ -278,8 +251,6 @@ public interface EmpMapper {
 
 1. 前端程序
 2. 服务端程序
-
-
 
 我们先来看看在前端程序中要完成哪些代码：
 
@@ -299,18 +270,15 @@ public interface EmpMapper {
   > ~~~html
   > <input type="file" name="image"/>
   > ~~~
-
+  >
 - 表单提交方式必须为POST
 
   > 通常上传的文件会比较大，所以需要使用 POST 提交方式
-
+  >
 - 表单的编码类型enctype必须要设置为：multipart/form-data
 
   > 普通默认的编码格式是不适合传输大型的二进制数据的，所以在文件上传时，表单的编码格式必须设置为multipart/form-data
-
-
-
-
+  >
 
 前端页面的3要素我们了解后，接下来我们就来验证下所讲解的文件上传3要素。
 
@@ -318,33 +286,21 @@ public interface EmpMapper {
 
 ![image-20221216210054136](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210054136.png)
 
-
-
-
-
 下面我们来验证：删除form表单中enctype属性值，会是什么情况？
 
 1. 在IDEA中直接使用浏览器打开upload.html页面
 
 ![image-20221216210643628](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210643628.png)
 
-
-
 2. 选择要上传的本地文件
 
 ![image-20221216210938612](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216210938612.png)
-
-
 
 3. 点击"提交"按钮，进入到开发者模式观察
 
 ![image-20221216211629307](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216211629307.png)
 
 ![image-20221216212152607](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216212152607.png)
-
-
-
-
 
 我们再来验证：设置form表单中enctype属性值为multipart/form-data，会是什么情况？
 
@@ -361,12 +317,9 @@ public interface EmpMapper {
 
 ![image-20221216215041710](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216215041710.png)
 
-
-
 知道了前端程序中需要设置上传文件页面三要素，那我们的后端程序又是如何实现的呢？
 
 - 首先在服务端定义这么一个controller，用来进行文件上传，然后在controller当中定义一个方法来处理`/upload` 请求
-
 - 在定义的方法中接收提交过来的数据 （方法中的形参名和请求参数的名字保持一致）
 
   - 用户名：String  name
@@ -374,6 +327,7 @@ public interface EmpMapper {
   - 文件： MultipartFile  image
 
   > Spring中提供了一个API：MultipartFile，使用这个API就可以来接收到上传的文件
+  >
 
 ![image-20221216215930807](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216215930807.png)
 
@@ -392,8 +346,6 @@ public interface EmpMapper {
 >                        Integer age, 
 >                        @RequestParam("image") MultipartFile file)
 >   ~~~
-
-
 
 **UploadController代码：**
 
@@ -431,11 +383,9 @@ public class UploadController {
 
 ![image-20221216223300846](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221216223300846.png)
 
-> 当我们程序运行完毕之后，这个临时文件会自动删除。 
+> 当我们程序运行完毕之后，这个临时文件会自动删除。
 >
 > 所以，我们如果想要实现文件上传，需要将这个临时文件，要转存到我们的磁盘目录中。
-
-
 
 ## 2.2 本地存储
 
@@ -446,7 +396,7 @@ public class UploadController {
 1. 在服务器本地磁盘上创建images目录，用来存储上传的文件（例：E盘创建images目录）
 2. 使用MultipartFile类提供的API方法，把临时文件转存到本地磁盘目录下
 
-> MultipartFile 常见方法： 
+> MultipartFile 常见方法：
 >
 > - String  getOriginalFilename();  //获取原始文件名
 > - void  transferTo(File dest);     //将接收的文件转存到磁盘文件中
@@ -486,8 +436,6 @@ public class UploadController {
 ![image-20221227214753358](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221227214753358.png)
 
 通过postman测试，我们发现文件上传是没有问题的。但是由于我们是使用原始文件名作为所上传文件的存储名字，当我们再次上传一个名为1.jpg文件时，发现会把之前已经上传成功的文件覆盖掉。
-
-
 
 解决方案：保证每次上传文件时文件名都唯一的（使用UUID获取随机文件名）
 
@@ -532,11 +480,9 @@ spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=100MB
 ~~~
 
+到时此，我们文件上传的本地存储方式已完成了。但是这种本地存储方式还存在一问题：
 
-
-到时此，我们文件上传的本地存储方式已完成了。但是这种本地存储方式还存在一问题： 
-
-![image-20220904200320964](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200320964.png) 
+![image-20220904200320964](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200320964.png)
 
 如果直接存储在服务器的磁盘目录中，存在以下缺点：
 
@@ -548,12 +494,6 @@ spring.servlet.multipart.max-request-size=100MB
 
 - 自己搭建存储服务器，如：fastDFS 、MinIO
 - 使用现成的云服务，如：阿里云，腾讯云，华为云
-
-
-
-
-
-
 
 ## 2.3 阿里云OSS
 
@@ -571,13 +511,11 @@ spring.servlet.multipart.max-request-size=100MB
 
 阿里云对象存储OSS（Object Storage Service），是一款海量、安全、低成本、高可靠的云存储服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种文件。
 
-![image-20220904200642064](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200642064.png) 
+![image-20220904200642064](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904200642064.png)
 
 在我们使用了阿里云OSS对象存储服务之后，我们的项目当中如果涉及到文件上传这样的业务，在前端进行文件上传并请求到服务端时，在服务器本地磁盘当中就不需要再来存储文件了。我们直接将接收到的文件上传到oss，由 oss帮我们存储和管理，同时阿里云的oss存储服务还保障了我们所存储内容的安全可靠。
 
 ![image-20221229095709505](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229095709505.png)
-
-
 
 那我们学习使用这类云服务，我们主要学习什么呢？其实我们主要学习的是如何在项目当中来使用云服务完成具体的业务功能。而无论使用什么样的云服务，阿里云也好，腾讯云、华为云也罢，在使用第三方的服务时，操作的思路都是一样的。
 
@@ -598,35 +536,29 @@ spring.servlet.multipart.max-request-size=100MB
 1. 注册阿里云账户（注册完成后需要实名认证）
 2. 注册完账号之后，就可以登录阿里云
 
-![image-20220904201839857](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201839857.png) 
+![image-20220904201839857](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201839857.png)
 
 3. 通过控制台找到对象存储OSS服务
 
-![image-20220904201932884](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201932884.png) 
+![image-20220904201932884](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201932884.png)
 
 > 如果是第一次访问，还需要开通对象存储服务OSS
 
-![image-20220904202537579](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202537579.png) 
+![image-20220904202537579](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202537579.png)
 
-![image-20220904202618423](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202618423.png) 
+![image-20220904202618423](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202618423.png)
 
 4. 开通OSS服务之后，就可以进入到阿里云对象存储的控制台
 
-![image-20220904201810832](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201810832.png) 
+![image-20220904201810832](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904201810832.png)
 
 5. 点击左侧的 "Bucket列表"，创建一个Bucket
 
-![image-20220904202235180](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202235180.png) 
+![image-20220904202235180](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202235180.png)
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904202824901.png)
 
 > 大家可以参照"资料\04. 阿里云oss\"中提供的文档，开通阿里云OSS服务。
-
-
-
-
-
-
 
 ## 2.3.2 入门
 
@@ -719,17 +651,11 @@ public class AliOssTest {
 >
 > AccessKey ：
 >
-> ![image-20221128020105943](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221128020105943.png) 
+> ![image-20221128020105943](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221128020105943.png)
 
 运行以上程序后，会把本地的文件上传到阿里云OSS服务器上：
 
 ![image-20221229161326919](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221229161326919.png)
-
-
-
-
-
-
 
 ## 2.3.3 集成
 
@@ -743,29 +669,26 @@ public class AliOssTest {
 > 2. 访问员工图像（通过图像在阿里云OSS的存储地址访问图像）
 >    - OSS中的每一个文件都会分配一个访问的url，通过这个url就可以访问到存储在阿里云上的图片。所以需要把url返回给前端，这样前端就可以通过url获取到图像。
 
-
-
 我们参照接口文档来开发文件上传功能：
 
 - 基本信息
 
   ~~~
   请求路径：/upload
-  
+
   请求方式：POST
-  
+
   接口描述：上传图片接口
   ~~~
-
 - 请求参数
 
   参数格式：multipart/form-data
 
   参数说明：
 
-| 参数名称 | 参数类型 | 是否必须 | 示例 | 备注 |
-| -------- | -------- | -------- | ---- | ---- |
-| image    | file     | 是       |      |      |
+|参数名称|参数类型|是否必须|示例|备注|
+| --------| --------| --------| ----| ----|
+|image|file|是|||
 
 - 响应数据
 
@@ -773,23 +696,21 @@ public class AliOssTest {
 
   参数说明：
 
-| 参数名  | 类型     | 是否必须 | 备注                |
-| ---- | ------ | ---- | ----------------- |
-| code | number | 必须   | 响应码，1 代表成功，0 代表失败 |
-| msg  | string | 非必须  | 提示信息              |
-| data | object | 非必须  | 返回的数据，上传图片的访问路径   |
+|参数名|类型|是否必须|备注|
+| ------| ------| --------| ------------------------------|
+|code|number|必须|响应码，1 代表成功，0 代表失败|
+|msg|string|非必须|提示信息|
+|data|object|非必须|返回的数据，上传图片的访问路径|
 
-  响应数据样例：
+响应数据样例：
 
-  ~~~json
-  {
-      "code": 1,
-      "msg": "success",
-      "data": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-02-00-27-0400.jpg"
-  }
-  ~~~
-
-
+~~~json
+{
+    "code": 1,
+    "msg": "success",
+    "data": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-02-00-27-0400.jpg"
+}
+~~~
 
 引入阿里云OSS上传文件工具类（由官方的示例代码改造而来）
 
@@ -869,62 +790,51 @@ public class UploadController {
 
 ![image-20230102175353270](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102175353270.png)
 
- 
-
-
-
-
-
-
-
-
-
 # 3. 修改员工
 
 需求：修改员工信息
 
 ![image-20220904220001994](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220001994.png)
 
- <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom: 50%;" />
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom: 50%;" />
+</div>
 
 在进行修改员工信息的时候，我们首先先要根据员工的ID查询员工的信息用于页面回显展示，然后用户修改员工数据之后，点击保存按钮，就可以将修改的数据提交到服务端，保存到数据库。 具体操作为：
 
 1. 根据ID查询员工信息
 2. 保存修改的员工信息
 
-
-
 ## 3.1 查询回显
 
 ## 3.1.1 接口文档
 
-根据ID查询员工数据 
+根据ID查询员工数据
 
 - 基本信息
 
   ~~~
   请求路径：/emps/{id}
-  
+
   请求方式：GET
-  
+
   接口描述：该接口用于根据主键ID查询员工的信息
   ~~~
-
 - 请求参数
 
   参数格式：路径参数
 
   参数说明：
 
-| 参数名 | 类型   | 是否必须 | 备注   |
-| ------ | ------ | -------- | ------ |
-| id     | number | 必须     | 员工ID |
+|参数名|类型|是否必须|备注|
+| ------| ------| --------| ------|
+|id|number|必须|员工ID|
 
-  请求参数样例：
+请求参数样例：
 
-  ~~~
-  /emps/1
-  ~~~
+~~~
+/emps/1
+~~~
 
 - 响应数据
 
@@ -932,52 +842,48 @@ public class UploadController {
 
   参数说明：
 
-| 名称           | 类型   | 是否必须 | 默认值 | 备注                                                         |
-| -------------- | ------ | -------- | ------ | ------------------------------------------------------------ |
-| code           | number | 必须     |        | 响应码, 1 成功 , 0 失败                                      |
-| msg            | string | 非必须   |        | 提示信息                                                     |
-| data           | object | 必须     |        | 返回的数据                                                   |
-| \|- id         | number | 非必须   |        | id                                                           |
-| \|- username   | string | 非必须   |        | 用户名                                                       |
-| \|- name       | string | 非必须   |        | 姓名                                                         |
-| \|- password   | string | 非必须   |        | 密码                                                         |
-| \|- entrydate  | string | 非必须   |        | 入职日期                                                     |
-| \|- gender     | number | 非必须   |        | 性别 , 1 男 ; 2 女                                           |
-| \|- image      | string | 非必须   |        | 图像                                                         |
-| \|- job        | number | 非必须   |        | 职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师 |
-| \|- deptId     | number | 非必须   |        | 部门id                                                       |
-| \|- createTime | string | 非必须   |        | 创建时间                                                     |
-| \|- updateTime | string | 非必须   |        | 更新时间                                                     |
+|名称|类型|是否必须|默认值|备注|
+| -------------| ------| --------| ------| -------------------------------------------------------------|
+|code|number|必须||响应码, 1 成功 , 0 失败|
+|msg|string|非必须||提示信息|
+|data|object|必须||返回的数据|
+|\|- id|number|非必须||id|
+|\|- username|string|非必须||用户名|
+|\|- name|string|非必须||姓名|
+|\|- password|string|非必须||密码|
+|\|- entrydate|string|非必须||入职日期|
+|\|- gender|number|非必须||性别 , 1 男 ; 2 女|
+|\|- image|string|非必须||图像|
+|\|- job|number|非必须||职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师|
+|\|- deptId|number|非必须||部门id|
+|\|- createTime|string|非必须||创建时间|
+|\|- updateTime|string|非必须||更新时间|
 
-  响应数据样例：
+响应数据样例：
 
-  ~~~json
-  {
-    "code": 1,
-    "msg": "success",
-    "data": {
-      "id": 2,
-      "username": "zhangwuji",
-      "password": "123456",
-      "name": "张无忌",
-      "gender": 1,
-      "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-02-00-27-53B.jpg",
-      "job": 2,
-      "entrydate": "2015-01-01",
-      "deptId": 2,
-      "createTime": "2022-09-01T23:06:30",
-      "updateTime": "2022-09-02T00:29:04"
-    }
+~~~json
+{
+  "code": 1,
+  "msg": "success",
+  "data": {
+    "id": 2,
+    "username": "zhangwuji",
+    "password": "123456",
+    "name": "张无忌",
+    "gender": 1,
+    "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-02-00-27-53B.jpg",
+    "job": 2,
+    "entrydate": "2015-01-01",
+    "deptId": 2,
+    "createTime": "2022-09-01T23:06:30",
+    "updateTime": "2022-09-02T00:29:04"
   }
-  ~~~
-
-
+}
+~~~
 
 ## 3.1.2 实现思路
 
 ![image-20221230161841795](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230161841795.png)
-
-
 
 ## 3.1.3 代码实现
 
@@ -1054,23 +960,17 @@ public class EmpController {
 }
 ~~~
 
-
-
 ## 3.1.4 postman测试
 
 ![image-20221230170926513](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230170926513.png)
 
-
-
-
-
-
-
 ## 3.2 修改员工
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904220006578.png" style="zoom:67%;" />
+</div>
 
-> 当用户修改完数据之后，点击保存按钮，就需要将数据提交到服务端，然后服务端需要将修改后的数据更新到数据库中。 
+> 当用户修改完数据之后，点击保存按钮，就需要将数据提交到服务端，然后服务端需要将修改后的数据更新到数据库中。
 
 ## 3.2.1 接口文档
 
@@ -1078,43 +978,42 @@ public class EmpController {
 
   ~~~
   请求路径：/emps
-  
+
   请求方式：PUT
-  
+
   接口描述：该接口用于修改员工的数据信息
   ~~~
-
 - 请求参数
 
   参数格式：application/json
 
   参数说明：
 
-| 名称      | 类型   | 是否必须 | 备注                                                         |
-| --------- | ------ | -------- | ------------------------------------------------------------ |
-| id        | number | 必须     | id                                                           |
-| username  | string | 必须     | 用户名                                                       |
-| name      | string | 必须     | 姓名                                                         |
-| gender    | number | 必须     | 性别, 说明: 1 男, 2 女                                       |
-| image     | string | 非必须   | 图像                                                         |
-| deptId    | number | 非必须   | 部门id                                                       |
-| entrydate | string | 非必须   | 入职日期                                                     |
-| job       | number | 非必须   | 职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师 |
+|名称|类型|是否必须|备注|
+| ---------| ------| --------| -------------------------------------------------------------|
+|id|number|必须|id|
+|username|string|必须|用户名|
+|name|string|必须|姓名|
+|gender|number|必须|性别, 说明: 1 男, 2 女|
+|image|string|非必须|图像|
+|deptId|number|非必须|部门id|
+|entrydate|string|非必须|入职日期|
+|job|number|非必须|职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管, 5 咨询师|
 
-  请求数据样例：
+请求数据样例：
 
-  ~~~json
-  {
-    "id": 1,
-    "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-03-07-37-38222.jpg",
-    "username": "linpingzhi",
-    "name": "林平之",
-    "gender": 1,
-    "job": 1,
-    "entrydate": "2022-09-18",
-    "deptId": 1
-  }
-  ~~~
+~~~json
+{
+  "id": 1,
+  "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2022-09-03-07-37-38222.jpg",
+  "username": "linpingzhi",
+  "name": "林平之",
+  "gender": 1,
+  "job": 1,
+  "entrydate": "2022-09-18",
+  "deptId": 1
+}
+~~~
 
 - 响应数据
 
@@ -1122,29 +1021,25 @@ public class EmpController {
 
   参数说明：
 
-| 参数名 | 类型   | 是否必须 | 备注                           |
-| ------ | ------ | -------- | ------------------------------ |
-| code   | number | 必须     | 响应码，1 代表成功，0 代表失败 |
-| msg    | string | 非必须   | 提示信息                       |
-| data   | object | 非必须   | 返回的数据                     |
+|参数名|类型|是否必须|备注|
+| ------| ------| --------| ------------------------------|
+|code|number|必须|响应码，1 代表成功，0 代表失败|
+|msg|string|非必须|提示信息|
+|data|object|非必须|返回的数据|
 
-  响应数据样例：
+响应数据样例：
 
-  ~~~json
-  {
-      "code":1,
-      "msg":"success",
-      "data":null
-  }
-  ~~~
-
-
+~~~json
+{
+    "code":1,
+    "msg":"success",
+    "data":null
+}
+~~~
 
 ## 3.2.2 实现思路
 
 ![image-20221230171342318](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221230171342318.png)
-
-
 
 ## 3.2.3 代码实现
 
@@ -1265,25 +1160,13 @@ public class EmpController {
 }
 ~~~
 
-
-
 ## 3.2.4 postman测试
 
-![image-20220904221941144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904221941144.png) 
-
-
+![image-20220904221941144](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904221941144.png)
 
 ## 3.2.5 前后端联调测试
 
-![image-20220904222028501](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904222028501.png) 
-
-
-
-
-
-
-
-
+![image-20220904222028501](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20220904222028501.png)
 
 # 4. 配置文件
 
@@ -1291,7 +1174,9 @@ public class EmpController {
 
 ## 4.1 参数配置化
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20221231085558457.png" alt="image-20221231085558457" style="zoom: 80%;" />
+</div>
 
 在我们之前编写的程序中进行文件上传时，需要调用AliOSSUtils工具类，将文件上传到阿里云OSS对象存储服务当中。而在调用工具类进行文件上传时，需要一些参数：
 
@@ -1300,14 +1185,10 @@ public class EmpController {
 - accessKeySecret   //用户密钥
 - bucketName      //存储空间的名字
 
-
-
 关于以上的这些阿里云相关配置信息，我们是直接写死在java代码中了(硬编码)，如果我们在做项目时每涉及到一个第三方技术服务，就将其参数硬编码，那么在Java程序中会存在两个问题：
 
 1. 如果这些参数发生变化了，就必须在源程序代码中改动这些参数，然后需要重新进行代码的编译，将Java代码编译成class字节码文件再重新运行程序。（比较繁琐）
 2. 如果我们开发的是一个真实的企业级项目， Java类可能会有很多，如果将这些参数分散的定义在各个Java类当中，我们要修改一个参数值，我们就需要在众多的Java代码当中来定位到对应的位置，再来修改参数，修改完毕之后再重新编译再运行。（参数配置过于分散，是不方便集中的管理和维护）
-
-
 
 为了解决以上分析的问题，我们可以将参数配置在配置文件中。如下：
 
@@ -1318,8 +1199,6 @@ aliyun.oss.accessKeyId=LTAI4GCH1vX6DKqJWxd6nEuW
 aliyun.oss.accessKeySecret=yBshYweHOpqDuhCArrVHwIiBKpyqSL
 aliyun.oss.bucketName=web-tlias
 ~~~
-
-
 
 在将阿里云OSS配置参数交给properties配置文件来管理之后，我们的AliOSSUtils工具类就变为以下形式：
 
@@ -1339,8 +1218,6 @@ public class AliOSSUtils {
 > 而此时如果直接调用AliOSSUtils类当中的upload方法进行文件上传时，这4项参数全部为null，原因是因为并没有给它赋值。
 >
 > 此时我们是不是需要将配置文件当中所配置的属性值读取出来，并分别赋值给AliOSSUtils工具类当中的各个属性呢？那应该怎么做呢？
-
-
 
 因为application.properties是springboot项目默认的配置文件，所以springboot程序在启动时会默认读取application.properties配置文件，而我们可以使用一个现成的注解：@Value，获取配置文件中的数据。
 
@@ -1372,14 +1249,6 @@ public class AliOSSUtils {
 
 ![image-20230102175353270](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230102175353270.png)
 
-
-
-
-
-
-
-
-
 ## 4.2 yml配置文件
 
 前面我们一直使用springboot项目创建完毕后自带的application.properties进行属性的配置，那其实呢，在springboot项目当中是支持多种配置方式的，除了支持properties配置文件以外，还支持另外一种类型的配置文件，就是我们接下来要讲解的yml格式的配置文件。
@@ -1390,23 +1259,20 @@ public class AliOSSUtils {
   server.port=8080
   server.address=127.0.0.1
   ```
-
-- application.yml 
-
-  ```yml
-  server:
-    port: 8080
-    address: 127.0.0.1
-  ```
-
-- application.yaml 
+- application.yml
 
   ```yml
   server:
     port: 8080
     address: 127.0.0.1
   ```
+- application.yaml
 
+  ```yml
+  server:
+    port: 8080
+    address: 127.0.0.1
+  ```
 
 > yml 格式的配置文件，后缀名有两种：
 >
@@ -1423,8 +1289,6 @@ public class AliOSSUtils {
 - 容易与脚本语言交互
 - 以数据为核心，重数据轻格式
 
-
-
 简单的了解过springboot所支持的配置文件，以及不同类型配置文件之间的优缺点之后，接下来我们就来了解下yml配置文件的基本语法：
 
 - 大小写敏感
@@ -1434,8 +1298,6 @@ public class AliOSSUtils {
 - `#`表示注释，从这个字符一直到行尾，都会被解析器忽略
 
 ![image-20230103084645450](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103084645450.png)
-
-
 
 了解完yml格式配置文件的基本语法之后，接下来我们再来看下yml文件中常见的数据格式。在这里我们主要介绍最为常见的两类：
 
@@ -1459,8 +1321,6 @@ hobby:
   - game
   - sport
 ```
-
-
 
 熟悉完了yml文件的基本语法后，我们修改下之前案例中使用的配置文件，变更为application.yml配置方式：
 
@@ -1498,12 +1358,6 @@ aliyun:
     bucketName: web-397
 ~~~
 
-
-
-
-
-
-
 ## 4.3 @ConfigurationProperties
 
 讲解完了yml配置文件之后，最后再来介绍一个注解`@ConfigurationProperties`。在介绍注解之前，我们先来看一个场景，分析下代码当中可能存在的问题：
@@ -1514,21 +1368,16 @@ aliyun:
 
 那么有没有一种方式可以简化这些配置参数的注入呢？答案是肯定有，在Spring中给我们提供了一种简化方式，可以直接将配置文件中配置项的值自动的注入到对象的属性中。
 
-
-
 Spring提供的简化方式套路：
 
 1. 需要创建一个实现类，且实体类中的属性名和配置文件当中key的名字必须要一致
 
    > 比如：配置文件当中叫endpoints，实体类当中的属性也得叫endpoints，另外实体类当中的属性还需要提供 getter / setter方法
-
+   >
 2. 需要将实体类交给Spring的IOC容器管理，成为IOC容器当中的bean对象
-
 3. 在实体类上添加`@ConfigurationProperties`注解，并通过perfect属性来指定配置参数项的前缀
 
 ![image-20230103210827003](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103210827003.png)
-
-
 
 实体类：AliOSSProperties
 
@@ -1552,8 +1401,6 @@ public class AliOSSProperties {
     private String bucketName;
 }
 ~~~
-
-
 
 AliOSSUtils工具类：
 
@@ -1602,11 +1449,9 @@ public class AliOSSUtils {
 
 ~~~
 
-
-
 在我们添加上注解后，会发现idea窗口上面出现一个红色警告：
 
-![image-20230103212042823](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103212042823.png) 
+![image-20230103212042823](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230103212042823.png)
 
 这个警告提示是告知我们还需要引入一个依赖：
 
@@ -1619,8 +1464,6 @@ public class AliOSSUtils {
 
 当我们在pom.xml文件当中配置了这项依赖之后，我们重新启动服务，大家就会看到在properties或者是yml配置文件当中，就会提示阿里云 OSS 相关的配置项。所以这项依赖它的作用就是会自动的识别被`@Configuration Properties`注解标识的bean对象。
 
-
-
 > 刚才的红色警告，已经变成了一个灰色的提示，提示我们需要重新运行springboot服务
 
 @ConfigurationProperties注解我们已经介绍完了，接下来我们就来区分一下@ConfigurationProperties注解以及我们前面所介绍的另外一个@Value注解：
@@ -1630,18 +1473,6 @@ public class AliOSSUtils {
 不同点：
 
 - @Value注解只能一个一个的进行外部属性的注入。
-
 - @ConfigurationProperties可以批量的将外部的属性配置注入到bean对象的属性中。
 
-
-
 如果要注入的属性非常的多，并且还想做到复用，就可以定义这么一个bean对象。通过 configuration properties 批量的将外部的属性配置直接注入到 bin 对象的属性当中。在其他的类当中，我要想获取到注入进来的属性，我直接注入 bin 对象，然后调用 get 方法，就可以获取到对应的属性值了
-
-
-
-
-
-
-
-
-

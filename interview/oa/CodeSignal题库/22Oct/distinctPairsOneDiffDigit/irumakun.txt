@@ -1,7 +1,0 @@
-substring map:
-
-make every thing str
-
-put all digits produced by removing a digit on each position into the map
-
-e.g. 12345 -> {2345:0,1345:0, 1245:0, 1235:0, 1234:0}

@@ -1,14 +1,19 @@
+# Middlewares-Cookies-Sessions
+
 ---
+
 title: Middlewares, Cookies, Sessions
 tags:
-  - Cookies
-  - Sessions
-  - 前端
-  - Express.js
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222254147.jpg
-abbrlink: faaf9cfa
-date: 2023-11-22 22:54:01
+
+- Cookies
+- Sessions
+- 前端
+- Express.js
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222254147.jpg
+  abbrlink: faaf9cfa
+  date: 2023-11-22 22:54:01
+
 ---
 
 # Express Middlewares
@@ -151,12 +156,12 @@ Cookie 签名的完整流程是：
 
 Cookies 以及 storage (local storage、session storage 的统称) 的差别在于：
 
-|            | Cookies                                | Storage                        |
-| ---------- | -------------------------------------- | ------------------------------ |
-| Purpose    | 服务器端读取数据，保留使用者的偏好设置 | 运行在用户端的储存空间         |
-| HTTP       | 会随着 HTTP 请求送到服务器端           | 不会随着 HTTP 请求送到服务器端 |
-| Data Size  | 对每个网站来说，最大 4095Bytes         | 最大 5MB                       |
-| Expiration | 有可能会过期                           | 不会过期                       |
+||Cookies|Storage|
+| ----------| --------------------------------------| ------------------------------|
+|Purpose|服务器端读取数据，保留使用者的偏好设置|运行在用户端的储存空间|
+|HTTP|会随着 HTTP 请求送到服务器端|不会随着 HTTP 请求送到服务器端|
+|Data Size|对每个网站来说，最大 4095Bytes|最大 5MB|
+|Expiration|有可能会过期|不会过期|
 
 # Sessions
 

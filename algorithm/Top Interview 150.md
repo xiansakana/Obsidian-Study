@@ -1,12 +1,17 @@
+# Top Interview 150
+
 ---
+
 title: Top Interview 150
 tags:
-  - Leetcode
-  - 算法
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050327460.jpg
-categories: 算法
-abbrlink: b6d1a2e5
-date: 2024-03-05 03:41:00
+
+- Leetcode
+- 算法
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050327460.jpg
+  categories: 算法
+  abbrlink: b6d1a2e5
+  date: 2024-03-05 03:41:00
+
 ---
 
 # Easy
@@ -498,6 +503,7 @@ class Solution:
 对于 3 位数的数字，它不可能大于 243。这意味着它要么被困在 243 以下的循环内，要么跌到 1。4 位或 4 位以上的数字在每一步都会丢失一位，直到降到 3 位为止。
 
 时间复杂度：O(243⋅3+log⁡n+log⁡log⁡n+log⁡log⁡log⁡n)... = O(log⁡n)。
+
 - 查找给定数字的下一个值的成本为 O(log⁡n)，因为我们正在处理数字中的每位数字，而数字中的位数由 log⁡n 给定。
 - 要计算出总的时间复杂度，我们需要仔细考虑循环中有多少个数字，它们有多大。
 - 我们在上面确定，一旦一个数字低于 243，它就不可能回到 243 以上。因此，我们就可以用 243 以下最长循环的长度来代替 243，不过，因为常数无论如何都无关紧要，所以我们不会担心它。
@@ -525,6 +531,7 @@ def isHappy(self, n: int) -> bool:  
 ```
 
 时间复杂度：O(log⁡n)。该分析建立在对前一种方法的分析的基础上，但是这次我们需要跟踪两个指针而不是一个指针来分析，以及在它们相遇前需要绕着这个循环走多少次。
+
 - 如果没有循环，那么快跑者将先到达 1，慢跑者将到达链表中的一半。我们知道最坏的情况下，成本是 O(2⋅log⁡n)=O(log⁡n)=O(logn)。
 - 一旦两个指针都在循环中，在每个循环中，快跑者将离慢跑者更近一步。一旦快跑者落后慢跑者一步，他们就会在下一步相遇。假设循环中有 k 个数字。如果他们的起点是相隔 k−1 的位置（这是他们可以开始的最远的距离），那么快跑者需要 k−1 步才能到达慢跑者，这对于我们的目的来说也是不变的。因此，主操作仍然在计算起始 n 的下一个值，即 O(log⁡n)。
 
@@ -610,7 +617,6 @@ class Solution:
 
 空间复杂度：O(k)，其中 k 是判断重复元素时允许的下标差的绝对值的最大值。需要使用哈希集合存储滑动窗口中的元素，任意时刻滑动窗口中的元素个数最多为 k+1 个。
 
-
 ## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)（[有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)）
 
 ```
@@ -662,7 +668,6 @@ class Solution:
 时间复杂度：O(n+m)，其中 n 为 pattern 的长度，m 为 str 的长度。插入和查询哈希表的均摊时间复杂度均为 O(n+m)。每一个字符至多只被遍历一次。
 
 空间复杂度：O(n+m)，其中 n 为 pattern 的长度，m 为 str 的长度。最坏情况下，我们需要存储 pattern 中的每一个字符和 str 中的每一个字符串。
-
 
 ## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)（[赎金信](https://leetcode.cn/problems/ransom-note/)）
 
@@ -740,7 +745,6 @@ class Solution:
 时间复杂度：O(n+m)，其中 n 为 s 的长度，m 为 t 的长度。每次无论是匹配成功还是失败，都有至少一个指针发生右移，两指针能够位移的总距离为 n+m。
 
 空间复杂度：O(1)。
-
 
 # Medium
 
@@ -971,7 +975,7 @@ class Solution:
 
 ## [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) （[跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/)）
 
-Return _the minimum number of jumps to reach_ `nums[n - 1]`.
+Return *the minimum number of jumps to reach* `nums[n - 1]`.
 
 ```
 Input: nums = [2,3,1,1,4]
@@ -1008,13 +1012,13 @@ Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[7,4,1],[8,5,2],[9,6,3]]
 ```
 
-
 ![](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
 
 ```
 Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
 Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 ```
+
 ![](https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg)
 
 **原地旋转**
@@ -1039,14 +1043,13 @@ class Solution:
                 matrix[i][j], matrix[n - j - 1][i], matrix[n - i - 1][n - j - 1], matrix[j][n - i - 1] = matrix[n -j - 1][i], matrix[n - i - 1][n - j - 1], matrix[j][n - i - 1], matrix[i][j]
 ```
 
-
 时间复杂度：O(N<sup>2</sup>)，其中 N 是 matrix 的边长。我们需要枚举的子矩阵大小为 O((n/2)×((n+1)/2))=O(N<sup>2</sup>)。
 
 空间复杂度：O(1)。为原地旋转。
 
 **用翻转代替旋转**
 
-$$  
+$$
 \left[  
 \begin{matrix}  
 5 & 1 & 9 & 11\\  
@@ -1074,7 +1077,6 @@ $$
 \end{matrix}  
 \right]
 $$
-
 
 ```python
 class Solution:
@@ -1164,6 +1166,7 @@ Output: [1,2,3,6,9,8,7,4,5]
 Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 ```
+
 ![]()
 ![](https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg)
 
@@ -1219,7 +1222,7 @@ class Solution:
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/) （[跳跃游戏](https://leetcode.cn/problems/jump-game/)）
 
-Return `true` _if you can reach the last index, or_ `false` _otherwise_.
+Return `true` *if you can reach the last index, or* `false` *otherwise*.
 
 ```
 Input: nums = [2,3,1,1,4]
@@ -1289,7 +1292,6 @@ class Solution:
 时间复杂度：O(mn)，其中 m 是矩阵的行数，n 是矩阵的列数。我们至多只需要遍历该矩阵两次。
 
 空间复杂度：O(m+n)，其中 m 是矩阵的行数，n 是矩阵的列数。我们需要分别记录每一行或每一列是否有零出现。
-
 
 **使用两个标记变量**
 
@@ -1568,7 +1570,6 @@ class Solution:
 
 空间复杂度：O(1)。
 
-
 ## [189. Rotate Array](https://leetcode.com/problems/rotate-array/description/) （[轮转数组](https://leetcode.cn/problems/rotate-array/)）
 
 ```
@@ -1595,12 +1596,12 @@ class Solution:
 
 空间复杂度：O(n)。
 
-| 操作                              | 结果          |
-| :-------------------------------- | ------------- |
-| 原始数组                          | 1 2 3 4 5 6 7 |
-| 翻转所有元素                      | 7 6 5 4 3 2 1 |
-| 翻转 [0, (k mod n) -1] 区间的元素 | 5 6 7 4 3 2 1 |
-| 翻转 [k mod n, n - 1] 区间的元素  | 5 6 7 1 2 3 4 |
+|操作|结果|
+| :--------------------------------| -------------|
+|原始数组|1 2 3 4 5 6 7|
+|翻转所有元素|7 6 5 4 3 2 1|
+|翻转 [0, (k mod n) -1] 区间的元素|5 6 7 4 3 2 1|
+|翻转 [k mod n, n - 1] 区间的元素|5 6 7 1 2 3 4|
 
 ```python
 class Solution:
@@ -1651,7 +1652,6 @@ class Solution {
 
 空间复杂度：O(1)。
 
-
 ## [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)（[长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)）
 
 ```
@@ -1688,7 +1688,6 @@ class Solution:
 时间复杂度：O(n)，其中 n 是数组的长度。指针 left 和 right 最多各移动 n 次。
 
 空间复杂度：O(1)。
-
 
 ## [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) （[除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/)）
 
@@ -1728,7 +1727,7 @@ class Solution:
 时间复杂度：O(N)，其中 N 指的是数组 nums 的大小。预处理 L 和 R 数组以及最后的遍历计算都是 O(N) 的时间复杂度。
 空间复杂度：O(N)，其中 N 指的是数组 nums 的大小。使用了 L 和 R 数组去构造答案，L 和 R 数组的长度为数组 nums 的大小。
 
-空间复杂度 O(1)O(1)_O_(1) 的方法
+空间复杂度 O(1)O(1)*O*(1) 的方法
 
 ```python
 class Solution:
@@ -1812,14 +1811,14 @@ class Solution:
 3. Any live cell with more than three live neighbors dies, as if by over-population.
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
-![](https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg)
+​![](https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg)​
 
 ```
 Input: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
 Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
-![](https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg)
+​![](https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg)​
 
 ```
 Input: board = [[1,1],[1,0]]
@@ -2017,7 +2016,6 @@ class Solution:
 
 空间复杂度：O(m×n)，其中 m 是 words 的单词数，n 是 words 中每个单词的长度。每次滑动窗口时，需要用一个哈希表保存单词频次。
 
-
 ## [68. Text Justification](https://leetcode.com/problems/text-justification/)（[文本左右对齐](https://leetcode.cn/problems/text-justification/)）
 
 ```
@@ -2086,7 +2084,6 @@ class Solution:
 时间复杂度：O(m)，其中 m 是数组 words 中所有字符串的长度之和。
 
 空间复杂度：O(m)。
-
 
 ## [135. Candy](https://leetcode.com/problems/candy/)（[分发糖果](https://leetcode.cn/problems/candy/)）
 
@@ -2162,3 +2159,5 @@ class Solution:
 时间复杂度：O(n)，其中 n 是孩子的数量。我们需要遍历两次数组以分别计算满足左规则或右规则的最少糖果数量。
 
 空间复杂度：O(1)。我们只需要常数的空间保存若干变量。
+
+‍

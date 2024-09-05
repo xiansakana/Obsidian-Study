@@ -1,13 +1,18 @@
+# Version-Control
+
 ---
+
 title: Version Control
 tags:
-  - Git
-  - Unix
-  - CMD
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120955919.png
-categories: 杂项
-abbrlink: 231a4d21
-date: 2023-11-12 09:43:35
+
+- Git
+- Unix
+- CMD
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120955919.png
+  categories: 杂项
+  abbrlink: 231a4d21
+  date: 2023-11-12 09:43:35
+
 ---
 
 # 版本控制
@@ -38,14 +43,14 @@ Windows 系统中， Command-Line Prompt (cmd.exe)是个 CLI 程式。在 macOS 
 
 # Command Prompt 常用指令
 
-| CMD Command               | Description                    |
-| :------------------------ | :----------------------------- |
-| cd                        | Change directory               |
-| mkdir                     | Make a new directory           |
-| type nul > "filename.txt" | 制作一个新的 filename.txt 文件 |
-| cls                       | clear screen                   |
-| dir                       | list directory content         |
-| Ctrl + C                  | 强制终止任何正在执行的指令     |
+|CMD Command|Description|
+| :------------------------| :-----------------------------|
+|cd|Change directory|
+|mkdir|Make a new directory|
+|type nul > "filename.txt"|制作一个新的 filename.txt 文件|
+|cls|clear screen|
+|dir|list directory content|
+|Ctrl + C|强制终止任何正在执行的指令|
 
 # Unix 作业系统
 
@@ -53,16 +58,16 @@ UNIX 作业系统，是一个强大的多使用者、多工作业系统，支援
 
 Unix 作业系统中，常用的指令有：
 
-| Unix Command | Description                                                                  |
-| :----------- | :--------------------------------------------------------------------------- |
-| cd           | Change directory                                                             |
-| ls           | List files or directories in a directory                                     |
-| pwd          | Stands for "present working directory"                                       |
-| mkdir        | Make directory                                                               |
-| touch        | Create, change and modify timestamps of a file                               |
-| rm           | Remove file                                                                  |
-| rmdir        | Remove an empty directory                                                    |
-| rm -rf       | rf stands for remove forcefully; can be used to remove a non-empty directory |
+|Unix Command|Description|
+| :-----------| :---------------------------------------------------------------------------|
+|cd|Change directory|
+|ls|List files or directories in a directory|
+|pwd|Stands for "present working directory"|
+|mkdir|Make directory|
+|touch|Create, change and modify timestamps of a file|
+|rm|Remove file|
+|rmdir|Remove an empty directory|
+|rm -rf|rf stands for remove forcefully; can be used to remove a non-empty directory|
 
 # Git and Git Bash
 
@@ -103,25 +108,25 @@ Git 对 Local Repository 的档案有 4 种主要状态：
 3. unchanged: 档案自上次 commit 以来未更改。 如果我们修改档案，档案就变成：
 4. unstaged: modified，但还不是下一次 commit 的一部分。 我们可以使用 git add 再次让他变成 staged 状态。
 
-| Git Command                           | Description                                                                                                                                   |
-| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git init                              | Initialize an empty git repository                                                                                                            |
-| git config --list                     | Display all configuration settings                                                                                                            |
-| git --version                         | Display the current version of Git                                                                                                            |
-| git config -global user.name "name"   | Set username                                                                                                                                  |
-| git config -global user.email "email" | Set email address                                                                                                                             |
-| git status                            | Display the state of the working directory and staging area                                                                                   |
-| git add _filename_                    | Add files to staging area                                                                                                                     |
-| git commit -m "commit message"        | Commit all files on staging area                                                                                                              |
-| git rm --cashed _filename_            | Remove files from staging area                                                                                                                |
-| git log                               | Review and read commit history                                                                                                                |
-| git branch _branchName_               | Create a new branch from current commit                                                                                                       |
-| git checkout _branchName_             | Switch to another branch                                                                                                                      |
-| git merge _branchName_                | Take the independent lines of development created by git branch and integrate them into a single branch                                       |
-| git remove add _origin_ _gitSSH_      | Connect to a remote repository in gitSSh and name the connection _origin_                                                                     |
-| git push -u origin master             | Push the commits in the local branch named master to the remote named origin; -u stands for upstream, 通常第一次 push 时，会被要求登入 GitHub |
-| git push                              | Once we set the -u flag, we can use "git push" command                                                                                        |
-| git clone _gitSSH_                    | Get a working copy of the remote repository                                                                                                   |
-| git pull _gitSSH_                     | Update that local copy with new commits from the remote repository                                                                            |
-| git remote set-url origin _gitSSH_    | Set the remote connection named origin to a new remote repository                                                                             |
-| git remote remove origin              | Remove a connection called origin                                                                                                             |
+|Git Command|Description|
+| -------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------|
+|git init|Initialize an empty git repository|
+|git config --list|Display all configuration settings|
+|git --version|Display the current version of Git|
+|git config -global user.name "name"|Set username|
+|git config -global user.email "email"|Set email address|
+|git status|Display the state of the working directory and staging area|
+|git add *filename*|Add files to staging area|
+|git commit -m "commit message"|Commit all files on staging area|
+|git rm --cashed *filename*|Remove files from staging area|
+|git log|Review and read commit history|
+|git branch *branchName*|Create a new branch from current commit|
+|git checkout *branchName*|Switch to another branch|
+|git merge *branchName*|Take the independent lines of development created by git branch and integrate them into a single branch|
+|git remove add *origin* *gitSSH*|Connect to a remote repository in gitSSh and name the connection *origin*|
+|git push -u origin master|Push the commits in the local branch named master to the remote named origin; -u stands for upstream, 通常第一次 push 时，会被要求登入 GitHub|
+|git push|Once we set the -u flag, we can use "git push" command|
+|git clone *gitSSH*|Get a working copy of the remote repository|
+|git pull *gitSSH*|Update that local copy with new commits from the remote repository|
+|git remote set-url origin *gitSSH*|Set the remote connection named origin to a new remote repository|
+|git remote remove origin|Remove a connection called origin|

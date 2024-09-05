@@ -1,13 +1,18 @@
+# Node-js
+
 ---
+
 title: Node.js
 tags:
-  - Node.js
-  - NPM
-  - 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120957148.png
-categories: 后端
-abbrlink: 747d7228
-date: 2023-11-12 09:56:07
+
+- Node.js
+- NPM
+- 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311120957148.png
+  categories: 后端
+  abbrlink: 747d7228
+  date: 2023-11-12 09:56:07
+
 ---
 
 # 静态与动态网页
@@ -100,9 +105,7 @@ Node.js 的 modules 分成三种：
      console.log(data);
    });
    ```
-
 2. 我们自己制作的 modules。
-
 3. 网路上第三方制作的 modules，可以透过 npm (node package manager)下载来使用。
 
 ## Self-Made Modules
@@ -121,29 +124,29 @@ IP 地址（英语：IP Address，全称 Internet Protocol Address），又译�
 
 IPv4 中的每 8 个 digit 都会被转换为 0 到 255 之间的整数； 因此，IPv4 通常是 168.1.7.0 而不 10101000.00000001.00000111.00000000。用前者更容易让人记忆。
 
-根据 IPv4 地址的格式，全世界有多少个不同的设备可以同时上网？32bits 可以制作出 2^32 个不同的 IP 地址。 2^32=4294967296, ，约 43 亿。 但是，这个世界上大约有 72 亿人，且每个人可能拥有超过 1 个与网路连接的设备，所以用 IPv4 地址的格式可能会有一天不够用。
+根据 IPv4 地址的格式，全世界有多少个不同的设备可以同时上网？32bits 可以制作出 2<sup>32 个不同的 IP 地址。 2</sup>32=4294967296, ，约 43 亿。 但是，这个世界上大约有 72 亿人，且每个人可能拥有超过 1 个与网路连接的设备，所以用 IPv4 地址的格式可能会有一天不够用。
 因此，IPv6 于 1990 年代引入； IPv6 使用 128 位元，将确保地球上的每一个人、装置、每一块岩石和沙子都能够拥有一个 IPv6 地址。
 
 Domain Name System，缩写：DNS，是网际网路的一项服务。它作为将域名(Domain Name)和 IP 位址相互对映的一个分散式资料库，能够使人更方便地存取网际网路。DNS 旨在让人们记住域名，而不是无意义的数字。 例如，记住www.youtube.com比记住168.112.0.12更容易。一个简单的DNS系统可以是：
 
-| Domain Name | IP Address   |
-| ----------- | ------------ |
-| youtube.com | 168.112.0.15 |
-| example.com | 167.3.22.19  |
-| google.com  | 168.0.1.3    |
+|Domain Name|IP Address|
+| -----------| ------------|
+|youtube.com|168.112.0.15|
+|example.com|167.3.22.19|
+|google.com|168.0.1.3|
 
 服务器中的 port 是网路通讯连接时，逻辑上的端点(endpoint)，用于在服务器和客户端之间交换信息。 每个 port 被分配一个唯一的数字来单独识别它们。一些最常用的端口及其相关的网络协议是：
 
-| Port 号码 | 用途                                                                                                                 |
-| --------- | -------------------------------------------------------------------------------------------------------------------- |
-| 20, 21    | File Transfer Protocol (FTP). FTP is for transferring files between a client and a server.                           |
-| 22        | Secure Shell (SSH). SSH is one of many protocols that create secure network connections.                             |
-| 25        | Simple Mail Transfer Protocol (SMTP). SMTP is used for email.                                                        |
-| 80        | Hypertext Transfer Protocol (HTTP).                                                                                  |
-| 443       | HTTP secure (HTTPS). All HTTPS web traffic goes to port 443.                                                         |
-| 3389      | Remote Desktop Protocol (RDP). RDP enables users to remotely connect to their desktop computers from another device. |
+|Port 号码|用途|
+| ---------| --------------------------------------------------------------------------------------------------------------------|
+|20, 21|File Transfer Protocol (FTP). FTP is for transferring files between a client and a server.|
+|22|Secure Shell (SSH). SSH is one of many protocols that create secure network connections.|
+|25|Simple Mail Transfer Protocol (SMTP). SMTP is used for email.|
+|80|Hypertext Transfer Protocol (HTTP).|
+|443|HTTP secure (HTTPS). All HTTPS web traffic goes to port 443.|
+|3389|Remote Desktop Protocol (RDP). RDP enables users to remotely connect to their desktop computers from another device.|
 
-例如，若 Google 服务器是https://www.google.com，我们希望发出HTTPs Request，则可以对著[https://www.google.com:443](https://www.google.com/)发出请求，即可连线到 Google 服务器上处理 HTTPs 请求的 port。因为没有必要显示，所以网址后面的*:443*通常在网页浏览器上是看不到的。
+例如，若 Google 服务器是https://www.google.com，我们希望发出HTTPs Request，则可以对著[https://www.google.com:443](https://www.google.com/)发出请求，即可连线到 Google 服务器上处理 HTTPs 请求的 port。因为没有必要显示，所以网址后面的 *:443*通常在网页浏览器上是看不到的。
 
 另一方面，Google 服务器有著 24 小时不停止运作的脚本语言，在处理任何来自 port 443 的请求。脚本的 Pseudocode 如下：
 

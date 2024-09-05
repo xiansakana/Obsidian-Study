@@ -1,12 +1,17 @@
+# CSS
+
 ---
+
 title: CSS
 tags:
-  - CSS
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310190107034.png
-abbrlink: d54bd6b
-date: 2023-10-19 01:24:41
+
+- CSS
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310190107034.png
+  abbrlink: d54bd6b
+  date: 2023-10-19 01:24:41
+
 ---
 
 # 基本概念
@@ -192,12 +197,12 @@ p::first-line {
 ### Inheritance
 
 - Parents and Children
-
 - [Inherited and Non-Inherited Properties](https://www.w3.org/TR/CSS21/propidx.html)
   Inherited: color, font-family, font-size, font-weight, list-style-type, text-align...
 
   > user styling: Program Setting
   > user agent styling: Browser Default (优先度可能大于 inheritance，比如`<a>`颜色通常需要额外设定)
+  >
 
 ### Conflicting Styling
 
@@ -254,7 +259,7 @@ p::first-line {
 
 ## Box Model
 
-![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310182246305.png)
+​![](https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310182246305.png)​
 
 - [margin](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin)
 
@@ -313,8 +318,8 @@ padding: unset;
 > padding、 border 以及 margin 都可再分别设置上下左右的属性。另外，border 可设置[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)（圆角外框）。
 
 - [overflow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow): visible, hidden, scroll
-
 - [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing):
+
   - border-box: 设置的边框和内边距的值是包含在 width 内，内容区的实际宽度是 width 减去 (border + padding) 的值
   - content-box: 默认值，元素的内容区的宽度就是 width
 
@@ -331,12 +336,12 @@ padding: unset;
 - flex
 - grid
 
-| display type | new line | width, height |       上下 margin, padding        | 左右 margin, padding |                             范例                             |
-| :----------: | -------- | :-----------: | :-------------------------------: | :------------------: | :----------------------------------------------------------: |
-|    block     | 会换行   |   可以设定    |             可以设定              |       可以设定       |                      `<h1>`, `<p>`等等                       |
-|    inline    | 不换行   |   不能设定    | 可以设定，但不会推开其他 elements |       可以设定       |                     `<a>`, `<span>`等等                      |
-| inline-block | 不换行   |   可以设定    |             可以设定              |       可以设定       | 只有`<img>`, `<button>`, `<input>`, `<select>`, `<textarea>` |
-|  flex item   | 不换行   |   可以设定    |             可以设定              |       可以设定       |                  任何在 flex 之下的 element                  |
+|display type|new line|width, height|上下 margin, padding|左右 margin, padding|范例|
+| :----------: | --------| :-----------: | :-------------------------------: | :------------------: | :------------------------: |
+|block|会换行|可以设定|可以设定|可以设定|`<h1>`, `<p>`等等|
+|inline|不换行|不能设定|可以设定，但不会推开其他 elements|可以设定|`<a>`, `<span>`等等|
+|inline-block|不换行|可以设定|可以设定|可以设定|只有`<img>`, `<button>`, `<input>`, `<select>`, `<textarea>`|
+|flex item|不换行|可以设定|可以设定|可以设定|任何在 flex 之下的 element|
 
 ## [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)属性
 

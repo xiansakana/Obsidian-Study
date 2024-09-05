@@ -1,12 +1,17 @@
+# Advanced-JavaScript
+
 ---
+
 title: Advanced JavaScript
 tags:
-  - JavaScript
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232138720.png
-abbrlink: 365c67ca
-date: 2023-11-06 15:13:34
+
+- JavaScript
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202309232138720.png
+  abbrlink: 365c67ca
+  date: 2023-11-06 15:13:34
+
 ---
 
 # JavaScript 引擎
@@ -234,11 +239,11 @@ sort(compareFn);
 
 compareFn 是定义排序顺序的函数。 如果省略，则将 array 元素按照 JavaScript 预设方式排序。若我们要自己提供 compareFn，则此 function 需要有两个 parameter a, b，而 sort()会根据 compareFn 的 return value 来决定排序顺序。若 return a - b，则採用升序排序。若 return b - a，则採用降序排序。其他 return 值为:
 
-| compareFn(a, b) return value | sort order                     |
-| ---------------------------- | ------------------------------ |
-| > 0                          | sort a after b                 |
-| < 0                          | sort a before b                |
-| === 0                        | keep original order of a and b |
+|compareFn(a, b) return value|sort order|
+| ----------------------------| ------------------------------|
+|> 0|sort a after b|
+|< 0|sort a before b|
+|=== 0|keep original order of a and b|
 
 > 进阶内容
 >
@@ -285,7 +290,7 @@ for...in Loop 创建一个回圈，去循环一个 JS 物件中所有的可枚�
 
 ```javascript
 let numbers = [10, 20, 30];
-for (let n in numbers) {
+for (let i in numbers) {
   console.log(numbers[i]);
 }
 // 10

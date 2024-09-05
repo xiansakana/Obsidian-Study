@@ -1,24 +1,31 @@
----
-title: Awesome Resume
-tags:
-  - 简历
-  - 项目
-categories: 求职
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512957.jpg'
-abbrlink: 1162e00e
+# Awesome-Resume
+
 ---
 
+title: Awesome Resume
+tags:
+
+- 简历
+- 项目
+  categories: 求职
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512957.jpg'
+  abbrlink: 1162e00e
+
+---
+
+<div>
 <h1 align="center">
  Awesome Resume
 </h1>
 <h4 align="center">
  专业地道的简历例句，包括个人简介，项目介绍以及 Cover Letter
 </h4>
+</div>
 
-| 其他热门项目     | 链接                                                                                                             |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 高频面试题       | <a href="https://osjobs.net/topk/">https://osjobs.net/topk/</a>                                                  |
-| 免费项目实战课程 | <a href="https://github.com/resumejob/free-project-course">https://github.com/resumejob/free-project-course/</a> |
+|其他热门项目|链接|
+| ----------------| ----------------------------------------------------------------------------------------------------------------|
+|高频面试题|<a href="https://osjobs.net/topk/">https://osjobs.net/topk/</a>|
+|免费项目实战课程|<a href="https://github.com/resumejob/free-project-course">https://github.com/resumejob/free-project-course/</a>|
 
 # 目录
 
@@ -32,7 +39,7 @@ abbrlink: 1162e00e
   - [简介](#简介)
   - [项目经验](#项目经验)
 
-# <a name="checklist">Checklist</a>
+# Checklist
 
 - [ ] 使用 https://www.promptio.net/Resume 来优化简历描述
 - [ ] 按照时间倒序列出工作经历以及项目经验
@@ -41,9 +48,9 @@ abbrlink: 1162e00e
 - [ ] 使用 Grammarly 或其他语法检查工具检查拼写
 - [ ] 使用 PDF 格式并且保持一页篇幅，简历命名方式为 “姓名\_岗位.pdf”
 
-# <a name="English">English</a>
+# English
 
-## <a name="Summary">Summary</a>
+## Summary
 
 ### Experienced
 
@@ -77,7 +84,7 @@ abbrlink: 1162e00e
 - Innovator of next-generation solutions, systems and applications giving companies a competitive edge and producing outstanding results for customers.
 - Designed and developed an auto tweeting utility that gave exposure to buyers and sellers in social media.
 
-## <a name="Work Experience">Work Experience</a>
+## Work Experience
 
 ### Backend
 
@@ -167,7 +174,9 @@ abbrlink: 1162e00e
 > Sincerely,
 > [Your Name]
 
+<div>
 <hr>
+</div>
 
 > Dear XXX
 >
@@ -182,7 +191,9 @@ abbrlink: 1162e00e
 > - Designed and initiated a cross-platform, Java-based POS system that was completed ahead of target date and well within budget.
 > - Wrote code for new solutions that improved scalability by 45%
 
+<div>
 <hr>
+</div>
 
 > Dear Hiring Manager,
 >
@@ -199,7 +210,9 @@ abbrlink: 1162e00e
 > Sincerely,
 > [Your Name]
 
+<div>
 <hr>
+</div>
 
 > Dear XXX,
 >
@@ -213,7 +226,9 @@ abbrlink: 1162e00e
 >
 > XXX
 
+<div>
 <hr>
+</div>
 
 > Dear XXX,
 >
@@ -229,7 +244,9 @@ abbrlink: 1162e00e
 >
 > XXX
 
+<div>
 <hr>
+</div>
 
 > Dear XXX:
 >
@@ -246,7 +263,7 @@ abbrlink: 1162e00e
 >
 > Sincerely,
 
-# <a name="中文">中文</a>
+# 中文
 
 ## 简介
 
@@ -358,7 +375,7 @@ abbrlink: 1162e00e
 - 熟悉 **Objective-C 与 Swift 语言**，掌握 iOS 开发中用代码与故事板实现 UI，网络通信，数据库等的基础知识，掌握 XCode 常用的调试技巧与测试方法，懂得 iOS 性能优化的常见思路。
 - 熟悉 **JS 与 WebView** 交互，熟悉第三方登录，分享，字符功能，熟悉 APP 上线发布，版本迭代的全部流程，有多个项目上线经验。
 
-## <a name="项目经验">项目经验</a>
+## 项目经验
 
 ### 通用
 
@@ -387,7 +404,7 @@ abbrlink: 1162e00e
 
 ### 前端与移动端经验
 
-- 对 **ListView，ConvertView** 进行优化，并通过 **ViewHolder** 缓存 Item 条目，减少重复代码的冗余，减少 **30%** 页面加载时间。
+- 对 **ListView，ConvertView** 进行优化，并通过 **ViewHolder** 缓存 Item 条目，减少重复代码的冗余，减少 **30%**  页面加载时间。
 - 使用多个类实现不同功能，如 Loading 类负责加载数据和布局文件，Adapter 类负责 ListView 控件与展示数据。实现项目模块化开发，降低组件耦合度。
 - 使用 **AsyncSocket** 进行完成即时通讯功能，并协助组长完成客户端与嵌入式网的 **Socket** 对接与通信，实现通过 iOS 设备控制插座的开关、定时开关、温度检测及报警等 8 个 功能。
 - 熟悉常见的前端调试工具，能够高保真还原设计稿，具备良好的代码风格以及接口、架构设计能力。熟悉 JS 性能优化，熟练解决各种浏览器兼容问题。

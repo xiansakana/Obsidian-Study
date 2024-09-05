@@ -1,11 +1,16 @@
+# Behavior-Questions
+
 ---
+
 title: Behavior Questions
 tags:
-  - 面试
-  - BQ
-categories: 求职
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050449090.jpg'
-abbrlink: 28a412e9
+
+- 面试
+- BQ
+  categories: 求职
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050449090.jpg'
+  abbrlink: 28a412e9
+
 ---
 
 # Basics
@@ -103,7 +108,7 @@ During my project course at undergraduate program, I worked with other nine memb
 
 ### Describe a time you solved a conflict
 
-When I was working on a course project with another classmate, we were stuck in a problem that the response time of our product page was very slow, so we planned to improve that first. But that's where we had a conflit. My thought was that the design of our databsse table is problematic, and this resulted in too many requests and slowing down the loading time, so we should redesign it. But my teammate insisted that changing the database would cause more potential problems since there are a lot of code need to be modified, so we should introduce caches. We both felt we had a point and couldn't persuade each other. As it's approaching the deadline, I proposed that we all want to make the product better, and it's useless to argue which side is better, so maybe we could work together to spend about half a day to write a simplified version of both methods, and then we could make a test and choose the better solution. He agreed to my proposal and finally, after a series of analysis, he understood my point and thought my plan was reasonable, and I also understood his idea in this way. The whole process significantly improved the efficiency between our teamwork and also enabled us to move smoother in the future.
+When I was working on a course project with another classmate, we were stuck in a problem that the response time of our product page was very slow, so we planned to improve that first. But that's where we had a conflict. My thought was that the design of our database table is problematic, and this resulted in too many requests and slowing down the loading time, so we should redesign it. But my teammate insisted that changing the database would cause more potential problems since there are a lot of code need to be modified, so we should introduce caches. We both felt we had a point and couldn't persuade each other. As it's approaching the deadline, I proposed that we all want to make the product better, and it's useless to argue which side is better, so maybe we could work together to spend about half a day to write a simplified version of both methods, and then we could make a test and choose the better solution. He agreed to my proposal and finally, after a series of analysis, he understood my point and thought my plan was reasonable, and I also understood his idea in this way. The whole process significantly improved the efficiency between our teamwork and also enabled us to move smoother in the future.
 
 Follow-up: What if you cannot persuade your colleagues although you try a lot?
 
@@ -225,7 +230,9 @@ Sample answer
 - Who's the most successful recent hire and why / Who didn't succeed as a new hire and why
 - What's the company's biggest challenge this year and how will this job help overcome it
   - How will I measure my performance so I know I'm having a positive impact on this challenge
-- I wonder what kind of career advice / suggestion you would give to someone like me who is still early in one’s career
+- I wonder what kind of career advice / suggestion you would give to someone like me who is still early in one's career
 - What additional skills or experience do you wish I had that would make me a better fit for this job
 - How's the work schedule for this job
 - What are the next steps in the process
+
+‍

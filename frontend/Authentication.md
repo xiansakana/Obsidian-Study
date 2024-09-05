@@ -1,12 +1,17 @@
+# Authentication
+
 ---
+
 title: Authentication
 tags:
-  - Authentication
-  - Bcrypt
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222256191.jpg
-abbrlink: 33d0b125
-date: 2023-11-22 22:55:29
+
+- Authentication
+- Bcrypt
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222256191.jpg
+  abbrlink: 33d0b125
+  date: 2023-11-22 22:55:29
+
 ---
 
 # Authentication and Authorizations
@@ -42,10 +47,10 @@ date: 2023-11-22 22:55:29
 
 在我们对密码做哈希处理之前，我们在密码中添加一些盐(salt)，再拿去做哈希处理，这样相同的密码在数据库中看起来会有所不同，因为相同的密码会有不同的盐，所以哈希函数算出来的哈希值也会不同。例如：
 
-| Password | Salt | Hash Value                                                      |
-| -------- | ---- | --------------------------------------------------------------- |
-| hello123 | ABC  | \$2a\$12\$5mt/1KTR.rY6zW0wnT1QveUgnt25iTLhyJsDB6emW4mv6zkZ.VGfO |
-| hello123 | DEF  | \$2a\$12\$JsGO0u4TzBnPVzRDOdwA4e5mQF1SeF3n9.QL9/qlkmJE8qtw7ib7G |
+|Password|Salt|Hash Value|
+| --------| ----| ------------------------------------------------------------|
+|hello123|ABC|\$2a\$12\$5mt/1KTR.rY6zW0wnT1QveUgnt25iTLhyJsDB6emW4mv6zkZ.VGfO|
+|hello123|DEF|\$2a\$12\$JsGO0u4TzBnPVzRDOdwA4e5mQF1SeF3n9.QL9/qlkmJE8qtw7ib7G|
 
 在数据库中，我们会存储哈希值和盐两个部分。下次当使用者给服务器密码时，服务器可以将使用者给的密码配上数据库内储存的盐，两者拿去算出哈希值。若算出的值与数据库内的哈希值相符合，则验证使用者。
 
@@ -53,7 +58,7 @@ date: 2023-11-22 22:55:29
 
 # Bcrypt
 
-Bcrypt 是根据 Blowfish 加密演算法所设计的密码哈希函数。在使用 Bcrypt 时，我们可以客制化 salt round。 salt round 的数字越大， Bcrypt 做哈希运算所需要完成的时间就越久，且成 2^𝑠𝑎𝑙𝑡^ ^𝑟𝑜𝑢𝑛𝑑^倍成长。也就是说，salt round 写 10，会比写 1 需要花上的时间多 2^10^=1024 倍。
+Bcrypt 是根据 Blowfish 加密演算法所设计的密码哈希函数。在使用 Bcrypt 时，我们可以客制化 salt round。 salt round 的数字越大， Bcrypt 做哈希运算所需要完成的时间就越久，且成 2<sup>𝑠𝑎𝑙𝑡</sup> <sup>𝑟𝑜𝑢𝑛𝑑</sup>倍成长。也就是说，salt round 写 10，会比写 1 需要花上的时间多 2<sup>10</sup>=1024 倍。
 
 使用 Bcrypt 时，输入是密码、salt round、 一个盐巴，而输出是哈希值。哈希值的形式是：
 

@@ -1,14 +1,19 @@
+# REST
+
 ---
+
 title: REST
 tags:
-  - API
-  - 前端
-  - Express.js
-  - REST
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222253181.jpg
-abbrlink: 5d268eee
-date: 2023-11-22 22:37:26
+
+- API
+- 前端
+- Express.js
+- REST
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222253181.jpg
+  abbrlink: 5d268eee
+  date: 2023-11-22 22:37:26
+
 ---
 
 # REST
@@ -23,14 +28,14 @@ REST 是根基于超文字传输协定(HTTP)之上而确定的一组约束和属
 
 如果我们要将服务器架构成一种服务(或是 API)，让任何使用者都可以存取数据，则可以将制作一个 RESTful API：
 
-| HTTP Verb | Path          | 用途                                                               |
-| --------- | ------------- | ------------------------------------------------------------------ |
-| GET       | /students     | 获得所有学生的数据。                                               |
-| GET       | /students/:id | 获得特定学生的数据。                                               |
-| POST      | /students     | 创建一个新的学生。                                                 |
-| PUT       | /students/:id | 修改特定学生的数据。使用者提供的资料会被变成数据库内的完整新数据。 |
-| PATCH     | /students/:id | 修改特定学生的数据。使用者只需要提供要被修改的数据即可。           |
-| DELETE    | /students/:id | 删除特定的学生                                                     |
+|HTTP Verb|Path|用途|
+| ---------| -------------| ------------------------------------------------------------------|
+|GET|/students|获得所有学生的数据。|
+|GET|/students/:id|获得特定学生的数据。|
+|POST|/students|创建一个新的学生。|
+|PUT|/students/:id|修改特定学生的数据。使用者提供的资料会被变成数据库内的完整新数据。|
+|PATCH|/students/:id|修改特定学生的数据。使用者只需要提供要被修改的数据即可。|
+|DELETE|/students/:id|删除特定的学生|
 
 ```javascript
 const express = require("express");
@@ -194,15 +199,15 @@ app.listen(3000, () => {
 
 如果我们的服务器不提供服务，而是网页功能，还是可以将网页服务器内部的 routing 做成 REST 风格，称为 RESTful Routing。通常来说，RESTful Routing 遵守以下的表格。当然，每个网站也可以设定自己的 Restful Routing。以下的表格与 Ruby on Rails 框架相同：
 
-| HTTP Verb | Path               | 用途                                       |
-| --------- | ------------------ | ------------------------------------------ |
-| GET       | /students          | 获得所有学生的数据                         |
-| GET       | /students/new      | 回传一个包含可以用来新增学生表格的网页     |
-| POST      | /students          | 创建一个新的学生                           |
-| GET       | /students/:id      | 获得特定学生的数据                         |
-| GET       | /students/:id/edit | 回传一个包含可以用来修改学生数据表格的网页 |
-| PUT/PATCH | /students/:id      | 修改特定学生的数据                         |
-| DELETE    | /students/:id      | 删除特定的学生                             |
+|HTTP Verb|Path|用途|
+| ---------| ------------------| ------------------------------------------|
+|GET|/students|获得所有学生的数据|
+|GET|/students/new|回传一个包含可以用来新增学生表格的网页|
+|POST|/students|创建一个新的学生|
+|GET|/students/:id|获得特定学生的数据|
+|GET|/students/:id/edit|回传一个包含可以用来修改学生数据表格的网页|
+|PUT/PATCH|/students/:id|修改特定学生的数据|
+|DELETE|/students/:id|删除特定的学生|
 
 ```javascript
 const methodOverride = require("method-override");

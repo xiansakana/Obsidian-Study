@@ -1,15 +1,19 @@
+# 实用篇day01-Nacos安装指南
+
 ---
+
 title: itheima-Microservice 实用篇day01-Nacos安装指南
 tags:
-  - itheima
-  - Nacos
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292210818.jpg'
-abbrlink: 36ab066a
+
+- itheima
+- Nacos
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292210818.jpg'
+  abbrlink: 36ab066a
+
 ---
+
 # Nacos安装指南
-
-
 
 # 1.Windows安装
 
@@ -27,15 +31,11 @@ GitHub的Release下载页：https://github.com/alibaba/nacos/releases
 
 ![image-20210402161102887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161102887.png)
 
-
-
 本课程采用1.4.1.版本的Nacos，课前资料已经准备了安装包：
 
 ![image-20210402161130261](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402161130261.png)
 
 windows版本使用`nacos-server-1.4.1.zip`包即可。
-
-
 
 ## 1.2.解压
 
@@ -48,8 +48,6 @@ windows版本使用`nacos-server-1.4.1.zip`包即可。
 - bin：启动脚本
 - conf：配置文件
 
-
-
 ## 1.3.端口配置
 
 Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端口，请先尝试关闭该进程。
@@ -61,8 +59,6 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 修改其中的内容：
 
 ![image-20210402162251093](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162251093.png)
-
-
 
 ## 1.4.启动
 
@@ -78,12 +74,9 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
   startup.cmd -m standalone
   ```
 
-
 执行后的效果如图：
 
 ![image-20210402162526774](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162526774.png)
-
-
 
 ## 1.5.访问
 
@@ -94,10 +87,6 @@ Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端�
 默认的账号和密码都是nacos，进入后：
 
 ![image-20210402162709515](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402162709515.png)
-
-
-
-
 
 # 2.Linux安装
 
@@ -113,8 +102,6 @@ Nacos依赖于JDK运行，索引Linux上也需要安装JDK才行。
 
 上传到某个目录，例如：`/usr/local/`
 
-
-
 然后解压缩：
 
 ```sh
@@ -122,8 +109,6 @@ tar -xvf jdk-8u144-linux-x64.tar.gz
 ```
 
 然后重命名为java
-
-
 
 配置环境变量：
 
@@ -138,10 +123,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 source /etc/profile
 ```
 
-
-
-
-
 ## 2.2.上传安装包
 
 如图：
@@ -155,8 +136,6 @@ source /etc/profile
 上传到Linux服务器的某个目录，例如`/usr/local/src`目录下：
 
 ![image-20210402163715580](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402163715580.png)
-
-
 
 ## 2.3.解压
 
@@ -180,13 +159,9 @@ rm -rf nacos-server-1.4.1.tar.gz
 
 ![image-20210402164414827](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210402164414827.png)
 
-
-
 ## 2.4.端口配置
 
 与windows中类似
-
-
 
 ## 2.5.启动
 
@@ -195,12 +170,6 @@ rm -rf nacos-server-1.4.1.tar.gz
 ```sh
 sh startup.sh -m standalone
 ```
-
-
-
-
-
-
 
 # 3.Nacos的依赖
 
@@ -216,8 +185,6 @@ sh startup.sh -m standalone
 </dependency>
 ```
 
-
-
 客户端：
 
 ```xml
@@ -228,10 +195,3 @@ sh startup.sh -m standalone
 </dependency>
 
 ```
-
-
-
-
-
-
-

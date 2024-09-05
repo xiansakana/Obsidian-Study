@@ -1,11 +1,16 @@
+# Git-bash配置多个Github用户
+
 ---
+
 title: Git bash配置多个Github用户
 tags:
-  - Git
-categories: 杂项
-cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242059346.jpg"
-abbrlink: 58eb18b5
-date: 2023-11-24 20:58:20
+
+- Git
+  categories: 杂项
+  cover: "https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242059346.jpg"
+  abbrlink: 58eb18b5
+  date: 2023-11-24 20:58:20
+
 ---
 
 其实有两种方法，第一种比较简单粗暴但是有效，第二种需要配置各种比较麻烦，但是一劳永逸。
@@ -141,3 +146,5 @@ ssh-add ~/.ssh/id_rsa_saltedfishcj
 ```bash
 git config --global --list
 ```
+
+‍

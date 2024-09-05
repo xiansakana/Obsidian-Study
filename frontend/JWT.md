@@ -1,11 +1,16 @@
+# JWT
+
 ---
+
 title: JWT
 tags:
-  - JWT
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242029724.jpg
-abbrlink: 1bb08f7a
-date: 2023-11-24 20:48:25
+
+- JWT
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311242029724.jpg
+  abbrlink: 1bb08f7a
+  date: 2023-11-24 20:48:25
+
 ---
 
 # HTTP is a stateless protocol
@@ -55,12 +60,12 @@ JWT 验证的逻辑步骤：
 
 以上的信息要放入 JWT 内部。有了这两个部分之后，我们分别将上面这两个部分换成 Base64url encoding。这是一种可以跟 UTF-8 互换的编码方式。转换后，我们得到：
 
-    eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
+eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
 
 以及
 
-    eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
-    9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
+eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly
+9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
 
 这个个值，可以分别叫做 Part1 以及 Part2。
 

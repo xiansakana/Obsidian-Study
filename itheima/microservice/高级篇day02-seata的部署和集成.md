@@ -1,30 +1,30 @@
+# 高级篇day02-seata的部署和集成
+
 ---
+
 title: itheima-Microservice 高级篇day02-seata的部署和集成
 tags:
-  - itheima
-  - 微服务
-  - Seata
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292203252.jpg'
-abbrlink: cec7834a
+
+- itheima
+- 微服务
+- Seata
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292203252.jpg'
+  abbrlink: cec7834a
+
 ---
+
 # seata的部署和集成
-
-
 
 # 一、部署Seata的tc-server
 
-
-
 ## 1.下载
 
-首先我们要下载seata-server包，地址在[http](http://seata.io/zh-cn/blog/download.html)[://seata.io/zh-cn/blog/download](http://seata.io/zh-cn/blog/download.html)[.](http://seata.io/zh-cn/blog/download.html)[html](http://seata.io/zh-cn/blog/download.html) 
+首先我们要下载seata-server包，地址在[http](http://seata.io/zh-cn/blog/download.html)​[://seata.io/zh-cn/blog/download](http://seata.io/zh-cn/blog/download.html)​[.](http://seata.io/zh-cn/blog/download.html)​[html](http://seata.io/zh-cn/blog/download.html)
 
 当然，课前资料也准备好了：
 
 ![image-20210622202357640](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210622202357640.png)
-
-
 
 ## 2.解压
 
@@ -72,10 +72,6 @@ config {
 }
 ```
 
-
-
-
-
 ## 4.在nacos添加配置
 
 特别注意，为了让tc服务的集群可以共享配置，我们选择了nacos作为统一配置中心。因此服务端配置文件seataServer.properties文件需要在nacos中配好。
@@ -83,8 +79,6 @@ config {
 格式如下：
 
 ![image-20210622203609227](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210622203609227.png)
-
-
 
 配置内容如下：
 
@@ -125,11 +119,7 @@ metrics.exporterList=prometheus
 metrics.exporterPrometheusPort=9898
 ```
 
-
-
 ==其中的数据库地址、用户名、密码都需要修改成你自己的数据库信息。==
-
-
 
 ## 5.创建数据库表
 
@@ -190,8 +180,6 @@ CREATE TABLE `global_table`  (
 SET FOREIGN_KEY_CHECKS = 1;
 ```
 
-
-
 ## 6.启动TC服务
 
 进入bin目录，运行其中的seata-server.bat即可：
@@ -200,17 +188,9 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 启动成功后，seata-server应该已经注册到nacos注册中心了。
 
-
-
 打开浏览器，访问nacos地址：http://localhost:8848，然后进入服务列表页面，可以看到seata-tc-server的信息：
 
 ![image-20210622205901450](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210622205901450.png)
-
-
-
-
-
-
 
 # 二、微服务集成seata
 
@@ -238,8 +218,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 </dependency>
 ```
 
-
-
 ## 2.修改配置文件
 
 需要修改application.yml文件，添加一些配置：
@@ -261,18 +239,16 @@ seata:
       seata-demo: SH
 ```
 
-
-
 # 三、TC服务的高可用和异地容灾
 
 ## 1.模拟异地容灾的TC集群
 
 计划启动两台seata的tc服务节点：
 
-| 节点名称 | ip地址    | 端口号 | 集群名称 |
-| -------- | --------- | ------ | -------- |
-| seata    | 127.0.0.1 | 8091   | SH       |
-| seata2   | 127.0.0.1 | 8092   | HZ       |
+|节点名称|ip地址|端口号|集群名称|
+| --------| ---------| ------| --------|
+|seata|127.0.0.1|8091|SH|
+|seata2|127.0.0.1|8092|HZ|
 
 之前我们已经启动了一台seata服务，端口是8091，集群名为SH。
 
@@ -312,15 +288,11 @@ config {
 }
 ```
 
-
-
 进入seata2/bin目录，然后运行命令：
 
 ```powershell
 seata-server.bat -p 8092
 ```
-
-
 
 打开nacos控制台，查看服务列表：
 
@@ -329,8 +301,6 @@ seata-server.bat -p 8092
 点进详情查看：
 
 ![image-20210624151221747](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210624151221747.png)
-
-
 
 ## 2.将事务组映射配置到nacos
 
@@ -409,7 +379,4 @@ seata:
       data-id: client.properties
 ```
 
-
-
 重启微服务，现在微服务到底是连接tc的SH集群，还是tc的HZ集群，都统一由nacos的client.properties来决定了。
-

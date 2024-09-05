@@ -1,17 +1,19 @@
+# 面试篇-Sentinel源码分析
+
 ---
+
 title: itheima-Microservice 面试篇-Sentinel源码分析
 tags:
-  - itheima
-  - '#Sentinel'
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292210713.jpg'
-abbrlink: e018eb92
+
+- itheima
+- '#Sentinel'
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292210713.jpg'
+  abbrlink: e018eb92
+
 ---
+
 # Sentinel源码分析
-
-
-
-
 
 # 1.Sentinel的基本概念
 
@@ -20,23 +22,15 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
 - 统计数据：统计某个资源的访问数据（QPS、RT等信息）
 - 规则判断：判断限流规则、隔离规则、降级规则、熔断规则是否满足
 
-
-
 这里的**资源**就是希望被Sentinel保护的业务，例如项目中定义的controller方法就是默认被Sentinel保护的资源。
-
-
 
 ## 1.1.ProcessorSlotChain
 
 实现上述功能的核心骨架是一个叫做ProcessorSlotChain的类。这个类基于责任链模式来设计，将不同的功能（限流、降级、系统保护）封装为一个个的Slot，请求进入后逐个执行即可。
 
-
-
 其工作流如图：
 
 ![image-20210925092845529](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925092845529.png)
-
-
 
 责任链中的Slot也分为两大类：
 
@@ -51,8 +45,6 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
   - FlowSlot：负责限流规则
   - DegradeSlot：负责降级规则
 
-
-
 ## 1.2.Node
 
 Sentinel中的簇点链路是由一个个的Node组成的，Node是一个接口，包括下面的实现：
@@ -66,11 +58,7 @@ Sentinel中的簇点链路是由一个个的Node组成的，Node是一个接口�
 - DefaultNode：代表链路树中的每一个资源，一个资源出现在不同链路中时，会创建不同的DefaultNode节点。而树的入口节点叫EntranceNode，是一种特殊的DefaultNode
 - ClusterNode：代表资源，一个资源不管出现在多少链路中，只会有一个ClusterNode。记录的是当前资源被访问的所有统计数据之和。
 
-
-
 DefaultNode记录的是资源在当前链路中的访问数据，用来实现基于链路模式的限流规则。ClusterNode记录的是资源在所有链路中的访问数据，实现默认模式、关联模式的限流规则。
-
-
 
 例如：我们在一个SpringMVC项目中，有两个业务：
 
@@ -80,8 +68,6 @@ DefaultNode记录的是资源在当前链路中的访问数据，用来实现基
 创建的链路图如下：
 
 ![image-20210925104726158](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925104726158.png)
-
-
 
 ## 1.3.Entry
 
@@ -99,8 +85,6 @@ try (Entry entry = SphU.entry("resourceName")) {
   // 在此处进行相应的处理操作
 }
 ```
-
-
 
 ### 1.3.1.自定义资源
 
@@ -149,8 +133,6 @@ public Order queryOrderById(Long orderId) {
 }
 ```
 
-
-
 4）访问
 
 打开浏览器，访问order服务：http://localhost:8080/order/101
@@ -159,17 +141,11 @@ public Order queryOrderById(Long orderId) {
 
 ![image-20210925113122759](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925113122759.png)
 
-
-
-
-
 ### 1.3.2.基于注解标记资源
 
 在之前学习Sentinel的时候，我们知道可以通过给方法添加@SentinelResource注解的形式来标记资源。
 
 ![image-20210925141507603](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925141507603.png)
-
-
 
 这个是怎么实现的呢？
 
@@ -248,13 +224,7 @@ public class SentinelResourceAspect extends AbstractSentinelAspectSupport {
 
 ```
 
-
-
-
-
 简单来说，@SentinelResource注解就是一个标记，而Sentinel基于AOP思想，对被标记的方法做环绕增强，完成资源（`Entry`）的创建。
-
-
 
 ## 1.4.Context
 
@@ -273,16 +243,12 @@ sentinel_spring_web_context，是一个EntranceNode类型的节点
 - 后续的Slot都可以通过Context拿到DefaultNode或者ClusterNode，从而获取统计数据，完成规则判断
 - Context初始化的过程中，会创建EntranceNode，contextName就是EntranceNode的名称
 
-
-
 对应的API如下：
 
 ```java
 // 创建context，包含两个参数：context名称、 来源名称
 ContextUtil.enter("contextName", "originName");
 ```
-
-
 
 ### 1.4.2.Context的初始化
 
@@ -316,11 +282,7 @@ ContextUtil.enter("contextName", "originName");
 
 ![image-20210925120221883](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925120221883.png)
 
-
-
 `HandlerInterceptor`拦截器会拦截一切进入controller的方法，执行`preHandle`前置拦截方法，而Context的初始化就是在这里完成的。
-
-
 
 #### 1.4.2.2.AbstractSentinelInterceptor
 
@@ -359,8 +321,6 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
     }
 }
 ```
-
-
 
 #### 1.4.2.3.ContextUtil
 
@@ -421,8 +381,6 @@ protected static Context trueEnter(String name, String origin) {
 }
 ```
 
-
-
 # 2.ProcessorSlotChain执行流程
 
 接下来我们跟踪源码，验证下ProcessorSlotChain的执行流程。
@@ -436,8 +394,6 @@ protected static Context trueEnter(String name, String origin) {
 还有，`SentinelResourceAspect`的环绕增强方法：
 
 ![image-20210925142438552](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925142438552.png)
-
-
 
 可以看到，任何一个资源必定要执行`SphU.entry()`这个方法:
 
@@ -492,15 +448,11 @@ private Entry entryWithPriority(ResourceWrapper resourceWrapper, int count, bool
 }
 ```
 
-
-
 在这段代码中，会获取`ProcessorSlotChain`对象，然后基于chain.entry()开始执行slotChain中的每一个Slot.  而这里创建的是其实现类：DefaultProcessorSlotChain.
 
 获取ProcessorSlotChain以后会保存到一个Map中，key是ResourceWrapper，值是ProcessorSlotChain.
 
 所以，**一个资源只会有一个ProcessorSlotChain**.
-
-
 
 ## 2.2.DefaultProcessorSlotChain
 
@@ -523,11 +475,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object t, in
 
 ![image-20210925144010507](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925144010507.png)
 
-
-
 因此，first一定是这些实现类中的一个，按照最早讲的责任链顺序，first应该就是 `NodeSelectorSlot`。
-
-
 
 不过，既然是基于责任链模式，所以这里只要记住下一个slot就可以了，也就是next：
 
@@ -535,15 +483,11 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object t, in
 
 next确实是NodeSelectSlot类型。
 
-
-
 而NodeSelectSlot的next一定是ClusterBuilderSlot，依次类推：
 
 ![image-20210925101327080](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925101327080.png)
 
 责任链就建立起来了。
-
-
 
 ## 2.3.NodeSelectorSlot
 
@@ -582,8 +526,6 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object obj, 
 }
 ```
 
-
-
 这个Slot完成了这么几件事情：
 
 - 为当前资源创建 DefaultNode
@@ -591,11 +533,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object obj, 
 - 将当前资源的DefaultNode设置为上一个资源的childNode
 - 将当前资源的DefaultNode设置为Context中的curNode（当前节点）
 
-
-
 下一个slot，就是ClusterBuilderSlot
-
-
 
 ## 2.4.ClusterBuilderSlot
 
@@ -631,8 +569,6 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
     fireEntry(context, resourceWrapper, node, count, prioritized, args);
 }
 ```
-
-
 
 ## 2.5.StatisticSlot
 
@@ -680,8 +616,6 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 }
 ```
 
-
-
 另外，需要注意的是，所有的计数+1动作都包括两部分，以` node.addPassRequest(count);`为例：
 
 ```java
@@ -703,8 +637,6 @@ public void addPassRequest(int count) {
 - ParamFlowSlot：负责热点参数限流规则
 - FlowSlot：负责限流规则
 - DegradeSlot：负责降级规则
-
-
 
 ## 2.6.AuthoritySlot
 
@@ -792,8 +724,6 @@ static boolean passCheck(AuthorityRule rule, Context context) {
 }
 ```
 
-
-
 ## 2.7.SystemSlot
 
 SystemSlot是对系统保护的规则校验：
@@ -861,8 +791,6 @@ public static void checkSystem(ResourceWrapper resourceWrapper) throws BlockExce
 }
 ```
 
-
-
 ## 2.8.ParamFlowSlot
 
 ParamFlowSlot就是热点参数限流，如图：
@@ -872,12 +800,9 @@ ParamFlowSlot就是热点参数限流，如图：
 是针对进入资源的请求，针对不同的请求参数值分别统计QPS的限流方式。
 
 - 这里的单机阈值，就是最大令牌数量：maxCount
-
 - 这里的统计窗口时长，就是统计时长：duration
 
 含义是每隔duration时间长度内，最多生产maxCount个令牌，上图配置的含义是每1秒钟生产2个令牌。
-
-
 
 核心API：
 
@@ -897,8 +822,6 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 }
 ```
 
-
-
 ### 2.8.1.令牌桶
 
 热点规则判断采用了令牌桶算法来实现参数限流，为每一个不同参数值设置令牌桶，Sentinel的令牌桶有两部分组成：
@@ -910,19 +833,9 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 - tokenCounters：用来记录剩余令牌数量
 - timeCounters：用来记录上一个请求的时间
 
-
-
 当一个携带参数的请求到来后，基本判断流程是这样的：
 
 ![sentinel](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/sentinel.jpg)
-
-
-
-
-
-
-
-
 
 ## 2.9.FlowSlot
 
@@ -935,21 +848,15 @@ FlowSlot是负责限流规则的判断，如图：
 - 三种流控模式：直接模式、关联模式、链路模式
 - 三种流控效果：快速失败、warm up、排队等待
 
-
-
 三种流控模式，从底层**数据统计**角度，分为两类：
 
 - 对进入资源的所有请求（ClusterNode）做限流统计：直接模式、关联模式
 - 对进入资源的部分链路（DefaultNode）做限流统计：链路模式
 
-
-
 三种流控效果，从**限流算法**来看，分为两类：
 
 - 滑动时间窗口算法：快速失败、warm up
 - 漏桶算法：排队等待效果
-
-
 
 ### 2.9.1.核心流程
 
@@ -998,8 +905,6 @@ public void checkFlow(Function<String, Collection<FlowRule>> ruleProvider,
     }
 ```
 
-
-
 这里的FlowRule就是限流规则接口，其中的几个成员变量，刚好对应表单参数：
 
 ```java
@@ -1039,8 +944,6 @@ public class FlowRule extends AbstractRule {
 }
 ```
 
-
-
 校验的逻辑定义在`FlowRuleChecker`的`canPassCheck`方法中：
 
 ```java
@@ -1072,8 +975,6 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 }
 ```
 
-
-
 这里对规则的判断先要通过`FlowRule#getRater()`获取流量控制器`TrafficShapingController`，然后再做限流。
 
 而`TrafficShapingController`有3种实现：
@@ -1084,11 +985,7 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 - WarmUpController：预热模式，基于滑动时间窗口算法，只不过阈值是动态的
 - RateLimiterController：排队等待模式，基于漏桶算法
 
-
-
 最终的限流判断都在TrafficShapingController的canPass方法中。
-
-
 
 ### 2.9.2.滑动时间窗口
 
@@ -1097,8 +994,6 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 - 一是时间区间窗口的QPS计数功能，这个是在StatisticSlot中调用的
 - 二是对滑动窗口内的时间区间窗口QPS累加，这个是在FlowRule中调用的
 
-
-
 先来看时间区间窗口的QPS计数功能。
 
 #### 2.9.2.1.时间窗口请求量统计
@@ -1106,8 +1001,6 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 回顾2.5章节中的StatisticSlot部分，有这样一段代码：
 
 ![image-20210925180522926](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925180522926.png)
-
-
 
 就是在统计通过该节点的QPS，我们跟入看看，这里进入了DefaultNode内部：
 
@@ -1137,8 +1030,6 @@ public ArrayMetric(int sampleCount, int intervalInMs) {
 
 ![image-20210925181359203](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925181359203.png)
 
-
-
 接下来，我们进入`ArrayMetric`类的`addPass`方法：
 
 ```java
@@ -1150,8 +1041,6 @@ public void addPass(int count) {
     wrap.value().addPass(count);
 }
 ```
-
-
 
 那么，计数器如何知道当前所在的窗口是哪个呢？
 
@@ -1174,17 +1063,11 @@ public abstract class LeapArray<T> {
 }
 ```
 
-
-
 LeapArray是一个环形数组，因为时间是无限的，数组长度不可能无限，因此数组中每一个格子放入一个时间窗（window），当数组放满后，角标归0，覆盖最初的window。
 
 ![image-20210925182127206](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925182127206.png)
 
 因为滑动窗口最多分成sampleCount数量的小窗口，因此数组长度只要大于sampleCount，那么最近的一个滑动窗口内的2个小窗口就永远不会被覆盖，就不用担心旧数据被覆盖的问题了。
-
-
-
-
 
 我们跟入` data.currentWindow();`方法：
 
@@ -1241,13 +1124,9 @@ public WindowWrap<T> currentWindow(long timeMillis) {
 }
 ```
 
-
-
 找到当前时间所在窗口（WindowWrap）后，只要调用WindowWrap对象中的add方法，计数器+1即可。
 
 这里只负责统计每个窗口的请求量，不负责拦截。限流拦截要看FlowSlot中的逻辑。
-
-
 
 #### 2.9.2.2.滑动窗口QPS计算
 
@@ -1256,8 +1135,6 @@ public WindowWrap<T> currentWindow(long timeMillis) {
 - DefaultController：快速失败，默认的方式，基于滑动时间窗口算法
 - WarmUpController：预热模式，基于滑动时间窗口算法，只不过阈值是动态的
 - RateLimiterController：排队等待模式，基于漏桶算法
-
-
 
 因此，我们跟入默认的DefaultController中的canPass方法来分析：
 
@@ -1289,8 +1166,6 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
     return true;
 }
 ```
-
-
 
 因此，判断的关键就是`int curCount = avgUsedTokens(node);`
 
@@ -1374,12 +1249,6 @@ public boolean isWindowDeprecated(long time, WindowWrap<T> windowWrap) {
 }
 ```
 
-
-
-
-
-
-
 ### 2.9.3.漏桶
 
 上一节我们讲过，FlowSlot的限流判断最终都由`TrafficShapingController`接口中的`canPass`方法来实现。该接口有三个实现类：
@@ -1387,8 +1256,6 @@ public boolean isWindowDeprecated(long time, WindowWrap<T> windowWrap) {
 - DefaultController：快速失败，默认的方式，基于滑动时间窗口算法
 - WarmUpController：预热模式，基于滑动时间窗口算法，只不过阈值是动态的
 - RateLimiterController：排队等待模式，基于漏桶算法
-
-
 
 因此，我们跟入默认的RateLimiterController中的canPass方法来分析：
 
@@ -1448,13 +1315,9 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
 }
 ```
 
-
-
 与我们之前分析的漏桶算法基本一致：
 
 ![image-20210925210716675](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925210716675.png)
-
-
 
 ## 2.10.DegradeSlot
 
@@ -1463,8 +1326,6 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
 Sentinel的降级是基于状态机来实现的：
 
 ![image-20210925211020881](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925211020881.png)
-
-
 
 对应的实现在DegradeSlot类中，核心API：
 
@@ -1496,8 +1357,6 @@ void performChecking(Context context, ResourceWrapper r) throws BlockException {
     }
 }
 ```
-
-
 
 ### 2.10.1.CircuitBreaker
 
@@ -1558,8 +1417,6 @@ protected boolean fromOpenToHalfOpen(Context context) {
 }
 ```
 
-
-
 这里出现了从OPEN到HALF_OPEN、从HALF_OPEN到OPEN的变化，但是还有几个没有：
 
 - 从CLOSED到OPEN
@@ -1574,8 +1431,6 @@ protected boolean fromOpenToHalfOpen(Context context) {
 会调用CircuitBreaker的onRequestComplete方法。而CircuitBreaker有两个实现：
 
 ![image-20210925213939035](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925213939035.png)
-
-
 
 我们这里以异常比例熔断为例来看，进入`ExceptionCircuitBreaker`的`onRequestComplete`方法：
 
@@ -1645,6 +1500,3 @@ private void handleStateChangeWhenThresholdExceeded(Throwable error) {
     }
 }
 ```
-
-
-

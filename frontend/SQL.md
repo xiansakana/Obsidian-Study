@@ -1,13 +1,18 @@
+# SQL
+
 ---
+
 title: SQL
 tags:
-  - SQL
-  - 数据库
-  - 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121237821.png
-categories: 后端
-abbrlink: 4d712855
-date: 2023-11-12 12:35:07
+
+- SQL
+- 数据库
+- 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311121237821.png
+  categories: 后端
+  abbrlink: 4d712855
+  date: 2023-11-12 12:35:07
+
 ---
 
 # 数据库管理系统 DBMS
@@ -56,12 +61,12 @@ SQL (Structured Query Language，结构化查询语言) 是一种特定目的程
 
 # SQL Data Types
 
-| Data Types    | Bytes        | Description                                                                                        |
-| ------------- | ------------ | -------------------------------------------------------------------------------------------------- |
-| INT           | 4 bytes      | 数据范围是-2<sup>31</sup>~2<sup>31</sup>-1 (-2147483648~2147483467)                                     |
-| DECIMAL(p, s) | 视精确度而定       | p 代表 total digits，s 代表小数点后的 digits。例如 153.23，p 是 5，s 是 2。数据范围是-10<sup>38</sup>+1~10<sup>38</sup>-1 |
-| VARCHAR(n)    | 变动长度，max=2GB | 数据范围是 1~2<sup>21</sup>-1                                                                           |
-| DATETIME      | 8 bytes      | 数据范围是 1753/1/1~9999/12/31 ex: 2008-11-27 08:08:08.888                                              |
+|Data Types|Bytes|Description|
+| -------------| -----------------| -------------------------------------------------------------------------------------------------------------------------|
+|INT|4 bytes|数据范围是-2<sup>31</sup>~~2~~​ ~~&lt;sup&gt;~~​~~31~~​ ~~&lt;/sup&gt;~~​ ~~-1 (-2147483648~~2147483467)|
+|DECIMAL(p, s)|视精确度而定|p 代表 total digits，s 代表小数点后的 digits。例如 153.23，p 是 5，s 是 2。数据范围是-10<sup>38</sup>+1~10<sup>38</sup>-1|
+|VARCHAR(n)|变动长度，max=2GB|数据范围是 1~2<sup>21</sup>-1|
+|DATETIME|8 bytes|数据范围是 1753/1/1~9999/12/31 ex: 2008-11-27 08:08:08.888|
 
 # SQL 基本语法
 
@@ -85,7 +90,6 @@ DESCRIBE table_name
    INSERT INTO table_name (column1, column2, column3, ...)
    VALUES (value1, value2, value3, ...);
    ```
-
 2. 如果要为表格的所有 column 添加值，则无需指定 column name。但是，需要确保值的顺序与表中 column 的顺序相同：
 
    ```sql

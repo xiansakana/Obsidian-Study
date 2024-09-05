@@ -1,20 +1,21 @@
+# 高级篇day04-案例导入说明
+
 ---
+
 title: itheima-Microservice 高级篇day04-案例导入说明
 tags:
-  - itheima
-  - 微服务
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205829.jpg'
-abbrlink: 17b9eeb0
+
+- itheima
+- 微服务
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292205829.jpg'
+  abbrlink: 17b9eeb0
+
 ---
 
 # 案例导入说明
 
-
-
 为了演示多级缓存，我们先导入一个商品管理的案例，其中包含商品的CRUD功能。我们将来会给查询商品添加多级缓存。
-
-
 
 # 1.安装MySQL
 
@@ -33,8 +34,6 @@ mkdir mysql
 cd mysql
 ```
 
-
-
 ## 1.2.运行命令
 
 进入mysql目录后，执行下面的Docker命令：
@@ -52,8 +51,6 @@ docker run \
  mysql:5.7.25
 ```
 
-
-
 ## 1.3.修改配置
 
 在/tmp/mysql/conf目录添加一个my.cnf文件，作为mysql的配置文件：
@@ -62,8 +59,6 @@ docker run \
 # 创建文件
 touch /tmp/mysql/conf/my.cnf
 ```
-
-
 
 文件的内容如下：
 
@@ -75,8 +70,6 @@ datadir=/var/lib/mysql
 server-id=1000
 ```
 
-
-
 ## 1.4.重启
 
 配置修改后，必须重启容器：
@@ -85,13 +78,11 @@ server-id=1000
 docker restart mysql
 ```
 
-
-
 # 2.导入SQL
 
 接下来，利用Navicat客户端连接MySQL，然后导入课前资料提供的sql文件：
 
-![image-20210809180936732](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809180936732.png) 
+![image-20210809180936732](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809180936732.png)
 
 其中包含两张表：
 
@@ -100,21 +91,15 @@ docker restart mysql
 
 之所以将库存分离出来，是因为库存是更新比较频繁的信息，写操作较多。而其他信息修改的频率非常低。
 
-
-
 # 3.导入Demo工程
 
 下面导入课前资料提供的工程：
 
-![image-20210809181147502](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181147502.png) 
-
-
+![image-20210809181147502](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181147502.png)
 
 项目结构如图所示：
 
 ![image-20210809181346450](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181346450.png)
-
-
 
 其中的业务包括：
 
@@ -126,11 +111,7 @@ docker restart mysql
 - 根据id查询商品
 - 根据id查询库存
 
-
-
 业务全部使用mybatis-plus来实现，如有需要请自行修改业务逻辑。
-
-
 
 ## 3.1.分页查询商品
 
@@ -138,15 +119,11 @@ docker restart mysql
 
 ![image-20210809181554563](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181554563.png)
 
-
-
 ## 3.2.新增商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181646907](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181646907.png)
-
-
 
 ## 3.3.修改商品
 
@@ -154,17 +131,11 @@ docker restart mysql
 
 ![image-20210809181714607](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181714607.png)
 
-
-
 ## 3.4.修改库存
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181744011](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181744011.png)
-
-
-
-
 
 ## 3.5.删除商品
 
@@ -174,27 +145,19 @@ docker restart mysql
 
 这里是采用了逻辑删除，将商品状态修改为3
 
-
-
 ## 3.6.根据id查询商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181901823](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181901823.png)
 
-
-
 这里只返回了商品信息，不包含库存
-
-
 
 ## 3.7.根据id查询库存
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181932805](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181932805.png)
-
-
 
 ## 3.8.启动
 
@@ -204,11 +167,7 @@ docker restart mysql
 
 需要修改为自己的虚拟机地址信息、还有账号和密码。
 
-
-
 修改后，启动服务，访问：http://localhost:8081/item/10001即可查询数据
-
-
 
 # 4.导入商品查询页面
 
@@ -222,17 +181,13 @@ docker restart mysql
 
 页面需要的数据通过ajax向服务端（nginx业务集群）查询。
 
-
-
-
-
 ## 4.1.运行nginx服务
 
 这里我已经给大家准备好了nginx反向代理服务器和静态资源。
 
 我们找到课前资料的nginx目录：
 
-![image-20210816111348353](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816111348353.png) 
+![image-20210816111348353](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816111348353.png)
 
 将其拷贝到一个非中文目录下，运行这个nginx服务。
 
@@ -242,13 +197,9 @@ docker restart mysql
 start nginx.exe
 ```
 
-
-
 然后访问 http://localhost/item.html?id=10001即可：
 
 ![image-20210816112323632](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816112323632.png)
-
-
 
 ## 4.2.反向代理
 
@@ -262,7 +213,7 @@ start nginx.exe
 
 查看nginx的conf目录下的nginx.conf文件：
 
-![image-20210816113917002](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816113917002.png) 
+![image-20210816113917002](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816113917002.png)
 
 其中的关键配置如下：
 
@@ -271,8 +222,6 @@ start nginx.exe
 其中的192.168.150.101是我的虚拟机IP，也就是我的Nginx业务集群要部署的地方：
 
 ![image-20210816114554645](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816114554645.png)
-
-
 
 完整内容如下：
 
@@ -316,6 +265,3 @@ http {
     }
 }
 ```
-
-
-

@@ -1,16 +1,20 @@
+# 高级篇day04-安装Canal
+
 ---
+
 title: itheima-Microservice 高级篇day04-安装Canal
 tags:
-  - itheima
-  - 微服务
-  - Canal
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204600.png'
-abbrlink: 7dc060ae
+
+- itheima
+- 微服务
+- Canal
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204600.png'
+  abbrlink: 7dc060ae
+
 ---
+
 # 安装和配置Canal
-
-
 
 下面我们就开启mysql的主从同步机制，让Canal来模拟salve
 
@@ -56,8 +60,6 @@ log-bin=/var/lib/mysql/mysql-bin
 binlog-do-db=heima
 ```
 
-
-
 ## 1.2.设置用户权限
 
 接下来添加一个仅用于数据同步的账户，出于安全考虑，这里仅提供对heima这个库的操作权限。
@@ -68,15 +70,11 @@ GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT,SUPER ON *.* TO 'canal'@'%' 
 FLUSH PRIVILEGES;
 ```
 
-
-
 重启mysql容器即可
 
 ```
 docker restart mysql
 ```
-
-
 
 测试设置是否成功：在mysql控制台，或者Navicat中，输入命令：
 
@@ -84,13 +82,9 @@ docker restart mysql
 show master status;
 ```
 
-![image-20200327094735948](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20200327094735948.png) 
-
-
+![image-20200327094735948](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20200327094735948.png)
 
 # 2.安装Canal
-
-
 
 ## 2.1.创建网络
 
@@ -106,23 +100,17 @@ docker network create heima
 docker network connect heima mysql
 ```
 
-
-
-
-
 ## 2.3.安装Canal
 
 课前资料中提供了canal的镜像压缩包:
 
-![image-20210813161804292](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210813161804292.png) 
+![image-20210813161804292](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210813161804292.png)
 
 大家可以上传到虚拟机，然后通过命令导入：
 
 ```
 docker load -i canal.tar
 ```
-
-
 
 然后运行命令创建Canal容器：
 
@@ -139,8 +127,6 @@ docker run -p 11111:11111 --name canal \
 --network heima \
 -d canal/canal-server:v1.1.5
 ```
-
-
 
 说明:
 
@@ -162,4 +148,3 @@ mysql 数据解析关注的表，Perl正则表达式.
 4.  canal schema下的一张表：canal.test1
 5.  多个规则组合使用然后以逗号隔开：canal\\..*,mysql.test1,mysql.test2 
 ```
-

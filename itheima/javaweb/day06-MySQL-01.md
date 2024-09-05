@@ -1,19 +1,21 @@
+# day06-MySQL-01
+
 ---
+
 title: itheima-JavaWeb day06-MySQL-01
 tags:
-  - itheima
-  - MySQL
-  - 数据库
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192158138.jpg'
-abbrlink: f303ea5a
+
+- itheima
+- MySQL
+- 数据库
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192158138.jpg'
+  abbrlink: f303ea5a
+
 ---
+
 # 数据库开发-MySQL
-
-
-
-
 
 # 前言
 
@@ -53,11 +55,9 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 结论：程序员给数据库管理系统(DBMS)发送SQL语句，再由数据库管理系统操作数据库当中的数据。
 
-
-
 了解了数据库的一些简单概念之后，接下来我们再来介绍下目前主流的数据库，这里截取了排名前十的数据库：
 
-![image-20221205120408757](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205120408757.png) 
+![image-20221205120408757](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205120408757.png)
 
 - Oracle：大型的收费数据库，Oracle公司产品，价格昂贵。（通常是不差钱的公司会选择使用这个数据库）
 - MySQL：开源免费的中小型数据库，后来Sun公司收购了MySQL，而Oracle又收购了Sun公司。目前Oracle推出两个版本的Mysql：社区版(开源免费)、商业版(收费)。
@@ -73,8 +73,6 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 > 结论：只要我们学会了SQL语句，就可以通过SQL语句来操作Mysql，也可以通过SQL语句来操作Oracle或SQL Server
 
-
-
 课程内容安排：
 
 ![image-20221205122731402](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205122731402.png)
@@ -85,13 +83,9 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 
 接下来我们就先进入到第一天的Mysql概述学习。
 
-
-
-
-
 # 1. MySQL概述
 
-![image-20220610191829748](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220610191829748.png) 
+![image-20220610191829748](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220610191829748.png)
 
 官网：https://dev.mysql.com/
 
@@ -102,14 +96,13 @@ SQL（**S**tructured **Q**uery **L**anguage，简称SQL）：结构化查询语�
 MySQL官方提供了两个版本：
 
 - 商业版本（MySQL Enterprise Edition）
-  - 该版本是收费的，我们可以使用30天。 官方会提供对应的技术支持。
 
+  - 该版本是收费的，我们可以使用30天。 官方会提供对应的技术支持。
 - 社区版本（MySQL Community Server）
+
   - 该版本是免费的，但是MySQL不会提供任何的技术支持。
 
 > 本课程，采用的是MySQL的社区版本（8.0.31）
-
-
 
 ## 1.1.2 安装
 
@@ -120,8 +113,6 @@ MySQL官方提供了两个版本：
 这个安装包呢，大家可以不用下载，因为资料中已提供现成的安装包。 ![image-20221205140732982](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205140732982.png)
 
 > 安装MySQL具体的步骤，参考资料中提供的 《MySQL安装文档》 ，进行软件的安装即可。
-
-
 
 ## 1.1.3 连接
 
@@ -143,41 +134,29 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 - 密码在-p回车之后，在命令行中输入密码，然后回车
 
-![image-20221205143418632](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205143418632.png) 
-
-
-
-
+![image-20221205143418632](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205143418632.png)
 
 ## 1.1.4 企业使用方式(了解)
 
 上述的MySQL服务器我们是安装在本地的，这个仅仅是在我们学习阶段，在真实的企业开发中，MySQL数据库服务器是不会在我们本地安装的，是在公司的服务器上安装的，而服务器还需要放置在专门的IDC机房中的，IDC机房呢，就需要保证恒温、恒湿、恒压，而且还要保证网络、电源的可靠性(备用电源及网络)。
 
-![image-20220829110618240](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110618240.png) 
+![image-20220829110618240](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110618240.png)
 
 那我们要想使用服务器上的这台MySQL服务器，就需要在我们的电脑上去远程连接这台MySQL。 而服务器上安装的MySQL数据库呢，并不是你一个人在访问，我们项目组的其他开发人员也是需要访问这台MySQL的。
 
-![image-20220829110723526](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110723526.png) 
+![image-20220829110723526](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829110723526.png)
 
 我们在学习阶段，如果想提前体验一下企业中数据库的使用方式，可以借助于VMware虚拟机来实现。我们可以在我们的电脑上安装一个VMware，然后在Vmware虚拟机上在安装一个服务器操作系统Linux，然后再在Linux服务器上安装各种企业级软件。
 
-![image-20220829111237340](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111237340.png) 
+![image-20220829111237340](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111237340.png)
 
-
-
-
-
-接下来，就来演示一下，通过MySQL的客户端命令行，如何来连接服务器上部署的MySQL ： 
+接下来，就来演示一下，通过MySQL的客户端命令行，如何来连接服务器上部署的MySQL ：
 
 ```
 mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 ```
 
 ![image-20220829111522126](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111522126.png)
-
-
-
-
 
 ## 1.2 数据模型
 
@@ -191,19 +170,16 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 而所谓二维表，指的是由行和列组成的表，如下图：
 
-![image-20221205145028667](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205145028667.png) 
+![image-20221205145028667](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205145028667.png)
 
 二维表的优点：
 
 - 使用表存储数据，格式统一，便于维护
-
 - 使用SQL语言操作，标准统一，使用方便，可用于复杂查询
 
 > 我们之前提到的MySQL、Oracle、DB2、SQLServer这些都是属于关系型数据库，里面都是基于二维表存储数据的。
 >
 > 结论：基于二维表存储数据的数据库就成为关系型数据库，不是基于二维表存储数据的数据库，就是非关系型数据库（比如大家后面要学习的Redis，就属于非关系型数据库）。
-
-
 
 **2). 数据模型**
 
@@ -211,7 +187,7 @@ mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 
 MySQL是关系型数据库，是基于二维表进行数据存储的，具体的结构图下:
 
-![image-20220829111741419](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111741419.png) 
+![image-20220829111741419](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829111741419.png)
 
 - 通过MySQL客户端连接数据库管理系统DBMS，然后通过DBMS操作数据库
 - 使用MySQL客户端，向数据库管理系统发送一条SQL语句，由数据库管理系统根据SQL语句指令去操作数据库中的表结构及数据
@@ -222,10 +198,6 @@ MySQL是关系型数据库，是基于二维表进行数据存储的，具体的
 > 1. 先去创建数据库（可以创建多个数据库，之间是相互独立的）
 > 2. 在数据库下再去创建数据表（一个数据库下可以创建多张表）
 > 3. 再将数据存放在数据表中（一张表可以存储多行数据）
-
-
-
-
 
 ## 1.3 SQL简介
 
@@ -249,31 +221,23 @@ SQL：结构化查询语言。一门操作关系型数据库的编程语言，�
 
 4、注释：
 
-- 单行注释：-- 注释内容   或   # 注释内容(MySQL特有)
+- 单行注释：-- 注释内容   或   ## 注释内容(MySQL特有)
 - 多行注释： /* 注释内容 */
 
 > 以上就是SQL语句的通用语法，这些通用语法大家目前先有一个直观的认识，我们后面在讲解每一类SQL语句的时候，还会再来强调通用语法。
 
-
-
 ## 1.3.2 分类
 
-SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL 
+SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
 
-| **分类** | **全称**                    | **说明**                                               |
-| -------- | --------------------------- | ------------------------------------------------------ |
-| DDL      | Data Definition  Language   | 数据定义语言，用来定义数据库对象(数据库，表，字段)     |
-| DML      | Data Manipulation  Language | 数据操作语言，用来对数据库表中的数据进行增删改         |
-| DQL      | Data Query Language         | 数据查询语言，用来查询数据库中表的记录                 |
-| DCL      | Data Control  Language      | 数据控制语言，用来创建数据库用户、控制数据库的访问权限 |
+|**分类**|**全称**|**说明**|
+| ---| ---------------------------| ------------------------------------------------------|
+|DDL|Data Definition  Language|数据定义语言，用来定义数据库对象(数据库，表，字段)|
+|DML|Data Manipulation  Language|数据操作语言，用来对数据库表中的数据进行增删改|
+|DQL|Data Query Language|数据查询语言，用来查询数据库中表的记录|
+|DCL|Data Control  Language|数据控制语言，用来创建数据库用户、控制数据库的访问权限|
 
-![image-20221205152804250](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205152804250.png)  
-
-
-
-
-
-
+![image-20221205152804250](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205152804250.png)
 
 # 2. 数据库设计-DDL
 
@@ -302,8 +266,6 @@ SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
 
 - 在项目的功能开发测试完成之后，项目就可以上线运行了，后期如果项目遇到性能瓶颈，还需要对项目进行优化。优化很重要的一个部分就是数据库的优化，包括数据库当中索引的建立、SQL 的优化、分库分表等操作。
 
-
-
 在上述的流程当中，针对于数据库来说，主要包括三个阶段：
 
 1. 数据库设计阶段
@@ -314,8 +276,6 @@ SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL
    - 通过数据库的优化来提高数据库的访问性能。优化手段：索引、SQL优化、分库分表等
 
 接下来我们就先来学习第一部分数据库的设计，而数据库的设计就是来定义数据库，定义表结构以及表中的字段。
-
-
 
 ## 2.2 数据库操作
 
@@ -335,7 +295,7 @@ show databases;
 
 命令行中执行效果如下：
 
-![image-20220829124104154](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124104154.png) 
+![image-20220829124104154](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124104154.png)
 
 **查询当前数据库：**
 
@@ -347,11 +307,9 @@ select database();
 
 ![image-20221205174615074](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205174615074.png)
 
-> 我们要操作某一个数据库，必须要切换到对应的数据库中。 
+> 我们要操作某一个数据库，必须要切换到对应的数据库中。
 >
-> 通过指令：select  database() ，就可以查询到当前所处的数据库 
-
-
+> 通过指令：select  database() ，就可以查询到当前所处的数据库
 
 ## 2.2.2 创建数据库
 
@@ -369,7 +327,7 @@ create database itcast;
 
 命令行执行效果如下：
 
-![image-20220829124219427](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124219427.png) 
+![image-20220829124219427](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124219427.png)
 
 ==注意：在同一个数据库服务器中，不能创建两个名称相同的数据库，否则将会报错。==
 
@@ -382,9 +340,7 @@ create database itcast;
 create database if not extists itcast; 
 ```
 
- 命令行执行效果如下： ![image-20220829124326741](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124326741.png) 
-
-
+命令行执行效果如下： ![image-20220829124326741](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124326741.png)
 
 ## 2.2.3 使用数据库
 
@@ -404,9 +360,7 @@ use itcast;
 
 命令执行效果如下：
 
-![image-20220829124929708](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124929708.png) 
-
-
+![image-20220829124929708](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829124929708.png)
 
 ## 2.2.4 删除数据库
 
@@ -428,7 +382,7 @@ drop database if exists itcast; -- itcast数据库存在时删除
 
 命令执行效果如下：
 
-![image-20220829125006142](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829125006142.png) 
+![image-20220829125006142](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829125006142.png)
 
 > 说明：上述语法中的database，也可以替换成 schema
 >
@@ -436,10 +390,6 @@ drop database if exists itcast; -- itcast数据库存在时删除
 > - 如：show schemas;
 >
 > ![image-20221205180608004](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205180608004.png)
-
-
-
-
 
 ## 2.3 图形化工具
 
@@ -461,15 +411,11 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 官网： https://www.jetbrains.com/zh-cn/datagrip/
 
-
-
 ## 2.3.2 安装
 
 安装： 参考资料中提供的《DataGrip安装手册》
 
 > 说明：DataGrip这款工具可以不用安装，因为Jetbrains公司已经将DataGrip这款工具的功能已经集成到了 IDEA当中，所以我们就可以使用IDEA来作为一款图形化界面工具来操作Mysql数据库。
-
-
 
 ## 2.3.3 使用
 
@@ -479,43 +425,29 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 
 ![image-20221205190929756](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205190929756.png)
 
-
-
 2、配置MySQL
 
 ![image-20221205191143072](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205191143072.png)
 
-
-
 3、输入相关信息
 
-![image-20221205192606038](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205192606038.png) 
-
-
+![image-20221205192606038](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205192606038.png)
 
 4、下载MySQL连接驱动
 
 ![image-20221205192847190](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205192847190.png)
 
-
-
 5、测试数据库连接
 
 ![image-20221205193304124](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205193304124.png)
-
-
 
 6、保存配置
 
 ![image-20221205193409856](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205193409856.png)
 
-
-
 默认情况下，连接上了MySQL数据库之后， 数据库并没有全部展示出来。 需要选择要展示哪些数据库。具体操作如下：
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/8.gif)
-
-
 
 ### 2.2.3.2 操作数据库
 
@@ -529,17 +461,11 @@ DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MyS
 >
 > 其实工具底层也是通过DDL语句操作的数据库，只不过这些SQL语句是图形化界面工具帮我们自动完成的。
 
-
-
 **查看所有数据库：**
 
 ![image-20221205195128343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195128343.png)
 
 ![image-20221205195833439](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205195833439.png)
-
-
-
-
 
 ## 2.3 表操作
 
@@ -562,15 +488,13 @@ create table  表名(
 
 > 注意： [ ] 中的内容为可选参数； 最后一个字段后面没有逗号
 
-
-
 案例：创建tb_user表
 
 - 对应的结构如下：
 
-![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png)  
+![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png)
 
-- 建表语句： 
+- 建表语句：
 
 ```mysql
 create table tb_user (
@@ -590,21 +514,17 @@ create table tb_user (
 
 添加数据：
 
-![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/9.gif) 
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/9.gif)
 
 此时我们再插入一条数据：
 
-![image-20221205214447060](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205214447060.png) 
+![image-20221205214447060](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205214447060.png)
 
 我们之前提到过：id字段是一行数据的唯一标识，不能有重复值。但是现在数据表中有两个相同的id值，这是为什么呢？
 
 - 其实我们现在创建表结构的时候， id这个字段我们只加了一个备注信息说明它是一个唯一标识，但是在数据库层面呢，并没有去限制字段存储的数据。所以id这个字段没有起到唯一标识的作用。
 
 > 想要限制字段所存储的数据，就需要用到数据库中的约束。
-
-
-
-
 
 ### 2.3.1.2 约束
 
@@ -614,35 +534,30 @@ create table tb_user (
 
 在MySQL数据库当中，提供了以下5种约束：
 
-| **约束** | **描述**                                         | **关键字**  |
-| -------- | ------------------------------------------------ | ----------- |
-| 非空约束 | 限制该字段值不能为null                           | not null    |
-| 唯一约束 | 保证字段的所有数据都是唯一、不重复的             | unique      |
-| 主键约束 | 主键是一行数据的唯一标识，要求非空且唯一         | primary key |
-| 默认约束 | 保存数据时，如果未指定该字段值，则采用默认值     | default     |
-| 外键约束 | 让两张表的数据建立连接，保证数据的一致性和完整性 | foreign key |
+|**约束**|**描述**|**关键字**|
+| --------| ------------------------------------------------| -----------|
+|非空约束|限制该字段值不能为null|not null|
+|唯一约束|保证字段的所有数据都是唯一、不重复的|unique|
+|主键约束|主键是一行数据的唯一标识，要求非空且唯一|primary key|
+|默认约束|保存数据时，如果未指定该字段值，则采用默认值|default|
+|外键约束|让两张表的数据建立连接，保证数据的一致性和完整性|foreign key|
 
 > 注意：约束是作用于表中字段上的，可以在创建表/修改表的时候添加约束。
-
-
 
 案例：创建tb_user表
 
 - 对应的结构如下：
 
-![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png) 
+![image-20220829143005524](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829143005524.png)
 
 > 在上述的表结构中:
 >
 > - id 是一行数据的唯一标识
->
 > - username 用户名字段是非空且唯一的
->
 > - name 姓名字段是不允许存储空值的
->
 > - gender 性别字段是有默认值，默认为男
 
-- 建表语句： 
+- 建表语句：
 
 ```mysql
 create table tb_user (
@@ -659,8 +574,6 @@ create table tb_user (
 ![image-20221205215309011](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205215309011.png)
 
 ![image-20221205215632599](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205215632599.png)
-
-
 
 大家有没有发现一个问题：id字段下存储的值，如果由我们自己来维护会比较麻烦(必须保证值的唯一性)。MySQL数据库为了解决这个问题，给我们提供了一个关键字：auto_increment（自动增长）
 
@@ -683,8 +596,6 @@ create table tb_user (
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/10.gif)
 
-
-
 ### 2.3.1.3 数据类型
 
 在上面建表语句中，我们在指定字段的数据类型时，用到了int 、varchar、char，那么在MySQL中除了以上的数据类型，还有哪些常见的数据类型呢？ 接下来,我们就来详细介绍一下MySQL的数据类型。
@@ -693,16 +604,16 @@ MySQL中的数据类型有很多，主要分为三类：数值类型、字符串
 
 **数值类型**
 
-| 类型        | 大小   | 有符号(SIGNED)范围                                    | 无符号(UNSIGNED)范围                                       | 描述               |
-| ----------- | ------ | ----------------------------------------------------- | ---------------------------------------------------------- | ------------------ |
-| TINYINT     | 1byte  | (-128，127)                                           | (0，255)                                                   | 小整数值           |
-| SMALLINT    | 2bytes | (-32768，32767)                                       | (0，65535)                                                 | 大整数值           |
-| MEDIUMINT   | 3bytes | (-8388608，8388607)                                   | (0，16777215)                                              | 大整数值           |
-| INT/INTEGER | 4bytes | (-2147483648，2147483647)                             | (0，4294967295)                                            | 大整数值           |
-| BIGINT      | 8bytes | (-2^63，2^63-1)                                       | (0，2^64-1)                                                | 极大整数值         |
-| FLOAT       | 4bytes | (-3.402823466 E+38，3.402823466351 E+38)              | 0 和 (1.175494351  E-38，3.402823466 E+38)                 | 单精度浮点数值     |
-| DOUBLE      | 8bytes | (-1.7976931348623157 E+308，1.7976931348623157 E+308) | 0 和  (2.2250738585072014 E-308，1.7976931348623157 E+308) | 双精度浮点数值     |
-| DECIMAL     |        | 依赖于M(精度)和D(标度)的值                            | 依赖于M(精度)和D(标度)的值                                 | 小数值(精确定点数) |
+|类型|大小|有符号(SIGNED)范围|无符号(UNSIGNED)范围|描述|
+| -----------| ------| -----------------------------------------------------| ----------------------------------------------------------| ------------------|
+|TINYINT|1byte|(-128，127)|(0，255)|小整数值|
+|SMALLINT|2bytes|(-32768，32767)|(0，65535)|大整数值|
+|MEDIUMINT|3bytes|(-8388608，8388607)|(0，16777215)|大整数值|
+|INT/INTEGER|4bytes|(-2147483648，2147483647)|(0，4294967295)|大整数值|
+|BIGINT|8bytes|(-2<sup>63，2</sup>63-1)|(0，2^64-1)|极大整数值|
+|FLOAT|4bytes|(-3.402823466 E+38，3.402823466351 E+38)|0 和 (1.175494351  E-38，3.402823466 E+38)|单精度浮点数值|
+|DOUBLE|8bytes|(-1.7976931348623157 E+308，1.7976931348623157 E+308)|0 和  (2.2250738585072014 E-308，1.7976931348623157 E+308)|双精度浮点数值|
+|DECIMAL||依赖于M(精度)和D(标度)的值|依赖于M(精度)和D(标度)的值|小数值(精确定点数)|
 
 ```sql
 示例: 
@@ -715,18 +626,18 @@ MySQL中的数据类型有很多，主要分为三类：数值类型、字符串
 
 **字符串类型**
 
-| 类型       | 大小                  | 描述                         |
-| ---------- | --------------------- | ---------------------------- |
-| CHAR       | 0-255 bytes           | 定长字符串(需要指定长度)     |
-| VARCHAR    | 0-65535 bytes         | 变长字符串(需要指定长度)     |
-| TINYBLOB   | 0-255 bytes           | 不超过255个字符的二进制数据  |
-| TINYTEXT   | 0-255 bytes           | 短文本字符串                 |
-| BLOB       | 0-65 535 bytes        | 二进制形式的长文本数据       |
-| TEXT       | 0-65 535 bytes        | 长文本数据                   |
-| MEDIUMBLOB | 0-16 777 215 bytes    | 二进制形式的中等长度文本数据 |
-| MEDIUMTEXT | 0-16 777 215 bytes    | 中等长度文本数据             |
-| LONGBLOB   | 0-4 294 967 295 bytes | 二进制形式的极大文本数据     |
-| LONGTEXT   | 0-4 294 967 295 bytes | 极大文本数据                 |
+|类型|大小|描述|
+| ----------| ---------------------| ----------------------------|
+|CHAR|0-255 bytes|定长字符串(需要指定长度)|
+|VARCHAR|0-65535 bytes|变长字符串(需要指定长度)|
+|TINYBLOB|0-255 bytes|不超过255个字符的二进制数据|
+|TINYTEXT|0-255 bytes|短文本字符串|
+|BLOB|0-65 535 bytes|二进制形式的长文本数据|
+|TEXT|0-65 535 bytes|长文本数据|
+|MEDIUMBLOB|0-16 777 215 bytes|二进制形式的中等长度文本数据|
+|MEDIUMTEXT|0-16 777 215 bytes|中等长度文本数据|
+|LONGBLOB|0-4 294 967 295 bytes|二进制形式的极大文本数据|
+|LONGTEXT|0-4 294 967 295 bytes|极大文本数据|
 
 char 与 varchar 都可以描述字符串，char是定长字符串，指定长度多长，就占用多少个字符，和字段值的长度无关 。而varchar是变长字符串，指定的长度为最大占用长度 。相对来说，char的性能会更高些。
 
@@ -741,13 +652,13 @@ char 与 varchar 都可以描述字符串，char是定长字符串，指定长�
 
 **日期时间类型**
 
-| 类型      | 大小 | 范围                                       | 格式                | 描述                     |
-| --------- | ---- | ------------------------------------------ | ------------------- | ------------------------ |
-| DATE      | 3    | 1000-01-01 至  9999-12-31                  | YYYY-MM-DD          | 日期值                   |
-| TIME      | 3    | -838:59:59 至  838:59:59                   | HH:MM:SS            | 时间值或持续时间         |
-| YEAR      | 1    | 1901 至 2155                               | YYYY                | 年份值                   |
-| DATETIME  | 8    | 1000-01-01 00:00:00 至 9999-12-31 23:59:59 | YYYY-MM-DD HH:MM:SS | 混合日期和时间值         |
-| TIMESTAMP | 4    | 1970-01-01 00:00:01 至 2038-01-19 03:14:07 | YYYY-MM-DD HH:MM:SS | 混合日期和时间值，时间戳 |
+|类型|大小|范围|格式|描述|
+| ---------| ----| ------------------------------------------| -------------------| ------------------------|
+|DATE|3|1000-01-01 至  9999-12-31|YYYY-MM-DD|日期值|
+|TIME|3|-838:59:59 至  838:59:59|HH:MM:SS|时间值或持续时间|
+|YEAR|1|1901 至 2155|YYYY|年份值|
+|DATETIME|8|1000-01-01 00:00:00 至 9999-12-31 23:59:59|YYYY-MM-DD HH:MM:SS|混合日期和时间值|
+|TIMESTAMP|4|1970-01-01 00:00:01 至 2038-01-19 03:14:07|YYYY-MM-DD HH:MM:SS|混合日期和时间值，时间戳|
 
 ```sql
 示例: 
@@ -758,36 +669,26 @@ char 与 varchar 都可以描述字符串，char是定长字符串，指定长�
 	createtime  datetime
 ```
 
-
-
-
-
-
-
 ### 2.3.1.4 案例
 
-需求：根据产品原型/需求创建表((设计合理的数据类型、长度、约束) 
+需求：根据产品原型/需求创建表((设计合理的数据类型、长度、约束)
 
 > 参考资料中提供的《黑马-tlias智能学习辅助系统》页面原型，设计员工管理模块的表结构
 >
 > 暂不考虑所属部门字段
 
-
-
 产品原型及需求如下：
 
 ![image-20220829151032029](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151032029.png)
 
- ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151228102.png)
+![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151228102.png)
 
 ![](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220829151245450.png)
 
 **步骤：**
 
 1. 阅读产品原型及需求文档，看看里面涉及到哪些字段。
-
 2. 查看需求文档说明，确认各个字段的类型以及字段存储数据的长度限制。
-
 3. 在页面原型中描述的基础字段的基础上，再增加额外的基础字段。
 
 使用SQL创建表：
@@ -819,35 +720,24 @@ create table emp (
 
 ![image-20221205231846161](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205231846161.png)
 
-
-
 ### 2.3.1.5 设计表流程
 
 通过上面的案例，我们明白了，设计一张表，基本的流程如下：
 
 1. 阅读页面原型及需求文档
-
 2. 基于页面原则和需求文档，确定原型字段(类型、长度限制、约束)
-
 3. 再增加表设计所需要的业务基础字段(id主键、插入时间、修改时间)
 
 ![image-20221205232253088](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205232253088.png)
 
 > 说明：
 >
-> - create_time：记录的是当前这条数据插入的时间。 
->
+> - create_time：记录的是当前这条数据插入的时间。
 > - update_time：记录当前这条数据最后更新的时间。
-
-
-
-
-
-
 
 ## 2.3.2 查询
 
-> 关于表结构的查询操作，工作中一般都是直接基于**图形化界面操作**。 
+> 关于表结构的查询操作，工作中一般都是直接基于**图形化界面操作**。
 
 **查询当前数据库所有表**
 
@@ -875,11 +765,9 @@ show create table 表名 ;
 
 ![image-20221205234444906](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205234444906.png)
 
-
-
 ## 2.3.3 修改
 
-> 关于表结构的修改操作，工作中一般都是直接基于**图形化界面操作**。 
+> 关于表结构的修改操作，工作中一般都是直接基于**图形化界面操作**。
 
 **添加字段**
 
@@ -898,8 +786,6 @@ alter table tb_emp add  qq  varchar(11) comment 'QQ号码';
 ![image-20221205235542272](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205235542272.png)
 
 ![image-20221205235657807](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221205235657807.png)
-
-
 
 **修改数据类型**
 
@@ -929,8 +815,6 @@ alter table tb_emp change qq qq_num varchar(13) comment 'QQ号码';
 
 ![image-20221206000030734](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000030734.png)
 
-
-
 **删除字段**
 
 ```sql
@@ -946,8 +830,6 @@ alter table tb_emp drop qq_num;
 > 图形化操作：删除字段
 
 ![image-20221206000159237](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000159237.png)
-
-
 
 **修改表名**
 
@@ -965,11 +847,9 @@ rename table tb_emp to emp;
 
 ![image-20221206000636659](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206000636659.png)
 
-
-
 ## 2.3.4 删除
 
-> 关于表结构的删除操作，工作中一般都是直接基于**图形化界面操作**。 
+> 关于表结构的删除操作，工作中一般都是直接基于**图形化界面操作**。
 
 删除表语法：
 
@@ -987,13 +867,7 @@ drop table if exists tb_emp;  -- 在删除表时，表中的全部数据也会�
 
 > 图形化操作：删除表
 
-![image-20221206001026916](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206001026916.png) 
-
-
-
-
-
-
+![image-20221206001026916](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221206001026916.png)
 
 # 3. 数据库操作-DML
 
@@ -1001,7 +875,7 @@ DML英文全称是Data Manipulation Language(数据操作语言)，用来对数�
 
 - 添加数据（INSERT）
 - 修改数据（UPDATE）
-- 删除数据（DELETE） 
+- 删除数据（DELETE）
 
 ## 3.1 增加(insert)
 
@@ -1012,26 +886,21 @@ insert语法：
   ~~~mysql
   insert into 表名 (字段名1, 字段名2) values (值1, 值2);
   ~~~
-
 - 全部字段添加数据
 
   ~~~mysql
   insert into 表名 values (值1, 值2, ...);
   ~~~
-
 - 批量添加数据（指定字段）
 
   ~~~mysql
   insert into 表名 (字段名1, 字段名2) values (值1, 值2), (值1, 值2);
   ~~~
-
 - 批量添加数据（全部字段）
 
   ~~~mysql
   insert into 表名 values (值1, 值2, ...), (值1, 值2, ...);
   ~~~
-
-
 
 案例1：向tb_emp表的username、name、gender字段插入数据
 
@@ -1063,14 +932,8 @@ values ('weifuwang', '韦一笑', 1, now(), now()),
 Insert操作的注意事项：
 
 1. 插入数据时，指定的字段顺序需要与值的顺序是一一对应的。
-
 2. 字符串和日期型数据应该包含在引号中。
-
 3. 插入的数据大小，应该在字段的规定范围内。
-
-
-
-
 
 ## 3.2 修改(update)
 
@@ -1097,10 +960,7 @@ update tb_emp set entrydate='2010-01-01',update_time=now();
 > 注意事项:
 >
 > 1. 修改语句的条件可以有，也可以没有，如果没有条件，则会修改整张表的所有数据。
->
 > 2. 在修改数据时，一般需要同时修改公共字段update_time，将其修改为当前操作时间。
-
-
 
 ## 3.3 删除(delete)
 
@@ -1128,37 +988,4 @@ delete from tb_emp;
 >
 > ​	• DELETE 语句不能删除某一个字段的值(可以使用UPDATE，将该字段值置为NULL即可)。
 >
-> ​	• 当进行删除全部数据操作时，会提示询问是否确认删除所有数据，直接点击Execute即可。 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> ​	• 当进行删除全部数据操作时，会提示询问是否确认删除所有数据，直接点击Execute即可。

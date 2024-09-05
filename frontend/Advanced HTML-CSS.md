@@ -1,13 +1,18 @@
+# Advanced HTML-CSS
+
 ---
+
 title: Advanced HTML, CSS
 tags:
-  - CSS
-  - HTML
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310200418702.png
-abbrlink: e4f80284
-date: 2023-10-20 04:13:38
+
+- CSS
+- HTML
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310200418702.png
+  abbrlink: e4f80284
+  date: 2023-10-20 04:13:38
+
 ---
 
 # [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)

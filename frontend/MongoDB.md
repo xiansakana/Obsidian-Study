@@ -1,13 +1,18 @@
+# MongoDB
+
 ---
+
 title: MongoDB
 tags:
-  - MongoDB
-  - 数据库
-  - 后端
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140937414.jpg
-abbrlink: 8ead567e
-date: 2023-11-14 09:36:39
+
+- MongoDB
+- 数据库
+- 后端
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140937414.jpg
+  abbrlink: 8ead567e
+  date: 2023-11-14 09:36:39
+
 ---
 
 # JSON and BSON
@@ -25,11 +30,11 @@ JSON 的普遍性使其成为 MongoDB 在开发时的数据结构第一选择。
 例如，将 JSON 的{“hello”: “world”} 换成 BSON 会得到
 \x16\x00\x00\x00\x02 hello\x00\x06\x00\x00\x00world\x00\x00
 
-|                   | JSON                           | BSON                                                                                   |
-| ----------------- | ------------------------------ | -------------------------------------------------------------------------------------- |
-| Encoding          | UTF-8 String                   | Binary                                                                                 |
-| Data Type Support | String, Boolean, Number, Array | String, Boolean, Number (Integer, Float, Long, Decimal128...), Array, Date, Raw Binary |
-| Readability       | Human and Machine              | Machine Only                                                                           |
+||JSON|BSON|
+| -----------------| ------------------------------| --------------------------------------------------------------------------------------|
+|Encoding|UTF-8 String|Binary|
+|Data Type Support|String, Boolean, Number, Array|String, Boolean, Number (Integer, Float, Long, Decimal128...), Array, Date, Raw Binary|
+|Readability|Human and Machine|Machine Only|
 
 # MongoDB Shell (mongosh)
 
@@ -53,39 +58,32 @@ MongoDB Shell (mongosh)是一个功能齐全的 JavaScript 和 Node.js 16.x REPL
   ```sql
   db.students.insertOne({name:"Grace",age:27,major:"Computer Science",scholarship:{merit:3000,other:1500}})
   ```
-
 - db.collection.insertMany( [ <document 1> , <document 2>, ...) – 参数为一个由物件组成的 array，功能为在 collection 当中新增一个或一个以上的 document。
 
   ```sql
   db.students.insertMany([{name:"Mike Huang",age:28,magjor:"Chemistry",scholarship:{merit:0,other:1500}},{name:"Spence Kwan",age:35,major:"Computer Science",scholarship:{merit:3000,other:2000}}])
   ```
-
 - db.collection.insert( <document or array of documents>) – 参数为一个物件或是一个由物件组成的 array，功能为在 collection 当中新增一个或一个以上的 document。
-
 - db.collection.find(<query>) – 找寻 collection 中的资料。 Query 的 data type 是 object，用来过滤找寻的资料。若想要获得 collection 中的所有资料，query 可以是 empty object，或者执行 find()时不给定任何 argument 即可。
 
   ```sql
   db.students.find({major:"Computer Science"})
   db.students.find({"scholarship.merit":{$lt:1000}})
   ```
-
 - db.collection.updateOne( <filter>, <update>) – 更新 collection 中第一笔找到的资料。 Filter 的 data type 是 object，是指更新的选择标准，与 find()中 query 功能一模一样。 Update 的 data type 也是 object，我们可以将被修改资料的新数据放在 update 这个位置。
 
   ```sql
   db.students.updateOne({name:"Spence Kwan"},{$set:{name:"Spencer Kwan",age:36}})
   db.students.updateOne({name:"Spencer Kwan"},{$set:{age:37},$currentDate:{lastModified:true}})
   ```
-
 - db.collection.updateMany(<filter>,<update>) – 功能也是更新 collection 中的资料，但可以一次性的更新 collection 中所有符合 filter 的多笔资料。
 
   ```sql
   db.students.updateMany({major:"Computer Science"},{$set:{major:"CS"}})
   ```
-
 - db.collection.deleteOne(<filter>) – 可以删除 collection 内的第一笔符合 filter 的资料。
 
   ```sql
   db.students.deleteOne({name:"Mike Huang"})
   ```
-
 - db.collection.deleteMany(<filter>) – 删除 collection 内所有符合 filter 的资料。

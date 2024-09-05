@@ -1,24 +1,30 @@
+# SpringMVC_day01
+
 ---
+
 title: itheima-SSM SpringMVC_day01
 tags:
-  - itheima
-  - SpringMVC
-  - 后端
-  - Spring
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png
-abbrlink: f67b5216
+
+- itheima
+- SpringMVC
+- 后端
+- Spring
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192142673.png
+  abbrlink: f67b5216
+
 ---
+
 # SpringMVC_day01
 
 **今日内容**
 
->* 理解SpringMVC相关概念
->* 完成SpringMVC的入门案例
->* 学会使用PostMan工具发送请求和数据
->* 掌握SpringMVC如何接收请求、数据和响应结果
->* 掌握RESTful风格及其使用
->* 完成基于RESTful的案例编写
+> * 理解SpringMVC相关概念
+> * 完成SpringMVC的入门案例
+> * 学会使用PostMan工具发送请求和数据
+> * 掌握SpringMVC如何接收请求、数据和响应结果
+> * 掌握RESTful风格及其使用
+> * 完成基于RESTful的案例编写
 
 SpringMVC是隶属于Spring框架的一部分，主要是用来进行Web开发，是对Servlet进行了封装。
 
@@ -52,15 +58,15 @@ SSM整合是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来完�
 ![1630427303762](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630427303762.png)
 
 * 浏览器发送一个请求给后端服务器，后端服务器现在是使用Servlet来接收请求和数据
-
 * 如果所有的处理都交给Servlet来处理的话，所有的东西都耦合在一起，对后期的维护和扩展极为不利
-
 * 将后端服务器Servlet拆分成三层，分别是`web`、`service`和`dao`
+
   * web层主要由servlet来处理，负责页面请求和数据的收集以及响应结果给前端
   * service层主要负责业务逻辑的处理
   * dao层主要负责数据的增删改查操作
 * servlet处理请求和数据的时候，存在的问题是一个servlet只能处理一个请求
 * 针对web层进行了优化，采用了MVC设计模式，将其设计为`controller`、`view`和`Model`
+
   * controller负责请求和数据的接收，接收后将其转发给service进行业务处理
   * service根据需要会调用dao对数据进行增删改查
   * dao把数据处理完后将结果交给service,service再交给controller
@@ -70,8 +76,6 @@ SSM整合是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来完�
 随着互联网的发展，上面的模式因为是同步调用，性能慢慢的跟不是需求，所以异步调用慢慢的走到了前台，是现在比较流行的一种处理方式。
 
 ![1630427769938](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630427769938.png)
-
-
 
 * 因为是异步调用，所以后端不需要返回view视图，将其去除
 * 前端如果通过异步调用的方式进行交互，后台就需要将返回的数据转换成json格式进行返回
@@ -83,7 +87,6 @@ SSM整合是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来完�
 介绍了这么多，对SpringMVC进行一个定义
 
 * SpringMVC是一种基于Java实现MVC模型的轻量级Web框架
-
 * 优点
 
   * 使用简单、开发便捷(相比于Servlet)
@@ -180,12 +183,11 @@ SpringMVC的制作过程和上述流程几乎是一致的，具体的实现流�
 
 ```
 
-**说明:**servlet的坐标为什么需要添加`<scope>provided</scope>`?
+**说明:** servlet的坐标为什么需要添加`<scope>provided</scope>`?
 
 * scope是maven中jar包依赖作用范围的描述，
 * 如果不设置默认是`compile`在在编译、运行、测试时均有效
 * 如果运行有效的话就会和tomcat中的servlet-api包发生冲突，导致启动报错
-
 * provided代表的是该包只在编译和测试的时候用，运行的时候无效直接使用tomcat中的，就避免冲突
 
 ## 步骤4:创建配置类
@@ -314,28 +316,28 @@ public class UserController {
 
 ## 知识点1：@Controller
 
-| 名称 | @Controller                   |
-| ---- | ----------------------------- |
-| 类型 | 类注解                        |
-| 位置 | SpringMVC控制器类定义上方     |
-| 作用 | 设定SpringMVC的核心控制器bean |
+|名称|@Controller|
+| ----| -----------------------------|
+|类型|类注解|
+|位置|SpringMVC控制器类定义上方|
+|作用|设定SpringMVC的核心控制器bean|
 
 ## 知识点2：@RequestMapping
 
-| 名称     | @RequestMapping                 |
-| -------- | ------------------------------- |
-| 类型     | 类注解或方法注解                |
-| 位置     | SpringMVC控制器类或方法定义上方 |
-| 作用     | 设置当前控制器方法请求访问路径  |
-| 相关属性 | value(默认)，请求访问路径       |
+|名称|@RequestMapping|
+| --------| -------------------------------|
+|类型|类注解或方法注解|
+|位置|SpringMVC控制器类或方法定义上方|
+|作用|设置当前控制器方法请求访问路径|
+|相关属性|value(默认)，请求访问路径|
 
 ## 知识点3：@ResponseBody
 
-| 名称 | @ResponseBody                                    |
-| ---- | ------------------------------------------------ |
-| 类型 | 类注解或方法注解                                 |
-| 位置 | SpringMVC控制器类或方法定义上方                  |
-| 作用 | 设置当前控制器方法响应内容为当前返回值，无需解析 |
+|名称|@ResponseBody|
+| ----| ------------------------------------------------|
+|类型|类注解或方法注解|
+|位置|SpringMVC控制器类或方法定义上方|
+|作用|设置当前控制器方法响应内容为当前返回值，无需解析|
 
 ## 2.3 入门案例总结
 
@@ -359,31 +361,25 @@ public class UserController {
 1. 服务器启动，执行ServletContainersInitConfig类，初始化web容器
 
    * 功能类似于以前的web.xml
-
 2. 执行createServletApplicationContext方法，创建了WebApplicationContext对象
 
    * 该方法加载SpringMVC的配置类SpringMvcConfig来初始化SpringMVC的容器
-
 3. 加载SpringMvcConfig配置类
 
    ![1630433335744](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630433335744.png)
-
 4. 执行@ComponentScan加载对应的bean
 
    * 扫描指定包及其子包下所有类上的注解，如Controller类上的@Controller注解
-
 5. 加载UserController，每个@RequestMapping的名称对应一个具体的方法
 
    ![1630433398932](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630433398932.png)
 
    * 此时就建立了 `/save` 和 save方法的对应关系
-
 6. 执行getServletMappings方法，设定SpringMVC拦截请求的路径规则
 
    ![1630433510528](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630433510528.png)
 
    * `/`代表所拦截请求的路径规则，只有被拦截后才能交给SpringMVC来处理请求
-
 
 ## 2.4.2 单次请求过程
 
@@ -452,21 +448,20 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
 ## 2.5.4 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_02_bean_load</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -484,32 +479,32 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
         <artifactId>druid</artifactId>
         <version>1.1.16</version>
       </dependency>
-  
+
       <dependency>
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis</artifactId>
         <version>3.5.6</version>
       </dependency>
-  
+
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.47</version>
       </dependency>
-  
+
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-jdbc</artifactId>
         <version>5.2.10.RELEASE</version>
       </dependency>
-  
+
       <dependency>
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis-spring</artifactId>
         <version>1.3.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -524,9 +519,8 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
@@ -543,25 +537,24 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
         return null;
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   public class SpringMvcConfig {
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima")
   public class SpringConfig {
   }
-  
-  ```
 
+  ```
 - 编写Controller，Service，Dao，Domain类
 
   ```java
   @Controller
   public class UserController {
-  
+
       @RequestMapping("/save")
       @ResponseBody
       public String save(){
@@ -569,18 +562,18 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
           return "{'info':'springmvc'}";
       }
   }
-  
+
   public interface UserService {
       public void save(User user);
   }
-  
+
   @Service
   public class UserServiceImpl implements UserService {
       public void save(User user) {
           System.out.println("user service ...");
       }
   }
-  
+
   public interface UserDao {
       @Insert("insert into tbl_user(name,age)values(#{name},#{age})")
       public void save(User user);
@@ -627,7 +620,6 @@ public class SpringConfig {
 ```
 
 * excludeFilters属性：设置扫描加载bean时，排除的过滤规则
-
 * type属性：设置排除规则，当前使用按照bean定义时的注解类型进行排除
 
   * ANNOTATION：按照注解排除
@@ -637,7 +629,6 @@ public class SpringConfig {
   * CUSTOM:按照自定义规则排除
 
   大家只需要知道第一种ANNOTATION即可
-
 * classes属性：设置排除的具体注解类，当前设置排除@Controller定义的bean
 
 如何测试controller类已经被排除掉了?
@@ -704,16 +695,14 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 }
 ```
 
-
-
 ## 知识点1：@ComponentScan
 
-| 名称     | @ComponentScan                                               |
-| -------- | ------------------------------------------------------------ |
-| 类型     | 类注解                                                       |
-| 位置     | 类定义上方                                                   |
-| 作用     | 设置spring配置类扫描路径，用于加载使用注解格式定义的bean     |
-| 相关属性 | excludeFilters:排除扫描路径中加载的bean,需要指定类别(type)和具体项(classes)<br/>includeFilters:加载指定的bean，需要指定类别(type)和具体项(classes) |
+|名称|@ComponentScan|
+| --------| ---------------------------------------------------------------------------------------------------------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|设置spring配置类扫描路径，用于加载使用注解格式定义的bean|
+|相关属性|excludeFilters:排除扫描路径中加载的bean,需要指定类别(type)和具体项(classes)<br />includeFilters:加载指定的bean，需要指定类别(type)和具体项(classes)|
 
 # 3，PostMan工具的使用
 
@@ -725,8 +714,8 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 
 * PostMan是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。![1630463382386](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630463382386.png)
 * 作用：常用于进行接口测试
-
 * 特征
+
   * 简单
   * 实用
   * 美观
@@ -758,7 +747,7 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 
 ![1630464783034](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630464783034.png)
 
-**注意:**第一次请求需要创建一个新的目录，后面就不需要创建新目录，直接保存到已经创建好的目录即可。
+**注意:** 第一次请求需要创建一个新的目录，后面就不需要创建新目录，直接保存到已经创建好的目录即可。
 
 # 4，请求与响应
 
@@ -774,21 +763,20 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 ## 4.1.1 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_03_request_mapping</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -802,7 +790,7 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
         <version>5.2.10.RELEASE</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -817,14 +805,13 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
   public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
@@ -835,27 +822,26 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
           return new Class[0];
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   public class SpringMvcConfig {
   }
-  
-  ```
 
+  ```
 - 编写BookController和UserController
 
   ```java
   @Controller
   public class UserController {
-  
+
       @RequestMapping("/save")
       @ResponseBody
       public String save(){
           System.out.println("user save ...");
           return "{'module':'user save'}";
       }
-      
+
       @RequestMapping("/delete")
       @ResponseBody
       public String save(){
@@ -863,10 +849,10 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
           return "{'module':'user delete'}";
       }
   }
-  
+
   @Controller
   public class BookController {
-  
+
       @RequestMapping("/save")
       @ResponseBody
       public String save(){
@@ -999,21 +985,20 @@ public class BookController {
 ## 4.2.1 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_03_request_mapping</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -1027,7 +1012,7 @@ public class BookController {
         <version>5.2.10.RELEASE</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -1042,14 +1027,13 @@ public class BookController {
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
   public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
@@ -1060,20 +1044,19 @@ public class BookController {
           return new Class[0];
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   public class SpringMvcConfig {
   }
-  
-  ```
 
+  ```
 - 编写UserController
 
   ```java
   @Controller
   public class UserController {
-  
+
       @RequestMapping("/commonParam")
       @ResponseBody
       public String commonParam(){
@@ -1443,12 +1426,12 @@ public String listParam(@RequestParam List<String> likes){
 
 ## 知识点1：@RequestParam
 
-| 名称     | @RequestParam                                          |
-| -------- | ------------------------------------------------------ |
-| 类型     | 形参注解                                               |
-| 位置     | SpringMVC控制器方法形参定义前面                        |
-| 作用     | 绑定请求参数与处理器方法形参间的关系                   |
-| 相关参数 | required：是否为必传参数 <br/>defaultValue：参数默认值 |
+|名称|@RequestParam|
+| --------| -------------------------------------------------|
+|类型|形参注解|
+|位置|SpringMVC控制器方法形参定义前面|
+|作用|绑定请求参数与处理器方法形参间的关系|
+|相关参数|required：是否为必传参数 <br />defaultValue：参数默认值|
 
 ## 4.4 JSON数据传输参数
 
@@ -1575,7 +1558,7 @@ address为null的原因是前端没有传递数据给后端。
 ]
 ```
 
- ![1630493501205](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630493501205.png)
+![1630493501205](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630493501205.png)
 
 后端接收数据:
 
@@ -1606,27 +1589,28 @@ SpringMVC接收JSON数据的实现步骤为:
 
 ## 知识点1：@EnableWebMvc
 
-| 名称 | @EnableWebMvc             |
-| ---- | ------------------------- |
-| 类型 | 配置类注解            |
-| 位置 | SpringMVC配置类定义上方   |
-| 作用 | 开启SpringMVC多项辅助功能 |
+|名称|@EnableWebMvc|
+| ----| -------------------------|
+|类型|配置类注解|
+|位置|SpringMVC配置类定义上方|
+|作用|开启SpringMVC多项辅助功能|
 
 ## 知识点2：@RequestBody
 
-| 名称 | @RequestBody                                                 |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 形参注解                                                 |
-| 位置 | SpringMVC控制器方法形参定义前面                              |
-| 作用 | 将请求中请求体所包含的数据传递给请求参数，此注解一个处理器方法只能使用一次 |
+|名称|@RequestBody|
+| ----| --------------------------------------------------------------------------|
+|类型|形参注解|
+|位置|SpringMVC控制器方法形参定义前面|
+|作用|将请求中请求体所包含的数据传递给请求参数，此注解一个处理器方法只能使用一次|
 
 ## @RequestBody与@RequestParam区别
 
 * 区别
+
   * @RequestParam用于接收url地址传参，表单传参【application/x-www-form-urlencoded】
   * @RequestBody用于接收json数据【application/json】
-
 * 应用
+
   * 后期开发中，发送json格式数据为主，@RequestBody应用较广
   * 如果发送非json格式数据，选用@RequestParam接收请求参数
 
@@ -1747,16 +1731,14 @@ public String dataParam(Date date,
 
 ![1630495507353](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630495507353.png)
 
-
-
 ## 知识点1：@DateTimeFormat
 
-| 名称     | @DateTimeFormat                 |
-| -------- | ------------------------------- |
-| 类型     | 形参注解                    |
-| 位置     | SpringMVC控制器方法形参前面     |
-| 作用     | 设定日期时间型数据格式          |
-| 相关属性 | pattern：指定日期时间格式字符串 |
+|名称|@DateTimeFormat|
+| --------| -------------------------------|
+|类型|形参注解|
+|位置|SpringMVC控制器方法形参前面|
+|作用|设定日期时间型数据格式|
+|相关属性|pattern：指定日期时间格式字符串|
 
 ## 内部实现原理
 
@@ -1792,7 +1774,7 @@ public interface Converter<S, T> {
 }
 ```
 
-**注意:Converter所属的包为`org.springframework.core.convert.converter`**
+**注意:Converter所属的包为**​**​`org.springframework.core.convert.converter`​**
 
 Converter接口的实现类
 
@@ -1828,21 +1810,20 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
 ## 4.6.1 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_05_response</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -1861,7 +1842,7 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -1876,9 +1857,8 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
@@ -1886,15 +1866,15 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -1903,17 +1883,16 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   //开启json数据类型自动转换
   @EnableWebMvc
   public class SpringMvcConfig {
   }
-  
-  
-  ```
 
+
+  ```
 - 编写模型类User
 
   ```java
@@ -1923,7 +1902,6 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
       //getter...setter...toString省略
   }
   ```
-
 - webapp下创建page.jsp
 
   ```jsp
@@ -1933,14 +1911,13 @@ SpringMVC接收到请求和数据后，进行一些了的处理，当然这个�
   </body>
   </html>
   ```
-
 - 编写UserController
 
   ```java
   @Controller
   public class UserController {
-  
-      
+
+
   }
   ```
 
@@ -2063,12 +2040,12 @@ public class UserController {
 
 ## 知识点1：@ResponseBody
 
-| 名称   | @ResponseBody                            |
-| ---- | ---------------------------------------- |
-| 类型   | 方法/类注解                                   |
-| 位置   | SpringMVC控制器方法定义上方和控制类上                  |
-| 作用   | 设置当前控制器返回值作为响应体,<br/>写在类上，该类的所有方法都有该注解功能 |
-| 相关属性 | pattern：指定日期时间格式字符串                      |
+|名称|@ResponseBody|
+| --------| ---------------------------------------------------------------------|
+|类型|方法/类注解|
+|位置|SpringMVC控制器方法定义上方和控制类上|
+|作用|设置当前控制器返回值作为响应体,<br />写在类上，该类的所有方法都有该注解功能|
+|相关属性|pattern：指定日期时间格式字符串|
 
 **说明:**
 
@@ -2102,7 +2079,7 @@ public class UserController {
     * `http://localhost/user/getById?id=1` 查询id为1的用户信息
     * `http://localhost/user/saveUser` 保存用户信息
   * REST风格描述形式
-    * `http://localhost/user/1` 
+    * `http://localhost/user/1`
     * `http://localhost/user`
 
 传统方式一般是一个请求url对应一种操作，这样做不仅麻烦，也不安全，因为会程序的人读取了你的请求url地址，就大概知道该url实现的是一个什么样的操作。
@@ -2151,21 +2128,20 @@ public class UserController {
 ## 5.2.1 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_06_rest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -2184,7 +2160,7 @@ public class UserController {
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -2199,9 +2175,8 @@ public class UserController {
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
@@ -2209,15 +2184,15 @@ public class UserController {
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -2226,17 +2201,16 @@ public class UserController {
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   //开启json数据类型自动转换
   @EnableWebMvc
   public class SpringMvcConfig {
   }
-  
-  
-  ```
 
+
+  ```
 - 编写模型类User和Book
 
   ```java
@@ -2245,14 +2219,13 @@ public class UserController {
       private int age;
       //getter...setter...toString省略
   }
-  
+
   public class Book {
       private String name;
       private double price;
        //getter...setter...toString省略
   }
   ```
-
 - 编写UserController和BookController
 
   ```java
@@ -2264,28 +2237,28 @@ public class UserController {
           System.out.println("user save..."+user);
           return "{'module':'user save'}";
       }
-  
+
       @RequestMapping("/delete")
       @ResponseBody
       public String delete(Integer id) {
           System.out.println("user delete..." + id);
           return "{'module':'user delete'}";
       }
-  
+
       @RequestMapping("/update")
       @ResponseBody
       public String update(@RequestBody User user) {
           System.out.println("user update..." + user);
           return "{'module':'user update'}";
       }
-  
+
       @RequestMapping("/getById")
       @ResponseBody
       public String getById(Integer id) {
           System.out.println("user getById..." + id);
           return "{'module':'user getById'}";
       }
-  
+
       @RequestMapping("/findAll")
       @ResponseBody
       public String getAll() {
@@ -2293,46 +2266,46 @@ public class UserController {
           return "{'module':'user getAll'}";
       }
   }
-  
-  
+
+
   @Controller
   public class BookController {
-      
+
   	@RequestMapping(value = "/books",method = RequestMethod.POST)
       @ResponseBody
       public String save(@RequestBody Book book){
           System.out.println("book save..." + book);
           return "{'module':'book save'}";
       }
-  
+
       @RequestMapping(value = "/books/{id}",method = RequestMethod.DELETE)
       @ResponseBody
       public String delete(@PathVariable Integer id){
           System.out.println("book delete..." + id);
           return "{'module':'book delete'}";
       }
-  
+
       @RequestMapping(value = "/books",method = RequestMethod.PUT)
       @ResponseBody
       public String update(@RequestBody Book book){
           System.out.println("book update..." + book);
           return "{'module':'book update'}";
       }
-  
+
       @RequestMapping(value = "/books/{id}",method = RequestMethod.GET)
       @ResponseBody
       public String getById(@PathVariable Integer id){
           System.out.println("book getById..." + id);
           return "{'module':'book getById'}";
       }
-  
+
       @RequestMapping(value = "/books",method = RequestMethod.GET)
       @ResponseBody
       public String getAll(){
           System.out.println("book getAll...");
           return "{'module':'book getAll'}";
       }
-      
+
   }
   ```
 
@@ -2346,9 +2319,9 @@ public class UserController {
 >
 > 1.之前不同的请求有不同的路径,现在要将其修改为统一的请求路径
 >
->  修改前: 新增: /save ,修改: /update,删除 /delete...
+> 修改前: 新增: /save ,修改: /update,删除 /delete...
 >
->  修改后: 增删改查: /users
+> 修改后: 增删改查: /users
 >
 > 2.根据GET查询、POST新增、PUT修改、DELETE删除对方法的请求方式进行限定
 >
@@ -2374,7 +2347,6 @@ public class UserController {
 * 将请求路径更改为`/users`
 
   * 访问该方法使用 POST: `http://localhost/users`
-
 * 使用method属性限定该方法的访问方式为`POST`
 
   * 如果发送的不是POST请求，比如发送GET请求，则会报错
@@ -2466,7 +2438,6 @@ public class UserController {
 - 将请求路径更改为`/users`
 
   - 访问该方法使用 PUT: `http://localhost/users`
-
 - 访问并携带参数:
 
   ![1630506507096](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630506507096.png)
@@ -2529,11 +2500,11 @@ public String delete(@PathVariable Integer id){
 
 ## 知识点1：@PathVariable
 
-| 名称 | @PathVariable                                                |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 形参注解                                                 |
-| 位置 | SpringMVC控制器方法形参定义前面                              |
-| 作用 | 绑定路径参数与处理器方法形参间的关系，要求路径参数名与形参名一一对应 |
+|名称|@PathVariable|
+| ----| --------------------------------------------------------------------|
+|类型|形参注解|
+|位置|SpringMVC控制器方法形参定义前面|
+|作用|绑定路径参数与处理器方法形参间的关系，要求路径参数名与形参名一一对应|
 
 关于接收参数，我们学过三个注解`@RequestBody`、`@RequestParam`、`@PathVariable`,这三个注解之间的区别和应用分别是什么?
 
@@ -2626,20 +2597,20 @@ public class BookController {
 
 ## 知识点1：@RestController
 
-| 名称 | @RestController                                              |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 类注解                                                   |
-| 位置 | 基于SpringMVC的RESTful开发控制器类定义上方                   |
-| 作用 | 设置当前控制器类为RESTful风格，<br/>等同于@Controller与@ResponseBody两个注解组合功能 |
+|名称|@RestController|
+| ----| -------------------------------------------------------------------------------|
+|类型|类注解|
+|位置|基于SpringMVC的RESTful开发控制器类定义上方|
+|作用|设置当前控制器类为RESTful风格，<br />等同于@Controller与@ResponseBody两个注解组合功能|
 
 ## 知识点2：@GetMapping @PostMapping @PutMapping @DeleteMapping
 
-| 名称     | @GetMapping @PostMapping @PutMapping @DeleteMapping          |
-| -------- | ------------------------------------------------------------ |
-| 类型     | 方法注解                                                 |
-| 位置     | 基于SpringMVC的RESTful开发控制器方法定义上方                 |
-| 作用     | 设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，<br/>例如@GetMapping对应GET请求 |
-| 相关属性 | value（默认）：请求访问路径                                  |
+|名称|@GetMapping @PostMapping @PutMapping @DeleteMapping|
+| --------| ------------------------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|基于SpringMVC的RESTful开发控制器方法定义上方|
+|作用|设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，<br />例如@GetMapping对应GET请求|
+|相关属性|value（默认）：请求访问路径|
 
 ## 5.4 RESTful案例
 
@@ -2653,7 +2624,7 @@ public class BookController {
 
 ![1630508367105](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630508367105.png)
 
-**说明:**此次案例的重点是在SpringMVC中如何使用RESTful实现前后台交互，所以本案例并没有和数据库进行交互，所有数据使用`假`数据来完成开发。
+**说明:** 此次案例的重点是在SpringMVC中如何使用RESTful实现前后台交互，所以本案例并没有和数据库进行交互，所有数据使用`假`数据来完成开发。
 
 步骤分析:
 
@@ -2676,21 +2647,20 @@ public class BookController {
 ## 5.4.2 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_07_rest_case</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -2709,7 +2679,7 @@ public class BookController {
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -2724,9 +2694,8 @@ public class BookController {
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
@@ -2734,15 +2703,15 @@ public class BookController {
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -2751,17 +2720,16 @@ public class BookController {
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   //开启json数据类型自动转换
   @EnableWebMvc
   public class SpringMvcConfig {
   }
-  
-  
-  ```
 
+
+  ```
 - 编写模型类Book
 
   ```java
@@ -2773,14 +2741,13 @@ public class BookController {
       //setter...getter...toString略
   }
   ```
-
 - 编写BookController
 
   ```java
   @Controller
   public class BookController {
-  
-      
+
+
   }
   ```
 
@@ -3060,4 +3027,3 @@ public class SpringMvcConfig {
     </script>
 </html>
 ```
-

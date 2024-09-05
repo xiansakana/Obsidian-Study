@@ -1,12 +1,17 @@
+# Java
+
 ---
+
 title: Java
 tags:
-  - Java
-  - 后端
-  - OOP
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512455.jpg'
-abbrlink: df2849ec
+
+- Java
+- 后端
+- OOP
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403050512455.jpg'
+  abbrlink: df2849ec
+
 ---
 
 # 基础知识
@@ -76,7 +81,6 @@ public class Util {
 
 泛型在Java中是一个非常强大的特性，它为编程提供了更多的灵活性和类型安全。
 
-
 ## 多态 (Polymorphism)
 
 Java 中的多态是面向对象编程中的一个核心概念，指的是一个方法调用可以有多种形式。它允许一个对象取多种形式，能够让 Java 程序具有更好的可扩展性和维护性。多态性可以分为编译时多态和运行时多态，主要通过继承和接口实现。
@@ -134,6 +138,6 @@ public class TestPolymorphism {
 
 在这个例子中，通过父类引用`myAnimal`调用`makeSound`方法时，实际执行的是对象的实际类型（`Dog`或`Cat`）的`makeSound`方法。这就是运行时多态的体现。
 
-
 # 面试
 
+‍

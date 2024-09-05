@@ -1,13 +1,19 @@
+# Spring_day02
+
 ---
+
 title: itheima-SSM Spring_day02
 tags:
-  - itheima
-  - Spring
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
-abbrlink: dd23acea
+
+- itheima
+- Spring
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
+  abbrlink: dd23acea
+
 ---
+
 # Spring_day02
 
 **今日目标**
@@ -33,8 +39,9 @@ abbrlink: dd23acea
 
 * 创建一个Maven项目
 
-	<img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629860338328.png" alt="image-20230309173355794" style="zoom:67%;" />  
-  
+  <div>
+  <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629860338328.png" alt="image-20230309173355794" style="zoom:67%;" />
+  </div>
 * pom.xml添加依赖
 
   ```xml
@@ -46,7 +53,6 @@ abbrlink: dd23acea
       </dependency>
   </dependencies>
   ```
-
 * resources下添加spring的配置文件applicationContext.xml
 
   ```xml
@@ -56,10 +62,9 @@ abbrlink: dd23acea
          xsi:schemaLocation="
               http://www.springframework.org/schema/beans
               http://www.springframework.org/schema/beans/spring-beans.xsd">
-  
+
   </beans>
   ```
-  
 * 编写一个运行类App
 
   ```java
@@ -150,7 +155,9 @@ public class App {
 
 打印如下结果: 说明第三方bean对象已经被spring的IOC容器进行管理
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629887733081.png" style="zoom: 80%;" />
+</div>
 
 做完案例后，我们可以将刚才思考的两个问题答案说下:
 
@@ -159,7 +166,6 @@ public class App {
   ```
   DruidDataSource
   ```
-
 - 如何注入数据库连接四要素?
 
   ```
@@ -170,9 +176,9 @@ public class App {
 
 完成了DruidDataSource的管理，接下来我们再来加深下练习，这次我们来管理`C3P0`数据源，具体的实现步骤是什么呢?
 
->需求:使用Spring的IOC容器来管理C3P0连接池对象
+> 需求:使用Spring的IOC容器来管理C3P0连接池对象
 >
->实现方案和上面基本一致，重点要关注管理的是哪个bean对象`?
+> 实现方案和上面基本一致，重点要关注管理的是哪个bean对象`?
 
 ### 步骤1:导入`C3P0`的依赖
 
@@ -189,7 +195,6 @@ pom.xml中添加依赖
 **对于新的技术，不知道具体的坐标该如何查找?**
 
 * 直接百度搜索
-
 * 从mvn的仓库`https://mvnrepository.com/`中进行搜索
 
   ![1629888540286](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629888540286.png)
@@ -437,9 +442,9 @@ public class App {
               http://www.springframework.org/schema/beans/spring-beans.xsd
               http://www.springframework.org/schema/context
               http://www.springframework.org/schema/context/spring-context.xsd">
-      
+
       <context:property-placeholder location="jdbc.properties"/>
-      
+
       <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
           <property name="name" value="${username}"/>
       </bean>
@@ -473,7 +478,7 @@ public class App {
               http://www.springframework.org/schema/beans/spring-beans.xsd
               http://www.springframework.org/schema/context
               http://www.springframework.org/schema/context/spring-context.xsd">
-      
+
       <context:property-placeholder location="jdbc.properties" system-properties-mode="NEVER"/>
   </beans>
   ```
@@ -481,7 +486,6 @@ public class App {
   system-properties-mode:设置为NEVER,表示不加载系统属性，就可以解决上述问题。
 
   当然还有一个解决方案就是避免使用`username`作为属性的`key`。
-
 * 问题二:当有多个properties配置文件需要被加载，该如何配置?
 
   1. 调整下配置文件的内容，在resources下添加`jdbc.properties`,`jdbc2.properties`,内容如下:
@@ -501,57 +505,53 @@ jdbc2.properties
 username=root666
 ```
 
+2.修改applicationContext.xml
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--方式一 -->
+    <context:property-placeholder location="jdbc.properties,jdbc2.properties" system-properties-mode="NEVER"/>
+    <!--方式二-->
+    <context:property-placeholder location="*.properties" system-properties-mode="NEVER"/>
+    <!--方式三 -->
+    <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>
+    <!--方式四-->
+    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
+</beans>	
+```
 
-  2.修改applicationContext.xml
+**说明:**
 
-  ```xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <beans xmlns="http://www.springframework.org/schema/beans"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:context="http://www.springframework.org/schema/context"
-         xsi:schemaLocation="
-              http://www.springframework.org/schema/beans
-              http://www.springframework.org/schema/beans/spring-beans.xsd
-              http://www.springframework.org/schema/context
-              http://www.springframework.org/schema/context/spring-context.xsd">
-      <!--方式一 -->
-      <context:property-placeholder location="jdbc.properties,jdbc2.properties" system-properties-mode="NEVER"/>
-      <!--方式二-->
-      <context:property-placeholder location="*.properties" system-properties-mode="NEVER"/>
-      <!--方式三 -->
-      <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>
-      <!--方式四-->
-      <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
-  </beans>	
-  ```
-
-  **说明:**
-
-  * 方式一:可以实现，如果配置文件多的话，每个都需要配置
-  * 方式二:`*.properties`代表所有以properties结尾的文件都会被加载，可以解决方式一的问题，但是不标准
-  * 方式三:标准的写法，`classpath:`代表的是从根路径下开始查找，但是只能查询当前项目的根路径
-  * 方式四:不仅可以加载当前项目还可以加载当前项目所依赖的所有项目的根路径下的properties配置文件
+* 方式一:可以实现，如果配置文件多的话，每个都需要配置
+* 方式二:`*.properties`代表所有以properties结尾的文件都会被加载，可以解决方式一的问题，但是不标准
+* 方式三:标准的写法，`classpath:`代表的是从根路径下开始查找，但是只能查询当前项目的根路径
+* 方式四:不仅可以加载当前项目还可以加载当前项目所依赖的所有项目的根路径下的properties配置文件
 
 ## 1.2.3 加载properties文件小结
 
-  本节主要讲解的是properties配置文件的加载，需要掌握的内容有:
+本节主要讲解的是properties配置文件的加载，需要掌握的内容有:
 
-  * 如何开启`context`命名空间
+* 如何开启`context`命名空间
 
-    ![1629980280952](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629980280952.png)
+  ![1629980280952](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1629980280952.png)
+* 如何加载properties配置文件
 
-  * 如何加载properties配置文件
+  ```xml
+  <context:property-placeholder location="" system-properties-mode="NEVER"/>
+  ```
+* 如何在applicationContext.xml引入properties配置文件中的值
 
-    ```xml
-    <context:property-placeholder location="" system-properties-mode="NEVER"/>
-    ```
-
-  * 如何在applicationContext.xml引入properties配置文件中的值
-
-    ```
-    ${key}
-    ```
+  ```
+  ${key}
+  ```
 
 # 2，核心容器
 
@@ -569,7 +569,6 @@ username=root666
 在学习和解决上述问题之前，先来准备下案例环境:
 
 * 创建一个Maven项目
-
 * pom.xml添加Spring的依赖
 
   ```xml
@@ -581,7 +580,6 @@ username=root666
       </dependency>
   </dependencies>
   ```
-
 * resources下添加applicationContext.xml
 
   ```xml
@@ -593,7 +591,6 @@ username=root666
       <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl"/>
   </beans>
   ```
-
 * 添加BookDao和BookDaoImpl类
 
   ```java
@@ -606,7 +603,6 @@ username=root666
       }
   }
   ```
-
 * 创建运行类App
 
   ```java
@@ -653,7 +649,7 @@ ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext
 ApplicationContext ctx = new FileSystemXmlApplicationContext("D:\\workspace\\spring\\spring_10_container\\src\\main\\resources\\applicationContext.xml"); 
 ```
 
-**说明:**大家练习的时候，写自己的具体路径。
+**说明:** 大家练习的时候，写自己的具体路径。
 
 这种方式虽能实现，但是当项目的位置发生变化后,代码也需要跟着改,耦合度较高,不推荐使用。
 
@@ -726,9 +722,7 @@ public class BookDaoImpl implements BookDao {
 如果不去获取bean对象，打印会发现：
 
 * BeanFactory是延迟加载，只有在获取bean对象的时候才会去创建
-
 * ApplicationContext是立即加载，容器加载的时候就会创建bean对象
-
 * ApplicationContext要想成为延迟加载，只需要按照如下方式进行配置
 
   ```xml
@@ -749,7 +743,6 @@ public class BookDaoImpl implements BookDao {
 
   * ClassPathXmlApplicationContext[掌握]
   * FileSystemXmlApplicationContext[知道即可]
-
 * 获取Bean的三种方式
 
   * getBean("名称"):需要类型转换
@@ -757,11 +750,9 @@ public class BookDaoImpl implements BookDao {
   * getBean(类型.class):容器中不能有多个该类的bean对象
 
   上述三种方式，各有各的优缺点，用哪个都可以。
-
 * 容器类层次结构
 
   * 只需要知晓容器的最上级的父接口为 BeanFactory即可
-
 * BeanFactory
 
   * 使用BeanFactory创建的容器是延迟加载
@@ -816,7 +807,6 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
 在学习注解开发之前，先来准备下案例环境:
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring的依赖
 
   ```xml
@@ -828,7 +818,6 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
       </dependency>
   </dependencies>
   ```
-
 - resources下添加applicationContext.xml
 
   ```xml
@@ -840,7 +829,6 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
       <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl"/>
   </beans>
   ```
-
 - 添加BookDao、BookDaoImpl、BookService、BookServiceImpl类
 
   ```java
@@ -855,15 +843,14 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
   public interface BookService {
       public void save();
   }
-  
+
   public class BookServiceImpl implements BookService {
       public void save() {
           System.out.println("book service save ...");
       }
   }
-  
+
   ```
-  
 - 创建运行类App
 
   ```java
@@ -988,7 +975,6 @@ public class App {
 **说明:**
 
 * BookServiceImpl类没有起名称，所以在App中是按照类型来获取bean对象
-
 * @Component注解如果不起名称，会有一个默认值就是`当前类名首字母小写`，所以也可以按照名称获取，如
 
   ```java
@@ -1008,12 +994,12 @@ public class App {
 
 ## 知识点1: @Component等
 
-| 名称 | @Component/@Controller/@Service/@Repository |
-| ---- | ------------------------------------------- |
-| 类型 | 类注解                                      |
-| 位置 | 类定义上方                                  |
-| 作用 | 设置该类为spring管理的bean                  |
-| 属性 | value（默认）：定义bean的id                 |
+|名称|@Component/@Controller/@Service/@Repository|
+| ----| -------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|设置该类为spring管理的bean|
+|属性|value（默认）：定义bean的id|
 
 ## 3.2 纯注解开发模式
 
@@ -1025,7 +1011,7 @@ public class App {
 
 ## 3.2.1 思路分析
 
-实现思路为: 
+实现思路为:
 
 * 将配置文件applicationContext.xml删除掉，使用类来替换。
 
@@ -1088,15 +1074,12 @@ public class AppForAnnotation {
 * Java类替换Spring核心配置文件
 
   ![1630029254372](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630029254372.png)
-
 * @Configuration注解用于设定当前类为配置类
-
 * @ComponentScan注解用于设定扫描路径，此注解只能添加一次，多个数据请用数组格式
 
   ```
   @ComponentScan({com.itheima.service","com.itheima.dao"})
   ```
-
 * 读取Spring核心配置文件初始化容器对象切换为读取Java配置类初始化容器对象
 
   ```java
@@ -1108,21 +1091,21 @@ public class AppForAnnotation {
 
 ## 知识点1：@Configuration
 
-| 名称 | @Configuration              |
-| ---- | --------------------------- |
-| 类型 | 类注解                      |
-| 位置 | 类定义上方                  |
-| 作用 | 设置该类为spring配置类      |
-| 属性 | value（默认）：定义bean的id |
+|名称|@Configuration|
+| ----| ---------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|设置该类为spring配置类|
+|属性|value（默认）：定义bean的id|
 
 ## 知识点2：@ComponentScan
 
-| 名称 | @ComponentScan                                           |
-| ---- | -------------------------------------------------------- |
-| 类型 | 类注解                                                   |
-| 位置 | 类定义上方                                               |
-| 作用 | 设置spring配置类扫描路径，用于加载使用注解格式定义的bean |
-| 属性 | value（默认）：扫描路径，此路径可以逐层向下扫描          |
+|名称|@ComponentScan|
+| ----| --------------------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|设置spring配置类扫描路径，用于加载使用注解格式定义的bean|
+|属性|value（默认）：扫描路径，此路径可以逐层向下扫描|
 
 **小结:**
 
@@ -1143,7 +1126,6 @@ public class AppForAnnotation {
 老规矩，学习之前先来准备环境:
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring的依赖
 
   ```xml
@@ -1155,7 +1137,6 @@ public class AppForAnnotation {
       </dependency>
   </dependencies>
   ```
-
 - 添加一个配置类`SpringConfig`
 
   ```java
@@ -1164,7 +1145,6 @@ public class AppForAnnotation {
   public class SpringConfig {
   }
   ```
-
 - 添加BookDao、BookDaoImpl类
 
   ```java
@@ -1178,7 +1158,6 @@ public class AppForAnnotation {
       }
   }
   ```
-
 - 创建运行类App
 
   ```java
@@ -1223,12 +1202,12 @@ public class BookDaoImpl implements BookDao {
 
 ### 知识点1：@Scope
 
-| 名称 | @Scope                                                       |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 类注解                                                       |
-| 位置 | 类定义上方                                                   |
-| 作用 | 设置该类创建对象的作用范围<br/>可用于设置创建出的bean是否为单例对象 |
-| 属性 | value（默认）：定义bean作用范围，<br/>默认值singleton（单例），可选值prototype（非单例） |
+|名称|@Scope|
+| ----| -----------------------------------------------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|设置该类创建对象的作用范围<br />可用于设置创建出的bean是否为单例对象|
+|属性|value（默认）：定义bean作用范围，<br />默认值singleton（单例），可选值prototype（非单例）|
 
 ## 3.3.3 Bean的生命周期
 
@@ -1291,7 +1270,7 @@ public class App {
 
 ![1630032385498](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630032385498.png)
 
-**注意:**@PostConstruct和@PreDestroy注解如果找不到，需要导入下面的jar包
+**注意:** @PostConstruct和@PreDestroy注解如果找不到，需要导入下面的jar包
 
 ```java
 <dependency>
@@ -1305,21 +1284,21 @@ public class App {
 
 ### 知识点1：@PostConstruct
 
-| 名称 | @PostConstruct         |
-| ---- | ---------------------- |
-| 类型 | 方法注解               |
-| 位置 | 方法上                 |
-| 作用 | 设置该方法为初始化方法 |
-| 属性 | 无                     |
+|名称|@PostConstruct|
+| ----| ----------------------|
+|类型|方法注解|
+|位置|方法上|
+|作用|设置该方法为初始化方法|
+|属性|无|
 
 ### 知识点2：@PreDestroy
 
-| 名称 | @PreDestroy          |
-| ---- | -------------------- |
-| 类型 | 方法注解             |
-| 位置 | 方法上               |
-| 作用 | 设置该方法为销毁方法 |
-| 属性 | 无                   |
+|名称|@PreDestroy|
+| ----| --------------------|
+|类型|方法注解|
+|位置|方法上|
+|作用|设置该方法为销毁方法|
+|属性|无|
 
 **小结**
 
@@ -1334,7 +1313,6 @@ Spring为了使用注解简化开发，并没有提供`构造函数注入`、`se
 在学习之前，把案例环境介绍下:
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring的依赖
 
   ```xml
@@ -1346,7 +1324,6 @@ Spring为了使用注解简化开发，并没有提供`构造函数注入`、`se
       </dependency>
   </dependencies>
   ```
-
 - 添加一个配置类`SpringConfig`
 
   ```java
@@ -1355,7 +1332,6 @@ Spring为了使用注解简化开发，并没有提供`构造函数注入`、`se
   public class SpringConfig {
   }
   ```
-
 - 添加BookDao、BookDaoImpl、BookService、BookServiceImpl类
 
   ```java
@@ -1383,7 +1359,6 @@ Spring为了使用注解简化开发，并没有提供`构造函数注入`、`se
       }
   }
   ```
-
 - 创建运行类App
 
   ```java
@@ -1471,16 +1446,13 @@ public class BookDaoImpl2 implements BookDao {
   }
   ```
 
-  此时就可以注入成功，但是得思考个问题: 
+  此时就可以注入成功，但是得思考个问题:
 
   * @Autowired是按照类型注入的，给BookDao的两个实现起了名称，它还是有两个bean对象，为什么不报错?
-
   * @Autowired默认按照类型自动装配，如果IOC容器中同类的Bean找到多个，就按照变量名和Bean的名称匹配。因为变量名叫`bookDao`而容器中也有一个`booDao`，所以可以成功注入。
-
   * 分析下面这种情况是否能完成注入呢?
 
     ![1630036236150](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630036236150.png)
-
   * 不行，因为按照类型会找到多个bean对象，此时会按照`bookDao`名称去找，因为IOC容器只有名称叫`bookDao1`和`bookDao2`,所以找不到，会报`NoUniqueBeanDefinitionException`
 
 ## 3.4.3 注解实现按照名称注入
@@ -1587,13 +1559,11 @@ public class BookDaoImpl implements BookDao {
   ```java
   @PropertySource({"jdbc.properties","xxx.properties"})
   ```
-
 * `@PropertySource`注解属性中不支持使用通配符`*`,运行会报错
 
   ```java
   @PropertySource({"*.properties"})
   ```
-
 * `@PropertySource`注解属性中可以把`classpath:`加上,代表从当前项目的根路径找文件
 
   ```java
@@ -1602,40 +1572,39 @@ public class BookDaoImpl implements BookDao {
 
 ## 知识点1：@Autowired
 
-
-| 名称 | @Autowired                                                   |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 属性注解  或  方法注解（了解）  或  方法形参注解（了解）     |
-| 位置 | 属性定义上方  或  标准set方法上方  或  类set方法上方  或  方法形参前面 |
-| 作用 | 为引用类型属性设置值                                         |
-| 属性 | required：true/false，定义该属性是否允许为null               |
+|名称|@Autowired|
+| ----| ----------------------------------------------------------------------|
+|类型|属性注解  或  方法注解（了解）  或  方法形参注解（了解）|
+|位置|属性定义上方  或  标准set方法上方  或  类set方法上方  或  方法形参前面|
+|作用|为引用类型属性设置值|
+|属性|required：true/false，定义该属性是否允许为null|
 
 ## 知识点2：@Qualifier
 
-| 名称 | @Qualifier                                           |
-| ---- | ---------------------------------------------------- |
-| 类型 | 属性注解  或  方法注解（了解）                       |
-| 位置 | 属性定义上方  或  标准set方法上方  或  类set方法上方 |
-| 作用 | 为引用类型属性指定注入的beanId                       |
-| 属性 | value（默认）：设置注入的beanId                      |
+|名称|@Qualifier|
+| ----| ----------------------------------------------------|
+|类型|属性注解  或  方法注解（了解）|
+|位置|属性定义上方  或  标准set方法上方  或  类set方法上方|
+|作用|为引用类型属性指定注入的beanId|
+|属性|value（默认）：设置注入的beanId|
 
 ## 知识点3：@Value
 
-| 名称 | @Value                                               |
-| ---- | ---------------------------------------------------- |
-| 类型 | 属性注解  或  方法注解（了解）                       |
-| 位置 | 属性定义上方  或  标准set方法上方  或  类set方法上方 |
-| 作用 | 为  基本数据类型  或  字符串类型  属性设置值         |
-| 属性 | value（默认）：要注入的属性值                        |
+|名称|@Value|
+| ----| ----------------------------------------------------|
+|类型|属性注解  或  方法注解（了解）|
+|位置|属性定义上方  或  标准set方法上方  或  类set方法上方|
+|作用|为  基本数据类型  或  字符串类型  属性设置值|
+|属性|value（默认）：要注入的属性值|
 
 ## 知识点4：@PropertySource
 
-| 名称 | @PropertySource                                              |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 类注解                                                       |
-| 位置 | 类定义上方                                                   |
-| 作用 | 加载properties文件中的属性值                                 |
-| 属性 | value（默认）：设置加载的properties文件对应的文件名或文件名组成的数组 |
+|名称|@PropertySource|
+| ----| ---------------------------------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|加载properties文件中的属性值|
+|属性|value（默认）：设置加载的properties文件对应的文件名或文件名组成的数组|
 
 # 4，IOC/DI注解开发管理第三方bean
 
@@ -1652,7 +1621,6 @@ public class BookDaoImpl implements BookDao {
 学习@Bean注解之前先来准备环境:
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring的依赖
 
   ```xml
@@ -1664,7 +1632,6 @@ public class BookDaoImpl implements BookDao {
       </dependency>
   </dependencies>
   ```
-
 - 添加一个配置类`SpringConfig`
 
   ```java
@@ -1672,7 +1639,6 @@ public class BookDaoImpl implements BookDao {
   public class SpringConfig {
   }
   ```
-
 - 添加BookDao、BookDaoImpl类
 
   ```java
@@ -1686,7 +1652,6 @@ public class BookDaoImpl implements BookDao {
       }
   }
   ```
-
 - 创建运行类App
 
   ```java
@@ -1752,7 +1717,7 @@ public class SpringConfig {
 }
 ```
 
-**注意:不能使用`DataSource ds = new DruidDataSource()`**
+**注意:不能使用**​**​`DataSource ds = new DruidDataSource()`​**
 
 因为DataSource接口中没有对应的setter方法来设置属性。
 
@@ -1869,9 +1834,7 @@ public class SpringConfig {
 **注意:**
 
 * 扫描注解可以移除
-
 * @Import参数需要的是一个数组，可以引入多个配置类。
-
 * @Import注解在配置类中只能写一次，下面的方式是不允许的
 
   ```java
@@ -1880,7 +1843,7 @@ public class SpringConfig {
   @Import(JdbcConfig.class)
   @Import(Xxx.class)
   public class SpringConfig {
-  	
+
   }
   ```
 
@@ -1890,21 +1853,21 @@ public class SpringConfig {
 
 ## 知识点1：@Bean
 
-| 名称 | @Bean                                  |
-| ---- | -------------------------------------- |
-| 类型 | 方法注解                               |
-| 位置 | 方法定义上方                           |
-| 作用 | 设置该方法的返回值作为spring管理的bean |
-| 属性 | value（默认）：定义bean的id            |
+|名称|@Bean|
+| ----| --------------------------------------|
+|类型|方法注解|
+|位置|方法定义上方|
+|作用|设置该方法的返回值作为spring管理的bean|
+|属性|value（默认）：定义bean的id|
 
 ## 知识点2：@Import
 
-| 名称 | @Import                                                      |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 类注解                                                       |
-| 位置 | 类定义上方                                                   |
-| 作用 | 导入配置类                                                   |
-| 属性 | value（默认）：定义导入的配置类类名，<br/>当配置类有多个时使用数组格式一次性导入多个配置类 |
+|名称|@Import|
+| ----| -------------------------------------------------------------------------------------|
+|类型|类注解|
+|位置|类定义上方|
+|作用|导入配置类|
+|属性|value（默认）：定义导入的配置类类名，<br />当配置类有多个时使用数组格式一次性导入多个配置类|
 
 ## 4.4 注解开发实现为第三方bean注入资源
 
@@ -1996,7 +1959,7 @@ public class JdbcConfig {
 
 ## 4.4.2 引用数据类型
 
-### 4.4.2.1 需求分析 
+### 4.4.2.1 需求分析
 
 假设在构建DataSource对象的时候，需要用到BookDao对象，该如何把BookDao对象注入进方法内让其使用呢?
 
@@ -2048,8 +2011,6 @@ public DataSource dataSource(BookDao bookDao){
 ### 步骤3:运行程序
 
 ![1630125475609](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630125475609.png)
-
-
 
 # 5，注解开发总结
 
@@ -2273,7 +2234,6 @@ Mybatis的基础环境我们已经准备好了，接下来就得分析下在上�
   ![1630137189480](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630137189480.png)
 
   从图中可以获取到，真正需要交给Spring管理的是SqlSessionFactory
-
 * 整合Mybatis，就是将Mybatis用到的内容交给Spring管理，分析下配置文件
 
   ![1630137388717](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630137388717.png)
@@ -2399,7 +2359,6 @@ public class MybatisConfig {
 
   * SqlSessionFactoryBean是前面我们讲解FactoryBean的一个子类，在该类中将SqlSessionFactory的创建进行了封装，简化对象的创建，我们只需要将其需要的内容设置即可。
   * 方法中有一个参数为dataSource,当前Spring容器中已经创建了Druid数据源，类型刚好是DataSource类型，此时在初始化SqlSessionFactoryBean这个对象的时候，发现需要使用DataSource对象，而容器中刚好有这么一个对象，就自动加载了DruidDataSource对象。
-
 * 使用MapperScannerConfigurer加载Dao接口，创建代理对象保存到IOC容器中
 
   ![1630138916939](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630138916939.png)
@@ -2513,18 +2472,18 @@ public class AccountServiceTest {
 
 ## 知识点1：@RunWith
 
-| 名称 | @RunWith                          |
-| ---- | --------------------------------- |
-| 类型 | 测试类注解                        |
-| 位置 | 测试类定义上方                    |
-| 作用 | 设置JUnit运行器                   |
-| 属性 | value（默认）：运行所使用的运行期 |
+|名称|@RunWith|
+| ----| ---------------------------------|
+|类型|测试类注解|
+|位置|测试类定义上方|
+|作用|设置JUnit运行器|
+|属性|value（默认）：运行所使用的运行期|
 
 ## 知识点2：@ContextConfiguration
 
-| 名称 | @ContextConfiguration                                        |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 测试类注解                                                   |
-| 位置 | 测试类定义上方                                               |
-| 作用 | 设置JUnit加载的Spring核心配置                                |
-| 属性 | classes：核心配置类，可以使用数组的格式设定加载多个配置类<br/>locations:配置文件，可以使用数组的格式设定加载多个配置文件名称 |
+|名称|@ContextConfiguration|
+| ----| -----------------------------------------------------------------------------------------------------------------------|
+|类型|测试类注解|
+|位置|测试类定义上方|
+|作用|设置JUnit加载的Spring核心配置|
+|属性|classes：核心配置类，可以使用数组的格式设定加载多个配置类<br />locations:配置文件，可以使用数组的格式设定加载多个配置文件名称|

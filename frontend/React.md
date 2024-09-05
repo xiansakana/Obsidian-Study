@@ -1,13 +1,18 @@
+# React
+
 ---
+
 title: React
 tags:
-  - React
-  - JSX
-  - SPA
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg
-abbrlink: d8a440d1
-date: 2023-11-22 23:04:10
+
+- React
+- JSX
+- SPA
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222305271.jpg
+  abbrlink: d8a440d1
+  date: 2023-11-22 23:04:10
+
 ---
 
 # SPA
@@ -82,7 +87,6 @@ JSX 的功能让我们可以在 JavaScript 内部，使用类 HTML 的程式码�
 JSX 的特殊语法如下：
 
 1. 我们可以在大括号`{ }`内编写 expression。在程式语言中， Statements 代表一个动作或是指令，例如打印出某个值或是 if statement。 Expression 是会算出某个值的操作，例如一个变数、数学运算或是执行函数等等。基本的原则是，「 An expression is something, while a statement does something. 」在 JSX 当中使用`{ }`可以执行 expression 本身，并且显示 return value。
-
 2. 在 JSX 当中，HTML 的标签内，class 属性都需要改叫做 className。这是因为 class 这个字在 JavaScript 内部是个保留字，所以不能直接写 class。
 
    ```jsx
@@ -106,7 +110,6 @@ JSX 的特殊语法如下：
    // 小华
    // 小张
    ```
-
 3. 在 JSX 内做 inline-styling 时，需要给 style 属性一个 expression。这个 expression 内部需要放入一个对象，所以 inline-styling 的语法会变成 `style={{}}`。其中，外部的大括号是 JSX expression 语法，内部的大括号是 JavaScript 物件语法。此外，因为连字符(Hyphen)在 JavaScript 有特殊意义，所以不能在 JavaScript 物件的属性使用连字符。因此，在 CSS 中具有连字符的属性都会被换成 camelCase 的语法。例如：background-color 会需要被写成 backgroudColor。
 
    ```jsx

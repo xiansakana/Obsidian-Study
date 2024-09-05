@@ -1,12 +1,17 @@
+# JavaScript-Basics
+
 ---
+
 title: JavaScript Basics
 tags:
-  - JavaScript
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310230052899.png
-abbrlink: 2c7e614e
-date: 2023-10-23 00:38:44
+
+- JavaScript
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310230052899.png
+  abbrlink: 2c7e614e
+  date: 2023-10-23 00:38:44
+
 ---
 
 # 常见 JavaScript 函数
@@ -40,14 +45,14 @@ window.alert("welcome " + user_name);
 
 > 注意：
 >
-> 1.  用 const 来声明变量，需要马上赋予初始值(initializer)。let 则不需要，若用 let 宣告了变量，但还没有赋值，则变量的值是 undefined。
-> 2.  用 const 和 let 声明的变量，不能重复声明(redeclaration)。
-> 3.  const 不能重复赋值(reassignment)。
+> 1. 用 const 来声明变量，需要马上赋予初始值(initializer)。let 则不需要，若用 let 宣告了变量，但还没有赋值，则变量的值是 undefined。
+> 2. 用 const 和 let 声明的变量，不能重复声明(redeclaration)。
+> 3. const 不能重复赋值(reassignment)。
 
-|       | redeclareation | reassignment | initializer |
+||redeclareation|reassignment|initializer|
 | :---: | :------------: | :----------: | :---------: |
-|  let  |    &#10003;    |   &#10003;   |   不需要    |
-| const |    &#10005;    |   &#10003;   |    需要     |
+|let|&#10003;|&#10003;|不需要|
+|const|&#10005;|&#10003;|需要|
 
 # 数据类型（Data Type）
 
@@ -62,14 +67,13 @@ window.alert("welcome " + user_name);
 
 ## [Number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
-范围：-9,007,199,254,740,992 (-2^253^) 和 9,007,199,254,740,992 (2^253^) 之间的所有整数。
+范围：-9,007,199,254,740,992 (-2<sup>253</sup>) 和 9,007,199,254,740,992 (2<sup>253</sup>) 之间的所有整数。
 
 运算符号包含加法、减法、乘法 、除法、remainder operator、exponentiation operator、++、--、 +=、-=、/=、\*= 等等。
 
 ## [String](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 - String 是由字母或数字串接组成的。String 需要使用单引号或双引号。两个 String 之间的串接是由符号“+”所完成的。String 之间的串接被称为 concatenation。String 与 String 之间不能做“-”、 “\*”、 “/”运算。若尝试做此类运算，则会出现 NaN，代表 Not a Number。(这是因为，JavaScript 还是会尝试算出某个数字结果，但两个 operand 的值都不是数字，无法算出一个数字结果，所以会出现 NaN。)
-
 - String 与 Number 之间，若是做“+”运算，则会变成 String 与 String 之间的 concatenation。\n 可以换行。
 
 ## Number Methods
@@ -111,7 +115,6 @@ JavaScript 中的 String 有可用的 attributes 以及 methods。常见的有�
 # [JavaScript Operators](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators)
 
 - assignment operator
-
 - comparison operator
 
   JavaScript 当中 comparison operators 的运算元是两个任意数据类型，且运算结果为 Boolean 值。
@@ -124,25 +127,21 @@ JavaScript 中的 String 有可用的 attributes 以及 methods。常见的有�
   - \>= returns true if the left operand is greater than or equal to the right operand.
   - < returns true if the left operand is less than the right operand.
   - <= returns true if the left operand is less than or equal to the right operand.
-
 - logical operator
 
-|   A   |   B   | A && B | A &#124;&#124; B |
-| :---: | :---: | :----: | :--------------: |
-| true  | true  |  true  |       true       |
-| true  | false | false  |       true       |
-| false | true  | false  |       true       |
-| false | false | false  |      false       |
+|A|B|A && B|A || B|
+| :---: | :---: | :----: | :----: |
+|true|true|true|true|
+|true|false|false|true|
+|false|true|false|true|
+|false|false|false|false|
 
 > - &&: If the left hand side is true, then it evaluates as the right hand side; If the left hand side is not true, then it ecaluates as the left hand side.
 > - ||: If the left hand side can be converted to true, then returns left hand side; else, return right hand side.
 
 - typeof operator (unary)
-
 - negation operator (unary)
-
 - increment operator (unary)
-
 - bitwise operator
 
   JavaScript 中的 Bitwise Operators 将数字 operand 视为 32 bits 的数字，并且对每个 bit 进行运算。
@@ -162,7 +161,6 @@ JavaScript 中的 String 有可用的 attributes 以及 methods。常见的有�
   - 作业系统、CPU
   - Finite State Machine
   - Graphics，例如影像处理、人工智能
-
 - arithmetic operator
 
 # if statement

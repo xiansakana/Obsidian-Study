@@ -1,12 +1,17 @@
+# OAuth
+
 ---
+
 title: OAuth
 tags:
-  - OAuth
-  - Passport.js
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222257191.jpg
-abbrlink: 6529f8fe
-date: 2023-11-22 22:58:04
+
+- OAuth
+- Passport.js
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311222257191.jpg
+  abbrlink: 6529f8fe
+  date: 2023-11-22 22:58:04
+
 ---
 
 # OAuth

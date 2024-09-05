@@ -1,12 +1,17 @@
+# HTML
+
 ---
+
 title: HTML
 tags:
-  - HTML
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310180425942.png
-abbrlink: 9192d298
-date: 2023-10-18 04:18:54
+
+- HTML
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310180425942.png
+  abbrlink: 9192d298
+  date: 2023-10-18 04:18:54
+
 ---
 
 # vscode 扩展
@@ -18,27 +23,27 @@ date: 2023-10-18 04:18:54
 
 # 基本语法
 
-- [`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)anchor tag 可以设定 target 属性
+- [`&lt;a&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)anchor tag 可以设定 target 属性
 
 ```html
 <a href="" target="_blank"></a>
 ```
 
-- [`<base>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/base)可以设定所有`<a>`标签的 target
+- [`&lt;base&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/base)可以设定所有`<a>`标签的 target
 
 ```html
 <base target="_blank" />
 ```
 
-- [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)插入图像，`<src>`图像来源，`<alt>`图像无法显示时替代文字
+- [`&lt;img&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)插入图像，`<src>`图像来源，`<alt>`图像无法显示时替代文字
 
 ```html
 <img src="" alt="" />
 ```
 
-- [`<ul>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ul)是 unordered list
+- [`&lt;ul&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ul)是 unordered list
+- [`&lt;ol&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ol)是 ordered list，可设置编号类型 type 属性
 
-- [`<ol>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ol)是 ordered list，可设置编号类型 type 属性
   - `a`  表示小写英文字母编号
   - `A`  表示大写英文字母编号
   - `i`  表示小写罗马数字编号
@@ -51,7 +56,6 @@ date: 2023-10-18 04:18:54
 - block elements: `<p>` `<div>`
   不会嵌套在 inline elements 中，但是可能嵌套在其他 block elements 中。
   块级元素总是从新行开始，浏览器会自动在元素前后添加一些空格（边距）块级元素始终占据可用的全部宽度（尽可能向左和向右延伸）。
-
 - inline elements: `<a>` `<span>`
   放在 block elements 中的内容。
   内联元素不会从新行开始，内联元素仅占用必要的宽度。
@@ -107,8 +111,8 @@ date: 2023-10-18 04:18:54
 
 - [GET](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/GET)：表单数据会附加在  `action`  属性的 URL 中，并以 '?' 作为分隔符，[没有副作用](https://developer.mozilla.org/zh-CN/docs/Glossary/Idempotent)  时使用这个方法。
 - [POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST)：用来隐藏信息，表单数据会包含在表单体内然后发送给服务器。
+- [`&lt;input&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input)标签的 type 属性有[`checkbox`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/checkbox) [`email`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/email) [`file`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file) [`number`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/number) [`password`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/password) [`radio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/radio) [`range`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/range)。其他属性有`checked` `max` `min` `maxlength` `minlength` `placeholder` `required` `value` `step` 等等。
 
-- [`<input>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input)标签的 type 属性有[`checkbox`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/checkbox) [`email`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/email) [`file`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file) [`number`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/number) [`password`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/password) [`radio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/radio) [`range`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/range)。其他属性有`checked` `max` `min` `maxlength` `minlength` `placeholder` `required` `value` `step` 等等。
   - checkbox--方框打勾，checked --默认勾选
   - number--输入数字，value--默认值，max 和 min--设置上限和下限，step--分度
   - minlength--最短长度，maxlength--最长长度
@@ -116,7 +120,7 @@ date: 2023-10-18 04:18:54
   - range--滑杆
   - radio--多选一
   - required--必须选择
-- [`<button>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button)在`<form>`标签内预设 type 是`<submit>`
+- [`&lt;button&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button)在`<form>`标签内预设 type 是`<submit>`
 
 ```html
 <form action="">
@@ -231,8 +235,8 @@ date: 2023-10-18 04:18:54
 
 # 其他
 
-- [`<br />`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br) break 换行
-- [`<hr />`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr) 主题分割（水平分割线）
+- [`&lt;br /&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br) break 换行
+- [`&lt;hr /&gt;`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr) 主题分割（水平分割线）
 - `favicon`
 
 ```html

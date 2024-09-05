@@ -1,13 +1,19 @@
+# 高级篇day03-Redis集群
+
 ---
+
 title: itheima-Microservice 高级篇day03-Redis集群
 tags:
-  - itheima
-  - 微服务
-  - Redis
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204705.jpg'
-abbrlink: f9972978
+
+- itheima
+- 微服务
+- Redis
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292204705.jpg'
+  abbrlink: f9972978
+
 ---
+
 # Redis集群
 
 本章是基于CentOS7下的Redis集群教程，包括：
@@ -16,8 +22,6 @@ abbrlink: f9972978
 - Redis主从
 - Redis分片集群
 
-
-
 # 1.单机安装Redis
 
 首先需要安装Redis所需要的依赖：
@@ -25,8 +29,6 @@ abbrlink: f9972978
 ```sh
 yum install -y gcc tcl
 ```
-
-
 
 然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：
 
@@ -52,8 +54,6 @@ tar -xvf redis-6.2.4.tar.gz
 cd redis-6.2.4
 ```
 
-
-
 运行编译命令：
 
 ```sh
@@ -71,8 +71,6 @@ bind 0.0.0.0
 databases 1
 ```
 
-
-
 启动Redis：
 
 ```sh
@@ -85,15 +83,7 @@ redis-server redis.conf
 redis-cli shutdown
 ```
 
-
-
-
-
-
-
 # 2.Redis主从集群
-
-
 
 ## 2.1.集群结构
 
@@ -105,11 +95,11 @@ redis-cli shutdown
 
 这里我们会在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：
 
-|       IP        | PORT |  角色  |
+|IP|PORT|角色|
 | :-------------: | :--: | :----: |
-| 192.168.150.101 | 7001 | master |
-| 192.168.150.101 | 7002 | slave  |
-| 192.168.150.101 | 7003 | slave  |
+|192.168.150.101|7001|master|
+|192.168.150.101|7002|slave|
+|192.168.150.101|7003|slave|
 
 ## 2.2.准备实例和配置
 
@@ -145,8 +135,6 @@ save 60 10000
 appendonly no
 ```
 
-
-
 3）拷贝配置文件到每个实例目录
 
 然后将redis-6.2.4/redis.conf文件拷贝到三个目录中（在/tmp目录执行下列命令）：
@@ -160,8 +148,6 @@ cp redis-6.2.4/redis.conf 7003
 echo 7001 7002 7003 | xargs -t -n 1 cp redis-6.2.4/redis.conf
 ```
 
-
-
 4）修改每个实例的端口、工作目录
 
 修改每个文件夹内的配置文件，将端口分别修改为7001、7002、7003，将rdb文件保存位置都修改为自己所在目录（在/tmp目录执行下列命令）：
@@ -172,8 +158,6 @@ sed -i -e 's/6379/7002/g' -e 's/dir .\//dir \/tmp\/7002\//g' 7002/redis.conf
 sed -i -e 's/6379/7003/g' -e 's/dir .\//dir \/tmp\/7003\//g' 7003/redis.conf
 ```
 
-
-
 5）修改每个实例的声明IP
 
 虚拟机本身有多个IP，为了避免将来混乱，我们需要在redis.conf文件中指定每一个实例的绑定ip信息，格式如下：
@@ -182,8 +166,6 @@ sed -i -e 's/6379/7003/g' -e 's/dir .\//dir \/tmp\/7003\//g' 7003/redis.conf
 # redis实例的声明 IP
 replica-announce-ip 192.168.150.101
 ```
-
-
 
 每个目录都要改，我们一键完成修改（在/tmp目录执行下列命令）：
 
@@ -196,12 +178,6 @@ sed -i '1a replica-announce-ip 192.168.150.101' 7003/redis.conf
 # 或者一键修改
 printf '%s\n' 7001 7002 7003 | xargs -I{} -t sed -i '1a replica-announce-ip 192.168.150.101' {}/redis.conf
 ```
-
-
-
-
-
-
 
 ## 2.3.启动
 
@@ -216,25 +192,15 @@ redis-server 7002/redis.conf
 redis-server 7003/redis.conf
 ```
 
-
-
 启动后：
 
 ![image-20210630183914491](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210630183914491.png)
-
-
-
-
 
 如果要一键停止，可以运行下面命令：
 
 ```sh
 printf '%s\n' 7001 7002 7003 | xargs -I{} -t redis-cli -p {} shutdown
 ```
-
-
-
-
 
 ## 2.4.开启主从关系
 
@@ -244,19 +210,14 @@ printf '%s\n' 7001 7002 7003 | xargs -I{} -t redis-cli -p {} shutdown
 
 - 修改配置文件（永久生效）
 
-  - 在redis.conf中添加一行配置：```slaveof <masterip> <masterport>```
-
+  - 在redis.conf中添加一行配置：`slaveof <masterip> <masterport>`
 - 使用redis-cli客户端连接到redis服务，执行slaveof命令（重启后失效）：
 
   ```sh
   slaveof <masterip> <masterport>
   ```
 
-
-
 <strong><font color='red'>注意</font></strong>：在5.0以后新增命令replicaof，与salveof效果一致。
-
-
 
 这里我们为了演示方便，使用方式二。
 
@@ -269,8 +230,6 @@ redis-cli -p 7002
 slaveof 192.168.150.101 7001
 ```
 
-
-
 通过redis-cli命令连接7003，执行下面命令：
 
 ```sh
@@ -279,8 +238,6 @@ redis-cli -p 7003
 # 执行slaveof
 slaveof 192.168.150.101 7001
 ```
-
-
 
 然后连接 7001节点，查看集群状态：
 
@@ -295,27 +252,17 @@ info replication
 
 ![image-20210630201258802](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210630201258802.png)
 
-
-
 ## 2.5.测试
 
 执行下列操作以测试：
 
-- 利用redis-cli连接7001，执行```set num 123```
-
-- 利用redis-cli连接7002，执行```get num```，再执行```set num 666```
-
-- 利用redis-cli连接7003，执行```get num```，再执行```set num 888```
-
-
+- 利用redis-cli连接7001，执行`set num 123`
+- 利用redis-cli连接7002，执行`get num`，再执行`set num 666`
+- 利用redis-cli连接7003，执行`get num`，再执行`set num 888`
 
 可以发现，只有在7001这个master节点上可以执行写操作，7002和7003这两个slave节点只能执行读操作。
 
-
-
 # 3.搭建哨兵集群
-
-
 
 ## 3.1.集群结构
 
@@ -323,15 +270,13 @@ info replication
 
 ![image-20210701215227018](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210701215227018.png)
 
-
-
 三个sentinel实例信息如下：
 
-| 节点 |       IP        | PORT  |
-| ---- | :-------------: | :---: |
-| s1   | 192.168.150.101 | 27001 |
-| s2   | 192.168.150.101 | 27002 |
-| s3   | 192.168.150.101 | 27003 |
+|节点|IP|PORT|
+| ----| :-------------: | :---: |
+|s1|192.168.150.101|27001|
+|s2|192.168.150.101|27002|
+|s3|192.168.150.101|27003|
 
 ## 3.2.准备实例和配置
 
@@ -369,8 +314,6 @@ dir "/tmp/s1"
   - `192.168.150.101 7001`：主节点的ip和端口
   - `2`：选举master时的quorum值
 
-
-
 然后将s1/sentinel.conf文件拷贝到s2、s3两个目录中（在/tmp目录执行下列命令）：
 
 ```sh
@@ -381,16 +324,12 @@ cp s1/sentinel.conf s3
 echo s2 s3 | xargs -t -n 1 cp s1/sentinel.conf
 ```
 
-
-
 修改s2、s3两个文件夹内的配置文件，将端口分别修改为27002、27003：
 
 ```sh
 sed -i -e 's/27001/27002/g' -e 's/s1/s2/g' s2/sentinel.conf
 sed -i -e 's/27001/27003/g' -e 's/s1/s3/g' s3/sentinel.conf
 ```
-
-
 
 ## 3.3.启动
 
@@ -405,13 +344,9 @@ redis-sentinel s2/sentinel.conf
 redis-sentinel s3/sentinel.conf
 ```
 
-
-
 启动后：
 
 ![image-20210701220714104](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210701220714104.png)
-
-
 
 ## 3.4.测试
 
@@ -427,11 +362,7 @@ redis-sentinel s3/sentinel.conf
 
 ![image-20210701223131264](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210701223131264.png)
 
-
-
 # 4.搭建分片集群
-
-
 
 ## 4.1.集群结构
 
@@ -439,20 +370,16 @@ redis-sentinel s3/sentinel.conf
 
 ![image-20210702164116027](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702164116027.png)
 
-
-
 这里我们会在同一台虚拟机中开启6个redis实例，模拟分片集群，信息如下：
 
-|       IP        | PORT |  角色  |
+|IP|PORT|角色|
 | :-------------: | :--: | :----: |
-| 192.168.150.101 | 7001 | master |
-| 192.168.150.101 | 7002 | master |
-| 192.168.150.101 | 7003 | master |
-| 192.168.150.101 | 8001 | slave  |
-| 192.168.150.101 | 8002 | slave  |
-| 192.168.150.101 | 8003 | slave  |
-
-
+|192.168.150.101|7001|master|
+|192.168.150.101|7002|master|
+|192.168.150.101|7003|master|
+|192.168.150.101|8001|slave|
+|192.168.150.101|8002|slave|
+|192.168.150.101|8003|slave|
 
 ## 4.2.准备实例和配置
 
@@ -466,8 +393,6 @@ rm -rf 7001 7002 7003
 # 创建目录
 mkdir 7001 7002 7003 8001 8002 8003
 ```
-
-
 
 在/tmp下准备一个新的redis.conf文件，内容如下：
 
@@ -504,8 +429,6 @@ cd /tmp
 echo 7001 7002 7003 8001 8002 8003 | xargs -t -n 1 cp redis.conf
 ```
 
-
-
 修改每个目录下的redis.conf，将其中的6379修改为与所在目录一致：
 
 ```sh
@@ -514,8 +437,6 @@ cd /tmp
 # 修改配置文件
 printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t sed -i 's/6379/{}/g' {}/redis.conf
 ```
-
-
 
 ## 4.3.启动
 
@@ -538,8 +459,6 @@ ps -ef | grep redis
 
 ![image-20210702174255799](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702174255799.png)
 
-
-
 如果要关闭所有进程，可以执行命令：
 
 ```sh
@@ -552,29 +471,21 @@ ps -ef | grep redis | awk '{print $2}' | xargs kill
 printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t redis-cli -p {} shutdown
 ```
 
-
-
-
-
 ## 4.4.创建集群
 
 虽然服务启动了，但是目前每个服务之间都是独立的，没有任何关联。
 
 我们需要执行命令来创建集群，在Redis5.0之前创建集群比较麻烦，5.0之后集群管理命令都集成到了redis-cli中。
 
-
-
 1）Redis5.0之前
 
 Redis5.0之前集群命令都是用redis安装包下的src/redis-trib.rb来实现的。因为redis-trib.rb是有ruby语言编写的所以需要安装ruby环境。
 
- ```sh
- # 安装依赖
- yum -y install zlib ruby rubygems
- gem install redis
- ```
-
-
+```sh
+# 安装依赖
+yum -y install zlib ruby rubygems
+gem install redis
+```
 
 然后通过命令来管理集群：
 
@@ -584,8 +495,6 @@ cd /tmp/redis-6.2.4/src
 # 创建集群
 ./redis-trib.rb create --replicas 1 192.168.150.101:7001 192.168.150.101:7002 192.168.150.101:7003 192.168.150.101:8001 192.168.150.101:8002 192.168.150.101:8003
 ```
-
-
 
 2）Redis5.0以后
 
@@ -601,8 +510,6 @@ redis-cli --cluster create --cluster-replicas 1 192.168.150.101:7001 192.168.150
 - `create`：代表是创建集群
 - `--replicas 1`或者`--cluster-replicas 1` ：指定集群中每个master的副本个数为1，此时`节点总数 ÷ (replicas + 1)` 得到的就是master的数量。因此节点列表中的前n个就是master，其它节点都是slave节点，随机分配到不同master
 
-
-
 运行后的样子：
 
 ![image-20210702181101969](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702181101969.png)
@@ -611,8 +518,6 @@ redis-cli --cluster create --cluster-replicas 1 192.168.150.101:7001 192.168.150
 
 ![image-20210702181215705](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702181215705.png)
 
-
-
 通过命令可以查看集群状态：
 
 ```sh
@@ -620,8 +525,6 @@ redis-cli -p 7001 cluster nodes
 ```
 
 ![image-20210702181922809](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702181922809.png)
-
-
 
 ## 4.5.测试
 
@@ -651,4 +554,3 @@ redis-cli -c -p 7001
 这次可以了：
 
 ![image-20210702182602145](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702182602145.png)
-

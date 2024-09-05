@@ -1,13 +1,19 @@
+# SpringBoot
+
 ---
+
 title: itheima-SSM SpringBoot
 tags:
-  - itheima
-  - SpringBoot
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
-abbrlink: 4fd98fb2
+
+- itheima
+- SpringBoot
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139626.jpg'
+  abbrlink: 4fd98fb2
+
 ---
+
 # SpringBoot
 
 **今日目标：**
@@ -22,25 +28,33 @@ abbrlink: 4fd98fb2
 
 使用了 `Spring` 框架后已经简化了我们的开发。而 `SpringBoot` 又是对 `Spring` 开发进行简化的，可想而知 `SpringBoot` 使用的简单及广泛性。既然 `SpringBoot` 是用来简化 `Spring` 开发的，那我们就先回顾一下，以 `SpringMVC` 开发为例：
 
-1. **创建工程，并在 `pom.xml` 配置文件中配置所依赖的坐标**
+1. **创建工程，并在 **​**​`pom.xml`​**​ ** 配置文件中配置所依赖的坐标**
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911132335452.png" alt="image-20210911132335452" style="zoom:50%;" />
+</div>
 
-2. **编写 `web3.0` 的配置类**
+2. **编写 **​**​`web3.0`​**​ ** 的配置类**
 
    作为 `web` 程序，`web3.0` 的配置类不能缺少，而这个配置类还是比较麻烦的，代码如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911133112602.png" alt="image-20210911133112602" style="zoom:50%;" />
+</div>
 
-3. **编写 `SpringMVC` 的配置类**
+3. **编写 **​**​`SpringMVC`​**​ ** 的配置类**
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911133219847.png" alt="image-20210911133219847" style="zoom:50%;" />
+</div>
 
 ​	做到这只是将工程的架子搭起来。要想被外界访问，最起码还需要提供一个 `Controller` 类，在该类中提供一个方法。
 
-4. **编写 `Controller` 类**
+4. **编写 **​**​`Controller`​**​ ** 类**
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911133532151.png" alt="image-20210911133532151" style="zoom:50%;" />
+</div>
 
 从上面的 `SpringMVC` 程序开发可以看到，前三步都是在搭建环境，而且这三步基本都是固定的。`SpringBoot` 就是对这三步进行简化了。接下来我们通过一个入门案例来体现 `SpingBoot` 简化 `Spring` 开发。
 
@@ -61,45 +75,56 @@ abbrlink: 4fd98fb2
 
 * 点击 `+` 选择 `New Module` 创建新模块
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911155135008.png" alt="image-20210911155135008" style="zoom:60%;" />
+</div>
 
 * 选择 `Spring Initializr` ，用来创建 `SpringBoot` 工程
 
   以前我们选择的是 `Maven` ，今天选择 `Spring Initializr` 来快速构建 `SpringBoot` 工程。而在 `Module SDK` 这一项选择我们安装的 `JDK` 版本。
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911155249493.png" alt="image-20210911155249493" style="zoom:60%;" />
+</div>
 
 * 对 `SpringBoot` 工程进行相关的设置
 
   我们使用这种方式构建的 `SpringBoot` 工程其实也是 `Maven` 工程，而该方式只是一种快速构建的方式而已。
 
+  <div>
   <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911155916899.png" alt="image-20210911155916899" style="zoom:67%;" />
+  </div>
 
   > ==注意：打包方式这里需要设置为 `Jar`==
-
+  >
 * 选中 `Web`，然后勾选 `Spring Web`
 
   由于我们需要开发一个 `web` 程序，使用到了 `SpringMVC` 技术，所以按照下图红框进行勾选
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911160040328.png" alt="image-20210911160040328" style="zoom:60%;" />
+</div>
 
 * 下图界面不需要任何修改，直接点击 `Finish` 完成 `SpringBoot` 工程的构建
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911160353534.png" alt="image-20210911160353534" style="zoom:70%;" />
+</div>
 
 经过以上步骤后就创建了如下结构的模块，它会帮我们自动生成一个 `Application` 类，而该类一会再启动服务器时会用到
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911160541833.png" alt="image-20210911160541833" style="zoom:80%;" />
+</div>
 
 > ==注意：==
 >
 > 1. 在创建好的工程中不需要创建配置类
->
 > 2. 创建好的项目会自动生成其他的一些文件，而这些文件目前对我们来说没有任何作用，所以可以将这些文件删除。
 >
 >    可以删除的目录和文件如下：
 >
->    * `.mvn`	
+>    * `.mvn`
 >    * `.gitignore`
 >    * `HELP.md`
 >    * `mvnw`
@@ -204,25 +229,25 @@ public class Application {
 
 做完 `SpringBoot` 的入门案例后，接下来对比一下 `Spring` 程序和 `SpringBoot` 程序。如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911172200292.png" alt="image-20210911172200292" style="zoom:60%;" />
+</div>
 
 * **坐标**
 
   `Spring` 程序中的坐标需要自己编写，而且坐标非常多
 
   `SpringBoot` 程序中的坐标是我们在创建工程时进行勾选自动生成的
-
 * **web3.0配置类**
 
   `Spring` 程序需要自己编写这个配置类。这个配置类大家之前编写过，肯定感觉很复杂
 
   `SpringBoot` 程序不需要我们自己书写
-
 * **配置类**
 
   `Spring/SpringMVC` 程序的配置类需要自己书写。而 `SpringBoot`  程序则不需要书写。
 
-> ==注意：基于Idea的 `Spring Initializr` 快速构建 `SpringBoot` 工程时需要联网。== 
+> ==注意：基于Idea的 `Spring Initializr` 快速构建 `SpringBoot` 工程时需要联网。==
 
 ## 1.1.3  官网构建工程
 
@@ -238,7 +263,9 @@ https://spring.io/projects/spring-boot
 
 进入到 `SpringBoot` 官网后拖到最下方就可以看到如下内容
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911173712014.png" alt="image-20210911173712014" style="zoom:60%;" />
+</div>
 
 然后点击 `Spring Initializr` 超链接就会跳转到如下页面
 
@@ -260,7 +287,9 @@ https://spring.io/projects/spring-boot
 
 打开下载好的压缩包可以看到工程结构和使用 `Idea` 生成的一模一样，如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911175502834.png" alt="image-20210911175502834" style="zoom:80%;" />
+</div>
 
 而打开 `pom.xml` 文件，里面也包含了父工程和 `Spring Web` 的依赖。
 
@@ -270,13 +299,17 @@ https://spring.io/projects/spring-boot
 
 ### 1.1.4.1  问题导入
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911180828611.png" alt="image-20210911180828611" style="zoom:50%;" />
+</div>
 
 以后我们和前端开发人员协同开发，而前端开发人员需要测试前端程序就需要后端开启服务器，这就受制于后端开发人员。为了摆脱这个受制，前端开发人员尝试着在自己电脑上安装 `Tomcat` 和 `Idea` ，在自己电脑上启动后端程序，这显然不现实。
 
 我们后端可以将 `SpringBoot` 工程打成 `jar` 包，该 `jar` 包运行不依赖于 `Tomcat` 和 `Idea` 这些工具也可以正常运行，只是这个 `jar` 包在运行过程中连接和我们自己程序相同的 `Mysql` 数据库即可。这样就可以解决这个问题，如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911181714437.png" alt="image-20210911181714437" style="zoom:50%;" />
+</div>
 
 那现在问题是如何打包呢？
 
@@ -305,7 +338,9 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 执行上述命令就可以看到 `SpringBoot` 运行的日志信息
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911182956629.png" alt="image-20210911182956629" style="zoom:60%;" />
+</div>
 
 ## 1.2  SpringBoot概述
 
@@ -330,7 +365,9 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 我们使用 `Spring Initializr`  方式创建的 `Maven` 工程的的 `pom.xml` 配置文件中自动生成了很多包含 `starter` 的依赖，如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918220338109.png" alt="image-20210918220338109" style="zoom:70%;" />
+</div>
 
 这些依赖就是==启动依赖==，接下来我们探究一下他是如何实现的。
 
@@ -338,21 +375,29 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 从上面的文件中可以看到指定了一个父工程，我们进入到父工程，发现父工程中又指定了一个父工程，如下图所示
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918220855024.png" alt="image-20210918220855024" style="zoom:80%;" />
+</div>
 
 再进入到该父工程中，在该工程中我们可以看到配置内容结构如下图所示
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918221042947.png" alt="image-20210918221042947" style="zoom:80%;" />
+</div>
 
 上图中的 `properties` 标签中定义了各个技术软件依赖的版本，避免了我们在使用不同软件技术时考虑版本的兼容问题。在 `properties` 中我们找 `servlet`  和 `mysql` 的版本如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918221511249.png" alt="image-20210918221511249" style="zoom:80%;" />
+</div>
 
 `dependencyManagement` 标签是进行依赖版本锁定，但是并没有导入对应的依赖；如果我们工程需要那个依赖只需要引入依赖的 `groupid` 和 `artifactId` 不需要定义 `version`。
 
 而 `build` 标签中也对插件的版本进行了锁定，如下图
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918221942453.png" alt="image-20210918221942453" style="zoom:80%;" />
+</div>
 
 看完了父工程中 `pom.xml` 的配置后不难理解我们工程的的依赖为什么都没有配置 `version`。
 
@@ -360,11 +405,15 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 在我们创建的工程中的 `pom.xml` 中配置了如下依赖
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918222321402.png" alt="image-20210918222321402" style="zoom:80%;" />
+</div>
 
 进入到该依赖，查看 `pom.xml` 的依赖会发现它引入了如下的依赖
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210918222607469.png" alt="image-20210918222607469" style="zoom:80%;" />
+</div>
 
 里面的引入了 `spring-web` 和 `spring-webmvc` 的依赖，这就是为什么我们的工程中没有依赖这两个包还能正常使用 `springMVC` 中的注解的原因。
 
@@ -381,7 +430,6 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 **parent**
 
 * 所有 `SpringBoot` 项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到减少依赖冲突的目的
-
 * `spring-boot-starter-parent`（2.5.0）与 `spring-boot-starter-parent`（2.4.6）共计57处坐标版本不同
 
 **实际开发**
@@ -393,7 +441,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
   > A：artifactId
   >
   > V：version
-
+  >
 * 如发生坐标错误，再指定version（要小心版本冲突）
 
 ## 1.2.2  程序启动
@@ -413,7 +461,6 @@ public class Springboot01QuickstartApplication {
 ==注意：==
 
 * `SpringBoot` 在创建项目时，采用jar的打包方式
-
 * `SpringBoot` 的引导类是项目的入口，运行 `main` 方法就可以启动项目
 
   因为我们在 `pom.xml` 中配置了 `spring-boot-starter-web` 依赖，而该依赖通过前面的学习知道它依赖 `tomcat` ，所以运行 `main` 方法就可以使用 `tomcat` 启动咱们的工程。
@@ -479,14 +526,12 @@ http://localhost/books/1
   ```
   server.port=80
   ```
-
 * `application.yml`
 
   ```yaml
   server:
   	port: 81
   ```
-
 * `application.yaml`
 
   ```yaml
@@ -500,7 +545,9 @@ http://localhost/books/1
 
 创建一个新工程 `springboot_02_base_config` 用来演示不同的配置文件，工程环境和入门案例一模一样，结构如下：
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917151314753.png" alt="image-20210917151314753" style="zoom:80%;" />
+</div>
 
 在该工程中的 `com.itheima.controller` 包下创建一个名为 `BookController` 的控制器。内容如下：
 
@@ -523,7 +570,9 @@ public class BookController {
 
 现在需要进行配置，配合文件必须放在 `resources` 目录下，而该目录下有一个名为 `application.properties` 的配置文件，我们就可以在该配置文件中修改端口号，在该配置文件中书写 `port` ，`Idea` 就会提示，如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917161422535.png" alt="image-20210917161422535" style="zoom:80%;" />
+</div>
 
 `application.properties` 配置文件内容如下：
 
@@ -533,7 +582,9 @@ server.port=80
 
 启动服务，会在控制台打印出日志信息，从日志信息中可以看到绑定的端口号已经修改了
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917161720855.png" alt="image-20210917161720855" style="zoom:80%;" />
+</div>
 
 * **application.yml配置文件**
 
@@ -548,7 +599,9 @@ server:
 
 而在 `yml` 配置文件中也是有提示功能的，我们也可以在该文件中书写 `port` ，然后 `idea` 就会提示并书写成上面的格式
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917162512646.png" alt="image-20210917162512646" style="zoom:80%;" />
+</div>
 
 启动服务，可以在控制台看到绑定的端口号是 `81`
 
@@ -573,23 +626,33 @@ server:
 
 * 点击 `File` 选中 `Project Structure`
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163557071.png" alt="image-20210917163557071" style="zoom:80%;" />
+</div>
 
 * 弹出如下窗口，按图中标记红框进行选择
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163736458.png" alt="image-20210917163736458" style="zoom:70%;" />
+</div>
 
 * 通过上述操作，会弹出如下窗口
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163818051.png" alt="image-20210917163818051" style="zoom:80%;" />
+</div>
 
 * 点击上图的 `+` 号，弹出选择该模块的配置文件
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163828518.png" alt="image-20210917163828518" style="zoom:80%;" />
+</div>
 
 * 通过上述几步后，就可以看到如下界面。`properties` 类型的配合文件有一个，`ymal` 类型的配置文件有两个
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163846243.png" alt="image-20210917163846243" style="zoom:80%;" />
+</div>
 
 ## 2.1.3  三种配合文件的优先级
 
@@ -626,7 +689,6 @@ server:
 > ==注意：==
 >
 > * `SpringBoot` 核心配置文件名为 `application`
->
 > * `SpringBoot` 内置属性过多，且所有属性集中在一起修改，在使用时，通过提示键+关键字修改属性
 >
 >   例如要设置日志的级别时，可以在配置文件中书写 `logging`，就会提示出来。配置内容如下
@@ -641,7 +703,7 @@ server:
 
 上面讲了三种不同类型的配置文件，而 `properties` 类型的配合文件之前我们学习过，接下来我们重点学习 `yaml` 类型的配置文件。
 
-**YAML（YAML Ain't Markup Language），一种数据序列化格式。**这种格式的配置文件在近些年已经占有主导地位，那么这种配置文件和前期使用的配置文件是有一些优势的，我们先看之前使用的配置文件。
+**YAML（YAML Ain't Markup Language），一种数据序列化格式。** 这种格式的配置文件在近些年已经占有主导地位，那么这种配置文件和前期使用的配置文件是有一些优势的，我们先看之前使用的配置文件。
 
 最开始我们使用的是 `xml` ，格式如下：
 
@@ -675,9 +737,7 @@ enterprise:
 * 容易阅读
 
   `yaml` 类型的配置文件比 `xml` 类型的配置文件更容易阅读，结构更加清晰
-
 * 容易与脚本语言交互
-
 * 以数据为核心，重数据轻格式
 
   `yaml` 更注重数据，而 `xml` 更注重格式
@@ -692,15 +752,11 @@ enterprise:
 ## 2.2.1  语法规则
 
 * 大小写敏感
-
 * 属性层级关系使用多行描述，每行结尾使用冒号结束
-
 * 使用缩进表示层级关系，同层级左侧对齐，只允许使用空格（不允许使用Tab键）
 
   空格的个数并不重要，只要保证同层级的左侧对齐即可。
-
 * 属性值前面添加空格（属性名与属性值之间使用冒号+空格作为分隔）
-
 * \# 表示注释
 
 ==核心规则：数据前面要加空格与冒号隔开==
@@ -724,7 +780,9 @@ enterprise:
 
 新创建一个名为 `springboot_03_read_data` 的 `SpringBoot` 工程，目录结构如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917172736484.png" alt="image-20210917172736484" style="zoom:80%;" />
+</div>
 
 在 `com.itheima.controller` 包写创建名为 `BookController` 的控制器，内容如下
 
@@ -835,11 +893,9 @@ public class BookController {
 * 将实体类 `bean` 的创建交给 `Spring` 管理。
 
   在类上添加 `@Component` 注解
-
 * 使用 `@ConfigurationProperties` 注解表示加载配置文件
 
   在该注解中也可以使用 `prefix` 属性指定只加载指定前缀的数据
-
 * 在 `BookController` 中进行注入
 
 **具体代码如下：**
@@ -925,7 +981,9 @@ public class BookController {
 
 使用第三种方式，在实体类上有如下警告提示
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917180919390.png" alt="image-20210917180919390" style="zoom:70%;" />
+</div>
 
 这个警告提示解决是在 `pom.xml` 中添加如下依赖即可
 
@@ -941,7 +999,9 @@ public class BookController {
 
 以后在工作中，对于开发环境、测试环境、生产环境的配置肯定都不相同，比如我们开发阶段会在自己的电脑上安装 `mysql` ，连接自己电脑上的 `mysql` 即可，但是项目开发完毕后要上线就需要该配置，将环境的配置改为线上环境的。
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917185253557.png" alt="image-20210917185253557" style="zoom:60%;" />
+</div>
 
 来回的修改配置会很麻烦，而 `SpringBoot` 给开发者提供了多环境的快捷配置，需要切换环境时只需要改一个配置即可。不同类型的配置文件多环境开发的配置都不相同，接下来对不同类型的配置文件进行说明
 
@@ -1010,7 +1070,7 @@ server:
 
 ==注意：==
 
-在上面配置中给不同配置起名字的 `spring.profiles` 配置项已经过时。最新用来起名字的配置项是 
+在上面配置中给不同配置起名字的 `spring.profiles` 配置项已经过时。最新用来起名字的配置项是
 
 ```yaml
 #开发
@@ -1029,13 +1089,11 @@ spring:
   ```properties
   server.port=80
   ```
-
 * `application-test.properties` 是测试环境的配置文件。我们在该文件中配置端口号为 `81`
 
   ```properties
   server.port=81
   ```
-
 * `application-pro.properties` 是生产环境的配置文件。我们在该文件中配置端口号为 `82`
 
   ```properties
@@ -1084,7 +1142,9 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-featu
 
 ## 2.5  配置文件分类
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917194941597.png" alt="image-20210917194941597" style="zoom:70%;" />
+</div>
 
 有这样的场景，我们开发完毕后需要测试人员进行测试，由于测试环境和开发环境的很多配置都不相同，所以测试人员在运行我们的工程时需要临时修改很多配置，如下
 
@@ -1096,10 +1156,10 @@ java –jar springboot.jar –-spring.profiles.active=test --server.port=85 --se
 
 `SpringBoot` 中4级配置文件放置位置：
 
-* 1级：classpath：application.yml  
+* 1级：classpath：application.yml
 * 2级：classpath：config/application.yml
 * 3级：file ：application.yml
-* 4级：file ：config/application.yml 
+* 4级：file ：config/application.yml
 
 > ==说明：==级别越高优先级越高
 
@@ -1111,7 +1171,9 @@ java –jar springboot.jar –-spring.profiles.active=test --server.port=85 --se
 
 创建一个名为 `springboot_06_config_file` 的 `SpringBoot` 工程，目录结构如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917200241282.png" alt="image-20210917200241282" style="zoom:80%;" />
+</div>
 
 在 `resources` 下创建一个名为 `config` 的目录，在该目录中创建 `application.yml` 配置文件，而在该配置文件中将端口号设置为 `81`，内容如下
 
@@ -1143,14 +1205,15 @@ server:
 
   点击工程的 `package` 来打 `jar` 包
 
+  <div>
   <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917201243721.png" alt="image-20210917201243721" style="zoom:80%;" />
-
+  </div>
 * 在硬盘上找到 `jar` 包所在位置
 
+  <div>
   <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917201523669.png" alt="image-20210917201523669" style="zoom:70%;" />
-
-* 在 `jar` 包所在位置创建 `config` 文件夹，在该文件夹下创建 `application.yml` 配置文件，而在该配合文件中将端口号设置为 `82` 
-
+  </div>
+* 在 `jar` 包所在位置创建 `config` 文件夹，在该文件夹下创建 `application.yml` 配置文件，而在该配合文件中将端口号设置为 `82`
 * 在命令行使用以下命令运行程序
 
   ```shell
@@ -1196,7 +1259,9 @@ public class UserServiceTest {
 
 创建一个名为 `springboot_07_test` 的 `SpringBoot` 工程，工程目录结构如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917213556673.png" alt="image-20210917213556673" style="zoom:80%;" />
+</div>
 
 在 `com.itheima.service` 下创建 `BookService` 接口，内容如下
 
@@ -1254,7 +1319,6 @@ class Springboot07TestApplicationTests {
 * `SpringConfig` 配置类
 
   * 导入 `JdbcConfig` 配置类
-
   * 导入 `MybatisConfig` 配置类
 
     ```java
@@ -1264,40 +1328,36 @@ class Springboot07TestApplicationTests {
     @Import({JdbcConfig.class,MyBatisConfig.class})
     public class SpringConfig {
     }
-    
+
     ```
+* `JdbcConfig` 配置类
+* 定义数据源（加载properties配置项：driver、url、username、password）
 
-*  `JdbcConfig` 配置类
+  ```java
+  public class JdbcConfig {
+      @Value("${jdbc.driver}")
+      private String driver;
+      @Value("${jdbc.url}")
+      private String url;
+      @Value("${jdbc.username}")
+      private String userName;
+      @Value("${jdbc.password}")
+      private String password;
 
-  * 定义数据源（加载properties配置项：driver、url、username、password）
-
-    ```java
-    public class JdbcConfig {
-        @Value("${jdbc.driver}")
-        private String driver;
-        @Value("${jdbc.url}")
-        private String url;
-        @Value("${jdbc.username}")
-        private String userName;
-        @Value("${jdbc.password}")
-        private String password;
-    
-        @Bean
-        public DataSource getDataSource(){
-            DruidDataSource ds = new DruidDataSource();
-            ds.setDriverClassName(driver);
-            ds.setUrl(url);
-            ds.setUsername(userName);
-            ds.setPassword(password);
-            return ds;
-        }
-    }
-    ```
-
+      @Bean
+      public DataSource getDataSource(){
+          DruidDataSource ds = new DruidDataSource();
+          ds.setDriverClassName(driver);
+          ds.setUrl(url);
+          ds.setUsername(userName);
+          ds.setPassword(password);
+          return ds;
+      }
+  }
+  ```
 * `MybatisConfig` 配置类
 
   * 定义 `SqlSessionFactoryBean`
-
   * 定义映射配置
 
     ```java
@@ -1307,7 +1367,7 @@ class Springboot07TestApplicationTests {
         msc.setBasePackage("com.itheima.dao");
         return msc;
     }
-    
+
     @Bean
     public SqlSessionFactoryBean getSqlSessionFactoryBean(DataSource dataSource){
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
@@ -1315,7 +1375,7 @@ class Springboot07TestApplicationTests {
         ssfb.setDataSource(dataSource);
         return ssfb;
     }
-    
+
     ```
 
 ## 4.2  SpringBoot整合mybatis
@@ -1324,11 +1384,15 @@ class Springboot07TestApplicationTests {
 
 * 创建新模块，选择 `Spring Initializr`，并配置模块相关基础信息
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917215913779.png" alt="image-20210917215913779" style="zoom:80%;" />
+</div>
 
 * 选择当前模块需要使用的技术集（MyBatis、MySQL）
 
+  <div>
   <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917215958091.png" alt="image-20210917215958091" style="zoom:80%;" />
+  </div>
 
 ## 4.2.2  定义实体类
 
@@ -1396,7 +1460,9 @@ spring:
 
 运行测试方法，我们会看到如下错误信息
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917221427930.png" alt="image-20210917221427930" style="zoom:70%;" />
+</div>
 
 错误信息显示在 `Spring` 容器中没有 `BookDao` 类型的 `bean`。为什么会出现这种情况呢？
 
@@ -1427,7 +1493,6 @@ public interface BookDao {
       <version>1.1.16</version>
   </dependency>
   ```
-
 * 在 `application.yml` 配置文件配置
 
   可以通过 `spring.datasource.type` 来配置使用什么数据源。配置文件内容可以改进为
@@ -1449,21 +1514,16 @@ public interface BookDao {
 1. pom.xml
 
    配置起步依赖，必要的资源坐标(druid)
-
 2. application.yml
 
    设置数据源、端口等
-
 3. 配置类
 
    全部删除
-
 4. dao
 
    设置@Mapper
-
 5. 测试类
-
 6. 页面
 
    放置在resources目录下的static目录中
@@ -1472,7 +1532,9 @@ public interface BookDao {
 
 创建 `SpringBoot` 工程，在创建工程时需要勾选 `web`、`mysql`、`mybatis`，工程目录结构如下
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917225019868.png" alt="image-20210917225019868" style="zoom:80%;" />
+</div>
 
 由于我们工程中使用到了 `Druid` ，所以需要导入 `Druid` 的坐标
 
@@ -1488,29 +1550,29 @@ public interface BookDao {
 
 将 `springmvc_11_page` 工程中的 `java` 代码及测试代码连同包拷贝到 `springboot_09_ssm` 工程，按照下图进行拷贝
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917225715519.png" alt="image-20210917225715519" style="zoom:70%;" />
+</div>
 
 需要修改的内容如下：
 
 * `Springmvc_11_page` 中 `config` 包下的是配置类，而 `SpringBoot` 工程不需要这些配置类，所以这些可以直接删除
-
 * `dao` 包下的接口上在拷贝到 `springboot_09-ssm` 工程中需要在接口中添加 `@Mapper` 注解
-
 * `BookServiceTest` 测试需要改成 `SpringBoot` 整合 `junit` 的
 
   ```java
   @SpringBootTest
   public class BookServiceTest {
-  
+
       @Autowired
       private BookService bookService;
-  
+
       @Test
       public void testGetById(){
           Book book = bookService.getById(2);
           System.out.println(book);
       }
-  
+
       @Test
       public void testGetAll(){
           List<Book> all = bookService.getAll();
@@ -1546,7 +1608,6 @@ spring:
 
 静态资源需要放在 `resources` 下的 `static` 下，如下图所示
 
+<div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917230702072.png" alt="image-20210917230702072" style="zoom:80%;" />
-
-
-
+</div>

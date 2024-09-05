@@ -1,12 +1,17 @@
+# JavaScipt-Basics-2
+
 ---
+
 title: JavaScipt Basics 2
 tags:
-  - JavaScript
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310240401759.png
-abbrlink: ef214ab0
-date: 2023-10-24 03:56:41
+
+- JavaScript
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202310240401759.png
+  abbrlink: ef214ab0
+  date: 2023-10-24 03:56:41
+
 ---
 
 # Function 函数
@@ -28,11 +33,8 @@ function name([param]) {
 Array 具有以下核心特征：
 
 - JavaScript Array 是可调整大小的，并且可以包含不同资料类型的混合。
-
 - JavaScript Array 中的元素必须使用非负整数作为 index 来访问。
-
 - JavaScript Array 的第一个元素在 index 0 处，第二个在 index 1 处，依此类推。最后一个元素在 Array 的长度减 1 处。
-
 - JavaScript Array 复制会复制 reference。
 
   > ```javascript
@@ -46,6 +48,7 @@ Array 具有以下核心特征：
   > console.log(arr3 == arr4);
   > //return false
   > ```
+  >
 
 Array Instance Properties：[length](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
 

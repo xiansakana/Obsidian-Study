@@ -1,13 +1,19 @@
+# SpringMVC_day02
+
 ---
+
 title: itheima-SSM SpringMVC_day02
 tags:
-  - itheima
-  - SpringMVC
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192143345.jpg'
-abbrlink: 6f7203ac
+
+- itheima
+- SpringMVC
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192143345.jpg'
+  abbrlink: 6f7203ac
+
 ---
+
 # SpringMVC_day02
 
 **今日内容**
@@ -70,7 +76,7 @@ abbrlink: 6f7203ac
     * @RequestParam
     * @PathVariable
     * @RequestBody
-  * 转发业务层 
+  * 转发业务层
     * @Autowired
   * 响应结果
     * @ResponseBody
@@ -445,16 +451,12 @@ public class BookServiceImpl implements BookService {
   * IOC容器又是在Web服务器启动的时候才会创建
   * IDEA在检测依赖关系的时候，没有找到适合的类注入，所以会提示错误提示
   * 但是程序运行的时候，代理对象就会被创建，框架会使用DI进行注入，所以程序运行无影响。
-
 * 如何解决上述问题?
 
   * 可以不用理会，因为运行是正常的
-
   * 设置错误提示级别
 
     ![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630600227357.png)
-
-
 
 ## 步骤5:编写Contorller类
 
@@ -616,11 +618,9 @@ SSM整合以及功能模块开发完成后，接下来，我们在上述案例�
 * 在Controller层增删改返回给前端的是boolean类型数据
 
   ![1630653359533](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653359533.png)
-
 * 在Controller层查询单个返回给前端的是对象
 
   ![1630653385377](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653385377.png)
-
 * 在Controller层查询所有返回给前端的是集合对象
 
   ![1630653468887](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630653468887.png)
@@ -645,7 +645,7 @@ public class Result{
 }
 ```
 
-**注意:**Result类名及类中的字段并不是固定的，可以根据需要自行增减提供若干个构造方法，方便操作。
+**注意:** Result类名及类中的字段并不是固定的，可以根据需要自行增减提供若干个构造方法，方便操作。
 
 ## 2.2 表现层与前端数据传输协议实现
 
@@ -715,7 +715,7 @@ public class Code {
 
 ```
 
-**注意:**code类中的常量设计也不是固定的，可以根据需要自行增减，例如将查询再进行细分为GET_OK,GET_ALL_OK,GET_PAGE_OK等。
+**注意:** code类中的常量设计也不是固定的，可以根据需要自行增减，例如将查询再进行细分为GET_OK,GET_ALL_OK,GET_PAGE_OK等。
 
 ### 步骤3:修改Controller类的返回值
 
@@ -811,11 +811,9 @@ public Result getById(@PathVariable Integer id) {
 1. 各个层级均出现异常，异常处理代码书写在哪一层?
 
    所有的异常均抛出到表现层进行处理
-
 2. 异常的种类很多，表现层如何将所有的异常都处理到呢?
 
    异常分类
-
 3. 表现层处理异常，每个方法中单独书写，代码书写量巨大且意义不强，如何解决?
 
    AOP
@@ -908,25 +906,25 @@ public class ProjectExceptionAdvice {
 
 ## 知识点1：@RestControllerAdvice
 
-| 名称 | @RestControllerAdvice              |
-| ---- | ---------------------------------- |
-| 类型 | 类注解                         |
-| 位置 | Rest风格开发的控制器增强类定义上方 |
-| 作用 | 为Rest风格开发的控制器类做增强     |
+|名称|@RestControllerAdvice|
+| ----| ----------------------------------|
+|类型|类注解|
+|位置|Rest风格开发的控制器增强类定义上方|
+|作用|为Rest风格开发的控制器类做增强|
 
-**说明:**此注解自带@ResponseBody注解与@Component注解，具备对应的功能
+**说明:** 此注解自带@ResponseBody注解与@Component注解，具备对应的功能
 
 ![1630659060451](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659060451.png)
 
 ## 知识点2：@ExceptionHandler
 
-| 名称 | @ExceptionHandler                                            |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                 |
-| 位置 | 专用于异常处理的控制器方法上方                               |
-| 作用 | 设置指定异常的处理方案，功能等同于控制器方法，<br/>出现异常后终止原始控制器执行,并转入当前方法执行 |
+|名称|@ExceptionHandler|
+| ----| ---------------------------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|专用于异常处理的控制器方法上方|
+|作用|设置指定异常的处理方案，功能等同于控制器方法，<br />出现异常后终止原始控制器执行,并转入当前方法执行|
 
-**说明：**此类方法可以根据处理的异常不同，制作多个方法分别处理对应的异常
+**说明：** 此类方法可以根据处理的异常不同，制作多个方法分别处理对应的异常
 
 ## 3.3 项目异常处理方案
 
@@ -943,18 +941,15 @@ public class ProjectExceptionAdvice {
     - 用户在页面输入内容的时候未按照指定格式进行数据填写，如在年龄框输入的是字符串
 
       ![1630659599983](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659599983.png)
-
   - 不规范的用户行为操作产生的异常
 
     - 如用户故意传递错误数据
 
       ![1630659622958](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630659622958.png)
-
 - 系统异常（SystemException）
 
   - 项目运行过程中可预计但无法避免的异常
     - 比如数据库或服务器宕机
-
 - 其他异常（Exception）
 
   - 编程人员未预期到的异常，如:用到的文件不存在
@@ -1187,7 +1182,6 @@ public class ProjectExceptionAdvice {
       }
   }
   ```
-
 * 在SpringMvcConfig中扫描SpringMvcSupport
 
   ```java
@@ -1407,23 +1401,23 @@ handleCreate() {
 
 ![1630670367812](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630670367812.png)
 
->需求:完成图书信息的修改功能
+> 需求:完成图书信息的修改功能
 >
->1.找到页面中的`编辑`按钮，该按钮绑定了`@click="handleUpdate(scope.row)"`
+> 1.找到页面中的`编辑`按钮，该按钮绑定了`@click="handleUpdate(scope.row)"`
 >
->2.在method的`handleUpdate`方法中发送异步请求根据ID查询图书信息
+> 2.在method的`handleUpdate`方法中发送异步请求根据ID查询图书信息
 >
->3.根据后台返回的结果，判断是否查询成功
+> 3.根据后台返回的结果，判断是否查询成功
 >
->​	如果查询成功打开修改面板回显数据，如果失败提示错误信息
+> ​	如果查询成功打开修改面板回显数据，如果失败提示错误信息
 >
->4.修改完成后找到修改面板的`确定`按钮，该按钮绑定了`@click="handleEdit()"`
+> 4.修改完成后找到修改面板的`确定`按钮，该按钮绑定了`@click="handleEdit()"`
 >
->5.在method的`handleEdit`方法中发送异步请求提交修改数据
+> 5.在method的`handleEdit`方法中发送异步请求提交修改数据
 >
->6.根据后台返回的结果，判断是否修改成功
+> 6.根据后台返回的结果，判断是否修改成功
 >
->​	如果成功提示错误信息，关闭修改面板，重新查询数据，如果失败提示错误信息
+> ​	如果成功提示错误信息，关闭修改面板，重新查询数据，如果失败提示错误信息
 
 scope.row代表的是当前行的行数据，也就是说,scope.row就是选中行对应的json数据，如下:
 
@@ -1919,21 +1913,20 @@ handleDelete(row) {
 ## 5.2.1 环境准备
 
 - 创建一个Web的Maven项目
-
 - pom.xml添加SSM整合所需jar包
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_12_interceptor</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -1952,7 +1945,7 @@ handleDelete(row) {
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -1975,9 +1968,8 @@ handleDelete(row) {
       </plugins>
     </build>
   </project>
-  
-  ```
 
+  ```
 - 创建对应的配置类
 
   ```java
@@ -1985,15 +1977,15 @@ handleDelete(row) {
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -2002,38 +1994,37 @@ handleDelete(row) {
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan({"com.itheima.controller"})
   @EnableWebMvc
   public class SpringMvcConfig{
-     
+
   }
   ```
-
 - 创建模型类Book
 
   ```java
   public class Book {
       private String name;
       private double price;
-  
+
       public String getName() {
           return name;
       }
-  
+
       public void setName(String name) {
           this.name = name;
       }
-  
+
       public double getPrice() {
           return price;
       }
-  
+
       public void setPrice(double price) {
           this.price = price;
       }
-  
+
       @Override
       public String toString() {
           return "Book{" +
@@ -2043,38 +2034,37 @@ handleDelete(row) {
       }
   }
   ```
-
 - 编写Controller
 
   ```java
   @RestController
   @RequestMapping("/books")
   public class BookController {
-  
+
       @PostMapping
       public String save(@RequestBody Book book){
           System.out.println("book save..." + book);
           return "{'module':'book save'}";
       }
-  
+
       @DeleteMapping("/{id}")
       public String delete(@PathVariable Integer id){
           System.out.println("book delete..." + id);
           return "{'module':'book delete'}";
       }
-  
+
       @PutMapping
       public String update(@RequestBody Book book){
           System.out.println("book update..."+book);
           return "{'module':'book update'}";
       }
-  
+
       @GetMapping("/{id}")
       public String getById(@PathVariable Integer id){
           System.out.println("book getById..."+id);
           return "{'module':'book getById'}";
       }
-  
+
       @GetMapping
       public String getAll(){
           System.out.println("book getAll...");
@@ -2119,7 +2109,7 @@ public class ProjectInterceptor implements HandlerInterceptor {
 }
 ```
 
-**注意:**拦截器类要被SpringMVC容器扫描到。
+**注意:** 拦截器类要被SpringMVC容器扫描到。
 
 ### 步骤2:配置拦截器类
 
@@ -2259,7 +2249,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 ## 5.3.2 后置处理方法
 
-原始方法运行后运行，如果原始方法被拦截，则不执行  
+原始方法运行后运行，如果原始方法被拦截，则不执行
 
 ```java
 public void postHandle(HttpServletRequest request,
@@ -2291,7 +2281,7 @@ public void afterCompletion(HttpServletRequest request,
 
 前三个参数与上面的是一致的。
 
-ex:如果处理器执行过程中出现异常对象，可以针对异常情况进行单独处理  
+ex:如果处理器执行过程中出现异常对象，可以针对异常情况进行单独处理
 
 因为我们现在已经有全局异常处理器类，所以该参数的使用率也不高。
 

@@ -1,12 +1,17 @@
+# Springboot常用注解
+
 ---
+
 title: SpringBoot常用注解
 tags:
-  - SpringBoot
-  - 后端
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202312180825037.jpg
-abbrlink: e750a506
-date: 2023-12-18 08:13:42
+
+- SpringBoot
+- 后端
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202312180825037.jpg
+  abbrlink: e750a506
+  date: 2023-12-18 08:13:42
+
 ---
 
 # @SpringBootApplication
@@ -249,15 +254,15 @@ public User addUser(@RequestBody User user){
 
 `@CrossOrigin`注解将为请求处理类或请求处理方法提供跨域调用支持。如果我们将此注解标注类，那么类中的所有方法都将获得支持跨域的能力。使用此注解的好处是可以微调跨域行为。
 
-| 注解                    | 备注                 |
-| ----------------------- | -------------------- |
-| @Service                | bean 注册            |
-| @Component              | bean 注册            |
-| @Autowired              | 获取 bean            |
-| @Resource               | 获取 bean            |
-| @Autowired + @Qualifier | 获取 bean            |
-| @Configuration + @Bean  | bean 注册（人为）    |
-| @Value                  | 从配置文件中获取参数 |
+|注解|备注|
+| -----------------------| --------------------|
+|@Service|bean 注册|
+|@Component|bean 注册|
+|@Autowired|获取 bean|
+|@Resource|获取 bean|
+|@Autowired + @Qualifier|获取 bean|
+|@Configuration + @Bean|bean 注册（人为）|
+|@Value|从配置文件中获取参数|
 
 # @Service
 
@@ -415,7 +420,6 @@ public class MyBeans {
     }
 }
 ```
-
 
 # @Value
 

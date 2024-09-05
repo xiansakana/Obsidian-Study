@@ -1,15 +1,19 @@
+# 实用篇day05-安装Elasticsearch
+
 ---
+
 title: itheima-Microservice 实用篇day05-安装Elasticsearch
 tags:
-  - itheima
-  - Elesticsearch
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292214426.jpg'
-abbrlink: f2513cc0
+
+- itheima
+- Elesticsearch
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292214426.jpg'
+  abbrlink: f2513cc0
+
 ---
+
 # 安装Elasticsearch
-
-
 
 # 1.部署单点es
 
@@ -20,8 +24,6 @@ abbrlink: f2513cc0
 ```sh
 docker network create es-net
 ```
-
-
 
 ## 1.2.加载镜像
 
@@ -39,8 +41,6 @@ docker load -i es.tar
 ```
 
 同理还有`kibana`的tar包也需要这样做。
-
-
 
 ## 1.3.运行
 
@@ -73,15 +73,9 @@ elasticsearch:7.12.1
 - `--network es-net` ：加入一个名为es-net的网络中
 - `-p 9200:9200`：端口映射配置
 
-
-
 在浏览器中输入：http://192.168.150.101:9200 即可看到elasticsearch的响应结果：
 
 ![image-20210506101053676](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210506101053676.png)
-
-
-
-
 
 # 2.部署kibana
 
@@ -124,11 +118,7 @@ kibana中提供了一个DevTools界面：
 
 这个界面中可以编写DSL来操作elasticsearch。并且对DSL语句有自动补全功能。
 
-
-
 # 3.安装IK分词器
-
-
 
 ## 3.1.在线安装ik插件（较慢）
 
@@ -173,8 +163,6 @@ docker volume inspect es-plugins
 
 说明plugins目录被挂载到了：`/var/lib/docker/volumes/es-plugins/_data `这个目录中。
 
-
-
 ### 2）解压缩分词器安装包
 
 下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
@@ -187,9 +175,7 @@ docker volume inspect es-plugins
 
 ![image-20210506110704293](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210506110704293.png)
 
-
-
-###  4）重启容器
+### 4）重启容器
 
 ```shell
 # 4、重启容器
@@ -206,10 +192,7 @@ docker logs -f es
 IK分词器包含两种模式：
 
 * `ik_smart`：最少切分
-
 * `ik_max_word`：最细切分
-
-
 
 ```json
 GET /_analyze
@@ -291,10 +274,6 @@ GET /_analyze
 }
 ```
 
-
-
-
-
 ## 3.3 扩展词词典
 
 随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
@@ -324,7 +303,7 @@ GET /_analyze
 奥力给
 ```
 
-4）重启elasticsearch 
+4）重启elasticsearch
 
 ```sh
 docker restart es
@@ -375,7 +354,7 @@ IK分词器也提供了强大的停用词功能，让我们在索引时就直接
 习大大
 ```
 
-4）重启elasticsearch 
+4）重启elasticsearch
 
 ```sh
 # 重启服务
@@ -399,10 +378,6 @@ GET /_analyze
 ```
 
 > 注意当前文件的编码必须是 UTF-8 格式，严禁使用Windows记事本编辑
-
-
-
-
 
 # 4.部署es集群
 
@@ -475,10 +450,6 @@ networks:
     driver: bridge
 ```
 
-
-
-
-
 es运行需要修改一些linux系统权限，修改`/etc/sysctl.conf`文件
 
 ```sh
@@ -497,17 +468,11 @@ vm.max_map_count=262144
 sysctl -p
 ```
 
-
-
 通过docker-compose启动集群：
 
 ```sh
 docker-compose up -d
 ```
-
-
-
-
 
 ## 4.2.集群状态监控
 
@@ -529,13 +494,9 @@ kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配
 
 ![image-20210602220846137](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210602220846137.png)
 
-
-
 双击其中的cerebro.bat文件即可启动服务。
 
 ![image-20210602220941101](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210602220941101.png)
-
-
 
 访问http://localhost:9000 即可进入管理界面：
 
@@ -543,13 +504,9 @@ kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配
 
 输入你的elasticsearch的任意节点的地址和端口，点击connect即可：
 
-
-
 ![image-20210109181106866](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210109181106866.png)
 
 绿色的条，代表集群处于绿色（健康状态）。
-
-
 
 ## 4.3.创建索引库
 
@@ -572,10 +529,6 @@ PUT /itcast
 }
 ```
 
-
-
-
-
 ### 2）利用cerebro创建索引库
 
 利用cerebro还可以创建索引库：
@@ -590,11 +543,8 @@ PUT /itcast
 
 ![image-20210602221542745](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210602221542745.png)
 
-
-
 ## 4.4.查看分片效果
 
 回到首页，即可查看索引库分片效果：
 
 ![image-20210602221914483](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210602221914483.png)
-

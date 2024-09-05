@@ -1,13 +1,19 @@
+# Spring_day03
+
 ---
+
 title: itheima-SSM Spring_day03
 tags:
-  - itheima
-  - Spring
-  - 后端
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
-abbrlink: aa249c7c
+
+- itheima
+- Spring
+- 后端
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192139235.png'
+  abbrlink: aa249c7c
+
 ---
+
 # Spring_day03
 
 **今日目标**
@@ -160,7 +166,6 @@ public class BookDaoImpl implements BookDao {
 ## 2.3 环境准备
 
 * 创建一个Maven项目
-
 * pom.xml添加Spring依赖
 
   ```xml
@@ -172,7 +177,6 @@ public class BookDaoImpl implements BookDao {
       </dependency>
   </dependencies>
   ```
-
 * 添加BookDao和BookDaoImpl类
 
   ```java
@@ -180,21 +184,20 @@ public class BookDaoImpl implements BookDao {
       public void save();
       public void update();
   }
-  
+
   @Repository
   public class BookDaoImpl implements BookDao {
-  
+
       public void save() {
           System.out.println(System.currentTimeMillis());
           System.out.println("book dao save ...");
       }
-  
+
       public void update(){
           System.out.println("book dao update ...");
       }
   }
   ```
-
 * 创建Spring的配置类
 
   ```java
@@ -203,7 +206,6 @@ public class BookDaoImpl implements BookDao {
   public class SpringConfig {
   }
   ```
-
 * 编写App运行类
 
   ```java
@@ -225,8 +227,6 @@ public class BookDaoImpl implements BookDao {
 * 目前打印save方法的时候，因为方法中有打印系统时间，所以运行的时候是可以看到系统时间
 * 对于update方法来说，就没有该功能
 * 我们要使用SpringAOP的方式在不改变update方法的前提下让其具有打印系统时间的功能。
-
-
 
 ## 2.4 AOP实现步骤
 
@@ -306,7 +306,7 @@ public class MyAdvice {
 
 ![1630148447689](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630148447689.png)
 
-**说明:**@Before翻译过来是之前，也就是说通知会在切入点方法执行之前执行，除此之前还有其他四种类型，后面会讲。
+**说明:** @Before翻译过来是之前，也就是说通知会在切入点方法执行之前执行，除此之前还有其他四种类型，后面会讲。
 
 ## 步骤6:将通知类配给容器并标识其为切面类
 
@@ -350,38 +350,38 @@ public class App {
 
 ![1630147945888](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630147945888.png)
 
-## 知识点1：@EnableAspectJAutoProxy  
+## 知识点1：@EnableAspectJAutoProxy
 
-| 名称 | @EnableAspectJAutoProxy |
-| ---- | ----------------------- |
-| 类型 | 配置类注解              |
-| 位置 | 配置类定义上方          |
-| 作用 | 开启注解格式AOP功能     |
+|名称|@EnableAspectJAutoProxy|
+| ----| -----------------------|
+|类型|配置类注解|
+|位置|配置类定义上方|
+|作用|开启注解格式AOP功能|
 
 ## 知识点2：@Aspect
 
-| 名称 | @Aspect               |
-| ---- | --------------------- |
-| 类型 | 类注解                |
-| 位置 | 切面类定义上方        |
-| 作用 | 设置当前类为AOP切面类 |
+|名称|@Aspect|
+| ----| ---------------------|
+|类型|类注解|
+|位置|切面类定义上方|
+|作用|设置当前类为AOP切面类|
 
-## 知识点3：@Pointcut   
+## 知识点3：@Pointcut
 
-| 名称 | @Pointcut                   |
-| ---- | --------------------------- |
-| 类型 | 方法注解                    |
-| 位置 | 切入点方法定义上方          |
-| 作用 | 设置切入点方法              |
-| 属性 | value（默认）：切入点表达式 |
+|名称|@Pointcut|
+| ----| ---------------------------|
+|类型|方法注解|
+|位置|切入点方法定义上方|
+|作用|设置切入点方法|
+|属性|value（默认）：切入点表达式|
 
 ## 知识点4：@Before
 
-| 名称 | @Before                                                      |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                     |
-| 位置 | 通知方法定义上方                                             |
-| 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前运行 |
+|名称|@Before|
+| ----| --------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|通知方法定义上方|
+|作用|设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前运行|
 
 # 3，AOP工作流程
 
@@ -409,7 +409,6 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
 判定bean对应的类中的方法是否匹配到任意切入点
 
 * 注意第1步在容器启动的时候，bean对象还没有被创建成功。
-
 * 要被实例化bean对象的类中的方法和切入点进行匹配
 
   ![1630152538083](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630152538083.png)
@@ -601,7 +600,6 @@ execution(public User com.itheima.service.UserService.findById(int))
   ```
 
   匹配com.itheima包下的任意包中的UserService类或接口中所有find开头的带有一个参数的方法
-
 * `..`：多个连续的任意符号，可以独立出现，常用于简化包名与参数的书写
 
   ```
@@ -609,7 +607,6 @@ execution(public User com.itheima.service.UserService.findById(int))
   ```
 
   匹配com包下的任意包中的UserService类或接口中所有名称为findById的方法
-
 * `+`：专用于匹配子类类型
 
   ```
@@ -710,7 +707,6 @@ execution(* com.itheima.*.*Service.save*(..))
 ## 4.2.2 环境准备
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
@@ -727,7 +723,6 @@ execution(* com.itheima.*.*Service.save*(..))
       </dependency>
   </dependencies>
   ```
-
 - 添加BookDao和BookDaoImpl类
 
   ```java
@@ -735,7 +730,7 @@ execution(* com.itheima.*.*Service.save*(..))
       public void update();
       public int select();
   }
-  
+
   @Repository
   public class BookDaoImpl implements BookDao {
       public void update(){
@@ -747,7 +742,6 @@ execution(* com.itheima.*.*Service.save*(..))
       }
   }
   ```
-
 - 创建Spring的配置类
 
   ```java
@@ -757,7 +751,6 @@ execution(* com.itheima.*.*Service.save*(..))
   public class SpringConfig {
   }
   ```
-
 - 创建通知类
 
   ```java
@@ -766,30 +759,29 @@ execution(* com.itheima.*.*Service.save*(..))
   public class MyAdvice {
       @Pointcut("execution(void com.itheima.dao.BookDao.update())")
       private void pt(){}
-  
+
       public void before() {
           System.out.println("before advice ...");
       }
-  
+
       public void after() {
           System.out.println("after advice ...");
       }
-  
+
       public void around(){
           System.out.println("around before advice ...");
           System.out.println("around after advice ...");
       }
-  
+
       public void afterReturning() {
           System.out.println("afterReturning advice ...");
       }
-      
+
       public void afterThrowing() {
           System.out.println("afterThrowing advice ...");
       }
   }
   ```
-
 - 编写App运行类
 
   ```java
@@ -893,7 +885,7 @@ public class MyAdvice {
 }
 ```
 
-**说明:**proceed()为什么要抛出异常?
+**说明:** proceed()为什么要抛出异常?
 
 原因很简单，看下源码就知道了
 
@@ -945,9 +937,9 @@ public class App {
 运行后会报错，错误内容为:
 
 Exception in thread "main" org.springframework.aop.AopInvocationException: Null return value from advice does not match primitive return type for: public abstract int com.itheima.dao.BookDao.select()
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:226)
-	at com.sun.proxy.$Proxy19.select(Unknown Source)
-	at com.itheima.App.main(App.java:12)
+at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:226)
+at com.sun.proxy.$Proxy19.select(Unknown Source)
+at com.itheima.App.main(App.java:12)
 
 错误大概的意思是:`空的返回不匹配原始方法的int返回`
 
@@ -1004,9 +996,7 @@ public class MyAdvice {
 
 ![1630169124446](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630169124446.png)
 
-
-
-**注意：**返回后通知是需要在原始方法`select`正常执行后才会被执行，如果`select()`方法执行的过程中出现了异常，那么返回后通知是不会被执行。后置通知是不管原始方法有没有抛出异常都会被执行。这个案例大家下去可以自己练习验证下。
+**注意：** 返回后通知是需要在原始方法`select`正常执行后才会被执行，如果`select()`方法执行的过程中出现了异常，那么返回后通知是不会被执行。后置通知是不管原始方法有没有抛出异常都会被执行。这个案例大家下去可以自己练习验证下。
 
 ### 异常后通知
 
@@ -1029,7 +1019,7 @@ public class MyAdvice {
 
 ![1630169357146](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630169357146.png)
 
-**注意：**异常后通知是需要原始方法抛出异常，可以在`select()`方法中添加一行代码`int i = 1/0`即可。如果没有抛异常，异常后通知将不会被执行。
+**注意：** 异常后通知是需要原始方法抛出异常，可以在`select()`方法中添加一行代码`int i = 1/0`即可。如果没有抛异常，异常后通知将不会被执行。
 
 学习完这5种通知类型，我们来思考下环绕通知是如何实现其他通知类型的功能的?
 
@@ -1041,35 +1031,35 @@ public class MyAdvice {
 
 ### 知识点1：@After
 
-| 名称 | @After                                                       |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                     |
-| 位置 | 通知方法定义上方                                             |
-| 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法后运行 |
+|名称|@After|
+| ----| --------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|通知方法定义上方|
+|作用|设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法后运行|
 
-### 知识点2：@AfterReturning  
+### 知识点2：@AfterReturning
 
-| 名称 | @AfterReturning                                              |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                     |
-| 位置 | 通知方法定义上方                                             |
-| 作用 | 设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法正常执行完毕后执行 |
+|名称|@AfterReturning|
+| ----| ------------------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|通知方法定义上方|
+|作用|设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法正常执行完毕后执行|
 
-### 知识点3：@AfterThrowing  
+### 知识点3：@AfterThrowing
 
-| 名称 | @AfterThrowing                                               |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                     |
-| 位置 | 通知方法定义上方                                             |
-| 作用 | 设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法运行抛出异常后执行 |
+|名称|@AfterThrowing|
+| ----| ------------------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|通知方法定义上方|
+|作用|设置当前通知方法与切入点之间绑定关系，当前通知方法在原始切入点方法运行抛出异常后执行|
 
 ### 知识点4：@Around
 
-| 名称 | @Around                                                      |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 方法注解                                                     |
-| 位置 | 通知方法定义上方                                             |
-| 作用 | 设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前后运行 |
+|名称|@Around|
+| ----| ----------------------------------------------------------------------------|
+|类型|方法注解|
+|位置|通知方法定义上方|
+|作用|设置当前通知方法与切入点之间的绑定关系，当前通知方法在原始切入点方法前后运行|
 
 **环绕通知注意事项**
 
@@ -1105,12 +1095,11 @@ public class MyAdvice {
 
 所以要在方法执行的前后添加业务，经过分析我们将采用`环绕通知`。
 
-**说明:**原始方法如果只执行一次，时间太快，两个时间差可能为0，所以我们要执行万次来计算时间差。
+**说明:** 原始方法如果只执行一次，时间太快，两个时间差可能为0，所以我们要执行万次来计算时间差。
 
 ## 4.3.2 环境准备
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
@@ -1163,7 +1152,6 @@ public class MyAdvice {
       </dependency>
     </dependencies>
   ```
-
 - 添加AccountService、AccountServiceImpl、AccountDao与Account类
 
   ```java
@@ -1174,60 +1162,59 @@ public class MyAdvice {
       List<Account> findAll();
       Account findById(Integer id);
   }
-  
+
   @Service
   public class AccountServiceImpl implements AccountService {
-  
+
       @Autowired
       private AccountDao accountDao;
-  
+
       public void save(Account account) {
           accountDao.save(account);
       }
-  
+
       public void update(Account account){
           accountDao.update(account);
       }
-  
+
       public void delete(Integer id) {
           accountDao.delete(id);
       }
-  
+
       public Account findById(Integer id) {
           return accountDao.findById(id);
       }
-  
+
       public List<Account> findAll() {
           return accountDao.findAll();
       }
   }
   public interface AccountDao {
-  
+
       @Insert("insert into tbl_account(name,money)values(#{name},#{money})")
       void save(Account account);
-  
+
       @Delete("delete from tbl_account where id = #{id} ")
       void delete(Integer id);
-  
+
       @Update("update tbl_account set name = #{name} , money = #{money} where id = #{id} ")
       void update(Account account);
-  
+
       @Select("select * from tbl_account")
       List<Account> findAll();
-  
+
       @Select("select * from tbl_account where id = #{id} ")
       Account findById(Integer id);
   }
-  
+
   public class Account implements Serializable {
-  
+
       private Integer id;
       private String name;
       private Double money;
       //setter..getter..toString方法省略
   }
   ```
-
 - resources下提供一个jdbc.properties
 
   ```properties
@@ -1236,7 +1223,6 @@ public class MyAdvice {
   jdbc.username=root
   jdbc.password=root
   ```
-
 - 创建相关配置类
 
   ```java
@@ -1257,7 +1243,7 @@ public class MyAdvice {
       private String userName;
       @Value("${jdbc.password}")
       private String password;
-  
+
       @Bean
       public DataSource dataSource(){
           DruidDataSource ds = new DruidDataSource();
@@ -1270,7 +1256,7 @@ public class MyAdvice {
   }
   //MybatisConfig配置类
   public class MybatisConfig {
-  
+
       @Bean
       public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource){
           SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
@@ -1278,7 +1264,7 @@ public class MyAdvice {
           ssfb.setDataSource(dataSource);
           return ssfb;
       }
-  
+
       @Bean
       public MapperScannerConfigurer mapperScannerConfigurer(){
           MapperScannerConfigurer msc = new MapperScannerConfigurer();
@@ -1286,9 +1272,8 @@ public class MyAdvice {
           return msc;
       }
   }
-  
-  ```
 
+  ```
 - 编写Spring整合Junit的测试类
 
   ```java
@@ -1297,17 +1282,17 @@ public class MyAdvice {
   public class AccountServiceTestCase {
       @Autowired
       private AccountService accountService;
-  
+
       @Test
       public void testFindById(){
           Account ac = accountService.findById(2);
       }
-  
+
       @Test
       public void testFindAll(){
           List<Account> all = accountService.findAll();
       }
-  
+
   }
   ```
 
@@ -1328,7 +1313,6 @@ public class MyAdvice {
 ### 步骤2:创建AOP的通知类
 
 * 该类要被Spring管理，需要添加@Component
-
 * 要标识该类是一个AOP的切面类，需要添加@Aspect
 * 配置切入点表达式，需要添加一个方法，并添加@Pointcut
 
@@ -1366,7 +1350,7 @@ public class ProjectAdvice {
 }
 ```
 
-**注意:**目前并没有做任何增强
+**注意:** 目前并没有做任何增强
 
 ### 步骤4:完成核心业务，记录万次执行的时间
 
@@ -1395,7 +1379,7 @@ public class ProjectAdvice {
 
 ![1630215355776](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630215355776.png)
 
-**注意:**因为程序每次执行的时长是不一样的，所以运行多次最终的结果是不一样的。
+**注意:** 因为程序每次执行的时长是不一样的，所以运行多次最终的结果是不一样的。
 
 ### 步骤6:程序优化
 
@@ -1436,8 +1420,6 @@ public class ProjectAdvice {
 
 ![1630215743444](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630215743444.png)
 
-
-
 补充说明
 
 当前测试的接口执行效率仅仅是一个理论值，并不是一次完整的执行过程。
@@ -1465,7 +1447,6 @@ public class ProjectAdvice {
 ## 4.4.1 环境准备
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
@@ -1482,7 +1463,6 @@ public class ProjectAdvice {
       </dependency>
     </dependencies>
   ```
-
 - 添加BookDao和BookDaoImpl类
 
   ```java
@@ -1491,14 +1471,13 @@ public class ProjectAdvice {
   }
   @Repository
   public class BookDaoImpl implements BookDao {
-  
+
       public String findName(int id) {
           System.out.println("id:"+id);
           return "itcast";
       }
   }
   ```
-
 - 创建Spring的配置类
 
   ```java
@@ -1508,7 +1487,6 @@ public class ProjectAdvice {
   public class SpringConfig {
   }
   ```
-
 - 编写通知类
 
   ```java
@@ -1517,17 +1495,17 @@ public class ProjectAdvice {
   public class MyAdvice {
       @Pointcut("execution(* com.itheima.dao.BookDao.findName(..))")
       private void pt(){}
-  
+
       @Before("pt()")
       public void before() {
           System.out.println("before advice ..." );
       }
-  
+
       @After("pt()")
       public void after() {
           System.out.println("after advice ...");
       }
-  
+
       @Around("pt()")
       public Object around() throws Throwable{
           Object ret = pjp.proceed();
@@ -1537,15 +1515,14 @@ public class ProjectAdvice {
       public void afterReturning() {
           System.out.println("afterReturning advice ...");
       }
-  
-  
+
+
       @AfterThrowing("pt()")
       public void afterThrowing() {
           System.out.println("afterThrowing advice ...");
       }
   }
   ```
-
 - 编写App运行类
 
   ```java
@@ -1666,9 +1643,7 @@ public class MyAdvice {
   ![1630234756123](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630234756123.png)
 
   * 调用无参数的proceed，当原始方法有参数，会在调用的过程中自动传入参数
-
   * 所以调用这两个方法的任意一个都可以完成功能
-
   * 但是当需要修改原始方法的参数时，就只能采用带有参数的方法,如下:
 
     ```java
@@ -1677,7 +1652,7 @@ public class MyAdvice {
     public class MyAdvice {
         @Pointcut("execution(* com.itheima.dao.BookDao.findName(..))")
         private void pt(){}
-    
+
         @Around("pt()")
         public Object around(ProceedingJoinPoint pjp) throws Throwable{
             Object[] args = pjp.getArgs();
@@ -1829,8 +1804,6 @@ public class BookDaoImpl implements BookDao {
 
 ![1630239997560](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630239997560.png)
 
-
-
 至此，AOP通知如何获取数据就已经讲解完了，数据中包含`参数`、`返回值`、`异常(了解)`。
 
 ## 4.5 百度网盘密码数据兼容处理
@@ -1846,15 +1819,10 @@ public class BookDaoImpl implements BookDao {
 * 点击链接，会提示，请输入提取码，如下图所示
 
   ![1630240528228](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630240528228.png)
-
 * 当我们从别人发给我们的内容中复制提取码的时候，有时候会多复制到一些空格，直接粘贴到百度的提取码输入框
-
 * 但是百度那边记录的提取码是没有空格的
-
 * 这个时候如果不做处理，直接对比的话，就会引发提取码不一致，导致无法访问百度盘上的内容
-
 * 所以多输入一个空格可能会导致项目的功能无法正常使用。
-
 * 此时我们就想能不能将输入的参数先帮用户去掉空格再操作呢?
 
 答案是可以的，我们只需要在业务方法执行之前对所有的输入参数进行格式处理——trim()
@@ -1878,7 +1846,6 @@ public class BookDaoImpl implements BookDao {
 ## 4.5.2 环境准备
 
 - 创建一个Maven项目
-
 - pom.xml添加Spring依赖
 
   ```xml
@@ -1895,7 +1862,6 @@ public class BookDaoImpl implements BookDao {
       </dependency>
     </dependencies>
   ```
-
 - 添加ResourcesService，ResourcesServiceImpl,ResourcesDao和ResourcesDaoImpl类
 
   ```java
@@ -1916,14 +1882,13 @@ public class BookDaoImpl implements BookDao {
   public class ResourcesServiceImpl implements ResourcesService {
       @Autowired
       private ResourcesDao resourcesDao;
-  
+
       public boolean openURL(String url, String password) {
           return resourcesDao.readResources(url,password);
       }
   }
-  
-  ```
 
+  ```
 - 创建Spring的配置类
 
   ```java
@@ -1932,7 +1897,6 @@ public class BookDaoImpl implements BookDao {
   public class SpringConfig {
   }
   ```
-
 - 编写App运行类
 
   ```java
@@ -2073,14 +2037,12 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
   ```
   execution(* com.itheima.service.*Service.*(..))
   ```
-
 * 切入点表达式描述通配符：
 
   * 作用：用于快速描述，范围描述
   * `*`：匹配任意符号（常用）
   * `..` ：匹配多个连续的任意符号（常用）
   * `+`：匹配子类类型
-
 * 切入点表达式书写技巧
 
   1.按标准规范开发
@@ -2486,7 +2448,7 @@ public class JdbcConfig {
 }
 ```
 
-**注意：**事务管理器要根据使用技术进行选择，Mybatis框架使用的是JDBC事务，可以直接使用`DataSourceTransactionManager`
+**注意：** 事务管理器要根据使用技术进行选择，Mybatis框架使用的是JDBC事务，可以直接使用`DataSourceTransactionManager`
 
 ### 步骤3：开启事务注解
 
@@ -2510,19 +2472,19 @@ public class SpringConfig {
 
 ### 知识点1：@EnableTransactionManagement
 
-| 名称 | @EnableTransactionManagement           |
-| ---- | -------------------------------------- |
-| 类型 | 配置类注解                             |
-| 位置 | 配置类定义上方                         |
-| 作用 | 设置当前Spring环境中开启注解式事务支持 |
+|名称|@EnableTransactionManagement|
+| ----| --------------------------------------|
+|类型|配置类注解|
+|位置|配置类定义上方|
+|作用|设置当前Spring环境中开启注解式事务支持|
 
-### 知识点2：@Transactional   
+### 知识点2：@Transactional
 
-| 名称 | @Transactional                                               |
-| ---- | ------------------------------------------------------------ |
-| 类型 | 接口注解  类注解  方法注解                                   |
-| 位置 | 业务层接口上方  业务层实现类上方  业务方法上方               |
-| 作用 | 为当前业务层方法添加事务（如果设置在类或接口上方则类或接口中所有方法均添加事务） |
+|名称|@Transactional|
+| ----| --------------------------------------------------------------------------------|
+|类型|接口注解  类注解  方法注解|
+|位置|业务层接口上方  业务层实现类上方  业务方法上方|
+|作用|为当前业务层方法添加事务（如果设置在类或接口上方则类或接口中所有方法均添加事务）|
 
 ## 6.2 Spring事务角色
 
@@ -2550,8 +2512,6 @@ public class SpringConfig {
 
 通过上面例子的分析，我们就可以得到如下概念:
 
-
-
 - 事务管理员：发起事务方，在Spring中通常指代业务层开启事务的方法
 - 事务协调员：加入事务方，在Spring中通常指代数据层方法，也可以是业务层方法
 
@@ -2572,17 +2532,12 @@ public class SpringConfig {
 上面这些属性都可以在`@Transactional`注解的参数上进行设置。
 
 * readOnly：true只读事务，false读写事务，增删改要设为false,查询设为true。
-
 * timeout:设置超时时间单位秒，在多长时间之内事务没有提交成功就自动回滚，-1表示不设置超时时间。
-
 * rollbackFor:当出现指定异常进行事务回滚
-
 * noRollbackFor:当出现指定异常不进行事务回滚
 
   * 思考:出现异常事务会自动回滚，这个是我们之前就已经知道的
-
   * noRollbackFor是设定对于指定的异常不回滚，这个好理解
-
   * rollbackFor是指定回滚异常，对于异常事务不应该都回滚么，为什么还要指定?
 
     * 这块需要更正一个知识点，并不是所有的异常都会回滚事务，比如下面的代码就不会回滚
@@ -2598,10 +2553,10 @@ public class SpringConfig {
           //配置当前接口方法具有事务
           public void transfer(String out,String in ,Double money) throws IOException;
       }
-      
+
       @Service
       public class AccountServiceImpl implements AccountService {
-      
+
           @Autowired
           private AccountDao accountDao;
       	@Transactional
@@ -2613,37 +2568,33 @@ public class SpringConfig {
               }
               accountDao.inMoney(in,money);
           }
-      
+
       }
       ```
-  
 * 出现这个问题的原因是，Spring的事务只会对`Error异常`和`RuntimeException异常`及其子类进行事务回顾，其他的异常类型是不会回滚的，对应IOException不符合上述条件所以不回滚
-      
-    * 此时就可以使用rollbackFor属性来设置出现IOException异常不回滚
-    
-      ```java
-      @Service
-      public class AccountServiceImpl implements AccountService {
-      
-          @Autowired
-          private AccountDao accountDao;
-      	 @Transactional(rollbackFor = {IOException.class})
-          public void transfer(String out,String in ,Double money) throws IOException{
-              accountDao.outMoney(out,money);
-              //int i = 1/0; //这个异常事务会回滚
-              if(true){
-                  throw new IOException(); //这个异常事务就不会回滚
-              }
-              accountDao.inMoney(in,money);
-          }
-      
-      }
-      ```
-  
+
+  * 此时就可以使用rollbackFor属性来设置出现IOException异常不回滚
+
+    ```java
+    @Service
+    public class AccountServiceImpl implements AccountService {
+
+        @Autowired
+        private AccountDao accountDao;
+    	 @Transactional(rollbackFor = {IOException.class})
+        public void transfer(String out,String in ,Double money) throws IOException{
+            accountDao.outMoney(out,money);
+            //int i = 1/0; //这个异常事务会回滚
+            if(true){
+                throw new IOException(); //这个异常事务就不会回滚
+            }
+            accountDao.inMoney(in,money);
+        }
+
+    }
+    ```
 * rollbackForClassName等同于rollbackFor,只不过属性为异常的类全名字符串
-
 * noRollbackForClassName等同于noRollbackFor，只不过属性为异常的类全名字符串
-
 * isolation设置事务的隔离级别
 
   * DEFAULT   :默认隔离级别, 会采用数据库的隔离级别
@@ -2653,7 +2604,6 @@ public class SpringConfig {
   * SERIALIZABLE: 串行化
 
 介绍完上述属性后，还有最后一个事务的传播行为，为了讲解该属性的设置，我们需要完成下面的案例。
-
 
 ## 6.3.2 转账业务追加日志案例
 
@@ -2752,7 +2702,6 @@ public class AccountServiceImpl implements AccountService {
 ### 步骤5:运行程序
 
 * 当程序正常运行，tbl_account表中转账成功，tbl_log表中日志记录成功
-
 * 当转账业务之间出现异常(int i =1/0),转账失败，tbl_account成功回滚，但是tbl_log表未添加数据
 * 这个结果和我们想要的不一样，什么原因?该如何解决?
 * 失败原因:日志的记录与转账操作隶属同一个事务，同成功同失败

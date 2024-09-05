@@ -1,21 +1,19 @@
+# 实用篇day04-RabbitMQ部署指南
+
 ---
+
 title: itheima-Microservice 实用篇day04-RabbitMQ部署指南
 tags:
-  - itheima
-  - '#RabbitMQ'
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213876.jpg'
-abbrlink: ae33f2da
+
+- itheima
+- '#RabbitMQ'
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292213876.jpg'
+  abbrlink: ae33f2da
+
 ---
+
 # RabbitMQ部署指南
-
-
-
-
-
-
-
-
 
 # 1.单机部署
 
@@ -25,27 +23,21 @@ abbrlink: ae33f2da
 
 方式一：在线拉取
 
-``` sh
+```sh
 docker pull rabbitmq:3-management
 ```
-
-
 
 方式二：从本地加载
 
 在课前资料已经提供了镜像包：
 
-![image-20210423191210349](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210423191210349.png) 
+![image-20210423191210349](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210423191210349.png)
 
 上传到虚拟机中后，使用命令加载镜像即可：
 
 ```sh
 docker load -i mq.tar
 ```
-
-
-
-
 
 ## 1.2.安装MQ
 
@@ -63,12 +55,6 @@ docker run \
  rabbitmq:3-management
 ```
 
-
-
-
-
-
-
 # 2.集群部署
 
 接下来，我们看看如何安装RabbitMQ的集群。
@@ -79,8 +65,6 @@ docker run \
 
 - 普通模式：普通模式集群不进行数据同步，每个MQ都有自己的队列、数据信息（其它元数据信息如交换机等会同步）。例如我们有2个MQ：mq1，和mq2，如果你的消息在mq1，而你连接到了mq2，那么mq2会去mq1拉取消息，然后返回给你。如果mq1宕机，消息就会丢失。
 - 镜像模式：与普通模式不同，队列会在各个mq的镜像节点之间同步，因此你连接到任何一个镜像节点，均可获取到消息。而且如果一个节点宕机，并不会导致数据丢失。不过，这种方式增加了数据同步的带宽消耗。
-
-
 
 我们先来看普通模式集群。
 
@@ -97,4 +81,3 @@ docker run \
 ```
 
 并在每台机器上测试，是否可以ping通对方：
-

@@ -1,36 +1,30 @@
+# 高级篇day02-分布式事务
+
 ---
+
 title: itheima-Microservice 高级篇day02-分布式事务
 tags:
-  - itheima
-  - 微服务
-  - 分布式
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201990.jpg'
-abbrlink: '989839e4'
+
+- itheima
+- 微服务
+- 分布式
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201990.jpg'
+  abbrlink: '989839e4'
+
 ---
+
 # 分布式事务
-
-
-
-
 
 # 0.学习目标
 
-
-
-
-
 # 1.分布式事务问题
-
-
 
 ## 1.1.本地事务
 
 本地事务，也就是传统的**单机事务**。在传统数据库事务中，必须要满足四个原则：
 
 ![image-20210724165045186](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165045186.png)
-
-
 
 ## 1.2.分布式事务
 
@@ -40,21 +34,15 @@ abbrlink: '989839e4'
 - 跨服务的分布式事务
 - 综合情况
 
-
-
 在数据库水平拆分、服务垂直拆分之后，一个业务操作通常要跨多个数据库、服务才能完成。例如电商行业中比较常见的下单付款案例，包括下面几个行为：
 
 - 创建新订单
 - 扣减商品库存
 - 从用户账户余额扣除金额
 
-
-
 完成上面的操作需要访问三个不同的微服务和三个不同的数据库。
 
 ![image-20210724165338958](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165338958.png)
-
-
 
 订单的创建、库存的扣减、账户扣款在每一个服务和数据库内是一个本地事务，可以保证ACID原则。
 
@@ -62,23 +50,21 @@ abbrlink: '989839e4'
 
 此时ACID难以满足，这是分布式事务要解决的问题
 
-
-
 ## 1.3.演示分布式事务问题
 
 我们通过一个案例来演示分布式事务的问题：
 
 1）**创建数据库，名为seata_demo，然后导入课前资料提供的SQL文件：**
 
-![image-20210724165634571](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165634571.png) 
+![image-20210724165634571](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165634571.png)
 
 2）**导入课前资料提供的微服务：**
 
-![image-20210724165709994](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165709994.png) 
+![image-20210724165709994](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165709994.png)
 
 微服务结构如下：
 
-![image-20210724165729273](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165729273.png) 
+![image-20210724165729273](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724165729273.png)
 
 其中：
 
@@ -87,8 +73,6 @@ seata-demo：父工程，负责管理项目依赖
 - account-service：账户服务，负责管理用户的资金账户。提供扣减余额的接口
 - storage-service：库存服务，负责管理商品库存。提供扣减库存的接口
 - order-service：订单服务，负责管理订单。创建订单时，需要调用account-service和storage-service
-
-
 
 **3）启动nacos、所有微服务**
 
@@ -104,11 +88,7 @@ curl --location --request POST 'http://localhost:8082/order?userId=user202103032
 
 ![image-20210724170113404](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724170113404.png)
 
-
-
 测试发现，当库存不足时，如果余额已经扣减，并不会回滚，出现了分布式事务问题。
-
-
 
 # 2.理论基础
 
@@ -124,13 +104,9 @@ curl --location --request POST 'http://localhost:8082/order?userId=user202103032
 
 ![image-20210724170517944](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724170517944.png)
 
-
-
 它们的第一个字母分别是 C、A、P。
 
 Eric Brewer 说，这三个指标不可能同时做到。这个结论就叫做 CAP 定理。
-
-
 
 ### 2.1.1.一致性
 
@@ -148,8 +124,6 @@ Consistency（一致性）：用户访问分布式系统中的任意节点，得
 
 ![image-20210724170834855](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724170834855.png)
 
-
-
 ### 2.1.2.可用性
 
 Availability （可用性）：用户访问集群中的任意健康节点，必须能得到响应，而不是超时或拒绝。
@@ -162,19 +136,13 @@ Availability （可用性）：用户访问集群中的任意健康节点，必�
 
 ![image-20210724171007516](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724171007516.png)
 
-
-
 ### 2.1.3.分区容错
 
-**Partition（分区）**：因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。
+**Partition（分区）** ：因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。
 
 ![image-20210724171041210](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724171041210.png)
 
-
-
-**Tolerance（容错）**：在集群出现分区时，整个系统也要持续对外提供服务
-
-
+**Tolerance（容错）** ：在集群出现分区时，整个系统也要持续对外提供服务
 
 ### 2.1.4.矛盾
 
@@ -188,41 +156,28 @@ Availability （可用性）：用户访问集群中的任意健康节点，必�
 
 如果此时要保证**可用性**，就不能等待网络恢复，那node01、node02与node03之间就会出现数据不一致。
 
-
-
 也就是说，在P一定会出现的情况下，A和C之间只能实现一个。
-
-
 
 ## 2.2.BASE理论
 
 BASE理论是对CAP的一种解决思路，包含三个思想：
 
-- **Basically Available** **（基本可用）**：分布式系统在出现故障时，允许损失部分可用性，即保证核心可用。
-- **Soft State（软状态）：**在一定时间内，允许出现中间状态，比如临时的不一致状态。
-- **Eventually Consistent（最终一致性）**：虽然无法保证强一致性，但是在软状态结束后，最终达到数据一致。
-
-
+- **Basically Available**  **（基本可用）** ：分布式系统在出现故障时，允许损失部分可用性，即保证核心可用。
+- **Soft State（软状态）：** 在一定时间内，允许出现中间状态，比如临时的不一致状态。
+- **Eventually Consistent（最终一致性）** ：虽然无法保证强一致性，但是在软状态结束后，最终达到数据一致。
 
 ## 2.3.解决分布式事务的思路
 
 分布式事务最大的问题是各个子事务的一致性问题，因此可以借鉴CAP定理和BASE理论，有两种解决思路：
 
 - AP模式：各子事务分别执行和提交，允许出现结果不一致，然后采用弥补措施恢复数据即可，实现最终一致。
-
 - CP模式：各个子事务执行后互相等待，同时提交，同时回滚，达成强一致。但事务等待过程中，处于弱可用状态。
 
-
-
-但不管是哪一种模式，都需要在子系统事务之间互相通讯，协调事务状态，也就是需要一个**事务协调者(TC)**：
+但不管是哪一种模式，都需要在子系统事务之间互相通讯，协调事务状态，也就是需要一个**事务协调者(TC)** ：
 
 ![image-20210724172123567](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724172123567.png)
 
-
-
 这里的子系统事务，称为**分支事务**；有关联的各个分支事务在一起称为**全局事务**。
-
-
 
 # 3.初识Seata
 
@@ -232,25 +187,17 @@ Seata是 2019 年 1 月份蚂蚁金服和阿里巴巴共同开源的分布式事
 
 ![image-20210724172225817](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724172225817.png)
 
-
-
 ## 3.1.Seata的架构
 
 Seata事务管理中有三个重要的角色：
 
-- **TC (Transaction Coordinator) -** **事务协调者：**维护全局和分支事务的状态，协调全局事务提交或回滚。
-
-- **TM (Transaction Manager) -** **事务管理器：**定义全局事务的范围、开始全局事务、提交或回滚全局事务。
-
-- **RM (Resource Manager) -** **资源管理器：**管理分支事务处理的资源，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
-
-
+- **TC (Transaction Coordinator) -**  **事务协调者：** 维护全局和分支事务的状态，协调全局事务提交或回滚。
+- **TM (Transaction Manager) -**  **事务管理器：** 定义全局事务的范围、开始全局事务、提交或回滚全局事务。
+- **RM (Resource Manager) -**  **资源管理器：** 管理分支事务处理的资源，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
 
 整体的架构如图：
 
 ![image-20210724172326452](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724172326452.png)
-
-
 
 Seata基于上述架构提供了四种不同的分布式事务解决方案：
 
@@ -261,15 +208,11 @@ Seata基于上述架构提供了四种不同的分布式事务解决方案：
 
 无论哪种方案，都离不开TC，也就是事务的协调者。
 
-
-
 ## 3.2.部署TC服务
 
 参考课前资料提供的文档《 seata的部署和集成.md 》：
 
 ![image-20210724172549013](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724172549013.png)
-
-
 
 ## 3.3.微服务集成Seata
 
@@ -300,8 +243,6 @@ Seata基于上述架构提供了四种不同的分布式事务解决方案：
 </dependency>
 ```
 
-
-
 ### 3.3.2.配置TC地址
 
 在order-service中的application.yml中，配置TC服务信息，通过注册中心nacos，结合服务名称获取TC地址：
@@ -323,8 +264,6 @@ seata:
       seata-demo: SH
 ```
 
-
-
 微服务如何根据这些配置寻找TC的地址呢？
 
 我们知道注册到Nacos中的微服务，确定一个具体实例需要四个信息：
@@ -334,8 +273,6 @@ seata:
 - application：服务名
 - cluster：集群名
 
-
-
 以上四个信息，在刚才的yaml文件中都能找到：
 
 ![image-20210724173654258](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724173654258.png)
@@ -344,27 +281,17 @@ namespace为空，就是默认的public
 
 结合起来，TC服务的信息就是：public@DEFAULT_GROUP@seata-tc-server@SH，这样就能确定TC服务集群了。然后就可以去Nacos拉取对应的实例信息了。
 
-
-
-
-
 ### 3.3.3.其它服务
 
 其它两个微服务也都参考order-service的步骤来做，完全一样。
-
-
 
 # 4.动手实践
 
 下面我们就一起学习下Seata中的四种不同的事务模式。
 
-
-
 ## 4.1.XA模式
 
 XA 规范 是 X/Open 组织定义的分布式事务处理（DTP，Distributed Transaction Processing）标准，XA 规范 描述了全局的TM与局部的RM之间的接口，几乎所有主流的数据库都对 XA 规范 提供了支持。
-
-
 
 ### 4.1.1.两阶段提交
 
@@ -378,8 +305,6 @@ XA是规范，目前主流数据库都实现了这种规范，实现的原理都
 
 ![image-20210724174234987](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724174234987.png)
 
-
-
 一阶段：
 
 - 事务协调者通知每个事物参与者执行本地事务
@@ -391,15 +316,11 @@ XA是规范，目前主流数据库都实现了这种规范，实现的原理都
   - 如果一阶段都成功，则通知所有事务参与者，提交事务
   - 如果一阶段任意一个参与者失败，则通知所有事务参与者回滚事务
 
-
-
 ### 4.1.2.Seata的XA模型
 
 Seata对原始的XA模式做了简单的封装和改造，以适应自己的事务模型，基本架构如图：
 
 ![image-20210724174424070](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724174424070.png)
-
-
 
 RM一阶段的工作：
 
@@ -421,10 +342,6 @@ RM二阶段的工作：
 
 - 接收TC指令，提交或回滚事务
 
-
-
-
-
 ### 4.1.3.优缺点
 
 XA模式的优点是什么？
@@ -437,8 +354,6 @@ XA模式的缺点是什么？
 - 因为一阶段需要锁定数据库资源，等待二阶段结束才释放，性能较差
 - 依赖关系型数据库实现事务
 
-
-
 ### 4.1.4.实现XA模式
 
 Seata的starter已经完成了XA模式的自动装配，实现非常简单，步骤如下：
@@ -450,25 +365,15 @@ seata:
   data-source-proxy-mode: XA
 ```
 
-
-
 2）给发起全局事务的入口方法添加@GlobalTransactional注解:
 
 本例中是OrderServiceImpl中的create方法.
 
 ![image-20210724174859556](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724174859556.png)
 
-
-
 3）重启服务并测试
 
 重启order-service，再次测试，发现无论怎样，三个微服务都能成功回滚。
-
-
-
-
-
-
 
 ## 4.2.AT模式
 
@@ -479,8 +384,6 @@ AT模式同样是分阶段提交的事务模型，不过缺弥补了XA模型中�
 基本流程图：
 
 ![image-20210724175327511](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724175327511.png)
-
-
 
 阶段一RM的工作：
 
@@ -497,25 +400,21 @@ AT模式同样是分阶段提交的事务模型，不过缺弥补了XA模型中�
 
 - 根据undo-log恢复数据到更新前
 
-
-
 ### 4.2.2.流程梳理
 
 我们用一个真实的业务来梳理下AT模式的原理。
 
 比如，现在又一个数据库表，记录用户余额：
 
-| **id** | **money** |
-| ------ | --------- |
-| 1      | 100       |
+|**id**|**money**|
+| -| ---|
+|1|100|
 
 其中一个分支业务要执行的SQL为：
 
 ```sql
 update tb_account set money = money - 10 where id = 1
 ```
-
-
 
 AT模式下，当前分支事务执行流程如下：
 
@@ -539,8 +438,6 @@ AT模式下，当前分支事务执行流程如下：
 
 6）RM报告本地事务状态给TC
 
-
-
 二阶段：
 
 1）TM通知TC事务结束
@@ -551,15 +448,9 @@ AT模式下，当前分支事务执行流程如下：
 
 ​	 b）如果有分支事务失败，需要回滚。读取快照数据（`{"id": 1, "money": 100}`），将快照恢复到数据库。此时数据库再次恢复为100
 
-
-
-
-
 流程图：
 
 ![image-20210724180722921](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724180722921.png)
-
-
 
 ### 4.2.3.AT与XA的区别
 
@@ -569,21 +460,15 @@ AT模式下，当前分支事务执行流程如下：
 - XA模式依赖数据库机制实现回滚；AT模式利用数据快照实现数据回滚。
 - XA模式强一致；AT模式最终一致
 
-
-
 ### 4.2.4.脏写问题
 
 在多线程并发访问AT模式的分布式事务时，有可能出现脏写问题，如图：
 
 ![image-20210724181541234](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724181541234.png)
 
-
-
 解决思路就是引入了全局锁的概念。在释放DB锁之前，先拿到全局锁。避免同一时刻有另外一个事务来操作当前数据。
 
 ![image-20210724181843029](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724181843029.png)
-
-
 
 ### 4.2.5.优缺点
 
@@ -598,15 +483,11 @@ AT模式的缺点：
 - 两阶段之间属于软状态，属于最终一致
 - 框架的快照功能会影响性能，但比XA模式要好很多
 
-
-
 ### 4.2.6.实现AT模式
 
 AT模式中的快照生成、回滚等动作都是由框架自动完成，没有任何代码侵入，因此实现非常简单。
 
 只不过，AT模式需要一个表来记录全局锁、另一张表来记录数据快照undo_log。
-
-
 
 1）导入数据库表，记录全局锁
 
@@ -621,33 +502,21 @@ seata:
   data-source-proxy-mode: AT # 默认就是AT
 ```
 
-
-
 3）重启服务并测试
-
-
-
-
-
-
 
 ## 4.3.TCC模式
 
 TCC模式与AT模式非常相似，每阶段都是独立事务，不同的是TCC通过人工编码来实现数据恢复。需要实现三个方法：
 
-- Try：资源的检测和预留； 
-
+- Try：资源的检测和预留；
 - Confirm：完成资源操作业务；要求 Try 成功 Confirm 一定要能成功。
-
 - Cancel：预留资源释放，可以理解为try的反向操作。
-
-
 
 ### 4.3.1.流程分析
 
 举例，一个扣减用户余额的业务。假设账户A原来余额是100，需要余额扣减30元。
 
-- **阶段一（ Try ）**：检查余额是否充足，如果充足则冻结金额增加30元，可用余额扣除30
+- **阶段一（ Try ）** ：检查余额是否充足，如果充足则冻结金额增加30元，可用余额扣除30
 
 初识余额：
 
@@ -657,43 +526,27 @@ TCC模式与AT模式非常相似，每阶段都是独立事务，不同的是TCC
 
 ![image-20210724182457951](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724182457951.png)
 
-
-
 此时，总金额 = 冻结金额 + 可用金额，数量依然是100不变。事务直接提交无需等待其它事务。
 
-
-
-- **阶段二（Confirm)**：假如要提交（Confirm），则冻结金额扣减30
+- **阶段二（Confirm)** ：假如要提交（Confirm），则冻结金额扣减30
 
 确认可以提交，不过之前可用金额已经扣减过了，这里只要清除冻结金额就好了：
 
 ![image-20210724182706011](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724182706011.png)
 
-
-
 此时，总金额 = 冻结金额 + 可用金额 = 0 + 70  = 70元
 
-
-
-
-
-- **阶段二(Canncel)**：如果要回滚（Cancel），则冻结金额扣减30，可用余额增加30
+- **阶段二(Canncel)** ：如果要回滚（Cancel），则冻结金额扣减30，可用余额增加30
 
 需要回滚，那么就要释放冻结金额，恢复可用金额：
 
 ![image-20210724182810734](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724182810734.png)
-
-
-
-
 
 ### 4.3.2.Seata的TCC模型
 
 Seata中的TCC模型依然延续之前的事务架构，如图：
 
 ![image-20210724182937713](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724182937713.png)
-
-
 
 ### 4.3.3.优缺点
 
@@ -715,8 +568,6 @@ TCC的缺点是什么？
 - 软状态，事务是最终一致
 - 需要考虑Confirm和Cancel的失败情况，做好幂等处理
 
-
-
 ### 4.3.4.事务悬挂和空回滚
 
 #### 1）空回滚
@@ -729,23 +580,15 @@ TCC的缺点是什么？
 
 执行cancel操作时，应当判断try是否已经执行，如果尚未执行，则应该空回滚。
 
-
-
 #### 2）业务悬挂
 
 对于已经空回滚的业务，之前被阻塞的try操作恢复，继续执行try，就永远不可能confirm或cancel ，事务一直处于中间状态，这就是**业务悬挂**。
 
 执行try操作时，应当判断cancel是否已经执行过了，如果已经执行，应当阻止空回滚后的try操作，避免悬挂
 
-
-
-
-
 ### 4.3.5.实现TCC模式
 
 解决空回滚和业务悬挂问题，必须要记录当前事务状态，是在try、还是cancel？
-
-
 
 #### 1）思路分析
 
@@ -768,8 +611,6 @@ CREATE TABLE `account_freeze_tbl` (
 - freeze_money：用来记录用户冻结金额
 - state：用来记录事务状态
 
-
-
 那此时，我们的业务开怎么做呢？
 
 - Try业务：
@@ -785,11 +626,7 @@ CREATE TABLE `account_freeze_tbl` (
 - 如何避免业务悬挂？
   - try业务中，根据xid查询account_freeze ，如果已经存在则证明Cancel已经执行，拒绝执行try业务
 
-
-
 接下来，我们改造account-service，利用TCC实现余额扣减功能。
-
-
 
 #### 2）声明TCC接口
 
@@ -817,8 +654,6 @@ public interface AccountTCCService {
     boolean cancel(BusinessActionContext ctx);
 }
 ```
-
-
 
 #### 3）编写实现类
 
@@ -889,12 +724,6 @@ public class AccountTCCServiceImpl implements AccountTCCService {
 }
 ```
 
-
-
-
-
-
-
 ## 4.4.SAGA模式
 
 Saga 模式是 Seata 即将开源的长事务解决方案，将由蚂蚁金服主要贡献。
@@ -916,11 +745,7 @@ Saga也分为两个阶段：
 - 一阶段：直接提交本地事务
 - 二阶段：成功则什么都不做；失败则通过编写补偿业务来回滚
 
-
-
 ### 4.4.2.优缺点
-
-
 
 优点：
 
@@ -943,15 +768,9 @@ Saga也分为两个阶段：
 - 性能：有无性能损耗？
 - 场景：常见的业务场景
 
-
-
 如图：
 
 ![image-20210724185021819](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724185021819.png)
-
-
-
-
 
 # 5.高可用
 
@@ -961,21 +780,13 @@ Seata的TC服务作为分布式事务核心，一定要保证集群的高可用�
 
 搭建TC服务集群非常简单，启动多个TC服务，注册到nacos即可。
 
-
-
 但集群并不能确保100%安全，万一集群所在机房故障怎么办？所以如果要求较高，一般都会做异地多机房容灾。
-
-
 
 比如一个TC集群在上海，另一个TC集群在杭州：
 
 ![image-20210724185240957](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210724185240957.png)
 
-
-
 微服务基于事务组（tx-service-group)与TC集群的映射关系，来查找当前应该使用哪个TC集群。当SH集群故障时，只需要将vgroup-mapping中的映射关系改成HZ。则所有微服务就会切换到HZ的TC集群了。
-
-
 
 ## 5.2.实现高可用
 

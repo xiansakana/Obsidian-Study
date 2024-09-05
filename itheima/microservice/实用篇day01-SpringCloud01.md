@@ -1,17 +1,19 @@
+# 实用篇day01-SpringCloud01
+
 ---
+
 title: itheima-Microservice 实用篇day01--SpringCloud01
 tags:
-  - itheima
-  - SpringCloud
-categories: 微服务
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211101.jpg
-abbrlink: 36ab066a
+
+- itheima
+- SpringCloud
+  categories: 微服务
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292211101.jpg
+  abbrlink: 36ab066a
+
 ---
+
 # SpringCloud01
-
-
-
-
 
 # 1.认识微服务
 
@@ -20,10 +22,6 @@ abbrlink: 36ab066a
 ## 1.0.学习目标
 
 了解微服务架构的优缺点
-
-
-
-
 
 ## 1.1.单体架构
 
@@ -42,15 +40,11 @@ abbrlink: 36ab066a
 
 - 耦合度高（维护困难、升级困难）
 
-
-
 ## 1.2.分布式架构
 
 **分布式架构**：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一个服务。
 
 ![image-20210713203124797](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713203124797.png)
-
-
 
 分布式架构的优缺点：
 
@@ -63,8 +57,6 @@ abbrlink: 36ab066a
 
 - 服务调用关系错综复杂
 
-
-
 分布式架构虽然降低了服务耦合，但是服务拆分时也有很多问题需要思考：
 
 - 服务拆分的粒度如何界定？
@@ -72,8 +64,6 @@ abbrlink: 36ab066a
 - 服务的调用关系如何管理？
 
 人们需要制定一套行之有效的标准来约束分布式架构。
-
-
 
 ## 1.3.微服务
 
@@ -104,33 +94,22 @@ SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了�
 
 ![image-20210713204155887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713204155887.png)
 
-
-
 另外，SpringCloud底层是依赖于SpringBoot的，并且有版本的兼容关系，如下：
 
 ![image-20210713205003790](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713205003790.png)
 
 我们课堂学习的版本是 Hoxton.SR10，因此对应的SpringBoot版本是2.3.x版本。
 
-
-
 ## 1.5.总结
 
 - 单体架构：简单方便，高度耦合，扩展性差，适合小型项目。例如：学生管理系统
-
 - 分布式架构：松耦合，扩展性好，但架构复杂，难度大。适合大型互联网项目，例如：京东、淘宝
-
 - 微服务：一种良好的分布式架构方案
 
   ①优点：拆分粒度更小、服务更独立、耦合度更低
 
   ②缺点：架构非常复杂，运维、监控、部署难度提高
-
 - SpringCloud是微服务架构的一站式解决方案，集成了各种优秀微服务功能组件
-
-
-
-
 
 # 2.服务拆分和远程调用
 
@@ -145,8 +124,6 @@ SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了�
 - 微服务可以将自己的业务暴露为接口，供其它微服务调用
 
 ![image-20210713210800950](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713210800950.png)
-
-
 
 ## 2.2.服务拆分示例
 
@@ -165,15 +142,11 @@ cloud-demo：父工程，管理依赖
 - 订单服务和用户服务都对外暴露Restful的接口
 - 订单服务如果需要查询用户信息，只能调用用户服务的Restful接口，不能查询用户数据库
 
-
-
 ### 2.2.1.导入Sql语句
 
 首先，将课前资料提供的`cloud-order.sql`和`cloud-user.sql`导入到mysql中：
 
 ![image-20210713211417049](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211417049.png)
-
-
 
 cloud-user表中初始数据如下：
 
@@ -183,11 +156,7 @@ cloud-order表中初始数据如下：
 
 ![image-20210713211657319](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211657319.png)
 
-
-
 cloud-order表中持有cloud-user表中的id字段。
-
-
 
 ### 2.2.2.导入demo工程
 
@@ -195,15 +164,9 @@ cloud-order表中持有cloud-user表中的id字段。
 
 ![image-20210713211814094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713211814094.png)
 
-
-
 项目结构如下：
 
 ![image-20210713212656887](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212656887.png)
-
-
-
-
 
 导入后，会在IDEA右下角出现弹窗：
 
@@ -217,17 +180,11 @@ cloud-order表中持有cloud-user表中的id字段。
 
 ![image-20210713212513324](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713212513324.png)
 
-
-
 配置下项目使用的JDK：
 
 ![image-20210713220736408](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220736408.png)
 
-
-
 ## 2.3.实现远程调用案例
-
-
 
 在order-service服务中，有一个根据id查询订单的接口：
 
@@ -239,10 +196,6 @@ cloud-order表中持有cloud-user表中的id字段。
 
 其中的user为null
 
-
-
-
-
 在user-service中有一个根据id查询用户的接口：
 
 ![image-20210713213146089](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213146089.png)
@@ -251,17 +204,11 @@ cloud-order表中持有cloud-user表中的id字段。
 
 ![image-20210713213213075](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213213075.png)
 
-
-
-
-
 ### 2.3.1.案例需求：
 
 修改order-service中的根据id查询订单业务，要求在查询订单的同时，根据订单中包含的userId查询出用户信息，一起返回。
 
 ![image-20210713213312278](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213312278.png)
-
-
 
 因此，我们需要在order-service中 向user-service发起一个http的请求，调用http://localhost:8081/user/{userId}这个接口。
 
@@ -270,8 +217,6 @@ cloud-order表中持有cloud-user表中的id字段。
 - 注册一个RestTemplate的实例到Spring容器
 - 修改order-service服务中的OrderService类中的queryOrderById方法，根据Order对象中的userId查询User
 - 将查询的User填充到Order对象，一起返回
-
-
 
 ### 2.3.2.注册RestTemplate
 
@@ -301,19 +246,11 @@ public class OrderApplication {
 }
 ```
 
-
-
 ### 2.3.3.实现远程调用
 
 修改order-service服务中的cn.itcast.order.service包下的OrderService类中的queryOrderById方法：
 
 ![image-20210713213959569](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713213959569.png)
-
-
-
-
-
-
 
 ## 2.4.提供者与消费者
 
@@ -325,8 +262,6 @@ public class OrderApplication {
 
 ![image-20210713214404481](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713214404481.png)
 
-
-
 但是，服务提供者与服务消费者的角色并不是绝对的，而是相对于业务而言。
 
 如果服务A调用了服务B，而服务B又调用了服务C，服务B的角色是什么？
@@ -334,23 +269,13 @@ public class OrderApplication {
 - 对于A调用B的业务而言：A是服务消费者，B是服务提供者
 - 对于B调用C的业务而言：B是服务消费者，C是服务提供者
 
-
-
 因此，服务B既可以是服务提供者，也可以是服务消费者。
 
-
-
-
-
 # 3.Eureka注册中心
-
-
 
 假如我们的服务提供者user-service部署了多个实例，如图：
 
 ![image-20210713214925388](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713214925388.png)
-
-
 
 大家思考几个问题：
 
@@ -358,15 +283,11 @@ public class OrderApplication {
 - 有多个user-service实例地址，order-service调用时该如何选择？
 - order-service如何得知某个user-service实例是否依然健康，是不是已经宕机？
 
-
-
 ## 3.1.Eureka的结构和作用
 
 这些问题都需要利用SpringCloud中的注册中心来解决，其中最广为人知的注册中心就是Eureka，其结构如下：
 
 ![image-20210713220104956](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220104956.png)
-
-
 
 回答之前的各个问题。
 
@@ -378,14 +299,10 @@ public class OrderApplication {
 - eureka-server保存服务名称到服务实例地址列表的映射关系
 - order-service根据服务名称，拉取实例地址列表。这个叫服务发现或服务拉取
 
-
-
 问题2：order-service如何从多个user-service实例中选择具体的实例？
 
 - order-service从实例列表中利用负载均衡算法选中一个实例地址
 - 向该实例地址发起远程调用
-
-
 
 问题3：order-service如何得知某个user-service实例是否依然健康，是不是已经宕机？
 
@@ -393,17 +310,11 @@ public class OrderApplication {
 - 当超过一定时间没有发送心跳时，eureka-server会认为微服务实例故障，将该实例从服务列表中剔除
 - order-service拉取服务时，就能将故障实例排除了
 
-
-
 > 注意：一个微服务，既可以是服务提供者，又可以是服务消费者，因此eureka将服务注册、服务发现等功能统一封装到了eureka-client端
-
-
 
 因此，接下来我们动手实践的步骤包括：
 
 ![image-20210713220509769](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220509769.png)
-
-
 
 ## 3.2.搭建eureka-server
 
@@ -419,13 +330,9 @@ public class OrderApplication {
 
 ![image-20210713220857396](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713220857396.png)
 
-
-
 然后填写服务信息：
 
 ![image-20210713221339022](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713221339022.png)
-
-
 
 ### 3.2.2.引入eureka依赖
 
@@ -437,8 +344,6 @@ public class OrderApplication {
     <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 </dependency>
 ```
-
-
 
 ### 3.2.3.编写启动类
 
@@ -460,8 +365,6 @@ public class EurekaApplication {
 }
 ```
 
-
-
 ### 3.2.4.编写配置文件
 
 编写一个application.yml文件，内容如下：
@@ -478,8 +381,6 @@ eureka:
       defaultZone: http://127.0.0.1:10086/eureka
 ```
 
-
-
 ### 3.2.5.启动服务
 
 启动微服务，然后在浏览器访问：http://127.0.0.1:10086
@@ -487,12 +388,6 @@ eureka:
 看到下面结果应该是成功了：
 
 ![image-20210713222157190](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222157190.png)
-
-
-
-
-
-
 
 ## 3.3.服务注册
 
@@ -509,8 +404,6 @@ eureka:
 </dependency>
 ```
 
-
-
 ### 2）配置文件
 
 在user-service中，修改application.yml文件，添加服务名称、eureka地址：
@@ -525,13 +418,9 @@ eureka:
       defaultZone: http://127.0.0.1:10086/eureka
 ```
 
-
-
 ### 3）启动多个user-service实例
 
 为了演示一个服务有多个实例的场景，我们添加一个SpringBoot的启动配置，再启动一个user-service。
-
-
 
 首先，复制原来的user-service启动配置：
 
@@ -540,8 +429,6 @@ eureka:
 然后，在弹出的窗口中，填写信息：
 
 ![image-20210713222757702](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713222757702.png)
-
-
 
 现在，SpringBoot窗口会出现两个user-service启动配置：
 
@@ -556,10 +443,6 @@ eureka:
 查看eureka-server管理页面：
 
 ![image-20210713223150650](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713223150650.png)
-
-
-
-
 
 ## 3.4.服务发现
 
@@ -578,8 +461,6 @@ eureka:
 </dependency>
 ```
 
-
-
 ### 2）配置文件
 
 服务发现也需要知道eureka地址，因此第二步与服务注册一致，都是配置eureka信息：
@@ -596,37 +477,25 @@ eureka:
       defaultZone: http://127.0.0.1:10086/eureka
 ```
 
-
-
 ### 3）服务拉取和负载均衡
 
 最后，我们要去eureka-server中拉取user-service服务的实例列表，并且实现负载均衡。
 
 不过这些动作不用我们去做，只需要添加一些注解即可。
 
-
-
 在order-service的OrderApplication中，给RestTemplate这个Bean添加一个@LoadBalanced注解：
 
 ![image-20210713224049419](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224049419.png)
-
-
 
 修改order-service服务中的cn.itcast.order.service包下的OrderService类中的queryOrderById方法。修改访问的url路径，用服务名代替ip、端口：
 
 ![image-20210713224245731](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224245731.png)
 
-
-
 spring会自动帮助我们从eureka-server端，根据userservice这个服务名称，获取实例列表，而后完成负载均衡。
-
-
 
 # 4.Ribbon负载均衡
 
 上一节中，我们添加了@LoadBalanced注解，即可实现负载均衡功能，这是什么原理呢？
-
-
 
 ## 4.1.负载均衡原理
 
@@ -635,8 +504,6 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 ![image-20210713224517686](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224517686.png)
 
 那么我们发出的请求明明是http://userservice/user/1，怎么变成了http://localhost:8081的呢？
-
-
 
 ## 4.2.源码跟踪
 
@@ -658,8 +525,6 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 这里的`this.loadBalancer`是`LoadBalancerClient`类型，我们继续跟入。
 
-
-
 ### 2）LoadBalancerClient
 
 继续跟入execute方法：
@@ -671,21 +536,17 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 - getLoadBalancer(serviceId)：根据服务id获取ILoadBalancer，而ILoadBalancer会拿着服务id去eureka中获取服务列表并保存起来。
 - getServer(loadBalancer)：利用内置的负载均衡算法，从服务列表中选择一个。本例中，可以看到获取了8082端口的服务
 
-
-
 放行后，再次访问并跟踪，发现获取的是8081：
 
- ![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
+![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
 
 果然实现了负载均衡。
-
-
 
 ### 3）负载均衡策略IRule
 
 在刚才的代码中，可以看到获取服务使通过一个`getServer`方法来做负载均衡:
 
- ![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
+![1525620835911](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525620835911.png)
 
 我们继续跟入：
 
@@ -693,29 +554,25 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 继续跟踪源码chooseServer方法，发现这么一段代码：
 
- ![1525622652849](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622652849.png)
+![1525622652849](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622652849.png)
 
 我们看看这个rule是谁：
 
- ![1525622699666](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622699666.png)
+![1525622699666](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622699666.png)
 
 这里的rule默认值是一个`RoundRobinRule`，看类的介绍：
 
- ![1525622754316](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622754316.png)
+![1525622754316](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/1525622754316.png)
 
 这不就是轮询的意思嘛。
 
 到这里，整个负载均衡的流程我们就清楚了。
-
-
 
 ### 4）总结
 
 SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出的请求，对地址做了修改。用一幅图来总结一下：
 
 ![image-20210713224724673](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713224724673.png)
-
-
 
 基本流程如下：
 
@@ -726,11 +583,7 @@ SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出
 - IRule利用内置负载均衡规则，从列表中选择一个，例如localhost:8081
 - RibbonLoadBalancerClient修改请求地址，用localhost:8081替代userservice，得到http://localhost:8081/user/1，发起真实请求
 
-
-
 ## 4.3.负载均衡策略
-
-
 
 ### 4.3.1.负载均衡策略
 
@@ -740,21 +593,17 @@ SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出
 
 不同规则的含义如下：
 
-| **内置负载均衡规则类**    | **规则描述**                                                 |
-| ------------------------- | ------------------------------------------------------------ |
-| RoundRobinRule            | 简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。 |
-| AvailabilityFilteringRule | 对以下两种服务器进行忽略：   （1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。  （2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的<clientName>.<clientConfigNameSpace>.ActiveConnectionsLimit属性进行配置。 |
-| WeightedResponseTimeRule  | 为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。 |
-| **ZoneAvoidanceRule**     | 以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。 |
-| BestAvailableRule         | 忽略那些短路的服务器，并选择并发数较低的服务器。             |
-| RandomRule                | 随机选择一个可用的服务器。                                   |
-| RetryRule                 | 重试机制的选择逻辑                                           |
-
-
+|**内置负载均衡规则类**|**规则描述**|
+| -------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|RoundRobinRule|简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。|
+|AvailabilityFilteringRule|对以下两种服务器进行忽略：   （1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。  （2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的<clientName>.<clientConfigNameSpace>.ActiveConnectionsLimit属性进行配置。|
+|WeightedResponseTimeRule|为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。|
+|**ZoneAvoidanceRule**|以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。|
+|BestAvailableRule|忽略那些短路的服务器，并选择并发数较低的服务器。|
+|RandomRule|随机选择一个可用的服务器。|
+|RetryRule|重试机制的选择逻辑|
 
 默认的实现就是ZoneAvoidanceRule，是一种轮询方案
-
-
 
 ### 4.3.2.自定义负载均衡策略
 
@@ -769,8 +618,6 @@ public IRule randomRule(){
 }
 ```
 
-
-
 2. 配置文件方式：在order-service的application.yml文件中，添加新的配置也可以修改规则：
 
 ```yaml
@@ -779,11 +626,7 @@ userservice: # 给某个微服务配置负载均衡规则，这里是userservice
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 负载均衡规则 
 ```
 
-
-
 > **注意**，一般用默认的负载均衡规则，不做修改。
-
-
 
 ## 4.4.饥饿加载
 
@@ -798,8 +641,6 @@ ribbon:
     clients: userservice
 ```
 
-
-
 # 5.Nacos注册中心
 
 国内公司一般都推崇阿里巴巴的技术，比如注册中心，SpringCloudAlibaba也推出了一个名为Nacos的注册中心。
@@ -810,13 +651,7 @@ ribbon:
 
 ![image-20210713230444308](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713230444308.png)
 
-
-
 安装方式可以参考课前资料《Nacos安装指南.md》
-
-
-
-
 
 ## 5.2.服务注册到nacos
 
@@ -826,8 +661,6 @@ Nacos是SpringCloudAlibaba的组件，而SpringCloudAlibaba也遵循SpringCloud�
 
 - 依赖不同
 - 服务地址不同
-
-
 
 ### 1）引入依赖
 
@@ -852,11 +685,7 @@ Nacos是SpringCloudAlibaba的组件，而SpringCloudAlibaba也遵循SpringCloud�
 </dependency>
 ```
 
-
-
 > **注意**：不要忘了注释掉eureka的依赖。
-
-
 
 ### 2）配置nacos地址
 
@@ -869,19 +698,13 @@ spring:
       server-addr: localhost:8848
 ```
 
-
-
 > **注意**：不要忘了注释掉eureka的地址
-
-
 
 ### 3）重启
 
 重启微服务后，登录nacos管理页面，可以看到微服务信息：
 
 ![image-20210713231439607](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713231439607.png)
-
-
 
 ## 5.3.服务分级存储模型
 
@@ -903,21 +726,13 @@ Nacos就将同一机房内的实例 划分为一个**集群**。
 
 ![image-20210713232522531](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232522531.png)
 
-
-
 微服务互相访问时，应该尽可能访问同集群实例，因为本地访问速度更快。当本集群内不可用时，才访问其它集群。例如：
 
 ![image-20210713232658928](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232658928.png)
 
 杭州机房内的order-service应该优先访问同机房的user-service。
 
-
-
-
-
 ### 5.3.1.给user-service配置集群
-
-
 
 修改user-service的application.yml文件，添加集群配置：
 
@@ -934,8 +749,6 @@ spring:
 
 ![image-20210713232916215](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713232916215.png)
 
-
-
 我们再次复制一个user-service启动配置，添加属性：
 
 ```sh
@@ -946,13 +759,9 @@ spring:
 
 ![image-20210713233528982](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713233528982.png)
 
-
-
 启动UserApplication3后再次查看nacos控制台：
 
 ![image-20210713233727923](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713233727923.png)
-
-
 
 ### 5.3.2.同集群优先的负载均衡
 
@@ -973,8 +782,6 @@ spring:
         cluster-name: HZ # 集群名称
 ```
 
-
-
 2）修改负载均衡规则
 
 修改order-service的application.yml文件，修改负载均衡规则：
@@ -985,8 +792,6 @@ userservice:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则 
 ```
 
-
-
 ## 5.4.权重配置
 
 实际部署中会出现这样的场景：
@@ -995,11 +800,7 @@ userservice:
 
 但默认情况下NacosRule是同集群内随机挑选，不会考虑机器的性能问题。
 
-
-
 因此，Nacos提供了权重配置来控制访问频率，权重越大则访问频率越高。
-
-
 
 在nacos控制台，找到user-service的实例列表，点击编辑，即可修改权重：
 
@@ -1009,13 +810,7 @@ userservice:
 
 ![image-20210713235235219](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713235235219.png)
 
-
-
-
-
 > **注意**：如果权重修改为0，则该实例永远不会被访问
-
-
 
 ## 5.5.环境隔离
 
@@ -1025,11 +820,7 @@ Nacos提供了namespace来实现环境隔离功能。
 - namespace下可以有group、service等
 - 不同namespace之间相互隔离，例如不同namespace的服务互相不可见
 
-
-
 ![image-20210714000101516](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000101516.png)
-
-
 
 ### 5.5.1.创建namespace
 
@@ -1037,13 +828,9 @@ Nacos提供了namespace来实现环境隔离功能。
 
 ![image-20210714000414781](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000414781.png)
 
-
-
 我们可以点击页面新增按钮，添加一个namespace：
 
 ![image-20210714000440143](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000440143.png)
-
-
 
 然后，填写表单：
 
@@ -1052,8 +839,6 @@ Nacos提供了namespace来实现环境隔离功能。
 就能在页面看到一个新的namespace：
 
 ![image-20210714000522913](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000522913.png)
-
-
 
 ### 5.5.2.给微服务配置namespace
 
@@ -1071,13 +856,9 @@ spring:
         namespace: 492a7d5d-237b-46a1-a99a-fa8e98e4b0f9 # 命名空间，填ID
 ```
 
-
-
 重启order-service后，访问控制台，可以看到下面的结果：
 
 ![image-20210714000830703](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000830703.png)
-
-
 
 ![image-20210714000837140](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000837140.png)
 
@@ -1085,17 +866,12 @@ spring:
 
 ![image-20210714000941256](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714000941256.png)
 
-
-
 ## 5.6.Nacos与Eureka的区别
 
 Nacos的服务实例分为两种l类型：
 
 - 临时实例：如果实例宕机超过一定时间，会从服务列表剔除，默认的类型。
-
 - 非临时实例：如果实例宕机，不会从服务列表剔除，也可以叫永久实例。
-
-
 
 配置一个服务实例为永久实例：
 
@@ -1107,27 +883,17 @@ spring:
         ephemeral: false # 设置为非临时实例
 ```
 
-
-
-
-
 Nacos和Eureka整体结构类似，服务注册、服务拉取、心跳等待，但是也存在一些差异：
 
 ![image-20210714001728017](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210714001728017.png)
 
-
-
 - Nacos与eureka的共同点
+
   - 都支持服务注册和服务拉取
   - 都支持服务提供者心跳方式做健康检测
-
 - Nacos与Eureka的区别
+
   - Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
   - 临时实例心跳不正常会被剔除，非临时实例则不会被剔除
   - Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
   - Nacos集群默认采用AP方式，当集群中存在非临时实例时，采用CP模式；Eureka采用AP方式
-
-
-
-
-

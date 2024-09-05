@@ -1,3 +1,4 @@
+# Java基础入门80问
 
 # 1.一个".java"源文件中是否可以包括多个类（不是内部类）？有什么限制？
 
@@ -11,7 +12,7 @@
 
 &和&&都可以用作逻辑与的运算符，表示逻辑与（and），当运算符两边的表达式的结果都为true时，整个运算结果才为true，否则，只要有一方为false，则结果为false。
 
-&&还具有短路的功能，即如果第一个表达式为false，则不再计算第二个表达式，例如，对于if(str != null && !str.equals(“”))表达式，当str为null时，后面的表达式不会执行，所以不会出现NullPointerException如果将&&改为&，则会抛出NullPointerException异常。If(x==33 & ++y>0) y会增长，If(x==33 && ++y>0)不会增长
+&&还具有短路的功能，即如果第一个表达式为false，则不再计算第二个表达式，例如，对于if(str != null && !str.equals(“”))表达式，当str为null时，后面的表达式不会执行，所以不会出现NullPointerException如果将&&改为&，则会抛出NullPointerException异常。If(x==33 &amp; ++y&gt;0) y会增长，If(x==33 && ++y>0)不会增长
 
 &还可以用作位运算符，当&操作符两边的表达式不是boolean类型时，&表示按位与操作，我们通常使用0x0f来与一个整数进行&运算，来获取该整数的最低4个bit位，例如，0x31 & 0x0f的结果为0x01。
 
@@ -28,6 +29,7 @@
         }
     }
 ```
+
 另外，可以不使用标号这种方式，而是让外层的循环条件表达式的结果可以受到里层循环体代码的控制，例如，要在二维数组中查找到某个数字。
 
 ```java
@@ -62,8 +64,6 @@ switch 不支持 long 类型；从 java1.7开始 switch 开始支持 String，�
 
 char型变量是用来存储Unicode编码的字符的，unicode编码字符集中包含了汉字，所以，char型变量中当然可以存储汉字啦。不过，如果某个特殊的汉字没有被包含在unicode编码字符集中，那么，这个char型变量中就不能存储这个特殊汉字。补充说明：unicode编码占用两个字节，所以，char类型的变量也是占用两个字节。
 
-
-
 # 8.用最有效率的方法算出2乘以8等于几?
 
 2 << 3。因为将一个数左移n位，就相当于乘以了2的n次方，那么，一个数乘以8只要将其左移3位即可，而位运算cpu直接支持的，效率最高，所以，2乘以8等於几的最效率的方法是2 << 3。
@@ -80,6 +80,7 @@ char型变量是用来存储Unicode编码的字符的，unicode编码字符集�
     int sum = a + b;
     System.out.println(“a=”+a+”,b=”+b+”,sum=”+sum);
 ```
+
 先不考虑long类型，由于int的正数范围为2的31次方，表示的最大数值约等于2*1000*1000*1000，也就是20亿的大小，所以，要实现一个一百亿的计算器，我们得自己设计一个类可以用于表示很大的整数，并且提供了与另外一个整数进行加减乘除的功能，大概功能如下：
 
 1）这个类内部有两个成员变量，一个表示符号，另一个用字节数组表示数值的二进制数；
@@ -110,6 +111,7 @@ public class BigInteger{
 		}
 }
 ```
+
 备注：要想写出这个类的完整代码，是非常复杂的，如果有兴趣的话，可以参看jdk中自带的java.math.BigInteger类的源码。面试的人也知道谁都不可能在短时间内写出这个类的完整代码的，他要的是你是否有这方面的概念和意识，他最重要的还是考查你的能力，所以，不要因为自己无法写出完整的最终结果就放弃答这道题，能做的就是你比别人写得多，证明你比别人强，有这方面的思想意识就可以了，毕竟别人可能连题目的意思都看不懂，什么都没写，要敢于答这道题，即使只答了一部分，那也与那些什么都不懂的人区别出来，拉开了距离，算是矮子中的高个，机会当然就得到了。另外，答案中的框架代码也很重要，体现了一些面向对象设计的功底，特别是其中的方法命名很专业，用的英文单词很精准，这也是能力、经验、专业性、英语水平等多个方面的体现，会给人留下很好的印象，在编程能力和其他方面条件差不多的情况下，英语好除了可以获得更多机会外，薪水可以高出一千元。
 
 # 10.使用final关键字修饰一个变量时，是引用不能变，还是引用的对象不能变？
@@ -119,23 +121,31 @@ public class BigInteger{
 ```java
 final StringBuffer a=new StringBuffer("immutable");
 ```
+
 执行如下语句将报告编译期错误：
+
 ```java
 a=new StringBuffer("");
 ```
+
 但是，执行如下语句则可以通过编译：
+
 ```java
 a.append(" broken!");
 ```
+
 有人在定义方法的参数时，可能想采用如下形式来阻止方法内部修改传进来的参数对象：
 
 ```java
 public void method(final StringBuffer param){}
 ```
+
 实际上，这是办不到的，在该方法内部仍然可以增加如下代码来修改参数对象：
+
 ```java
 param.append("a");
 ```
+
 # 11."=="和equals方法究竟有什么区别？
 
 ==操作符专门用来比较两个变量的值是否相等，也就是用于比较变量所对应的内存中所存储的数值是否相同，要比较两个基本类型的数据或两个引用变量是否相等，只能用==操作符。
@@ -148,6 +158,7 @@ equals方法是用于比较两个独立对象的内容是否相同，就好比�
 String a=new String("foo");
 String b=new String("foo");
 ```
+
 两条new语句创建了两个对象，然后用a,b这两个变量分别指向了其中一个对象，这是两个不同的对象，它们的首地址是不同的，即a和b中存储的数值是不相同的，所以，表达式a==b将返回false，而这两个对象中的内容是相同的，所以，表达式a.equals(b)将返回true。
 
 在实际开发中，我们经常要比较传递进行来的字符串内容是否等，例如，String input = input.equals(“quit”)，许多人稍不注意就使用==进行比较了，这是错误的，随便从网上找几个项目实战的教学视频看看，里面就有大量这样的错误。记住，字符串的比较基本上都是使用equals方法。
@@ -159,6 +170,7 @@ boolean equals(Object o){
 return this==o;
 }
 ```
+
 这说明，如果一个类没有自己定义equals方法，它默认的equals方法（从Object 类继承的）就是使用==操作符，也是在比较两个变量指向的对象是否是同一对象，这时候使用equals和使用==会得到同样的结果，如果比较的是两个独立的对象则总返回false。如果你编写的类希望能够比较该类创建的两个实例对象的内容是否相同，那么你必须覆盖equals方法，由你自己写代码来决定在什么情况即可认为两个对象的内容是相同的。
 
 # 12.静态变量和实例变量的区别？
@@ -181,6 +193,7 @@ public class VariantTest {
     }
 }
 ```
+
 # 13.是否可以从一个static方法内部发出对非static方法的调用？
 
 不可以。
@@ -205,12 +218,12 @@ Math类中提供了三个与取整有关的方法：ceil、floor、round，这�
 
 说明：如果在修饰的元素上面没有写任何访问修饰符，则表示friendly。
 
-| 作用域     | 当前类 | 同一package | 子孙类 | 其他package |
-|:----------|:------|:-----------|:------|:-----------|
-| public    | √     | √          | √    | √          |
-| protected | √     | √          | √    | ×          |
-| friendly  | √     | √          | ×     | ×          |
-| private   | √     | ×         | ×     | ×          |
+|作用域|当前类|同一package|子孙类|其他package|
+| :--------| :-----| :----------| :-----| :----------|
+|public|√|√|√|√|
+|protected|√|√|√|×|
+|friendly|√|√|×|×|
+|private|√|×|×|×|
 
 备注：只要记住了有4种访问权限，4个访问范围，然后将全选和范围在水平和垂直方向上分别按排从小到大或从大到小的顺序排列，就很容易画出上面的图了。
 
@@ -328,8 +341,6 @@ eclipse下不报错，但应该也不行），但接口中的抽象方法只能�
 
 7）一个类可以实现多个接口，但只能继承一个抽象类。
 
-
-
 下面接着再说说两者在应用上的区别：
 
 接口更多的是在系统架构设计方法发挥作用，主要用于定义模块之间的通信契约。而抽象类在代码实现方面发挥作用，可以实现代码的重用，例如，模板方法设计模式是抽象类的一个典型应用，假设某个项目的所有Servlet类都要用相同的方式进行权限判断、记录访问日志和处理异常，那么就可以定义一个抽象的基类，让所有的Servlet都继承这个抽象基类，在抽象基类的service方法中完成权限判断、记录访问日志和处理异常的代码，在各个子类中只是完成各自的业务逻辑代码，伪代码如下：
@@ -361,6 +372,7 @@ public class MyServlet1 extends BaseServlet {
     }
 }
 ```
+
 父类方法中间的某段代码不确定，留给子类干，就用模板方法设计模式。
 备注：这道题的思路是先从总体解释抽象类和接口的基本概念，然后再比较两者的语法细节，最后再说两者的应用区别。比较两者语法细节区别的条理是：先从一个类中的构造方法、普通成员变量和方法（包括抽象方法），静态变量和方法，继承性等6个方面逐一去比较回答，接着从第三者继承的角度的回答，特别是最后用了一个典型的例子来展现自己深厚的技术功底。
 
@@ -400,12 +412,14 @@ public class Outer {
     }
 }
 ```
+
 在方法体外面定义的内部类的访问类型可以是public,protecte,默认的，private等4种类型，这就好像类中定义的成员变量有4种访问类型一样，它们决定这个内部类的定义对其他类是否可见；对于这种情况，我们也可以在外面创建内部类的实例对象，创建内部类的实例对象时，一定要先创建外部类的实例对象，然后用这个外部类的实例对象去创建内部类的实例对象，代码如下：
 
 ```java
 Outer outer = new Outer();
 Outer.Inner1 inner1 = outer.new Innner1();
 ```
+
 在方法内部定义的内部类前面不能有访问类型修饰符，就好像方法中定义的局部变量一样，但这种内部类的前面可以使用final或abstract修饰符。这种内部类对其他类是不可见的其他类无法引用这种内部类，但是这种内部类创建的实例对象可以传递给其他类访问。这种内部类必须是先定义，后使用，即内部类的定义代码必须出现在使用该类之前，这与方法中的局部变量必须先定义后使用的道理也是一样的。这种内部类可以访问方法体中的局部变量，但是，该局部变量前必须加final修饰符。
 
 对于这些细节，只要在eclipse写代码试试，根据开发工具提示的各类错误信息就可以马上了解到。
@@ -422,11 +436,13 @@ public class Outer {
     }
 }
 ```
+
 最后，在方法外部定义的内部类前面可以加上static关键字，从而成为Static Nested Class，它不再具有内部类的特性，所有，从狭义上讲，它不是内部类。Static Nested Class与普通类在运行时的行为和功能上没有什么区别，只是在编程引用时的语法上有一些差别，它可以定义成public、protected、默认的、private等多种类型，而普通类只能定义成public和默认的这两种类型。在外面引用Static Nested Class类的名称为“外部类名.内部类名”。在外面不需要创建外部类的实例对象，就可以直接创建Static Nested Class，例如，假设Inner是定义在Outer类中的Static Nested Class，那么可以使用如下语句创建Inner类：
 
 ```java
 Outer.Inner inner = new Outer.Inner();
 ```
+
 由于static Nested Class不依赖于外部类的实例对象，所以，static Nested Class能访问外部类的非static成员变量。当在外部类中访问Static Nested Class时，可以直接使用Static Nested Class的名字，而不需要加上外部类的名字了，在Static Nested Class中也可以直接引用外部类的static的成员变量，不需要加上外部类的名字。
 
 在静态方法中定义的内部类也是Static Nested Class，这时候不能在类前面加static关键字，静态方法中的Static Nested Class与普通方法中的内部类的应用方式很相似，它除了可以直接访问外部类中的static的成员变量，还可以访问静态方法中的局部变量，但是，该局部变量前必须加final修饰符。
@@ -450,6 +466,7 @@ class Outer {
     }
 }
 ```
+
 答题时，也要能察言观色，揣摩提问者的心思，显然面试官想知道的是静态内部类不能访问外部类的成员，但如果一上来就顶牛，这不好，要先顺着人家，让人家满意，然后再说特殊情况，让人家吃惊。
 
 # 27.Anonymous Inner Class (匿名内部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?
@@ -473,6 +490,7 @@ public class Test extends Date {
 	}
 }
 ```
+
 很奇怪，结果是Test。
 
 在test方法中，直接调用getClass().getName()方法，返回的是Test类名。由于getClass()在Object类中定义成了final，子类不能覆盖该方法，所以，在test方法中调用getClass().getName()方法，其实就是在调用从父类继承的getClass()方法，等效于调用super.getClass().getName()方法，所以，super.getClass().getName()方法返回的也应该是Test。
@@ -482,6 +500,7 @@ public class Test extends Date {
 ```java
 getClass().getSuperClass().getName();
 ```
+
 # 29.String是最基本的数据类型吗?
 
 基本数据类型包括byte、int、char、long、float、double、boolean和short。
@@ -508,10 +527,13 @@ public Demo {
 ...
 }
 ```
+
 而非
+
 ```java
 s = new String("Initial Value");
 ```
+
 后者每次都会调用构造器，生成新对象，性能低下且内存开销大，并且没有意义，因为String对象不可改变，所以对于内容相同的字符串，只要一个String对象来表示就可以了。也就说，多次调用上面的构造器创建多个对象，他们的String类型属性s都指向同一个对象。
 
 上面的结论还基于这样一个事实：对于字符串常量，如果内容相同，Java认为它们代表同一个String对象。而用关键字new调用构造器，总是会创建一个新的对象，无论内容是否相同。
@@ -539,6 +561,7 @@ for(int i=0;i<100;i++)
 	sbf.append(i);
 }
 ```
+
 上面的代码效率很高，因为只创建了一个StringBuffer对象，而下面的代码效率很低，因为创建了101个对象。
 
 ```java
@@ -548,6 +571,7 @@ for(int i=0;i<100;i++)
 	str = str + i;
 }
 ```
+
 在讲两者区别时，应把循环的次数搞成10000，然后用endTime-beginTime来比较两者执行的时间差异，最后还要讲讲StringBuilder与StringBuffer的区别。
 
 String覆盖了equals方法和hashCode方法，而StringBuffer没有覆盖equals方法和hashCode方法，所以，将StringBuffer对象存储进Java集合类中时会出现问题。
@@ -559,13 +583,16 @@ String覆盖了equals方法和hashCode方法，而StringBuffer没有覆盖equals
 ```java
 String [] result = orgStr.split(",");
 ```
+
 2）用 StringTokenizer ,代码为：
+
 ```java
 StringTokenizer tokener = StringTokenizer(orgStr,",");
 String [] result = new String[tokener .countTokens()];
 Int i=0;
 while(tokener.hasNext(){result[i++]=toker.nextToken();}
 ```
+
 # 35.数组有没有length()这个方法? String有没有length()这个方法？
 
 数组没有length()这个方法，有length的属性。String有有length()这个方法。
@@ -581,6 +608,7 @@ String s3 = "a" + "b";
 System.out.println(s2 == "ab");
 System.out.println(s3 == "ab");
 ```
+
 第一条语句打印的结果为false，第二条语句打印的结果为true，这说明javac编译可以对字符串常量直接相加的表达式进行优化，不必要等到运行期去进行加法运算处理，而是在编译时去掉其中的加号，直接将其编译成一个这些常量相连的结果。
 
 题目中的第一行代码被编译器在编译时优化后，相当于直接定义了一个”abcd”的字符串，所以，上面的代码应该只创建了一个String对象。写如下两行代码，
@@ -589,6 +617,7 @@ System.out.println(s3 == "ab");
 String s = "a" + "b" + "c" + "d";
 System.out.println(s == "abcd");
 ```
+
 最终打印的结果应该为true。
 
 # 37.try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?
@@ -612,6 +641,7 @@ public class Test {
     }
 }
 ```
+
 ---------执行结果 ---------
 
 1
@@ -637,6 +667,7 @@ public class SmallT {
     }
 }
 ```
+
 返回的结果是2。
 
 从下面例子的运行结果中可以发现，try中的return语句调用的函数先于finally中调用的函数执行，也就是说return语句先执行，finally语句后执行，所以，返回的结果是2。Return并不是让函数马上返回，而是return语句执行后，将把返回结果放置进函数栈中，此时函数并不是马上返回，它要执行finally语句后才真正开始返回。
@@ -671,6 +702,7 @@ public class Test {
     }
 }
 ```
+
 -----------执行结果-----------------
 func1
 
@@ -726,6 +758,7 @@ new Thread(){
 	}
 }.start();
 ```
+
 第二种：
 
 new Thread(new Runnable(){}).start();这表示调用Thread对象接受的Runnable对象的run方法，new Runnable(){}表示一个Runnable的匿名子类的实例对象,runnable的子类加上run方法后的代码如下：
@@ -737,6 +770,7 @@ new Thread(new Runnable(){
 		}
 	).start();
 ```
+
 从java5开始，还有如下一些线程池创建多线程的方式：
 
 ```java
@@ -748,6 +782,7 @@ for(int i=0;i<10;i++)
 Executors.newCachedThreadPool().execute(new Runable(){public void run(){}});
 Executors.newSingleThreadExecutor().execute(new Runable(){public void run(){}});
 ```
+
 有两种实现方法，分别使用new Thread()和new Thread(runnable)形式，第一种直接调用thread的run方法，所以，我们往往使用Thread子类，即new SubThread()。第二种调用runnable的run方法。
 
 有两种实现方法，分别是继承Thread类与实现Runnable接口，用synchronized关键字修饰同步方法。反对使用stop()，是因为它不安全。它会解除由线程获取的所有锁定，而且如果对象处于一种不连贯状态，那么其他线程能在那种状态下检查和修改它们。结果很难检查出真正的问题所在。suspend()方法容易发生死锁。调用suspend()的时候，目标线程会停下来，但却仍然持有在这之前获得的锁定。此时，其他任何线程都不能访问锁定的资源，除非被"挂起"的线程恢复运行。对任何线程来说，如果它们想恢复目标线程，同时又试图使用任何一个锁定的资源，就会造成死锁。所以不应该使用suspend()，而应在自己的Thread类中置入一个标志，指出线程应该活动还是挂起。若标志指出线程应该挂起，便用wait()命其进入等待状态。若标志指出线程应当恢复，则用一个notify()重新启动线程。
@@ -810,6 +845,7 @@ public class MultiThread {
     }
 }
 ```
+
 # 46.同步和异步有何异同，在什么情况下分别使用他们？举例说明。
 
 如果数据将在线程间共享。例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就是共享数据，必须进行同步存取。
@@ -859,8 +895,6 @@ Allnotity():唤醒所有处入等待状态的线程，注意并不是给所有�
 主要相同点：Lock能完成synchronized所实现的所有功能。
 
 主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。Lock还有更强大的功能，例如，它的tryLock方法可以非阻塞方式去拿锁。
-
-
 
 举例说明（对下面的题用lock进行了改写）：
 
@@ -918,6 +952,7 @@ public class ThreadTest {
     }
 }
 ```
+
 # 52.设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。
 
 以下程序使用内部类实现线程，对j增减的时候没有考虑顺序问题。
@@ -961,6 +996,7 @@ class Dec implements Runnable{
 }
 }
 ```
+
 ----------随手再写的一个-------------
 
 ```java
@@ -998,6 +1034,7 @@ class JManager
 	
 }
 ```
+
 # 53.子线程循环10次，接着主线程循环100，接着又回到子线程循环10次，接着再回到主线程又循环100，如此循环50次，请写出程序。
 
 最终的程序代码如下：
@@ -1071,6 +1108,7 @@ public class ThreadTest {
 	}
 }
 ```
+
 备注：不可能一上来就写出上面的完整代码，最初写出来的代码如下，问题在于两个线程的代码要参照同一个变量，即这两个线程的代码要共享数据，所以，把这两个线程的执行代码搬到同一个类中去：
 
 ```java
@@ -1148,7 +1186,9 @@ public class ThreadTest {
 	}
 }
 ```
+
 下面使用jdk5中的并发库来实现的：
+
 ```java
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
@@ -1215,6 +1255,7 @@ public class ThreadTest
 	}
 }
 ```
+
 # 54.Collection框架中实现比较要实现什么接口
 
 comparable/comparator
@@ -1298,10 +1339,13 @@ Object obj = vector.get(i);
 		newVector.add(obj);
 }
 ```
+
 还有一种简单的方式
+
 ```java
 HashSet set = new HashSet(vector);
 ```
+
 # 62.Collection 和 Collections的区别。
 
 Collection是集合类的上级接口，继承与他的接口主要有Set 和List。
@@ -1374,6 +1418,7 @@ public class TreeSetTest {
 	}
 }
 ```
+
 # 67.说出一些常用的类，包，接口，请各举5个。
 
 要让人家感觉你对java ee开发很熟，所以，不能仅仅只列core java中的那些东西，要多列你在做ssh项目中涉及的那些东西，就写你最近写的那些程序中涉及的那些类。
@@ -1447,6 +1492,7 @@ public class IOTest {
 	}
 }
 ```
+
 # 70.什么是java序列化，如何实现java序列化？或者请解释Serializable接口的作用。
 
 我们有时候将一个java对象变成字节流的形式传出去或者从一个字节流中恢复成一个java对象，例如，要将java对象存储到硬盘或者传送给网络上的其他计算机，这个过程我们可以自己写代码去把一个java对象变成某个格式的字节流再传输，但是，jre本身就提供了这种支持，我们可以调用OutputStream的writeObject方法来做，如果要让java 帮我们做，要被传输的对象必须实现serializable接口，这样，javac编译时就会进行特殊处理，编译的类才可以被writeObject方法操作，这就是所谓的序列化。需要被序列化的类必须实现Serializable接口，该接口是一个mini接口，其中没有需要实现的方法，implements Serializable只是为了标注该对象是可被序列化的。
@@ -1475,8 +1521,6 @@ Java语言中一个显著的特点就是引入了垃圾回收机制，使c++程�
 
 对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是“可达的”，哪些对象是“不可达的”。当GC确定一些对象为“不可达”时，GC就有责任回收这些内存空间。可以。程序员可以手动执行System.gc()，通知GC运行，但是Java语言规范并不保证GC一定会执行。
 
-
-
 # 76.什么时候用assert。
 
 assertion(断言)在软件开发中是一种常用的调试方式，很多开发语言中都支持这种机制。在实现中，assertion就是在程序中的一条语句，它对一个boolean表达式进行检查，一个正确程序必须保证这个boolean表达式的值为true；如果该值为false，说明程序已经处于不正确的状态下，assert将给出警告或退出。一般来说，assertion用于保证程序最基本、关键的正确性。
@@ -1502,6 +1546,7 @@ public class AssertTest {
 	}
 }
 ```
+
 # 77.java中会存在内存泄漏吗，请简单描述。
 
 所谓内存泄露就是指一个不再被程序使用的对象或变量一直被占据在内存中。java中有垃圾回收机制，它可以保证一对象不再被引用的时候，即对象编程了孤儿的时候，对象将自动被垃圾回收器从内存中清除掉。由于Java 使用有向图的方式进行垃圾回收管理，可以消除引用循环的问题，例如有两个对象，相互引用，只要它们和根进程不可达的，那么GC也是可以回收它们的，例如下面的代码可以看到这种情况的内存回收：
@@ -1559,6 +1604,7 @@ public class GarbageTest {
 	}
 }
 ```
+
 Java中的内存泄露的情况：长生命周期的对象持有短生命周期对象的引用就很可能发生内存泄露，尽管短生命周期对象已经不再需要，但是因为长生命周期对象持有它的引用而导致不能被回收，这就是Java中内存泄露的发生场景，通俗地说，就是程序员可能创建了一个对象，以后一直不再使用这个对象，这个对象却一直被引用，即这个对象无用但是却无法被垃圾回收器回收的，这就是Java中可能出现内存泄露的情况，例如，缓存系统，我们加载了一个对象放在缓存中(例如放在一个全局map对象中)，然后一直不再使用它，这个对象一直被缓存引用，但却不再被使用。
 
 检查Java中的内存泄露，一定要让程序将各种分支情况都完整执行到程序结束，然后看某个对象是否被使用过，如果没有，则才能判定这个对象属于内存泄露。
@@ -1589,6 +1635,7 @@ public class Stack {
     }
 }
 ```
+
 上面的原理应该很简单，假如堆栈加了10个元素，然后全部弹出来，虽然堆栈是空的，没有我们要的东西，但是这是个对象是无法回收的，这个才符合了内存泄露的两个条件：无用，无法回收。
 但是就是存在这样的东西也不一定会导致什么样的后果，如果这个堆栈用的比较少，也就浪费了几个K内存而已，反正我们的内存都上G了，哪里会有什么影响，再说这个东西很快就会被回收的，有什么关系。
 
@@ -1604,6 +1651,7 @@ public class Bad{
     }
 }
 ```
+
 因为是static，就一直存在到程序退出，但是我们也可以看到它有自愈功能，就是说如果你的Stack最多有100个对象，那么最多也就只有100个对象无法被回收其实这个应该很容易理解，Stack内部持有100个引用，最坏的情况就是他们都是无用的，因为我们一旦放新的进取，以前的引用自然消失！
 
 内存泄露的另外一种情况：当一个对象被存储进HashSet集合中以后，就不能修改这个对象中的那些参与计算哈希值的字段了，否则，对象修改后的哈希值与最初存储进HashSet集合中时的哈希值就不同了，在这种情况下，即使在contains方法使用该对象的当前引用作为的参数去HashSet集合中检索对象，也将返回找不到对象的结果，这也会导致无法从HashSet集合中单独删除当前对象，造成内存泄露。
@@ -1626,6 +1674,7 @@ public class String {
 	}
 }
 ```
+
 报告的错误如下：
 java.lang.NoSuchMethodError: main
 
@@ -1653,6 +1702,7 @@ abstract class Name {
     public abstract boolean isStupidName(String name) {}
 }
 ```
+
 这有何错误?
 答案: 错。abstract method必须以分号结尾，且不带花括号。
 
@@ -1666,6 +1716,7 @@ public class Something {
     }
 }
 ```
+
 有错吗?
 答案: 错。局部变量前不能放置任何访问修饰符 (private，public，和protected)。final可以用来修饰局部变量(final如同abstract和strictfp，都是非访问修饰符，strictfp只能修饰class和method而非variable)。
 
@@ -1676,6 +1727,7 @@ abstract class Something {
     private abstract String doSomething ();
 }
 ```
+
 这好像没什么错吧?
 答案: 错。abstract的methods不能以private修饰。abstract的methods就是让子类implement(实现)具体细节的，怎么可以用private把abstract method封锁起来呢? (同理，abstract method前不能加final)。
 
@@ -1688,6 +1740,7 @@ public class Something {
     }
 }
 ```
+
 这个比较明显。
 答案: 错。int x被修饰成final，意味着x不能在addOne method中被修改。
 
@@ -1707,6 +1760,7 @@ class Other {
     public int i;
 }
 ```
+
 和上面的很相似，都是关于final的问题，这有错吗?
 答案: 正确。在addOne method中，参数o被修饰成final。如果在addOne method里我们修改了o的reference(比如: o = new Other();)，那么如同上例这题也是错的。但这里修改的是o的member vairable(成员变量)，而o的reference并没有改变。
 
@@ -1720,6 +1774,7 @@ class Something {
     }
 }
 ```
+
 有什么错呢? 看不出来啊。
 答案: 正确。输出的是"i = 0"。int i属於instant variable (实例变量，或叫成员变量)。instant variable有default value。int的default value是0。
 
@@ -1733,6 +1788,7 @@ class Something {
     }
 }
 ```
+
 和上面一题只有一个地方不同，就是多了一个final。这难道就错了吗?
 答案: 错。final int i是个final的instant variable (实例变量，或叫成员变量)。final的instant variable没有default value，必须在constructor (构造器)结束之前被赋予一个明确的值。可以修改为“final int i = 0;”。
 
@@ -1749,6 +1805,7 @@ public class Something {
     }
 }
 ```
+
 看上去很完美。
 答案: 错。看上去在main里call doSomething没有什么问题，毕竟两个methods都在同一个class里。但仔细看，main是static的。static method不能直接call non-static methods。可改成"System.out.println("s.doSomething() returns " + s.doSomething());"。同理，static method不能访问non-static instant variable。
 
@@ -1763,6 +1820,7 @@ class Something {
     }
 }
 ```
+
 这个好像很明显。
 答案: 正确。从来没有人说过Java的Class名字必须和其文件名相同。但public class的名字必须和文件名相同。
 
@@ -1784,6 +1842,7 @@ class C extends B implements A {
     }
 }
 ```
+
 答案：错误。在编译时会发生错误(错误描述不同的JVM有不同的信息，意思就是未明确的x调用，两个x都匹配（就象在同时import java.util和java.sql两个包时直接声明Date一样）。对于父类的变量,可以用super.x来明确，而接口的属性默认隐含为 public static final.所以可以通过A.x来明确。
 11）
 
@@ -1811,6 +1870,7 @@ class Ball implements Rollable {
     }
 }
 ```
+
 这个错误不容易发现。
 答案: 错。
 
@@ -1819,9 +1879,10 @@ class Ball implements Rollable {
 因此编译器将在"ball = new Ball("Football");"这里显示有错。
 
 # 公众号
-**`Github` 上所有的文章我都会首发在微信公众号『爱笑的架构师』，大家可以关注一下，定时推送技术干货~**
 
+**​`Github`​**​ ** 上所有的文章我都会首发在微信公众号『爱笑的架构师』，大家可以关注一下，定时推送技术干货~**
+
+<div>
 <div align="center">
     <img src="https://cdn.jsdelivr.net/gh/smileArchitect/assets@main/202012/20201205221844.png"></img>
 </div>
-

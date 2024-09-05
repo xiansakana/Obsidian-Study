@@ -1,26 +1,24 @@
+# 高级篇day01-Jmeter快速入门
+
 ---
+
 title: itheima-Microservice 高级篇day01-Jmeter快速入门
 tags:
-  - itheima
-  - 微服务
-  - Jmeter
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201194.png'
-abbrlink: f9ad4dd6
+
+- itheima
+- 微服务
+- Jmeter
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292201194.png'
+  abbrlink: f9ad4dd6
+
 ---
+
 # Jmeter快速入门
-
-
-
-
-
-
 
 # 1.安装Jmeter
 
 Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，并且配置了环境变量。
-
-
 
 ## 1.1.下载
 
@@ -28,13 +26,9 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 ![image-20210715193149837](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193149837.png)
 
-
-
 当然，我们课前资料也提供了下载好的安装包：
 
 ![image-20210715193224094](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193224094.png)
-
-
 
 ## 1.2.解压
 
@@ -55,11 +49,7 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 ![image-20210715193730096](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193730096.png)
 
-
-
 # 2.快速入门
-
-
 
 ## 2.1.设置中文语言
 
@@ -71,11 +61,7 @@ Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，�
 
 ![image-20210715193914039](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715193914039.png)
 
-
-
 > **注意**：上面的配置只能保证本次运行是中文，如果要永久中文，需要修改Jmeter的配置文件
-
-
 
 打开jmeter文件夹，在bin目录中找到 **jmeter.properties**，添加下面配置：
 
@@ -85,13 +71,7 @@ language=zh_CN
 
 ![image-20210715194137982](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715194137982.png)
 
-
-
 > 注意：前面不要出现#，#代表注释，另外这里是下划线，不是中划线
-
-
-
-
 
 ## 2.2.基本用法
 
@@ -103,19 +83,13 @@ language=zh_CN
 
 ![image-20210715195053807](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195053807.png)
 
-
-
 给线程组点鼠标右键，添加http取样器：
 
 ![image-20210715195144130](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195144130.png)
 
-
-
 编写取样器内容：
 
 ![image-20210715195410764](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715195410764.png)
-
-
 
 添加监听报告：
 
@@ -125,8 +99,6 @@ language=zh_CN
 
 ![image-20210715200155537](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200155537.png)
 
-
-
 汇总报告结果：
 
 ![image-20210715200243194](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200243194.png)
@@ -134,4 +106,3 @@ language=zh_CN
 结果树：
 
 ![image-20210715200336526](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715200336526.png)
-

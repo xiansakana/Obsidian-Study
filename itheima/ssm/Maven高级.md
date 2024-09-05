@@ -1,12 +1,17 @@
+# Maven高级
+
 ---
+
 title: itheima-SSM Maven高级
 tags:
-  - itheima
-  - Maven
-  - SpringBoot
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg
-abbrlink: 21afdd51
+
+- itheima
+- Maven
+- SpringBoot
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192130933.jpg
+  abbrlink: 21afdd51
+
 ---
 
 # Maven高级
@@ -79,7 +84,7 @@ abbrlink: 21afdd51
 
 ![1630771505703](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630771505703.png)
 
-**说明:**出错的原因是`maven_02_ssm`中已经将Book类删除，所以该项目找不到Book类，所以报错
+**说明:** 出错的原因是`maven_02_ssm`中已经将Book类删除，所以该项目找不到Book类，所以报错
 
 要想解决上述问题，我们需要在`maven_02_ssm`中添加`maven_03_pojo`的依赖。
 
@@ -121,7 +126,7 @@ abbrlink: 21afdd51
 
 ![1630773262441](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630773262441.png)
 
-**说明:**具体安装在哪里，和你们自己电脑上Maven的本地仓库配置的位置有关。
+**说明:** 具体安装在哪里，和你们自己电脑上Maven的本地仓库配置的位置有关。
 
 当再次执行`maven_02_ssm`的compile的命令后，就已经能够成功编译。
 
@@ -156,7 +161,6 @@ abbrlink: 21afdd51
         </dependency>
     </dependencies>
     ```
-
 * 项目`maven_04_dao`的BookDao接口中，Mybatis的增删改查注解报错
 
   * 解决方案在`maven_04_dao`项目的pom.xml中添加`mybatis`的相关依赖
@@ -168,7 +172,7 @@ abbrlink: 21afdd51
             <artifactId>mybatis</artifactId>
             <version>3.5.6</version>
         </dependency>
-    
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -264,7 +268,7 @@ abbrlink: 21afdd51
 
 ![](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630818930387.png)
 
-在项目所依赖的这些jar包中，有一个比较大的区别就是**有的依赖前面有箭头`>`,有的依赖前面没有。**
+在项目所依赖的这些jar包中，有一个比较大的区别就是**有的依赖前面有箭头**​ **​`>`​**​ **,有的依赖前面没有。**
 
 那么这个箭头所代表的含义是什么?
 
@@ -288,7 +292,7 @@ abbrlink: 21afdd51
 
 ![1630853726532](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630853726532.png)
 
-**说明:**A代表自己的项目；B,C,D,E,F,G代表的是项目所依赖的jar包；D1和D2 E1和E2代表是相同jar包的不同版本
+**说明:** A代表自己的项目；B,C,D,E,F,G代表的是项目所依赖的jar包；D1和D2 E1和E2代表是相同jar包的不同版本
 
 (1) A依赖了B和C,B和C有分别依赖了其他jar包，所以在A项目中就可以使用上面所有jar包，这就是所说的依赖传递
 
@@ -361,7 +365,7 @@ abbrlink: 21afdd51
 * 因为现在有依赖传递，所以maven_02_ssm能够使用到maven_03_pojo的内容
 * 如果说现在不想让maven_02_ssm依赖到maven_03_pojo，有哪些解决方案?
 
-**说明:**在真实使用的过程中，maven_02_ssm中是需要用到maven_03_pojo的，我们这里只是用这个例子描述我们的需求。因为有时候，maven_04_dao出于某些因素的考虑，就是不想让别人使用自己所依赖的maven_03_pojo。
+**说明:** 在真实使用的过程中，maven_02_ssm中是需要用到maven_03_pojo的，我们这里只是用这个例子描述我们的需求。因为有时候，maven_04_dao出于某些因素的考虑，就是不想让别人使用自己所依赖的maven_03_pojo。
 
 ## 方案一:可选依赖
 
@@ -480,7 +484,7 @@ abbrlink: 21afdd51
 </project>
 ```
 
-**说明:**项目的打包方式，我们接触到的有三种，分别是
+**说明:** 项目的打包方式，我们接触到的有三种，分别是
 
 * jar:默认情况，说明该项目为java项目
 * war:说明该项目为web项目
@@ -515,7 +519,7 @@ abbrlink: 21afdd51
 
 测试发现，当`maven_01_parent`的`compile`被点击后，所有被其管理的项目都会被执行编译操作。这就是聚合工程的作用。
 
-**说明：**聚合工程管理的项目在进行运行的时候，会按照项目与项目之间的依赖关系来自动决定执行的顺序和配置的顺序无关。
+**说明：** 聚合工程管理的项目在进行运行的时候，会按照项目与项目之间的依赖关系来自动决定执行的顺序和配置的顺序无关。
 
 聚合的知识我们就讲解完了，最后总结一句话就是，**聚合工程主要是用来管理项目**。
 
@@ -831,7 +835,6 @@ abbrlink: 21afdd51
   ```xml
   <packaging>pom</packaging>
   ```
-
 * 在父工程的pom文件中配置依赖关系(子工程将沿用父工程中的依赖关系),一般只抽取子项目中公有的jar包
 
   ```xml
@@ -844,7 +847,6 @@ abbrlink: 21afdd51
       ...
   </dependencies>
   ```
-
 * 在父工程中配置子工程中可选的依赖关系
 
   ```xml
@@ -859,7 +861,6 @@ abbrlink: 21afdd51
       ...
   </dependencyManagement>
   ```
-
 * 在子工程中配置当前工程所继承的父工程
 
   ```xml
@@ -872,7 +873,6 @@ abbrlink: 21afdd51
       <relativePath>../maven_01_parent/pom.xml</relativePath>
   </parent>
   ```
-
 * 在子工程中配置使用父工程中可选依赖的坐标
 
   ```xml
@@ -1041,13 +1041,11 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 </build>
 ```
 
-**说明:**directory路径前要添加`../`的原因是maven_02_ssm相对于父工程的pom.xml路径是在其上一层的目录中，所以需要添加。
+**说明:** directory路径前要添加`../`的原因是maven_02_ssm相对于父工程的pom.xml路径是在其上一层的目录中，所以需要添加。
 
 修改完后，注意maven_02_ssm项目的resources目录就多了些东西，如下:
 
 ![1630977419627](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630977419627.png)
-
-
 
 ### 步骤4:测试是否生效
 
@@ -1095,7 +1093,7 @@ Maven在默认情况下是从当前项目的`src\main\resources`下读取文件�
 </build>
 ```
 
-**说明:**打包的过程中如果报如下错误:
+**说明:** 打包的过程中如果报如下错误:
 
 ![1630948929828](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630948929828.png)
 
@@ -1303,7 +1301,6 @@ maven提供配置多种环境的设定，帮助开发者在使用过程中快速
       ...
   </profiles>
   ```
-
 * 使用多环境(构建过程)
 
   ```
@@ -1501,17 +1498,17 @@ http://localhost:8081
 
 所有私服仓库总共分为三大类:
 
-宿主仓库hosted 
+宿主仓库hosted
 
 - 保存无法从中央仓库获取的资源
   - 自主研发
   - 第三方非开源项目,比如Oracle,因为是付费产品，所以中央仓库没有
 
-代理仓库proxy 
+代理仓库proxy
 
 - 代理远程仓库，通过nexus访问其他公共仓库，例如中央仓库
 
-仓库组group 
+仓库组group
 
 - 将若干个仓库组成一个群组，简化配置
 - 仓库组不能保存资源，属于设计型仓库

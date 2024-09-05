@@ -1,5 +1,7 @@
 # Redis原理篇
 
+# Redis原理篇
+
 ## 1、原理篇-Redis数据结构
 
 ### 1.1 Redis数据结构-动态字符串
@@ -38,8 +40,6 @@ SDS之所以叫做动态字符串，是因为它具备动态扩容的能力，�
 ![1653984822363](https://cdn.jsdelivr.net/npm/redis-itheima/1653984822363.png)
 
 ![1653984838306](https://cdn.jsdelivr.net/npm/redis-itheima/1653984838306.png)
-
-
 
 ### 1.2 Redis数据结构-intset
 
@@ -122,9 +122,9 @@ Dict在每次新增键值对时都会检查负载因子（LoadFactor = used/size
 不管是扩容还是收缩，必定会创建新的哈希表，导致哈希表的size和sizemask变化，而key的查询与sizemask有关。因此必须对哈希表中的每一个key重新计算索引，插入新的哈希表，这个过程称为rehash。过程是这样的：
 
 * 计算新hash表的realeSize，值取决于当前要做的是扩容还是收缩：
+
   * 如果是扩容，则新size为第一个大于等于dict.ht[0].used + 1的2^n
   * 如果是收缩，则新size为第一个大于等于dict.ht[0].used的2^n （不得小于4）
-
 * 按照新的realeSize申请内存空间，创建dictht，并赋值给dict.ht[1]
 * 设置dict.rehashidx = 0，标示开始rehash
 * 将dict.ht[0]中的每一个dictEntry都rehash到dict.ht[1]
@@ -160,13 +160,13 @@ ZipList 是一种特殊的“双端链表” ，由一系列特殊编码的连�
 
 ![1653986020491](https://cdn.jsdelivr.net/npm/redis-itheima/1653986020491.png)
 
-| **属性** | **类型** | **长度** | **用途**                                                     |
-| -------- | -------- | -------- | ------------------------------------------------------------ |
-| zlbytes  | uint32_t | 4 字节   | 记录整个压缩列表占用的内存字节数                             |
-| zltail   | uint32_t | 4 字节   | 记录压缩列表表尾节点距离压缩列表的起始地址有多少字节，通过这个偏移量，可以确定表尾节点的地址。 |
-| zllen    | uint16_t | 2 字节   | 记录了压缩列表包含的节点数量。 最大值为UINT16_MAX （65534），如果超过这个值，此处会记录为65535，但节点的真实数量需要遍历整个压缩列表才能计算得出。 |
-| entry    | 列表节点 | 不定     | 压缩列表包含的各个节点，节点的长度由节点保存的内容决定。     |
-| zlend    | uint8_t  | 1 字节   | 特殊值 0xFF （十进制 255 ），用于标记压缩列表的末端。        |
+|**属性**|**类型**|**长度**|**用途**|
+| -------| --------| ------| --------------------------------------------------------------------------------------------------------------------------------------------------|
+|zlbytes|uint32_t|4 字节|记录整个压缩列表占用的内存字节数|
+|zltail|uint32_t|4 字节|记录压缩列表表尾节点距离压缩列表的起始地址有多少字节，通过这个偏移量，可以确定表尾节点的地址。|
+|zllen|uint16_t|2 字节|记录了压缩列表包含的节点数量。 最大值为UINT16_MAX （65534），如果超过这个值，此处会记录为65535，但节点的真实数量需要遍历整个压缩列表才能计算得出。|
+|entry|列表节点|不定|压缩列表包含的各个节点，节点的长度由节点保存的内容决定。|
+|zlend|uint8_t|1 字节|特殊值 0xFF （十进制 255 ），用于标记压缩列表的末端。|
 
 **ZipListEntry**
 
@@ -175,9 +175,9 @@ ZipList 中的Entry并不像普通链表那样记录前后节点的指针，因�
 ![1653986055253](https://cdn.jsdelivr.net/npm/redis-itheima/1653986055253.png)
 
 * previous_entry_length：前一节点的长度，占1个或5个字节。
+
   * 如果前一节点的长度小于254字节，则采用1个字节来保存这个长度值
   * 如果前一节点的长度大于254字节，则采用5个字节来保存这个长度值，第一个字节为0xfe，后四个字节才是真实长度数据
-
 * encoding：编码属性，记录content的数据类型（字符串还是整数）以及长度，占用1个、2个或5个字节
 * contents：负责保存节点的数据，可以是字符串或整数
 
@@ -188,34 +188,32 @@ ZipList中所有存储长度的数值均采用小端字节序，即低位字节�
 ZipListEntry中的encoding编码分为字符串和整数两种：
 字符串：如果encoding是以“00”、“01”或者“10”开头，则证明content是字符串
 
-| **编码**                                             | **编码长度** | **字符串大小**      |
-| ---------------------------------------------------- | ------------ | ------------------- |
-| \|00pppppp\|                                         | 1 bytes      | <= 63 bytes         |
-| \|01pppppp\|qqqqqqqq\|                               | 2 bytes      | <= 16383 bytes      |
-| \|10000000\|qqqqqqqq\|rrrrrrrr\|ssssssss\|tttttttt\| | 5 bytes      | <= 4294967295 bytes |
+|**编码**|**编码长度**|**字符串大小**|
+| ----------------------------------------------| -------| -------------------|
+|\|00pppppp\||1 bytes|<= 63 bytes|
+|\|01pppppp\|qqqqqqqq\||2 bytes|<= 16383 bytes|
+|\|10000000\|qqqqqqqq\|rrrrrrrr\|ssssssss\|tttttttt\||5 bytes|<= 4294967295 bytes|
 
 例如，我们要保存字符串：“ab”和 “bc”
 
 ![1653986172002](https://cdn.jsdelivr.net/npm/redis-itheima/1653986172002.png)
 
- ZipListEntry中的encoding编码分为字符串和整数两种：
+ZipListEntry中的encoding编码分为字符串和整数两种：
 
 * 整数：如果encoding是以“11”开始，则证明content是整数，且encoding固定只占用1个字节
 
-| **编码** | **编码长度** | **整数类型**                                               |
-| -------- | ------------ | ---------------------------------------------------------- |
-| 11000000 | 1            | int16_t（2 bytes）                                         |
-| 11010000 | 1            | int32_t（4 bytes）                                         |
-| 11100000 | 1            | int64_t（8 bytes）                                         |
-| 11110000 | 1            | 24位有符整数(3 bytes)                                      |
-| 11111110 | 1            | 8位有符整数(1 bytes)                                       |
-| 1111xxxx | 1            | 直接在xxxx位置保存数值，范围从0001~1101，减1后结果为实际值 |
+|**编码**|**编码长度**|**整数类型**|
+| --------| -| ----------------------------------------------------------|
+|11000000|1|int16_t（2 bytes）|
+|11010000|1|int32_t（4 bytes）|
+|11100000|1|int64_t（8 bytes）|
+|11110000|1|24位有符整数(3 bytes)|
+|11111110|1|8位有符整数(1 bytes)|
+|1111xxxx|1|直接在xxxx位置保存数值，范围从0001~1101，减1后结果为实际值|
 
 ![1653986282879](https://cdn.jsdelivr.net/npm/redis-itheima/1653986282879.png)
 
 ![1653986217182](https://cdn.jsdelivr.net/npm/redis-itheima/1653986217182.png)
-
-
 
 ### 1.5 Redis数据结构-ZipList的连锁更新问题
 
@@ -275,8 +273,6 @@ ZipList这种特殊情况下产生的连续多次空间扩展操作称之为连�
 
 ![1653986718554](https://cdn.jsdelivr.net/npm/redis-itheima/1653986718554.png)
 
-
-
 总结：
 
 QuickList的特点：
@@ -331,31 +327,31 @@ Redis的编码方式
 
 Redis中会根据存储的数据类型不同，选择不同的编码方式，共包含11种不同类型：
 
-| **编号** | **编码方式**            | **说明**               |
-| -------- | ----------------------- | ---------------------- |
-| 0        | OBJ_ENCODING_RAW        | raw编码动态字符串      |
-| 1        | OBJ_ENCODING_INT        | long类型的整数的字符串 |
-| 2        | OBJ_ENCODING_HT         | hash表（字典dict）     |
-| 3        | OBJ_ENCODING_ZIPMAP     | 已废弃                 |
-| 4        | OBJ_ENCODING_LINKEDLIST | 双端链表               |
-| 5        | OBJ_ENCODING_ZIPLIST    | 压缩列表               |
-| 6        | OBJ_ENCODING_INTSET     | 整数集合               |
-| 7        | OBJ_ENCODING_SKIPLIST   | 跳表                   |
-| 8        | OBJ_ENCODING_EMBSTR     | embstr的动态字符串     |
-| 9        | OBJ_ENCODING_QUICKLIST  | 快速列表               |
-| 10       | OBJ_ENCODING_STREAM     | Stream流               |
+|**编号**|**编码方式**|**说明**|
+| --| -----------------------| ----------------------|
+|0|OBJ_ENCODING_RAW|raw编码动态字符串|
+|1|OBJ_ENCODING_INT|long类型的整数的字符串|
+|2|OBJ_ENCODING_HT|hash表（字典dict）|
+|3|OBJ_ENCODING_ZIPMAP|已废弃|
+|4|OBJ_ENCODING_LINKEDLIST|双端链表|
+|5|OBJ_ENCODING_ZIPLIST|压缩列表|
+|6|OBJ_ENCODING_INTSET|整数集合|
+|7|OBJ_ENCODING_SKIPLIST|跳表|
+|8|OBJ_ENCODING_EMBSTR|embstr的动态字符串|
+|9|OBJ_ENCODING_QUICKLIST|快速列表|
+|10|OBJ_ENCODING_STREAM|Stream流|
 
 五种数据结构
 
 Redis中会根据存储的数据类型不同，选择不同的编码方式。每种数据类型的使用的编码方式如下：
 
-| **数据类型** | **编码方式**                                       |
-| ------------ | -------------------------------------------------- |
-| OBJ_STRING   | int、embstr、raw                                   |
-| OBJ_LIST     | LinkedList和ZipList(3.2以前)、QuickList（3.2以后） |
-| OBJ_SET      | intset、HT                                         |
-| OBJ_ZSET     | ZipList、HT、SkipList                              |
-| OBJ_HASH     | ZipList、HT                                        |
+|**数据类型**|**编码方式**|
+| ----------| --------------------------------------------------|
+|OBJ_STRING|int、embstr、raw|
+|OBJ_LIST|LinkedList和ZipList(3.2以前)、QuickList（3.2以后）|
+|OBJ_SET|intset、HT|
+|OBJ_ZSET|ZipList、HT、SkipList|
+|OBJ_HASH|ZipList、HT|
 
 ### 1.8 Redis数据结构-String
 
@@ -385,8 +381,6 @@ String的内部存储结构⼀般是sds（Simple Dynamic String，可以动态�
 用来表示String的robj可能编码成3种内部表⽰：OBJ_ENCODING_RAW，OBJ_ENCODING_EMBSTR，OBJ_ENCODING_INT。
 其中前两种编码使⽤的是sds来存储，最后⼀种OBJ_ENCODING_INT编码直接把string存成了long型。
 在对string进行incr, decr等操作的时候，如果它内部是OBJ_ENCODING_INT编码，那么可以直接行加减操作；如果它内部是OBJ_ENCODING_RAW或OBJ_ENCODING_EMBSTR编码，那么Redis会先试图把sds存储的字符串转成long型，如果能转成功，再进行加减操作。对⼀个内部表示成long型的string执行append, setbit, getrange这些命令，针对的仍然是string的值（即⼗进制表示的字符串），而不是针对内部表⽰的long型进⾏操作。比如字符串”32”，如果按照字符数组来解释，它包含两个字符，它们的ASCII码分别是0x33和0x32。当我们执行命令setbit key 7 0的时候，相当于把字符0x33变成了0x32，这样字符串的值就变成了”22”。⽽如果将字符串”32”按照内部的64位long型来解释，那么它是0x0000000000000020，在这个基础上执⾏setbit位操作，结果就完全不对了。因此，在这些命令的实现中，会把long型先转成字符串再进行相应的操作。
-
-
 
 ### 1.9 Redis数据结构-List
 
@@ -431,7 +425,7 @@ Set是Redis中的集合，不一定确保元素有序，可以满足元素唯一
 
 ​	![1653987454403](https://cdn.jsdelivr.net/npm/redis-itheima/1653987454403.png)
 
-### 2.1、Redis数据结构-ZSET
+### 2.1 Redis数据结构-ZSET
 
 ZSet也就是SortedSet，其中每一个元素都需要指定一个score值和member值：
 
@@ -464,9 +458,7 @@ ziplist本身没有排序功能，而且没有键值对的概念，因此需要�
 
 ![1653992299740](https://cdn.jsdelivr.net/npm/redis-itheima/1653992299740.png)
 
-
-
-### 2.2 、Redis数据结构-Hash
+### 2.2 Redis数据结构-Hash
 
 Hash结构与Redis中的Zset非常类似：
 
@@ -514,8 +506,6 @@ Hash结构默认采用ZipList编码，用以节省内存。 ZipList中相邻的�
 
 ![1653992413406](https://cdn.jsdelivr.net/npm/redis-itheima/1653992413406.png)
 
-
-
 ## 2、原理篇-Redis网络模型
 
 ### 2.1 用户空间和内核态空间
@@ -533,8 +523,6 @@ ubuntu和Centos 都是Linux的发行版，发行版可以看成对linux包了一
 计算机硬件包括，如cpu，内存，网卡等等，内核（通过寻址空间）可以操作硬件的，但是内核需要不同设备的驱动，有了这些驱动之后，内核就可以去对计算机硬件去进行 内存管理，文件系统的管理，进程的管理等等
 
 ![1653896065386](https://cdn.jsdelivr.net/npm/redis-itheima/1653896065386.png)
-
-
 
 我们想要用户的应用来访问，计算机就必须要通过对外暴露的一些接口，才能访问到，从而简介的实现对内核的操控，但是内核本身上来说也是一个应用，所以他本身也需要一些内存，cpu等设备资源，用户应用本身也在消耗这些资源，如果不加任何限制，用户去操作随意的去操作我们的资源，就有可能导致一些冲突，甚至有可能导致我们的系统出现无法运行的问题，因此我们需要把用户和**内核隔离开**
 
@@ -595,8 +583,6 @@ Linux系统为了提高IO效率，会在用户空间和内核空间都加入缓�
 
 可以看到，阻塞IO模型中，用户进程在两个阶段都是阻塞状态。
 
-
-
 ![1653897270074](https://cdn.jsdelivr.net/npm/redis-itheima/1653897270074.png)
 
 ### 2.3 网络模型-非阻塞IO
@@ -617,8 +603,6 @@ Linux系统为了提高IO效率，会在用户空间和内核空间都加入缓�
 * 拷贝过程中，用户进程依然阻塞等待
 * 拷贝完成，用户进程解除阻塞，处理数据
 * 可以看到，非阻塞IO模型中，用户进程在第一个阶段是非阻塞，第二个阶段是阻塞状态。虽然是非阻塞，但性能并没有得到提高。而且忙等机制会导致CPU空转，CPU使用率暴增。
-
-
 
 ![1653897490116](https://cdn.jsdelivr.net/npm/redis-itheima/1653897490116.png)
 
@@ -671,11 +655,7 @@ Linux系统为了提高IO效率，会在用户空间和内核空间都加入缓�
 
 用IO复用模式，可以确保去读数据的时候，数据是一定存在的，他的效率比原来的阻塞IO和非阻塞IO性能都要高
 
-
-
 ![1653898691736](https://cdn.jsdelivr.net/npm/redis-itheima/1653898691736.png)
-
-
 
 IO多路复用是利用单个线程来同时监听多个FD，并在某个FD可读、可写时得到通知，从而避免无效的等待，充分利用CPU资源。不过监听FD的方式、通知的方式又有多种实现，常见的有：
 
@@ -686,8 +666,6 @@ IO多路复用是利用单个线程来同时监听多个FD，并在某个FD可�
 其中select和pool相当于是当被监听的数据准备好之后，他会把你监听的FD整个数据都发给你，你需要到整个FD中去找，哪些是处理好了的，需要通过遍历的方式，所以性能也并不是那么好
 
 而epoll，则相当于内核准备好了之后，他会把准备好的数据，直接发给你，咱们就省去了遍历的动作。
-
-
 
 ### 2.5 网络模型-IO多路复用-select方式
 
@@ -754,7 +732,7 @@ epoll模式中如何解决这些问题的？
 * 每个FD只需要执行一次epoll_ctl添加到红黑树，以后每次epol_wait无需传递任何参数，无需重复拷贝FD到内核空间
 * 利用ep_poll_callback机制来监听FD状态，无需遍历所有FD，因此性能不会随监听的FD数量增多而下降
 
-### 2.8、网络模型-epoll中的ET和LT
+### 2.8 网络模型-epoll中的ET和LT
 
 当FD有数据可读时，我们调用epoll_wait（或者select、poll）可以得到通知。但是事件通知的模式有两种：
 
@@ -789,7 +767,7 @@ epoll模式中如何解决这些问题的？
 
 ![1653902845082](https://cdn.jsdelivr.net/npm/redis-itheima/1653902845082.png)
 
-### 3.0 、网络模型-信号驱动
+### 3.0 网络模型-信号驱动
 
 信号驱动IO是与内核建立SIGIO的信号关联并设置回调，当内核有FD就绪时，会发出SIGIO信号通知用户，期间用户应用可以执行其它业务，无需阻塞等待。
 
@@ -825,7 +803,7 @@ epoll模式中如何解决这些问题的？
 
 ![1653912219712](https://cdn.jsdelivr.net/npm/redis-itheima/1653912219712.png)
 
-### 3.1 、网络模型-Redis是单线程的吗？为什么使用单线程
+### 3.1 网络模型-Redis是单线程的吗？为什么使用单线程
 
 **Redis到底是单线程还是多线程？**
 
@@ -845,13 +823,11 @@ epoll模式中如何解决这些问题的？
 * 多线程会导致过多的上下文切换，带来不必要的开销
 * 引入多线程会面临线程安全问题，必然要引入线程锁这样的安全手段，实现复杂度增高，而且性能也会大打折扣
 
-### 3.2 、Redis的单线程模型-Redis单线程和多线程网络模型变更
+### 3.2 Redis的单线程模型-Redis单线程和多线程网络模型变更
 
 ![1653982278727](https://cdn.jsdelivr.net/npm/redis-itheima/1653982278727.png)
 
 当我们的客户端想要去连接我们服务器，会去先到IO多路复用模型去进行排队，会有一个连接应答处理器，他会去接受读请求，然后又把读请求注册到具体模型中去，此时这些建立起来的连接，如果是客户端请求处理器去进行执行命令时，他会去把数据读取出来，然后把数据放入到client中， clinet去解析当前的命令转化为redis认识的命令，接下来就开始处理这些命令，从redis中的command中找到这些命令，然后就真正的去操作对应的数据了，当数据操作完成后，会去找到命令回复处理器，再由他将数据写出。
-
-
 
 ## 3、Redis通信协议-RESP协议
 
@@ -891,7 +867,7 @@ Redis 6.0版本中，从RESP2升级到了RESP3协议，增加了更多数据类�
 
 ![1653982993020](https://cdn.jsdelivr.net/npm/redis-itheima/1653982993020.png)
 
-### 3.1、Redis通信协议-基于Socket自定义Redis的客户端
+### 3.1 Redis通信协议-基于Socket自定义Redis的客户端
 
 Redis支持TCP通信，因此我们可以使用Socket来模拟客户端，与Redis服务端建立连接：
 
@@ -1006,7 +982,7 @@ public class Main {
 
 ```
 
-### 3.2、Redis内存回收-过期key处理
+### 3.2 Redis内存回收-过期key处理
 
 Redis之所以性能强，最主要的原因就是基于内存存储。然而单节点的Redis其内存大小不宜过大，会影响持久化或主从同步性能。
 我们可以通过修改配置文件来设置Redis的最大内存：
@@ -1026,8 +1002,6 @@ Redis之所以性能强，最主要的原因就是基于内存存储。然而单
 Redis本身是一个典型的key-value内存存储数据库，因此所有的key、value都保存在之前学习过的Dict结构中。不过在其database结构体中，有两个Dict：一个用来记录key-value；另一个用来记录key-TTL。
 
 ![1653983423128](https://cdn.jsdelivr.net/npm/redis-itheima/1653983423128.png)
-
-
 
 ![1653983606531](https://cdn.jsdelivr.net/npm/redis-itheima/1653983606531.png)
 
@@ -1089,7 +1063,7 @@ FAST模式执行频率不固定，但两次间隔不低于2ms，每次耗时不�
 
 ![1653983978671](https://cdn.jsdelivr.net/npm/redis-itheima/1653983978671.png)
 
- 淘汰策略
+淘汰策略
 
 Redis支持8种不同策略来选择要删除的key：
 

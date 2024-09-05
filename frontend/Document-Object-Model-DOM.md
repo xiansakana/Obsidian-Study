@@ -1,13 +1,18 @@
+# Document-Object-Model-DOM
+
 ---
+
 title: Document Object Model (DOM)
 tags:
-  - JavaScript
-  - 前端
-  - DOM
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311010813961.png
-abbrlink: 5fb72f5f
-date: 2023-11-01 05:15:52
+
+- JavaScript
+- 前端
+- DOM
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311010813961.png
+  abbrlink: 5fb72f5f
+  date: 2023-11-01 05:15:52
+
 ---
 
 # Document Object Model ([DOM](https://developer.mozilla.org/zh-CN/docs/Glossary/DOM))
@@ -120,20 +125,20 @@ Element Object 是三种节点的其中一种。每个节点(Node)有 childNodes
 
 因此，我们知道，Element objects 这种 node 可以同时使用 childNodes 以及 children 属性，但其他两种 node 却只有能够使用 childNodes 属性。若其他两种 node 使用 children 属性，只会看到 undefined。
 
-| Methods                           | Return Type                                 |
-| --------------------------------- | ------------------------------------------- |
-| getElementById(id)                | Element Object                              |
-| getElementsByClassName(className) | HTMLCollection (内部元素为 Element Objects) |
-| querySelector(selector)           | Element Object                              |
-| querySelectorAll(selector)        | NodeList (内部元素为 Nodes)                 |
+|Methods|Return Type|
+| ---------------------------------| -------------------------------------------|
+|getElementById(id)|Element Object|
+|getElementsByClassName(className)|HTMLCollection (内部元素为 Element Objects)|
+|querySelector(selector)|Element Object|
+|querySelectorAll(selector)|NodeList (内部元素为 Nodes)|
 
-|            | NodeList                                                        | HTMLCollection                                                  |
-| ---------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| Feature    | Array-like, but not array. No push, pop, shift, unshift methods | Array-like, but not array. No push, pop, shift, unshift methods |
-| Motion     | static                                                          | dynamic                                                         |
-| Elements   | Nodes                                                           | Element Objects                                                 |
-| Attributes | length, index                                                   | length, index                                                   |
-| forEach    | Allowed                                                         | Not allowed                                                     |
+||NodeList|HTMLCollection|
+| ----------| ---------------------------------------------------------------| ---------------------------------------------------------------|
+|Feature|Array-like, but not array. No push, pop, shift, unshift methods|Array-like, but not array. No push, pop, shift, unshift methods|
+|Motion|static|dynamic|
+|Elements|Nodes|Element Objects|
+|Attributes|length, index|length, index|
+|forEach|Allowed|Not allowed|
 
 # Function Declaration and Expression
 
@@ -243,12 +248,11 @@ Wilson.walk2();
 Wilson.walk3();
 ```
 
-- param _=>_ expression
+- param  *=&gt;*  expression
 
   - param => expression
   - (param1, param2, ...) => expression
-
-- param _=>_ {return expression}
+- param  *=&gt;*  {return expression}
 
 ```javascript
 let addition = (a, b) => a + b;
@@ -351,26 +355,24 @@ console.log(firstP.parentElement.parentElement);
 
   - [add()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList/add)
 
-    **`add()`** 方法将给定的标记添加到列表中
+    **​`add()`​**  方法将给定的标记添加到列表中
 
     ```javascript
     let firstP = document.querySelector("p");
     firstP.classList.add("blue", "red");
     ```
-
   - [remove()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList/remove)
 
-    **`remove()`** 方法从 [`DOMTokenList`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList) 中移除指定标记。
+    **​`remove()`​**  方法从 [`DOMTokenList`](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList) 中移除指定标记。
 
     ```javascript
     let firstP = document.querySelector("p");
     firstP.classList.add("blue", "red");
     firstP.classList.remove("red");
     ```
-
   - [toggle()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList/toggle)
 
-    接口的 **`toggle()`** 方法从列表中删除一个给定的标记并返回 `false`。如果标记不存在，则添加并且函数返回 `true`。
+    接口的 **​`toggle()`​**  方法从列表中删除一个给定的标记并返回 `false`。如果标记不存在，则添加并且函数返回 `true`。
 
     ```javascript
     let firstP = document.querySelector("p");
@@ -378,16 +380,14 @@ console.log(firstP.parentElement.parentElement);
       firstP.classList.toggle("red");
     });
     ```
-
   - [contains()](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMTokenList/contains)
 
-    **`contains()`** 方法返回 [`Boolean` (en-US)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) 类型。若传入的参数 `token` 包含在列表中时则返回`true`，否则返回 `false`。
+    **​`contains()`​**  方法返回 [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)​[ (en-US)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) 类型。若传入的参数 `token` 包含在列表中时则返回`true`，否则返回 `false`。
 
     ```javascript
     let firstP = document.querySelector("p");
     console.log(firstP.classList.contains("green"));
     ```
-
 - [getAttribute(attributeName)](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getAttribute)
 
 ```javascript

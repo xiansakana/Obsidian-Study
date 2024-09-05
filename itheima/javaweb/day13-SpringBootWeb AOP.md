@@ -1,19 +1,21 @@
+# day13-SpringBootWeb AOP
+
 ---
+
 title: itheima-JavaWeb day13-SpringBootWeb-AOP
 tags:
-  - itheima
-  - SpringBoot
-  - 后端
-  - AOP
-categories: 后端
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
-abbrlink: 9cf23d6
+
+- itheima
+- SpringBoot
+- 后端
+- AOP
+  categories: 后端
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202403192208941.jpg'
+  abbrlink: 9cf23d6
+
 ---
 
-
 # 事务&AOP
-
-
 
 # 1. 事务管理
 
@@ -23,8 +25,6 @@ abbrlink: 9cf23d6
 
 **事务**是一组操作的集合，它是一个不可分割的工作单位。事务会把所有的操作作为一个整体，一起向数据库提交或者是撤销操作请求。所以这组操作要么同时成功，要么同时失败。
 
-
-
 怎么样来控制这组操作，让这组操作同时成功或同时失败呢？此时就要涉及到事务的具体操作了。
 
 事务的操作主要有三步：
@@ -32,8 +32,6 @@ abbrlink: 9cf23d6
 1. 开启事务（一组操作开始前，开启事务）：start transaction / begin ;
 2. 提交事务（这组操作全部成功后，提交事务）：commit ;
 3. 回滚事务（中间任何一个操作出现异常，回滚事务）：rollback ;
-
-
 
 ## 1.2 Spring事务管理
 
@@ -102,21 +100,15 @@ public interface EmpMapper {
 }
 ~~~
 
-
-
 重启SpringBoot服务，使用postman测试部门删除：
 
 ![image-20230107140057729](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140057729.png)
-
-
 
 代码正常情况下，dept表和Em表中的数据已删除
 
 ![image-20230107140130199](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140130199.png)
 
 ![image-20230107140221425](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140221425.png)
-
-
 
 修改DeptServiceImpl类中代码，添加可能出现异常的代码：
 
@@ -146,15 +138,11 @@ public class DeptServiceImpl implements DeptService {
 }
 ~~~
 
-
-
 重启SpringBoot服务，使用postman测试部门删除：
 
 ![image-20230107140618199](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140618199.png)
 
 ![image-20230107140706301](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140706301.png)
-
-
 
 查看数据库表：
 
@@ -166,13 +154,7 @@ public class DeptServiceImpl implements DeptService {
 
 ![image-20230107140221425](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140221425.png)
 
-
-
 **以上程序出现的问题：即使程序运行抛出了异常，部门依然删除了，但是部门下的员工却没有删除，造成了数据的不一致。**
-
-
-
-
 
 ## 1.2.2 原因分析
 
@@ -184,13 +166,9 @@ public class DeptServiceImpl implements DeptService {
 
 此时就出现问题了，部门删除了，部门下的员工还在，业务操作前后数据不一致。
 
-
-
 而要想保证操作前后，数据的一致性，就需要让解散部门中涉及到的两个业务操作，要么全部成功，要么全部失败 。 那我们如何，让这两个操作要么全部成功，要么全部失败呢 ？
 
 那就可以通过事务来实现，因为一个事务中的多个业务操作，要么全部成功，要么全部失败。
-
-
 
 此时，我们就需要在delete删除业务功能中添加事务。
 
@@ -198,25 +176,17 @@ public class DeptServiceImpl implements DeptService {
 
 在方法运行之前，开启事务，如果方法成功执行，就提交事务，如果方法执行的过程当中出现异常了，就回滚事务。
 
-
-
 思考：开发中所有的业务操作，一旦我们要进行控制事务，是不是都是这样的套路？
 
 答案：是的。
 
-
-
 所以在spring框架当中就已经把事务控制的代码都已经封装好了，并不需要我们手动实现。我们使用了spring框架，我们只需要通过一个简单的注解@Transactional就搞定了。
-
-
 
 ## 1.2.3 Transactional注解
 
 > @Transactional作用：就是在当前这个方法执行开始之前来开启事务，方法执行完毕之后提交事务。如果在这个方法执行的过程当中出现了异常，就会进行事务的回滚操作。
 >
 > @Transactional注解：我们一般会在业务层当中来控制事务，因为在业务层当中，一个业务功能可能会包含多个数据访问的操作。在业务层来控制事务，我们就可以将多个数据访问操作控制在一个事务范围内。
-
-
 
 @Transactional注解书写位置：
 
@@ -226,8 +196,6 @@ public class DeptServiceImpl implements DeptService {
   - 当前类中所有的方法都交由spring进行事务管理
 - 接口
   - 接口下所有的实现类当中所有的方法都交给spring 进行事务管理
-
-
 
 接下来，我们就可以在业务方法delete上加上 @Transactional 来控制事务 。
 
@@ -257,21 +225,15 @@ public class DeptServiceImpl implements DeptService {
 }
 ```
 
-
-
 在业务功能上添加@Transactional注解进行事务管理后，我们重启SpringBoot服务，使用postman测试：
 
 ![image-20230107143339917](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107143339917.png)
-
-
 
 添加Spring事务管理后，由于服务端程序引发了异常，所以事务进行回滚。
 
 ![image-20230107144312892](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107144312892.png)
 
 ![image-20230107143720961](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107143720961.png)
-
-
 
 说明：可以在application.yml配置文件中开启事务管理日志，这样就可以在控制看到和事务相关的日志信息了
 
@@ -282,17 +244,11 @@ logging:
     org.springframework.jdbc.support.JdbcTransactionManager: debug
 ~~~
 
-
-
-
-
-
-
 ## 1.3 事务进阶
 
 前面我们通过spring事务管理注解@Transactional已经控制了业务层方法的事务。接下来我们要来详细的介绍一下@Transactional事务管理注解的使用细节。我们这里主要介绍@Transactional注解当中的两个常见的属性：
 
-1. 异常回滚的属性：rollbackFor 
+1. 异常回滚的属性：rollbackFor
 2. 事务传播行为：propagation
 
 我们先来学习下rollbackFor属性。
@@ -316,8 +272,6 @@ public void delete(Integer id){
 ~~~
 
 以上业务功能delete()方法在运行时，会引发除0的算数运算异常(运行时异常)，出现异常之后，由于我们在方法上加了@Transactional注解进行事务管理，所以发生异常会执行rollback回滚操作，从而保证事务操作前后数据是一致的。
-
-
 
 下面我们在做一个测试，我们修改业务功能代码，在模拟异常的位置上直接抛出Exception异常（编译时异常）
 
@@ -351,10 +305,6 @@ public void delete(Integer id) throws Exception {
 > }
 > ~~~
 
-
-
-
-
 重新启动服务后测试：
 
 抛出异常之后事务会不会回滚
@@ -363,15 +313,9 @@ public void delete(Integer id) throws Exception {
 >
 > ![image-20230107140726701](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107140726701.png)
 
-
-
 使用postman测试，删除5号部门
 
 ![image-20230108142359592](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230108142359592.png)
-
-
-
-
 
 发生了Exception异常，但事务依然提交了
 
@@ -380,8 +324,6 @@ public void delete(Integer id) throws Exception {
 > dept表中数据：
 >
 > ![image-20230108142707351](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230108142707351.png)
-
-
 
 通过以上测试可以得出一个结论：默认情况下，只有出现RuntimeException(运行时异常)才会回滚事务。
 
@@ -413,8 +355,6 @@ public class DeptServiceImpl implements DeptService {
 }
 ~~~
 
-
-
 接下来我们重新启动服务，测试删除部门的操作：
 
 ![image-20230108184912155](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230108184912155.png)
@@ -427,14 +367,10 @@ public class DeptServiceImpl implements DeptService {
 
 ![image-20230107143720961](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230107143720961.png)
 
-
-
 > 结论：
 >
 > - 在Spring的事务管理中，默认只有运行时异常 RuntimeException才会回滚。
 > - 如果还需要回滚指定类型的异常，可以通过rollbackFor属性来指定。
-
-
 
 ## 1.3.3 propagation
 
@@ -446,53 +382,40 @@ public class DeptServiceImpl implements DeptService {
 
 - 就是当一个事务方法被另一个事务方法调用时，这个事务方法应该如何进行事务控制。
 
-
-
 例如：两个事务方法，一个A方法，一个B方法。在这两个方法上都添加了@Transactional注解，就代表这两个方法都具有事务，而在A方法当中又去调用了B方法。
 
-![image-20230112152543953](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112152543953.png) 
+![image-20230112152543953](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112152543953.png)
 
 所谓事务的传播行为，指的就是在A方法运行的时候，首先会开启一个事务，在A方法当中又调用了B方法， B方法自身也具有事务，那么B方法在运行的时候，到底是加入到A方法的事务当中来，还是B方法在运行的时候新建一个事务？这个就涉及到了事务的传播行为。
 
-
-
 我们要想控制事务的传播行为，在@Transactional注解的后面指定一个属性propagation，通过 propagation 属性来指定传播行为。接下来我们就来介绍一下常见的事务传播行为。
 
-| **属性值**       | **含义**                             |
-| ------------- | ---------------------------------- |
-| REQUIRED      | 【默认值】需要事务，有则加入，无则创建新事务             |
-| REQUIRES_NEW  | 需要新事务，无论有无，总是创建新事务                 |
-| SUPPORTS      | 支持事务，有则加入，无则在无事务状态中运行              |
-| NOT_SUPPORTED | 不支持事务，在无事务状态下运行,如果当前存在已有事务,则挂起当前事务 |
-| MANDATORY     | 必须有事务，否则抛异常                        |
-| NEVER         | 必须没事务，否则抛异常                        |
-
+|**属性值**|**含义**|
+| -------------| ------------------------------------------------------------------|
+|REQUIRED|【默认值】需要事务，有则加入，无则创建新事务|
+|REQUIRES_NEW|需要新事务，无论有无，总是创建新事务|
+|SUPPORTS|支持事务，有则加入，无则在无事务状态中运行|
+|NOT_SUPPORTED|不支持事务，在无事务状态下运行,如果当前存在已有事务,则挂起当前事务|
+|MANDATORY|必须有事务，否则抛异常|
+|NEVER|必须没事务，否则抛异常|
 
 > 对于这些事务传播行为，我们只需要关注以下两个就可以了：
 >
 > 1. REQUIRED（默认值）
 > 2. REQUIRES_NEW
 
-
-
 ### 1.3.3.2 案例
 
 接下来我们就通过一个案例来演示下事务传播行为propagation属性的使用。
 
-
-
-**需求：**解散部门时需要记录操作日志
+**需求：** 解散部门时需要记录操作日志
 
 ​			由于解散部门是一个非常重要而且非常危险的操作，所以在业务当中要求每一次执行解散部门的操作都需要留下痕迹，就是要记录操作日志。而且还要求无论是执行成功了还是执行失败了，都需要留下痕迹。
-
-
 
 **步骤：**
 
 1. 执行解散部门的业务：先删除部门，再删除部门下的员工（前面已实现）
 2. 记录解散部门的日志，到日志表（未实现）
-
-
 
 **准备工作：**
 
@@ -557,8 +480,6 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 ~~~
 
-
-
 **代码实现:**
 
 业务实现类：DeptServiceImpl
@@ -606,8 +527,6 @@ public class DeptServiceImpl implements DeptService {
 }
 ~~~
 
-
-
 **测试:**
 
 重新启动SpringBoot服务，测试删除3号部门后会发生什么？
@@ -621,27 +540,17 @@ public class DeptServiceImpl implements DeptService {
 
 然后在dept_log表中没有记录日志数据
 
-![image-20230109154344393](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230109154344393.png) 
-
-
+![image-20230109154344393](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230109154344393.png)
 
 **原因分析:**
 
 接下来我们就需要来分析一下具体是什么原因导致的日志没有成功的记录。
 
 - 在执行delete操作时开启了一个事务
-
 - 当执行insert操作时，insert设置的事务传播行是默认值REQUIRED，表示有事务就加入，没有则新建事务
-
 - 此时：delete和insert操作使用了同一个事务，同一个事务中的多个操作，要么同时成功，要么同时失败，所以当异常发生时进行事务回滚，就会回滚delete和insert操作
 
 ![image-20230109162420479](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230109162420479.png)
-
-
-
-
-
-
 
 **解决方案：**
 
@@ -664,31 +573,16 @@ public class DeptLogServiceImpl implements DeptLogService {
 }
 ~~~
 
-
-
 重启SpringBoot服务，再次测试删除3号部门：
 
 ![image-20230109170002879](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230109170002879.png)
 
 那此时，DeptServiceImpl中的delete方法运行时，会开启一个事务。 当调用  deptLogService.insert(deptLog)  时，也会创建一个新的事务，那此时，当insert方法运行完毕之后，事务就已经提交了。 即使外部的事务出现异常，内部已经提交的事务，也不会回滚了，因为是两个独立的事务。
 
-
-
 到此事务传播行为已演示完成，事务的传播行为我们只需要掌握两个：REQUIRED、REQUIRES_NEW。
 
 > - REQUIRED ：大部分情况下都是用该传播行为即可。
->
 > - REQUIRES_NEW ：当我们不希望事务之间相互影响时，可以使用该传播行为。比如：下订单前需要记录日志，不论订单保存成功与否，都需要保证日志记录能够记录成功。
-
-
-
-
-
-
-
-
-
-
 
 # 2. AOP基础
 
@@ -700,17 +594,13 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 什么是AOP？
 
-- AOP英文全称：Aspect Oriented Programming（面向切面编程、面向方面编程），其实说白了，面向切面编程就是面向特定方法编程。 
-
-
+- AOP英文全称：Aspect Oriented Programming（面向切面编程、面向方面编程），其实说白了，面向切面编程就是面向特定方法编程。
 
 那什么又是面向方法编程呢，为什么又需要面向方法编程呢？来我们举个例子做一个说明：
 
 比如，我们这里有一个项目，项目中开发了很多的业务功能。
 
-![image-20230112154547523](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154547523.png) 
-
-
+![image-20230112154547523](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154547523.png)
 
 然而有一些业务功能执行效率比较低，执行耗时较长，我们需要针对于这些业务方法进行优化。 那首先第一步就需要定位出执行耗时比较长的业务方法，再针对于业务方法再来进行优化。
 
@@ -718,15 +608,15 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 可能多数人首先想到的就是在每一个业务方法运行之前，记录这个方法运行的开始时间。在这个方法运行完毕之后，再来记录这个方法运行的结束时间。拿结束时间减去开始时间，不就是这个方法的执行耗时吗？
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154605206.png" alt="image-20230112154605206" style="zoom:80%;" /> 
-
-
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154605206.png" alt="image-20230112154605206" style="zoom:80%;" />
+</div>
 
 以上分析的实现方式是可以解决需求问题的。但是对于一个项目来讲，里面会包含很多的业务模块，每个业务模块又包含很多增删改查的方法，如果我们要在每一个模块下的业务方法中，添加记录开始时间、结束时间、计算执行耗时的代码，就会让程序员的工作变得非常繁琐。
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154627546.png" alt="image-20230112154627546" style="zoom:80%;" /> 
-
-
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154627546.png" alt="image-20230112154627546" style="zoom:80%;" />
+</div>
 
 而AOP面向方法编程，就可以做到在不改动这些原始方法的基础上，针对特定的方法进行功能的增强。
 
@@ -734,15 +624,11 @@ public class DeptLogServiceImpl implements DeptLogService {
 
 我们要想完成统计各个业务方法执行耗时的需求，我们只需要定义一个模板方法，将记录方法执行耗时这一部分公共的逻辑代码，定义在模板方法当中，在这个方法开始运行之前，来记录这个方法运行的开始时间，在方法结束运行的时候，再来记录方法运行的结束时间，中间就来运行原始的业务方法。
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154530101.png" alt="image-20230112154530101" style="zoom:80%;" /> 
-
-
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112154530101.png" alt="image-20230112154530101" style="zoom:80%;" />
+</div>
 
 而中间运行的原始业务方法，可能是其中的一个业务方法，比如：我们只想通过 部门管理的 list 方法的执行耗时，那就只有这一个方法是原始业务方法。  而如果，我们是先想统计所有部门管理的业务方法执行耗时，那此时，所有的部门管理的业务方法都是 原始业务方法。 **那面向这样的指定的一个或多个方法进行编程，我们就称之为 面向切面编程。**
-
-
-
-
 
 那此时，当我们再调用部门管理的 list 业务方法时啊，并不会直接执行 list 方法的逻辑，而是会执行我们所定义的 模板方法 ， 然后再模板方法中：
 
@@ -750,19 +636,17 @@ public class DeptLogServiceImpl implements DeptLogService {
 - 运行原始的业务方法（那此时原始的业务方法，就是 list 方法）
 - 记录方法运行结束时间，计算方法执行耗时
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112155813944.png" alt="image-20230112155813944" style="zoom:80%;" /> 
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112155813944.png" alt="image-20230112155813944" style="zoom:80%;" />
+</div>
 
 不论，我们运行的是那个业务方法，最后其实运行的就是我们定义的模板方法，而在模板方法中，就完成了原始方法执行耗时的统计操作 。(那这样呢，我们就通过一个模板方法就完成了指定的一个或多个业务方法执行耗时的统计)
 
-
-
-而大家会发现，这个流程，我们是不是似曾相识啊？ 
+而大家会发现，这个流程，我们是不是似曾相识啊？
 
 对了，就是和我们之前所学习的动态代理技术是非常类似的。 我们所说的模板方法，其实就是代理对象中所定义的方法，那代理对象中的方法以及根据对应的业务需要， 完成了对应的业务功能，当运行原始业务方法时，就会运行代理对象中的方法，从而实现统计业务方法执行耗时的操作。
 
 其实，AOP面向切面编程和OOP面向对象编程一样，它们都仅仅是一种编程思想，而动态代理技术是这种思想最主流的实现方式。而Spring的AOP是Spring框架的高级技术，旨在管理bean对象的过程中底层使用动态代理机制，对特定的方法进行编程(功能增强)。
-
-
 
 > AOP的优势：
 >
@@ -770,15 +654,11 @@ public class DeptLogServiceImpl implements DeptLogService {
 > 2. 提高开发效率
 > 3. 维护方便
 
-
-
-
-
 ## 2.2 AOP快速入门
 
 在了解了什么是AOP后，我们下面通过一个快速入门程序，体验下AOP的开发，并掌握Spring中AOP的开发步骤。
 
-**需求：**统计各个业务层方法执行耗时。
+**需求：** 统计各个业务层方法执行耗时。
 
 **实现步骤：**
 
@@ -786,8 +666,6 @@ public class DeptLogServiceImpl implements DeptLogService {
 2. 编写AOP程序：针对于特定方法根据业务需要进行编程
 
 > 为演示方便，可以自建新项目或导入提供的`springboot-aop-quickstart`项目工程
-
-
 
 **pom.xml**
 
@@ -797,8 +675,6 @@ public class DeptLogServiceImpl implements DeptLogService {
     <artifactId>spring-boot-starter-aop</artifactId>
 </dependency>
 ~~~
-
-
 
 **AOP程序：TimeAspect**
 
@@ -827,8 +703,6 @@ public class TimeAspect {
 }
 ~~~
 
-
-
 重新启动SpringBoot服务测试程序：
 
 - 查询3号部门信息
@@ -841,10 +715,6 @@ public class TimeAspect {
 >
 > ![image-20230110143815479](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110143815479.png)
 
-
-
-
-
 我们通过AOP入门程序完成了业务方法执行耗时的统计，那其实AOP的功能远不止于此，常见的应用场景如下：
 
 - 记录系统的操作日志
@@ -853,34 +723,24 @@ public class TimeAspect {
 
 这些都是AOP应用的典型场景。
 
-
-
 通过入门程序，我们也应该感受到了AOP面向切面编程的一些优势：
 
 - 代码无侵入：没有修改原始的业务方法，就已经对原始的业务方法进行了功能的增强或者是功能的改变
-
 - 减少了重复代码
 - 提高开发效率
-
 - 维护方便
-
-
 
 ## 2.3 AOP核心概念
 
 通过SpringAOP的快速入门，感受了一下AOP面向切面编程的开发方式。下面我们再来学习AOP当中涉及到的一些核心概念。
 
-
-
 **1. 连接点：JoinPoint**，可以被AOP控制的方法（暗含方法执行时的相关信息）
 
 ​	连接点指的是可以被aop控制的方法。例如：入门程序当中所有的业务方法都是可以被aop控制的方法。
 
-​	![image-20230112160708474](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112160708474.png) 
+​	![image-20230112160708474](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112160708474.png)
 
 ​	在SpringAOP提供的JoinPoint当中，封装了连接点方法在执行时的相关信息。（后面会有具体的讲解）
-
-
 
 **2. 通知：Advice**，指哪些重复的逻辑，也就是共性功能（最终体现为一个方法）
 
@@ -888,9 +748,9 @@ public class TimeAspect {
 
 ​	但是在AOP面向切面编程当中，我们只需要将这部分重复的代码逻辑抽取出来单独定义。抽取出来的这一部分重复的逻辑，也就是共性的功能。
 
-​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112160852883.png" alt="image-20230112160852883" style="zoom:80%;" /> 
+​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112160852883.png" alt="image-20230112160852883" style="zoom:80%;" />
 
-​	
+​
 
 **3. 切入点：PointCut**，匹配连接点的条件，通知仅会在切入点方法执行时被应用
 
@@ -898,43 +758,35 @@ public class TimeAspect {
 
 ​	在aop的开发当中，我们通常会通过一个切入点表达式来描述切入点(后面会有详解)。
 
-​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161131937.png" alt="image-20230112161131937" style="zoom:80%;" /> 
+​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161131937.png" alt="image-20230112161131937" style="zoom:80%;" />
 
 ​	假如：切入点表达式改为DeptServiceImpl.list()，此时就代表仅仅只有list这一个方法是切入点。只有list()方法在运行的时候才会应用通知。
 
-​	
+​
 
 **4. 切面：Aspect**，描述通知与切入点的对应关系（通知+切入点）
 
 ​	当通知和切入点结合在一起，就形成了一个切面。通过切面就能够描述当前aop程序需要针对于哪个原始方法，在什么时候执行什么样的操作。
 
-​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161335186.png" alt="image-20230112161335186" style="zoom:80%;" /> 
+​	<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161335186.png" alt="image-20230112161335186" style="zoom:80%;" />
 
 ​	切面所在的类，我们一般称为**切面类**（被@Aspect注解标识的类）
 
-​	
+​
 
 **5. 目标对象：Target**，通知所应用的对象
 
 ​	目标对象指的就是通知所应用的对象，我们就称之为目标对象。
 
-​	![image-20230112161657667](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161657667.png) 
-
-
-
-
+​	![image-20230112161657667](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161657667.png)
 
 AOP的核心概念我们介绍完毕之后，接下来我们再来分析一下我们所定义的通知是如何与目标对象结合在一起，对目标对象当中的方法进行功能增强的。
 
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161821401.png" alt="image-20230112161821401" style="zoom:80%;" /> 
+<div>
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230112161821401.png" alt="image-20230112161821401" style="zoom:80%;" />
+</div>
 
 Spring的AOP底层是基于动态代理技术来实现的，也就是说在程序运行的时候，会自动的基于动态代理技术为目标对象生成一个对应的代理对象。在代理对象当中就会对目标对象当中的原始方法进行功能的增强。
-
-
-
-
-
-
 
 # 3. AOP进阶
 
@@ -946,8 +798,6 @@ AOP的基础知识学习完之后，下面我们对AOP当中的各个细节进�
 4. 连接点
 
 我们先来学习第一部分通知类型。
-
-
 
 ## 3.1 通知类型
 
@@ -970,8 +820,6 @@ public Object recordTime(ProceedingJoinPoint pjp) throws Throwable {
 
 > 只要我们在通知方法上加上了@Around注解，就代表当前通知是一个环绕通知。
 
-
-
 Spring中AOP的通知类型：
 
 - @Around：环绕通知，此注解标注的通知方法在目标方法前、后都被执行
@@ -979,8 +827,6 @@ Spring中AOP的通知类型：
 - @After ：后置通知，此注解标注的通知方法在目标方法后被执行，无论是否有异常都会执行
 - @AfterReturning ： 返回后通知，此注解标注的通知方法在目标方法后被执行，有异常不会执行
 - @AfterThrowing ： 异常后通知，此注解标注的通知方法发生异常后执行
-
-
 
 下面我们通过代码演示，来加深对于不同通知类型的理解：
 
@@ -1031,8 +877,6 @@ public class MyAspect1 {
 
 ~~~
 
-
-
 重新启动SpringBoot服务，进行测试：
 
 **1. 没有异常情况下：**
@@ -1046,8 +890,6 @@ public class MyAspect1 {
 ![image-20230110165806934](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110165806934.png)
 
 > 程序没有发生异常的情况下，@AfterThrowing标识的通知方法不会执行。
-
-
 
 **2. 出现异常情况下：**
 
@@ -1084,17 +926,12 @@ public class DeptServiceImpl implements DeptService {
 > 程序发生异常的情况下：
 >
 > - @AfterReturning标识的通知方法不会执行，@AfterThrowing标识的通知方法执行了
->
 > - @Around环绕通知中原始方法调用时有异常，通知中的环绕后的代码逻辑也不会在执行了 （因为原始方法调用已经出异常了）
-
-
 
 在使用通知时的注意事项：
 
 - @Around环绕通知需要自己调用 ProceedingJoinPoint.proceed() 来让原始方法执行，其他通知不需要考虑目标方法执行
 - @Around环绕通知方法的返回值，必须指定为Object，来接收原始方法的返回值，否则原始方法执行完毕，是获取不到返回值的。
-
-
 
 五种常见的通知类型，我们已经测试完毕了，此时我们再来看一下刚才所编写的代码，有什么问题吗？
 
@@ -1117,11 +954,7 @@ public class DeptServiceImpl implements DeptService {
 
 我们发现啊，每一个注解里面都指定了切入点表达式，而且这些切入点表达式都一模一样。此时我们的代码当中就存在了大量的重复性的切入点表达式，假如此时切入点表达式需要变动，就需要将所有的切入点表达式一个一个的来改动，就变得非常繁琐了。
 
-
-
 怎么来解决这个切入点表达式重复的问题？ 答案就是：**抽取**
-
-
 
 Spring提供了@PointCut注解，该注解的作用是将公共的切入点表达式抽取出来，需要用到时引用该切入点表达式即可。
 
@@ -1178,8 +1011,6 @@ public class MyAspect1 {
 }
 ~~~
 
-
-
 需要注意的是：当切入点方法使用private修饰时，仅能在当前切面类中引用该表达式， 当外部其他切面类中也要引用当前类中的切入点表达式，就需要把private改为public，而在引用的时候，具体的语法为：
 
 全类名.方法名()，具体形式如下：
@@ -1197,14 +1028,6 @@ public class MyAspect2 {
 }
 ~~~
 
-
-
-
-
-
-
-
-
 ## 3.2 通知顺序
 
 讲解完了Spring中AOP所支持的5种通知类型之后，接下来我们再来研究通知的执行顺序。
@@ -1212,8 +1035,6 @@ public class MyAspect2 {
 当在项目开发当中，我们定义了多个切面类，而多个切面类中多个切入点都匹配到了同一个目标方法。此时当目标方法在运行的时候，这多个切面类当中的这些通知方法都会运行。
 
 此时我们就有一个疑问，这多个通知方法到底哪个先运行，哪个后运行？ 下面我们通过程序来验证（这里呢，我们就定义两种类型的通知进行测试，一种是前置通知@Before，一种是后置通知@After）
-
-
 
 定义多个切面类：
 
@@ -1276,15 +1097,12 @@ public class MyAspect4 {
 
 ~~~
 
-
-
 重新启动SpringBoot服务，测试通知的执行顺序：
 
 > 备注：
 >
-> 1.  把DeptServiceImpl实现类中模拟异常的代码删除或注释掉。
->
-> 2.  注释掉其他切面类(把@Aspect注释即可)，仅保留MyAspect2、MyAspect3、MyAspect4 ，这样就可以清晰看到执行的结果，而不被其他切面类干扰。
+> 1. 把DeptServiceImpl实现类中模拟异常的代码删除或注释掉。
+> 2. 注释掉其他切面类(把@Aspect注释即可)，仅保留MyAspect2、MyAspect3、MyAspect4 ，这样就可以清晰看到执行的结果，而不被其他切面类干扰。
 
 - 使用postman测试查询所有部门数据
 
@@ -1294,21 +1112,15 @@ public class MyAspect4 {
 
 ![image-20230110211208549](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110211208549.png)
 
-
-
 通过以上程序运行可以看出在不同切面类中，默认按照切面类的类名字母排序：
 
 - 目标方法前的通知方法：字母排名靠前的先执行
 - 目标方法后的通知方法：字母排名靠前的后执行
 
-
-
 如果我们想控制通知的执行顺序有两种方式：
 
 1. 修改切面类的类名（这种方式非常繁琐、而且不便管理）
 2. 使用Spring提供的@Order注解
-
-
 
 使用@Order注解，控制通知的执行顺序：
 
@@ -1372,24 +1184,14 @@ public class MyAspect4 {
 }
 ~~~
 
-
-
 重新启动SpringBoot服务，测试通知执行顺序：
 
 ![image-20230110212523787](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110212523787.png)
-
-
 
 > 通知的执行顺序大家主要知道两点即可：
 >
 > 1. 不同的切面类当中，默认情况下通知的执行顺序是与切面类的类名字母排序是有关系的
 > 2. 可以在切面类上面加上@Order注解，来控制不同的切面类通知的执行顺序
-
-
-
-
-
-
 
 ## 3.3 切入点表达式
 
@@ -1398,9 +1200,7 @@ public class MyAspect4 {
 切入点表达式：
 
 - 描述切入点方法的一种表达式
-
 - 作用：主要用来决定项目中的哪些方法需要加入通知
-
 - 常见形式：
 
   1. execution(……)：根据方法的签名来匹配
@@ -1413,8 +1213,6 @@ public class MyAspect4 {
 
 首先我们先学习第一种最为常见的execution切入点表达式。
 
-
-
 ## 3.3.1 execution
 
 execution主要根据方法的返回值、包名、类名、方法名、方法参数等信息来匹配，语法为：
@@ -1426,9 +1224,7 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 其中带`?`的表示可以省略的部分
 
 - 访问修饰符：可省略（比如: public、protected）
-
 - 包名.类名： 可省略
-
 - throws 异常：可省略（注意是方法上声明抛出的异常，不是实际抛出的异常）
 
 示例：
@@ -1437,15 +1233,10 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 @Before("execution(void com.itheima.service.impl.DeptServiceImpl.delete(java.lang.Integer))")
 ~~~
 
-
-
 可以使用通配符描述切入点
 
 - `*` ：单个独立的任意符号，可以通配任意返回值、包名、类名、方法名、任意类型的一个参数，也可以通配包、类、方法名的一部分
-
 - `..` ：多个连续的任意符号，可以通配任意层级的包，或任意类型、任意个数的参数
-
-
 
 切入点表达式的语法规则：
 
@@ -1458,59 +1249,50 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 7. 可以使用 `*`  配置参数，一个任意类型的参数
 8. 可以使用`..` 配置参数，任意个任意类型的参数
 
-
-
 **切入点表达式示例**
 
-- 省略方法的修饰符号 
+- 省略方法的修饰符号
 
   ~~~java
   execution(void com.itheima.service.impl.DeptServiceImpl.delete(java.lang.Integer))
   ~~~
-
 - 使用`*`代替返回值类型
 
   ~~~java
   execution(* com.itheima.service.impl.DeptServiceImpl.delete(java.lang.Integer))
   ~~~
-
 - 使用`*`代替包名（一层包使用一个`*`）
 
   ~~~java
   execution(* com.itheima.*.*.DeptServiceImpl.delete(java.lang.Integer))
   ~~~
-
 - 使用`..`省略包名
 
   ~~~java
   execution(* com..DeptServiceImpl.delete(java.lang.Integer))    
   ~~~
-
 - 使用`*`代替类名
 
   ~~~java
   execution(* com..*.delete(java.lang.Integer))   
   ~~~
-
 - 使用`*`代替方法名
 
   ~~~java
   execution(* com..*.*(java.lang.Integer))   
   ~~~
-
 - 使用 `*` 代替参数
 
   ```java
   execution(* com.itheima.service.impl.DeptServiceImpl.delete(*))
   ```
-  
 - 使用`..`省略参数
 
   ~~~java
   execution(* com..*.*(..))
   ~~~
 
-​	
+​
 
 注意事项：
 
@@ -1520,8 +1302,6 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
   execution(* com.itheima.service.DeptService.list(..)) || execution(* com.itheima.service.DeptService.delete(..))
   ```
 
-  
-
 切入点表达式的书写建议：
 
 - 所有业务方法名在命名时尽量规范，方便切入点表达式快速匹配。如：查询类方法都是 find 开头，更新类方法都是update开头
@@ -1530,19 +1310,19 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
   //业务类
   @Service
   public class DeptServiceImpl implements DeptService {
-      
+
       public List<Dept> findAllDept() {
          //省略代码...
       }
-      
+
       public Dept findDeptById(Integer id) {
          //省略代码...
       }
-      
+
       public void updateDeptById(Integer id) {
          //省略代码...
       }
-      
+
       public void updateDeptByMoreCondition(Dept dept) {
          //省略代码...
       }
@@ -1554,20 +1334,16 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
   //匹配DeptServiceImpl类中以find开头的方法
   execution(* com.itheima.service.impl.DeptServiceImpl.find*(..))
   ~~~
-
 - 描述切入点方法通常基于接口描述，而不是直接描述实现类，增强拓展性
 
   ~~~java
   execution(* com.itheima.service.DeptService.*(..))
   ~~~
-
 - 在满足业务需要的前提下，尽量缩小切入点的匹配范围。如：包名匹配尽量不使用 ..，使用 * 匹配单个包
 
   ~~~java
   execution(* com.itheima.*.*.DeptServiceImpl.find*(..))
   ~~~
-
-  
 
 ## 3.3.2 @annotation
 
@@ -1575,15 +1351,10 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 
 我们可以借助于另一种切入点表达式annotation来描述这一类的切入点，从而来简化切入点表达式的书写。
 
-
-
 实现步骤：
 
 1. 编写自定义注解
-
 2. 在业务类要做为连接点的方法上添加自定义注解
-
-   
 
 **自定义注解**：MyLog
 
@@ -1593,8 +1364,6 @@ execution(访问修饰符?  返回值  包名.类名.?方法名(方法参数) th
 public @interface MyLog {
 }
 ~~~
-
-
 
 **业务类**：DeptServiceImpl
 
@@ -1642,8 +1411,6 @@ public class DeptServiceImpl implements DeptService {
 }
 ~~~
 
-
-
 **切面类**
 
 ~~~java
@@ -1671,8 +1438,6 @@ public class MyAspect6 {
 
 ![image-20230110224447047](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110224447047.png)
 
-
-
 到此我们两种常见的切入点表达式我已经介绍完了。
 
 - execution切入点表达式
@@ -1681,25 +1446,16 @@ public class MyAspect6 {
 - annotation 切入点表达式
   - 基于注解的方式来匹配切入点方法。这种方式虽然多一步操作，我们需要自定义一个注解，但是相对来比较灵活。我们需要匹配哪个方法，就在方法上加上对应的注解就可以了
 
-
-
-
-
 ## 3.4 连接点
 
 讲解完了切入点表达式之后，接下来我们再来讲解最后一个部分连接点。我们前面在讲解AOP核心概念的时候，我们提到过什么是连接点，连接点可以简单理解为可以被AOP控制的方法。
 
 我们目标对象当中所有的方法是不是都是可以被AOP控制的方法。而在SpringAOP当中，连接点又特指方法的执行。
 
-
-
 在Spring中用JoinPoint抽象了连接点，用它可以获得方法执行时的相关信息，如目标类名、方法名、方法参数等。
 
 - 对于@Around通知，获取连接点信息只能使用ProceedingJoinPoint类型
-
 - 对于其他四种通知，获取连接点信息只能使用JoinPoint，它是ProceedingJoinPoint的父类型
-
-
 
 示例代码：
 
@@ -1752,14 +1508,6 @@ public class MyAspect7 {
 
 ![image-20230110231629140](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230110231629140.png)
 
-
-
-
-
-
-
-
-
 # 4. AOP案例
 
 SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要通过一个案例来对AOP进行一个综合的应用。
@@ -1776,8 +1524,6 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 
 > 所记录的日志信息包括当前接口的操作人是谁操作的，什么时间点操作的，以及访问的是哪个类当中的哪个方法，在访问这个方法的时候传入进来的参数是什么，访问这个方法最终拿到的返回值是什么，以及整个接口方法的运行时长是多长时间。
 
-
-
 ## 4.2 分析
 
 问题1：项目当中增删改相关的方法是不是有很多？
@@ -1788,13 +1534,9 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 
 - 这种做法比较繁琐
 
-
-
 以上两个问题的解决方案：可以使用AOP解决(每一个增删改功能接口中要实现的记录操作日志的逻辑代码是相同)。
 
 > 可以把这部分记录操作日志的通用的、重复性的逻辑代码抽取出来定义在一个通知方法当中，我们通过AOP面向切面编程的方式，在不改动原始功能的基础上来对原始的功能进行增强。目前我们所增强的功能就是来记录操作日志，所以也可以使用AOP的技术来实现。使用AOP的技术来实现也是最为简单，最为方便的。
-
-
 
 问题3：既然要基于AOP面向切面编程的方式来完成的功能，那么我们要使用 AOP五种通知类型当中的哪种通知类型？
 
@@ -1806,19 +1548,13 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 >
 > 方法的运行时长，需要原始方法运行之前记录开始时间，原始方法运行之后记录结束时间。通过计算获得方法的执行耗时。
 >
-> 
->
 > 基于以上的分析我们确定要使用Around环绕通知。
-
-
 
 问题4：最后一个问题，切入点表达式我们该怎么写？
 
 - 答案：使用annotation来描述表达式
 
 > 要匹配业务接口当中所有的增删改的方法，而增删改方法在命名上没有共同的前缀或后缀。此时如果使用execution切入点表达式也可以，但是会比较繁琐。 当遇到增删改的方法名没有规律时，就可以使用 annotation切入点表达式
-
-
 
 ## 4.3 步骤
 
@@ -1830,14 +1566,6 @@ SpringAOP的相关知识我们就已经全部学习完毕了。最后我们要�
 - 编码实现
   1. 自定义注解@Log
   2. 定义切面类，完成记录操作日志的逻辑
-
-
-
-
-
-
-
-
 
 ## 4.4 实现
 
@@ -1904,8 +1632,6 @@ public interface OperateLogMapper {
 }
 ~~~
 
-
-
 ## 4.4.2 编码实现
 
 - 自定义注解@Log
@@ -1920,8 +1646,6 @@ public interface OperateLogMapper {
 public @interface Log {
 }
 ~~~
-
-
 
 - 修改业务实现类，在增删改业务方法上添加@Log注解
 
@@ -1961,8 +1685,6 @@ public class EmpServiceImpl implements EmpService {
 ~~~
 
 以同样的方式，修改EmpServiceImpl业务类
-
-
 
 - 定义切面类，完成记录操作日志的逻辑
 
@@ -2025,8 +1747,6 @@ public class LogAspect {
 
 > 代码实现细节： 获取request对象，从请求头中获取到jwt令牌，解析令牌获取出当前用户的id。
 
-
-
 重启SpringBoot服务，测试操作日志记录功能：
 
 - 添加一个新的部门
@@ -2036,34 +1756,3 @@ public class LogAspect {
 - 数据表
 
 ![image-20230111001230731](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230111001230731.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

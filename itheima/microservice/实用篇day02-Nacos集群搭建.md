@@ -1,21 +1,23 @@
+# 实用篇day02-Nacos集群搭建
+
 ---
+
 title: itheima-Microservice 实用篇day02-Nacos集群搭建
 tags:
-  - itheima
-  - '#Nacos'
-categories: 微服务
-cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg'
-abbrlink: cf50504b
+
+- itheima
+- '#Nacos'
+  categories: 微服务
+  cover: 'https://cdn.jsdelivr.net/npm/xiansakana-blog-cover/202403292212834.jpg'
+  abbrlink: cf50504b
+
 ---
+
 # Nacos集群搭建
-
-
 
 # 1.集群结构图
 
 官方给出的Nacos集群图：
-
-
 
 ![image-20210409210621117](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409210621117.png)
 
@@ -25,17 +27,13 @@ abbrlink: cf50504b
 
 ![image-20210409211355037](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409211355037.png)
 
-
-
 三个nacos节点的地址：
 
-| 节点   | ip            | port |
-| ------ | ------------- | ---- |
-| nacos1 | 192.168.150.1 | 8845 |
-| nacos2 | 192.168.150.1 | 8846 |
-| nacos3 | 192.168.150.1 | 8847 |
-
-
+|节点|ip|port|
+| ------| -------------| ----|
+|nacos1|192.168.150.1|8845|
+|nacos2|192.168.150.1|8846|
+|nacos3|192.168.150.1|8847|
 
 # 2.搭建集群
 
@@ -46,8 +44,6 @@ abbrlink: cf50504b
 - 配置nacos
 - 启动nacos集群
 - nginx反向代理
-
-
 
 ## 2.1.初始化数据库
 
@@ -260,8 +256,6 @@ INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHz
 INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 ```
 
-
-
 ## 2.2.下载nacos
 
 nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可以选择任意版本下载。
@@ -269,14 +263,6 @@ nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可�
 本例中才用1.4.1版本：
 
 ![image-20210409212119411](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409212119411.png)
-
-
-
-
-
-
-
-
 
 ## 2.3.配置Nacos
 
@@ -288,8 +274,6 @@ nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可�
 
 - bin：启动脚本
 - conf：配置文件
-
-
 
 进入nacos的conf目录，修改配置文件cluster.conf.example，重命名为cluster.conf：
 
@@ -303,8 +287,6 @@ nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可�
 127.0.0.1.8847
 ```
 
-
-
 然后修改application.properties文件，添加数据库配置
 
 ```properties
@@ -317,13 +299,11 @@ db.user.0=root
 db.password.0=123
 ```
 
-
-
 ## 2.4.启动
 
 将nacos文件夹复制三份，分别命名为：nacos1、nacos2、nacos3
 
-![image-20210409213335538](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409213335538.png) 
+![image-20210409213335538](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409213335538.png)
 
 然后分别修改三个文件夹中的application.properties，
 
@@ -345,25 +325,21 @@ nacos3:
 server.port=8847
 ```
 
-
-
 然后分别启动三个nacos节点：
 
 ```
 startup.cmd
 ```
 
-
-
 ## 2.5.nginx反向代理
 
-找到课前资料提供的nginx安装包： 
+找到课前资料提供的nginx安装包：
 
-![image-20210410103253355](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210410103253355.png) 
+![image-20210410103253355](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210410103253355.png)
 
 解压到任意非中文目录下：
 
-![image-20210410103322874](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210410103322874.png) 
+![image-20210410103322874](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210410103322874.png)
 
 修改conf/nginx.conf文件，配置如下：
 
@@ -384,11 +360,7 @@ server {
 }
 ```
 
-
-
 而后在浏览器访问：http://localhost/nacos即可。
-
-
 
 代码中application.yml文件配置如下：
 
@@ -399,17 +371,7 @@ spring:
       server-addr: localhost:80 # Nacos地址
 ```
 
-
-
-
-
-
-
 ## 2.6.优化
 
-
-
 - 实际部署时，需要给做反向代理的nginx服务器设置一个域名，这样后续如果有服务器迁移nacos的客户端也无需更改配置.
-
 - Nacos的各个节点应该部署到多个不同服务器，做好容灾和隔离
-

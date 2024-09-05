@@ -1,13 +1,18 @@
+# Mongoose
+
 ---
+
 title: Mongoose
 tags:
-  - Mongoose
-  - 数据库
-  - 后端
-categories: 后端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140944975.jpg
-abbrlink: aaac2584
-date: 2023-11-14 09:43:11
+
+- Mongoose
+- 数据库
+- 后端
+  categories: 后端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311140944975.jpg
+  abbrlink: aaac2584
+  date: 2023-11-14 09:43:11
+
 ---
 
 # Mongoose
@@ -143,7 +148,6 @@ app.listen(3000, () => {
       console.log(e);
     });
   ```
-
 - Model.findOne(filter) –找到第一个符合 filter 条件的对象。参数一个对象，用来提供过滤寻找的条件。
 
   ```javascript
@@ -157,7 +161,6 @@ app.listen(3000, () => {
     }
   });
   ```
-
 - Model.updateOne(filter, update, options) –找到第一个符合 filter 条件的对象，并且将数据更新 update 的值。 filter, update 这两个 parameter 的数据类型都是 object。 .then()内部的 callback 被执行时，带入的 parameter 是更新操作讯息，例如，acknowledged, modifiedCount, upsertedId 等等。 Options 对象可设定 runValidators，若 update 对象的值不符合 Schema 的设定，则出现 error。
 
   ```javascript
@@ -206,9 +209,7 @@ app.listen(3000, () => {
   // 会出现error
   // age: ValidatorError: 年龄不能小于0
   ```
-
 - Model.updateMany(filter, update, options) – 找到所有符合 filter 条件的对象，并且将符合 filter 的每一笔数据，更新 update 的值。 filter, update 这两个 parameter 的数据类型都是 object。 .then()内部的 callback 被执行时，带入的 parameter 也是更新操作讯息。 Options 可设定 runValidators。
-
 - Model.findOneAndUpdate(condition, update, options) –找到第一个符合 condition 条件的对象，并且更新 update 的值。 condition, update, options 这三个 parameter 的数据类型都是 object。 .then()内部的 callback 被执行时，若在 options 内部有表明 new 属性为 true，则.then()内部的 callback 被执行时，带入的 parameter 会是更新完成了 document。反之， 没有表明 new 是 true，或设定 new 是 false (这是预设值)，则 callback 的 parameter 会是更新前的 document。 Options 中也可设定 runValidators。
 
   ```javascript
@@ -235,7 +236,7 @@ app.listen(3000, () => {
   ```
 
   > updateOne()与 findOneAndUpdate()的使用时机为何？ updateOne()是在当我们不需要更新后的 document 时，并且希望节省一点数据库操作时间和通讯流量的话，可以用的选择。但其他情况下， findOneAndUpdate()提供更新完成的 document 是非常实用的功能。
-
+  >
 - Model.deleteOne(conditions) – 从 Collections 中删除与 conditions 匹配的第一个 document。此 method 会 return 一个具有 deletedCount 属性的 object。
 
   ```javascript
@@ -248,7 +249,6 @@ app.listen(3000, () => {
       console.log(e);
     });
   ```
-
 - Model.deleteMany(conditions) – 从 Collections 中删除与 conditions 匹配的所有 documents。此 method 会 return 一个具有 deletedCount 属性的 object。
 
 其他的所有操作，请参考 Mongoose CRUD 页面： https://mongoosejs.com/docs/queries.html
@@ -295,7 +295,6 @@ name:{  type: String,  required: true}
      },
    });
    ```
-
 2. default – 可设定属性的预设值。
 
    ```javascript
@@ -318,9 +317,7 @@ name:{  type: String,  required: true}
 跟 String 有关的验证器有：
 
 1. uppercase (boolean)
-
 2. lowercase (boolean)
-
 3. enum (array of strings)
 
    ```javascript
@@ -346,9 +343,7 @@ name:{  type: String,  required: true}
      },
    });
    ```
-
 4. minlength (number)
-
 5. maxlength (number)
 
    ```javascript

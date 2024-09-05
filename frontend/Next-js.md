@@ -1,13 +1,18 @@
+# Next-js
+
 ---
+
 title: Next.js
 tags:
-  - Next.js
-  - React
-  - 前端
-categories: 前端
-cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291739583.jpg
-abbrlink: 98531b37
-date: 2023-11-29 17:36:34
+
+- Next.js
+- React
+- 前端
+  categories: 前端
+  cover: https://cdn.jsdelivr.net/npm/xiansakana-blog-img/202311291739583.jpg
+  abbrlink: 98531b37
+  date: 2023-11-29 17:36:34
+
 ---
 
 # Next.js
