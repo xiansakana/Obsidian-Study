@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/resume/en.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/resume/en.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/resume/en.md",
+                "file": "os/Deep_into_OperatingSystem.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/resume/en.md"
+                "file": "os/Deep_into_OperatingSystem.md"
               }
             }
           },
@@ -174,14 +174,18 @@
   },
   "active": "503bf9e2c37ef859",
   "lastOpenFiles": [
+    "miscellaneous/Unblock Netease Music.md",
+    "miscellaneous/Git bash配置多个Github用户.md",
+    "miscellaneous/Git常用版本控制指令.md",
+    "miscellaneous/Markdown语法参考.md",
+    "miscellaneous/关于美国身份问题的常识.md",
+    "interview/awesome resume.md",
+    "interview/resume/en.md",
+    "interview/oa.md",
+    "interview/bq.md",
     "interview/resume/cn.md",
     "interview/oa/Citadel Securities.md",
     "interview/awesome resume/Awesome-Resume.md",
-    "miscellaneous/关于美国身份问题的常识.md",
-    "miscellaneous/Git-bash配置多个Github用户.md",
-    "miscellaneous/Git常用版本控制指令.md",
-    "miscellaneous/Markdown语法参考.md",
-    "miscellaneous/Unblock-Netease-Music.md",
     "algorithm/刷题记录.md",
     "itheima/Java面试.md",
     "assets/image-20240810165339-3xv6ku8.png",
@@ -216,10 +220,6 @@
     "Intern.md",
     "sql/sql.md",
     "os/Deep_into_OperatingSystem.md",
-    "algorithm/未命名.md",
-    "algorithm/基本语法.md",
-    "miscellaneous/笔记.md",
-    "miscellaneous/运维.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
