@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c8d5778a3a3951e3",
+        "id": "7edc471bfbebcd26",
         "type": "tabs",
         "children": [
           {
-            "id": "88a811b6a46f5157",
+            "id": "503bf9e2c37ef859",
             "type": "leaf",
             "state": {
-              "type": "univer-xlsx",
-              "state": {
-                "file": "Job Applications.xlsx"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -83,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Job Applications.xlsx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Job Applications.xlsx",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -122,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Job Applications.xlsx"
-              }
+              "state": {}
             }
           },
           {
@@ -170,13 +164,17 @@
       "univer:Univer": false
     }
   },
-  "active": "88a811b6a46f5157",
+  "active": "503bf9e2c37ef859",
   "lastOpenFiles": [
-    "Fulltime.md",
-    "tools/tools.md",
-    "Job Applications.xlsx",
-    "Excel 2024-09-05 14.21.03.sheet.md",
+    "D5F99500",
     "~$Job Applications.xlsx",
+    "B3D99500",
+    "61599500",
+    "Fulltime.md",
+    "Job Applications.xlsx",
+    "41DA8500",
+    "tools/tools.md",
+    "Excel 2024-09-05 14.21.03.sheet.md",
     "59FD7500",
     "407B7500",
     "assets/image-20240904133207-7cg72l8.png",
@@ -212,10 +210,7 @@
     "algorithm.md",
     "os.md",
     "itheima/Java面试/Redis面试题-参考回答.md",
-    "sql",
     "tools/云盘.md",
-    "tools/assets",
-    "sql/assets/sql_cheat_sheet_sqlserver-20240701154738-pod70n4.pdf",
     "miscellaneous.md",
     "未命名.canvas",
     "未命名 1.canvas"
