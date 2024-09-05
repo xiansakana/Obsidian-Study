@@ -11,8 +11,12 @@
             "id": "503bf9e2c37ef859",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "interview/bq/亚麻官方STAR.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282.5
+    "width": 290.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "interview/bq/亚麻官方STAR.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "interview/bq/亚麻官方STAR.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "interview/bq/亚麻官方STAR.md"
+              }
             }
           },
           {
@@ -166,6 +174,9 @@
   },
   "active": "503bf9e2c37ef859",
   "lastOpenFiles": [
+    "interview/bq/Behavior-Questions.md",
+    "interview/bq/亚麻官方STAR.md",
+    "interview/bq/ebook.md",
     "D5F99500",
     "~$Job Applications.xlsx",
     "B3D99500",
@@ -194,7 +205,6 @@
     "Intern.md",
     "sql/sql.md",
     "os/Deep_into_OperatingSystem.md",
-    "os/assets",
     "algorithm/刷题记录.md",
     "algorithm/Top Interview 150.md",
     "algorithm/未命名.md",
@@ -210,8 +220,6 @@
     "algorithm.md",
     "os.md",
     "itheima/Java面试/Redis面试题-参考回答.md",
-    "tools/云盘.md",
-    "miscellaneous.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

@@ -1,8 +1,9 @@
 ---
-title: 亚麻官方STAR Example: Tell me about a time when you had to work with incomplete data or information.
+title: 亚麻官方STAR
 date: 2024-07-01T15:37:47Z
 lastmod: 2024-07-01T15:38:51Z
 ---
+Example Tell me about a time when you had to work with incomplete data or information.
 
 My team had a big outage a few months back and we knew that there had been an issue because I received an alarm, I was on call. So I responded to the alarm, started looking at some of our dashboards and saw that there was a big drop in our order count. That usually signifies that something is gone pretty South for the customers. But the problem is I didn’t have enough time to figure out what had gone wrong at a root cause level.
 
