@@ -16,9 +16,9 @@ lastmod: 2024-05-04T21:00:48Z
 2. 单项数据流清晰，易于定位bug
 3. 调试工具配套良好，方便调试
 
-# Redux快速体验
+## Redux快速体验
 
-## 1. 实现计数器
+### 1. 实现计数器
 
 > 需求：不和任何框架绑定，不使用任何构建工具，使用纯Redux实现计数器
 
@@ -79,7 +79,7 @@ lastmod: 2024-05-04T21:00:48Z
 </script>
 ```
 
-## 2. Redux数据流架构
+### 2. Redux数据流架构
 
 > Redux的难点是理解它对于数据修改的规则, 下图动态展示了在整个数据的修改中，数据的流向
 
@@ -90,7 +90,7 @@ lastmod: 2024-05-04T21:00:48Z
 2. action:  一个对象 用来描述你想怎么改数据
 3. reducer:  一个函数 根据action的描述更新state
 
-# Redux与React - 环境准备
+## Redux与React - 环境准备
 
 > Redux虽然是一个框架无关可以独立运行的插件，但是社区通常还是把它与React绑定在一起使用，以一个计数器案例体验一下Redux + React 的基础使用
 
@@ -103,7 +103,7 @@ lastmod: 2024-05-04T21:00:48Z
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/4-20240504032629-vyglzvi.png)
 
-## 2. 配置基础环境
+### 2. 配置基础环境
 
 1. 使用 CRA 快速创建 React 项目
 
@@ -123,7 +123,7 @@ npm i @reduxjs/toolkit  react-redux
 npm run start 
 ```
 
-## 3. store目录结构设计
+### 3. store目录结构设计
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/5-20240504032629-71r22dp.png)
 
@@ -131,13 +131,13 @@ npm run start
 2. 应用通常会有很多个子store模块，所以创建一个 `modules` 目录，在内部编写业务分类的子store
 3. store中的入口文件 index.js 的作用是组合modules中所有的子模块，并导出store
 
-# Redux与React - 实现counter
+## Redux与React - 实现counter
 
-## 1. 整体路径熟悉
+### 1. 整体路径熟悉
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/6-20240504032629-ica9fae.png)
 
-## 2. 使用React Toolkit 创建 counterStore
+### 2. 使用React Toolkit 创建 counterStore
 
 ```javascript
 import { createSlice } from '@reduxjs/toolkit'
@@ -183,7 +183,7 @@ export default configureStore({
 })
 ```
 
-## 3. 为React注入store
+### 3. 为React注入store
 
 > react-redux负责把Redux和React 链接 起来，内置 Provider组件 通过 store 参数把创建好的store实例注入到应用中，链接正式建立
 
@@ -204,19 +204,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 ```
 
-## 4. React组件使用store中的数据
+### 4. React组件使用store中的数据
 
 > 在React组件中使用store中的数据，需要用到一个钩子函数 - useSelector，它的作用是把store中的数据映射到组件中，使用样例如下：
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/7-20240504032629-c9htf9h.png)
 
-## 5. React组件修改store中的数据
+### 5. React组件修改store中的数据
 
 > React组件中修改store中的数据需要借助另外一个hook函数 - useDispatch，它的作用是生成提交action对象的dispatch函数，使用样例如下：
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/8-20240504032629-ow6oe4y.png)
 
-# Redux与React - 提交action传参
+## Redux与React - 提交action传参
 
 > 需求：组件中有俩个按钮 `add to 10` 和 `add to 20` 可以直接把count值修改到对应的数字，目标count值是在组件中传递过去的，需要在提交action的时候传递参数
 
@@ -225,7 +225,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/10-20240504032629-iu8iz8y.png)
 
-# Redux与React - 异步action处理
+## Redux与React - 异步action处理
 
 **需求理解**
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/11-20240504032629-io1o9w5.png)
@@ -301,21 +301,21 @@ function App () {
 export default App
 ```
 
-# Redux调试 - devtools
+## Redux调试 - devtools
 
 > Redux官方提供了针对于Redux的调试工具，支持实时state信息展示，action提交信息查看等
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/12-20240504032629-2xx6zik.png)
 
-# 美团小案例
+## 美团小案例
 
-## 1. 案例演示
+### 1. 案例演示
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/13-20240504032629-chswclw.png)
 
 > 基本开发思路：使用 RTK（Redux Toolkit）来管理应用状态, 组件负责 数据渲染 和 dispatch action
 
-## 2. 准备并熟悉环境
+### 2. 准备并熟悉环境
 
 1. 克隆项目到本地（内置了基础静态组件和模版）
 
@@ -341,7 +341,7 @@ npm run serve
 npm run start 
 ```
 
-## 3. 分类和商品列表渲染
+### 3. 分类和商品列表渲染
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/14-20240504032629-brr8dl6.png)
 1- 编写store逻辑
@@ -435,7 +435,7 @@ const App = () => {
 export default App
 ```
 
-## 4. 点击分类激活交互实现
+### 4. 点击分类激活交互实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/15-20240504032629-zu80a4o.png)
 1- 编写store逻辑
@@ -501,7 +501,7 @@ const Menu = () => {
 }
 ```
 
-## 5. 商品列表切换显示
+### 5. 商品列表切换显示
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/16-20240504032629-avnll3d.png)
 
@@ -524,7 +524,7 @@ const Menu = () => {
 </div>
 ```
 
-## 6. 添加购物车实现
+### 6. 添加购物车实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/17-20240504032629-uq2y0u6.png)
 1- 编写store逻辑
@@ -584,7 +584,7 @@ export default reducer
 </div>
 ```
 
-## 7. 统计区域实现
+### 7. 统计区域实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/18-20240504032629-o8yinq5.png)
 
@@ -605,7 +605,7 @@ const totalPrice = cartList.reduce((a, c) => a + c.price * c.count, 0)
 </div>
 ```
 
-## 8. 购物车列表功能实现
+### 8. 购物车列表功能实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/19-20240504032629-ynmn7tu.png)
 
@@ -701,7 +701,7 @@ clearCart (state) {
 </div>
 ```
 
-## 9. 控制购物车显示和隐藏
+### 9. 控制购物车显示和隐藏
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/20-20240504032629-d877l6y.png)
 

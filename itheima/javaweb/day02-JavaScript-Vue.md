@@ -4,17 +4,17 @@ date: 2024-04-25T19:12:40Z
 lastmod: 2024-04-25T19:12:40Z
 ---
 
-# 1 JavaScript
+## 1. JavaScript
 
 html完成了架子，css做了美化，但是网页是死的，我们需要给他注入灵魂，所以接下来我们需要学习JavaScript，这门语言会让我们的页面能够和用户进行交互。
 
-## 1.1 介绍
+### 1.1 介绍
 
 通过**代码/js效果演示**提供资料进行效果演示，通过浏览器打开，我们点击主题5按钮，页面的主题发生了变化，所以js可以让我们的页面更加的智能，让页面和用户进行交互。
 
 ![1667964998343](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1667964998343.png)
 
-## 1.2 引入方式
+### 1.2 引入方式
 
 同样，js代码也是书写在html中的，那么html中如何引入js代码呢？主要通过下面的2种引入方式：
 
@@ -111,9 +111,9 @@ alert('Hello JS2');
 
 ![1668021241174](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668021241174.png)
 
-## 1.3 基础语法
+### 1.3 基础语法
 
-### 1.3.1 书写语法
+#### 1.3.1 书写语法
 
 掌握了js的引入方式，那么接下来我们需要学习js的书写了，首先需要掌握的是js的书写语法，语法规则如下：
 
@@ -227,7 +227,7 @@ alert('Hello JS2');
 
 ![1668101840992](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668101840992.png)
 
-### 1.3.2 变量
+#### 1.3.2 变量
 
 书写语法会了，变量是一门编程语言比不可少的，所以接下来我们需要学习js中变量的声明，在js中，变量的声明和java中还是不同的。首先js中主要通过如下3个关键字来声明变量的：
 
@@ -405,7 +405,7 @@ alert(x);
 </html>
 ~~~
 
-### 1.3.3 数据类型和运算符
+#### 1.3.3 数据类型和运算符
 
 虽然js是弱数据类型的语言，但是js中也存在数据类型，js中的数据类型分为 ：原始类型 和 引用类型，具体有如下类型
 
@@ -560,11 +560,11 @@ if(1){ //true
 
 **需要注意的是：** 在js中，0,null,undefined,"",NaN理解成false,反之理解成true
 
-## 1.4 函数
+### 1.4 函数
 
 在java中我们为了提高代码的复用性，可以使用方法。同样，在JavaScript中可以使用函数来完成相同的事情。JavaScript中的函数被设计为执行特定任务的代码块，通过关键字function来定义。接下来我们学习一下JavaScript中定义函数的2种语法
 
-### 1.4.1 第一种定义格式
+#### 1.4.1 第一种定义格式
 
 第一种定义格式如下：
 
@@ -612,7 +612,7 @@ alert(result);
 
 ![1668584359136](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668584359136.png)
 
-### 1.4.2 第二种定义格式
+#### 1.4.2 第二种定义格式
 
 第二种可以通过var去定义函数的名字，具体格式如下：
 
@@ -659,7 +659,7 @@ var result = add(10,20,30,40);
 
 因为在JavaScript中，函数的调用只需要名称正确即可，参数列表不管的。如上述案例，10传递给了变量a，20传递给了变量b,而30和40没有变量接受，但是不影响函数的正常调用。
 
-## 1.5 JavaScript对象
+### 1.5 JavaScript对象
 
 JavaScript中的对象有很多，主要可以分为如下3大类，我们可以打开[W3school在线学习文档](https://www.w3school.com.cn/)，来到首页，在左侧栏找到浏览器脚本下的JavaScript，如下图所示：
 
@@ -691,9 +691,9 @@ JavaScript中的对象有很多，主要可以分为如下3大类，我们可以
 
 ### 1.5.1 基本对象
 
-#### 1.5.1.1 Array对象
+##### 1.5.1.1 Array对象
 
-##### 语法格式
+**语法格式**
 
 Array对象时用来定义数组的。常用语法格式有如下2种：
 
@@ -744,7 +744,7 @@ arr[索引] = 值;
 
 ![1668590655291](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668590655291.png)
 
-##### 特点
+**特点**
 
 与java中不一样的是，JavaScript中数组相当于java中的集合，数组的长度是可以变化的。而且JavaScript是弱数据类型的语言，所以数组中可以存储任意数据类型的值。接下来我们通过代码来演示上述特点。
 
@@ -785,7 +785,7 @@ console.log(arr);
 
 ![1668590895662](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668590895662.png)
 
-##### 属性和方法
+**属性和方法**
 
 Array作为一个对象，那么对象是有属性和方法的，所以接下来我们介绍一下Array对象的属性和方法
 
@@ -942,9 +942,9 @@ Array数组的完整代码如下：
 </html>
 ~~~
 
-#### 1.5.1.2 String对象
+##### 1.5.1.2 String对象
 
-##### 语法格式
+**语法格式**
 
 String对象的创建方式有2种：
 
@@ -988,7 +988,7 @@ var str = 'Hello String';
 
 ![1668595022160](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668595022160.png)
 
-##### 属性和方法
+**属性和方法**
 
 String对象也提供了一些常用的属性和方法，如下表格所示：
 
@@ -1094,9 +1094,9 @@ String对象也提供了一些常用的属性和方法，如下表格所示：
 
 ![1668595450181](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668595450181.png)
 
-#### 1.5.1.3 JSON对象
+##### 1.5.1.3 JSON对象
 
-##### 自定义对象
+**自定义对象**
 
 在 JavaScript 中自定义对象特别简单，其语法格式如下：
 
@@ -1161,7 +1161,7 @@ var 对象名 = {
     }
 ~~~
 
-##### json对象
+**json对象**
 
 JSON对象：**J**ava**S**cript **O**bject **N**otation，JavaScript对象标记法。是通过JavaScript标记法书写的文本。其格式如下：
 
@@ -1284,7 +1284,7 @@ alert(JSON.stringify(obj));
 </html>
 ~~~
 
-### 1.5.2 BOM对象
+#### 1.5.2 BOM对象
 
 接下来我们学习BOM对象，BOM的全称是Browser Object Model,翻译过来是浏览器对象模型。也就是JavaScript将浏览器的各个组成部分封装成了对象。我们要操作浏览器的部分功能，可以通过操作BOM对象的相关属性或者函数来完成。例如：我们想要将浏览器的地址改为`http://www.baidu.com`,我们就可以通过BOM中提供的location对象的href属性来完成，代码如下：`location.href='http://www.baidu.com'`
 
@@ -1304,7 +1304,7 @@ BOM中提供了如下5个对象：
 
 对于上述5个对象，我们重点学习的是Window对象、Location对象这2个。
 
-#### 1.5.2.1 Window对象
+##### 1.5.2.1 Window对象
 
 window对象指的是浏览器窗口对象，是JavaScript的全部对象，所以对于window对象，我们可以直接使用，并且对于window对象的方法和属性，我们可以省略window.例如：我们之前学习的alert()函数其实是属于window对象的,其完整的代码如下：
 
@@ -1406,7 +1406,7 @@ window也提供了一些常用的函数，如下表格所示：
 
   浏览器打开，3s后弹框，关闭弹框，发现再也不会弹框了。
 
-#### 1.5.2.2 Location对象
+##### 1.5.2.2 Location对象
 
 location是指代浏览器的地址栏对象，对于这个对象，我们常用的是href属性，用于获取或者设置浏览器的地址信息，添加如下代码：
 
@@ -1468,9 +1468,9 @@ location.href = "https://www.itcast.cn";
 </html>
 ~~~
 
-### 1.5.3 DOM对象
+#### 1.5.3 DOM对象
 
-#### 1.5.3.1 DOM介绍
+##### 1.5.3.1 DOM介绍
 
 DOM：Document Object Model 文档对象模型。也就是 JavaScript 将 HTML 文档的各个组成部分封装为对象。
 
@@ -1495,7 +1495,7 @@ DOM 其实我们并不陌生，之前在学习 XML 就接触过，只不过 XML 
 
 总而达到动态改变页面效果目的，具体我们可以查看代码中提供的06. JS-对象-DOM-演示.html来体会DOM的效果。
 
-#### 1.5.3.2 获取DOM对象
+##### 1.5.3.2 获取DOM对象
 
 我们知道DOM的作用是通过修改HTML元素的内容和样式等来实现页面的各种动态效果，但是我们要操作DOM对象的前提是先获取元素对象，然后才能操作。所以学习DOM,主要的核心就是学习如下2点：
 
@@ -1546,7 +1546,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
   ~~~html
   <script>
   //1. 获取Element元素
-
+  
   //1.1 获取元素-根据ID获取
    var img = document.getElementById('h1');
    alert(img);
@@ -1612,7 +1612,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
   ~~~js
   var divs = document.getElementsByClassName('cls');
   var div1 = divs[0];
-
+  
   div1.innerHTML = "传智教育666";
   ~~~
 
@@ -1684,9 +1684,9 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 </html>
 ~~~
 
-### 1.5.4 案例
+#### 1.5.4 案例
 
-#### 1.5.4.1 需求说明
+##### 1.5.4.1 需求说明
 
 鲁迅说的好，光说不练假把式,光练不说傻把式。所以接下来我们需要通过案例来加强对于上述DOM知识的掌握。需求如下3个：
 
@@ -1698,7 +1698,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 
 ![1668800646200](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668800646200.png)
 
-#### 1.5.4.2 资料准备
+##### 1.5.4.2 资料准备
 
 在JS目录下，也就是用于存放html文件的同级创建img文件下，然后将`资料/图片素材`中提供的2张图片拷贝到img文件夹中，最终整体结果如下图所示：
 
@@ -1737,7 +1737,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 
 ![1668800839720](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668800839720.png)
 
-#### 1.5.4.3 需求1
+##### 1.5.4.3 需求1
 
 - 需求
 
@@ -1763,7 +1763,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 
 ![1668801541168](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668801541168.png)
 
-#### 1.5.4.4 需求2
+##### 1.5.4.4 需求2
 
 - 需求
 
@@ -1793,7 +1793,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 
 ![1668801991368](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668801991368.png)
 
-#### 1.5.4.5 需求3
+##### 1.5.4.5 需求3
 
 - 需求
 
@@ -1821,7 +1821,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 
 ![1668802645347](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668802645347.png)
 
-#### 1.5.4.6 完整代码
+##### 1.5.4.6 完整代码
 
 ~~~html
 <!DOCTYPE html>
@@ -1869,9 +1869,9 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 </html>
 ~~~
 
-## 1.6 JavaScript事件
+### 1.6 JavaScript事件
 
-### 1.6.1 事件介绍
+#### 1.6.1 事件介绍
 
 如下图所示的百度注册页面，当我们用户输入完内容，百度可以自动的提示我们用户名已经存在还是可以使用。那么百度是怎么知道我们用户名输入完了呢？这就需要用到JavaScript中的事件了。
 
@@ -1889,7 +1889,7 @@ HTML中的Element对象可以通过Document对象获取，而Document对象是�
 - 事件绑定
 - 常用事件
 
-### 1.6.2 事件绑定
+#### 1.6.2 事件绑定
 
 JavaScript对于事件的绑定提供了2种方式：
 
@@ -1949,26 +1949,26 @@ JavaScript对于事件的绑定提供了2种方式：
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>JS-事件-事件绑定</title>
   </head>
-
+  
   <body>
       <input type="button" id="btn1" value="事件绑定1" onclick="on()">
       <input type="button" id="btn2" value="事件绑定2">
   </body>
-
+  
   <script>
       function on(){
           alert("按钮1被点击了...");
       }
-
+  
       document.getElementById('btn2').onclick = function(){
           alert("按钮2被点击了...");
       }
-
+  
   </script>
   </html>
   ~~~
 
-### 1.6.3 常见事件
+#### 1.6.3 常见事件
 
 上面案例中使用到了 `onclick` 事件属性，那都有哪些事件属性供我们使用呢？下面就给大家列举一些比较常用的事件属性
 
@@ -1993,9 +1993,9 @@ JavaScript对于事件的绑定提供了2种方式：
 
 其他事件的效果，同学们可以通过提供好的代码去演示，亲身体会事件在什么时候触发。
 
-### 1.6.4 案例
+#### 1.6.4 案例
 
-#### 1.6.4.1 需求说明
+##### 1.6.4.1 需求说明
 
 接下来我们通过案例来加强所学js知识点的掌握。
 
@@ -2009,7 +2009,7 @@ JavaScript对于事件的绑定提供了2种方式：
 
 ![1668806049390](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668806049390.png)
 
-#### 1.6.4.2 资料准备
+##### 1.6.4.2 资料准备
 
 在VS  Code中创建名为11. JS-事件-案例.html的文件，提前准备如下代码：
 
@@ -2051,7 +2051,7 @@ JavaScript对于事件的绑定提供了2种方式：
 
 ![1668806362090](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668806362090.png)
 
-#### 1.6.4.3 需求1
+##### 1.6.4.3 需求1
 
 - 需求：
 
@@ -2084,7 +2084,7 @@ JavaScript对于事件的绑定提供了2种方式：
       //b. 设置src属性
       img.src = "img/on.gif";
   }
-
+  
   function off(){
       //a. 获取img元素对象
       var img = document.getElementById("light");
@@ -2093,7 +2093,7 @@ JavaScript对于事件的绑定提供了2种方式：
   }
   ~~~
 
-#### 1.6.4.4 需求2
+##### 1.6.4.4 需求2
 
 - 需求：
 
@@ -2122,21 +2122,21 @@ JavaScript对于事件的绑定提供了2种方式：
   function lower(){//小写
       //a. 获取输入框元素对象
       var input = document.getElementById("name");
-
+  
       //b. 将值转为小写
       input.value = input.value.toLowerCase();
   }
-
+  
   function upper(){//大写
       //a. 获取输入框元素对象
       var input = document.getElementById("name");
-
+  
       //b. 将值转为大写
       input.value = input.value.toUpperCase();
   }
   ~~~
 
-#### 1.6.4.5 需求3
+##### 1.6.4.5 需求3
 
 - 需求：
 
@@ -2166,19 +2166,19 @@ JavaScript对于事件的绑定提供了2种方式：
   function checkAll(){
       //a. 获取所有复选框元素对象
       var hobbys = document.getElementsByName("hobby");
-
+  
       //b. 设置选中状态
       for (let i = 0; i < hobbys.length; i++) {
           const element = hobbys[i];
           element.checked = true;
       }
-
+  
   }
-
+  
   function reverse(){
       //a. 获取所有复选框元素对象
       var hobbys = document.getElementsByName("hobby");
-
+  
       //b. 设置未选中状态
       for (let i = 0; i < hobbys.length; i++) {
           const element = hobbys[i];
@@ -2187,7 +2187,7 @@ JavaScript对于事件的绑定提供了2种方式：
   }
   ~~~
 
-#### 1.6.4.6 完整代码
+##### 1.6.4.6 完整代码
 
 ~~~html
 <!DOCTYPE html>
@@ -2278,9 +2278,9 @@ JavaScript对于事件的绑定提供了2种方式：
 </html>
 ~~~
 
-# 2 Vue
+## 2. Vue
 
-## 2.1 Vue概述
+### 2.1 Vue概述
 
 通过我们学习的html+css+js已经能够开发美观的页面了，但是开发的效率还有待提高，那么如何提高呢？我们先来分析下页面的组成。一个完整的html页面包括了视图和数据，数据是通过请求 从后台获取的，那么意味着我们需要将后台获取到的数据呈现到页面上，很明显， 这就需要我们使用DOM操作。正因为这种开发流程，所以我们引入了一种叫做**MVVM(Model-View-ViewModel)的前端开发思想**，即让我们开发者更加关注数据，而非数据绑定到视图这种机械化的操作。那么具体什么是MVVM思想呢？
 
@@ -2306,7 +2306,7 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
 
 框架即是一个半成品软件，是一套可重用的、通用的、软件基础代码模型。基于框架进行开发，更加快捷、更加高效。
 
-## 2.2 快速入门
+### 2.2 快速入门
 
 接下来我们通过一个vue的快速入门案例，来体验一下vue。
 
@@ -2387,7 +2387,7 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
 </html>
 ~~~
 
-## 2.3 Vue指令
+### 2.3 Vue指令
 
 在上述的快速入门中，我们发现了html中输入了一个没有学过的属性`v-model`，这个就是vue的**指令**。
 
@@ -2406,7 +2406,7 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
 |v-show|根据条件展示某元素，区别在于切换的是display属性的值|
 |v-for|列表渲染，遍历容器的元素或者对象的属性|
 
-### 2.3.1 v-bind和v-model
+#### 2.3.1 v-bind和v-model
 
 我们首先来学习v-bind指令和v-model指令。
 
@@ -2433,12 +2433,12 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
   </head>
   <body>
       <div id="app">
-
+  
           <a >链接1</a>
           <a >链接2</a>
-
+  
           <input type="text" >
-
+  
       </div>
   </body>
   <script>
@@ -2505,12 +2505,12 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
   </head>
   <body>
       <div id="app">
-
+  
           <a v-bind:href="url">链接1</a>
           <a :href="url">链接2</a>
-
+  
           <input type="text" v-model="url">
-
+  
       </div>
   </body>
   <script>
@@ -2525,7 +2525,7 @@ Vue.js（读音 /vjuː/, 类似于 **view**） 是一套构建用户界面的 **
   </html>
   ~~~
 
-### 2.3.2 v-on
+#### 2.3.2 v-on
 
 接下来我们学习一下v-on指令。
 
@@ -2643,7 +2643,7 @@ v-on: 用来给html标签绑定事件的。**需要注意的是如下2点**：
 </html>
 ~~~
 
-### 2.3.3 v-if和v-show
+#### 2.3.3 v-if和v-show
 
 |指令|描述|
 | ---------| ---------------------------------------------------|
@@ -2764,7 +2764,7 @@ v-show和v-if的作用效果是一样的，只是原理不一样。复制上述h
 </html>
 ~~~
 
-### 2.3.4 v-for
+#### 2.3.4 v-for
 
 v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法格式如下：
 
@@ -2831,7 +2831,7 @@ v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法�
 
 ![1668866805981](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1668866805981.png)
 
-### 2.3.5 案例
+#### 2.3.5 案例
 
 - 需求：
 
@@ -2862,9 +2862,9 @@ v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法�
       <script src="js/vue.js"></script>
   </head>
   <body>
-
+  
       <div id="app">
-
+  
           <table border="1" cellspacing="0" width="60%">
               <tr>
                   <th>编号</th>
@@ -2875,11 +2875,11 @@ v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法�
                   <th>等级</th>
               </tr>
           </table>
-
+  
       </div>
-
+  
   </body>
-
+  
   <script>
       new Vue({
           el: "#app",
@@ -2907,7 +2907,7 @@ v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法�
               }]
           },
           methods: {
-
+  
           },
       })
   </script>
@@ -3015,7 +3015,7 @@ v-for: 从名字我们就能看出，这个指令是用来遍历的。其语法�
 </html>
 ~~~
 
-## 2.4 生命周期
+### 2.4 生命周期
 
 vue的生命周期：指的是vue对象从创建到销毁的过程。vue的生命周期包含8个阶段：每触发一个生命周期事件，会自动执行一个生命周期方法，这些生命周期方法也被称为钩子方法。其完整的生命周期如下图所示：
 

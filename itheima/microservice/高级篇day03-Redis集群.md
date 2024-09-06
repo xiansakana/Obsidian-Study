@@ -4,15 +4,7 @@ date: 2024-04-25T19:24:10Z
 lastmod: 2024-04-25T19:24:10Z
 ---
 
-# Redis集群
-
-本章是基于CentOS7下的Redis集群教程，包括：
-
-- 单机安装Redis
-- Redis主从
-- Redis分片集群
-
-# 1.单机安装Redis
+## 1. 单机安装Redis
 
 首先需要安装Redis所需要的依赖：
 
@@ -73,9 +65,9 @@ redis-server redis.conf
 redis-cli shutdown
 ```
 
-# 2.Redis主从集群
+## 2. Redis主从集群
 
-## 2.1.集群结构
+### 2.1 集群结构
 
 我们搭建的主从集群结构如图：
 
@@ -91,7 +83,7 @@ redis-cli shutdown
 |192.168.150.101|7002|slave|
 |192.168.150.101|7003|slave|
 
-## 2.2.准备实例和配置
+### 2.2 准备实例和配置
 
 要在同一台虚拟机开启3个实例，必须准备三份不同的配置文件和目录，配置文件所在目录也就是工作目录。
 
@@ -169,7 +161,7 @@ sed -i '1a replica-announce-ip 192.168.150.101' 7003/redis.conf
 printf '%s\n' 7001 7002 7003 | xargs -I{} -t sed -i '1a replica-announce-ip 192.168.150.101' {}/redis.conf
 ```
 
-## 2.3.启动
+### 2.3 启动
 
 为了方便查看日志，我们打开3个ssh窗口，分别启动3个redis实例，启动命令：
 
@@ -192,7 +184,7 @@ redis-server 7003/redis.conf
 printf '%s\n' 7001 7002 7003 | xargs -I{} -t redis-cli -p {} shutdown
 ```
 
-## 2.4.开启主从关系
+### 2.4 开启主从关系
 
 现在三个实例还没有任何关系，要配置主从可以使用replicaof 或者slaveof（5.0以前）命令。
 
@@ -242,7 +234,7 @@ info replication
 
 ![image-20210630201258802](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210630201258802.png)
 
-## 2.5.测试
+### 2.5 测试
 
 执行下列操作以测试：
 
@@ -252,9 +244,9 @@ info replication
 
 可以发现，只有在7001这个master节点上可以执行写操作，7002和7003这两个slave节点只能执行读操作。
 
-# 3.搭建哨兵集群
+## 3. 搭建哨兵集群
 
-## 3.1.集群结构
+### 3.1 集群结构
 
 这里我们搭建一个三节点形成的Sentinel集群，来监管之前的Redis主从集群。如图：
 
@@ -268,7 +260,7 @@ info replication
 |s2|192.168.150.101|27002|
 |s3|192.168.150.101|27003|
 
-## 3.2.准备实例和配置
+### 3.2 准备实例和配置
 
 要在同一台虚拟机开启3个实例，必须准备三份不同的配置文件和目录，配置文件所在目录也就是工作目录。
 
@@ -321,7 +313,7 @@ sed -i -e 's/27001/27002/g' -e 's/s1/s2/g' s2/sentinel.conf
 sed -i -e 's/27001/27003/g' -e 's/s1/s3/g' s3/sentinel.conf
 ```
 
-## 3.3.启动
+### 3.3 启动
 
 为了方便查看日志，我们打开3个ssh窗口，分别启动3个redis实例，启动命令：
 
@@ -338,7 +330,7 @@ redis-sentinel s3/sentinel.conf
 
 ![image-20210701220714104](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210701220714104.png)
 
-## 3.4.测试
+### 3.4 测试
 
 尝试让master节点7001宕机，查看sentinel日志：
 
@@ -352,9 +344,9 @@ redis-sentinel s3/sentinel.conf
 
 ![image-20210701223131264](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210701223131264.png)
 
-# 4.搭建分片集群
+# 4. 搭建分片集群
 
-## 4.1.集群结构
+### 4.1 集群结构
 
 分片集群需要的节点数量较多，这里我们搭建一个最小的分片集群，包含3个master节点，每个master包含一个slave节点，结构如下：
 
@@ -371,7 +363,7 @@ redis-sentinel s3/sentinel.conf
 |192.168.150.101|8002|slave|
 |192.168.150.101|8003|slave|
 
-## 4.2.准备实例和配置
+### 4.2 准备实例和配置
 
 删除之前的7001、7002、7003这几个目录，重新创建出7001、7002、7003、8001、8002、8003目录：
 
@@ -428,7 +420,7 @@ cd /tmp
 printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t sed -i 's/6379/{}/g' {}/redis.conf
 ```
 
-## 4.3.启动
+### 4.3 启动
 
 因为已经配置了后台启动模式，所以可以直接启动服务：
 
@@ -461,7 +453,7 @@ ps -ef | grep redis | awk '{print $2}' | xargs kill
 printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t redis-cli -p {} shutdown
 ```
 
-## 4.4.创建集群
+### 4.4 创建集群
 
 虽然服务启动了，但是目前每个服务之间都是独立的，没有任何关联。
 
@@ -516,7 +508,7 @@ redis-cli -p 7001 cluster nodes
 
 ![image-20210702181922809](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210702181922809.png)
 
-## 4.5.测试
+### 4.5 测试
 
 尝试连接7001节点，存储一个数据：
 

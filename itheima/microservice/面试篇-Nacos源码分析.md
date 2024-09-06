@@ -4,13 +4,11 @@ date: 2024-04-25T19:19:24Z
 lastmod: 2024-04-25T19:19:24Z
 ---
 
-# Nacos源码分析
-
-# 1.下载Nacos源码并运行
+## 1. 下载Nacos源码并运行
 
 要研究Nacos源码自然不能用打包好的Nacos服务端jar包来运行，需要下载源码自己编译来运行。
 
-## 1.1.下载Nacos源码
+### 1.1 下载Nacos源码
 
 Nacos的GitHub地址：https://github.com/alibaba/nacos
 
@@ -28,7 +26,7 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 ![image-20210906105102668](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906105102668.png)
 
-## 1.2.导入Demo工程
+### 1.2 导入Demo工程
 
 我们的课前资料提供了一个微服务Demo，包含了服务注册、发现等业务。
 
@@ -45,7 +43,7 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
     - order-service：订单微服务，业务中需要访问user-service，是一个服务消费者
     - user-service：用户微服务，对外暴露根据id查询用户的接口，是一个服务提供者
 
-## 1.3.导入Nacos源码
+### 1.3 导入Nacos源码
 
 将之前下载好的Nacos源码解压到cloud-source-demo项目目录中：
 
@@ -77,7 +75,7 @@ Nacos的GitHub地址：https://github.com/alibaba/nacos
 
 ![image-20210906111632336](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906111632336.png)
 
-## 1.4.proto编译
+### 1.4 proto编译
 
 Nacos底层的数据通信会基于protobuf对数据做序列化和反序列化。并将对应的proto文件定义在了consistency这个子模块中：
 
@@ -85,7 +83,7 @@ Nacos底层的数据通信会基于protobuf对数据做序列化和反序列化�
 
 我们需要先将proto文件编译为对应的Java代码。
 
-### 1.4.1.什么是protobuf
+#### 1.4.1 什么是protobuf
 
 protobuf的全称是Protocol Buffer，是Google提供的一种数据序列化协议，这是Google官方的定义：
 
@@ -95,7 +93,7 @@ protobuf的全称是Protocol Buffer，是Google提供的一种数据序列化协
 
 protobuf的之所以可以跨语言，就是因为数据定义的格式为`.proto`格式，需要基于protoc编译为对应的语言。
 
-### 1.4.2.安装protoc
+#### 1.4.2 安装protoc
 
 Protobuf的GitHub地址：https://github.com/protocolbuffers/protobuf/releases
 
@@ -115,7 +113,7 @@ Protobuf的GitHub地址：https://github.com/protocolbuffers/protobuf/releases
 
 ![image-20210906113552081](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113552081.png)
 
-### 1.4.3.编译proto
+#### 1.4.3 编译proto
 
 进入nacos-1.4.2的consistency模块下的src/main目录下：
 
@@ -136,7 +134,7 @@ protoc --java_out=./java ./proto/Data.proto
 
 ![image-20210906113923430](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906113923430.png)
 
-## 1.5.运行
+### 1.5 运行
 
 nacos服务端的入口是在console模块中的Nacos类：
 
@@ -162,7 +160,7 @@ nacos服务端的入口是在console模块中的Nacos类：
 
 ![image-20210906151358154](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210906151358154.png)
 
-# 2.服务注册
+## 2. 服务注册
 
 服务注册到Nacos以后，会保存在一个本地注册表中，其结构如下：
 
@@ -180,7 +178,7 @@ nacos服务端的入口是在console模块中的Nacos类：
 
 每一个服务去注册到Nacos时，就会把信息组织并存入这个Map中。
 
-## 2.1.服务注册接口
+### 2.1 服务注册接口
 
 Nacos提供了服务注册的API接口，客户端只需要向该接口发送请求，即可实现服务注册。
 
@@ -216,11 +214,11 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 |500|Internal Server Error|服务器内部错误|
 |200|OK|正常|
 
-## 2.2.客户端
+### 2.2 客户端
 
 首先，我们需要找到服务注册的入口。
 
-### 2.2.1.NacosServiceRegistryAutoConfiguration
+#### 2.2.1 NacosServiceRegistryAutoConfiguration
 
 因为Nacos的客户端是基于SpringBoot的自动装配实现的，我们可以在nacos-discovery依赖：
 
@@ -236,7 +234,7 @@ Nacos提供了服务注册的API接口，客户端只需要向该接口发送请
 
 ![image-20210907201612322](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907201612322.png)
 
-### 2.2.2.NacosAutoServiceRegistration
+#### 2.2.2 NacosAutoServiceRegistration
 
 `NacosAutoServiceRegistration`源码如图：
 
@@ -317,7 +315,7 @@ protected void register() {
 
 ![image-20210907215903335](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210907215903335.png)
 
-### 2.2.3.NacosServiceRegistry
+#### 2.2.3 NacosServiceRegistry
 
 `NacosServiceRegistry`是Spring的`ServiceRegistry`接口的实现类，而ServiceRegistry接口是服务注册、发现的规约接口，定义了register、deregister等方法的声明。
 
@@ -363,7 +361,7 @@ public void register(Registration registration) {
 
 而NamingService接口的默认实现就是NacosNamingService。
 
-### 2.2.4.NacosNamingService
+#### 2.2.4 NacosNamingService
 
 NacosNamingService提供了服务注册、订阅等功能。
 
@@ -428,13 +426,13 @@ public void registerService(String serviceName, String groupName, Instance insta
 
 ![image-20210908141019175](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210908141019175.png)
 
-### 2.2.5.客户端注册的流程图
+#### 2.2.5 客户端注册的流程图
 
 如图：
 
 ![image-20210923185331470](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923185331470.png)
 
-## 2.3.服务端
+### 2.3 服务端
 
 在nacos-console的模块中，会引入nacos-naming这个模块：
 
@@ -448,7 +446,7 @@ public void registerService(String serviceName, String groupName, Instance insta
 
 ![image-20210922113158618](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922113158618.png)
 
-### 2.3.1.InstanceController
+#### 2.3.1 InstanceController
 
 进入InstanceController类，可以看到一个register方法，就是服务注册的方法了：
 
@@ -473,7 +471,7 @@ public String register(HttpServletRequest request) throws Exception {
 
 这里，进入到了serviceManager.registerInstance()方法中。
 
-### 2.3.2.ServiceManager
+#### 2.3.2 ServiceManager
 
 ServiceManager就是Nacos中管理服务、实例信息的核心API，其中就包含Nacos的服务注册表：
 
@@ -549,7 +547,7 @@ public void addInstance(String namespaceId, String serviceName, boolean ephemera
 >
 > 这样在更新列表状态过程中，无需阻塞用户的读操作，也不会导致用户读取到脏数据，性能比较好。这种方案称为CopyOnWrite方案。
 
-#### 1）更服务列表
+##### 2.3.2.1 更服务列表
 
 我们来看看实例列表的更新，对应的方法是`addIpAddresses(service, ephemeral, ips);`：
 
@@ -633,7 +631,7 @@ public List<Instance> updateIpAddresses(Service service, String action, boolean 
 
 简单来讲，就是先获取旧的实例列表，然后把新的实例信息与旧的做对比，新的实例就添加，老的实例同步ID。然后返回最新的实例列表。
 
-#### 2）Nacos集群一致性
+##### 2.3.5.2 Nacos集群一致性
 
 在完成本地服务列表更新后，Nacos又实现了集群一致性更新，调用的是:
 
@@ -666,7 +664,7 @@ private ConsistencyService mapConsistencyService(String key) {
 
 默认情况下，所有实例都是临时实例，我们关注DistroConsistencyServiceImpl即可。
 
-### 2.3.4.DistroConsistencyServiceImpl
+#### 2.3.4 DistroConsistencyServiceImpl
 
 我们来看临时实例的一致性实现：DistroConsistencyServiceImpl类的put方法：
 
@@ -687,9 +685,9 @@ public void put(String key, Record value) throws NacosException {
 
 我们先看onPut方法
 
-#### 2.3.4.1.更新本地实例列表
+##### 2.3.4.1 更新本地实例列表
 
-##### 1）放入阻塞队列
+**1）放入阻塞队列**
 
 onPut方法如下：
 
@@ -735,7 +733,7 @@ public void addTask(String datumKey, DataOperation action) {
 }
 ```
 
-##### 2）Notifier异步更新
+**2）Notifier异步更新**
 
 同时，notifier还是一个Runnable，通过一个单线程的线程池来不断从阻塞队列中获取任务，执行服务列表的更新。来看下其中的run方法：
 
@@ -807,7 +805,7 @@ private void handle(Pair<String, DataOperation> pair) {
 }
 ```
 
-##### 3）覆盖实例列表
+**3）覆盖实例列表**
 
 而在Service的onChange方法中，就可以看到更新实例列表的逻辑了：
 
@@ -938,7 +936,7 @@ public void updateIps(List<Instance> ips, boolean ephemeral) {
 }
 ```
 
-#### 2.3.4.2.集群数据同步
+##### 2.3.4.2 集群数据同步
 
 在DistroConsistencyServiceImpl的put方法中分为两步：
 
@@ -1003,11 +1001,11 @@ protected void processTasks() {
 
 可以看出来基于Distro模式的同步是异步进行的，并且失败时会将任务重新入队并充实，因此不保证同步结果的强一致性，属于AP模式的一致性策略。
 
-### 2.3.5.服务端流程图
+#### 2.3.5 服务端流程图
 
 ![image-20210923214042926](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923214042926.png)
 
-## 2.4.总结
+### 2.4 总结
 
 - Nacos的注册表结构是什么样的？
 
@@ -1030,7 +1028,7 @@ protected void processTasks() {
 
   - 答：Nacos内部会将服务注册的任务放入阻塞队列，采用线程池异步来完成实例更新，从而提高并发写能力。
 
-# 3.服务心跳
+## 3. 服务心跳
 
 Nacos的实例分为临时实例和永久实例两种，可以通过在yaml 文件配置：
 
@@ -1078,7 +1076,7 @@ spring:
 |500|Internal Server Error|服务器内部错误|
 |200|OK|正常|
 
-## 3.1.客户端
+### 3.1 客户端
 
 在2.2.4.服务注册这一节中，我们说过NacosNamingService这个类实现了服务的注册，同时也实现了服务心跳：
 
@@ -1098,13 +1096,13 @@ public void registerInstance(String serviceName, String groupName, Instance inst
 }
 ```
 
-### 3.1.1.BeatInfo
+#### 3.1.1 BeatInfo
 
 这里的BeanInfo就包含心跳需要的各种信息：
 
 ![image-20210922213313677](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922213313677.png)
 
-### 3.1.2.BeatReactor
+#### 3.1.2 BeatReactor
 
 而`BeatReactor`这个类则维护了一个线程池：
 
@@ -1134,7 +1132,7 @@ public void addBeatInfo(String serviceName, BeatInfo beatInfo) {
 
 可以看到是5秒，默认5秒一次心跳。
 
-### 3.1.3.BeatTask
+#### 3.1.3 BeatTask
 
 心跳的任务封装在`BeatTask`这个类中，是一个Runnable，其run方法如下：
 
@@ -1193,7 +1191,7 @@ public void run() {
 }
 ```
 
-### 3.1.5.发送心跳
+#### 3.1.5 发送心跳
 
 最终心跳的发送还是通过`NamingProxy`的`sendBeat`方法来实现：
 
@@ -1220,14 +1218,14 @@ public JsonNode sendBeat(BeatInfo beatInfo, boolean lightBeatEnabled) throws Nac
 }
 ```
 
-## 3.2.服务端
+### 3.2 服务端
 
 对于临时实例，服务端代码分两部分：
 
 - 1）InstanceController提供了一个接口，处理客户端的心跳请求
 - 2）定时检测实例心跳是否按期执行
 
-### 3.2.1.InstanceController
+#### 3.2.1 InstanceController
 
 与服务注册时一样，在nacos-naming模块中的InstanceController类中，定义了一个方法用来处理心跳请求：
 
@@ -1315,7 +1313,7 @@ public ObjectNode beat(HttpServletRequest request) throws Exception {
 
 最终，在确认心跳请求对应的服务、实例都在的情况下，开始交给Service类处理这次心跳请求。调用了Service的processClientBeat方法
 
-### 3.2.2.处理心跳请求
+#### 3.2.2 处理心跳请求
 
 查看`Service`的`service.processClientBeat(clientBeat);`方法：
 
@@ -1373,7 +1371,7 @@ public void run() {
 
 处理心跳请求的核心就是更新心跳实例的最后一次心跳时间，lastBeat，这个会成为判断实例心跳是否过期的关键指标！
 
-### 3.3.3.心跳异常检测
+#### 3.3.3 心跳异常检测
 
 在服务注册时，一定会创建一个`Service`对象，而`Service`中有一个`init`方法，会在注册时被调用：
 
@@ -1450,7 +1448,7 @@ public void run() {
 
 ![image-20210922221344417](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210922221344417.png)
 
-### 3.3.4.主动健康检测
+#### 3.3.4 主动健康检测
 
 对于非临时实例（ephemeral=false)，Nacos会采用主动的健康检测，定时向实例发送请求，根据响应来判断实例健康状态。
 
@@ -1693,7 +1691,7 @@ public Void call() {
 }
 ```
 
-## 3.3.总结
+### 3.3 总结
 
 Nacos的健康检测有两种模式：
 
@@ -1714,7 +1712,7 @@ Nacos的健康检测有两种模式：
 
 另外，Nacos支持永久实例，而Eureka不支持，Eureka只提供了心跳模式的健康监测，而没有主动检测功能。
 
-# 4.服务发现
+## 4. 服务发现
 
 Nacos提供了一个根据serviceId查询实例列表的接口：
 
@@ -1748,11 +1746,11 @@ Nacos提供了一个根据serviceId查询实例列表的接口：
 |500|Internal Server Error|服务器内部错误|
 |200|OK|正常|
 
-## 4.1.客户端
+### 4.1 客户端
 
-### 4.1.1.定时更新服务列表
+#### 4.1.1 定时更新服务列表
 
-#### 4.1.1.1.NacosNamingService
+##### 4.1.1.1 NacosNamingService
 
 在2.2.4小节中，我们讲到一个类`NacosNamingService`，这个类不仅仅提供了服务注册功能，同样提供了服务发现的功能。
 
@@ -1786,7 +1784,7 @@ public List<Instance> getAllInstances(String serviceName, String groupName, List
 }
 ```
 
-#### 4.1.1.2.HostReactor
+##### 4.1.1.2 HostReactor
 
 进入1.1.订阅服务消息，这里是由`HostReactor`类的`getServiceInfo()`方法来实现的：
 
@@ -1873,7 +1871,7 @@ public void updateService(String serviceName, String clusters) throws NacosExcep
 }
 ```
 
-#### 4.1.1.3.ServerProxy
+##### 4.1.1.3 ServerProxy
 
 而ServerProxy的queryList方法如下：
 
@@ -1893,7 +1891,7 @@ public String queryList(String serviceName, String clusters, int udpPort, boolea
 }
 ```
 
-### 4.1.2.处理服务变更通知
+#### 4.1.2 处理服务变更通知
 
 除了定时更新服务列表的功能外，Nacos还支持服务列表变更时的主动推送功能。
 
@@ -1907,7 +1905,7 @@ public String queryList(String serviceName, String clusters, int udpPort, boolea
 - 解析数据后，通过NotifyCenter发布服务变更的事件
 - InstanceChangeNotifier监听变更事件，完成对服务列表的更新
 
-#### 4.1.2.1.PushReceiver
+##### 4.1.2.1 PushReceiver
 
 我们先看PushReceiver，这个类会以UDP方式接收Nacos服务端推送的服务变更数据。
 
@@ -1975,7 +1973,7 @@ public void run() {
 }
 ```
 
-#### 4.1.2.2.HostReactor
+##### 4.1.2.2 HostReactor
 
 通知数据的处理由交给了`HostReactor`的`processServiceJson`方法：
 
@@ -2028,9 +2026,9 @@ public ServiceInfo processServiceJson(String json) {
 }
 ```
 
-## 4.2.服务端
+### 4.2 服务端
 
-### 4.2.1.拉取服务列表接口
+#### 4.2.1 拉取服务列表接口
 
 在2.3.1小节介绍的InstanceController中，提供了拉取服务列表的接口：
 
@@ -2131,7 +2129,7 @@ public ObjectNode doSrvIpxt(String namespaceId, String serviceName, String agent
 }
 ```
 
-### 4.2.2.发布服务变更的UDP通知
+#### 4.2.2 发布服务变更的UDP通知
 
 在上一节中，`InstanceController`中的`doSrvIpxt()`方法中，有这样一行代码：
 
@@ -2153,7 +2151,7 @@ PushService类本身实现了`ApplicationListener`接口：
 
 ![image-20210923183017424](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210923183017424.png)
 
-## 4.3.总结
+### 4.3 总结
 
 Nacos的服务发现分为两种模式：
 

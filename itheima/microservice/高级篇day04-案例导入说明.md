@@ -4,15 +4,15 @@ date: 2024-04-25T19:25:48Z
 lastmod: 2024-04-25T19:25:48Z
 ---
 
-# 案例导入说明
+## 案例导入说明
 
 为了演示多级缓存，我们先导入一个商品管理的案例，其中包含商品的CRUD功能。我们将来会给查询商品添加多级缓存。
 
-# 1.安装MySQL
+## 1. 安装MySQL
 
 后期做数据同步需要用到MySQL的主从功能，所以需要大家在虚拟机中，利用Docker来运行一个MySQL容器。
 
-## 1.1.准备目录
+### 1.1准备目录
 
 为了方便后期配置MySQL，我们先准备两个目录，用于挂载容器的数据和配置文件目录：
 
@@ -25,7 +25,7 @@ mkdir mysql
 cd mysql
 ```
 
-## 1.2.运行命令
+### 1.2 运行命令
 
 进入mysql目录后，执行下面的Docker命令：
 
@@ -42,7 +42,7 @@ docker run \
  mysql:5.7.25
 ```
 
-## 1.3.修改配置
+### 1.3 修改配置
 
 在/tmp/mysql/conf目录添加一个my.cnf文件，作为mysql的配置文件：
 
@@ -61,7 +61,7 @@ datadir=/var/lib/mysql
 server-id=1000
 ```
 
-## 1.4.重启
+### 1.4 重启
 
 配置修改后，必须重启容器：
 
@@ -69,7 +69,7 @@ server-id=1000
 docker restart mysql
 ```
 
-# 2.导入SQL
+## 2. 导入SQL
 
 接下来，利用Navicat客户端连接MySQL，然后导入课前资料提供的sql文件：
 
@@ -82,7 +82,7 @@ docker restart mysql
 
 之所以将库存分离出来，是因为库存是更新比较频繁的信息，写操作较多。而其他信息修改的频率非常低。
 
-# 3.导入Demo工程
+## 3. 导入Demo工程
 
 下面导入课前资料提供的工程：
 
@@ -104,31 +104,31 @@ docker restart mysql
 
 业务全部使用mybatis-plus来实现，如有需要请自行修改业务逻辑。
 
-## 3.1.分页查询商品
+### 3.1 分页查询商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181554563](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181554563.png)
 
-## 3.2.新增商品
+### 3.2 新增商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181646907](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181646907.png)
 
-## 3.3.修改商品
+### 3.3 修改商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181714607](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181714607.png)
 
-## 3.4.修改库存
+### 3.4 修改库存
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181744011](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181744011.png)
 
-## 3.5.删除商品
+### 3.5 删除商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
@@ -136,7 +136,7 @@ docker restart mysql
 
 这里是采用了逻辑删除，将商品状态修改为3
 
-## 3.6.根据id查询商品
+### 3.6 根据id查询商品
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
@@ -144,13 +144,13 @@ docker restart mysql
 
 这里只返回了商品信息，不包含库存
 
-## 3.7.根据id查询库存
+### 3.7 根据id查询库存
 
 在`com.heima.item.web`包的`ItemController`中可以看到接口定义：
 
 ![image-20210809181932805](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210809181932805.png)
 
-## 3.8.启动
+### 3.8 启动
 
 注意修改application.yml文件中配置的mysql地址信息：
 
@@ -160,7 +160,7 @@ docker restart mysql
 
 修改后，启动服务，访问：http://localhost:8081/item/10001即可查询数据
 
-# 4.导入商品查询页面
+## 4. 导入商品查询页面
 
 商品查询是购物页面，与商品管理的页面是分离的。
 
@@ -172,7 +172,7 @@ docker restart mysql
 
 页面需要的数据通过ajax向服务端（nginx业务集群）查询。
 
-## 4.1.运行nginx服务
+### 4.1 运行nginx服务
 
 这里我已经给大家准备好了nginx反向代理服务器和静态资源。
 
@@ -192,7 +192,7 @@ start nginx.exe
 
 ![image-20210816112323632](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210816112323632.png)
 
-## 4.2.反向代理
+### 4.2 反向代理
 
 现在，页面是假数据展示的。我们需要向服务器发送ajax请求，查询商品数据。
 

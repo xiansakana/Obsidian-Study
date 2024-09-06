@@ -4,13 +4,11 @@ date: 2024-04-25T19:17:03Z
 lastmod: 2024-04-25T19:17:03Z
 ---
 
-# 微服务保护
+## 1. 初识Sentinel
 
-# 1.初识Sentinel
+### 1.1 雪崩问题及解决方案
 
-## 1.1.雪崩问题及解决方案
-
-### 1.1.1.雪崩问题
+#### 1.1.1 雪崩问题
 
 微服务中，服务间调用关系错综复杂，一个微服务往往依赖于多个其它微服务。
 
@@ -30,15 +28,15 @@ lastmod: 2024-04-25T19:17:03Z
 
 ![image-20210715172710340](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715172710340.png)
 
-### 1.1.2.超时处理
+#### 1.1.2 超时处理
 
 解决雪崩问题的常见方式有四种：
 
-•超时处理：设定超时时间，请求超过一定时间没有响应就返回错误信息，不会无休止等待
+• 超时处理：设定超时时间，请求超过一定时间没有响应就返回错误信息，不会无休止等待
 
 ![image-20210715172820438](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715172820438.png)
 
-### 1.1.3.仓壁模式
+#### 1.1.3 仓壁模式
 
 方案2：仓壁模式
 
@@ -52,7 +50,7 @@ lastmod: 2024-04-25T19:17:03Z
 
 ![image-20210715173215243](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173215243.png)
 
-### 1.1.4.断路器
+#### 1.1.4. 断路器
 
 断路器模式：由**断路器**统计业务执行的异常比例，如果超出阈值则会**熔断**该业务，拦截访问该业务的一切请求。
 
@@ -64,13 +62,13 @@ lastmod: 2024-04-25T19:17:03Z
 
 ![image-20210715173428073](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173428073.png)
 
-### 1.1.5.限流
+#### 1.1.5 限流
 
 **流量控制**：限制业务访问的QPS，避免服务因流量的突增而故障。
 
 ![image-20210715173555158](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715173555158.png)
 
-### 1.1.6.总结
+#### 1.1.6 总结
 
 什么是雪崩问题？
 
@@ -82,7 +80,7 @@ lastmod: 2024-04-25T19:17:03Z
 
 **超时处理、线程隔离、降级熔断**是在部分服务故障时，将故障控制在一定范围，避免雪崩。是一种**补救**措施。
 
-## 1.2.服务保护技术对比
+### 1.2 服务保护技术对比
 
 在SpringCloud当中支持多种服务保护技术：
 
@@ -106,9 +104,9 @@ lastmod: 2024-04-25T19:17:03Z
 |控制台|开箱即用，可配置规则、查看秒级监控、机器发现等|不完善|
 |常见框架的适配|Servlet、Spring Cloud、Dubbo、gRPC  等|Servlet、Spring Cloud Netflix|
 
-## 1.3.Sentinel介绍和安装
+### 1.3 Sentinel介绍和安装
 
-### 1.3.1.初识Sentinel
+#### 1.3.1 初识Sentinel
 
 Sentinel是阿里巴巴开源的一款微服务流量控制组件。官网地址：https://sentinelguard.io/zh-cn/index.html
 
@@ -122,7 +120,7 @@ Sentinel 具有以下特征:
 
 •**完善的** **SPI** **扩展点**：Sentinel 提供简单易用、完善的 SPI 扩展接口。您可以通过实现扩展接口来快速地定制逻辑。例如定制规则管理、适配动态数据源等。
 
-### 1.3.2.安装Sentinel
+#### 1.3.2 安装Sentinel
 
 1）下载
 
@@ -168,7 +166,7 @@ java -Dserver.port=8090 -jar sentinel-dashboard-1.8.1.jar
 
 这是因为我们还没有与微服务整合。
 
-## 1.4.微服务整合Sentinel
+### 1.4 微服务整合Sentinel
 
 我们在order-service中整合sentinel，并连接sentinel的控制台，步骤如下：
 
@@ -204,11 +202,11 @@ spring:
 
 ![image-20210715191241799](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210715191241799.png)
 
-# 2.流量控制
+## 2. 流量控制
 
 雪崩问题虽然有四种方案，但是限流是避免服务因突发的流量而发生故障，是对微服务雪崩问题的预防。我们先学习这种模式。
 
-## 2.1.簇点链路
+### 2.1 簇点链路
 
 当请求进入微服务时，首先会访问DispatcherServlet，然后进入Controller、Service、Mapper，这样的一个调用链就叫做**簇点链路**。簇点链路中被监控的每一个接口就是一个**资源**。
 
@@ -225,9 +223,9 @@ spring:
 - 热点：热点参数限流，是限流的一种
 - 授权：请求的权限控制
 
-## 2.1.快速入门
+### 2.1 快速入门
 
-### 2.1.1.示例
+#### 2.1.1 示例
 
 点击资源/order/{orderId}后面的流控按钮，就可以弹出表单。
 
@@ -239,7 +237,7 @@ spring:
 
 其含义是限制 /order/{orderId}这个资源的单机QPS为1，即每秒只允许1次请求，超出的请求会被拦截并报错。
 
-### 2.1.2.练习：
+#### 2.1.2 练习
 
 需求：给 /order/{orderId}这个资源设置流控规则，QPS不能超过 5，然后测试。
 
@@ -277,7 +275,7 @@ spring:
 
 可以看到，成功的请求每次只有5个
 
-## 2.2.流控模式
+### 2.2 流控模式
 
 在添加限流规则时，点击高级选项，可以选择三种**流控模式**：
 
@@ -289,7 +287,7 @@ spring:
 
 快速入门测试的就是直接模式。
 
-### 2.2.1.关联模式
+#### 2.2.1 关联模式
 
 **关联模式**：统计与当前资源相关的另一个资源，触发阈值时，对当前资源限流
 
@@ -362,7 +360,7 @@ public String updateOrder() {
 
 ![image-20210716103143002](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716103143002.png)
 
-### 2.2.2.链路模式
+#### 2.2.2 链路模式
 
 **链路模式**：只针对从指定链路访问到本资源的请求做统计，判断是否超过阈值。
 
@@ -390,7 +388,7 @@ public String updateOrder() {
 
 实现：
 
-#### 1）添加查询商品方法
+1）添加查询商品方法
 
 在order-service服务中，给OrderService类添加一个queryGoods方法：
 
@@ -400,7 +398,7 @@ public void queryGoods(){
 }
 ```
 
-#### 2）查询订单时，查询商品
+2）查询订单时，查询商品
 
 在order-service的OrderController中，修改/order/query端点的业务逻辑：
 
@@ -415,7 +413,7 @@ public String queryOrder() {
 }
 ```
 
-#### 3）新增订单，查询商品
+3）新增订单，查询商品
 
 在order-service的OrderController中，修改/order/save端点，模拟新增订单：
 
@@ -430,7 +428,7 @@ public String saveOrder() {
 }
 ```
 
-#### 4）给查询商品添加资源标记
+4）给查询商品添加资源标记
 
 默认情况下，OrderService中的方法是不被Sentinel监控的，需要我们自己通过注解来标记要监控的方法。
 
@@ -458,7 +456,7 @@ spring:
 
 ![image-20210716105227163](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716105227163.png)
 
-#### 5）添加流控规则
+5）添加流控规则
 
 点击goods资源后面的流控按钮，在弹出的表单中填写下面信息：
 
@@ -466,7 +464,7 @@ spring:
 
 只统计从/order/query进入/goods的资源，QPS阈值为2，超出则被限流。
 
-#### 6）Jmeter测试
+6）Jmeter测试
 
 选择《流控模式-链路》：
 
@@ -494,7 +492,7 @@ spring:
 
 每次只有2个通过。
 
-### 2.2.3.总结
+#### 2.2.3 总结
 
 流控模式有哪些？
 
@@ -504,7 +502,7 @@ spring:
 
 •链路：阈值统计时，只统计从指定资源进入当前资源的请求，是对请求来源的限流
 
-## 2.3.流控效果
+### 2.3 流控效果
 
 在流控的高级选项中，还有一个流控效果选项：
 
@@ -516,7 +514,7 @@ spring:
 - warm up：预热模式，对超出阈值的请求同样是拒绝并抛出异常。但这种模式阈值会动态变化，从一个较小值逐渐增加到最大阈值。
 - 排队等待：让所有的请求按照先后次序排队执行，两个请求的间隔不能小于指定时长
 
-### 2.3.1.warm up
+#### 2.3.1  warm up
 
 阈值一般是一个微服务能承担的最大QPS，但是一个服务刚刚启动时，一切资源尚未初始化（**冷启动**），如果直接将QPS跑到最大值，可能导致服务瞬间宕机。
 
@@ -530,11 +528,11 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 需求：给/order/{orderId}这个资源设置限流，最大QPS为10，利用warm up效果，预热时长为5秒
 
-#### 1）配置流控规则：
+1）配置流控规则：
 
 ![image-20210716111012387](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111012387.png)
 
-#### 2）Jmeter测试
+2）Jmeter测试
 
 选择《流控效果，warm up》：
 
@@ -558,7 +556,7 @@ QPS为10.
 
 ![image-20210716111658541](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716111658541.png)
 
-### 2.3.2.排队等待
+#### 2.3.2 排队等待
 
 当请求超过QPS阈值时，快速失败和warm up 会拒绝新的请求并抛出异常。
 
@@ -589,11 +587,11 @@ QPS为10.
 
 需求：给/order/{orderId}这个资源设置限流，最大QPS为10，利用排队的流控效果，超时时长设置为5s
 
-#### 1）添加流控规则
+1）添加流控规则
 
 ![image-20210716114048918](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114048918.png)
 
-#### 2）Jmeter测试
+2）Jmeter测试
 
 选择《流控效果，队列》：
 
@@ -619,7 +617,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 ![image-20210716114651137](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716114651137.png)
 
-### 2.3.3.总结
+#### 2.3.3 总结
 
 流控效果有哪些？
 
@@ -627,11 +625,11 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 - warm up： QPS超过阈值时，拒绝新的请求；QPS阈值是逐渐提升的，可以避免冷启动时高并发导致服务宕机。
 - 排队等待：请求会进入队列，按照阈值允许的时间间隔依次执行请求；如果请求预期等待时长大于超时时间，直接拒绝
 
-## 2.4.热点参数限流
+### 2.4 热点参数限流
 
 之前的限流是统计访问某个资源的所有请求，判断是否超过QPS阈值。而热点参数限流是**分别统计参数值相同的请求**，判断是否超过QPS阈值。
 
-### 2.4.1.全局参数限流
+#### 2.4.1 全局参数限流
 
 例如，一个根据id查询商品的接口：
 
@@ -649,7 +647,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 代表的含义是：对hot这个资源的0号参数（第一个参数）做统计，每1秒**相同参数值**的请求数不能超过5
 
-### 2.4.2.热点参数限流
+#### 2.4.2 热点参数限流
 
 刚才的配置中，对查询商品这个接口的所有商品一视同仁，QPS都限定为5.
 
@@ -663,7 +661,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 •如果参数值是101，则每1秒允许的QPS为15
 
-### 2.4.4.案例
+#### 2.4.4 案例
 
 **案例需求**：给/order/{orderId}这个资源添加热点参数限流，规则如下：
 
@@ -675,13 +673,13 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 **注意事项**：热点参数限流对默认的SpringMVC资源无效，需要利用@SentinelResource注解标记资源
 
-#### 1）标记资源
+1）标记资源
 
 给order-service中的OrderController中的/order/{orderId}资源添加注解：
 
 ![image-20210716120033572](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120033572.png)
 
-#### 2）热点参数限流规则
+2）热点参数限流规则
 
 访问该接口，可以看到我们标记的hot资源出现了：
 
@@ -697,7 +695,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 ![image-20210716120536714](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716120536714.png)
 
-#### 3）Jmeter测试
+3）Jmeter测试
 
 选择《热点参数限流 QPS1》：
 
@@ -731,7 +729,7 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 ![image-20210716121220305](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716121220305.png)
 
-# 3.隔离和降级
+## 3. 隔离和降级
 
 限流是一种预防措施，虽然限流可以尽量避免因高并发而引起的服务故障，但服务还会因为其它原因而故障。
 
@@ -749,11 +747,11 @@ QPS非常平滑，一致保持在10，但是超出的请求没有被拒绝，而
 
 而我们的微服务远程调用都是基于Feign来完成的，因此我们需要将Feign与Sentinel整合，在Feign里面实现线程隔离和服务熔断。
 
-## 3.1.FeignClient整合Sentinel
+### 3.1 FeignClient整合Sentinel
 
 SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户端保护必须整合Feign和Sentinel。
 
-### 3.1.1.修改配置，开启sentinel功能
+#### 3.1.1 修改配置，开启sentinel功能
 
 修改OrderService的application.yml文件，开启Feign的Sentinel功能：
 
@@ -763,7 +761,7 @@ feign:
     enabled: true # 开启feign对sentinel的支持
 ```
 
-### 3.1.2.编写失败降级逻辑
+#### 3.1.2 编写失败降级逻辑
 
 业务失败后，不能直接报错，而应该返回用户一个友好提示或者默认结果，这个就是失败降级逻辑。
 
@@ -835,7 +833,7 @@ public interface UserClient {
 
 ![image-20210716123705780](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123705780.png)
 
-### 3.1.3.总结
+#### 3.1.3 总结
 
 Sentinel支持的雪崩解决方案：
 
@@ -848,9 +846,9 @@ Feign整合Sentinel的步骤：
 - 给FeignClient编写FallbackFactory并注册为Bean
 - 将FallbackFactory配置到FeignClient
 
-## 3.2.线程隔离（舱壁模式）
+### 3.2 线程隔离（舱壁模式）
 
-### 3.2.1.线程隔离的实现方式
+#### 3.2.1 线程隔离的实现方式
 
 线程隔离有两种方式实现：
 
@@ -869,7 +867,7 @@ Feign整合Sentinel的步骤：
 
 ![image-20210716123240518](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123240518.png)
 
-### 3.2.2.sentinel的线程隔离
+#### 3.2.2 sentinel的线程隔离
 
 **用法说明**：
 
@@ -882,7 +880,7 @@ Feign整合Sentinel的步骤：
 
 **案例需求**：给 order-service服务中的UserClient的查询用户接口设置流控规则，线程数不能超过 2。然后利用jemeter测试。
 
-#### 1）配置隔离规则
+1）配置隔离规则
 
 选择feign接口后面的流控按钮：
 
@@ -892,7 +890,7 @@ Feign整合Sentinel的步骤：
 
 ![image-20210716123936844](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716123936844.png)
 
-#### 2）Jmeter测试
+2）Jmeter测试
 
 选择《阈值类型-线程数<2》：
 
@@ -906,7 +904,7 @@ Feign整合Sentinel的步骤：
 
 发现虽然结果都是通过了，不过部分请求得到的响应是降级返回的null信息。
 
-### 3.2.3.总结
+#### 3.2.3 总结
 
 线程隔离的两种手段是？
 
@@ -921,7 +919,7 @@ Feign整合Sentinel的步骤：
 
 - 基于线程池模式，有额外开销，但隔离控制更强
 
-## 3.3.熔断降级
+### 3.3 熔断降级
 
 熔断降级是解决雪崩问题的重要手段。其思路是由**断路器**统计服务调用的异常比例、慢请求比例，如果超出阈值则会**熔断**该服务。即拦截访问该服务的一切请求；而当服务恢复时，断路器会放行访问该服务的请求。
 
@@ -939,7 +937,7 @@ Feign整合Sentinel的步骤：
 
 断路器熔断策略有三种：慢调用、异常比例、异常数
 
-### 3.3.1.慢调用
+#### 3.3.1 慢调用
 
 **慢调用**：业务的响应时长（RT）大于指定时长的请求认定为慢调用请求。在指定时间内，如果请求数量超过设定的最小数量，慢调用比例大于设定的阈值，则触发熔断。
 
@@ -953,7 +951,7 @@ Feign整合Sentinel的步骤：
 
 需求：给 UserClient的查询用户接口设置降级规则，慢调用的RT阈值为50ms，统计时间为1秒，最小请求数量为5，失败阈值比例为0.4，熔断时长为5
 
-#### 1）设置慢调用
+1）设置慢调用
 
 修改user-service中的/user/{id}这个接口的业务。通过休眠模拟一个延迟时间：
 
@@ -967,7 +965,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 ![image-20210716150605208](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716150605208.png)
 
-#### 2）设置熔断规则
+2）设置熔断规则
 
 下面，给feign接口设置降级规则：
 
@@ -979,7 +977,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 超过50ms的请求都会被认为是慢请求
 
-#### 3）测试
+3）测试
 
 在浏览器访问：http://localhost:8088/order/101，快速刷新5次，可以发现：
 
@@ -991,7 +989,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 ![image-20210716151107785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151107785.png)
 
-### 3.3.2.异常比例、异常数
+#### 3.3.2 异常比例、异常数
 
 **异常比例或异常数**：统计指定时间内的调用，如果调用次数超过指定请求数，并且出现异常的比例达到设定的比例阈值（或超过指定异常数），则触发熔断。
 
@@ -1011,7 +1009,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 需求：给 UserClient的查询用户接口设置降级规则，统计时间为1秒，最小请求数量为5，失败阈值比例为0.4，熔断时长为5s
 
-#### 1）设置异常请求
+1）设置异常请求
 
 首先，修改user-service中的/user/{id}这个接口的业务。手动抛出异常，以触发异常比例的熔断：
 
@@ -1019,7 +1017,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 也就是说，id 为 2时，就会触发异常
 
-#### 2）设置熔断规则
+2）设置熔断规则
 
 下面，给feign接口设置降级规则：
 
@@ -1031,7 +1029,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 在5次请求中，只要异常比例超过0.4，也就是有2次以上的异常，就会触发熔断。
 
-#### 3）测试
+3）测试
 
 在浏览器快速访问：http://localhost:8088/order/102，快速刷新5次，触发熔断：
 
@@ -1041,13 +1039,13 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 ![image-20210716151844817](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716151844817.png)
 
-# 4.授权规则
+## 4. 授权规则
 
 授权规则可以对请求方来源做判断和控制。
 
-## 4.1.授权规则
+### 4.1 授权规则
 
-### 4.1.1.基本规则
+#### 4.1.1 基本规则
 
 授权规则可以对调用方的来源做控制，有白名单和黑名单两种方式。
 
@@ -1070,7 +1068,7 @@ orderId=102的订单，关联的是id为2的用户，调用时长为非常短；
 
 我们允许请求从gateway到order-service，不允许浏览器访问order-service，那么白名单中就要填写**网关的来源名称（origin）** 。
 
-### 4.1.2.如何获取origin
+#### 4.1.2 如何获取origin
 
 Sentinel是通过RequestOriginParser这个接口的parseOrigin来获取请求的来源的。
 
@@ -1117,7 +1115,7 @@ public class HeaderOriginParser implements RequestOriginParser {
 
 我们会尝试从request-header中获取origin值。
 
-### 4.1.3.给网关添加请求头
+#### 4.1.3 给网关添加请求头
 
 既然获取请求origin的方式是从reques-header中获取origin值，我们必须让**所有从gateway路由到微服务的请求都带上origin头**。
 
@@ -1137,7 +1135,7 @@ spring:
 
 这样，从gateway路由的所有请求都会带上origin头，值为gateway。而从其它地方到达微服务的请求则没有这个头。
 
-### 4.1.4.配置授权规则
+#### 4.1.4 配置授权规则
 
 接下来，我们添加一个授权规则，放行origin值为gateway的请求。
 
@@ -1155,11 +1153,11 @@ spring:
 
 ![image-20210716153434095](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716153434095.png)
 
-## 4.2.自定义异常结果
+### 4.2 自定义异常结果
 
 默认情况下，发生限流、降级、授权拦截时，都会抛出异常到调用方。异常结果都是flow limmiting（限流）。这样不够友好，无法得知是限流还是降级还是授权拦截。
 
-### 4.2.1.异常类型
+#### 4.2.1 异常类型
 
 而如果要自定义异常时的返回结果，需要实现BlockExceptionHandler接口：
 
@@ -1188,7 +1186,7 @@ public interface BlockExceptionHandler {
 |AuthorityException|授权规则异常|
 |SystemBlockException|系统规则异常|
 
-### 4.2.2.自定义异常处理
+#### 4.2.2 自定义异常处理
 
 下面，我们就在order-service定义一个自定义异常处理类：
 
@@ -1241,11 +1239,11 @@ public class SentinelExceptionHandler implements BlockExceptionHandler {
 
 ![image-20210716154012736](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154012736.png)
 
-# 5.规则持久化
+## 5. 规则持久化
 
 现在，sentinel的所有规则都是内存存储，重启后所有规则都会丢失。在生产环境下，我们必须确保这些规则的持久化，避免丢失。
 
-## 5.1.规则管理模式
+### 5.1 规则管理模式
 
 规则是否能持久化，取决于规则管理模式，sentinel支持三种规则管理模式：
 
@@ -1253,19 +1251,19 @@ public class SentinelExceptionHandler implements BlockExceptionHandler {
 - pull模式
 - push模式
 
-### 5.1.1.pull模式
+#### 5.1.1 pull模式
 
 pull模式：控制台将配置的规则推送到Sentinel客户端，而客户端会将配置规则保存在本地文件或数据库中。以后会定时去本地文件或数据库中查询，更新本地规则。
 
 ![image-20210716154155238](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154155238.png)
 
-### 5.1.2.push模式
+#### 5.1.2 push模式
 
 push模式：控制台将配置规则推送到远程配置中心，例如Nacos。Sentinel客户端监听Nacos，获取配置变更的推送消息，完成本地配置更新。
 
 ![image-20210716154215456](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210716154215456.png)
 
-## 5.2.实现push模式
+### 5.2. 实现push模式
 
 详细步骤可以参考课前资料的《sentinel规则持久化》：
 

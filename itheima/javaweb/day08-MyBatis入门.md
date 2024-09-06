@@ -4,7 +4,7 @@ date: 2024-04-25T19:22:11Z
 lastmod: 2024-04-25T19:22:11Z
 ---
 
-# 前言
+## 前言
 
 在前面我们学习MySQL数据库时，都是利用图形化客户端工具(如：idea、datagrip)，来操作数据库的。
 
@@ -38,11 +38,11 @@ Mybatis课程安排：
 
 接下来，我们就通过一个入门程序，让大家快速感受一下通过Mybatis如何来操作数据库。
 
-# 1. 快速入门
+## 1. 快速入门
 
 需求：使用Mybatis查询所有用户数据。
 
-## 1.1 入门程序分析
+### 1.1 入门程序分析
 
 以前我们是在图形化客户端工具中编写SQL查询代码，发送给数据库执行，数据库执行后返回操作结果。
 
@@ -66,11 +66,11 @@ Mybatis操作数据库的步骤：
 2. 引入Mybatis的相关依赖，配置Mybatis(数据库连接信息)
 3. 编写SQL语句(注解/XML)
 
-## 1.2 入门程序实现
+### 1.2 入门程序实现
 
-## 1.2.1 准备工作
+#### 1.2.1 准备工作
 
-### 1.2.1.1 创建springboot工程
+##### 1.2.1.1 创建springboot工程
 
 创建springboot工程，并导入 mybatis的起步依赖、mysql的驱动包。
 
@@ -106,7 +106,7 @@ Mybatis操作数据库的步骤：
 </dependencies>
 ~~~
 
-### 1.2.1.2 数据准备
+##### 1.2.1.2 数据准备
 
 创建用户表user，并创建对应的实体类User。
 
@@ -151,7 +151,7 @@ public class User {
 
 ![image-20221209170354143](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221209170354143.png)
 
-## 1.2.2 配置Mybatis
+#### 1.2.2 配置Mybatis
 
 > 在之前使用图形化客户端工具，连接MySQL数据库时，需要配置：
 >
@@ -185,7 +185,7 @@ spring.datasource.password=1234
 
 > 上述的配置，可以直接复制过去，不要敲错了。 全部都是 spring.datasource.xxxx 开头。
 
-## 1.2.3 编写SQL语句
+#### 1.2.3 编写SQL语句
 
 在创建出来的springboot工程中，在引导类所在包下，在创建一个包 mapper。在mapper包下创建一个接口 UserMapper ，这是一个持久层接口（Mybatis的持久层接口规范一般都叫 XxxMapper）。
 
@@ -215,7 +215,7 @@ public interface UserMapper {
 >
 > @Select注解：代表的就是select查询，用于书写select查询语句
 
-## 1.2.4 单元测试
+#### 1.2.4 单元测试
 
 在创建出来的SpringBoot工程中，在src下的test目录下，已经自动帮我们创建好了测试类 ，并且在测试类上已经添加了注解 @SpringBootTest，代表该测试类已经与SpringBoot整合。
 
@@ -252,7 +252,7 @@ public class MybatisQuickstartApplicationTests {
 > User{id=6, name='光明右使', age=48, gender=1, phone='18800000005'}
 > ~~~
 
-## 1.3 解决SQL警告与提示
+### 1.3 解决SQL警告与提示
 
 默认我们在UserMapper接口上加的@Select注解中编写SQL语句是没有提示的。 如果想让idea给我们提示对应的SQL语句，我们需要在IDEA中配置与MySQL数据库的链接。
 
@@ -272,9 +272,9 @@ public class MybatisQuickstartApplicationTests {
 
 > 在配置的时候指定连接那个数据库，如上图所示连接的就是mybatis数据库。
 
-# 2. JDBC介绍(了解)
+## 2. JDBC介绍(了解)
 
-## 2.1 介绍
+### 2.1 介绍
 
 通过Mybatis的快速入门，我们明白了，通过Mybatis可以很方便的进行数据库的访问操作。但是大家要明白，其实java语言操作数据库呢，只能通过一种方式：使用sun公司提供的 JDBC 规范。
 
@@ -292,7 +292,7 @@ JDBC： ( Java DataBase Connectivity )，就是使用Java语言操作关系型�
 > - 各个数据库厂商去实现这套接口，提供数据库驱动jar包。
 > - 我们可以使用这套接口(JDBC)编程，真正执行的代码是驱动jar包中的实现类。
 
-## 2.2 代码
+### 2.2 代码
 
 下面我们看看原始的JDBC程序是如何操作数据库的。操作步骤如下：
 
@@ -380,7 +380,7 @@ public class JdbcTest {
 
 通过上述代码，我们看到直接基于JDBC程序来操作数据库，代码实现非常繁琐，所以在项目开发中，我们很少使用。  在项目开发中，通常会使用Mybatis这类的高级技术来操作数据库，从而简化数据库操作、提高开发效率。
 
-## 2.3 问题分析
+### 2.3 问题分析
 
 原始的JDBC程序，存在以下几点问题：
 
@@ -390,7 +390,7 @@ public class JdbcTest {
 
 ![image-20221210153407998](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210153407998.png)
 
-## 2.4 技术对比
+### 2.4 技术对比
 
 分析了JDBC的缺点之后，我们再来看一下在mybatis中，是如何解决这些问题的：
 
@@ -427,13 +427,13 @@ public class JdbcTest {
    }
    ~~~
 
-# 3. 数据库连接池
+## 3. 数据库连接池
 
 在前面我们所讲解的mybatis中，使用了数据库连接池技术，避免频繁的创建连接、销毁连接而带来的资源浪费。
 
 下面我们就具体的了解下数据库连接池。
 
-## 3.1 介绍
+### 3.1 介绍
 
 ![image-20221210160341852](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221210160341852.png)
 
@@ -461,7 +461,7 @@ public class JdbcTest {
 2. 提升系统响应速度
 3. 避免数据库连接遗漏
 
-## 3.2 产品
+### 3.2 产品
 
 要怎么样实现数据库连接池呢？
 
@@ -492,7 +492,7 @@ public class JdbcTest {
   * Druid连接池是阿里巴巴开源的数据库连接池项目
   * 功能强大，性能优秀，是Java语言最好的数据库连接池之一
 
-​
+
 
 如果我们想把默认的数据库连接池切换为Druid数据库连接池，只需要完成以下两步操作即可：
 
@@ -529,9 +529,9 @@ spring.datasource.username=root
 spring.datasource.password=1234
 ~~~
 
-# 4. lombok
+## 4. lombok
 
-## 4.1 介绍
+### 4.1 介绍
 
 Lombok是一个实用的Java类库，可以通过简单的注解来简化和消除一些必须有但显得很臃肿的Java代码。
 
@@ -548,7 +548,7 @@ Lombok是一个实用的Java类库，可以通过简单的注解来简化和消�
 |@NoArgsConstructor|为实体类生成无参的构造器方法|
 |@AllArgsConstructor|为实体类生成除了static修饰的字段之外带有各参数的构造器方法。|
 
-## 4.2 使用
+### 4.2 使用
 
 第1步：在pom.xml文件中引入依赖
 

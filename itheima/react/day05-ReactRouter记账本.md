@@ -4,7 +4,7 @@ date: 2024-05-04T03:23:29Z
 lastmod: 2024-05-04T21:01:12Z
 ---
 
-# 环境搭建
+## 环境搭建
 
 > 使用CRA创建项目，并安装必要依赖，包括下列基础包
 
@@ -15,16 +15,16 @@ lastmod: 2024-05-04T21:01:12Z
 5. 移动端组件库 - antd-mobile
 6. 请求插件 - axios
 
-# 配置别名路径
+## 配置别名路径
 
-## 1. 背景知识
+### 1. 背景知识
 
 > 1. 路径解析配置（webpack），把 @/ 解析为 src/
 > 2. 路径联想配置（VsCode），VsCode 在输入 @/ 时，自动联想出来对应的 src/下的子级目录
 
-​![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/12-20240504032629-frrue2b.png)​
+![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/12-20240504032629-frrue2b.png)​
 
-## 2. 路径解析配置
+### 2. 路径解析配置
 
 配置步骤：
 
@@ -37,7 +37,7 @@ lastmod: 2024-05-04T21:01:12Z
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/13-20240504032629-yrsnxto.png)
 
-## 3. 联想路径配置
+### 3. 联想路径配置
 
 配置步骤：
 
@@ -57,15 +57,15 @@ lastmod: 2024-05-04T21:01:12Z
 }
 ```
 
-# 数据Mock实现
+## 数据Mock实现
 
 > 在前后端分类的开发模式下，前端可以在没有实际后端接口的支持下先进行接口数据的模拟，进行正常的业务功能开发
 
-## 1. 常见的Mock方式
+### 1. 常见的Mock方式
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/14-20240504032629-v5xhq8v.png)
 
-## 2. json-server实现Mock
+### 2. json-server实现Mock
 
 实现步骤：
 
@@ -78,19 +78,19 @@ lastmod: 2024-05-04T21:01:12Z
 
 4. 访问接口进行测试
 
-# 整体路由设计
+## 整体路由设计
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/16-20240504032629-nmrqgch.png)
 
 1. 俩个一级路由 （Layout / new）2. 俩个二级路由 （Layout - mouth/year）
 
-# antD主题定制
+## antD主题定制
 
-## 1. 定制方案
+### 1. 定制方案
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/17-20240504032629-th4yh3j.png)
 
-## 2. 实现方式
+### 2. 实现方式
 
 1. 全局定制
 
@@ -100,7 +100,7 @@ lastmod: 2024-05-04T21:01:12Z
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/19-20240504032629-z5yw108.png)
 
-## 3. 记账本主题色
+### 3. 记账本主题色
 
 ```css
 :root:root {
@@ -108,7 +108,7 @@ lastmod: 2024-05-04T21:01:12Z
 }
 ```
 
-# Redux管理账目列表
+## Redux管理账目列表
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/20-20240504032629-uuavoj0.png)
 
@@ -178,11 +178,11 @@ root.render(
 )
 ```
 
-# TabBar功能实现
+## TabBar功能实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/21-20240504032629-e06dl3d.png)
 
-## 1. 静态布局实现
+### 1. 静态布局实现
 
 配套静态模版和样式文件
 
@@ -256,7 +256,7 @@ export default Layout
 }
 ```
 
-## 2. 切换路由实现
+### 2. 切换路由实现
 
 > 监听change事件，在事件回调中调用路由跳转方法
 
@@ -279,11 +279,11 @@ export default Layout
   )
 ```
 
-# 月度账单-统计区域
+## 月度账单-统计区域
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/22-20240504032629-kx1mq9y.png)
 
-## 1. 准备静态结构
+### 1. 准备静态结构
 
 ```jsx
 import { NavBar, DatePicker } from 'antd-mobile'
@@ -421,7 +421,7 @@ export default Month
 }
 ```
 
-## 2. 点击切换时间选择框
+### 2. 点击切换时间选择框
 
 > 实现思路：
 >
@@ -476,7 +476,7 @@ const Month = () => {
 export default Month
 ```
 
-## 3. 切换时间显示
+### 3. 切换时间显示
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/23-20240504032629-k6nk5rp.png)
 
@@ -499,7 +499,7 @@ const dateConfirm = (date) => {
 }
 ```
 
-## 4. 统计功能实现
+### 4. 统计功能实现
 
 > 实现思路：
 >
@@ -534,7 +534,7 @@ const overview = useMemo(() => {
 }, [currentMonthList])
 ```
 
-## 5. 完整代码
+### 5. 完整代码
 
 ```jsx
 import { useSelector } from "react-redux"
@@ -636,11 +636,11 @@ const Month = () => {
 export default Month
 ```
 
-# 月度账单-单日统计列表实现
+## 月度账单-单日统计列表实现
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/24-20240504032629-3mge74z.png)
 
-## 1. 准备组件和配套样式
+### 1. 准备组件和配套样式
 
 ```jsx
 import classNames from 'classnames'
@@ -814,7 +814,7 @@ export default DailyBill
 }
 ```
 
-## 2. 按日分组账单数据
+### 2. 按日分组账单数据
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/25-20240504032629-hjd9ndh.png)
 
@@ -830,7 +830,7 @@ export default DailyBill
   console.log(dayGroup)
 ```
 
-## 3. 遍历日账单组件并传入参数
+### 3. 遍历日账单组件并传入参数
 
 ```jsx
  {/* 日账单 */}
@@ -839,7 +839,7 @@ export default DailyBill
 ))}
 ```
 
-## 4. 接收数据计算统计渲染页面
+### 4. 接收数据计算统计渲染页面
 
 ```jsx
 const DailyBill = ({ date, billList }) => {
@@ -881,11 +881,11 @@ const DailyBill = ({ date, billList }) => {
 export default DailyBill
 ```
 
-# 月度账单-单日账单列表展示
+## 月度账单-单日账单列表展示
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/26-20240504032629-b7nc4mm.png)
 
-## 1. 渲染基础列表
+### 1. 渲染基础列表
 
 ```jsx
 {/* 单日列表 */}
@@ -905,7 +905,7 @@ export default DailyBill
 </div>
 ```
 
-## 2. 适配Type
+### 2. 适配Type
 
 1-准备静态数据
 
@@ -993,7 +993,7 @@ export const billTypeToName = Object.keys(billListData).reduce((prev, key) => {
  <div className="billType">{billTypeToName[item.useFor]}</div>
 ```
 
-# 月度账单-切换打开关闭
+## 月度账单-切换打开关闭
 
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/274425/1680169396175-a10287d1-cc4a-4464-b295-aea0becb3805.png#averageHue=%23fcfcfc&clientId=u4bda8888-0a67-4&from=paste&height=98&id=u1d780ff6&name=image.png&originHeight=196&originWidth=736&originalType=binary&ratio=2&rotation=0&showTitle=false&size=15931&status=done&style=none&taskId=uc682e670-0453-45ac-9d64-b891c330814&title=&width=368)
 
@@ -1012,11 +1012,11 @@ const [visible, setVisible] = useState(false)
 <div className="billList" style={{ display: !visible && 'none' }}></div>
 ```
 
-# 月度账单-Icon组件封装
+## 月度账单-Icon组件封装
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/28-20240504032629-4ndl8n6.png)
 
-## 1. 准备静态结构
+### 1. 准备静态结构
 
 ```jsx
 const Icon = () => {
@@ -1035,7 +1035,7 @@ const Icon = () => {
 export default Icon
 ```
 
-## 2. 设计参数
+### 2. 设计参数
 
 ```jsx
 const BASE_URL = 'https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/reactbase/ka/'
@@ -1056,7 +1056,7 @@ const Icon = ({ type }) => {
 export default Icon
 ```
 
-## 3. 使用组件
+### 3. 使用组件
 
 ```jsx
 <div className="billList" style={{ display: visible ? 'block' : 'none' }}>
@@ -1070,9 +1070,9 @@ export default Icon
   </div>
 ```
 
-# 记账功能
+## 记账功能
 
-## 记账 - 结构渲染
+### 记账 - 结构渲染
 
 ```jsx
 import { Button, DatePicker, Input, NavBar } from 'antd-mobile'
@@ -1345,7 +1345,7 @@ export default New
 
 ```
 
-## 记账 - 支出和收入切换
+### 记账 - 支出和收入切换
 
 ```jsx
 const new = ()=>{
@@ -1381,7 +1381,7 @@ const new = ()=>{
 }
 ```
 
-## 记账 - 新增一笔
+### 记账 - 新增一笔
 
 ```jsx
 import { useDispatch } from 'react-redux'

@@ -44,15 +44,15 @@ lastmod: 2024-04-25T19:08:20Z
 
 ![1653056228879](https://cdn.jsdelivr.net/npm/redis-itheima/1653056228879.png)
 
-## 1、短信登录
+## 1. 短信登录
 
-### 1.1、导入黑马点评项目
+### 1.1 导入黑马点评项目
 
-#### 1.1.1 、导入SQL
+#### 1.1.1 导入SQL
 
 ![1653057872536](https://cdn.jsdelivr.net/npm/redis-itheima/1653057872536.png)
 
-#### 1.1.2、有关当前模型
+#### 1.1.2 有关当前模型
 
 手机或者app端发起请求，请求我们的nginx服务器，nginx基于七层模型走的事HTTP协议，可以实现基于Lua直接绕开tomcat访问redis，也可以作为静态资源服务器，轻松扛下上万并发， 负载均衡到下游tomcat服务器，打散流量，我们都知道一台4核8G的tomcat，在优化和处理简单业务的加持下，大不了就处理1000左右的并发， 经过nginx的负载均衡分流后，利用集群支撑起整个项目，同时nginx在部署了前端项目后，更是可以做到动静分离，进一步降低tomcat服务的压力，这些功能都得靠nginx起作用，所以nginx是整个项目中重要的一环。
 
@@ -60,13 +60,13 @@ lastmod: 2024-04-25T19:08:20Z
 
 ![1653059409865](https://cdn.jsdelivr.net/npm/redis-itheima/1653059409865.png)
 
-#### 1.1.3、导入后端项目
+#### 1.1.3 导入后端项目
 
 在资料中提供了一个项目源码：
 
 ![1653060237073](https://cdn.jsdelivr.net/npm/redis-itheima/1653060237073.png)
 
-#### 1.1.4、导入前端工程
+#### 1.1.4 导入前端工程
 
 ![1653060337562](https://cdn.jsdelivr.net/npm/redis-itheima/1653060337562.png)
 
@@ -74,7 +74,7 @@ lastmod: 2024-04-25T19:08:20Z
 
 ![1653060588190](https://cdn.jsdelivr.net/npm/redis-itheima/1653060588190.png)
 
-### 1.2 、基于Session实现登录流程
+### 1.2  基于Session实现登录流程
 
 **发送验证码：**
 
@@ -92,7 +92,7 @@ lastmod: 2024-04-25T19:08:20Z
 
 ![1653066208144](https://cdn.jsdelivr.net/npm/redis-itheima/1653066208144.png)
 
-### 1.3 、实现发送短信验证码功能
+### 1.3  实现发送短信验证码功能
 
 **页面流程**
 
@@ -159,7 +159,7 @@ lastmod: 2024-04-25T19:08:20Z
     }
 ```
 
-### 1.4、实现登录拦截功能
+### 1.4 实现登录拦截功能
 
 **温馨小贴士：tomcat的运行原理**
 
@@ -228,7 +228,7 @@ public class MvcConfig implements WebMvcConfigurer {
 }
 ```
 
-### 1.5、隐藏用户敏感信息
+### 1.5 隐藏用户敏感信息
 
 我们通过浏览器观察到此时用户的全部信息都在，这样极为不靠谱，所以我们应当在返回用户信息之前，将用户的敏感信息进行隐藏，采用的核心思路就是书写一个UserDto对象，这个UserDto对象就没有敏感信息了，我们在返回前，将有用户敏感信息的User对象转化成没有敏感信息的UserDto对象，那么就能够避免这个尴尬的问题了
 
@@ -266,7 +266,7 @@ public class UserHolder {
 }
 ```
 
-### 1.6、session共享问题
+### 1.6 session共享问题
 
 **核心思路分析：**
 
@@ -284,13 +284,13 @@ public class UserHolder {
 
 ### 1.7 Redis代替session的业务流程
 
-#### 1.7.1、设计key的结构
+#### 1.7.1 设计key的结构
 
 首先我们要思考一下利用redis来存储数据，那么到底使用哪种结构呢？由于存入的数据比较简单，我们可以考虑使用String，或者是使用哈希，如下图，如果使用String，同学们注意他的value，用多占用一点空间，如果使用哈希，则他的value中只会存储他数据本身，如果不是特别在意内存，其实使用String就可以啦。
 
 ![1653319261433](https://cdn.jsdelivr.net/npm/redis-itheima/1653319261433.png)
 
-#### 1.7.2、设计key的具体细节
+#### 1.7.2 设计key的具体细节
 
 所以我们可以使用String结构，就是一个简单的key，value键值对的方式，但是关于key的处理，session他是每个用户都有自己的session，但是redis的key是共享的，咱们就不能使用code了
 
@@ -302,7 +302,7 @@ public class UserHolder {
 
 如果我们采用phone：手机号这个的数据来存储当然是可以的，但是如果把这样的敏感数据存储到redis中并且从页面中带过来毕竟不太合适，所以我们在后台生成一个随机串token，然后让前端带来这个token就能完成我们的整体逻辑了
 
-#### 1.7.3、整体访问流程
+#### 1.7.3 整体访问流程
 
 当注册完成后，用户去登录会去校验用户提交的手机号和验证码，是否一致，如果一致，则根据手机号查询用户信息，不存在则新建，最后将用户数据保存到redis，并且生成token作为redis的key，当我们校验用户是否登录时，会去携带着token进行访问，从redis中取出token对应的value，判断是否存在这个数据，如果没有则拦截，如果存在则将其保存到threadLocal中，并且放行。
 
@@ -440,7 +440,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 }
 ```
 
-## 2、商户查询缓存
+## 2. 商户查询缓存
 
 ### 2.1 什么是缓存?
 
@@ -504,13 +504,13 @@ public Result queryShopById(@PathVariable("id") Long id) {
 }
 ```
 
-#### 2.2.1 、缓存模型和思路
+#### 2.2.1 缓存模型和思路
 
 标准的操作方式就是查询数据库之前先查询缓存，如果缓存数据存在，则直接从缓存中返回，如果缓存数据不存在，再查询数据库，然后将数据存入redis。
 
 ![1653322097736](https://cdn.jsdelivr.net/npm/redis-itheima/1653322097736.png)
 
-#### 2.1.2、代码如下
+#### 2.1.2 代码如下
 
 代码思路：如果缓存有，则直接返回，如果缓存不存在，则查询数据库，然后存入redis。
 
@@ -528,7 +528,7 @@ public Result queryShopById(@PathVariable("id") Long id) {
 
 ![1653322506393](https://cdn.jsdelivr.net/npm/redis-itheima/1653322506393.png)
 
-#### 2.3.1 、数据库缓存不一致解决方案：
+#### 2.3.1  数据库缓存不一致解决方案：
 
 由于我们的**缓存的数据源来自于数据库**,而数据库的**数据是会发生变化的**,因此,如果当数据库中**数据发生变化,而缓存却没有同步**,此时就会有**一致性问题存在**,其后果是:
 
@@ -542,7 +542,7 @@ Write Behind Caching Pattern ：调用者只操作缓存，其他线程去异步
 
 ![1653322857620](https://cdn.jsdelivr.net/npm/redis-itheima/1653322857620.png)
 
-#### 2.3.2 、数据库和缓存不一致采用什么方案
+#### 2.3.2 数据库和缓存不一致采用什么方案
 
 综合考虑使用方案一，但是方案一调用者如何处理呢？这里有几个问题
 
@@ -769,7 +769,7 @@ private void unlock(String key) {
     }
 ```
 
-### 3.0 、利用逻辑过期解决缓存击穿问题
+### 3.10  利用逻辑过期解决缓存击穿问题
 
 **需求：修改根据id查询商铺的业务，基于逻辑过期方式来解决缓存击穿问题**
 
@@ -849,7 +849,7 @@ public Shop queryWithLogicalExpire( Long id ) {
 }
 ```
 
-### 3.1、封装Redis工具类
+### 3.11 封装Redis工具类
 
 基于StringRedisTemplate封装一个缓存工具类，满足下列需求：
 
@@ -1052,9 +1052,9 @@ private CacheClient cacheClient;
     }
 ```
 
-## 3、优惠卷秒杀
+## 3. 优惠卷秒杀
 
-### 3.1 -全局唯一ID
+### 3.1 全局唯一ID
 
 每个店铺都可以发布优惠券：
 
@@ -1081,7 +1081,7 @@ private CacheClient cacheClient;
 
 序列号：32bit，秒内的计数器，支持每秒产生2^32个不同ID
 
-### 3.2 -Redis实现全局唯一Id
+### 3.2 Redis实现全局唯一Id
 
 ```java
 @Component
@@ -1559,9 +1559,9 @@ public  Result createVoucherOrder(Long voucherId) {
 
 ![1653374044740](https://cdn.jsdelivr.net/npm/redis-itheima/1653374044740.png)
 
-## 4、分布式锁
+## 4. 分布式锁
 
-### 4.1 、基本原理和实现方式对比
+### 4.1  基本原理和实现方式对比
 
 分布式锁：满足分布式系统或集群模式下多进程可见并且互斥的锁。
 
@@ -1593,7 +1593,7 @@ Zookeeper：zookeeper也是企业级开发中较好的一个实现分布式锁�
 
 ![1653382219377](https://cdn.jsdelivr.net/npm/redis-itheima/1653382219377.png)
 
-### 4.2 、Redis分布式锁的实现核心思路
+### 4.2  Redis分布式锁的实现核心思路
 
 实现分布式锁时需要实现的两个基本方法：
 
@@ -1873,7 +1873,7 @@ public void unlock() {
 
 第一个线程进来，得到了锁，手动删除锁，模拟锁超时了，其他线程会执行lua来抢锁，当第一天线程利用lua删除锁时，lua能保证他不能删除他的锁，第二个线程删除锁时，利用lua同样可以保证不会删除别人的锁，同时还能保证原子性。
 
-## 5、分布式锁-redission
+## 5. 分布式锁-redission
 
 ### 5.1 分布式锁-redission功能介绍
 
@@ -2175,7 +2175,7 @@ private void renewExpiration() {
 
 ![1653553093967](https://cdn.jsdelivr.net/npm/redis-itheima/1653553093967.png)
 
-## 6、秒杀优化
+## 6. 秒杀优化
 
 ### 6.1 秒杀优化-异步秒杀思路
 
@@ -2440,7 +2440,7 @@ private void init() {
   * 内存限制问题
   * 数据安全问题
 
-## 7、Redis消息队列
+## 7. Redis消息队列
 
 ### 7.1 Redis消息队列-认识消息队列
 
@@ -2686,9 +2686,9 @@ private class VoucherOrderHandler implements Runnable {
 
 ```
 
-## 8、达人探店
+## 8. 达人探店
 
-### 8.1、达人探店-发布探店笔记
+### 8.1 达人探店-发布探店笔记
 
 发布探店笔记
 
@@ -2956,7 +2956,7 @@ public Result queryBlogLikes(Long id) {
 }
 ```
 
-## 9、好友关注
+## 9. 好友关注
 
 ### 9.1 好友关注-关注和取消关注
 
@@ -3254,7 +3254,7 @@ public Result saveBlog(Blog blog) {
 }
 ```
 
-### 9.5好友关注-实现分页查询收邮箱
+### 9.5 好友关注-实现分页查询收邮箱
 
 需求：在个人主页的“关注”卡片中，查询并展示推送的Blog信息：
 
@@ -3346,9 +3346,9 @@ public Result queryBlogOfFollow(Long max, Integer offset) {
 }
 ```
 
-## 10、附近商户
+## 10. 附近商户
 
-### 10.1、附近商户-GEO数据结构的基本用法
+### 10.1 附近商户-GEO数据结构的基本用法
 
 GEO就是Geolocation的简写形式，代表地理坐标。Redis在3.2版本中加入了对GEO的支持，允许存储地理坐标信息，帮助我们根据经纬度来检索数据。常见的命令有：
 
@@ -3360,7 +3360,7 @@ GEO就是Geolocation的简写形式，代表地理坐标。Redis在3.2版本中�
 * GEOSEARCH：在指定范围内搜索member，并按照与指定点之间的距离排序后返回。范围可以是圆形或矩形。6.2.新功能
 * GEOSEARCHSTORE：与GEOSEARCH功能一致，不过可以把结果存储到一个指定的key。 6.2.新功能
 
-### 10.2、 附近商户-导入店铺数据到GEO
+### 10.2 附近商户-导入店铺数据到GEO
 
 具体场景说明：
 
@@ -3514,9 +3514,9 @@ ShopServiceImpl
     }
 ```
 
-## 11、用户签到
+## 11. 用户签到
 
-#### 11.1、用户签到-BitMap功能演示
+#### 11.1 用户签到-BitMap功能演示
 
 我们针对签到功能完全可以通过mysql来完成，比如说以下这张表
 
@@ -3548,7 +3548,7 @@ BitMap的操作命令有：
 * BITOP ：将多个BitMap的结果做位运算（与 、或、异或）
 * BITPOS ：查找bit数组中指定范围内第一个0或1出现的位置
 
-#### 11.2 、用户签到-实现签到功能
+#### 11.2  用户签到-实现签到功能
 
 需求：实现签到接口，将当前用户当天签到信息保存到Redis中
 
@@ -3704,9 +3704,9 @@ id % bitmap.size  = 算出当前这个id对应应该落在bitmap的哪个索引�
 
 ![1653836578970](https://cdn.jsdelivr.net/npm/redis-itheima/1653836578970.png)
 
-## 12、UV统计
+## 12. UV统计
 
-### 12.1 、UV统计-HyperLogLog
+### 12.1  UV统计-HyperLogLog
 
 首先我们搞懂两个概念：
 

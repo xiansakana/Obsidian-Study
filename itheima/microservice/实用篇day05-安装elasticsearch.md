@@ -4,11 +4,9 @@ date: 2024-04-25T19:24:49Z
 lastmod: 2024-04-25T19:24:49Z
 ---
 
-# 安装Elasticsearch
+## 1 部署单点es
 
-# 1.部署单点es
-
-## 1.1.创建网络
+### 1.1 创建网络
 
 因为我们还需要部署kibana容器，因此需要让es和kibana容器互联。这里先创建一个网络：
 
@@ -16,7 +14,7 @@ lastmod: 2024-04-25T19:24:49Z
 docker network create es-net
 ```
 
-## 1.2.加载镜像
+### 1.2 加载镜像
 
 这里我们采用elasticsearch的7.12.1版本的镜像，这个镜像体积非常大，接近1G。不建议大家自己pull。
 
@@ -33,7 +31,7 @@ docker load -i es.tar
 
 同理还有`kibana`的tar包也需要这样做。
 
-## 1.3.运行
+### 1.3 运行
 
 运行docker命令，部署单点es：
 
@@ -68,11 +66,11 @@ elasticsearch:7.12.1
 
 ![image-20210506101053676](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210506101053676.png)
 
-# 2.部署kibana
+## 2. 部署kibana
 
 kibana可以给我们提供一个elasticsearch的可视化界面，便于我们学习。
 
-## 2.1.部署
+### 2.1 部署
 
 运行docker命令，部署kibana
 
@@ -101,7 +99,7 @@ docker logs -f kibana
 
 此时，在浏览器输入地址访问：http://192.168.150.101:5601，即可看到结果
 
-## 2.2.DevTools
+### 2.2 DevTools
 
 kibana中提供了一个DevTools界面：
 
@@ -109,9 +107,9 @@ kibana中提供了一个DevTools界面：
 
 这个界面中可以编写DSL来操作elasticsearch。并且对DSL语句有自动补全功能。
 
-# 3.安装IK分词器
+## 3. 安装IK分词器
 
-## 3.1.在线安装ik插件（较慢）
+### 3.1 在线安装ik插件（较慢）
 
 ```shell
 # 进入容器内部
@@ -126,9 +124,9 @@ exit
 docker restart elasticsearch
 ```
 
-## 3.2.离线安装ik插件（推荐）
+### 3.2 离线安装ik插件（推荐）
 
-### 1）查看数据卷目录
+#### 3.2.1 查看数据卷目录
 
 安装插件需要知道elasticsearch的plugins目录位置，而我们用了数据卷挂载，因此需要查看elasticsearch的数据卷目录，通过下面命令查看:
 
@@ -154,19 +152,19 @@ docker volume inspect es-plugins
 
 说明plugins目录被挂载到了：`/var/lib/docker/volumes/es-plugins/_data `这个目录中。
 
-### 2）解压缩分词器安装包
+#### 3.2.2 解压缩分词器安装包
 
 下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
 
 ![image-20210506110249144](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210506110249144.png)
 
-### 3）上传到es容器的插件数据卷中
+#### 3.2.3 上传到es容器的插件数据卷中
 
 也就是`/var/lib/docker/volumes/es-plugins/_data `：
 
 ![image-20210506110704293](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210506110704293.png)
 
-### 4）重启容器
+#### 3.2.4 重启容器
 
 ```shell
 # 4、重启容器
@@ -178,7 +176,7 @@ docker restart es
 docker logs -f es
 ```
 
-### 5）测试：
+#### 3.2.5 测试
 
 IK分词器包含两种模式：
 
@@ -265,7 +263,7 @@ GET /_analyze
 }
 ```
 
-## 3.3 扩展词词典
+### 3.3 扩展词词典
 
 随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
 
@@ -319,7 +317,7 @@ GET /_analyze
 
 > 注意当前文件的编码必须是 UTF-8 格式，严禁使用Windows记事本编辑
 
-## 3.4 停用词词典
+### 3.4 停用词词典
 
 在互联网项目中，在网络间传输的速度很快，所以很多语言是不允许在网络上传递的，如：关于宗教、政治等敏感词语，那么我们在搜索时也应该忽略当前词汇。
 
@@ -370,13 +368,13 @@ GET /_analyze
 
 > 注意当前文件的编码必须是 UTF-8 格式，严禁使用Windows记事本编辑
 
-# 4.部署es集群
+## 4. 部署es集群
 
 我们会在单机上利用docker容器运行多个es实例来模拟es集群。不过生产环境推荐大家每一台服务节点仅部署一个es的实例。
 
 部署es集群可以直接使用docker-compose来完成，但这要求你的Linux虚拟机至少有**4G**的内存空间
 
-## 4.1.创建es集群
+### 4.1 创建es集群
 
 首先编写一个docker-compose文件，内容如下：
 
@@ -465,7 +463,7 @@ sysctl -p
 docker-compose up -d
 ```
 
-## 4.2.集群状态监控
+### 4.2 集群状态监控
 
 kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配置比较复杂。
 
@@ -499,9 +497,9 @@ kibana可以监控es集群，不过新版本需要依赖es的x-pack 功能，配
 
 绿色的条，代表集群处于绿色（健康状态）。
 
-## 4.3.创建索引库
+### 4.3 创建索引库
 
-### 1）利用kibana的DevTools创建索引库
+#### 4.3.1 利用kibana的DevTools创建索引库
 
 在DevTools中输入指令：
 
@@ -520,7 +518,7 @@ PUT /itcast
 }
 ```
 
-### 2）利用cerebro创建索引库
+#### 4.3.2 利用cerebro创建索引库
 
 利用cerebro还可以创建索引库：
 
@@ -534,7 +532,7 @@ PUT /itcast
 
 ![image-20210602221542745](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210602221542745.png)
 
-## 4.4.查看分片效果
+### 4.4 查看分片效果
 
 回到首页，即可查看索引库分片效果：
 

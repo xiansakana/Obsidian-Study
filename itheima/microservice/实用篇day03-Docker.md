@@ -4,20 +4,16 @@ date: 2024-04-25T19:17:56Z
 lastmod: 2024-04-25T19:17:56Z
 ---
 
-# Docker实用篇
+## 1. 初识Docker
 
-# 0.学习目标
-
-# 1.初识Docker
-
-## 1.1.什么是Docker
+### 1.1 什么是Docker
 
 微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
 
 - 分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
 - 在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
 
-### 1.1.1.应用部署的环境问题
+#### 1.1.1 应用部署的环境问题
 
 大型项目组件较多，运行环境也较为复杂，部署时会碰到一些问题：
 
@@ -28,7 +24,7 @@ lastmod: 2024-04-25T19:17:56Z
 
 例如一个项目中，部署时需要依赖于node.js、Redis、RabbitMQ、MySQL等，这些服务部署时所需要的函数库、依赖项各不相同，甚至会有冲突。给部署带来了极大的困难。
 
-### 1.1.2.Docker解决依赖兼容问题
+#### 1.1.2 Docker解决依赖兼容问题
 
 而Docker确巧妙的解决了这些问题，Docker是如何实现的呢？
 
@@ -43,7 +39,7 @@ Docker为了解决依赖的兼容问题的，采用了两个手段：
 
 虽然解决了不同应用的兼容问题，但是开发、测试等环境会存在差异，操作系统版本也会有差异，怎么解决这些问题呢？
 
-### 1.1.3.Docker解决操作系统环境差异
+#### 1.1.3 Docker解决操作系统环境差异
 
 要解决不同操作系统环境差异问题，必须先了解操作系统结构。以一个Ubuntu操作系统为例，结构如下：
 
@@ -80,7 +76,7 @@ Docker如何解决不同系统环境的问题？
 
 ![image-20210731144820638](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731144820638.png)
 
-### 1.1.4.小结
+#### 1.1.4 小结
 
 Docker如何解决大型项目依赖关系复杂，不同组件依赖的兼容性问题？
 
@@ -97,7 +93,7 @@ Docker是一个快速交付应用、运行应用的技术，具备下列优势�
 - 运行时利用沙箱机制形成隔离容器，各个应用互不干扰
 - 启动、移除都可以通过一行命令完成，方便快捷
 
-## 1.2.Docker和虚拟机的区别
+### 1.2 Docker和虚拟机的区别
 
 Docker可以让一个应用在任何操作系统中非常方便的运行。而以前我们接触的虚拟机，也能在一个操作系统中，运行另外一个操作系统，保护系统中的任何应用。
 
@@ -120,9 +116,9 @@ Docker和虚拟机的差异：
 - docker是一个系统进程；虚拟机是在操作系统中的操作系统
 - docker体积小、启动速度快、性能好；虚拟机体积大、启动速度慢、性能一般
 
-## 1.3.Docker架构
+### 1.3 Docker架构
 
-### 1.3.1.镜像和容器
+#### 1.3.1 镜像和容器
 
 Docker中有几个重要的概念：
 
@@ -140,7 +136,7 @@ Docker中有几个重要的概念：
 
 例如你下载了一个QQ，如果我们将QQ在磁盘上的运行**文件**及其运行的操作系统依赖打包，形成QQ镜像。然后你可以启动多次，双开、甚至三开QQ，跟多个妹子聊天。
 
-### 1.3.2.DockerHub
+#### 1.3.2 DockerHub
 
 开源应用程序非常多，打包这些应用往往是重复的劳动。为了避免这些重复劳动，人们就会将自己打包的应用镜像，例如Redis、MySQL镜像放到网络上，共享使用，就像GitHub的代码共享一样。
 
@@ -151,7 +147,7 @@ Docker中有几个重要的概念：
 
 ![image-20210731153743354](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731153743354.png)
 
-### 1.3.3.Docker架构
+#### 1.3.3 Docker架构
 
 我们要使用Docker来操作镜像、容器，就必须要安装Docker。
 
@@ -164,7 +160,7 @@ Docker是一个CS架构的程序，由两部分组成：
 
 ![image-20210731154257653](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731154257653.png)
 
-### 1.3.4.小结
+#### 1.3.4 小结
 
 镜像：
 
@@ -183,17 +179,17 @@ DockerHub：
 
 - 一个镜像托管的服务器，类似的还有阿里云镜像服务，统称为DockerRegistry
 
-## 1.4.安装Docker
+### 1.4 安装Docker
 
 企业部署一般都是采用Linux操作系统，而其中又数CentOS发行版占比最多，因此我们在CentOS下安装Docker。参考课前资料中的文档：
 
 ![image-20210731155002425](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155002425.png)
 
-# 2.Docker的基本操作
+## 2. Docker的基本操作
 
-## 2.1.镜像操作
+### 2.1 镜像操作
 
-### 2.1.1.镜像名称
+#### 2.1.1 镜像名称
 
 首先来看下镜像的名称组成：
 
@@ -206,13 +202,13 @@ DockerHub：
 
 这里的mysql就是repository，5.7就是tag，合一起就是镜像名称，代表5.7版本的MySQL镜像。
 
-### 2.1.2.镜像命令
+#### 2.1.2 镜像命令
 
 常见的镜像操作命令如图：
 
 ![image-20210731155649535](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155649535.png)
 
-### 2.1.3.案例1-拉取、查看镜像
+#### 2.1.3 案例1-拉取、查看镜像
 
 需求：从DockerHub中拉取一个nginx镜像并查看
 
@@ -228,7 +224,7 @@ DockerHub：
 
 ![image-20210731155903037](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731155903037.png)
 
-### 2.1.4.案例2-保存、导入镜像
+#### 2.1.4 案例2-保存、导入镜像
 
 需求：利用docker save将nginx镜像导出磁盘，然后再通过load加载回来
 
@@ -280,7 +276,7 @@ docker load -i nginx.tar
 
 ![image-20210731161746245](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731161746245.png)
 
-### 2.1.5.练习
+#### 2.1.5 练习
 
 需求：去DockerHub搜索并拉取一个Redis镜像
 
@@ -298,9 +294,9 @@ docker load -i nginx.tar
 
 6）利用docker load 重新加载 redis.tar文件
 
-## 2.2.容器操作
+### 2.2 容器操作
 
-### 2.2.1.容器相关命令
+#### 2.2.1 容器相关命令
 
 容器操作的命令如图：
 
@@ -321,7 +317,7 @@ docker load -i nginx.tar
 - docker start：让一个停止的容器再次运行
 - docker rm：删除一个容器
 
-### 2.2.2.案例-创建并运行一个容器
+#### 2.2.2 案例-创建并运行一个容器
 
 创建并运行nginx容器的命令：
 
@@ -345,7 +341,7 @@ docker run --name containerName -p 80:80 -d nginx
 
 ![image-20210731163255863](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731163255863.png)
 
-### 2.2.3.案例-进入容器，修改文件
+#### 2.2.3 案例-进入容器，修改文件
 
 **需求**：进入Nginx容器，修改HTML文件内容，添加“传智教育欢迎您”
 
@@ -398,7 +394,7 @@ sed -i -e 's#Welcome to nginx#传智教育欢迎您#g' -e 's#<head>#<head><meta 
 
 ![image-20210731164717604](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731164717604.png)
 
-### 2.2.4.小结
+#### 2.2.4 小结
 
 docker run命令的常见参数有哪些？
 
@@ -416,7 +412,7 @@ docker run命令的常见参数有哪些？
 - docker ps
 - docker ps -a 查看所有容器，包括已经停止的
 
-## 2.3.数据卷（容器数据管理）
+### 2.3 数据卷（容器数据管理）
 
 在之前的nginx案例中，修改nginx的html页面时，需要进入nginx内部。并且因为没有编辑器，修改文件也很麻烦。
 
@@ -426,7 +422,7 @@ docker run命令的常见参数有哪些？
 
 要解决这个问题，必须将数据与容器解耦，这就要用到数据卷了。
 
-### 2.3.1.什么是数据卷
+#### 2.3.1 什么是数据卷
 
 **数据卷（volume）** 是一个虚拟目录，指向宿主机文件系统中的某个目录。
 
@@ -436,7 +432,7 @@ docker run命令的常见参数有哪些？
 
 这样，我们操作宿主机的/var/lib/docker/volumes/html目录，就等于操作容器内的/usr/share/nginx/html目录了
 
-### 2.3.2.数据集操作命令
+#### 2.3.2 数据集操作命令
 
 数据卷操作的基本语法如下：
 
@@ -452,7 +448,7 @@ docker volume命令是数据卷操作，根据命令后跟随的command来确定
 - prune 删除未使用的volume
 - rm 删除一个或多个指定的volume
 
-### 2.3.3.创建和查看数据卷
+#### 2.3.3 创建和查看数据卷
 
 **需求**：创建一个数据卷，并查看数据卷在宿主机的目录位置
 
@@ -498,7 +494,7 @@ docker volume inspect html
 - docker volume rm：删除指定数据卷
 - docker volume prune：删除所有未使用的数据卷
 
-### 2.3.4.挂载数据卷
+#### 2.3.4 挂载数据卷
 
 我们在创建容器时，可以通过 -v 参数来挂载一个数据卷到某个容器内目录，命令格式如下：
 
@@ -514,7 +510,7 @@ docker run \
 
 - `-v html:/root/htm` ：把html数据卷挂载到容器内的/root/html这个目录中
 
-### 2.3.5.案例-给nginx挂载数据卷
+#### 2.3.5 案例-给nginx挂载数据卷
 
 **需求**：创建一个nginx容器，修改容器内的html目录内的index.html内容
 
@@ -541,7 +537,7 @@ cd /var/lib/docker/volumes/html/_data
 vi index.html
 ```
 
-### 2.3.6.案例-给MySQL挂载本地目录
+#### 2.3.6 案例-给MySQL挂载本地目录
 
 容器不仅仅可以挂载数据卷，也可以直接挂载到宿主机目录上。关联关系如下：
 
@@ -577,7 +573,7 @@ vi index.html
 
 ③ 设置MySQL密码
 
-### 2.3.7.小结
+#### 2.3.7 小结
 
 docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
@@ -590,13 +586,13 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 - 数据卷挂载耦合度低，由docker来管理目录，但是目录较深，不好找
 - 目录挂载耦合度高，需要我们自己管理目录，不过目录容易寻找查看
 
-# 3.Dockerfile自定义镜像
+## 3. Dockerfile自定义镜像
 
 常见的镜像在DockerHub就能找到，但是我们自己写的项目就必须自己构建镜像了。
 
 而要自定义镜像，就必须先了解镜像的结构才行。
 
-## 3.1.镜像结构
+### 3.1 镜像结构
 
 镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。
 
@@ -608,7 +604,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 我们要构建镜像，其实就是实现上述打包的过程。
 
-## 3.2.Dockerfile语法
+### 3.2 Dockerfile语法
 
 构建自定义的镜像时，并不需要一个个文件去拷贝，打包。
 
@@ -622,9 +618,9 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 更新详细语法说明，请参考官网文档： https://docs.docker.com/engine/reference/builder
 
-## 3.3.构建Java项目
+### 3.3 构建Java项目
 
-### 3.3.1.基于Ubuntu构建Java项目
+#### 3.3.1 基于Ubuntu构建Java项目
 
 需求：基于Ubuntu镜像构建一个新镜像，运行一个java项目
 
@@ -648,20 +644,20 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
   FROM ubuntu:16.04
   # 配置环境变量，JDK的安装目录
   ENV JAVA_DIR=/usr/local
-
+  
   # 拷贝jdk和java项目的包
   COPY ./jdk8.tar.gz $JAVA_DIR/
   COPY ./docker-demo.jar /tmp/app.jar
-
+  
   # 安装JDK
   RUN cd $JAVA_DIR \
    && tar -xf ./jdk8.tar.gz \
    && mv ./jdk1.8.0_144 ./java8
-
+  
   # 配置环境变量
   ENV JAVA_HOME=$JAVA_DIR/java8
   ENV PATH=$PATH:$JAVA_HOME/bin
-
+  
   # 暴露端口
   EXPOSE 8090
   # 入口，java项目的启动命令
@@ -678,7 +674,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 
 最后访问 http://192.168.150.101:8090/hello/count，其中的ip改成你的虚拟机ip
 
-### 3.3.2.基于java8构建Java项目
+#### 3.3.2 基于java8构建Java项目
 
 虽然我们可以基于Ubuntu基础镜像，添加任意自己需要的安装包，构建镜像，但是却比较麻烦。所以大多数情况下，我们都可以在一些安装了部分软件的基础镜像上做改造。
 
@@ -708,7 +704,7 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 - ④ 使用docker build命令构建镜像
 - ⑤ 使用docker run创建容器并运行
 
-## 3.4.小结
+### 3.4 .小结
 
 小结：
 
@@ -716,13 +712,13 @@ docker run的命令中通过 -v 参数挂载文件或目录到容器中：
 2. Dockerfile的第一行必须是FROM，从一个基础镜像来构建
 3. 基础镜像可以是基本操作系统，如Ubuntu。也可以是其他人制作好的镜像，例如：java:8-alpine
 
-# 4.Docker-Compose
+## 4. Docker-Compose
 
 Docker Compose可以基于Compose文件帮我们快速的部署分布式应用，而无需手动一个个创建和运行容器！
 
 ![image-20210731180921742](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210731180921742.png)
 
-## 4.1.初识DockerCompose
+### 4.1 初识DockerCompose
 
 Compose文件是一个文本文件，通过指令定义集群中的每个容器如何运行。格式如下：
 
@@ -752,11 +748,11 @@ DockerCompose的详细语法参考官网：https://docs.docker.com/compose/compo
 
 其实DockerCompose文件可以看做是将多个docker run命令写到一个文件，只是语法稍有差异。
 
-## 4.2.安装DockerCompose
+### 4.2 安装DockerCompose
 
 参考课前资料
 
-## 4.3.部署微服务集群
+### 4.3 部署微服务集群
 
 **需求**：将之前学习的cloud-demo微服务集群利用DockerCompose部署
 
@@ -772,7 +768,7 @@ DockerCompose的详细语法参考官网：https://docs.docker.com/compose/compo
 
 ⑤ 将cloud-demo上传至虚拟机，利用 docker-compose up -d 来部署
 
-### 4.3.1.compose文件
+#### 4.3.1 compose文件
 
 查看课前资料提供的cloud-demo文件夹，里面已经编写好了docker-compose文件，而且每个微服务都准备了一个独立的目录：
 
@@ -837,7 +833,7 @@ COPY ./app.jar /tmp/app.jar
 ENTRYPOINT java -jar /tmp/app.jar
 ```
 
-### 4.3.2.修改微服务配置
+#### 4.3.2 修改微服务配置
 
 因为微服务将来要部署为docker容器，而容器之间互联不是通过IP地址，而是通过容器名。这里我们将order-service、user-service、gateway服务的mysql、nacos地址都修改为基于容器名的访问。
 
@@ -857,7 +853,7 @@ spring:
       server-addr: nacos:8848 # nacos服务地址
 ```
 
-### 4.3.3.打包
+#### 4.3.3 打包
 
 接下来需要将我们的每个微服务都打包。因为之前查看到Dockerfile中的jar包名称都是app.jar，因此我们的每个微服务都需要用这个名称。
 
@@ -880,7 +876,7 @@ spring:
 
 ![image-20210801095951030](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801095951030.png)
 
-### 4.3.4.拷贝jar包到部署目录
+#### 4.3.4 拷贝jar包到部署目录
 
 编译打包好的app.jar文件，需要放到Dockerfile的同级目录中。注意：每个微服务的app.jar放到与服务名称对应的目录，别搞错了。
 
@@ -896,7 +892,7 @@ gateway：
 
 ![image-20210801100308102](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210801100308102.png)
 
-### 4.3.5.部署
+#### 4.3.5 部署
 
 最后，我们需要将文件整个cloud-demo文件夹上传到虚拟机中，理由DockerCompose部署。
 
@@ -912,13 +908,13 @@ gateway：
 docker-compose up -d
 ```
 
-# 5.Docker镜像仓库
+## 5. Docker镜像仓库
 
-## 5.1.搭建私有镜像仓库
+### 5.1 搭建私有镜像仓库
 
 参考课前资料《CentOS7安装Docker.md》
 
-## 5.2.推送、拉取镜像
+### 5.2 推送、拉取镜像
 
 推送镜像到私有镜像服务必须先tag，步骤如下：
 

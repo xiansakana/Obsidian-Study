@@ -4,7 +4,6 @@ date: 2024-04-25T19:16:36Z
 lastmod: 2024-04-25T19:16:36Z
 ---
 
-
 ## 开篇导读
 
 **理想课程**
@@ -13,7 +12,7 @@ lastmod: 2024-04-25T19:16:36Z
 
 ![1652882458107](https://cdn.jsdelivr.net/npm/redis-itheima/1652882458107.png)
 
-## 1.Redis简单介绍
+## 1. Redis简单介绍
 
 Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
@@ -28,7 +27,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 对于存储的数据，没有类似Mysql那么严格的约束，比如唯一性，是否可以为null等等，所以我们把这种松散结构的数据库，称之为NoSQL数据库。
 
-## 2.课程目录
+## 2. 课程目录
 
 > - 初始Redis
 >   - 认识NoSQL
@@ -42,13 +41,13 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 >   - Jedis客户端
 >   - SpringDataRedis客户端
 
-## 3.初始Redis
+## 3. 初始Redis
 
-### 3.1.认识NoSQL
+### 3.1 认识NoSQL
 
 **NoSql**可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为**非关系型数据库**。
 
-#### 3.1.1.结构化与非结构化
+#### 3.1.1 结构化与非结构化
 
 传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束：
 
@@ -68,7 +67,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 ![](https://i.imgur.com/zBnKxWf.png)
 
-#### 3.1.2.关联和非关联
+#### 3.1.2 关联和非关联
 
 传统数据库的表与表之间往往存在关联，例如外键：
 
@@ -99,7 +98,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 此处要维护“张三”的订单与商品“荣耀”和“小米11”的关系，不得不冗余的将这两个商品保存在张三的订单文档中，不够优雅。还是建议用业务来维护关联关系。
 
-#### 3.1.3.查询方式
+#### 3.1.3 查询方式
 
 传统关系型数据库会基于Sql语句做查询，语法有统一标准；
 
@@ -107,7 +106,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 ![](https://i.imgur.com/AzaHOTF.png)
 
-#### 3.1.4.事务
+#### 3.1.4 事务
 
 传统关系型数据库能满足事务ACID的原则。
 
@@ -115,7 +114,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 而非关系型数据库往往不支持事务，或者不能严格保证ACID的特性，只能实现基本的一致性。
 
-#### 3.1.5.总结
+#### 3.1.5 总结
 
 除了上述四点以外，在存储方式.扩展性.查询性能上关系型与非关系型也都有着显著差异，总结如下：
 
@@ -130,7 +129,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
   * 非关系型数据库可以将数据拆分，存储在不同机器上，可以保存海量数据，解决内存大小有限的问题。称为水平扩展。
   * 关系型数据库因为表之间存在关联关系，如果做水平扩展会给数据查询带来很多麻烦
 
-### 3.2.认识Redis
+### 3.2 认识Redis
 
 Redis诞生于2009年全称是**Re**mote  **D**ictionary **S**erver 远程词典服务器，是一个基于内存的键值型NoSQL数据库。
 
@@ -147,13 +146,13 @@ Redis诞生于2009年全称是**Re**mote  **D**ictionary **S**erver 远程词典
 
 Redis的官方网站地址：https://redis.io/
 
-### 3.3.安装Redis
+### 3.3 安装Redis
 
 大多数企业都是基于Linux服务器来部署项目，而且Redis官方也没有提供Windows版本的安装包。因此课程中我们会基于Linux系统来安装Redis.
 
 此处选择的Linux版本为CentOS 7.
 
-#### 3.3.1.依赖库
+#### 3.3.1 依赖库
 
 Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
 
@@ -161,7 +160,7 @@ Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依
 yum install -y gcc tcl
 ```
 
-#### 3.3.2.上传安装包并解压
+#### 3.3.2 上传安装包并解压
 
 然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：
 
@@ -205,7 +204,7 @@ make && make install
 - redis-server：是redis的服务端启动脚本
 - redis-sentinel：是redis的哨兵启动脚本
 
-#### 3.3.3.启动
+#### 3.3.3 启动
 
 redis的启动方式有很多种，例如：
 
@@ -213,7 +212,7 @@ redis的启动方式有很多种，例如：
 - 指定配置启动
 - 开机自启
 
-#### 3.3.4.默认启动
+#### 3.3.4 .默认启动
 
 安装完成后，在任意目录输入redis-server命令即可启动Redis：
 
@@ -227,7 +226,7 @@ redis-server
 
 这种启动属于`前台启动`，会阻塞整个会话窗口，窗口关闭或者按下`CTRL + C`则Redis停止。不推荐使用。
 
-#### 3.3.5.指定配置启动
+#### 3.3.5 指定配置启动
 
 如果要让Redis以`后台`方式启动，则必须修改Redis配置文件，就在我们之前解压的redis安装包下（`/usr/local/src/redis-6.2.6`），名字叫redis.conf：
 
@@ -282,7 +281,7 @@ redis-server redis.conf
 redis-cli -u 123321 shutdown
 ```
 
-#### 3.3.6.开机自启
+#### 3.3.6 .开机自启
 
 我们也可以通过配置来实现开机自启。
 
@@ -333,7 +332,7 @@ systemctl status redis
 systemctl enable redis
 ```
 
-### 3.4.Redis桌面客户端
+### 3.4 Redis桌面客户端
 
 安装完成Redis，我们就可以操作Redis，实现数据的CRUD了。这需要用到Redis客户端，包括：
 
@@ -341,7 +340,7 @@ systemctl enable redis
 - 图形化桌面客户端
 - 编程客户端
 
-#### 3.4.1.Redis命令行客户端
+#### 3.4.1 .Redis命令行客户端
 
 Redis安装完成后就自带了命令行客户端：redis-cli，使用方式如下：
 
@@ -363,7 +362,7 @@ redis-cli [options] [commonds]
 
 ![](https://i.imgur.com/OYYWPNo.png)
 
-#### 3.4.2.图形化桌面客户端
+#### 3.4.2 .图形化桌面客户端
 
 GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://github.com/uglide/RedisDesktopManager
 
@@ -371,7 +370,7 @@ GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://g
 
 在下面这个仓库可以找到安装包：https://github.com/lework/RedisDesktopManager-Windows/releases
 
-#### 3.4.3.安装
+#### 3.4.3 .安装
 
 在课前资料中可以找到Redis的图形化桌面客户端：
 
@@ -389,7 +388,7 @@ GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://g
 
 ![](https://i.imgur.com/6hUqslY.png)
 
-#### 3.4.4.建立连接
+#### 3.4.4 .建立连接
 
 点击左上角的`连接到Redis服务器`按钮：
 
@@ -416,7 +415,7 @@ Redis默认有16个仓库，编号从0至15.  通过配置文件可以设置仓�
 select 0
 ```
 
-## 4.Redis常见命令
+## 4. Redis常见命令
 
 ### 4.1 Redis数据结构介绍
 
@@ -698,8 +697,8 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 
 |**KEY**|**VALUE**|
 | ---------------| -----------------------------------------|
-|heima:user:1|{"id":1, "name": "Jack", "age": 21}|
-|heima:product:1|{"id":1, "name": "小米11", "price": 4999}|
+|heima:user:1|`{"id":1, "name": "Jack", "age": 21}`|
+|heima:product:1|`{"id":1, "name": "小米11", "price": 4999}`|
 
 一旦我们向redis采用这样的方式存储，那么在可视化界面中，redis会以层级结构来进行存储，形成类似于这样的结构，更加方便Redis获取数据
 
@@ -839,7 +838,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - LRANGE key star end：返回一段角标范围内的所有元素
 - BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil
 
-![1652943604992](.\Redis.assets\1652943604992.png)
+![1652943604992](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1652943604992.png)
 
 * LPUSH和RPUSH
 
@@ -1001,7 +1000,7 @@ SortedSet的常见命令有：
 - **升序**获取sorted set 中的指定元素的排名：ZRANK key member
 - **降序**获取sorted set 中的指定元素的排名：ZREVRANK key memeber
 
-## 5.Redis的Java客户端-Jedis
+## 5. Redis的Java客户端-Jedis
 
 在Redis官网中提供了各种语言的客户端，地址：https://redis.io/docs/clients/
 
@@ -1024,7 +1023,7 @@ SortedSet的常见命令有：
 
 0）创建工程：
 
-![1652959239813](\Redis.assets\1652959239813.png)
+![1652959239813](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1652959239813.png)
 
 1）引入依赖：
 
@@ -1105,7 +1104,7 @@ Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性
 
 有关池化思想，并不仅仅是这里会使用，很多地方都有，比如说我们的数据库连接池，比如我们tomcat中的线程池，这些都是池化思想的体现。
 
-#### 5.2.1.创建Jedis的连接池
+#### 5.2.1 创建Jedis的连接池
 
 ```java
 public class JedisConnectionFacotry {
@@ -1136,13 +1135,11 @@ public class JedisConnectionFacotry {
 - 2）静态代码块：随着类的加载而加载，确保只能执行一次，我们在加载当前工厂类的时候，就可以执行static的操作完成对 连接池的初始化
 - 3）最后提供返回连接池中连接的方法.
 
-#### 5.2.2.改造原始代码
+#### 5.2.2 改造原始代码
 
 **代码说明:**
 
-1.在我们完成了使用工厂设计模式来完成代码的编写之后，我们在获得连接时，就可以通过工厂来获得。
-
-，而不用直接去new对象，降低耦合，并且使用的还是连接池对象。
+1.在我们完成了使用工厂设计模式来完成代码的编写之后，我们在获得连接时，就可以通过工厂来获得，而不用直接去new对象，降低耦合，并且使用的还是连接池对象。
 
 2.当我们使用了连接池后，当我们关闭连接其实并不是关闭，而是将Jedis还回连接池的。
 
@@ -1164,7 +1161,7 @@ public class JedisConnectionFacotry {
     }
 ```
 
-## 6.Redis的Java客户端-SpringDataRedis
+## 6. Redis的Java客户端-SpringDataRedis
 
 SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做SpringDataRedis，官网地址：https://spring.io/projects/spring-data-redis
 
@@ -1178,13 +1175,13 @@ SpringData是Spring中数据操作的模块，包含对各种数据库的集成�
 
 SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redis的操作。并且将不同数据类型的操作API封装到了不同的类型中：
 
-![1652976773295](.\Redis.assets\1652976773295.png)
+![1652976773295](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1652976773295.png)
 
-### 6.1.快速入门
+### 6.1 快速入门
 
 SpringBoot已经提供了对SpringDataRedis的支持，使用非常简单：
 
-#### 6.1.1.导入pom坐标
+#### 6.1.1 导入pom坐标
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1253,7 +1250,7 @@ SpringBoot已经提供了对SpringDataRedis的支持，使用非常简单：
 </project>
 ```
 
-#### 6.1.2 .配置文件
+#### 6.1.2 配置文件
 
 ```yaml
 spring:
@@ -1269,7 +1266,7 @@ spring:
         max-wait: 100ms #连接等待时间
 ```
 
-#### 6.1.3.测试代码
+#### 6.1.3 测试代码
 
 ```java
 @SpringBootTest
@@ -1297,7 +1294,7 @@ SpringDataRedis的使用步骤：
 * 在application.yml配置Redis信息
 * 注入RedisTemplate
 
-### 6.2 .数据序列化器
+### 6.2 数据序列化器
 
 RedisTemplate可以接收任意Object作为值写入Redis：
 
@@ -1349,13 +1346,13 @@ public class RedisConfig {
 
 尽管JSON的序列化方式可以满足我们的需求，但依然存在一些问题，如图：
 
-![1653054602930](.\Redis.assets\1653054602930.png)
+![1653054602930](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1653054602930.png)
 
 为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销。
 
 为了减少内存的消耗，我们可以采用手动序列化的方式，换句话说，就是不借助默认的序列化器，而是我们自己来控制序列化的动作，同时，我们只采用String的序列化器，这样，在存储value时，我们就不需要在内存中就不用多存储数据，从而节约我们的内存空间
 
-![1653054744832](.\Redis.assets\1653054744832.png)
+![1653054744832](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1653054744832.png)
 
 这种用法比较普遍，因此SpringDataRedis就提供了RedisTemplate的子类：StringRedisTemplate，它的key和value的序列化方式默认就是String方式。
 
@@ -1402,7 +1399,7 @@ class RedisStringTests {
 
 此时我们再来看一看存储的数据，小伙伴们就会发现那个class数据已经不在了，节约了我们的空间~
 
-![1653054945211](.\Redis.assets\1653054945211.png)
+![1653054945211](https://cdn.jsdelivr.net/npm/redis-itheima@1.0.1/1653054945211.png)
 
 最后小总结：
 

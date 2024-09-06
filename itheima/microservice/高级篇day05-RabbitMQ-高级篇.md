@@ -4,13 +4,11 @@ date: 2024-04-25T19:19:59Z
 lastmod: 2024-04-25T19:19:59Z
 ---
 
-# 服务异步通信-高级篇
-
-消息队列在使用过程中，面临着很多实际问题需要思考：
+消息队列在使用过程中，面临着很多实际问题需要思考
 
 ![image-20210718155003157](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155003157.png)
 
-# 1.消息可靠性
+## 1. 消息可靠性
 
 消息从发送，到消费者接收，会经理多个过程：
 
@@ -41,7 +39,7 @@ lastmod: 2024-04-25T19:19:59Z
 
 ![image-20210718155448734](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718155448734.png)
 
-## 1.1.生产者消息确认
+### 1.1 生产者消息确认
 
 RabbitMQ提供了publisher confirm机制来避免消息发送到MQ过程中丢失。这种机制必须给每个消息指定一个唯一ID。消息发送到MQ以后，会返回一个结果给发送者，表示消息是否处理成功。
 
@@ -59,7 +57,7 @@ RabbitMQ提供了publisher confirm机制来避免消息发送到MQ过程中丢�
 
 ![image-20210718161707992](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718161707992.png)
 
-### 1.1.1.修改配置
+#### 1.1.1 修改配置
 
 首先，修改publisher服务中的application.yml文件，添加下面的内容：
 
@@ -81,7 +79,7 @@ spring:
 - `publish-returns`：开启publish-return功能，同样是基于callback机制，不过是定义ReturnCallback
 - `template.mandatory`：定义消息路由失败时的策略。true，则调用ReturnCallback；false：则直接丢弃消息
 
-### 1.1.2.定义Return回调
+#### 1.1.2 定义Return回调
 
 每个RabbitTemplate只能配置一个ReturnCallback，因此需要在项目加载时配置：
 
@@ -115,7 +113,7 @@ public class CommonConfig implements ApplicationContextAware {
 }
 ```
 
-### 1.1.3.定义ConfirmCallback
+#### 1.1.3 定义ConfirmCallback
 
 ConfirmCallback可以在发送消息时指定，因为每个业务处理confirm成功或失败的逻辑不一定相同。
 
@@ -148,7 +146,7 @@ public void testSendMessage2SimpleQueue() throws InterruptedException {
 }
 ```
 
-## 1.2.消息持久化
+### 1.2 消息持久化
 
 生产者确认可以确保消息投递到RabbitMQ的队列中，但是消息发送到RabbitMQ以后，如果突然宕机，也可能导致消息丢失。
 
@@ -158,7 +156,7 @@ public void testSendMessage2SimpleQueue() throws InterruptedException {
 - 队列持久化
 - 消息持久化
 
-### 1.2.1.交换机持久化
+#### 1.2.1 交换机持久化
 
 RabbitMQ中交换机默认是非持久化的，mq重启后就丢失。
 
@@ -178,7 +176,7 @@ public DirectExchange simpleExchange(){
 
 ![image-20210718164412450](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718164412450.png)
 
-### 1.2.2.队列持久化
+#### 1.2.2 队列持久化
 
 RabbitMQ中队列默认是非持久化的，mq重启后就丢失。
 
@@ -198,7 +196,7 @@ public Queue simpleQueue(){
 
 ![image-20210718164729543](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718164729543.png)
 
-### 1.2.3.消息持久化
+#### 1.2.3 消息持久化
 
 利用SpringAMQP发送消息时，可以设置消息的属性（MessageProperties），指定delivery-mode：
 
@@ -211,7 +209,7 @@ public Queue simpleQueue(){
 
 默认情况下，SpringAMQP发出的任何消息都是持久化的，不用特意指定。
 
-## 1.3.消费者消息确认
+### 1.3 消费者消息确认
 
 RabbitMQ是**阅后即焚**机制，RabbitMQ确认消息被消费者消费后会立刻删除。
 
@@ -242,7 +240,7 @@ RabbitMQ是**阅后即焚**机制，RabbitMQ确认消息被消费者消费后会
 
 一般，我们都是使用默认的auto即可。
 
-### 1.3.1.演示none模式
+#### 1.3.1 演示none模式
 
 修改consumer服务的application.yml文件，添加下面内容：
 
@@ -268,7 +266,7 @@ public void listenSimpleQueue(String msg) {
 
 测试可以发现，当消息处理抛异常时，消息依然被RabbitMQ删除了。
 
-### 1.3.2.演示auto模式
+#### 1.3.2 演示auto模式
 
 再次把确认机制修改为auto:
 
@@ -288,7 +286,7 @@ spring:
 
 ![image-20210718171759179](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718171759179.png)
 
-## 1.4.消费失败重试机制
+### 1.4 消费失败重试机制
 
 当消费者出现异常后，消息会不断requeue（重入队）到队列，再重新发送给消费者，然后再次异常，再次requeue，无限循环，导致mq的消息处理飙升，带来不必要的压力：
 
@@ -296,7 +294,7 @@ spring:
 
 怎么办呢？
 
-### 1.4.1.本地重试
+#### 1.4.1 本地重试
 
 我们可以利用Spring的retry机制，在消费者出现异常时利用本地重试，而不是无限制的requeue到mq队列。
 
@@ -325,7 +323,7 @@ spring:
 - 开启本地重试时，消息处理过程中抛出异常，不会requeue到队列，而是在消费者本地重试
 - 重试达到最大次数后，Spring会返回ack，消息会被丢弃
 
-### 1.4.2.失败策略
+#### 1.4.2 失败策略
 
 在之前的测试中，达到最大重试次数后，消息会被丢弃，这是由Spring内部机制决定的。
 
@@ -399,7 +397,7 @@ public class ErrorMessageConfig {
 }
 ```
 
-## 1.5.总结
+### 1.5 总结
 
 如何确保RabbitMQ消息的可靠性？
 
@@ -408,11 +406,11 @@ public class ErrorMessageConfig {
 - 开启消费者确认机制为auto，由spring确认消息处理成功后完成ack
 - 开启消费者失败重试机制，并设置MessageRecoverer，多次重试失败后将消息投递到异常交换机，交由人工处理
 
-# 2.死信交换机
+## 2. 死信交换机
 
-## 2.1.初识死信交换机
+### 2.1 初识死信交换机
 
-### 2.1.1.什么是死信交换机
+#### 2.1.1 什么是死信交换机
 
 什么是死信？
 
@@ -445,7 +443,7 @@ public class ErrorMessageConfig {
 
 ![image-20210821073801398](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210821073801398.png)
 
-### 2.1.2.利用死信交换机接收死信（拓展）
+#### 2.1.2 利用死信交换机接收死信（拓展）
 
 在失败重试策略中，默认的RejectAndDontRequeueRecoverer会在本地重试次数耗尽后，发送reject给RabbitMQ，消息变成死信，被丢弃。
 
@@ -480,7 +478,7 @@ public Binding dlBinding(){
 }
 ```
 
-### 2.1.3.总结
+#### 2.1.3 总结
 
 什么样的消息会成为死信？
 
@@ -493,7 +491,7 @@ public Binding dlBinding(){
 - 如果队列绑定了死信交换机，死信会投递到死信交换机；
 - 可以利用死信交换机收集所有消费者处理失败的消息（死信），交由人工处理，进一步提高消息队列的可靠性。
 
-## 2.2.TTL
+### 2.2 TTL
 
 一个队列中的消息如果超时未消费，则会变为死信，超时分为两种情况：
 
@@ -502,7 +500,7 @@ public Binding dlBinding(){
 
 ![image-20210718182643311](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718182643311.png)
 
-### 2.2.1.接收超时死信的死信交换机
+#### 2.2.1 接收超时死信的死信交换机
 
 在consumer服务的SpringRabbitListener中，定义一个新的消费者，并且声明 死信交换机、死信队列：
 
@@ -517,7 +515,7 @@ public void listenDlQueue(String msg){
 }
 ```
 
-### 2.2.2.声明一个队列，并且指定TTL
+#### 2.2.2 声明一个队列，并且指定TTL
 
 要给队列设置超时时间，需要在声明队列时配置x-message-ttl属性：
 
@@ -572,7 +570,7 @@ public void testTTLQueue() {
 
 因为队列的TTL值是10000ms，也就是10秒。可以看到消息发送与接收之间的时差刚好是10秒。
 
-### 2.2.3.发送消息时，设定TTL
+#### 2.2.3 发送消息时，设定TTL
 
 在发送消息时，也可以指定TTL：
 
@@ -602,7 +600,7 @@ public void testTTLMsg() {
 
 这次，发送与接收的延迟只有5秒。说明当队列、消息都设置了TTL时，任意一个到期就会成为死信。
 
-### 2.2.4.总结
+#### 2.2.4 总结
 
 消息超时的两种方式是？
 
@@ -615,7 +613,7 @@ public void testTTLMsg() {
 - 将消费者监听的队列绑定到死信交换机
 - 发送消息时给消息设置超时时间为20秒
 
-## 2.3.延迟队列
+### 2.3 延迟队列
 
 利用TTL结合死信交换机，我们实现了消息发出后，消费者延迟收到消息的效果。这种消息模式就称为延迟队列（Delay Queue）模式。
 
@@ -633,13 +631,13 @@ public void testTTLMsg() {
 
 使用方式可以参考官网地址：https://blog.rabbitmq.com/posts/2015/04/scheduling-messages-with-rabbitmq
 
-### 2.3.1.安装DelayExchange插件
+#### 2.3.1 安装DelayExchange插件
 
 参考课前资料：
 
 ![image-20210718193409812](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193409812.png)
 
-### 2.3.2.DelayExchange原理
+#### 2.3.2 DelayExchange原理
 
 DelayExchange需要将一个交换机声明为delayed类型。当我们发送消息到delayExchange时，流程如下：
 
@@ -649,11 +647,11 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 - 返回routing not found结果给消息发送者
 - x-delay时间到期后，重新投递消息到指定队列
 
-### 2.3.3.使用DelayExchange
+#### 2.3.3 使用DelayExchange
 
 插件的使用也非常简单：声明一个交换机，交换机的类型可以是任意类型，只需要设定delayed属性为true即可，然后声明队列与其绑定即可。
 
-#### 1）声明DelayExchange交换机
+##### 2.3.3.1 声明DelayExchange交换机
 
 基于注解方式（推荐）：
 
@@ -663,23 +661,23 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 
 ![image-20210718193831076](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193831076.png)
 
-#### 2）发送消息
+##### 2.3.3.2发送消息
 
 发送消息时，一定要携带x-delay属性，指定延迟的时间：
 
 ![image-20210718193917009](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718193917009.png)
 
-### 2.3.4.总结
+#### 2.3.4 总结
 
 延迟队列插件的使用步骤包括哪些？
 
-•声明一个交换机，添加delayed属性为true
+- 声明一个交换机，添加delayed属性为true
 
-•发送消息时，添加x-delay头，值为超时时间
+- 发送消息时，添加x-delay头，值为超时时间
 
-# 3.惰性队列
+## 3. 惰性队列
 
-## 3.1.消息堆积问题
+### 3.1 消息堆积问题
 
 当生产者发送消息的速度超过了消费者处理消息的速度，就会导致队列中的消息堆积，直到队列存储消息达到上限。之后发送的消息就会成为死信，可能会被丢弃，这就是消息堆积问题。
 
@@ -692,7 +690,7 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 
 要提升队列容积，把消息保存在内存中显然是不行的。
 
-## 3.2.惰性队列
+### 3.2 惰性队列
 
 从RabbitMQ的3.6.0版本开始，就增加了Lazy Queues的概念，也就是惰性队列。惰性队列的特征如下：
 
@@ -700,7 +698,7 @@ DelayExchange需要将一个交换机声明为delayed类型。当我们发送消
 - 消费者要消费消息时才会从磁盘中读取并加载到内存
 - 支持数百万条的消息存储
 
-### 3.2.1.基于命令行设置lazy-queue
+#### 3.2.1 基于命令行设置lazy-queue
 
 而要设置一个队列为惰性队列，只需要在声明队列时，指定x-queue-mode属性为lazy即可。可以通过命令行将一个运行中的队列修改为惰性队列：
 
@@ -717,15 +715,15 @@ rabbitmqctl set_policy Lazy "^lazy-queue$" '{"queue-mode":"lazy"}' --apply-to qu
 - `'{"queue-mode":"lazy"}'` ：设置队列模式为lazy模式
 - `--apply-to queues  `：策略的作用对象，是所有的队列
 
-### 3.2.2.基于@Bean声明lazy-queue
+#### 3.2.2 基于@Bean声明lazy-queue
 
 ![image-20210718194522223](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718194522223.png)
 
-### 3.2.3.基于@RabbitListener声明LazyQueue
+#### 3.2.3 基于@RabbitListener声明LazyQueue
 
 ![image-20210718194539054](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718194539054.png)
 
-### 3.3.总结
+### 3.3 总结
 
 消息堆积问题的解决方案？
 
@@ -742,9 +740,9 @@ rabbitmqctl set_policy Lazy "^lazy-queue$" '{"queue-mode":"lazy"}' --apply-to qu
 - 基于磁盘存储，消息时效性会降低
 - 性能受限于磁盘的IO
 
-# 4.MQ集群
+## 4. MQ集群
 
-## 4.1.集群分类
+### 4.1 集群分类
 
 RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语言，天然支持集群模式。RabbitMQ的集群有两种模式：
 
@@ -754,9 +752,9 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 镜像集群虽然支持主从，但主从同步并不是强一致的，某些情况下可能有数据丢失的风险。因此在RabbitMQ的3.8版本以后，推出了新的功能：**仲裁队列**来代替镜像集群，底层采用Raft协议确保主从的数据一致性。
 
-## 4.2.普通集群
+### 4.2 普通集群
 
-### 4.2.1.集群结构和特征
+#### 4.2.1 集群结构和特征
 
 普通集群，或者叫标准集群（classic cluster），具备下列特征：
 
@@ -768,13 +766,13 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 ![image-20210718220843323](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718220843323.png)
 
-### 4.2.2.部署
+#### 4.2.2 部署
 
 参考课前资料：《RabbitMQ部署指南.md》
 
-## 4.3.镜像集群
+### 4.3 镜像集群
 
-### 4.3.1.集群结构和特征
+#### 4.3.1 集群结构和特征
 
 镜像集群：本质是主从模式，具备下面的特征：
 
@@ -788,13 +786,13 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 
 ![image-20210718221039542](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718221039542.png)
 
-### 4.3.2.部署
+#### 4.3.2 部署
 
 参考课前资料：《RabbitMQ部署指南.md》
 
-## 4.4.仲裁队列
+### 4.4 仲裁队列
 
-### 4.4.1.集群特征
+#### 4.4.1 集群特征
 
 仲裁队列：仲裁队列是3.8版本以后才有的新功能，用来替代镜像队列，具备下列特征：
 
@@ -802,11 +800,11 @@ RabbitMQ的是基于Erlang语言编写，而Erlang又是一个面向并发的语
 - 使用非常简单，没有复杂的配置
 - 主从同步基于Raft协议，强一致
 
-### 4.4.2.部署
+#### 4.4.2 部署
 
 参考课前资料：《RabbitMQ部署指南.md》
 
-### 4.4.3.Java代码创建仲裁队列
+#### 4.4.3 Java代码创建仲裁队列
 
 ```java
 @Bean
@@ -818,7 +816,7 @@ public Queue quorumQueue() {
 }
 ```
 
-### 4.4.4.SpringAMQP连接MQ集群
+#### 4.4.4 SpringAMQP连接MQ集群
 
 注意，这里用address来代替host、port方式
 

@@ -12,7 +12,7 @@ lastmod: 2024-04-25T19:14:18Z
 2. Bean的管理
 3. 剖析Springboot的底层原理
 
-# 1. 配置优先级
+## 1. 配置优先级
 
 在我们前面的课程当中，我们已经讲解了SpringBoot项目当中支持的三类配置文件：
 
@@ -132,7 +132,7 @@ java -Dserver.port=9000 -jar XXXXX.jar --server.port=10010
 - java系统属性（-Dxxx=xxx）
 - 命令行参数（--xxx=xxx）
 
-# 2. Bean管理
+## 2. Bean管理
 
 在前面的课程当中，我们已经讲过了我们可以通过Spring当中提供的注解@Component以及它的三个衍生注解（@Controller、@Service、@Repository）来声明IOC容器中的bean对象，同时我们也学习了如何为应用程序注入运行时所需要依赖的bean对象，也就是依赖注入DI。
 
@@ -144,7 +144,7 @@ java -Dserver.port=9000 -jar XXXXX.jar --server.port=10010
 
 接下来我们先来学习第一方面，从IOC容器中获取bean对象。
 
-## 2.1 获取Bean
+### 2.1 获取Bean
 
 默认情况下，SpringBoot项目在启动的时候会自动的创建IOC容器(也称为Spring容器)，并且在启动的过程当中会自动的将bean对象都创建好，存放在IOC容器当中。应用程序在运行时需要依赖什么bean对象，就直接进行依赖注入就可以了。
 
@@ -296,7 +296,7 @@ class SpringbootWebConfig2ApplicationTests {
 
 - 上述所说的 【Spring项目启动时，会把其中的bean都创建好】还会受到作用域及延迟初始化影响，这里主要针对于默认的单例非延迟加载的bean而言。
 
-## 2.2 Bean作用域
+### 2.2 Bean作用域
 
 在前面我们提到的IOC容器当中，默认bean对象是单例模式(只有一个实例对象)。那么如何设置bean对象为非单例呢？需要设置bean的作用域。
 
@@ -398,7 +398,7 @@ public class DeptController {
 > - prototype的bean，每一次使用该bean的时候都会创建一个新的实例
 > - 实际开发当中，绝大部分的Bean是单例的，也就是说绝大部分Bean不需要配置scope属性
 
-## 2.3 第三方Bean
+### 2.3 第三方Bean
 
 学习完bean的获取、bean的作用域之后，接下来我们再来学习第三方bean的配置。
 
@@ -531,7 +531,7 @@ Tom : 18
 - 如果是在项目当中我们自己定义的类，想将这些类交给IOC容器管理，我们直接使用@Component以及它的衍生注解来声明就可以。
 - 如果这个类它不是我们自己定义的，而是引入的第三方依赖当中提供的类，而且我们还想将这个类交给IOC容器管理。此时我们就需要在配置类中定义一个方法，在方法上加上一个@Bean注解，通过这种方式来声明第三方的bean对象。
 
-# 3. SpringBoot原理
+## 3. SpringBoot原理
 
 经过前面10多天课程的学习，大家也会发现基于SpringBoot进行web程序的开发是非常简单、非常高效的。
 
@@ -564,7 +564,7 @@ SpringBoot框架之所以使用起来更简单更快捷，是因为SpringBoot框
 
 简单回顾之后，接下来我们来学习下SpringBoot的原理。其实学习SpringBoot的原理就是来解析SpringBoot当中的起步依赖与自动配置的原理。我们首先来学习SpringBoot当中起步依赖的原理。
 
-## 3.1 起步依赖
+### 3.1 起步依赖
 
 假如我们没有使用SpringBoot，用的是Spring框架进行web程序的开发，此时我们就需要引入web程序开发所需要的一些依赖。
 
@@ -593,11 +593,11 @@ SpringBoot框架之所以使用起来更简单更快捷，是因为SpringBoot框
 
 **结论：起步依赖的原理就是Maven的依赖传递。**
 
-## 3.2 自动配置
+### 3.2 自动配置
 
 我们讲解了SpringBoot当中起步依赖的原理，就是Maven的依赖传递。接下来我们解析下自动配置的原理，我们要分析自动配置的原理，首先要知道什么是自动配置。
 
-## 3.2.1 概述
+#### 3.2.1 概述
 
 SpringBoot的自动配置就是当Spring容器启动后，一些配置类、bean对象就自动存入到了IOC容器中，不需要我们手动去声明，从而简化了开发，省去了繁琐的配置操作。
 
@@ -663,9 +663,9 @@ public class AutoConfigurationTests {
 
 体验了SpringBoot的自动配置了，下面我们就来分析自动配置的原理。其实分析自动配置原理就是来解析在SpringBoot项目中，在引入依赖之后是如何将依赖jar包当中所定义的配置类以及bean加载到SpringIOC容器中的。
 
-## 3.2.2 常见方案
+#### 3.2.2 常见方案
 
-### 3.2.2.1 概述
+##### 3.2.2.1 概述
 
 我们知道了什么是自动配置之后，接下来我们就要来剖析自动配置的原理。解析自动配置的原理就是分析在 SpringBoot项目当中，我们引入对应的依赖之后，是如何将依赖jar包当中所提供的bean以及配置类直接加载到当前项目的SpringIOC容器当中的。
 
@@ -724,7 +724,7 @@ public class AutoConfigurationTests {
 - 方案1：@ComponentScan 组件扫描
 - 方案2：@Import 导入（使用@Import导入的类会被Spring加载到IOC容器中）
 
-### 3.2.2.2 方案一
+##### 3.2.2.2 方案一
 
 @ComponentScan组件扫描
 
@@ -752,7 +752,7 @@ public class SpringbootWebConfig2Application {
 >
 > **结论：SpringBoot中并没有采用以上这种方案。**
 
-### 3.2.2.3 方案二
+##### 3.2.2.3 方案二
 
 @Import导入
 
@@ -912,9 +912,9 @@ public class SpringbootWebConfig2Application {
 
 以上四种方式都可以完成导入操作，但是第4种方式会更方便更优雅，而这种方式也是SpringBoot当中所采用的方式。
 
-## 3.2.3 原理分析
+#### 3.2.3 原理分析
 
-### 3.2.3.1 源码跟踪
+##### 3.2.3.1 源码跟踪
 
 前面我们讲解了在项目当中引入第三方依赖之后，如何加载第三方依赖中定义好的bean对象以及配置类，从而完成自动配置操作。那下面我们通过源码跟踪的形式来剖析下SpringBoot底层到底是如何完成自动配置的。
 
@@ -1017,7 +1017,7 @@ META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
 >
 > 答案：并不是。 在声明bean对象时，上面有加一个以@Conditional开头的注解，这种注解的作用就是按照条件进行装配，只有满足条件之后，才会将bean注册到Spring的IOC容器中（下面会详细来讲解）
 
-### 3.2.3.2 @Conditional
+##### 3.2.3.2 @Conditional
 
 我们在跟踪SpringBoot自动配置的源码的时候，在自动配置类声明bean的时候，除了在方法上加了一个@Bean注解以外，还会经常用到一个注解，就是以Conditional开头的这一类的注解。以Conditional开头的这些注解都是条件装配的注解。下面我们就来介绍下条件装配注解。
 
@@ -1236,9 +1236,9 @@ public HeaderParser headerParser(){
 > - 此时它会去读取两份配置文件，一份儿是 spring.factories，另外一份儿是 autoConfiguration.imports。而在  autoConfiguration.imports 这份儿文件当中，它就会去配置大量的自动配置的类。
 > - 而前面我们也提到过这些所有的自动配置类当中，所有的 bean都会加载到 spring 的 IOC 容器当中吗？其实并不会，因为这些配置类当中，在声明 bean 的时候，通常会加上这么一类@Conditional 开头的注解。这个注解就是进行条件装配。所以SpringBoot非常的智能，它会根据 @Conditional 注解来进行条件装配。只有条件成立，它才会声明这个bean，才会将这个 bean 交给 IOC 容器管理。
 
-## 3.2.4 案例
+#### 3.2.4 案例
 
-### 3.2.4.1 自定义starter分析
+##### 3.2.4.1 自定义starter分析
 
 前面我们解析了SpringBoot中自动配置的原理，下面我们就通过一个自定义starter案例来加深大家对于自动配置原理的理解。首先介绍一下自定义starter的业务场景，再来分析一下具体的操作步骤。
 
@@ -1361,7 +1361,7 @@ public class AliOSSUtils {
 
 我们分析完自定义阿里云OSS自动配置的操作步骤了，下面我们就按照分析的步骤来实现自定义starter。
 
-### 3.2.4.2 自定义starter实现
+##### 3.2.4.2 自定义starter实现
 
 自定义starter的步骤我们刚才已经分析了，接下来我们就按照分析的步骤来完成自定义starter的开发。
 
@@ -1666,7 +1666,7 @@ public class AliOSSUtils {
 
 ![image-20230116004957697](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116004957697.png)
 
-### 3.2.4.3 自定义starter测试
+##### 3.2.4.3 自定义starter测试
 
 阿里云OSS的starter我们刚才已经定义好了，接下来我们就来做一个测试。
 
@@ -1704,17 +1704,17 @@ public class AliOSSUtils {
    ~~~java
    @RestController
    public class UploadController {
-
+   
        @Autowired
        private AliOSSUtils aliOSSUtils;
-
+   
        @PostMapping("/upload")
        public String upload(MultipartFile image) throws Exception {
            //上传文件到阿里云 OSS
            String url = aliOSSUtils.upload(image);
            return url;
        }
-
+   
    }
    ~~~
 
@@ -1732,7 +1732,7 @@ public class AliOSSUtils {
 
 ![image-20230116011501201](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.2/assets2/image-20230116011501201.png)
 
-# 4. Web后端开发总结
+## 4. Web后端开发总结
 
 到此基于SpringBoot进行web后端开发的相关知识我们已经学习完毕了。下面我们一起针对这段web课程做一个总结。
 

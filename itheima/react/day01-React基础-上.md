@@ -4,12 +4,12 @@ date: 2024-05-04T03:24:17Z
 lastmod: 2024-05-05T01:43:26Z
 ---
 
-# React介绍
+## React介绍
 
 React由Meta公司开发，是一个用于 构建Web和原生交互界面的库  
 ​![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/01-20240504032629-zi3jca4.png)​
 
-## React的优势
+### React的优势
 
 相较于传统基于DOM开发的优势
 
@@ -21,12 +21,12 @@ React由Meta公司开发，是一个用于 构建Web和原生交互界面的库
 1. 丰富的生态
 2. 跨平台支持
 
-## React的市场情况
+### React的市场情况
 
 全球最流行，大厂必备
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/02-20240504032629-znpq3u8.png)
 
-# 开发环境创建
+## 开发环境创建
 
 create-react-app是一个快速创建React开发环境的工具，底层由Webpack构件，封装了配置细节，开箱即用
 执行命令：
@@ -43,9 +43,9 @@ npx create-react-app react-basic
    [https://zh-hans.react.dev/learn/start-a-new-react-project](https://zh-hans.react.dev/learn/start-a-new-react-project)
    :::
 
-# JSX基础
+## JSX基础
 
-## 什么是JSX
+### 什么是JSX
 
 > 概念：JSX是JavaScript和XMl(HTML)的缩写，表示在JS代码中编写HTML模版结构，它是React中构建UI的方式
 
@@ -67,13 +67,13 @@ function App(){
 1. HTML的声明式模版写法
 2. JavaScript的可编程能力
 
-## JSX的本质
+### JSX的本质
 
 > JSX并不是标准的JS语法，它是 JS的语法扩展，浏览器本身不能识别，需要通过解析工具做解析之后才能在浏览器中使用
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/03-20240504032629-tcb1osp.png)
 
-## JSX高频场景-JS表达式
+### JSX高频场景-JS表达式
 
 > 在JSX中可以通过 `大括号语法{}` 识别JavaScript中的表达式，比如常见的变量、函数调用、方法调用等等
 
@@ -109,7 +109,7 @@ function App(){
 }
 ```
 
-## JSX高频场景-列表渲染
+### JSX高频场景-列表渲染
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/04-20240504032629-xhzxj03.png)
 
@@ -131,7 +131,7 @@ function App(){
 }
 ```
 
-## JSX高频场景-条件渲染
+### JSX高频场景-条件渲染
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/05-20240504032629-23f7j0j.png)
 
@@ -151,7 +151,7 @@ function App(){
 }
 ```
 
-## JSX高频场景-复杂条件渲染
+### JSX高频场景-复杂条件渲染
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/06-20240504032629-pqyz5c1.png)
 
@@ -180,9 +180,9 @@ function App(){
 }
 ```
 
-# React的事件绑定
+## React的事件绑定
 
-## 基础实现
+### 基础实现
 
 > React中的事件绑定，通过语法 `on + 事件名称 = { 事件处理程序 }`，整体上遵循驼峰命名法
 
@@ -197,7 +197,7 @@ function App(){
 }
 ```
 
-## 使用事件参数
+### 使用事件参数
 
 > 在事件回调函数中设置形参e即可
 
@@ -212,7 +212,7 @@ function App(){
 }
 ```
 
-## 传递自定义参数
+### 传递自定义参数
 
 > 语法：事件绑定的位置改造成箭头函数的写法，在执行clickHandler实际处理业务函数的时候传递实参
 
@@ -231,7 +231,7 @@ function App(){
 注意：不能直接写函数调用，这里事件绑定需要一个函数引用
 :::
 
-## 同时传递事件对象和自定义参数
+### 同时传递事件对象和自定义参数
 
 > 语法：在事件绑定的位置传递事件实参e和自定义参数，clickHandler中声明形参，注意顺序对应
 
@@ -246,14 +246,14 @@ function App(){
 }
 ```
 
-# React组件基础使用
+## React组件基础使用
 
-## 组件是什么
+### 组件是什么
 
 概念：一个组件就是一个用户界面的一部分，它可以有自己的逻辑和外观，组件之间可以互相嵌套，也可以服用多次
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/07-20240504032629-tywwckx.png)
 
-## 组件基础使用
+### 组件基础使用
 
 > 在React中，一个组件就是**首字母大写的函数**，内部存放了组件的逻辑和视图UI, 渲染组件只需要把组件当成标签书写即可
 
@@ -276,9 +276,9 @@ function App(){
 }
 ```
 
-# 组件状态管理-useState
+## 组件状态管理-useState
 
-## 基础使用
+### 基础使用
 
 > useState 是一个 React Hook（函数），它允许我们向组件添加一个`状态变量`, 从而控制影响组件的渲染结果
 > 和普通JS变量不同的是，状态变量一旦发生变化组件的视图UI也会跟着变化（数据驱动视图）
@@ -296,19 +296,19 @@ function App(){
 }
 ```
 
-## 状态的修改规则
+### 状态的修改规则
 
 > 在React中状态被认为是只读的，我们应该始终`替换它而不是修改它`, 直接修改状态不能引发视图更新
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/09-20240504032629-2hpy10y.png)
 
-## 修改对象状态
+### 修改对象状态
 
 > 对于对象类型的状态变量，应该始终给set方法一个`全新的对象` 来进行修改
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/10-20240504032629-u4hsvqa.png)
 
-# 组件的基础样式处理
+## 组件的基础样式处理
 
 > React组件基础的样式控制有俩种方式，行内样式和class类名控制
 
@@ -334,7 +334,7 @@ function App(){
 }
 ```
 
-# B站评论案例
+## B站评论案例
 
 ![image.png](https://cdn.jsdelivr.net/npm/itheima-react/assets/11-20240504032629-gf73buv.png)
 
@@ -343,7 +343,7 @@ function App(){
 3. 渲染导航Tab和高亮实现
 4. 评论列表排序功能实现
 
-## 基础模版
+### 基础模版
 
 ```tsx
 import { useState } from 'react'
@@ -791,7 +791,7 @@ export default App
 }
 ```
 
-## 完成版本
+### 完成版本
 
 ```jsx
  import { useState } from 'react'

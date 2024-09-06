@@ -4,23 +4,11 @@ date: 2024-04-25T19:11:13Z
 lastmod: 2024-04-25T19:11:13Z
 ---
 
-# MyBatisPlus
-
-**今日目标**
-
-> 基于MyBatisPlus完成标准Dao的增删改查功能
->
-> 掌握MyBatisPlus中的分页及条件查询构建
->
-> 掌握主键ID的生成策略
->
-> 了解MyBatisPlus的代码生成器
-
-# 1，MyBatisPlus入门案例与简介
+## 1. MyBatisPlus入门案例与简介
 
 这一节我们来学习下MyBatisPlus的入门案例与简介，这个和其他课程都不太一样，其他的课程都是先介绍概念，然后再写入门案例。而对于MyBatisPlus的学习，我们将顺序做了调整，主要的原因MyBatisPlus主要是对MyBatis的简化，所有我们先体会下它简化在哪，然后再学习它是什么，以及它帮我们都做哪些事。
 
-## 1.1 入门案例
+### 1.1 入门案例
 
 * MybatisPlus(简称MP)是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提供效率。
 * 开发方式
@@ -48,7 +36,7 @@ SpringBoot刚刚我们学习完成，它能快速构建Spring开发环境用以�
 
 我们可以参考着上面的这个实现步骤把SpringBoot整合MyBatisPlus来快速实现下，具体的实现步骤为:
 
-## 步骤1:创建数据库及表
+**步骤1:创建数据库及表**
 
 ```sql
 create database if not exists mybatisplus_db character set utf8;
@@ -66,11 +54,11 @@ insert into user values(3,'Jock','123456',41,'18812345678');
 insert into user values(4,'传智播客','itcast',15,'4006184000');
 ```
 
-## 步骤2:创建SpringBoot工程
+**步骤2:创建SpringBoot工程**
 
 ![1630998241426](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630998241426.png)
 
-## 步骤3:勾选配置使用技术
+**步骤3:勾选配置使用技术**
 
 ![1630998321660](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1630998321660.png)
 
@@ -78,7 +66,7 @@ insert into user values(4,'传智播客','itcast',15,'4006184000');
 
 * 由于MP并未被收录到idea的系统内置配置，无法直接选择加入，需要手动在pom.xml中配置添加
 
-## 步骤4:pom.xml补全依赖
+**步骤4:pom.xml补全依赖**
 
 ```xml
 <dependency>
@@ -100,7 +88,7 @@ insert into user values(4,'传智播客','itcast',15,'4006184000');
 
   ![1631206757758](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631206757758.png)
 
-## 步骤5:添加MP的相关配置信息
+**步骤5:添加MP的相关配置信息**
 
 resources默认生成的是properties配置文件，可以将其替换成yml文件，并在文件中配置数据库连接的相关信息:`application.yml`
 
@@ -116,7 +104,7 @@ spring:
 
 **说明:** serverTimezone是用来设置时区，UTC是标准时区，和咱们的时间差8小时，所以可以将其修改为`Asia/Shanghai`
 
-## 步骤6:根据数据库表创建实体类
+**步骤6:根据数据库表创建实体类**
 
 ```java
 public class User {   
@@ -129,7 +117,7 @@ public class User {
 }
 ```
 
-## 步骤7:创建Dao接口
+**步骤7:创建Dao接口**
 
 ```java
 @Mapper
@@ -137,7 +125,7 @@ public interface UserDao extends BaseMapper<User>{
 }
 ```
 
-## 步骤8:编写引导类
+**步骤8:编写引导类**
 
 ```java
 @SpringBootApplication
@@ -157,7 +145,7 @@ public class Mybatisplus01QuickstartApplication {
 * 方案二:在引导类上添加`@MapperScan`注解，其属性为所要扫描的Dao所在包
   * 该方案的好处是只需要写一次，则指定包下的所有Dao接口都能被扫描到，`@Mapper`就可以不写。
 
-## 步骤9:编写测试类
+**步骤9:编写测试类**
 
 ```java
 @SpringBootTest
@@ -188,7 +176,7 @@ userDao注入的时候下面有红线提示的原因是什么?
 
 跟之前整合MyBatis相比，你会发现我们不需要在DAO接口中编写方法和SQL语句了，只需要继承`BaseMapper`接口即可。整体来说简化很多。
 
-## 1.2 MybatisPlus简介
+### 1.2 MybatisPlus简介
 
 MyBatisPlus（简称MP）是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提高效率
 
@@ -219,11 +207,11 @@ MP的特性:
 - 内置分页插件
 - ……
 
-# 2，标准数据层开发
+## 2. 标准数据层开发
 
 在这一节中我们重点学习的是数据层标准的CRUD(增删改查)的实现与分页功能。代码比较多，我们一个个来学习。
 
-## 2.1 标准CRUD使用
+### 2.1 标准CRUD使用
 
 对于标准的CRUD功能都有哪些以及MP都提供了哪些方法可以使用呢?
 
@@ -235,7 +223,7 @@ MP的特性:
 
 首先说下，案例中的环境就是咱们入门案例的内容，第一个先来完成`新增`功能
 
-## 2.2 新增
+### 2.2 新增
 
 在进行新增之前，我们可以分析下新增的方法:
 
@@ -273,7 +261,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 但是数据中的主键ID，有点长，那这个主键ID是如何来的?我们更想要的是主键自增，应该是5才对，这个是我们后面要学习的主键ID生成策略，这块的这个问题，我们暂时先放放。
 
-## 2.3 删除
+### 2.3 删除
 
 在进行删除之前，我们可以分析下删除的方法:
 
@@ -312,7 +300,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 ```
 
-## 2.4 修改
+### 2.4 修改
 
 在进行修改之前，我们可以分析下修改的方法:
 
@@ -345,7 +333,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 **说明:** 修改的时候，只修改实体对象中有值的字段。
 
-## 2.5 根据ID查询
+### 2.5 根据ID查询
 
 在进行根据ID查询之前，我们可以分析下根据ID查询的方法:
 
@@ -373,7 +361,7 @@ class Mybatisplus01QuickstartApplicationTests {
 }
 ```
 
-## 2.6 查询所有
+### 2.6 查询所有
 
 在进行查询所有之前，我们可以分析下查询所有的方法:
 
@@ -403,7 +391,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 我们所调用的方法都是来自于DAO接口继承的BaseMapper类中。里面的方法有很多，我们后面会慢慢去学习里面的内容。
 
-## 2.7 Lombok
+### 2.7 Lombok
 
 代码写到这，我们会发现DAO接口类的编写现在变成最简单的了，里面什么都不用写。反过来看看模型类的编写都需要哪些内容:
 
@@ -414,13 +402,13 @@ class Mybatisplus01QuickstartApplicationTests {
 
 虽然这些内容不难，同时也都是通过IDEA工具生成的，但是过程还是必须得走一遍，那么对于模型类的编写有没有什么优化方法?就是我们接下来要学习的Lombok。
 
-## 概念
+#### 概念
 
 * Lombok，一个Java类库，提供了一组注解，简化POJO实体类开发。
 
-## 使用步骤
+#### 使用步骤
 
-### 步骤1:添加lombok依赖
+**步骤1:添加lombok依赖**
 
 ```xml
 <dependency>
@@ -432,7 +420,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 **注意：** 版本可以不用写，因为SpringBoot中已经管理了lombok的版本。
 
-### 步骤2:安装Lombok的插件
+**步骤2:安装Lombok的插件**
 
 新版本IDEA已经内置了该插件，如果删除setter和getter方法程序有报红，则需要安装插件
 
@@ -446,7 +434,7 @@ class Mybatisplus01QuickstartApplicationTests {
 
 ![1631016876641](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631016876641.png)
 
-### 步骤3:模型类上添加注解
+**步骤3:模型类上添加注解**
 
 Lombok常见的注解有:
 
@@ -497,7 +485,7 @@ public class User {
 
 这种方式是被允许的。
 
-## 2.8 分页功能
+### 2.8 分页功能
 
 基础的增删改查就已经学习完了，刚才我们在分析基础开发的时候，有一个分页功能还没有实现，在MP中如何实现分页功能，就是咱们接下来要学习的内容。
 
@@ -513,7 +501,7 @@ IPage<T> selectPage(IPage<T> page, Wrapper<T> queryWrapper)
 
 IPage是一个接口，我们需要找到它的实现类来构建它，具体的实现类，可以进入到IPage类中按ctrl+h,会找到其有一个实现类为`Page`。
 
-## 步骤1:调用方法传入参数获取返回值
+**步骤1:调用方法传入参数获取返回值**
 
 ```java
 @SpringBootTest
@@ -539,7 +527,7 @@ class Mybatisplus01QuickstartApplicationTests {
 }
 ```
 
-## 步骤2:设置分页拦截器
+**步骤2:设置分页拦截器**
 
 这个拦截器MP已经为我们提供好了，我们只需要将其配置成Spring管理的bean对象即可。
 
@@ -564,7 +552,7 @@ public class MybatisPlusConfig {
 
 ![1631208030131](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631208030131.png)
 
-## 步骤3:运行测试程序
+**步骤3:运行测试程序**
 
 ![1631019660480](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631019660480.png)
 
@@ -580,7 +568,7 @@ mybatis-plus:
 
 ![1631019896688](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631019896688.png)
 
-# 3，DQL编程控制
+## 3. DQL编程控制
 
 增删改查四个操作中，查询是非常重要的也是非常复杂的操作，这块需要我们重点学习下，这节我们主要学习的内容有:
 
@@ -589,9 +577,9 @@ mybatis-plus:
 * 查询条件设定
 * 字段映射与表名映射
 
-## 3.1 条件查询
+### 3.1 条件查询
 
-## 3.1.1 条件查询的类
+#### 3.1.1 条件查询的类
 
 * MyBatisPlus将书写复杂的SQL查询条件进行了封装，使用编程的形式完成查询条件的组合。
 
@@ -601,7 +589,7 @@ mybatis-plus:
 
 那么条件查询如何使用Wrapper来构建呢?
 
-## 3.1.2 环境构建
+#### 3.1.2 环境构建
 
 在构建条件查询之前，我们先来准备下环境
 
@@ -625,43 +613,43 @@ mybatis-plus:
           <java.version>1.8</java.version>
       </properties>
       <dependencies>
-
+  
           <dependency>
               <groupId>com.baomidou</groupId>
               <artifactId>mybatis-plus-boot-starter</artifactId>
               <version>3.4.1</version>
           </dependency>
-
+  
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter</artifactId>
           </dependency>
-
+  
           <dependency>
               <groupId>com.alibaba</groupId>
               <artifactId>druid</artifactId>
               <version>1.1.16</version>
           </dependency>
-
+  
           <dependency>
               <groupId>mysql</groupId>
               <artifactId>mysql-connector-java</artifactId>
               <scope>runtime</scope>
           </dependency>
-
+  
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-test</artifactId>
               <scope>test</scope>
           </dependency>
-
+  
           <dependency>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
           </dependency>
-
+  
       </dependencies>
-
+  
       <build>
           <plugins>
               <plugin>
@@ -670,9 +658,9 @@ mybatis-plus:
               </plugin>
           </plugins>
       </build>
-
+  
   </project>
-
+  
   ```
 * 编写UserDao接口
 
@@ -698,11 +686,11 @@ mybatis-plus:
   ```java
   @SpringBootApplication
   public class Mybatisplus02DqlApplication {
-
+  
       public static void main(String[] args) {
           SpringApplication.run(Mybatisplus02DqlApplication.class, args);
       }
-
+  
   }
   ```
 * 编写配置文件
@@ -726,10 +714,10 @@ mybatis-plus:
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-
+  
       @Autowired
       private UserDao userDao;
-
+  
       @Test
       void testGetAll(){
           List<User> userList = userDao.selectList(null);
@@ -780,7 +768,7 @@ mybatis-plus:
 
 解决控制台打印日志过多的相关操作可以不用去做，一般会被用来方便我们查看程序运行的结果。
 
-## 3.1.3 构建条件查询
+#### 3.1.3 构建条件查询
 
 在进行查询的时候，我们的入口是在Wrapper这个类上，因为它是一个接口，所以我们需要去找它对应的实现类，关于实现类也有很多，说明我们有多种构建查询条件对象的方式，
 
@@ -863,7 +851,7 @@ class Mybatisplus02DqlApplicationTests {
 
 这种方式就解决了上一种方式所存在的问题。
 
-## 3.1.4 多条件构建
+#### 3.1.4 多条件构建
 
 学完了三种构建查询对象的方式，每一种都有自己的特点，所以用哪一种都行，刚才都是一个条件，那如果有多个条件该如何构建呢?
 
@@ -926,7 +914,7 @@ class Mybatisplus02DqlApplicationTests {
   SELECT id,name,password,age,tel FROM user WHERE (age < ? OR age > ?)
   ```
 
-## 3.1.5 null判定
+#### 3.1.5 null判定
 
 先来看一张图，
 
@@ -1058,9 +1046,9 @@ class Mybatisplus02DqlApplicationTests {
 
   condition为boolean类型，返回true，则添加条件，返回false则不添加条件
 
-## 3.2 查询投影
+### 3.2 查询投影
 
-## 3.2.1 查询指定字段
+#### 3.2.1 查询指定字段
 
 目前我们在查询数据的时候，什么都没有做默认就是查询表中所有字段的内容，我们所说的查询投影即不查询所有字段，只查询出指定内容的数据。
 
@@ -1093,10 +1081,10 @@ class Mybatisplus02DqlApplicationTests {
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-
+  
       @Autowired
       private UserDao userDao;
-
+  
       @Test
       void testGetAll(){
           QueryWrapper<User> lqw = new QueryWrapper<User>();
@@ -1109,7 +1097,7 @@ class Mybatisplus02DqlApplicationTests {
 
   * 最终的sql语句为:SELECT id,name,age,tel FROM user
 
-## 3.2.2 聚合查询
+#### 3.2.2 聚合查询
 
 > 需求:聚合函数查询，完成count、max、min、avg、sum的使用
 >
@@ -1151,7 +1139,7 @@ class Mybatisplus02DqlApplicationTests {
 
 为了在做结果封装的时候能够更简单，我们将上面的聚合函数都起了个名称，方面后期来获取这些数据
 
-## 3.2.3 分组查询
+#### 3.2.3 分组查询
 
 > 需求:分组查询，完成 group by的查询使用
 
@@ -1184,7 +1172,7 @@ class Mybatisplus02DqlApplicationTests {
 * 聚合与分组查询，无法使用lambda表达式来完成
 * MP只是对MyBatis的增强，如果MP实现不了，我们可以直接在DAO接口中使用MyBatis的方式实现
 
-## 3.3 查询条件
+### 3.3 查询条件
 
 前面我们只使用了lt()和gt(),除了这两个方法外，MP还封装了很多条件对应的方法，这一节我们重点把MP提供的查询条件方法进行学习下。
 
@@ -1198,7 +1186,7 @@ MP的查询条件有很多:
 * 排序（order）
 * ……
 
-## 3.3.1 等值查询
+#### 3.3.1 等值查询
 
 > 需求:根据用户名和密码查询用户信息
 
@@ -1227,7 +1215,7 @@ class Mybatisplus02DqlApplicationTests {
 * selectList：查询结果为多个或者单个
 * selectOne:查询结果为单个
 
-## 3.3.2 范围查询
+#### 3.3.2 范围查询
 
 > 需求:对年龄进行范围查询，使用lt()、le()、gt()、ge()、between()进行范围查询
 
@@ -1255,7 +1243,7 @@ class Mybatisplus02DqlApplicationTests {
 * lte():小于等于(<=)
 * between():between ? and ?
 
-## 3.3.3 模糊查询
+#### 3.3.3 模糊查询
 
 > 需求:查询表中name属性的值以`J`开头的用户信息,使用like进行模糊查询
 
@@ -1281,7 +1269,7 @@ class Mybatisplus02DqlApplicationTests {
 * likeLeft():前面加百分号,如 %J
 * likeRight():后面加百分号,如 J%
 
-## 3.3.4 排序查询
+#### 3.3.4 排序查询
 
 > 需求:查询所有数据，然后按照id降序
 
@@ -1326,7 +1314,9 @@ class Mybatisplus02DqlApplicationTests {
 
 `https://mp.baomidou.com/guide/wrapper.html#abstractwrapper`
 
-## 3.4 映射匹配兼容性
+### 3.4 映射匹配兼容性
+
+#### 3.4.1 问题
 
 前面我们已经能从表中查询出数据，并将数据封装到模型类中，这整个过程涉及到一张表和一个模型类:
 
@@ -1336,7 +1326,7 @@ class Mybatisplus02DqlApplicationTests {
 
 那么问题就来了:
 
-## 问题1:表字段与编码属性设计不同步
+**问题1:表字段与编码属性设计不同步**
 
 当表的列名和模型类的属性名发生不一致，就会导致数据封装不到模型对象，这个时候就需要其中一方做出修改，那如果前提是两边都不能改又该如何解决?
 
@@ -1344,7 +1334,7 @@ MP给我们提供了一个注解`@TableField`,使用该注解可以实现模型�
 
 ![1631030550100](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631030550100.png)
 
-## 问题2:编码中添加了数据库中未定义的属性
+**问题2:编码中添加了数据库中未定义的属性**
 
 当模型类中多了一个数据库表不存在的字段，就会导致生成的sql语句中在select的时候查询了数据库不存在的字段，程序运行就会报错，错误信息为:
 
@@ -1354,13 +1344,13 @@ Unknown column '多出来的字段名称' in 'field list'
 
 ![1631031054206](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631031054206.png)
 
-## 问题3：采用默认查询开放了更多的字段查看权限
+**问题3：采用默认查询开放了更多的字段查看权限**
 
 查询表中所有的列的数据，就可能把一些敏感数据查询到返回给前端，这个时候我们就需要限制哪些字段默认不要进行查询。解决方案是`@TableField`注解的一个属性叫`select`，该属性设置默认是否需要查询该字段的值，true(默认值)表示默认查询该字段，false表示默认不查询该字段。
 
 ![1631031270558](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631031270558.png)
 
-## 知识点1：@TableField
+**知识点1：@TableField**
 
 |名称|@TableField|
 | --------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1369,7 +1359,7 @@ Unknown column '多出来的字段名称' in 'field list'
 |作用|设置当前属性对应的数据库表中的字段关系|
 |相关属性|value(默认)：设置数据库表字段名称<br />exist:设置属性在数据库表字段中是否存在，默认为true，此属性不能与value合并使用<br />select:设置属性是否参与查询，此属性与select()映射配置不冲突|
 
-## 问题4:表名与编码开发设计不同步
+**问题4:表名与编码开发设计不同步**
 
 该问题主要是表的名称和模型类的名称不一致，导致查询失败，这个时候通常会报如下错误信息:
 
@@ -1381,7 +1371,7 @@ Table 'databaseName.tableNaem' doesn't exist,翻译过来就是数据库中的�
 
 ![1631031915632](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631031915632.png)
 
-## 知识点2：@TableName
+**知识点2：@TableName**
 
 |名称|@TableName|
 | --------| -----------------------------|
@@ -1390,17 +1380,17 @@ Table 'databaseName.tableNaem' doesn't exist,翻译过来就是数据库中的�
 |作用|设置当前类对应于数据库表关系|
 |相关属性|value(默认)：设置数据库表名称|
 
-## 代码演示
+#### 3.4.2 代码演示
 
 接下来我们使用案例的方式把刚才的知识演示下:
 
-### 步骤1:修改数据库表user为tbl_user
+**步骤1:修改数据库表user为tbl_user**
 
 直接查询会报错，原因是MP默认情况下会使用模型类的类名首字母小写当表名使用。
 
 ![1631032123894](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631032123894.png)
 
-### 步骤2:模型类添加@TableName注解
+**步骤2:模型类添加@TableName注解**
 
 ```java
 @Data
@@ -1414,13 +1404,13 @@ public class User {
 }
 ```
 
-### 步骤3:将字段password修改成pwd
+**步骤3:将字段password修改成pwd**
 
 直接查询会报错，原因是MP默认情况下会使用模型类的属性名当做表的列名使用
 
 ![1631032283147](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631032283147.png)
 
-### 步骤4：使用@TableField映射关系
+**步骤4：使用@TableField映射关系**
 
 ```java
 @Data
@@ -1435,7 +1425,7 @@ public class User {
 }
 ```
 
-### 步骤5:添加一个数据库表不存在的字段
+**步骤5:添加一个数据库表不存在的字段**
 
 ```java
 @Data
@@ -1455,7 +1445,7 @@ public class User {
 
 ![1631032450558](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631032450558.png)
 
-### 步骤6：使用@TableField排除字段
+**步骤6：使用@TableField排除字段**
 
 ```java
 @Data
@@ -1472,7 +1462,7 @@ public class User {
 }
 ```
 
-### 步骤7:查询时将pwd隐藏
+**步骤7:查询时将pwd隐藏****
 
 ```java
 @Data
@@ -1489,11 +1479,11 @@ public class User {
 }
 ```
 
-# 4，DML编程控制
+## 4. DML编程控制
 
 查询相关的操作我们已经介绍完了，紧接着我们需要对另外三个，增删改进行内容的讲解。挨个来说明下，首先是新增(insert)中的内容。
 
-## 4.1 id生成策略控制
+### 4.1 id生成策略控制
 
 前面我们在新增的时候留了一个问题，就是新增成功后，主键ID是一个很长串的内容，我们更想要的是按照数据库表字段进行自增长，在解决这个问题之前，我们先来分析下ID该如何选择:
 
@@ -1508,7 +1498,7 @@ public class User {
 
 在这里我们又需要用到MP的一个注解叫`@TableId`
 
-## 知识点1：@TableId
+**知识点1：@TableId**
 
 |名称|@TableId|
 | --------| ----------------------------------------------------------------------------------|
@@ -1517,7 +1507,7 @@ public class User {
 |作用|设置当前类中主键属性的生成策略|
 |相关属性|value(默认)：设置数据库表主键名称<br />type:设置主键属性的生成策略，值查照IdType的枚举值|
 
-## 4.1.1 环境构建
+#### 4.1.1 环境构建
 
 在构建条件查询之前，我们先来准备下环境
 
@@ -1542,44 +1532,44 @@ public class User {
           <java.version>1.8</java.version>
       </properties>
       <dependencies>
-
+  
           <dependency>
               <groupId>com.baomidou</groupId>
               <artifactId>mybatis-plus-boot-starter</artifactId>
               <version>3.4.1</version>
           </dependency>
-
+  
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter</artifactId>
           </dependency>
-
+  
           <dependency>
               <groupId>com.alibaba</groupId>
               <artifactId>druid</artifactId>
               <version>1.1.16</version>
           </dependency>
-
+  
           <dependency>
               <groupId>mysql</groupId>
               <artifactId>mysql-connector-java</artifactId>
               <scope>runtime</scope>
           </dependency>
-
+  
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-test</artifactId>
               <scope>test</scope>
           </dependency>
-
+  
           <dependency>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
               <version>1.18.12</version>
           </dependency>
-
+  
       </dependencies>
-
+  
       <build>
           <plugins>
               <plugin>
@@ -1588,9 +1578,9 @@ public class User {
               </plugin>
           </plugins>
       </build>
-
+  
   </project>
-
+  
   ```
 - 编写UserDao接口
 
@@ -1620,11 +1610,11 @@ public class User {
   ```java
   @SpringBootApplication
   public class Mybatisplus03DqlApplication {
-
+  
       public static void main(String[] args) {
           SpringApplication.run(Mybatisplus03DqlApplication.class, args);
       }
-
+  
   }
   ```
 - 编写配置文件
@@ -1648,10 +1638,10 @@ public class User {
   ```java
   @SpringBootTest
   class Mybatisplus02DqlApplicationTests {
-
+  
       @Autowired
       private UserDao userDao;
-
+  
       @Test
       void testGetAll(){
           List<User> userList = userDao.selectList(null);
@@ -1664,10 +1654,10 @@ public class User {
   ```java
   @SpringBootTest
   class Mybatisplus03DqlApplicationTests {
-
+  
       @Autowired
       private UserDao userDao;
-
+  
       @Test
       void testSave(){
           User user = new User();
@@ -1695,11 +1685,11 @@ public class User {
 
   ![1631033634879](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631033634879.png)
 
-## 4.1.2 代码演示
+#### 4.1.2 代码演示
 
-### AUTO策略
+##### 4.1.2.1 AUTO策略
 
-### 步骤1:设置生成策略为AUTO
+**步骤1:设置生成策略为AUTO**
 
 ```java
 @Data
@@ -1717,7 +1707,7 @@ public class User {
 }
 ```
 
-### 步骤2:删除测试数据并修改自增值
+**步骤2:删除测试数据并修改自增值**
 
 * 删除测试数据
 
@@ -1726,7 +1716,7 @@ public class User {
 
 ![1631211080703](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631211080703.png)
 
-### 步骤3:运行新增方法
+**步骤3:运行新增方法**
 
 会发现，新增成功，并且主键id也是从5开始
 
@@ -1761,9 +1751,9 @@ public class User {
 * 如果用数据库表的自增主键，因为在两台服务器上所以会出现冲突
 * 这个时候就需要一个全局唯一ID,这个ID就是分布式ID。
 
-### INPUT策略
+##### 4.1.2.2 INPUT策略
 
-### 步骤1:设置生成策略为INPUT
+**步骤1:设置生成策略为INPUT**
 
 ```java
 @Data
@@ -1785,7 +1775,7 @@ public class User {
 
 ![1631212246124](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631212246124.png)
 
-### 步骤2:添加数据手动设置ID
+**步骤2:添加数据手动设置ID**
 
 ```java
 @SpringBootTest
@@ -1808,7 +1798,7 @@ class Mybatisplus03DqlApplicationTests {
 }
 ```
 
-### 步骤3:运行新增方法
+**步骤3:运行新增方法**
 
 如果没有设置主键ID的值，则会报错，错误提示就是主键ID没有给值:
 
@@ -1818,9 +1808,9 @@ class Mybatisplus03DqlApplicationTests {
 
 ![1631212421137](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631212421137.png)
 
-### ASSIGN_ID策略
+##### 4.1.2.3 ASSIGN_ID策略
 
-### 步骤1:设置生成策略为ASSIGN_ID
+**步骤1:设置生成策略为ASSIGN_ID**
 
 ```java
 @Data
@@ -1838,7 +1828,7 @@ public class User {
 }
 ```
 
-### 步骤2:添加数据不设置ID
+**步骤2:添加数据不设置ID**
 
 ```java
 @SpringBootTest
@@ -1861,15 +1851,15 @@ class Mybatisplus03DqlApplicationTests {
 
 **注意:** 这种生成策略，不需要手动设置ID，如果手动设置ID，则会使用自己设置的值。
 
-### 步骤3:运行新增方法
+**步骤3:运行新增方法**
 
 ![1631242753467](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631242753467.png)
 
 生成的ID就是一个Long类型的数据。
 
-### ASSIGN_UUID策略
+##### 4.1.2.4 ASSIGN_UUID策略
 
-### 步骤1:设置生成策略为ASSIGN_UUID
+**步骤1:设置生成策略为ASSIGN_UUID**
 
 使用uuid需要注意的是，主键的类型不能是Long，而应该改成String类型
 
@@ -1889,13 +1879,13 @@ public class User {
 }
 ```
 
-### 步骤2:修改表的主键类型
+**步骤2:修改表的主键类型**
 
 ![1631243694870](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631243694870.png)
 
 主键类型设置为varchar，长度要大于32，因为UUID生成的主键为32位，如果长度小的话就会导致插入失败。
 
-### 步骤3:添加数据不设置ID
+**步骤3:添加数据不设置ID**
 
 ```java
 @SpringBootTest
@@ -1916,7 +1906,7 @@ class Mybatisplus03DqlApplicationTests {
 }
 ```
 
-### 步骤4:运行新增方法
+**步骤4:运行新增方法**
 
 ![1631243810974](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631243810974.png)
 
@@ -1931,7 +1921,7 @@ class Mybatisplus03DqlApplicationTests {
 3. 10bit-工作机器id，用来记录工作机器id,其中高位5bit是数据中心ID其取值范围0-31，低位5bit是工作节点ID其取值范围0-31，两个组合起来最多可以容纳1024个节点
 4. 序列号占用12bit，每个节点每毫秒0开始不断累加，最多可以累加到4095，一共可以产生4096个ID
 
-## 4.1.3 ID生成策略对比
+#### 4.1.3 ID生成策略对比
 
 介绍了这些主键ID的生成策略，我们以后该用哪个呢?
 
@@ -1941,11 +1931,11 @@ class Mybatisplus03DqlApplicationTests {
 * ASSIGN_ID:可以在分布式的情况下使用，生成的是Long类型的数字，可以排序性能也高，但是生成的策略和服务器时间有关，如果修改了系统时间就有可能导致出现重复主键
 * 综上所述，每一种主键策略都有自己的优缺点，根据自己项目业务的实际情况来选择使用才是最明智的选择。
 
-## 4.1.4 简化配置
+#### 4.1.4 简化配置
 
 前面我们已经完成了表关系映射、数据库主键策略的设置，接下来对于这两个内容的使用，我们再讲下他们的简化配置:
 
-### 模型类主键策略设置
+**模型类主键策略设置****
 
 对于主键ID的策略已经介绍完，但是如果要在项目中的每一个模型类上都需要使用相同的生成策略，如:![1631245676125](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631245676125.png)
 
@@ -1962,7 +1952,7 @@ mybatis-plus:
 
 配置完成后，每个模型类的主键ID策略都将成为assign_id.
 
-### 数据库表与模型类的映射关系
+**数据库表与模型类的映射关系**
 
 MP会默认将模型类的类名名首字母小写作为表名使用，假如数据库表的名称都以`tbl_`开头，那么我们就需要将所有的模型类上添加`@TableName`，如:
 
@@ -1979,7 +1969,7 @@ mybatis-plus:
 
 设置表的前缀内容，这样MP就会拿 `tbl_`加上模型类的首字母小写，就刚好组装成数据库的表名。
 
-## 4.2 多记录操作
+### 4.2 多记录操作
 
 先来看下问题:
 
@@ -2053,7 +2043,7 @@ class Mybatisplus03DqlApplicationTests {
 
 ![1631246688218](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631246688218.png)
 
-## 4.3 逻辑删除
+### 4.3 逻辑删除
 
 接下来要讲解是删除中比较重要的一个操作，逻辑删除，先来分析下问题:
 
@@ -2078,13 +2068,13 @@ class Mybatisplus03DqlApplicationTests {
 
 MP中逻辑删除具体该如何实现?
 
-## 步骤1:修改数据库表添加`deleted`列
+**步骤1:修改数据库表添加`deleted`列**
 
 字段名可以任意，内容也可以自定义，比如`0`代表正常，`1`代表删除，可以在添加列的同时设置其默认值为`0`正常。
 
 ![1631247439168](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631247439168.png)
 
-## 步骤2:实体类添加属性
+**步骤2:实体类添加属性**
 
 (1)添加与数据库表的列对应的一个属性名，名称可以任意，如果和数据表列名对不上，可以使用@TableField进行关系映射，如果一致，则会自动对应。
 
@@ -2109,7 +2099,7 @@ public class User {
 }
 ```
 
-## 步骤3:运行删除方法
+**步骤3:运行删除方法**
 
 ```java
 @SpringBootTest
@@ -2138,10 +2128,10 @@ class Mybatisplus03DqlApplicationTests {
   ```java
   @SpringBootTest
   class Mybatisplus03DqlApplicationTests {
-
+  
       @Autowired
       private UserDao userDao;
-
+  
       @Test
       void testFind(){
          System.out.println(userDao.selectList(null));
@@ -2192,7 +2182,7 @@ UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 
 ![1631248494929](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631248494929.png)
 
-## 知识点1：@TableLogic
+**知识点1：@TableLogic**
 
 |名称|@TableLogic|
 | --------| --------------------------------------|
@@ -2201,9 +2191,9 @@ UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 |作用|标识该字段为进行逻辑删除的字段|
 |相关属性|value：逻辑未删除值<br />delval:逻辑删除值|
 
-## 4.4 乐观锁
+### 4.4 乐观锁
 
-## 4.4.1 概念
+#### 4.4.1 概念
 
 在讲解乐观锁之前，我们还是先来分析下问题:
 
@@ -2216,7 +2206,7 @@ UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 
 简单来说，乐观锁主要解决的问题是当要更新一条记录的时候，希望这条记录没有被别人更新。
 
-## 4.4.2 实现思路
+#### 4.4.2 实现思路
 
 乐观锁的实现方式:
 
@@ -2238,17 +2228,17 @@ UPDATE tbl_user SET deleted=1 where id = ? AND deleted=0
 
 上面所说的步骤具体该如何实现呢?
 
-## 4.4.3 实现步骤
+#### 4.4.3 实现步骤
 
 分析完步骤后，具体的实现步骤如下:
 
-### 步骤1:数据库表添加列
+**步骤1:数据库表添加列**
 
 列名可以任意，比如使用`version`,给列设置默认值为`1`
 
 ![1631249913103](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631249913103.png)
 
-### 步骤2:在模型类中添加对应的属性
+**步骤2:在模型类中添加对应的属性**
 
 根据添加的字段列名，在模型类中添加对应的属性值
 
@@ -2271,7 +2261,7 @@ public class User {
 }
 ```
 
-### 步骤3:添加乐观锁的拦截器
+**步骤3:添加乐观锁的拦截器**
 
 ```java
 @Configuration
@@ -2287,7 +2277,7 @@ public class MpConfig {
 }
 ```
 
-### 步骤4:执行更新操作
+**步骤4:执行更新操作**
 
 ```java
 @SpringBootTest
@@ -2390,9 +2380,9 @@ class Mybatisplus03DqlApplicationTests {
 
 ![1631253387845](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631253387845.png)
 
-# 5，快速开发
+## 5. 快速开发
 
-## 5.1 代码生成器原理分析
+### 5.1 代码生成器原理分析
 
 造句:![1631253928893](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/1631253928893.png)
 
@@ -2426,11 +2416,11 @@ class Mybatisplus03DqlApplicationTests {
 * 数据库相关配置:读取数据库获取表和字段信息
 * 开发者自定义配置:手工配置，比如ID生成策略
 
-## 5.2 代码生成器实现
+### 5.2 代码生成器实现
 
-## 步骤1:创建一个Maven项目
+**步骤1:创建一个Maven项目****
 
-## 代码2:导入对应的jar包
+**代码2:导入对应的jar包**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -2519,7 +2509,7 @@ class Mybatisplus03DqlApplicationTests {
 
 ```
 
-## 步骤3:编写引导类
+**步骤3:编写引导类****
 
 ```java
 @SpringBootApplication
@@ -2532,7 +2522,7 @@ public class Mybatisplus04GeneratorApplication {
 }
 ```
 
-## 步骤4:创建代码生成类
+**步骤4:创建代码生成类**
 
 ```java
 public class CodeGenerator {
@@ -2584,7 +2574,7 @@ public class CodeGenerator {
 
 `https://mp.baomidou.com/guide/generator.html`
 
-## 步骤5:运行程序
+**步骤5:运行程序****
 
 运行成功后，会在当前项目中生成很多代码，代码包含`controller`,`service`，`mapper`和`entity`
 
@@ -2592,7 +2582,7 @@ public class CodeGenerator {
 
 至此代码生成器就已经完成工作，我们能快速根据数据库表来创建对应的类，简化我们的代码开发。
 
-## 5.3 MP中Service的CRUD
+### 5.3 MP中Service的CRUD
 
 回顾我们之前业务层代码的编写，编写接口和对应的实现类:
 

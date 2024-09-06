@@ -4,15 +4,7 @@ date: 2024-04-25T19:16:29Z
 lastmod: 2024-04-25T19:16:29Z
 ---
 
-# SpringBoot
-
-**今日目标：**
-
-> * 掌握基于SpringBoot框架的程序开发步骤
-> * 熟练使用SpringBoot配置信息修改服务器配置
-> * 基于SpringBoot的完成SSM整合项目开发
-
-# 1，SpringBoot简介
+## 1. SpringBoot简介
 
 `SpringBoot` 是由 `Pivotal` 团队提供的全新框架，其设计目的是用来==简化== `Spring` 应用的==初始搭建==以及==开发过程==。
 
@@ -48,9 +40,9 @@ lastmod: 2024-04-25T19:16:29Z
 
 从上面的 `SpringMVC` 程序开发可以看到，前三步都是在搭建环境，而且这三步基本都是固定的。`SpringBoot` 就是对这三步进行简化了。接下来我们通过一个入门案例来体现 `SpingBoot` 简化 `Spring` 开发。
 
-## 1.1  SpringBoot快速入门
+### 1.1  SpringBoot快速入门
 
-## 1.1.1  开发步骤
+#### 1.1.1  开发步骤
 
 `SpringBoot` 开发起来特别简单，分为如下几步：
 
@@ -61,7 +53,7 @@ lastmod: 2024-04-25T19:16:29Z
 
 知道了 `SpringBoot` 的开发步骤后，接下来我们进行具体的操作
 
-### 1.1.1.1  创建新模块
+##### 1.1.1.1  创建新模块
 
 * 点击 `+` 选择 `New Module` 创建新模块
 
@@ -120,7 +112,7 @@ lastmod: 2024-04-25T19:16:29Z
 >    * `mvnw`
 >    * `mvnw.cmd`
 
-### 1.1.1.2  创建 `Controller`
+##### 1.1.1.2  创建 `Controller`
 
 在  `com.itheima.controller` 包下创建 `BookController` ，代码如下：
 
@@ -137,13 +129,13 @@ public class BookController {
 }
 ```
 
-### 1.1.1.3  启动服务器
+##### 1.1.1.3  启动服务器
 
 运行 `SpringBoot` 工程不需要使用本地的 `Tomcat` 和 插件，只运行项目 `com.itheima` 包下的 `Application` 类，我们就可以在控制台看出如下信息
 
 ![image-20210911165642280](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911165642280.png)
 
-### 1.1.1.4  进行测试
+##### 1.1.1.4  进行测试
 
 使用 `Postman` 工具来测试我们的程序
 
@@ -215,7 +207,7 @@ public class Application {
 
 我们代码之所以能简化，就是因为指定的父工程和 `Spring Web` 依赖实现的。具体的我们后面在聊。
 
-## 1.1.2  对比
+#### 1.1.2  对比
 
 做完 `SpringBoot` 的入门案例后，接下来对比一下 `Spring` 程序和 `SpringBoot` 程序。如下图
 
@@ -239,11 +231,11 @@ public class Application {
 
 > ==注意：基于Idea的 `Spring Initializr` 快速构建 `SpringBoot` 工程时需要联网。==
 
-## 1.1.3  官网构建工程
+#### 1.1.3  官网构建工程
 
 在入门案例中之所以能快速构建 `SpringBoot` 工程，是因为 `Idea` 使用了官网提供了快速构建 `SpringBoot` 工程的组件实现的。那如何在官网进行工程构建呢？通过如下步骤构建
 
-### 1.1.3.1  进入SpringBoot官网
+##### 1.1.3.1  进入SpringBoot官网
 
 官网地址如下：
 
@@ -263,13 +255,13 @@ https://spring.io/projects/spring-boot
 
 这个页面内容是不是感觉很眼熟的，这和我们使用 `Idea` 快速构建 `SpringBoot` 工程的界面基本相同。在上面页面输入对应的信息
 
-### 1.1.3.2  选择依赖
+##### 1.1.3.2  选择依赖
 
 选择 `Spring Web` 可以点击上图右上角的 `ADD DEPENDENCIES... CTRL + B` 按钮，就会出现如下界面
 
 ![image-20210911174650679](https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911174650679.png)
 
-### 1.1.3.3  生成工程
+##### 1.1.3.3  生成工程
 
 以上步骤完成后就可以生成 `SpringBoot` 工程了。在页面的最下方点击 `GENERATE CTRL + 回车` 按钮生成工程并下载到本地，如下图所示
 
@@ -285,9 +277,9 @@ https://spring.io/projects/spring-boot
 
 通过上面官网的操作，我们知道 `Idea` 中快速构建 `SpringBoot` 工程其实就是使用的官网的快速构建组件，那以后即使没有 `Idea` 也可以使用官网的方式构建 `SpringBoot` 工程。
 
-## 1.1.4  SpringBoot工程快速启动
+#### 1.1.4  SpringBoot工程快速启动
 
-### 1.1.4.1  问题导入
+##### 1.1.4.1  问题导入
 
 <div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911180828611.png" alt="image-20210911180828611" style="zoom:50%;" />
@@ -303,7 +295,7 @@ https://spring.io/projects/spring-boot
 
 那现在问题是如何打包呢？
 
-### 1.1.4.2  打包
+##### 1.1.4.2  打包
 
 由于我们在构建 `SpringBoot` 工程时已经在 `pom.xml` 中配置了如下插件
 
@@ -318,7 +310,7 @@ https://spring.io/projects/spring-boot
 
 > ==注意：该插件必须配置，不然打好的 `jar` 包也是有问题的。==
 
-### 1.1.4.3  启动
+##### 1.1.4.3  启动
 
 进入 `jar` 包所在位置，在 `命令提示符` 中输入如下命令
 
@@ -331,8 +323,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 <div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210911182956629.png" alt="image-20210911182956629" style="zoom:60%;" />
 </div>
-
-## 1.2  SpringBoot概述
+### 1.2  SpringBoot概述
 
 `SpringBoot` 是由Pivotal团队提供的全新框架，其设计目的是用来==简化==Spring应用的==初始搭建==以及==开发过程==。
 
@@ -351,7 +342,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 接下来我们来说一下 `SpringBoot` 的起步依赖
 
-## 1.2.1  起步依赖
+#### 1.2.1  起步依赖
 
 我们使用 `Spring Initializr`  方式创建的 `Maven` 工程的的 `pom.xml` 配置文件中自动生成了很多包含 `starter` 的依赖，如下图
 
@@ -361,7 +352,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 这些依赖就是==启动依赖==，接下来我们探究一下他是如何实现的。
 
-### 1.2.1.1  探索父工程
+##### 1.2.1.1  探索父工程
 
 从上面的文件中可以看到指定了一个父工程，我们进入到父工程，发现父工程中又指定了一个父工程，如下图所示
 
@@ -391,7 +382,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 看完了父工程中 `pom.xml` 的配置后不难理解我们工程的的依赖为什么都没有配置 `version`。
 
-### 1.2.1.2  探索依赖
+##### 1.2.1.2  探索依赖
 
 在我们创建的工程中的 `pom.xml` 中配置了如下依赖
 
@@ -411,7 +402,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
 
 ==结论：以后需要使用技术，只需要引入该技术对应的起步依赖即可==
 
-### 1.2.1.3  小结
+##### 1.2.1.3  小结
 
 **starter**
 
@@ -434,7 +425,7 @@ jar -jar springboot_01_quickstart-0.0.1-SNAPSHOT.jar
   >
 * 如发生坐标错误，再指定version（要小心版本冲突）
 
-## 1.2.2  程序启动
+#### 1.2.2  程序启动
 
 创建的每一个 `SpringBoot` 程序时都包含一个类似于下面的类，我们将这个类称作引导类
 
@@ -455,7 +446,7 @@ public class Springboot01QuickstartApplication {
 
   因为我们在 `pom.xml` 中配置了 `spring-boot-starter-web` 依赖，而该依赖通过前面的学习知道它依赖 `tomcat` ，所以运行 `main` 方法就可以使用 `tomcat` 启动咱们的工程。
 
-## 1.2.3  切换web服务器
+#### 1.2.3  切换web服务器
 
 现在我们启动工程使用的是 `tomcat` 服务器，那能不能不使用 `tomcat` 而使用 `jetty` 服务器，`jetty` 在我们 `maven` 高级时讲 `maven` 私服使用的服务器。而要切换 `web` 服务器就需要将默认的 `tomcat` 服务器给排除掉，怎么排除呢？使用 `exclusion` 标签
 
@@ -493,9 +484,9 @@ public class Springboot01QuickstartApplication {
 
 通过切换服务器，我们不难发现在使用 `SpringBoot` 换技术时只需要导入该技术的起步依赖即可。
 
-# 2，配置文件
+## 2. 配置文件
 
-## 2.1  配置文件格式
+### 2.1  配置文件格式
 
 我们现在启动服务器默认的端口号是 `8080`，访问路径可以书写为
 
@@ -531,7 +522,7 @@ http://localhost/books/1
 
 > ==注意：`SpringBoot` 程序的配置文件名必须是 `application` ，只是后缀名不同而已。==
 
-## 2.1.1  环境准备
+#### 2.1.1  环境准备
 
 创建一个新工程 `springboot_02_base_config` 用来演示不同的配置文件，工程环境和入门案例一模一样，结构如下：
 
@@ -554,7 +545,7 @@ public class BookController {
 }
 ```
 
-## 2.1.2  不同配置文件演示
+#### 2.1.2  不同配置文件演示
 
 * **application.properties配置文件**
 
@@ -643,8 +634,7 @@ server:
 <div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917163846243.png" alt="image-20210917163846243" style="zoom:80%;" />
 </div>
-
-## 2.1.3  三种配合文件的优先级
+#### 2.1.3  三种配合文件的优先级
 
 在三种配合文件中分别配置不同的端口号，启动服务查看绑定的端口号。用这种方式就可以看到哪个配置文件的优先级更高一些
 
@@ -689,7 +679,7 @@ server:
 >       root: info
 >   ```
 
-## 2.2  yaml格式
+### 2.2  yaml格式
 
 上面讲了三种不同类型的配置文件，而 `properties` 类型的配合文件之前我们学习过，接下来我们重点学习 `yaml` 类型的配置文件。
 
@@ -739,7 +729,7 @@ enterprise:
 
 上面两种后缀名都可以，以后使用更多的还是 `yml` 的。
 
-## 2.2.1  语法规则
+#### 2.2.1  语法规则
 
 * 大小写敏感
 * 属性层级关系使用多行描述，每行结尾使用冒号结束
@@ -764,9 +754,9 @@ enterprise:
     - 大数据
 ```
 
-## 2.3  yaml配置文件数据读取
+### 2.3  yaml配置文件数据读取
 
-## 2.3.1  环境准备
+#### 2.3.1  环境准备
 
 新创建一个名为 `springboot_03_read_data` 的 `SpringBoot` 工程，目录结构如下
 
@@ -822,9 +812,9 @@ enterprise:
     - 大数据
 ```
 
-## 2.3.2  读取配置数据
+#### 2.3.2  读取配置数据
 
-### 2.3.2.1  使用 @Value注解
+##### 2.3.2.1  使用 @Value注解
 
 使用 `@Value("表达式")` 注解可以从配合文件中读取数据，注解中用于读取属性名引用方式是：`${一级属性名.二级属性名……}`
 
@@ -852,7 +842,7 @@ public class BookController {
 }
 ```
 
-### 2.3.2.2  Environment对象
+##### 2.3.2.2  Environment对象
 
 上面方式读取到的数据特别零散，`SpringBoot` 还可以使用 `@Autowired` 注解注入 `Environment` 对象的方式读取数据。这种方式 `SpringBoot` 会将配置文件中所有的数据封装到 `Environment` 对象中，如果需要使用哪个数据只需要通过调用 `Environment` 对象的 `getProperty(String name)` 方法获取。具体代码如下：
 
@@ -876,7 +866,7 @@ public class BookController {
 
 > ==注意：这种方式，框架内容大量数据，而在开发中我们很少使用。==
 
-### 2.3.2.3  自定义对象
+##### 2.3.2.3  自定义对象
 
 `SpringBoot` 还提供了将配置文件中的数据封装到我们自定义的实体类对象中的方式。具体操作如下：
 
@@ -985,7 +975,7 @@ public class BookController {
 </dependency>
 ```
 
-## 2.4  多环境配置
+### 2.4  多环境配置
 
 以后在工作中，对于开发环境、测试环境、生产环境的配置肯定都不相同，比如我们开发阶段会在自己的电脑上安装 `mysql` ，连接自己电脑上的 `mysql` 即可，但是项目开发完毕后要上线就需要该配置，将环境的配置改为线上环境的。
 
@@ -995,7 +985,7 @@ public class BookController {
 
 来回的修改配置会很麻烦，而 `SpringBoot` 给开发者提供了多环境的快捷配置，需要切换环境时只需要改一个配置即可。不同类型的配置文件多环境开发的配置都不相同，接下来对不同类型的配置文件进行说明
 
-## 2.4.1  yaml文件
+#### 2.4.1  yaml文件
 
 在 `application.yml` 中使用 `---` 来分割不同的配置，内容如下
 
@@ -1070,7 +1060,7 @@ spring:
       on-profile: dev
 ```
 
-## 2.4.2  properties文件
+#### 2.4.2  properties文件
 
 `properties` 类型的配置文件配置多环境需要定义不同的配置文件
 
@@ -1096,7 +1086,7 @@ spring:
 spring.profiles.active=pro
 ```
 
-## 2.4.3  命令行启动参数设置
+#### 2.4.3  命令行启动参数设置
 
 使用 `SpringBoot` 开发的程序以后都是打成 `jar` 包，通过 `java -jar xxx.jar` 的方式启动服务的。那么就存在一个问题，如何切换环境呢？因为配置文件打到的jar包中了。
 
@@ -1130,7 +1120,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-featu
 
 如果使用了多种方式配合同一个配置项，优先级高的生效。
 
-## 2.5  配置文件分类
+### 2.5  配置文件分类
 
 <div>
 <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917194941597.png" alt="image-20210917194941597" style="zoom:70%;" />
@@ -1153,11 +1143,11 @@ java –jar springboot.jar –-spring.profiles.active=test --server.port=85 --se
 
 > ==说明：==级别越高优先级越高
 
-## 2.5.1  代码演示
+#### 2.5.1  代码演示
 
 在这里我们只演示不同级别配置文件放置位置的优先级。
 
-### 2.5.1.1  环境准备
+##### 2.5.1.1  环境准备
 
 创建一个名为 `springboot_06_config_file` 的 `SpringBoot` 工程，目录结构如下
 
@@ -1179,7 +1169,7 @@ server:
   port: 80
 ```
 
-### 2.5.1.2  验证1级和2级的优先级
+##### 2.5.1.2  验证1级和2级的优先级
 
 运行启动引导类，可以在控制台看到如下日志信息
 
@@ -1187,7 +1177,7 @@ server:
 
 通过这个结果可以得出==类路径下的 `config` 下的配置文件优先于类路径下的配置文件。==
 
-### 2.5.1.3  验证2级和4级的优先级
+##### 2.5.1.3  验证2级和4级的优先级
 
 要验证4级，按照以下步骤完成
 
@@ -1220,7 +1210,7 @@ server:
 >
 > SpringBoot 2.5.0版本存在一个bug，我们在使用这个版本时，需要在 `jar` 所在位置的 `config` 目录下创建一个任意名称的文件夹
 
-# 3，SpringBoot整合junit
+## 3. SpringBoot整合junit
 
 回顾 `Spring` 整合 `junit`
 
@@ -1245,7 +1235,7 @@ public class UserServiceTest {
 * 使用 `@Autowired` 注入要测试的资源
 * 定义测试方法进行测试
 
-## 3.1  环境准备
+### 3.1  环境准备
 
 创建一个名为 `springboot_07_test` 的 `SpringBoot` 工程，工程目录结构如下
 
@@ -1273,7 +1263,7 @@ public class BookServiceImpl implements BookService {
 }
 ```
 
-## 3.2  编写测试类
+### 3.2  编写测试类
 
 在 `test/java` 下创建 `com.itheima` 包，在该包下创建测试类，将 `BookService` 注入到该测试类中
 
@@ -1300,9 +1290,9 @@ class Springboot07TestApplicationTests {
 >
 > 如果不满足这个要求的话，就需要在使用 `@SpringBootTest` 注解时，使用 `classes` 属性指定引导类的字节码对象。如 `@SpringBootTest(classes = Springboot07TestApplication.class)`
 
-# 4，SpringBoot整合mybatis
+## 4. SpringBoot整合mybatis
 
-## 4.1  回顾Spring整合Mybatis
+### 4.1  回顾Spring整合Mybatis
 
 `Spring` 整合 `Mybatis` 需要定义很多配置类
 
@@ -1318,7 +1308,7 @@ class Springboot07TestApplicationTests {
     @Import({JdbcConfig.class,MyBatisConfig.class})
     public class SpringConfig {
     }
-
+    
     ```
 * `JdbcConfig` 配置类
 * 定义数据源（加载properties配置项：driver、url、username、password）
@@ -1333,7 +1323,7 @@ class Springboot07TestApplicationTests {
       private String userName;
       @Value("${jdbc.password}")
       private String password;
-
+  
       @Bean
       public DataSource getDataSource(){
           DruidDataSource ds = new DruidDataSource();
@@ -1357,7 +1347,7 @@ class Springboot07TestApplicationTests {
         msc.setBasePackage("com.itheima.dao");
         return msc;
     }
-
+    
     @Bean
     public SqlSessionFactoryBean getSqlSessionFactoryBean(DataSource dataSource){
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
@@ -1365,12 +1355,12 @@ class Springboot07TestApplicationTests {
         ssfb.setDataSource(dataSource);
         return ssfb;
     }
-
+    
     ```
 
-## 4.2  SpringBoot整合mybatis
+### 4.2  SpringBoot整合mybatis
 
-## 4.2.1  创建模块
+#### 4.2.1  创建模块
 
 * 创建新模块，选择 `Spring Initializr`，并配置模块相关基础信息
 
@@ -1384,7 +1374,7 @@ class Springboot07TestApplicationTests {
   <img src="https://cdn.jsdelivr.net/npm/ssm-kuang-jia/assets/image-20210917215958091.png" alt="image-20210917215958091" style="zoom:80%;" />
   </div>
 
-## 4.2.2  定义实体类
+#### 4.2.2  定义实体类
 
 在 `com.itheima.domain` 包下定义实体类 `Book`，内容如下
 
@@ -1401,7 +1391,7 @@ public class Book {
 }
 ```
 
-## 4.2.3  定义dao接口
+#### 4.2.3  定义dao接口
 
 在 `com.itheima.dao` 包下定义 `BookDao` 接口，内容如下
 
@@ -1412,7 +1402,7 @@ public interface BookDao {
 }
 ```
 
-## 4.2.4  定义测试类
+#### 4.2.4  定义测试类
 
 在 `test/java` 下定义包 `com.itheima` ，在该包下测试类，内容如下
 
@@ -1431,7 +1421,7 @@ class Springboot08MybatisApplicationTests {
 }
 ```
 
-## 4.2.5  编写配置
+#### 4.2.5  编写配置
 
 我们代码中并没有指定连接哪儿个数据库，用户名是什么，密码是什么。所以这部分需要在 `SpringBoot` 的配置文件中进行配合。
 
@@ -1446,7 +1436,7 @@ spring:
     password: root
 ```
 
-## 4.2.6  测试
+#### 4.2.6  测试
 
 运行测试方法，我们会看到如下错误信息
 
@@ -1470,7 +1460,7 @@ public interface BookDao {
 >
 > `SpringBoot` 版本低于2.4.3(不含)，Mysql驱动版本大于8.0时，需要在url连接串中配置时区 `jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC`，或在MySQL数据库端配置时区解决此问题
 
-## 4.2.7  使用Druid数据源
+#### 4.2.7  使用Druid数据源
 
 现在我们并没有指定数据源，`SpringBoot` 有默认的数据源，我们也可以指定使用 `Druid` 数据源，按照以下步骤实现
 
@@ -1497,7 +1487,7 @@ public interface BookDao {
       type: com.alibaba.druid.pool.DruidDataSource
   ```
 
-# 5，案例
+## 5. 案例
 
 `SpringBoot` 到这就已经学习完毕，接下来我们将学习 `SSM` 时做的三大框架整合的案例用 `SpringBoot` 来实现一下。我们完成这个案例基本是将之前做的拷贝过来，修改成 `SpringBoot` 的即可，主要从以下几部分完成
 
@@ -1518,7 +1508,7 @@ public interface BookDao {
 
    放置在resources目录下的static目录中
 
-## 5.1  创建工程
+### 5.1  创建工程
 
 创建 `SpringBoot` 工程，在创建工程时需要勾选 `web`、`mysql`、`mybatis`，工程目录结构如下
 
@@ -1536,7 +1526,7 @@ public interface BookDao {
 </dependency>
 ```
 
-## 5.2  代码拷贝
+### 5.2  代码拷贝
 
 将 `springmvc_11_page` 工程中的 `java` 代码及测试代码连同包拷贝到 `springboot_09_ssm` 工程，按照下图进行拷贝
 
@@ -1553,16 +1543,16 @@ public interface BookDao {
   ```java
   @SpringBootTest
   public class BookServiceTest {
-
+  
       @Autowired
       private BookService bookService;
-
+  
       @Test
       public void testGetById(){
           Book book = bookService.getById(2);
           System.out.println(book);
       }
-
+  
       @Test
       public void testGetAll(){
           List<Book> all = bookService.getAll();
@@ -1571,7 +1561,7 @@ public interface BookDao {
   }
   ```
 
-## 5.3  配置文件
+### 5.3  配置文件
 
 在 `application.yml` 配置文件中需要配置如下内容
 
@@ -1592,7 +1582,7 @@ spring:
     password: root
 ```
 
-## 5.4  静态资源
+### 5.4  静态资源
 
 在 `SpringBoot` 程序中是没有 `webapp` 目录的，那么在 `SpringBoot` 程序中静态资源需要放在什么位置呢？
 

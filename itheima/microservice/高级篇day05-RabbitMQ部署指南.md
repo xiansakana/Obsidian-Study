@@ -4,13 +4,11 @@ date: 2024-04-25T19:23:32Z
 lastmod: 2024-04-25T19:23:32Z
 ---
 
-# RabbitMQ部署指南
-
-# 1.单机部署
+## 1. 单机部署
 
 我们在Centos7虚拟机中使用Docker来安装。
 
-## 1.1.下载镜像
+### 1.1 下载镜像
 
 方式一：在线拉取
 
@@ -30,7 +28,7 @@ docker pull rabbitmq:3.8-management
 docker load -i mq.tar
 ```
 
-## 1.2.安装MQ
+### 1.2 安装MQ
 
 执行下面的命令来运行MQ容器：
 
@@ -47,7 +45,7 @@ docker run \
  rabbitmq:3.8-management
 ```
 
-# 2.安装DelayExchange插件
+## 2. 安装DelayExchange插件
 
 官方的安装指南地址为：https://blog.rabbitmq.com/posts/2015/04/scheduling-messages-with-rabbitmq
 
@@ -55,7 +53,7 @@ docker run \
 
 因为我们之前是基于Docker安装RabbitMQ，所以下面我们会讲解基于Docker来安装RabbitMQ插件。
 
-## 2.1.下载插件
+### 2.1 下载插件
 
 RabbitMQ有一个官方的插件社区，地址为：https://www.rabbitmq.com/community-plugins.html
 
@@ -69,7 +67,7 @@ RabbitMQ有一个官方的插件社区，地址为：https://www.rabbitmq.com/co
 
 ![image-20210713104808909](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713104808909.png)
 
-## 2.2.上传插件
+### 2.2 上传插件
 
 因为我们是基于Docker安装，所以需要先查看RabbitMQ的插件目录对应的数据卷。如果不是基于Docker的同学，请参考第一章部分，重新创建Docker容器。
 
@@ -87,7 +85,7 @@ docker volume inspect mq-plugins
 
 ![image-20210713105339785](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713105339785.png)
 
-## 2.3.安装插件
+### 2.3 安装插件
 
 最后就是安装了，需要进入MQ容器内部来执行安装。我的容器名为`mq`，所以执行下面命令：
 
@@ -107,11 +105,11 @@ rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 
 ![image-20210713105829435](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210713105829435.png)
 
-# 3.集群部署
+## 3. 集群部署
 
 接下来，我们看看如何安装RabbitMQ的集群。
 
-## 2.1.集群分类
+### 2.1 集群分类
 
 在RabbitMQ的官方文档中，讲述了两种集群的配置方式：
 
@@ -132,7 +130,7 @@ rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 - rabbit@mq2
 - rabbit@mq3
 
-## 2.2.获取cookie
+### 2.2 获取cookie
 
 RabbitMQ底层依赖于Erlang，而Erlang虚拟机就是一个面向分布式的语言，默认就支持集群模式。集群模式中的每个RabbitMQ 节点使用 cookie 来确定它们是否被允许相互通信。
 
@@ -160,7 +158,7 @@ docker rm -f mq
 
 ![image-20210717212345165](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717212345165.png)
 
-## 2.3.准备集群配置
+### 2.3 准备集群配置
 
 在/tmp目录新建一个配置文件 rabbitmq.conf：
 
@@ -215,7 +213,7 @@ cp .erlang.cookie mq2
 cp .erlang.cookie mq3
 ```
 
-## 2.4.启动集群
+### 2.4 启动集群
 
 创建一个网络：
 
@@ -266,7 +264,7 @@ docker run -d --net mq-net \
 rabbitmq:3.8-management
 ```
 
-## 2.5.测试
+### 2.5 测试
 
 在mq1这个节点上添加一个队列：
 
@@ -276,7 +274,7 @@ rabbitmq:3.8-management
 
 ![image-20210717223057902](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223057902.png)
 
-### 2.5.1.数据共享测试
+#### 2.5.1 数据共享测试
 
 点击这个队列，进入管理页面：
 
@@ -290,7 +288,7 @@ rabbitmq:3.8-management
 
 ![image-20210717223603628](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717223603628.png)
 
-### 2.5.2.可用性测试
+#### 2.5.2 可用性测试
 
 我们让其中一台节点mq1宕机：
 
@@ -304,13 +302,13 @@ docker stop mq1
 
 说明数据并没有拷贝到mq2和mq3。
 
-# 4.镜像模式
+## 4. 镜像模式
 
 在刚刚的案例中，一旦创建队列的主机宕机，队列就会不可用。不具备高可用能力。如果要解决这个问题，必须使用官方提供的镜像集群方案。
 
 官方文档地址：https://www.rabbitmq.com/ha.html
 
-## 4.1.镜像模式的特征
+### 4.1 镜像模式的特征
 
 默认情况下，队列只保存在创建该队列的节点上。而镜像模式下，创建队列的节点被称为该队列的**主节点**，队列还会拷贝到集群中的其它节点，也叫做该队列的**镜像**节点。
 
@@ -327,7 +325,7 @@ docker stop mq1
 - 主宕机后，镜像节点会替代成新的主（如果在主从同步完成前，主就已经宕机，可能出现数据丢失）
 - 不具备负载均衡功能，因为所有操作都会有主节点完成（但是不同队列，其主节点可以不同，可以利用这个提高吞吐量）
 
-## 4.2.镜像模式的配置
+### 4.2 镜像模式的配置
 
 镜像模式的配置有3种模式：
 
@@ -341,7 +339,7 @@ docker stop mq1
 
 语法示例：
 
-### 4.2.1.exactly模式
+#### 4.2.1 exactly模式
 
 ```
 rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly","ha-params":2,"ha-sync-mode":"automatic"}'
@@ -355,7 +353,7 @@ rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly","ha-params":2,"ha-s
   - `"ha-params":2`：策略参数，这里是2，就是副本数量为2，1主1镜像
   - `"ha-sync-mode":"automatic"`：同步策略，默认是manual，即新加入的镜像节点不会同步旧的消息。如果设置为automatic，则新加入的镜像节点会把主节点中所有消息都同步，会带来额外的网络开销
 
-### 4.2.2.all模式
+#### 4.2.2 all模式
 
 ```
 rabbitmqctl set_policy ha-all "^all\." '{"ha-mode":"all"}'
@@ -366,7 +364,7 @@ rabbitmqctl set_policy ha-all "^all\." '{"ha-mode":"all"}'
 - `'{"ha-mode":"all"}'`：策略内容
   - `"ha-mode":"all"`：策略模式，此处是all模式，即所有节点都会称为镜像节点
 
-### 4.2.3.nodes模式
+#### 4.2.3 nodes模式
 
 ```
 rabbitmqctl set_policy ha-nodes "^nodes\." '{"ha-mode":"nodes","ha-params":["rabbit@nodeA", "rabbit@nodeB"]}'
@@ -379,7 +377,7 @@ rabbitmqctl set_policy ha-nodes "^nodes\." '{"ha-mode":"nodes","ha-params":["rab
   - `"ha-mode":"nodes"`：策略模式，此处是nodes模式
   - `"ha-params":["rabbit@mq1", "rabbit@mq2"]`：策略参数，这里指定副本所在节点名称
 
-## 4.3.测试
+### 4.3 测试
 
 我们使用exactly模式的镜像，因为集群节点数量为3，因此镜像数量就设置为2.
 
@@ -397,7 +395,7 @@ docker exec -it mq1 rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly"
 
 ![image-20210717231829505](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717231829505.png)
 
-### 4.3.1.测试数据共享
+#### 4.3.1 测试数据共享
 
 给two.queue发送一条消息：
 
@@ -407,7 +405,7 @@ docker exec -it mq1 rabbitmqctl set_policy ha-two "^two\." '{"ha-mode":"exactly"
 
 ![image-20210717232108584](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210717232108584.png)
 
-### 4.3.2.测试高可用
+#### 4.3.2 测试高可用
 
 现在，我们让two.queue的主节点mq1宕机：
 
@@ -425,11 +423,11 @@ docker stop mq1
 
 发现依然是健康的！并且其主节点切换到了rabbit@mq2上
 
-# 5.仲裁队列
+# 5. 仲裁队列
 
 从RabbitMQ 3.8版本开始，引入了新的仲裁队列，他具备与镜像队里类似的功能，但使用更加方便。
 
-## 5.1.添加仲裁队列
+### 5.1 添加仲裁队列
 
 在任意控制台添加一个队列，一定要选择队列类型为Quorum类型。
 
@@ -443,13 +441,13 @@ docker stop mq1
 
 因为仲裁队列默认的镜像数为5。如果你的集群有7个节点，那么镜像数肯定是5；而我们集群只有3个节点，因此镜像数量就是3.
 
-## 5.2.测试
+### 5.2 测试
 
 可以参考对镜像集群的测试，效果是一样的。
 
-## 5.3.集群扩容
+### 5.3 集群扩容
 
-### 5.3.1.加入集群
+#### 5.3.1 加入集群
 
 1）启动一个新的MQ容器：
 
@@ -497,7 +495,7 @@ rabbitmqctl start_app
 
 ![image-20210718001909492](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210718001909492.png)
 
-### 5.3.2.增加仲裁队列副本
+#### 5.3.2 增加仲裁队列副本
 
 我们先查看下quorum.queue这个队列目前的副本情况，进入mq1容器：
 

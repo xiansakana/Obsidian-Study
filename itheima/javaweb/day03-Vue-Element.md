@@ -4,11 +4,11 @@ date: 2024-04-25T19:14:36Z
 lastmod: 2024-04-25T19:14:36Z
 ---
 
-# 1 Ajax
+## 1. Ajax
 
-## 1.1 Ajax介绍
+### 1.1 Ajax介绍
 
-### 1.1.1 Ajax概述
+#### 1.1.1 Ajax概述
 
 我们前端页面中的数据，如下图所示的表格中的学生信息，应该来自于后台，那么我们的后台和前端是互不影响的2个程序，那么我们前端应该如何从后台获取数据呢？因为是2个程序，所以必须涉及到2个程序的交互，所以这就需要用到我们接下来学习的Ajax技术。
 
@@ -19,7 +19,7 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
 - 与服务器进行数据交换：通过Ajax可以给服务器发送请求，并获取服务器响应的数据。
 - 异步交互：可以在**不重新加载整个页面**的情况下，与服务器交换数据并**更新部分网页**的技术，如：搜索联想、用户名是否可用的校验等等。
 
-### 1.1.2 Ajax作用
+#### 1.1.2 Ajax作用
 
 我们详细的解释一下Ajax技术的2个作用
 
@@ -34,7 +34,7 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
 
   ![1669105041533](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669105041533.png)
 
-### 1.1.3 同步异步
+#### 1.1.3 同步异步
 
 针对于上述Ajax的局部刷新功能是因为Ajax请求是异步的，与之对应的有同步请求。接下来我们介绍一下异步请求和同步请求的区别。
 
@@ -49,7 +49,7 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
 
   浏览器页面发送请求给服务器，在服务器处理请求的过程中，浏览器页面还可以做其他的操作。
 
-## 1.2 原生Ajax
+### 1.2 原生Ajax
 
 对于Ajax技术有了充分的认知了，我们接下来通过代码来演示Ajax的效果。此处我们先采用原生的Ajax代码来演示。因为Ajax请求是基于客户端发送请求，服务器响应数据的技术。所以为了完成快速入门案例，我们需要提供服服务器端和编写客户端。
 
@@ -76,15 +76,15 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
       <title>原生Ajax</title>
   </head>
   <body>
-
+  
       <input type="button" value="获取数据" onclick="getData()">
-
+  
       <div id="div1"></div>
-
+  
   </body>
   <script>
       function getData(){
-
+  
       }
   </script>
   </html>
@@ -123,11 +123,11 @@ Ajax: 全称Asynchronous JavaScript And XML，异步的JavaScript和XML。其作
 
   并且通过浏览器的f12抓包，我们点击网络中的XHR请求，发现可以抓包到我们发送的Ajax请求。XHR代表的就是异步请求
 
-## 1.3 Axios
+### 1.3 Axios
 
 上述原生的Ajax请求的代码编写起来还是比较繁琐的，所以接下来我们学习一门更加简单的发送Ajax请求的技术Axios 。Axios是对原生的AJAX进行封装，简化书写。Axios官网是：`https://www.axios-http.cn`
 
-### 1.3.1 Axios的基本使用
+#### 1.3.1 Axios的基本使用
 
 Axios的使用比较简单，主要分为2步：
 
@@ -168,7 +168,7 @@ Axios的使用比较简单，主要分为2步：
 
   then() 需要传递一个匿名函数。我们将 then()中传递的匿名函数称为 **回调函数**，意思是该匿名函数在发送请求时不会被调用，而是在成功响应后调用的函数。而该回调函数中的 resp 参数是对响应的数据进行封装的对象，通过 resp.data 可以获取到响应的数据。
 
-### 1.3.2 Axios快速入门
+#### 1.3.2 Axios快速入门
 
 - 后端实现
 
@@ -194,17 +194,17 @@ Axios的使用比较简单，主要分为2步：
       <script src="js/axios-0.18.0.js"></script>
   </head>
   <body>
-
+  
       <input type="button" value="获取数据GET" onclick="get()">
-
+  
       <input type="button" value="删除数据POST" onclick="post()">
-
+  
   </body>
   <script>
       function get(){
           //通过axios发送异步请求-get
       }
-
+  
       function post(){
           //通过axios发送异步请求-post
       }
@@ -256,11 +256,11 @@ Axios的使用比较简单，主要分为2步：
       <script src="js/axios-0.18.0.js"></script>
   </head>
   <body>
-
+  
       <input type="button" value="获取数据GET" onclick="get()">
-
+  
       <input type="button" value="删除数据POST" onclick="post()">
-
+  
   </body>
   <script>
       function get(){
@@ -271,10 +271,10 @@ Axios的使用比较简单，主要分为2步：
           }).then(result => {
               console.log(result.data);
           })
-
-
+  
+  
       }
-
+  
       function post(){
          // 通过axios发送异步请求-post
           axios({
@@ -284,40 +284,40 @@ Axios的使用比较简单，主要分为2步：
           }).then(result => {
               console.log(result.data);
           })
-
+  
       }
   </script>
   </html>
-  ~~~
+  
 
-### 1.3.3 请求方法的别名
+#### 1.3.3 请求方法的别名
 
 Axios还针对不同的请求，提供了别名方式的api,具体如下：
 
-|方法|描述|
-| ----------------------------------| --------------|
-|axios.get(url [, config])|发送get请求|
-|axios.delete(url [, config])|发送delete请求|
-|axios.post(url [, data[, config]])|发送post请求|
-|axios.put(url [, data[, config]])|发送put请求|
+| 方法                               | 描述           |
+| ---------------------------------- | -------------- |
+| axios.get(url [, config])          | 发送get请求    |
+| axios.delete(url [, config])       | 发送delete请求 |
+| axios.post(url [, data[, config]]) | 发送post请求   |
+| axios.put(url [, data[, config]])  | 发送put请求    |
 
 我们目前只关注get和post请求，所以在上述的入门案例中，我们可以将get请求代码改写成如下：
 
-~~~js
+```js
 axios.get("http://yapi.smart-xwork.cn/mock/169327/emp/list").then(result => {
     console.log(result.data);
 })
-~~~
+```
 
 post请求改写成如下：
 
-~~~js
+```js
 axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(result => {
     console.log(result.data);
 })
-~~~
+```
 
-### 1.3.4 案例
+#### 1.3.4 案例
 
 - 需求：基于Vue及Axios完成数据的动态加载展示，如下图所示
 
@@ -364,7 +364,7 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
                      <th>入职日期</th>
                      <th>最后操作时间</th>
                  </tr>
-
+     
                  <tr align="center" >
                      <td>1</td>
                      <td>Tom</td>
@@ -386,7 +386,7 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
          new Vue({
             el: "#app",
             data: {
-
+     
             }
          });
      </script>
@@ -398,7 +398,7 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
      mounted () {
          //发送异步请求,加载数据
          axios.get("http://yapi.smart-xwork.cn/mock/169327/emp/list").then(result => {
-
+     
          })
      }
      ~~~
@@ -502,9 +502,9 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
 </html>
 ~~~
 
-# 2 前后台分离开发
+## 2. 前后台分离开发
 
-## 2.1 前后台分离开发介绍
+### 2.1 前后台分离开发介绍
 
 在之前的课程中，我们介绍过，前端开发有2种方式：**前后台混合开发**和**前后台分离开发**。
 
@@ -535,9 +535,9 @@ axios.post("http://yapi.smart-xwork.cn/mock/169327/emp/deleteById","id=1").then(
 4. 测试：前后台开发完了，各自按照接口文档进行测试
 5. 前后段联调测试：前段工程请求后端工程，测试功能
 
-## 2.2 YAPI
+### 2.2 YAPI
 
-### 2.2.1 YAPI介绍
+#### 2.2.1 YAPI介绍
 
 前后台分离开发中，我们前后台开发人员都需要遵循接口文档，所以接下来我们介绍一款撰写接口文档的平台。
 
@@ -550,7 +550,7 @@ YApi主要提供了2个功能：
 - API接口管理：根据需求撰写接口，包括接口的地址，参数，响应等等信息。
 - Mock服务：模拟真实接口，生成接口的模拟测试数据，用于前端的测试。
 
-### 2.2.2 接口文档管理
+#### 2.2.2 接口文档管理
 
 接下来我们演示一下YApi是如何管理接口文档的。
 
@@ -604,9 +604,9 @@ YApi主要提供了2个功能：
 
 如上步骤就是YAPI接口平台中对于接口的配置步骤。
 
-# 3 前端工程化
+## 3. 前端工程化
 
-## 3.1 前端工程化介绍
+### 3.1 前端工程化介绍
 
 我们目前的前端开发中，当我们需要使用一些资源时，例如：vue.js，和axios.js文件，都是直接再工程中导入的，如下图所示：
 
@@ -627,9 +627,9 @@ YApi主要提供了2个功能：
 
 所以对于前端工程化，说白了，就是在企业级的前端项目开发中，把前端开发所需要的工具、技术、流程、经验进行规范化和标准化。从而提升开发效率，降低开发难度等等。接下来我们就需要学习vue的官方提供的脚手架帮我们完成前端的工程化。
 
-## 3.2 前端工程化入门
+### 3.2 前端工程化入门
 
-### 3.2.1 环境准备
+#### 3.2.1 环境准备
 
 我们的前端工程化是通过vue官方提供的脚手架Vue-cli来完成的，用于快速的生成一个Vue的项目模板。Vue-cli主要提供了如下功能：
 
@@ -647,7 +647,7 @@ YApi主要提供了2个功能：
 
   ![1669293955527](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669293955527.png)
 
-### 3.2.2 Vue项目简介
+#### 3.2.2 Vue项目简介
 
 环境准备好了，接下来我们需要通过Vue-cli创建一个vue项目，然后再学习一下vue项目的目录结构。Vue-cli提供了如下2种方式创建vue项目:
 
@@ -666,7 +666,7 @@ YApi主要提供了2个功能：
 
   ![1669294586147](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669294586147.png)
 
-#### 3.2.2.1 创建vue项目
+##### 3.2.2.1 创建vue项目
 
 此处我们通过第二种图形化界面方式给大家演示。
 
@@ -712,7 +712,7 @@ YApi主要提供了2个功能：
 
 到此，vue项目创建结束
 
-#### 3.2.2.2 vue项目目录结构介绍
+##### 3.2.2.2 vue项目目录结构介绍
 
 我们通过VS Code打开之前创建的vue文件夹，打开之后，呈现如下图所示页面：
 
@@ -724,7 +724,7 @@ vue项目的标准目录结构以及目录对应的解释如下图所示:
 
 其中我们平时开发代码就是在**src目录**下
 
-#### 3.2.2.3 运行vue项目
+##### 3.2.2.3 运行vue项目
 
 那么vue项目开发好了，我们应该怎么运行vue项目呢？主要提供了2种方式
 
@@ -786,7 +786,7 @@ vue项目的标准目录结构以及目录对应的解释如下图所示:
 
 然后就能都显示NPM脚本小窗口了。
 
-### 3.2.3 Vue项目开发流程
+#### 3.2.3 Vue项目开发流程
 
 那么我们访问的首页是index.html，但是我们找到public/index.html文件，打开之后发现，里面没有什么代码，但是能够呈现内容丰富的首页：如下图所示：
 
@@ -865,9 +865,9 @@ export default {
 
 ![1669314115641](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669314115641.png)
 
-# 4 Vue组件库Element
+## 4. Vue组件库Element
 
-## 4.1 Element介绍
+### 4.1 Element介绍
 
 不知道同学们还否记得我们之前讲解的前端开发模式MVVM，我们之前学习的vue是侧重于VM开发的，主要用于数据绑定到视图的，那么接下来我们学习的ElementUI就是一款侧重于V开发的前端框架，主要用于开发美观的页面的。
 
@@ -879,7 +879,7 @@ Element 提供了很多组件（组成网页的部件）供我们使用。例如
 
 ElementUI的学习方式和我们之前的学习方式不太一样，对于ElementUI，我们作为一个后台开发者，只需要**学会如何从ElementUI的官网拷贝组件到我们自己的页面中，并且做一些修改即可**。其官网地址：https://element.eleme.cn/#/zh-CN，我们主要学习的是ElementUI中提供的常用组件，至于其他组件同学们可以通过我们这几个组件的学习掌握到ElementUI的学习技巧，然后课后自行学习。
 
-## 4.2 快速入门
+### 4.2 快速入门
 
 首先我们要掌握ElementUI的快速入门，接下来同学们就一起跟着步骤来操作一下。
 
@@ -977,13 +977,13 @@ export default {
 
 到此，我们ElementUI的入门程序编写成功
 
-## 4.3 Element组件
+### 4.3 Element组件
 
 接下来我们来学习一下ElementUI的常用组件，对于组件的学习比较简单，我们只需要参考官方提供的代码，然后复制粘贴即可。
 
-### 4.3.1 Table表格
+#### 4.3.1 Table表格
 
-#### 4.3.1.1 组件演示
+##### 4.3.1.1 组件演示
 
 Table 表格：用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。
 
@@ -1076,7 +1076,7 @@ export default {
 
 ![1669362451236](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669362451236.png)
 
-#### 4.3.1.2 组件属性详解
+##### 4.3.1.2 组件属性详解
 
 那么我们的ElementUI是如何将数据模型绑定到视图的呢？主要通过如下几个属性：
 
@@ -1093,9 +1093,9 @@ export default {
 
 ![1669363190361](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669363190361.png)
 
-### 4.3.2 Pagination分页
+#### 4.3.2 Pagination分页
 
-#### 4.3.2.1 组件演示
+##### 4.3.2.1 组件演示
 
 Pagination: 分页组件，主要提供分页工具条相关功能。其展示效果图下图所示：
 
@@ -1121,7 +1121,7 @@ Pagination: 分页组件，主要提供分页工具条相关功能。其展示�
 
 ![1669363921750](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669363921750.png)
 
-#### 4.3.2.2 组件属性详解
+##### 4.3.2.2 组件属性详解
 
 对于分页组件我们需要关注的是如下几个重要属性（可以通过查阅官网组件中最下面的组件属性详细说明得到）：
 
@@ -1147,7 +1147,7 @@ Pagination: 分页组件，主要提供分页工具条相关功能。其展示�
 
 ![1669364533849](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669364533849.png)
 
-#### 4.3.2.3 组件事件详解
+##### 4.3.2.3 组件事件详解
 
 对于分页组件，除了上述几个属性，还有2个非常重要的事件我们需要去学习：
 
@@ -1237,9 +1237,9 @@ export default {
 
 ![1669365585379](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669365585379.png)
 
-### 4.3.3 Dialog对话框
+#### 4.3.3 Dialog对话框
 
-#### 4.3.3.1 组件演示
+##### 4.3.3.1 组件演示
 
 Dialog: 在保留当前页面状态的情况下，告知用户并承载相关操作。其企业开发应用场景示例如下图所示：
 
@@ -1349,7 +1349,7 @@ export default {
 
 ![1669366365778](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669366365778.png)
 
-#### 4.3.3.2 组件属性详解
+##### 4.3.3.2 组件属性详解
 
 那么ElementUI是如何做到对话框的显示与隐藏的呢？是通过如下的属性：
 
@@ -1363,9 +1363,9 @@ visible属性绑定的dialogTableVisble属性一开始默认是false，所以对
 
 然后对话框visible属性值为true，所以对话框呈现出来。
 
-### 4.3.4 Form表单
+#### 4.3.4 Form表单
 
-#### 4.3.4.1 组件演示
+##### 4.3.4.1 组件演示
 
 Form 表单：由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据。
 
@@ -1624,9 +1624,9 @@ export default {
 
 ~~~
 
-## 4.4 案例
+### 4.4 案例
 
-### 4.4.1 案例需求
+#### 4.4.1 案例需求
 
 参考 **资料/页面原型/tlias智能学习辅助系统/首页.html** 文件，浏览器打开，点击页面中的左侧栏的员工管理，如下所示：
 
@@ -1649,7 +1649,7 @@ export default {
 
 通过观察数据，我们发现返回的json数据的data属性中，才是返回的人员列表信息
 
-### 4.4.2 案例分析
+#### 4.4.2 案例分析
 
 整个案例相对来说功能比较复杂，需求较多，所以我们需要先整体，后局部细节。整个页面我们可以分为3个部分，如下图所示：
 
@@ -1661,9 +1661,9 @@ export default {
 2. 然后分别针对3个部分进行各自组件的具体实现
 3. 针对于右侧核心内容展示区域，需要使用异步加载数据，以表格渲染数据
 
-### 4.4.3 代码实现
+#### 4.4.3 代码实现
 
-#### 4.4.3.1 环境搭建
+##### 4.4.3.1 环境搭建
 
 首先我们来到VS Code中，在views目录下创建 tlias/EmpView.vue这个vue组件，并且编写组件的基本模板代码，其效果如下图所示：其中模板代码在之前的案例中已经提供，此处不再赘述
 
@@ -1700,7 +1700,7 @@ export default {
 
 打开浏览器，我们发现之前的element案例内容没了，从而呈现的是一片空白，那么接下来我们就可以继续开发了。
 
-#### 4.4.3.2 整体布局
+##### 4.4.3.2 整体布局
 
 此处肯定不需要我们自己去布局的，我们直接来到ElementUI的官网，找到布局组件，如下图所示：
 
@@ -2520,9 +2520,9 @@ export default {
 
 ~~~
 
-# 5 Vue路由
+## 5. Vue路由
 
-## 5.1 路由介绍
+### 5.1 路由介绍
 
 将资代码/vue-project(路由)/vue-project/src/views/tlias/DeptView.vue拷贝到我们当前EmpView.vue同级，其结构如下：
 
@@ -2560,7 +2560,7 @@ export default {
 
 最后VueRouter会切换&lt;router-view&gt;中的组件，从而进行视图的更新
 
-## 5.2 路由入门
+### 5.2 路由入门
 
 接下来我们来演示vue的路由功能。
 
@@ -2677,14 +2677,14 @@ const routes = [
 
 到此我们的路由实现成功。
 
-# 6 打包部署
+## 6. 打包部署
 
 我们的前端工程开发好了，但是我们需要发布，那么如何发布呢？主要分为2步：
 
 1. 前端工程打包
 2. 通过nginx服务器发布前端工程
 
-## 6.1 前端工程打包
+### 6.1 前端工程打包
 
 接下来我们先来对前端工程进行打包
 
@@ -2696,9 +2696,9 @@ const routes = [
 
 ![1669389147027](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1669389147027.png)
 
-## 6.2 部署前端工程
+### 6.2 部署前端工程
 
-### 6.2.1 nginx介绍
+#### 6.2.1 nginx介绍
 
 nginx: Nginx是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。其特点是占有内存少，并发能力强，在各大型互联网公司都有非常广泛的使用。
 
@@ -2708,7 +2708,7 @@ niginx在windows中的安装是比较方便的，直接解压即可。所以我�
 
 **很明显，我们如果要发布，直接将资源放入到html目录中。**
 
-### 6.2.2 部署
+#### 6.2.2 部署
 
 将我们之前打包的前端工程dist目录下得内容拷贝到nginx的html目录下，如下图所示：
 

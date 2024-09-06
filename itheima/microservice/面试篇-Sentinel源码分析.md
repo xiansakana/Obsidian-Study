@@ -4,9 +4,7 @@ date: 2024-04-25T19:21:12Z
 lastmod: 2024-04-25T19:21:12Z
 ---
 
-# Sentinel源码分析
-
-# 1.Sentinel的基本概念
+## 1. Sentinel的基本概念
 
 Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是两件事情：
 
@@ -15,7 +13,7 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
 
 这里的**资源**就是希望被Sentinel保护的业务，例如项目中定义的controller方法就是默认被Sentinel保护的资源。
 
-## 1.1.ProcessorSlotChain
+### 1.1 ProcessorSlotChain
 
 实现上述功能的核心骨架是一个叫做ProcessorSlotChain的类。这个类基于责任链模式来设计，将不同的功能（限流、降级、系统保护）封装为一个个的Slot，请求进入后逐个执行即可。
 
@@ -36,7 +34,7 @@ Sentinel实现限流、隔离、降级、熔断等功能，本质要做的就是
   - FlowSlot：负责限流规则
   - DegradeSlot：负责降级规则
 
-## 1.2.Node
+### 1.2 Node
 
 Sentinel中的簇点链路是由一个个的Node组成的，Node是一个接口，包括下面的实现：
 
@@ -60,7 +58,7 @@ DefaultNode记录的是资源在当前链路中的访问数据，用来实现基
 
 ![image-20210925104726158](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925104726158.png)
 
-## 1.3.Entry
+### 1.3 Entry
 
 默认情况下，Sentinel会将controller中的方法作为被保护资源，那么问题来了，我们该如何将自己的一段代码标记为一个Sentinel的资源呢？
 
@@ -77,7 +75,7 @@ try (Entry entry = SphU.entry("resourceName")) {
 }
 ```
 
-### 1.3.1.自定义资源
+#### 1.3.1 自定义资源
 
 例如，我们在order-service服务中，将`OrderService`的`queryOrderById()`方法标记为一个资源。
 
@@ -132,7 +130,7 @@ public Order queryOrderById(Long orderId) {
 
 ![image-20210925113122759](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925113122759.png)
 
-### 1.3.2.基于注解标记资源
+#### 1.3.2 基于注解标记资源
 
 在之前学习Sentinel的时候，我们知道可以通过给方法添加@SentinelResource注解的形式来标记资源。
 
@@ -217,7 +215,7 @@ public class SentinelResourceAspect extends AbstractSentinelAspectSupport {
 
 简单来说，@SentinelResource注解就是一个标记，而Sentinel基于AOP思想，对被标记的方法做环绕增强，完成资源（`Entry`）的创建。
 
-## 1.4.Context
+### 1.4 Context
 
 上一节，我们发现簇点链路中除了controller方法、service方法两个资源外，还多了一个默认的入口节点：
 
@@ -225,7 +223,7 @@ sentinel_spring_web_context，是一个EntranceNode类型的节点
 
 这个节点是在初始化Context的时候由Sentinel帮我们创建的。
 
-### 1.4.1.什么是Context
+#### 1.4.1 什么是Context
 
 那么，什么是Context呢？
 
@@ -241,11 +239,11 @@ sentinel_spring_web_context，是一个EntranceNode类型的节点
 ContextUtil.enter("contextName", "originName");
 ```
 
-### 1.4.2.Context的初始化
+#### 1.4.2 Context的初始化
 
 那么这个Context又是在何时完成初始化的呢？
 
-#### 1.4.2.1.自动装配
+##### 1.4.2.1 自动装配
 
 来看下我们引入的Sentinel依赖包：
 
@@ -275,7 +273,7 @@ ContextUtil.enter("contextName", "originName");
 
 `HandlerInterceptor`拦截器会拦截一切进入controller的方法，执行`preHandle`前置拦截方法，而Context的初始化就是在这里完成的。
 
-#### 1.4.2.2.AbstractSentinelInterceptor
+##### 1.4.2.2 AbstractSentinelInterceptor
 
 `HandlerInterceptor`拦截器会拦截一切进入controller的方法，执行`preHandle`前置拦截方法，而Context的初始化就是在这里完成的。
 
@@ -313,7 +311,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 }
 ```
 
-#### 1.4.2.3.ContextUtil
+##### 1.4.2.3 ContextUtil
 
 创建Context的方法就是` ContextUtil.enter(contextName, origin);`
 
@@ -372,11 +370,11 @@ protected static Context trueEnter(String name, String origin) {
 }
 ```
 
-# 2.ProcessorSlotChain执行流程
+## 2. ProcessorSlotChain执行流程
 
 接下来我们跟踪源码，验证下ProcessorSlotChain的执行流程。
 
-## 2.1.入口
+### 2.1 入口
 
 首先，回到一切的入口，`AbstractSentinelInterceptor`类的`preHandle`方法：
 
@@ -445,7 +443,7 @@ private Entry entryWithPriority(ResourceWrapper resourceWrapper, int count, bool
 
 所以，**一个资源只会有一个ProcessorSlotChain**.
 
-## 2.2.DefaultProcessorSlotChain
+### 2.2 DefaultProcessorSlotChain
 
 我们进入DefaultProcessorSlotChain的entry方法：
 
@@ -480,7 +478,7 @@ next确实是NodeSelectSlot类型。
 
 责任链就建立起来了。
 
-## 2.3.NodeSelectorSlot
+### 2.3. NodeSelectorSlot
 
 NodeSelectorSlot负责构建簇点链路中的节点（DefaultNode），将这些节点形成链路树。
 
@@ -526,7 +524,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, Object obj, 
 
 下一个slot，就是ClusterBuilderSlot
 
-## 2.4.ClusterBuilderSlot
+### 2.4 ClusterBuilderSlot
 
 ClusterBuilderSlot负责构建某个资源的ClusterNode，核心代码：
 
@@ -561,7 +559,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 }
 ```
 
-## 2.5.StatisticSlot
+### 2.5 StatisticSlot
 
 StatisticSlot负责统计实时调用数据，包括运行信息（访问次数、线程数）、来源信息等。
 
@@ -629,7 +627,7 @@ public void addPassRequest(int count) {
 - FlowSlot：负责限流规则
 - DegradeSlot：负责降级规则
 
-## 2.6.AuthoritySlot
+### 2.6 AuthoritySlot
 
 负责请求来源origin的授权规则判断，如图：
 
@@ -715,7 +713,7 @@ static boolean passCheck(AuthorityRule rule, Context context) {
 }
 ```
 
-## 2.7.SystemSlot
+### 2.7 SystemSlot
 
 SystemSlot是对系统保护的规则校验：
 
@@ -782,7 +780,7 @@ public static void checkSystem(ResourceWrapper resourceWrapper) throws BlockExce
 }
 ```
 
-## 2.8.ParamFlowSlot
+### 2.8 ParamFlowSlot
 
 ParamFlowSlot就是热点参数限流，如图：
 
@@ -813,7 +811,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 }
 ```
 
-### 2.8.1.令牌桶
+#### 2.8.1 令牌桶
 
 热点规则判断采用了令牌桶算法来实现参数限流，为每一个不同参数值设置令牌桶，Sentinel的令牌桶有两部分组成：
 
@@ -828,7 +826,7 @@ public void entry(Context context, ResourceWrapper resourceWrapper, DefaultNode 
 
 ![sentinel](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/sentinel.jpg)
 
-## 2.9.FlowSlot
+### 2.9 FlowSlot
 
 FlowSlot是负责限流规则的判断，如图：
 
@@ -849,7 +847,7 @@ FlowSlot是负责限流规则的判断，如图：
 - 滑动时间窗口算法：快速失败、warm up
 - 漏桶算法：排队等待效果
 
-### 2.9.1.核心流程
+#### 2.9.1 核心流程
 
 核心API如下：
 
@@ -978,7 +976,7 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 
 最终的限流判断都在TrafficShapingController的canPass方法中。
 
-### 2.9.2.滑动时间窗口
+#### 2.9.2 滑动时间窗口
 
 滑动时间窗口的功能分两部分来看：
 
@@ -987,7 +985,7 @@ private static boolean passLocalCheck(FlowRule rule, Context context, DefaultNod
 
 先来看时间区间窗口的QPS计数功能。
 
-#### 2.9.2.1.时间窗口请求量统计
+##### 2.9.2.1 时间窗口请求量统计
 
 回顾2.5章节中的StatisticSlot部分，有这样一段代码：
 
@@ -1119,7 +1117,7 @@ public WindowWrap<T> currentWindow(long timeMillis) {
 
 这里只负责统计每个窗口的请求量，不负责拦截。限流拦截要看FlowSlot中的逻辑。
 
-#### 2.9.2.2.滑动窗口QPS计算
+##### 2.9.2.2 滑动窗口QPS计算
 
 在2.9.1小节我们讲过，FlowSlot的限流判断最终都由`TrafficShapingController`接口中的`canPass`方法来实现。该接口有三个实现类：
 
@@ -1240,7 +1238,7 @@ public boolean isWindowDeprecated(long time, WindowWrap<T> windowWrap) {
 }
 ```
 
-### 2.9.3.漏桶
+#### 2.9.3 漏桶
 
 上一节我们讲过，FlowSlot的限流判断最终都由`TrafficShapingController`接口中的`canPass`方法来实现。该接口有三个实现类：
 
@@ -1310,7 +1308,7 @@ public boolean canPass(Node node, int acquireCount, boolean prioritized) {
 
 ![image-20210925210716675](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210925210716675.png)
 
-## 2.10.DegradeSlot
+### 2.10 DegradeSlot
 
 最后一关，就是降级规则判断了。
 
@@ -1349,7 +1347,7 @@ void performChecking(Context context, ResourceWrapper r) throws BlockException {
 }
 ```
 
-### 2.10.1.CircuitBreaker
+#### 2.10.1 CircuitBreaker
 
 我们进入CircuitBreaker的tryPass方法中：
 
@@ -1413,7 +1411,7 @@ protected boolean fromOpenToHalfOpen(Context context) {
 - 从CLOSED到OPEN
 - 从HALF_OPEN到CLOSED
 
-### 2.10.2.触发断路器
+#### 2.10.2 触发断路器
 
 请求经过所有插槽 后，一定会执行exit方法，而在DegradeSlot的exit方法中：
 

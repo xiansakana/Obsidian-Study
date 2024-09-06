@@ -12,7 +12,8 @@
   "readableLineLength": false,
   "strictLineBreaks": true,
   "propertiesInDocument": "visible",
-  "attachmentFolderPath": "./assets",
+  "attachmentFolderPath": "assets",
   "showUnsupportedFiles": true,
-  "alwaysUpdateLinks": false
+  "alwaysUpdateLinks": false,
+  "showRibbon": false
 }

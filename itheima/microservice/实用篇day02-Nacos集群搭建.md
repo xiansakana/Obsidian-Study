@@ -4,9 +4,7 @@ date: 2024-04-25T19:26:19Z
 lastmod: 2024-04-25T19:26:19Z
 ---
 
-# Nacos集群搭建
-
-# 1.集群结构图
+## 1. 集群结构图
 
 官方给出的Nacos集群图：
 
@@ -26,7 +24,7 @@ lastmod: 2024-04-25T19:26:19Z
 |nacos2|192.168.150.1|8846|
 |nacos3|192.168.150.1|8847|
 
-# 2.搭建集群
+## 2. 搭建集群
 
 搭建集群的基本步骤：
 
@@ -36,7 +34,7 @@ lastmod: 2024-04-25T19:26:19Z
 - 启动nacos集群
 - nginx反向代理
 
-## 2.1.初始化数据库
+### 2.1 初始化数据库
 
 Nacos默认数据存储在内嵌数据库Derby中，不属于生产可用的数据库。
 
@@ -247,7 +245,7 @@ INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHz
 INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 ```
 
-## 2.2.下载nacos
+### 2.2 下载nacos
 
 nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可以选择任意版本下载。
 
@@ -255,7 +253,7 @@ nacos在GitHub上有下载地址：https://github.com/alibaba/nacos/tags，可�
 
 ![image-20210409212119411](https://cdn.jsdelivr.net/npm/microservice-springcloud-rabbitmq-docker-redis-es/image-20210409212119411.png)
 
-## 2.3.配置Nacos
+### 2.3 配置Nacos
 
 将这个包解压到任意非中文目录下，如图：
 
@@ -290,7 +288,7 @@ db.user.0=root
 db.password.0=123
 ```
 
-## 2.4.启动
+### 2.4 启动
 
 将nacos文件夹复制三份，分别命名为：nacos1、nacos2、nacos3
 
@@ -322,7 +320,7 @@ server.port=8847
 startup.cmd
 ```
 
-## 2.5.nginx反向代理
+### 2.5 nginx反向代理
 
 找到课前资料提供的nginx安装包：
 
@@ -362,7 +360,7 @@ spring:
       server-addr: localhost:80 # Nacos地址
 ```
 
-## 2.6.优化
+### 2.6 优化
 
 - 实际部署时，需要给做反向代理的nginx服务器设置一个域名，这样后续如果有服务器迁移nacos的客户端也无需更改配置.
 - Nacos的各个节点应该部署到多个不同服务器，做好容灾和隔离
