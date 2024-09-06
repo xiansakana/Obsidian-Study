@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b5e91cada96783da",
+        "id": "da4387d58e7d4dd2",
         "type": "tabs",
         "children": [
           {
-            "id": "7c3ba73302ed2298",
+            "id": "5f91627ef4e4b1dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "miscellaneous/笔记/Hexo搭建个人网站.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "miscellaneous/笔记/Hexo搭建个人网站.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "miscellaneous/笔记/Hexo搭建个人网站.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +121,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "miscellaneous/笔记/Hexo搭建个人网站.md"
+              }
             }
           },
           {
@@ -142,7 +150,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -162,23 +170,27 @@
       "univer:Univer": false
     }
   },
-  "active": "6ac5818d92ae7f06",
+  "active": "5f91627ef4e4b1dc",
   "lastOpenFiles": [
+    "miscellaneous/笔记/图床使用方案.md",
+    "miscellaneous/笔记/笔记软件测评.md",
+    "miscellaneous/笔记/Hexo搭建个人网站.md",
+    "miscellaneous/笔记/Obsidian同步到Github.md",
+    "miscellaneous/笔记/Github搭建免费图床.md",
+    "miscellaneous/笔记/Hexo博客增加书单集.md",
+    "miscellaneous/笔记/assets/net-img-202309262046103-20240905131056-sozz4vk.png",
+    "miscellaneous/笔记/assets/net-img-202401262256214-20240905130910-mr1exg2.png",
+    "miscellaneous/笔记/assets/net-img-202401262302769-20240905131052-urijdud.png",
     "itheima/java面试/多线程相关面试题.md",
     "itheima/java面试/消息中间件面试题.md",
-    "miscellaneous/笔记/笔记软件测评.md",
-    "miscellaneous/笔记/图床使用方案.md",
     "algorithm/刷题记录.md",
     "algorithm/assets/net-img-1-20240905131114-jisg5ds.png",
     "algorithm/assets/net-img-2-20240905131114-a6zqoyn.png",
     "algorithm/Top Interview 150.md",
     "assets",
-    "miscellaneous/笔记/Hexo搭建个人网站.md",
-    "miscellaneous/笔记/Hexo博客增加书单集.md",
     "miscellaneous/笔记/assets/net-img-202310052134977-20240905130932-3qgmldj.png",
     "miscellaneous/Git常用版本控制指令.md",
     "miscellaneous/assets/net-img-3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c-20240905130715-nz3n2az.webp",
-    "miscellaneous/笔记/Github搭建免费图床.md",
     "miscellaneous/笔记/assets/net-img-202309231748785-20240905131009-hdbhvu3.png",
     "miscellaneous/笔记/assets/image-20240426002356-43jclqt.png",
     "itheima/javaweb/day01-HTML-CSS.md",
@@ -196,7 +208,6 @@
     "itheima/react/day09-07.项目打包.md",
     "itheima/react/day06-01.项目前置准备.md",
     "itheima/react/day08-04.发布文章模块.md",
-    "itheima/react/day07-03.Layout模块.md",
     "itheima/react",
     "itheima/microservice",
     "itheima/java面试/test.txt",
@@ -205,9 +216,6 @@
     "itheima/ssm",
     "itheima/redis",
     "redis/assets/net-img-1653813047671-20240905172655-xqfzy6e.png",
-    "redis/assets/net-img-1653806140822-20240905172647-q6m67uk.png",
-    "redis/assets/net-img-1653805203758-20240905172646-yzfcpl7.png",
-    "redis/assets/net-img-1653812346852-20240905172654-pel4v2x.png",
     "redis/assets",
     "redis",
     "未命名.canvas",

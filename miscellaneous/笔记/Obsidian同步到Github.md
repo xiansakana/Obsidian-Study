@@ -4,15 +4,15 @@ date: 2024-04-25T23:55:20Z
 lastmod: 2024-04-27T19:25:16Z
 ---
 
-# 创建 Github 新仓库
+## 创建 Github 新仓库
 
 ![image](assets/net-img-202401262255535-20240905131051-z872g07.png)
 
 然后根据自己需求设置名称，如果想要公开笔记就选 public，不想公开就选 private。
 
-​![202401262300632](assets/net-img-202401262300632-20240905131051-a2u55yk.png)​
+![202401262300632](assets/net-img-202401262300632-20240905131051-a2u55yk.png)​
 
-# 同步仓库到本地
+## 同步仓库到本地
 
 这里如果熟悉 git 就用 git clone，不熟悉 git 的话就用[Github Desktop](https://desktop.github.com/)，也就是 Github 的桌面端。
 
@@ -24,7 +24,7 @@ lastmod: 2024-04-27T19:25:16Z
 
 ![image](assets/net-img-202401262301847-20240905131051-eu8wru8.png)
 
-# 合并 Obsidian 仓库和 Git 仓库
+## 合并 Obsidian 仓库和 Git 仓库
 
 在 clone 后的 Obsidian-Library 的文件夹中可以看到隐藏的.git 文件夹，如果看不到可能是因为没有勾选显示隐藏的项目，选择勾选就好。
 
@@ -38,7 +38,7 @@ lastmod: 2024-04-27T19:25:16Z
 
 具体的安装过程可以参考这篇文章：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）](https://blog.csdn.net/mukes/article/details/115693833)
 
-# 安装 Obsidian Git 插件进行后续的同步
+## 安装 Obsidian Git 插件进行后续的同步
 
 打开 Obsidian，在的这个准备好的库中，安装一个名为[Obsidian Git](https://github.com/denolehov/obsidian-git)的插件，具体操作如下。
 
@@ -84,9 +84,9 @@ lastmod: 2024-04-27T19:25:16Z
 
 到这一步就完成了所有的配置工作，第一次使用时，点击 Backup 就可以。
 
-# 一键同步Obsidian和个人博客
+## 一键同步Obsidian和个人博客
 
-## 一键复制md文件从obdidian文件夹到博客文件夹
+### 一键复制md文件从obdidian文件夹到博客文件夹
 
 - 创建一个.bat批处理文件
 
@@ -119,7 +119,7 @@ for root, dirs, files in os.walk(source_dir):
             print(f'文件 {file} 已被复制到 {target_dir}')
 ```
 
-## 一键post文章并备份
+### 一键post文章并备份
 
 - 创建一个.bat批处理文件
 
@@ -127,7 +127,7 @@ for root, dirs, files in os.walk(source_dir):
 start cmd /k "d: && cd Hexo && hexo cl && hexo g && hexo d && git add  --all && git commit -m "update posts" && git push"
 ```
 
-## 一键上传图片到npm图床
+### 一键上传图片到npm图床
 
 - 创建一个.bat批处理文件
 
@@ -135,7 +135,7 @@ start cmd /k "d: && cd Hexo && hexo cl && hexo g && hexo d && git add  --all && 
 start cmd /c "d: && cd data/npm/xiansakana-blog-img && npm version patch && npm publish"
 ```
 
-## 一键修改图床链接
+### 一键修改图床链接
 
 因为我给上传到backblaze的图片加了防盗链，所以在obsidian的本地笔记里面无法显示。因此需要将图片上传到npm或者其他的图床，然后在obsidian笔记中修改之前上传的图片链接，这里以backblaze到jsdelivr为例。
 
