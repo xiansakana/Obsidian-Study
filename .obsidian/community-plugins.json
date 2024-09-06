@@ -1,12 +1,12 @@
 [
   "emoji-shortcodes",
-  "mousewheel-image-zoom",
   "obsidian-git",
   "mx-bili-plugin",
   "media-extended",
-  "markdown-prettifier",
   "remember-cursor-position",
   "floating-toc",
   "obsidian-excel-to-markdown-table",
-  "univer"
+  "univer",
+  "mousewheel-image-zoom",
+  "markdown-prettifier"
 ]

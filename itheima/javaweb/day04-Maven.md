@@ -26,7 +26,7 @@ lastmod: 2024-04-25T19:19:32Z
 
 ## 1.2 初识Maven
 
-## 1.2.1 什么是Maven
+### 1.2.1 什么是Maven
 
 Maven是Apache旗下的一个开源项目，是一款用于管理和构建java项目的工具。
 
@@ -36,7 +36,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 >
 > 开源项目：https://www.apache.org/index.html#projects-list
 
-## 1.2.2 Maven的作用
+### 1.2.2 Maven的作用
 
 使用Maven能够做什么呢？
 
@@ -69,7 +69,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 具体的统一结构如下：
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221130140132209.png" alt="image-20221130140132209" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221130140132209.png" alt="image-20221130140132209" style="zoom:100%;" />
 </div>
 
 > 目录说明：
@@ -84,7 +84,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 - maven提供了标准的、跨平台(Linux、Windows、MacOS) 的自动化项目构建方式
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221130140247524.png" alt="image-20221130140247524" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221130140247524.png" alt="image-20221130140247524" style="zoom:100%;" />
 </div>
 
 如上图所示我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建。
@@ -168,7 +168,7 @@ Maven仓库分为：
 
 认识了Maven后，我们就要开始使用Maven了，那么首先我们要进行Maven的下载与安装。
 
-## 2.4.1 下载
+### 2.4.1 下载
 
 下载地址：https://maven.apache.org/download.cgi
 
@@ -176,7 +176,7 @@ Maven仓库分为：
 
 ![image-20220616100211209](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616100211209.png)
 
-## 2.4.2 安装步骤
+### 2.4.2 安装步骤
 
 Maven安装配置步骤：
 
@@ -208,13 +208,14 @@ Maven安装配置步骤：
 
 1). 使用超级记事本软件，打开settings.xml文件，定位到53行
 
-2). 复制<localRepository>标签，粘贴到注释的外面（55行）
+2). 复制`<localRepository>`标签，粘贴到注释的外面（55行）
 
-3). 复制之前新建的用来存储jar包的路径，替换掉<localRepository>标签体内容
+3). 复制之前新建的用来存储jar包的路径，替换掉`<localRepository>`标签体内容
 
-<div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/2.gif" style="zoom:80%;" />
+
+<div><img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/2.gif" style="zoom:100%;" />
 </div>
+
 
 **3、配置阿里云私服**
 
@@ -224,7 +225,7 @@ Maven安装配置步骤：
 
 1). 使用超级记事本软件，打开settings.xml文件，定位到160行左右
 
-2). 在<mirrors>标签下为其添加子标签<mirror>，内容如下：
+2). 在`<mirrors>`标签下为其添加子标签`<mirror>`，内容如下：
 
 ```xml
 <mirror>  
@@ -260,7 +261,7 @@ Maven安装配置步骤：
 - PATH环境变量的值，设置为：%MAVEN_HOME%\bin
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616102435856.png" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616102435856.png" style="zoom:100%;" />
 </div>
 
 3). 打开DOS命令提示符进行验证，出现如图所示表示安装成功
@@ -277,7 +278,7 @@ mvn -v
 
 ## 3.1 配置Maven环境
 
-## 3.1.1 当前工程设置
+### 3.1.1 当前工程设置
 
 1、选择 IDEA中 File  =>  Settings  =>  Build,Execution,Deployment  =>  Build Tools  =>  Maven
 
@@ -303,72 +304,72 @@ mvn -v
 
 上述配置的maven环境，只是针对于当前工程的，如果我们再创建一个project，又恢复成默认的配置了。 要解决这个问题， 我们就需要配置全局的maven环境。
 
-## 3.1.2 全局设置
+### 3.1.2 全局设置
 
 1、进入到IDEA欢迎页面
 
 - 选择 IDEA中 File  =>  close project
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/4.gif" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/4.gif" style="zoom:100%;" />
 </div>
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616104338612.png" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616104338612.png" style="zoom100%;" />
 </div>
 
 2、打开 All settings , 选择 Build,Execution,Deployment  =>  Build Tools  =>  Maven
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616104517726.png" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616104517726.png" style="zoom:100%;" />
 </div>
 
 3、配置工程的编译版本为11
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:100%;" />
 </div>
 
 这里所设置的maven的环境信息，并未指定任何一个project，此时设置的信息就属于全局配置信息。 以后，我们再创建project，默认就是使用我们全局配置的信息。
 
 ## 3.2 Maven项目
 
-## 3.2.1 创建Maven项目
+### 3.2.1 创建Maven项目
 
 1、创建一个空项目
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095621738.png" alt="image-20221201095621738" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095621738.png" alt="image-20221201095621738" style="zoom:100%;" />
 </div>
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095600057.png" alt="image-20221201095600057" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095600057.png" alt="image-20221201095600057" style="zoom:100%;" />
 </div>
 
 2、创建模块，选择Maven，点击Next
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095831320.png" alt="image-20221201095831320" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201095831320.png" alt="image-20221201095831320" style="zoom:100%;" />
 </div>
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201100011799.png" alt="image-20221201100011799" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201100011799.png" alt="image-20221201100011799" style="zoom:100%;" />
 </div>
 
 3、填写模块名称，坐标信息，点击finish，创建完成
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201100502234.png" alt="image-20221201100502234" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201100502234.png" alt="image-20221201100502234" style="zoom:100%;" />
 </div>
 
 4、在Maven工程下，创建HelloWorld类
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201101603397.png" alt="image-20221201101603397" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201101603397.png" alt="image-20221201101603397" style="zoom:100%;" />
 </div>
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201101643427.png" alt="image-20221201101643427" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201101643427.png" alt="image-20221201101643427" style="zoom:100%;" />
 </div>
 
 > - Maven项目的目录结构:
@@ -393,7 +394,7 @@ public class HelloWorld {
 }
 ```
 
-## 3.2.2 POM配置详解
+### 3.2.2 POM配置详解
 
 POM (Project Object Model) ：指的是项目对象模型，用来描述当前的maven项目。
 
@@ -422,14 +423,14 @@ pom.xml文件：
 
 pom文件详解：
 
-- <project> ：pom文件的根标签，表示当前maven项目
-- <modelVersion> ：声明项目描述遵循哪一个POM模型版本
+- `<project>` ：pom文件的根标签，表示当前maven项目
+- `<modelVersion>` ：声明项目描述遵循哪一个POM模型版本
   - 虽然模型本身的版本很少改变，但它仍然是必不可少的。目前POM模型版本是4.0.0
-- 坐标 ：<groupId>、<artifactId>、<version>
+- 坐标 ：`<groupId>`、`<artifactId>`、`<version>`
   - 定位项目在本地仓库中的位置，由以上三个标签组成一个坐标
-- <packaging> ：maven项目的打包方式，通常设置为jar或war（默认值：jar）
+- `<packaging>` ：maven项目的打包方式，通常设置为jar或war（默认值：jar）
 
-## 3.2.3 Maven坐标详解
+### 3.2.3 Maven坐标详解
 
 什么是坐标？
 
@@ -460,7 +461,7 @@ Maven坐标主要组成
 ![image-20221201104320521](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201104320521.png)
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201104906754.png" alt="image-20221201104906754" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201104906754.png" alt="image-20221201104906754" style="zoom:100%;" />
 </div>
 
 > 说明：如果没有Maven面板，选择 View  =>  Appearance  =>  Tool Window Bars
@@ -472,7 +473,7 @@ Maven坐标主要组成
 File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220823161727718.png" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220823161727718.png" style="zoom:100%;" />
 </div>
 
 找到要导入工程的pom.xml
@@ -480,7 +481,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 ![image-20221201105532909](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201105532909.png)
 
 <div>
-<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:100%;" />
 </div>
 
 # 04. 依赖管理
@@ -491,8 +492,8 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 例如：在当前工程中，我们需要用到logback来记录日志，此时就可以在maven工程的pom.xml文件中，引入logback的依赖。具体步骤如下：
 
-1. 在pom.xml中编写<dependencies>标签
-2. 在<dependencies>标签中使用<dependency>引入坐标
+1. 在pom.xml中编写`<dependencies>`标签
+2. 在`<dependencies>`标签中使用`<dependency>`引入坐标
 3. 定义坐标的 groupId、artifactId、version
 
 ```xml
@@ -527,22 +528,22 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 1. 利用中央仓库搜索的依赖坐标
 
    <div>
-   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/5.gif" style="zoom:80%;" />
+   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/5.gif" style="zoom:100%;" />
    </div>
 2. 利用IDEA工具搜索依赖
 
    <div>
-   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/6.gif" style="zoom:80%;" />
+   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/6.gif" style="zoom:100%;" />
    </div>
 3. 熟练上手maven后，快速导入依赖
 
    <div>
-   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/7.gif" style="zoom:80%;" />
+   <img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/7.gif" style="zoom:100%;" />
    </div>
 
 ## 4.2 依赖传递
 
-## 4.2.1 依赖具有传递性
+### 4.2.1 依赖具有传递性
 
 早期我们没有使用maven时，向项目中添加依赖的jar包，需要把所有的jar包都复制到项目工程下。如下图所示，需要logback-classic时，由于logback-classic又依赖了logback-core和slf4j，所以必须把这3个jar包全部复制到项目工程下
 
@@ -568,7 +569,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 ![image-20221201115801806](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201115801806.png)
 
-## 4.2.2 排除依赖
+### 4.2.2 排除依赖
 
 问题：之前我们讲了依赖具有传递性。那么A依赖B，B依赖C，如果A不想将C依赖进来，是否可以做到？
 
@@ -610,7 +611,7 @@ File  =>  Project Structure  =>  Modules  =>  +  =>  Import Module
 
 ![image-20221201135142706](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20221201135142706.png)
 
-如果希望限制依赖的使用范围，可以通过<scope>标签设置其作用范围。
+如果希望限制依赖的使用范围，可以通过`<scope>`标签设置其作用范围。
 
 ![image-20220616123806894](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616123806894.png)
 
@@ -635,7 +636,7 @@ scope标签的取值范围：
 
 ## 4.4 生命周期
 
-## 4.4.1 介绍
+### 4.4.1 介绍
 
 Maven的生命周期就是为了对所有的构建过程进行抽象和统一。 描述了一次项目构建，经历哪些阶段。
 
@@ -685,7 +686,7 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
 >
 > ​		clean不会运行，compile会运行。  因为compile与package属于同一套生命周期，而clean与package不属于同一套生命周期。
 
-## 4.4.2 执行
+### 4.4.2 执行
 
 在日常开发中，当我们要执行指定的生命周期时，有两种执行方式：
 
@@ -734,7 +735,8 @@ clean：
 
 打开设置----搜索maven----Repositories----选中本地仓库-----点击Update
 
-![1537786634456](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1537786634456-1582625518984.png)
+<div><img src="https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/1537786634456-1582625518984.png" style="zoom:100%;" />
+</div>
 
 ## 5.2 清理maven仓库
 
