@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "itheima/javaweb/day01-HTML-CSS.md",
+                "file": "itheima/javaweb/day04-Maven.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "itheima/javaweb/day01-HTML-CSS.md",
+                "file": "itheima/javaweb/day04-Maven.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "itheima/javaweb/day01-HTML-CSS.md",
+                "file": "itheima/javaweb/day04-Maven.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "itheima/javaweb/day01-HTML-CSS.md"
+                "file": "itheima/javaweb/day04-Maven.md"
               }
             }
           },
@@ -172,24 +172,24 @@
   },
   "active": "e19b8aa74b4a5ccc",
   "lastOpenFiles": [
-    "itheima/javaweb/day15-Maven高级.md",
-    "itheima/javaweb/day14-SpringBoot原理篇.md",
+    "itheima/javaweb/day02-JavaScript-Vue.md",
+    "itheima/javaweb/day03-Vue-Element.md",
+    "itheima/javaweb/day01-HTML-CSS.md",
+    "itheima/javaweb/day01-Web开发介绍.md",
     "itheima/javaweb/day13-SpringBootWeb AOP.md",
     "itheima/javaweb/day12-SpringBootWeb登录认证.md",
     "itheima/javaweb/day11-SpringBootWeb案例-2.md",
-    "itheima/javaweb/day10-SpringBootWeb案例-1.md",
     "itheima/javaweb/day09-MyBatis.md",
     "itheima/javaweb/day08-MySQL-03.md",
-    "itheima/javaweb/day08-MyBatis入门.md",
     "itheima/javaweb/day07-MySQL-02.md",
     "itheima/javaweb/day06-MySQL-01.md",
     "itheima/javaweb/day05-SpringBootWeb请求响应.md",
     "itheima/javaweb/day04-SpringBootWeb入门.md",
     "itheima/javaweb/day04-Maven.md",
-    "itheima/javaweb/day03-Vue-Element.md",
-    "itheima/javaweb/day02-JavaScript-Vue.md",
-    "itheima/javaweb/day01-Web开发介绍.md",
-    "itheima/javaweb/day01-HTML-CSS.md",
+    "itheima/javaweb/day15-Maven高级.md",
+    "itheima/javaweb/day14-SpringBoot原理篇.md",
+    "itheima/javaweb/day10-SpringBootWeb案例-1.md",
+    "itheima/javaweb/day08-MyBatis入门.md",
     "algorithm/刷题记录/19. Remove Nth Node From End of List（删除链表的倒数第 N 个结点）.md",
     "tools/Obsidian.md",
     "tools/云盘.md",

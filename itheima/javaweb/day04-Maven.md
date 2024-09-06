@@ -54,7 +54,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 
 ![image-20220616001159531](https://cdn.jsdelivr.net/npm/zui-xin-ban-java-web-kai-fa-jiao-cheng@1.0.1/assets1/image-20220616001159531.png)
 
-**统一项目结构 : **
+**统一项目结构 :**
 
 - 提供标准、统一的项目结构
 
@@ -79,7 +79,7 @@ Maven是Apache旗下的一个开源项目，是一款用于管理和构建java�
 > - src/test/java: 测试代码
 > - src/test/resources: 测试配置文件信息
 
-**项目构建 :**
+**项目构建:**
 
 - maven提供了标准的、跨平台(Linux、Windows、MacOS) 的自动化项目构建方式
 
