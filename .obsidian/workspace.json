@@ -13,13 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "javaweb/day01-Web开发介绍.md",
+                "file": "react/day03-Redux.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "day03-Redux"
+            }
+          },
+          {
+            "id": "9567e5047d3e492f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -38,8 +53,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -54,7 +72,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,7 +82,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -85,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "javaweb/day01-Web开发介绍.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +114,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
             }
           },
           {
@@ -102,10 +125,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "javaweb/day01-Web开发介绍.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "出链"
             }
           },
           {
@@ -113,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -122,8 +148,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "javaweb/day01-Web开发介绍.md"
-              }
+                "file": "react/day03-Redux.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "day03-Redux 的大纲"
             }
           },
           {
@@ -135,7 +166,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           },
           {
@@ -145,12 +178,16 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
-              }
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -170,8 +207,9 @@
       "univer:Univer": false
     }
   },
-  "active": "6ac5818d92ae7f06",
+  "active": "9567e5047d3e492f",
   "lastOpenFiles": [
+    "javaweb/day01-Web开发介绍.md",
     "java面试/Redis面试题.md",
     "algorithm/刷题记录.md",
     "algorithm/刷题记录/112. Path Sum（路径总和）.md",
@@ -208,7 +246,6 @@
     "miscellaneous/笔记/assets/net-img-202310052134977-20240905130932-3qgmldj.png",
     "miscellaneous/assets/net-img-3fb28cc5eef41d048083c48e7539bdf9a7864440.jpg@560w_350h_100Q_1c-20240905130715-nz3n2az.webp",
     "miscellaneous/笔记/assets/net-img-202309231748785-20240905131009-hdbhvu3.png",
-    "javaweb/day01-HTML-CSS.md",
     "react",
     "microservice",
     "java面试/test.txt",

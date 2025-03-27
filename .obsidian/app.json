@@ -14,6 +14,5 @@
   "propertiesInDocument": "visible",
   "attachmentFolderPath": "assets",
   "showUnsupportedFiles": true,
-  "alwaysUpdateLinks": false,
-  "showRibbon": false
+  "alwaysUpdateLinks": false
 }
