@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 289.5
   },
   "right": {
     "id": "defed06388ad0739",
@@ -180,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 370.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,7 +196,7 @@
       "univer:Univer": false
     }
   },
-  "active": "36584871c01f4a39",
+  "active": "6881fef42268e5a0",
   "lastOpenFiles": [
     "命理学/三命通会/卷一.md",
     "javaweb/day01-HTML-CSS.md",
