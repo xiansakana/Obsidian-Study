@@ -139,7 +139,7 @@
               "state": {
                 "file": "命理学/三命通会/卷一.md",
                 "followCursor": true,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
