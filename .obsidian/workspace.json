@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "命理学/三命通会/卷一.md",
+                "file": "命理/三命通会/卷一.md",
                 "mode": "source",
                 "source": false
               },
@@ -196,10 +196,10 @@
       "univer:Univer": false
     }
   },
-  "active": "6ac5818d92ae7f06",
+  "active": "36584871c01f4a39",
   "lastOpenFiles": [
     "java面试/微服务面试题.md",
-    "命理学/三命通会/卷一.md",
+    "命理/三命通会/卷一.md",
     "javaweb/day01-HTML-CSS.md",
     "javaweb/day01-Web开发介绍.md",
     "java面试/MySQL面试题.md",
@@ -212,8 +212,8 @@
     "react/day03-Redux.md",
     "react/卷一.md",
     "react/未命名.md",
-    "命理学/三命通会",
-    "命理学",
+    "命理/三命通会",
+    "命理",
     "java面试/Redis面试题.md",
     "algorithm/刷题记录.md",
     "algorithm/刷题记录/112. Path Sum（路径总和）.md",
